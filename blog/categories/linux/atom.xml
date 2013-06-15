@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[ktkr3d]]></title>
-  <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Linux | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
   <updated>2013-06-16T01:46:00+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
