@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-06-16T18:08:11+09:00</updated>
+  <updated>2013-06-16T19:33:37+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,8 +18,9 @@
     <link href="http://ktkr3d.github.io/blog/2013/06/16/octopress/"/>
     <updated>2013-06-16T12:34:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/octopress</id>
-    <content type="html"><![CDATA[<p><img src="http://ktkr3d.github.io/images/octopress.png">
-<a href="http://ktkr3d.site11.com">http://ktkr3d.site11.com</a> 上のWordPress からGitHub 上のOctopress にブログを移行してみました。</p>
+    <content type="html"><![CDATA[<p><img src="http://ktkr3d.github.io/images/octopress.png"></p>
+
+<p><a href="http://ktkr3d.site11.com">http://ktkr3d.site11.com</a> 上のWordPress からGitHub 上のOctopress にブログを移行してみました。</p>
 
 <!-- more -->
 
@@ -89,7 +90,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png" alt="Ubuntu GNOME 13.10" /></p>
+    <content type="html"><![CDATA[<p><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png" width="600"></p>
 
 <p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a></p>
 
