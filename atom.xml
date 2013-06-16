@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-06-16T11:42:31+09:00</updated>
+  <updated>2013-06-16T11:47:47+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,13 +18,12 @@
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p>Ubuntu GNOME 13.10 Daily Build + Cairo-Dock</p>
+    <content type="html"><![CDATA[<p>Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。いつものようにAvant Window Navigator を使いたかったのですが、うまく起動しなかったので、Cairo Dock に移行してみました。Cairo Dock は挙動が派手で好みではなかったのですが、テーマを変更して、詳細設定をしたらAWN みたいな挙動にすることができました。</p>
 
 <!-- more -->
 
 
-<p>Ubuntu GNOME 13.10 でAWN が動かなかったので、Cairo-Dock に移行してみた。
-テーマを変更して、詳細設定をしたらAWN みたいな挙動にすることができた。</p>
+<p>その他で気になったのは、Code::Blocks が起動しないことと、GTK+ テーマのリストボックスの挙動が少し不自然なことくらいでしょうか。そのうち、直るでしょう。</p>
 ]]></content>
   </entry>
   
