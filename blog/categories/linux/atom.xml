@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-06-16T12:03:35+09:00</updated>
+  <updated>2013-06-16T12:13:01+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,9 @@
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p>Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。いつものようにAvant Window Navigator を使いたかったのですが、うまく起動しなかったので、Cairo Dock に移行してみました。Cairo Dock は挙動が派手で好みではなかったのですが、テーマを変更して、詳細設定をしたらAWN みたいな挙動にすることができました。</p>
+    <content type="html"><![CDATA[<p><img src="/images/Ubuntu-GNOME-13-10.png" width="600">
+<a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a>
+Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。いつものようにAvant Window Navigator を使いたかったのですが、うまく起動しなかったので、Cairo Dock に移行してみました。Cairo Dock は挙動が派手で好みではなかったのですが、テーマを変更して、詳細設定をしたらAWN みたいな挙動にすることができました。</p>
 
 <!-- more -->
 
