@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-06-16T12:31:00+09:00</updated>
+  <updated>2013-06-16T12:44:15+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/06/16/octopress/"/>
+    <updated>2013-06-16T12:34:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/06/16/octopress</id>
+    <content type="html"><![CDATA[<p>Octopress に移行してみました。</p>
+
+<!-- more -->
+
+
+<p>Wordpress は便利なのですが、メモリ消費量が多くなってしまい、海外無料Webサービスでの運用が困難になってきました。（解決策はいろいろとあるとは思いますが。）
+そこで、Github Pages + Octopress でブログサイトを構築してみることにしました。
+Markdown で記述していきますが、よく知らないので、これから覚えていくことにしましょう。</p>
+
+<p>使い方のメモ</p>
+
+<p>(1) ポスト</p>
+
+<pre><code>rake new_post["title"]
+でひな形が以下のように作成されます。
+./octopress/source/_posts/*.markdown
+
+生成とデプロイ
+rake generate
+rake deploy
+
+画像はsource/images/ に格納することにします。
+画像の挿入は
+&lt;img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png" width="600"&gt;
+</code></pre>
+
+<p>(2) ページ</p>
+
+<pre><code>rake new_page[page-name]
+</code></pre>
+
+<p>(3) スタイル</p>
+
+<pre><code>./octopress/source/stylesheets/
+にスタイルシートがあります。
+
+スタイルシートのカスタマイズは以下にあるファイルを編集します。
+./octopress/saas/custom/
+
+テンプレートを編集するなら
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu GNOME 13.10 Daily Build + Cairo-Dock]]></title>
