@@ -108,10 +108,16 @@ $(document).ready( function () {
 <h3>使い方のメモ</h3>
 
 <ol>
-<li><p>新規記事の作成</p>
+<li>新規記事の作成</li>
+</ol>
 
-<p> rake new_post[&ldquo;title&rdquo;]</p></li>
-<li><p>記事の編集</p></li>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>記事の編集</li>
 </ol>
 
 
@@ -119,22 +125,36 @@ $(document).ready( function () {
 画像はsource/images/ に格納することにします。
 画像の挿入は</p>
 
-<pre><code>&lt;img src="/images/Ubuntu-GNOME-13-10.png" width="600"&gt;
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img src="/images/Ubuntu-GNOME-13-10.png" width="600"></span></code></pre></td></tr></table></div></figure>
+
 
 <ol>
-<li><p>生成とデプロイ</p>
-
-<p> rake generate
- rake deploy</p></li>
-<li><p>新規ページの作成</p>
-
-<p> rake new_page[page-name]</p></li>
-<li><p>スタイルの変更</p></li>
+<li>生成とデプロイ</li>
 </ol>
 
 
-<p><code>./octopress/source/stylesheets/</code>にスタイルシートがあります。
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>新規ページの作成</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[page-name]</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>スタイルの変更</li>
+</ol>
+
+
+<p>./octopress/source/stylesheets/ にスタイルシートがあります。
 スタイルシートのカスタマイズは<code>./octopress/saas/custom/</code>にあるファイルを編集します。</p>
 </div>
 
