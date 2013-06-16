@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-06-16T16:19:43+09:00</updated>
+  <updated>2013-06-16T16:31:02+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -29,18 +29,18 @@
 
 <h3>使い方のメモ</h3>
 
-<ol>
+<ul>
 <li>新規記事の作成</li>
-</ol>
+</ul>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
+<ul>
 <li>記事の編集</li>
-</ol>
+</ul>
 
 
 <p>./octopress/source/_posts/*.markdown を編集します。
@@ -51,9 +51,9 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png" width="600"></span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
+<ul>
 <li>生成とデプロイ</li>
-</ol>
+</ul>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -62,18 +62,18 @@
 </span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
+<ul>
 <li>新規ページの作成</li>
-</ol>
+</ul>
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[page-name]</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
+<ul>
 <li>スタイルの変更</li>
-</ol>
+</ul>
 
 
 <p>./octopress/source/stylesheets/ にスタイルシートがあります。

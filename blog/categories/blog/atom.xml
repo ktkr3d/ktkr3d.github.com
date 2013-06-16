@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-06-16T16:19:43+09:00</updated>
+  <updated>2013-06-16T16:31:02+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -29,17 +29,17 @@
 
 <h3>使い方のメモ</h3>
 
-<ol>
+<ul>
 <li>新規記事の作成</li>
-</ol>
+</ul>
 
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post[&ldquo;title&rdquo;]</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<ol>
+<ul>
 <li>記事の編集</li>
-</ol>
+</ul>
 
 
 <p>./octopress/source/_posts/*.markdown を編集します。
@@ -49,9 +49,9 @@
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img src="/images/Ubuntu-GNOME-13-10.png" width="600"></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<ol>
+<ul>
 <li>生成とデプロイ</li>
-</ol>
+</ul>
 
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -59,17 +59,17 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
 </span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<ol>
+<ul>
 <li>新規ページの作成</li>
-</ol>
+</ul>
 
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[page-name]</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<ol>
+<ul>
 <li>スタイルの変更</li>
-</ol>
+</ul>
 
 
 <p>./octopress/source/stylesheets/ にスタイルシートがあります。
