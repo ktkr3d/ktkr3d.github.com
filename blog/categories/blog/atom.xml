@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-06-16T12:59:58+09:00</updated>
+  <updated>2013-06-16T14:46:03+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -29,38 +29,36 @@
 
 <p>Markdown で記述していきますが、よく知らないので、これから覚えていくことにしましょう。</p>
 
-<p>使い方のメモ</p>
+<h2>使い方のメモ</h2>
 
-<p>(1) ポスト</p>
+<ol>
+<li><p>新規記事の作成</p>
 
-<pre><code>rake new_post["title"]
-でひな形が以下のように作成されます。
-./octopress/source/_posts/*.markdown
+<p> rake new_post[&ldquo;title&rdquo;]</p></li>
+<li><p>記事の編集</p></li>
+</ol>
 
-生成とデプロイ
-rake generate
-rake deploy
 
+<p>./octopress/source/_posts/*.markdown を編集します。
 画像はsource/images/ に格納することにします。
-画像の挿入は
-<img src="/images/Ubuntu-GNOME-13-10.png" width="600">
+画像の挿入は</p>
+
+<pre><code><img src="/images/Ubuntu-GNOME-13-10.png" width="600">
 </code></pre>
 
-<p>(2) ページ</p>
+<ol>
+<li><p>生成とデプロイ</p>
 
-<pre><code>rake new_page[page-name]
-</code></pre>
+<p> rake generate
+ rake deploy</p></li>
+<li><p>新規ページの作成</p>
 
-<p>(3) スタイル</p>
+<p> rake new_page[page-name]</p></li>
+<li><p>スタイルの変更
+<code>./octopress/source/stylesheets/</code>にスタイルシートがあります。
+スタイルシートのカスタマイズは<code>./octopress/saas/custom/</code>にあるファイルを編集します。</p></li>
+</ol>
 
-<pre><code>./octopress/source/stylesheets/
-にスタイルシートがあります。
-
-スタイルシートのカスタマイズは以下にあるファイルを編集します。
-./octopress/saas/custom/
-
-テンプレートを編集するなら
-</code></pre>
 ]]></content>
   </entry>
   
