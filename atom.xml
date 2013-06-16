@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-06-16T17:49:42+09:00</updated>
+  <updated>2013-06-16T17:57:05+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -89,7 +89,8 @@
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png">
+    <content type="html"><![CDATA[<p><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png" alt="Ubuntu GNOME 13.10" />
+<img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png">
 <a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a>
 Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。</p>
 
