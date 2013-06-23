@@ -1,2 +1,125 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+body
+{
+	background: url("body-bg.png") repeat-y scroll center top #E6EDC8 !important;
+	padding: 0px 0px 0 0px !important;
+    font-family: "HiraKakuProN-W3","Hiragino Kaku Gothic ProN","メイリオ","Meiryo","IPAexGothic",verdana,'trebuchet ms',sans-serif !important;
+}
+body > header
+{
+#	max-width: 916px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	background: url("travel.png") no-repeat scroll center bottom !important;
+}
+body > header hgroup
+{
+	max-width: 916px !important;
+	margin: 0 auto 0 auto !important;
+	background: url("airplane.gif") no-repeat scroll 20px 12px transparent !important;
+	box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.2), -10px 0px 10px 0px rgba(0,0,0,0.2) !important;
+}
+body > header h1
+{
+	font-family: Ubuntu,TertreExtraBold,Tahoma,Arial !important;
+    font-size: 30px !important;
+    font-weight: normal !important;
+    line-height: 1 !important;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #C9C9C9, 0 3px 0 #BBBBBB, 0 4px 0 #B9B9B9, 0 5px 0 #AAAAAA, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15) !important;
+	color: #FFFFFF !important;
+	margin: 0 !important;
+	padding: 10px 15px 8px 75px !important;
+}
+body > header h1 a:hover
+{
+	color: #FFFF00 !important;
+}
+body > header h2
+{
+	color: #FFFFFF !important;
+	font-size: 14px !important;
+	line-height: 1.125 !important;
+	margin: 0 !important;
+	padding: 5px 15px 60px 75px !important;
+}
+body > nav
+{
+	max-width: 896px !important;
+	margin: 0 auto 0 auto !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.2), -10px 0px 10px 0px rgba(0,0,0,0.2) !important;
+}
+body > div
+{
+	max-width: 916px !important;
+	margin: 0 auto 0 auto !important;
+}
+body > footer
+{
+	max-width: 896px !important;
+	margin: 0 auto 0 auto !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.2), -10px 0px 10px 0px rgba(0,0,0,0.2) !important;
+}
+h1.entry-title
+{
+	font-family: Ubuntu,TertreExtraBold,Tahoma,Arial !important;
+	color: #000 !important;
+	font-size: 21px !important;
+	font-weight: bold !important;
+	line-height: 1.3em !important;
+	margin-bottom: 0 !important;
+    background: url("entry-header-bg.gif") no-repeat 0px 7px transparent !important;
+	padding-left: 20px !important;
+}
+div.entry-content p
+{
+    color: #333333 !important;
+    font-size: 16px !important;
+    line-height: 27px !important;
+}
+div#main
+{
+	background: #f3edde !important;
+	box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.2), -10px 0px 10px 0px rgba(0,0,0,0.2) !important;
+}
+div#content
+{
+	box-shadow: 10px 0px 10px 0px rgba(0,0,0,0.2) !important;
+}
+aside.sidebar
+{
+	padding-top: 2.0em !important;
+}
+aside.sidebar section h1
+{
+	background: url("module-header-bg.gif") no-repeat scroll left center #BCCAEE !important;
+	color: #FFFFFF !important;
+	font-size: 14px !important;
+#	font-weight: bold !important;
+	margin: 0 !important;
+	padding: 3px 10px 3px 35px !important;
+	position: relative !important;
+	width: auto !important;
+	border-bottom: none !important;
+}
+article
+{
+	padding-left: 30px !important;
+	padding-right: 30px !important;
+}
+
+aside div#twitter-profile
+{
+	margin-left: 10px !important;
+}
+aside ul
+{
+	margin-left: 10px !important;
+}
+.serif, body, #content .blog-index a[rel="full-article"] {
+    font-family: "HiraKakuProN-W3","Hiragino Kaku Gothic ProN","メイリオ","Meiryo","IPAexGothic",verdana,'trebuchet ms',sans-serif !important;
+}
