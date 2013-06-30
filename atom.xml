@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-01T01:09:07+09:00</updated>
+  <updated>2013-07-01T01:13:57+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -22,7 +22,7 @@
 
 <p><a href="https://launchpad.net/~mir-team/+archive/staging">https://launchpad.net/~mir-team/+archive/staging</a></p>
 
-<p>Ubuntu 13.10 Daily Build にMir をインストールしてみました。現時点のパフォーマンスは十分ではありませんでしたが、今後改善されるでしょう。</p>
+<p>Ubuntu 13.10 Daily Build にMir を適用してみました。現時点では若干もたつく感じがしますが、今後改善されるでしょう。</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -32,7 +32,7 @@
 </span><span class='line'>$ sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure>
 
 
-
+<p>特に資料を参考にしていないので、正式な手順ではないかもしれませんし、不十分かもしれません。</p>
 ]]></content>
   </entry>
   
