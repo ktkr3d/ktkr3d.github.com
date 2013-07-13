@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-13T14:58:21+09:00</updated>
+  <updated>2013-07-13T15:00:53+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,19 +18,23 @@
     <link href="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/"/>
     <updated>2013-07-13T09:36:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="/images/gnome_shell_3_9_4.png" width="600"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png">{% img /images/gnome_shell_3_9_4.png 600 %}</a></p>
 
 <p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
 
 <p>GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。</p>
 
-<p>$ sudo add-apt-repository ppa:ricotz/testing
+<p>{% codeblock %}
+$ sudo add-apt-repository ppa:ricotz/testing
 $ sudo apt-get update
-$ sudo apt-get install gnome-shell</p>
+$ sudo apt-get install gnome-shell
+{% endcodeblock %}</p>
 
 <p>Cairo-Dock も動かなくなりました。一部のGNOME Shell 拡張も正常に動かないようです。Docky を使うことにしました。</p>
 
-<p>$ sudo apt-get install docky</p>
+<p>{% codeblock %}
+$ sudo apt-get install docky
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
@@ -39,22 +43,21 @@ $ sudo apt-get install gnome-shell</p>
     <link href="http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/"/>
     <updated>2013-07-01T00:30:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png"><img src="/images/ubuntu_13_10_daily_build_mir.png" width="600"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png">{% img /images/ubuntu_13_10_daily_build_mir.png 600 %}</a></p>
 
 <p><a href="https://launchpad.net/~mir-team/+archive/staging">https://launchpad.net/~mir-team/+archive/staging</a></p>
 
 <p>Ubuntu 13.10 Daily Build にMir を適用してみました。現時点では若干もたつく感じがしますが、今後改善されるでしょう。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-add-repository ppa:mir-team/staging
-</span><span class='line'>$ sudo apt-get update
-</span><span class='line'>$ sudo apt-get upgrade</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+$ sudo apt-add-repository ppa:mir-team/staging
+$ sudo apt-get update
+$ sudo apt-get upgrade
+{% endcodeblock %}</p>
 
 <p>特に資料を参考にしていないので、正式な手順ではないかもしれませんし、不十分かもしれません。</p>
 
-<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell.png"><img src="/images/ubuntu_13_10_daily_build_mir_gnome_shell.png" width="600"></a></p>
+<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell.png">{% img /images/ubuntu_13_10_daily_build_mir_gnome_shell.png 600 %}</a></p>
 
 <p>GNOME Shell 3.8.3 で使った方が快適なような気がします。気のせいかもしれませんが。</p>
 
@@ -69,7 +72,7 @@ $ sudo apt-get install gnome-shell</p>
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png"><img src="/images/Ubuntu-GNOME-13-10.png" width="600"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png">{% img /images/Ubuntu-GNOME-13-10.png 600 %}</a></p>
 
 <p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a></p>
 
