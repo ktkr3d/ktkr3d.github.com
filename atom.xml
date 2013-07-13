@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-01T23:07:32+09:00</updated>
+  <updated>2013-07-13T14:54:12+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[GNOME Shell 3.9.4]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/"/>
+    <updated>2013-07-13T09:36:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png" width="600"></a></p>
+
+<p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
+
+<p>GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。</p>
+
+<p>$ sudo add-apt-repository ppa:ricotz/testing
+$ sudo apt-get update
+$ sudo apt-get install gnome-shell</p>
+
+<p>Cairo-Dock も動かなくなりました。一部のGNOME Shell 拡張も正常に動かないようです。Docky を使うことにしました。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu 13.10 Daily Build + Mir]]></title>
