@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-13T20:17:37+09:00</updated>
+  <updated>2013-07-14T11:52:25+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Docky + Cardapio]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
+    <updated>2013-07-14T11:11:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="http://ktkr3d.github.io/images/docky_cardapio.png" width="600"></a></p>
+
+<p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。
+1. 電源ボタンが無いこと
+2. アプリケーションメニューがないこと</p>
+
+<p>Docky とCardapio の設定で上記を動くようにしてみました。</p>
+
+<!-- more -->
+
+
+<p></p>
+
+<h4>電源ボタンの設定</h4>
+
+<p>一番右の「画面のロック」アイコンを右クリックすることで、「画面のロック」、「ログアウト」、「サスペンド」、「再起動」、「シャットダウン」のようなサブメニューが表示されます。
+「画面のロック」のアイコン上でマウスのホイールボタンで上下にホイールすると、デフォルトの動作を指定できます。
+ボタン押下後に再起動かシャットダウンかを選択させる形式がよかったのですが、とりあえずこれで良しとしましょう。</p>
+
+<h4>Cardapio の設定</h4>
+
+<p>Cardapio を使ってDocky からアプリケーションメニューを表示することにします。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo add-apt-repository ppa:cardapio-team/unstable
+</span><span class='line'>$ sudo apt-get update
+</span><span class='line'>$ sudo apt-get install cardapio</span></code></pre></td></tr></table></div></figure>
+
+
+<p>saucy 向けのCardapio が存在しなかったので、ソフトウェアソースをquantal 向けに切り替えてインストールしました。
+cardapio を起動してみたところ、いくつかエラーが表示されたので、修正しました。</p>
+
+<ol>
+<li><p>以下を追加<br>
+<code>from xdg import BaseDirectory</code></p></li>
+<li><p>以下を置換<br>
+<code>DesktopEntry.xdg_config_home</code> &ndash;> <code>BaseDirectory.xdg_config_home</code></p></li>
+<li><p>以下を置換<br>
+<code>DesktopEntry.xdg_cache_home</code> &ndash;> <code>BaseDirectory.xdg_cache_home</code></p></li>
+</ol>
+
+
+<h4>Docky へCardapio を登録</h4>
+
+<p>cardapio-helper というDocky のヘルパーを使うと、Docky アイコンをクリックで、Cardapio が起動されるはずなのですが、うまく動作しませんでした。
+仕方がないので、/usr/share/applications/cardapio.desktop をDocky にドラッグアンドドラッグして、メニューアイコンを登録しました。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GNOME Shell 3.9.4]]></title>
@@ -44,7 +100,7 @@
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#97;&#117;&#x74;&#x6f;&#104;&#105;&#x64;&#101;&#116;&#111;&#112;&#x62;&#97;&#114;&#50;&#x40;&#x77;&#101;&#x72;&#101;&#x77;&#x6f;&#x6c;&#x76;&#101;&#x73;&#x2e;&#117;&#115;">&#x61;&#117;&#x74;&#x6f;&#104;&#105;&#x64;&#101;&#x74;&#x6f;&#112;&#x62;&#x61;&#x72;&#x32;&#x40;&#x77;&#101;&#x72;&#101;&#x77;&#x6f;&#x6c;&#x76;&#101;&#115;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x61;&#117;&#x74;&#111;&#104;&#105;&#100;&#x65;&#116;&#111;&#112;&#98;&#x61;&#x72;&#50;&#x40;&#119;&#x65;&#114;&#x65;&#119;&#111;&#x6c;&#x76;&#101;&#x73;&#x2e;&#x75;&#x73;">&#97;&#x75;&#116;&#111;&#104;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#98;&#x61;&#x72;&#x32;&#64;&#x77;&#x65;&#x72;&#x65;&#x77;&#111;&#x6c;&#x76;&#x65;&#115;&#x2e;&#117;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
