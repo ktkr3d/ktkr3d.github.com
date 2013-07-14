@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-14T23:29:33+09:00</updated>
+  <updated>2013-07-14T23:32:03+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -109,7 +109,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#97;&#117;&#116;&#111;&#x68;&#x69;&#x64;&#x65;&#x74;&#111;&#112;&#98;&#x61;&#114;&#x32;&#x40;&#119;&#101;&#114;&#x65;&#119;&#111;&#x6c;&#118;&#101;&#115;&#x2e;&#117;&#x73;">&#97;&#x75;&#116;&#111;&#x68;&#105;&#100;&#x65;&#x74;&#x6f;&#112;&#x62;&#97;&#x72;&#50;&#64;&#119;&#101;&#114;&#x65;&#119;&#x6f;&#x6c;&#118;&#101;&#x73;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#97;&#117;&#116;&#x6f;&#104;&#105;&#x64;&#101;&#x74;&#x6f;&#112;&#98;&#x61;&#114;&#50;&#x40;&#119;&#101;&#114;&#x65;&#119;&#111;&#108;&#118;&#x65;&#x73;&#x2e;&#117;&#115;">&#x61;&#x75;&#116;&#x6f;&#x68;&#x69;&#x64;&#x65;&#116;&#111;&#112;&#98;&#97;&#114;&#x32;&#64;&#119;&#101;&#x72;&#101;&#x77;&#111;&#x6c;&#x76;&#x65;&#x73;&#46;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
@@ -157,7 +157,7 @@ shell-version は3.9.4 を指定しました。</p>
     <link href="http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/"/>
     <updated>2013-07-01T00:30:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png"><img src="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png" width="600"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png"><img src="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_tn.png" width="600"></a></p>
 
 <p><a href="https://launchpad.net/~mir-team/+archive/staging">https://launchpad.net/~mir-team/+archive/staging</a></p>
 
@@ -265,7 +265,7 @@ shell-version は3.9.4 を指定しました。</p>
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png"><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png" width="600"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png"><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10_tn.png" width="600"></a></p>
 
 <p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a></p>
 
