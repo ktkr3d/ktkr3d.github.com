@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-14T11:31:55+09:00</updated>
+  <updated>2013-07-14T11:32:36+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,115 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Docky + Cardapio]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
+    <updated>2013-07-14T11:11:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png">{% img /images/docky_cardapio.png 600 %}</a></p>
+
+<p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。
+1. 電源ボタンが無いこと
+2. アプリケーションメニューがないこと</p>
+
+<p>Docky とCardapio の設定で上記を動くようにしてみました。</p>
+
+<p> <!-- more --></p>
+
+<h4>電源ボタン</h4>
+
+<p>一番右の「画面のロック」アイコンを右クリックすることで、「画面のロック」、「ログアウト」、「サスペンド」、「再起動」、「シャットダウン」のようなサブメニューが表示されます。
+「画面のロック」のアイコン上でマウスのホイールボタンで上下にホイールすると、デフォルトの動作を指定できます。
+ボタン押下後に再起動かシャットダウンかを選択させる形式がよかったのですが、とりあえずこれで良しとしましょう。</p>
+
+<h3>アプリケーションメニュー</h3>
+
+<p>Cardapio を使ってDocky からアプリケーションメニューを表示することにします。</p>
+
+<p>{% codeblock %}
+sudo add-apt-repository ppa:cardapio-team/unstable
+sudo apt-get update
+sudo apt-get install cardapio
+{% endcodeblock %}</p>
+
+<p>saucy 向けのCardapio が存在しなかったので、ソフトウェアソースをquantal 向けに切り替えてインストールしました。
+cardapio を起動してみたところ、いくつかエラーが表示されたので、修正しました。</p>
+
+<p>{% codeblock Cardapio.py.patch %}
+&mdash;&ndash; ./Cardapio.py.orig  2013-07-14 10:33:26.019485000 +0900
++++ ./Cardapio.py   2013-07-14 10:39:34.683472322 +0900
+@@ -52,6 +52,7 @@</p>
+
+<pre><code>import dbus, dbus.service
+
+from time import time
+</code></pre>
+
+<ul>
+<li><p>from xdg import BaseDirectory
+from xdg import DesktopEntry
+from pango import ELLIPSIZE_END
+from threading import Lock, Thread
+@@ -453,7 +454,7 @@
+    self._plugin_database[&lsquo;pinned&rsquo;] = {&lsquo;class&rsquo; : plugin_class, &lsquo;instances&rsquo; : []}</p>
+
+<pre><code>plugin_dirs = [
+</code></pre></li>
+<li><pre><code>    os.path.join(DesktopEntry.xdg_config_home, 'Cardapio', 'plugins'),
+</code></pre></li>
+<li><pre><code>    os.path.join(BaseDirectory.xdg_config_home, 'Cardapio', 'plugins'),
+    os.path.join(self.cardapio_path, 'plugins'),
+    ]
+</code></pre></li>
+</ul>
+
+
+<p>@@ -631,7 +632,7 @@</p>
+
+<pre><code>    ~/.cache/Cardapio)
+    """
+</code></pre>
+
+<ul>
+<li><pre><code>self._config_folder_path = os.path.join(DesktopEntry.xdg_config_home, 'Cardapio')
+</code></pre></li>
+<li><pre><code>self._config_folder_path = os.path.join(BaseDirectory.xdg_config_home, 'Cardapio')
+
+if not os.path.exists(self._config_folder_path):
+    os.mkdir(self._config_folder_path)
+</code></pre>
+
+<p>@@ -640,7 +641,7 @@
+        fatal_error(&lsquo;Error creating config folder!&rsquo;, &lsquo;Cannot create folder &ldquo;%s&rdquo; because a file with that name already exists!&rsquo; % self.<em>config_folder_path)
+        self.</em>quit()</p></li>
+<li><pre><code>self._cache_folder_path = os.path.join(DesktopEntry.xdg_cache_home, 'Cardapio')
+</code></pre></li>
+<li><pre><code>self._cache_folder_path = os.path.join(BaseDirectory.xdg_cache_home, 'Cardapio')
+
+if not os.path.exists(self._cache_folder_path):
+    os.mkdir(self._cache_folder_path)
+</code></pre>
+
+<p>@@ -1931,7 +1932,7 @@</p>
+
+<pre><code>  self._add_app_button(_('Home'), 'user-home', section, 'xdg', self._home_folder_path, _('Open your personal folder'), self._app_list)
+</code></pre></li>
+<li><pre><code>xdg_folders_file_path = os.path.join(DesktopEntry.xdg_config_home, 'user-dirs.dirs')
+</code></pre></li>
+<li><pre><code>xdg_folders_file_path = os.path.join(BaseDirectory.xdg_config_home, 'user-dirs.dirs')
+xdg_folders_file = file(xdg_folders_file_path, 'r')
+# TODO: xdg_folders_file = codecs.open(xdg_folders_file_path, mode='r', encoding='utf-8')
+</code></pre>
+
+<p>{% endcodeblock %}</p></li>
+</ul>
+
+
+<p>cardapio-helper というDocky のヘルパーがあって、Docky のアイコンをクリックするとCardapio が起動されるはずなのですが、うまく動作しませんでした。
+仕方がありませんでしたので、/usr/share/applications/cardapio.desktop をDocky にドラッグアンドドラッグして、メニューアイコンを登録しました。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GNOME Shell 3.9.4]]></title>
@@ -42,7 +151,7 @@ $ sudo apt-get install docky
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#97;&#117;&#x74;&#111;&#x68;&#x69;&#100;&#101;&#x74;&#x6f;&#x70;&#x62;&#97;&#x72;&#50;&#x40;&#x77;&#x65;&#x72;&#101;&#x77;&#x6f;&#108;&#x76;&#x65;&#x73;&#x2e;&#117;&#x73;">&#x61;&#x75;&#x74;&#x6f;&#x68;&#x69;&#100;&#101;&#x74;&#x6f;&#x70;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#x65;&#114;&#101;&#119;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x61;&#x75;&#116;&#x6f;&#104;&#105;&#100;&#x65;&#116;&#x6f;&#x70;&#98;&#97;&#114;&#50;&#64;&#x77;&#x65;&#114;&#101;&#119;&#111;&#108;&#118;&#x65;&#115;&#x2e;&#117;&#x73;">&#97;&#117;&#x74;&#111;&#104;&#105;&#100;&#101;&#116;&#x6f;&#112;&#x62;&#97;&#x72;&#x32;&#64;&#x77;&#x65;&#114;&#101;&#x77;&#111;&#108;&#x76;&#101;&#x73;&#46;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <p>{% codeblock metadata.json lang:js %}
@@ -62,7 +171,7 @@ shell-version は3.9.4 を指定しました。</p>
 
 <p>  ],
   &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
-  &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#97;&#x75;&#116;&#111;&#104;&#x69;&#x64;&#101;&#x74;&#111;&#x70;&#98;&#x61;&#x72;&#x32;&#64;&#119;&#x65;&#114;&#101;&#119;&#x6f;&#108;&#118;&#x65;&#115;&#x2e;&#117;&#115;">&#x61;&#117;&#116;&#111;&#104;&#105;&#100;&#x65;&#x74;&#111;&#112;&#98;&#x61;&#x72;&#x32;&#x40;&#119;&#x65;&#x72;&#x65;&#x77;&#x6f;&#x6c;&#x76;&#x65;&#x73;&#46;&#117;&#115;</a>&rdquo;,
+  &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#x61;&#117;&#116;&#x6f;&#x68;&#x69;&#100;&#101;&#116;&#x6f;&#112;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#x65;&#114;&#x65;&#119;&#111;&#108;&#118;&#101;&#115;&#x2e;&#x75;&#x73;">&#x61;&#x75;&#116;&#111;&#104;&#x69;&#x64;&#x65;&#x74;&#x6f;&#x70;&#98;&#97;&#114;&#50;&#64;&#x77;&#x65;&#x72;&#101;&#x77;&#x6f;&#x6c;&#x76;&#x65;&#x73;&#x2e;&#x75;&#115;</a>&rdquo;,
   &ldquo;version&rdquo;: 1
 }
 {% endcodeblock %}</p>
