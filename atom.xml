@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-14T23:03:23+09:00</updated>
+  <updated>2013-07-14T23:29:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
     <updated>2013-07-14T11:11:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="http://ktkr3d.github.io/images/docky_cardapio.png" width="600"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="http://ktkr3d.github.io/images/docky_cardapio_tn.png" width="600"></a></p>
 
 <p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
 
@@ -78,7 +78,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
     <link href="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/"/>
     <updated>2013-07-13T09:36:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png" width="600"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="http://ktkr3d.github.io/images/gnome_shell_3_9_4_tn.png" width="600"></a></p>
 
 <p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
 
@@ -109,7 +109,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x61;&#117;&#116;&#x6f;&#x68;&#x69;&#100;&#x65;&#x74;&#x6f;&#x70;&#x62;&#97;&#114;&#50;&#64;&#x77;&#101;&#x72;&#101;&#x77;&#x6f;&#x6c;&#118;&#101;&#x73;&#x2e;&#x75;&#115;">&#97;&#x75;&#116;&#111;&#x68;&#x69;&#100;&#x65;&#x74;&#x6f;&#112;&#98;&#97;&#x72;&#50;&#64;&#x77;&#x65;&#x72;&#101;&#119;&#111;&#x6c;&#x76;&#x65;&#x73;&#x2e;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#97;&#117;&#116;&#111;&#x68;&#x69;&#x64;&#x65;&#x74;&#111;&#112;&#98;&#x61;&#114;&#x32;&#x40;&#119;&#101;&#114;&#x65;&#119;&#111;&#x6c;&#118;&#101;&#115;&#x2e;&#117;&#x73;">&#97;&#x75;&#116;&#111;&#x68;&#105;&#100;&#x65;&#x74;&#x6f;&#112;&#x62;&#97;&#x72;&#50;&#64;&#119;&#101;&#114;&#x65;&#119;&#x6f;&#x6c;&#118;&#101;&#x73;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
