@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-15T22:55:30+09:00</updated>
+  <updated>2013-07-15T23:01:21+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -146,7 +146,9 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>Categories=Application;
 </span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>ちなみに私は<code>rake preview</code>を起動時に常駐させています。フォルダを監視しているので、多少の負荷はあるかもしれません。</p>
+<h4>プレビュー</h4>
+
+<p>私は <code>rake preview</code> をログイン時に常駐させて、ブラウザから <code>http://localhost:4000/</code> にアクセスしてレイアウト結果を確認しています。フォルダ内の変更が監視されるので、多少の負荷はあるかもしれません。</p>
 ]]></content>
   </entry>
   
