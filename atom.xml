@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-14T23:47:34+09:00</updated>
+  <updated>2013-07-15T09:04:38+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[GNOME Shell Lock Screen]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
+    <updated>2013-07-15T08:57:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"></a></p>
+
+<p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
+
+<!-- more -->
+
+
+<p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
+
+<figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Docky + Cardapio]]></title>
@@ -109,7 +151,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x61;&#x75;&#x74;&#111;&#x68;&#x69;&#100;&#x65;&#x74;&#x6f;&#112;&#98;&#97;&#x72;&#x32;&#x40;&#119;&#x65;&#x72;&#x65;&#x77;&#111;&#108;&#x76;&#101;&#115;&#x2e;&#117;&#115;">&#x61;&#117;&#x74;&#x6f;&#x68;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#x65;&#114;&#101;&#119;&#x6f;&#x6c;&#118;&#x65;&#x73;&#46;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x61;&#117;&#x74;&#111;&#104;&#105;&#x64;&#101;&#x74;&#x6f;&#112;&#x62;&#x61;&#x72;&#x32;&#64;&#x77;&#101;&#114;&#x65;&#119;&#x6f;&#108;&#118;&#x65;&#115;&#x2e;&#117;&#115;">&#97;&#x75;&#116;&#x6f;&#104;&#105;&#x64;&#x65;&#116;&#x6f;&#112;&#x62;&#x61;&#x72;&#50;&#x40;&#x77;&#101;&#114;&#x65;&#x77;&#x6f;&#x6c;&#118;&#101;&#x73;&#x2e;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>

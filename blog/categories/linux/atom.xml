@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-14T23:47:34+09:00</updated>
+  <updated>2013-07-15T09:04:38+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[GNOME Shell Lock Screen]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
+    <updated>2013-07-15T08:57:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png"></a></p>
+
+<p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
+
+<!-- more -->
+
+
+<p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
+</span><span class='line'><span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Docky + Cardapio]]></title>
@@ -106,7 +157,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#x61;&#x75;&#x74;&#111;&#104;&#x69;&#x64;&#101;&#116;&#x6f;&#x70;&#98;&#x61;&#114;&#x32;&#64;&#x77;&#x65;&#114;&#x65;&#119;&#111;&#x6c;&#x76;&#101;&#x73;&#46;&#117;&#x73;">&#97;&#x75;&#x74;&#x6f;&#104;&#x69;&#x64;&#x65;&#116;&#x6f;&#112;&#x62;&#x61;&#114;&#50;&#x40;&#119;&#101;&#114;&#x65;&#119;&#x6f;&#x6c;&#118;&#101;&#115;&#46;&#117;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#97;&#117;&#x74;&#x6f;&#x68;&#x69;&#x64;&#x65;&#116;&#111;&#x70;&#98;&#97;&#114;&#x32;&#64;&#119;&#x65;&#x72;&#101;&#x77;&#x6f;&#108;&#x76;&#101;&#115;&#46;&#x75;&#x73;">&#x61;&#x75;&#116;&#x6f;&#x68;&#x69;&#100;&#101;&#116;&#x6f;&#112;&#98;&#97;&#114;&#50;&#64;&#x77;&#101;&#x72;&#101;&#119;&#x6f;&#x6c;&#x76;&#x65;&#x73;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>metadata.json </span></figcaption>
@@ -145,7 +196,7 @@ shell-version は3.9.4 を指定しました。</p>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">],</span>
 </span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">url</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//fpmurphy.com/gnome-shell-extensions&lt;/a&gt;&amp;rdquo;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">uuid</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&amp;#109;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#111;&amp;#x3a;&amp;#x61;&amp;#117;&amp;#116;&amp;#x6f;&amp;#x68;&amp;#105;&amp;#100;&amp;#101;&amp;#x74;&amp;#111;&amp;#x70;&amp;#x62;&amp;#97;&amp;#114;&amp;#50;&amp;#64;&amp;#x77;&amp;#x65;&amp;#114;&amp;#101;&amp;#x77;&amp;#111;&amp;#108;&amp;#118;&amp;#101;&amp;#x73;&amp;#x2e;&amp;#x75;&amp;#115;&quot;</span><span class="o">&gt;&amp;</span><span class="err">#</span><span class="mi">97</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">117</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x74</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x68</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x69</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x64</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x74</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">112</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">98</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x61</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x72</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">50</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x40</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x77</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x72</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x77</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x6f</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">108</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">118</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">115</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">46</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">117</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">115</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/a&gt;&amp;rdquo;,</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">uuid</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&amp;#109;&amp;#97;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#111;&amp;#58;&amp;#x61;&amp;#x75;&amp;#x74;&amp;#x6f;&amp;#104;&amp;#x69;&amp;#x64;&amp;#x65;&amp;#116;&amp;#111;&amp;#x70;&amp;#x62;&amp;#97;&amp;#114;&amp;#50;&amp;#64;&amp;#x77;&amp;#x65;&amp;#x72;&amp;#101;&amp;#119;&amp;#111;&amp;#x6c;&amp;#118;&amp;#101;&amp;#115;&amp;#x2e;&amp;#117;&amp;#115;&quot;</span><span class="o">&gt;&amp;</span><span class="err">#</span><span class="nx">x61</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">117</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">116</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x68</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x69</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x64</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x74</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x70</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x62</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x61</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">114</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x32</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">64</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">119</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x72</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x77</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">108</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">118</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">115</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">46</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x75</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x73</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/a&gt;&amp;rdquo;,</span>
 </span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">version</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="mi">1</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
