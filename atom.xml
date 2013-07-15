@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-15T15:35:54+09:00</updated>
+  <updated>2013-07-15T20:56:30+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -63,6 +63,10 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 <span class='line-number'>28</span>
 <span class='line-number'>29</span>
 <span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/bin:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
@@ -76,11 +80,15 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>  <span class="k">case</span> <span class="nv">$pick</span> in
 </span><span class='line'>      0<span class="o">)</span>
 </span><span class='line'>          <span class="nv">article_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
-</span><span class='line'>          rake new_post<span class="o">[</span><span class="s2">&quot;$article_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="nv">$article_title</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">              </span>rake new_post<span class="o">[</span><span class="s2">&quot;$article_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          <span class="k">fi</span>
 </span><span class='line'>          ;;
 </span><span class='line'>      1<span class="o">)</span>
 </span><span class='line'>          <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
-</span><span class='line'>          rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="nv">$page_title</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">              </span>rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          <span class="k">fi</span>
 </span><span class='line'>          ;;
 </span><span class='line'>      2<span class="o">)</span>
 </span><span class='line'>          rake generate &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
@@ -267,7 +275,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#97;&#x75;&#x74;&#111;&#x68;&#x69;&#100;&#x65;&#116;&#x6f;&#112;&#x62;&#x61;&#114;&#50;&#x40;&#119;&#x65;&#114;&#101;&#119;&#x6f;&#108;&#118;&#101;&#115;&#46;&#117;&#115;">&#x61;&#x75;&#x74;&#111;&#104;&#x69;&#100;&#x65;&#x74;&#x6f;&#x70;&#x62;&#97;&#114;&#50;&#64;&#x77;&#x65;&#114;&#101;&#x77;&#x6f;&#108;&#118;&#x65;&#115;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#x61;&#117;&#116;&#111;&#104;&#105;&#100;&#x65;&#x74;&#x6f;&#112;&#98;&#97;&#114;&#50;&#64;&#119;&#x65;&#x72;&#101;&#119;&#111;&#108;&#x76;&#101;&#115;&#x2e;&#117;&#115;">&#97;&#x75;&#x74;&#111;&#x68;&#x69;&#x64;&#x65;&#x74;&#111;&#112;&#98;&#97;&#x72;&#50;&#64;&#x77;&#x65;&#114;&#101;&#119;&#111;&#108;&#118;&#101;&#x73;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
