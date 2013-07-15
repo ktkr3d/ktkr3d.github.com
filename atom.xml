@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-15T12:49:01+09:00</updated>
+  <updated>2013-07-15T14:32:37+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,117 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Zenity OctoPress Helper]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/"/>
+    <updated>2013-07-15T13:26:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_octopress_menu.png"><img src="http://ktkr3d.github.io/images/zenity_octopress_menu.png"></a><br>
+<a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"></a></p>
+
+<p>OctoPress のフロントエンドをZenity で作って見ました。
+Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。
+あいかわらず、GTK+ のリストボックスの表示が少しおかしいですが、機能的には問題なさそうです。</p>
+
+<!-- more -->
+
+
+<h4>zenity スクリプト</h4>
+
+<p>Zenity のリストボックス、テキスト入力、プログレスバー等を利用して、フロントエンドを作成します。</p>
+
+<figure class='code'><figcaption><span>octopress_helper.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/bin:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
+</span><span class='line'><span class="nb">source</span> <span class="nv">$HOME</span>/.rvm/scripts/rvm
+</span><span class='line'>
+</span><span class='line'><span class="nb">cd</span> /mnt/common/github/octopress
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span> :
+</span><span class='line'><span class="k">do</span>
+</span><span class='line'><span class="k">  </span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span><span class="k">)</span>;
+</span><span class='line'>  <span class="k">case</span> <span class="nv">$pick</span> in
+</span><span class='line'>      0<span class="o">)</span>
+</span><span class='line'>          <span class="nv">article_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>          rake new_post<span class="o">[</span><span class="s2">&quot;$article_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      1<span class="o">)</span>
+</span><span class='line'>          <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>          rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      2<span class="o">)</span>
+</span><span class='line'>          rake generate &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      3<span class="o">)</span>
+</span><span class='line'>          rake deploy &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      *<span class="o">)</span>
+</span><span class='line'>          <span class="nb">break</span>
+</span><span class='line'>          ;;
+</span><span class='line'>  <span class="k">esac</span>
+</span><span class='line'><span class="k">done</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>起動用スクリプト</h4>
+
+<p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Desktop Entry]
+</span><span class='line'>Encoding=UTF-8
+</span><span class='line'>Name=OctoPress Helper
+</span><span class='line'>Exec=/mnt/common/home/Script/octopress_helper.sh
+</span><span class='line'>Icon=/usr/share/pixmaps/octopress.png
+</span><span class='line'>Terminal=false
+</span><span class='line'>Type=Application
+</span><span class='line'>Categories=Application;
+</span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GNOME Shell Lock Screen]]></title>
@@ -155,7 +266,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#97;&#x75;&#116;&#x6f;&#104;&#x69;&#x64;&#101;&#x74;&#x6f;&#x70;&#x62;&#x61;&#114;&#x32;&#x40;&#119;&#101;&#x72;&#x65;&#119;&#x6f;&#x6c;&#118;&#x65;&#x73;&#x2e;&#x75;&#x73;">&#x61;&#117;&#116;&#111;&#104;&#x69;&#100;&#x65;&#x74;&#x6f;&#x70;&#98;&#97;&#114;&#x32;&#64;&#x77;&#101;&#114;&#x65;&#x77;&#x6f;&#x6c;&#x76;&#101;&#115;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#97;&#117;&#x74;&#x6f;&#x68;&#x69;&#100;&#101;&#x74;&#x6f;&#112;&#x62;&#97;&#x72;&#50;&#x40;&#119;&#101;&#x72;&#101;&#119;&#111;&#x6c;&#118;&#101;&#x73;&#46;&#x75;&#115;">&#97;&#117;&#x74;&#x6f;&#x68;&#105;&#100;&#101;&#116;&#111;&#112;&#x62;&#97;&#x72;&#x32;&#x40;&#x77;&#101;&#x72;&#x65;&#119;&#x6f;&#x6c;&#118;&#101;&#x73;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-15T12:49:01+09:00</updated>
+  <updated>2013-07-15T14:32:37+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,123 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Zenity OctoPress Helper]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/"/>
+    <updated>2013-07-15T13:26:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_octopress_menu.png"><img src="/images/zenity_octopress_menu.png"></a><br>
+<a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="/images/zenity_octopress_new_post.png"></a></p>
+
+<p>OctoPress のフロントエンドをZenity で作って見ました。
+Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。
+あいかわらず、GTK+ のリストボックスの表示が少しおかしいですが、機能的には問題なさそうです。</p>
+
+<!-- more -->
+
+
+<h4>zenity スクリプト</h4>
+
+<p>Zenity のリストボックス、テキスト入力、プログレスバー等を利用して、フロントエンドを作成します。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>octopress_helper.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;!/bin/bash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;PATH<span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/bin:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
+</span><span class='line'><span class="nb">source</span> <span class="nv">$HOME</span>/.rvm/scripts/rvm&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;cd /mnt/common/github/octopress&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;while :
+</span><span class='line'><span class="k">do</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;pick<span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span><span class="k">)</span>;
+</span><span class='line'><span class="k">case</span> <span class="nv">$pick</span> in
+</span><span class='line'>    0<span class="o">)</span>
+</span><span class='line'>        <span class="nv">article_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>        rake new_post<span class="o">[</span><span class="s2">&quot;$article_title&quot;</span><span class="o">]</span> &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>        ;;
+</span><span class='line'>    1<span class="o">)</span>
+</span><span class='line'>        <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>        rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>        ;;
+</span><span class='line'>    2<span class="o">)</span>
+</span><span class='line'>        rake generate &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>        ;;
+</span><span class='line'>    3<span class="o">)</span>
+</span><span class='line'>        rake deploy &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>        ;;
+</span><span class='line'>    *<span class="o">)</span>
+</span><span class='line'>        <span class="nb">break</span>
+</span><span class='line'>        ;;
+</span><span class='line'><span class="k">esac</span>
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;done
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>起動用スクリプト</h4>
+
+<p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Desktop Entry]
+</span><span class='line'>Encoding=UTF-8
+</span><span class='line'>Name=OctoPress Helper
+</span><span class='line'>Exec=/mnt/common/home/Script/octopress_helper.sh
+</span><span class='line'>Icon=/usr/share/pixmaps/octopress.png
+</span><span class='line'>Terminal=false
+</span><span class='line'>Type=Application
+</span><span class='line'>Categories=Application;
+</span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress]]></title>
