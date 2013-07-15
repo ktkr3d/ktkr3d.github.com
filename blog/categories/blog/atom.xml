@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-15T14:34:58+09:00</updated>
+  <updated>2013-07-15T14:43:13+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -107,7 +107,8 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 
 <h4>起動用ショートカットアイコン</h4>
 
-<p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。</p>
+<p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。
+端末を非表示にする場合は<code>Terminal=false</code>とします。</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -123,7 +124,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>Name=OctoPress Helper
 </span><span class='line'>Exec=/mnt/common/home/Script/octopress_helper.sh
 </span><span class='line'>Icon=/usr/share/pixmaps/octopress.png
-</span><span class='line'>Terminal=false
+</span><span class='line'>Terminal=true
 </span><span class='line'>Type=Application
 </span><span class='line'>Categories=Application;
 </span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure></notextile></div></p>

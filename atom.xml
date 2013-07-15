@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-15T14:34:58+09:00</updated>
+  <updated>2013-07-15T14:43:13+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -98,7 +98,8 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 
 <h4>起動用ショートカットアイコン</h4>
 
-<p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。</p>
+<p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。
+端末を非表示にする場合は<code>Terminal=false</code>とします。</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -114,7 +115,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>Name=OctoPress Helper
 </span><span class='line'>Exec=/mnt/common/home/Script/octopress_helper.sh
 </span><span class='line'>Icon=/usr/share/pixmaps/octopress.png
-</span><span class='line'>Terminal=false
+</span><span class='line'>Terminal=true
 </span><span class='line'>Type=Application
 </span><span class='line'>Categories=Application;
 </span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure>
@@ -266,7 +267,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#97;&#x75;&#116;&#111;&#x68;&#x69;&#100;&#x65;&#x74;&#x6f;&#112;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#101;&#114;&#101;&#119;&#x6f;&#x6c;&#118;&#101;&#x73;&#x2e;&#117;&#x73;">&#x61;&#117;&#x74;&#111;&#104;&#x69;&#x64;&#x65;&#x74;&#111;&#x70;&#98;&#97;&#114;&#50;&#64;&#x77;&#101;&#x72;&#101;&#119;&#111;&#108;&#118;&#x65;&#115;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#97;&#x75;&#x74;&#111;&#x68;&#x69;&#100;&#101;&#116;&#111;&#112;&#x62;&#97;&#114;&#50;&#64;&#119;&#101;&#114;&#x65;&#x77;&#111;&#108;&#x76;&#x65;&#115;&#46;&#x75;&#x73;">&#x61;&#x75;&#x74;&#111;&#104;&#105;&#x64;&#x65;&#116;&#111;&#112;&#98;&#97;&#x72;&#50;&#64;&#x77;&#101;&#x72;&#101;&#119;&#111;&#x6c;&#118;&#101;&#x73;&#46;&#117;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
