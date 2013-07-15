@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-15T15:17:42+09:00</updated>
+  <updated>2013-07-15T15:35:54+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,8 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/"/>
     <updated>2013-07-15T13:26:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_octopress_menu.png"><img src="/images/zenity_octopress_menu.png"></a><br>
-<a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="/images/zenity_octopress_new_post.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_octopress_menu.png"><img src="/images/zenity_octopress_menu.png"></a></p>
 
 <p>OctoPress のフロントエンドをZenity で作ってみました。
 Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。</p>
@@ -28,6 +27,8 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 
 
 <h4>zenity スクリプト</h4>
+
+<p><a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="/images/zenity_octopress_new_post.png"></a></p>
 
 <p>Zenity のリストボックス、テキスト入力、プログレスバー等を利用して、フロントエンドを作成します。</p>
 
