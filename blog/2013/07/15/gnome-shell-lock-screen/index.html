@@ -112,42 +112,40 @@ $(document).ready( function () {
   </header>
 
 
-<div class="entry-content"><p><a href="/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png"></a></p>
+<div class="entry-content"><p><a href="/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png" /></a></p>
 
 <p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
 
 <!-- more -->
 
-
-<h4>ロック画面のフォントの変更</h4>
+<h4 id="section">ロック画面のフォントの変更</h4>
 
 <p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
 
-<figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="css"><span class="line"><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span>
+</span><span class="line">    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class="line">    <span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
+</span><span class="line">    <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span>
+</span><span class="line">    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class="line">    <span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h4>設定の反映</h4>
+<h4 id="section-1">設定の反映</h4>
 
 <p>設定を反映するには、<code>Alt + F2</code> を押下、<code>r</code> を入力して<code>Enter</code>で、GNOME Shell を再起動します。</p>
 </div>
@@ -177,7 +175,7 @@ $(document).ready( function () {
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/linux/'>Linux</a>
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/gnome/'>gnome</a>
   
 </span>
 
@@ -242,7 +240,7 @@ $(document).ready( function () {
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/blog/'>blog (2)</a></li><li><a href='/blog/categories/linux/'>Linux (5)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/gnome/'>gnome (4)</a></li><li><a href='/blog/categories/linux/'>Linux (5)</a></li><li><a href='/blog/categories/octopress/'>octopress (2)</a></li></ul>
 </section>
 
 

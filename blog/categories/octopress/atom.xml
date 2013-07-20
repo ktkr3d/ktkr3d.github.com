@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: blog | ktkr3d]]></title>
-  <link href="http://ktkr3d.github.io/blog/categories/blog/atom.xml" rel="self"/>
+  <title><![CDATA[Category: octopress | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-19T01:03:11+09:00</updated>
+  <updated>2013-07-20T11:22:23+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -25,10 +25,9 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 
 <!-- more -->
 
+<h4 id="zenity-">zenity スクリプト</h4>
 
-<h4>zenity スクリプト</h4>
-
-<p><a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="/images/zenity_octopress_new_post.png"></a><br>
+<p><a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="/images/zenity_octopress_new_post.png"></a><br />
 <a href="http://ktkr3d.github.io/images/zenity_octopress_deploy.png"><img src="/images/zenity_octopress_deploy.png"></a></p>
 
 <p>Zenity のリストボックス、テキスト入力、プログレスバー等を利用して、フロントエンドを作成します。</p>
@@ -72,14 +71,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 <span class='line-number'>36</span>
 <span class='line-number'>37</span>
 <span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;!/bin/bash&lt;/h1&gt;
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;OCTOPRESS_DIR<span class="o">=</span>/mnt/common/github/octopress&lt;/p&gt;
 </span><span class='line'>
@@ -88,41 +80,38 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'><span class="nb">cd</span> <span class="nv">$OCTOPRESS_DIR</span>&lt;/p&gt;
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;while :
-</span><span class='line'><span class="k">do</span>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;pick<span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
-</span><span class='line'><span class="k">case</span> <span class="nv">$pick</span> in
-</span><span class='line'>    0<span class="o">)</span>
-</span><span class='line'>        <span class="nv">article_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
-</span><span class='line'>        <span class="k">if</span> <span class="o">[</span> <span class="nv">$article_title</span> &amp;gt; 0 <span class="o">]</span> ; <span class="k">then</span>
-</span><span class='line'><span class="k">            </span>rake new_post<span class="o">[</span><span class="s2">&quot;$article_title&quot;</span><span class="o">]</span> &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>        <span class="k">fi</span>
-</span><span class='line'>        ;;
-</span><span class='line'>    1<span class="o">)</span>
-</span><span class='line'>        <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
-</span><span class='line'>        <span class="k">if</span> <span class="o">[</span> <span class="nv">$page_title</span> &amp;gt; 0 <span class="o">]</span> ; <span class="k">then</span>
-</span><span class='line'><span class="k">            </span>rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>        <span class="k">fi</span>
-</span><span class='line'>        ;;
-</span><span class='line'>    2<span class="o">)</span>
-</span><span class='line'>        rake generate &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>        ;;
-</span><span class='line'>    3<span class="o">)</span>
-</span><span class='line'>        rake deploy &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>        ;;
-</span><span class='line'>    4<span class="o">)</span>
-</span><span class='line'>        nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;amp;
-</span><span class='line'>        ;;
-</span><span class='line'>    *<span class="o">)</span>
-</span><span class='line'>        <span class="nb">break</span>
-</span><span class='line'>        ;;
-</span><span class='line'><span class="k">esac</span>
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;done
+</span><span class='line'><span class="k">do</span>
+</span><span class='line'><span class="k">	</span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>zenity –list –title “OctoPress Helper” –text “Select Action.” –radiolist –column Pick –column dummy –column Action –hide-column 2 <span class="nb">true </span>0 “New Post” <span class="nb">false </span>1 “New Page” <span class="nb">false </span>2 “Generate” <span class="nb">false </span>3 “Deploy” <span class="nb">false </span>4 “Open Posts Folder”<span class="k">)</span>;
+</span><span class='line'>	<span class="k">case</span> <span class="nv">$pick</span> in
+</span><span class='line'>		0<span class="o">)</span>
+</span><span class='line'>			<span class="nv">article_title</span><span class="o">=</span><span class="k">$(</span>zenity –entry –title<span class="o">=</span>”New Post” –text<span class="o">=</span>”Enter Title.” <span class="k">)</span>
+</span><span class='line'>			<span class="k">if</span> <span class="o">[</span> <span class="nv">$article_title</span> &amp;gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">				</span>rake new_post<span class="o">[</span>“<span class="nv">$article_title</span>”<span class="o">]</span> &amp;gt;<span class="o">(</span>zenity –progress –title<span class="o">=</span>”New Post” –pulsate –auto-close –auto-kill<span class="o">)</span>
+</span><span class='line'>			<span class="k">fi</span>
+</span><span class='line'>			;;
+</span><span class='line'>		1<span class="o">)</span>
+</span><span class='line'>			<span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity –entry –title<span class="o">=</span>”New Page” –text<span class="o">=</span>”Enter Title.” <span class="k">)</span>
+</span><span class='line'>			<span class="k">if</span> <span class="o">[</span> <span class="nv">$page_title</span> &amp;gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">				</span>rake new_page<span class="o">[</span>“<span class="nv">$page_title</span>”<span class="o">]</span> &amp;gt;<span class="o">(</span>zenity –progress –title<span class="o">=</span>”New Page” –pulsate –auto-close –auto-kill<span class="o">)</span>
+</span><span class='line'>			<span class="k">fi</span>
+</span><span class='line'>			;;
+</span><span class='line'>		2<span class="o">)</span>
+</span><span class='line'>			rake generate &amp;gt;<span class="o">(</span>zenity –progress –title<span class="o">=</span>”Generate” –pulsate –auto-close –auto-kill<span class="o">)</span>
+</span><span class='line'>			;;
+</span><span class='line'>		3<span class="o">)</span>
+</span><span class='line'>			rake deploy &amp;gt;<span class="o">(</span>zenity –progress –title<span class="o">=</span>”Deploy” –pulsate –auto-close –auto-kill<span class="o">)</span>
+</span><span class='line'>			;;
+</span><span class='line'>		4<span class="o">)</span>
+</span><span class='line'>			nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;amp;
+</span><span class='line'>			;;
+</span><span class='line'>		*<span class="o">)</span>
+</span><span class='line'>			<span class="nb">break</span>
+</span><span class='line'>			;;
+</span><span class='line'>	<span class="k">esac</span>
+</span><span class='line'><span class="k">done</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h4>起動用ショートカットアイコン</h4>
+<h4 id="section">起動用ショートカットアイコン</h4>
 
 <p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。
 端末を非表示にする場合は<code>Terminal=false</code>とします。</p>
@@ -146,7 +135,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>Categories=Application;
 </span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h4>プレビュー</h4>
+<h4 id="section-1">プレビュー</h4>
 
 <p>私は <code>rake preview</code> をログイン時に常駐させて、ブラウザから <code>http://localhost:4000/</code> にアクセスしてレイアウト結果を確認しています。フォルダ内の変更が監視されるので、多少の負荷はあるかもしれません。</p>
 ]]></content>
@@ -159,31 +148,27 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
     <id>http://ktkr3d.github.io/blog/2013/06/16/octopress</id>
     <content type="html"><![CDATA[<p><img src="/images/octopress.png"></p>
 
-<p><a href="http://ktkr3d.site11.com">http://ktkr3d.site11.com</a> 上のWordPress からGitHub 上のOctopress にブログを移行してみました。</p>
-
+<p>http://ktkr3d.site11.com 上のWordPress からGitHub 上のOctopress にブログを移行してみました。
 <!-- more -->
-
-
-<p>WordPress は便利なのですが、メモリ消費量が多くなってしまい、海外無料Webサービスでの運用が困難になってきました。（解決策はいろいろとあるとは思いますが。）</p>
+WordPress は便利なのですが、メモリ消費量が多くなってしまい、海外無料Webサービスでの運用が困難になってきました。（解決策はいろいろとあるとは思いますが。）</p>
 
 <p>そこで、Github Pages + Octopress でブログサイトを構築してみることにしました。Markdown で記述していきますが、よく知らないので、これから覚えていくことにしましょう。</p>
 
-<h3>使い方のメモ</h3>
+<h3 id="section">使い方のメモ</h3>
 
-<p><a href="http://octopress.org/docs/">http://octopress.org/docs/</a></p>
-
-<ul>
-<li>新規記事の作成</li>
-</ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post[&ldquo;title&rdquo;]</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>http://octopress.org/docs/</p>
 
 <ul>
-<li>記事の編集</li>
-</ul>
+  <li>
+    <p>新規記事の作成</p>
 
+    <pre><code>  $ rake new_post["title"]
+</code></pre>
+  </li>
+  <li>
+    <p>記事の編集	</p>
+  </li>
+</ul>
 
 <p>./octopress/source/_posts/*.markdown を編集します。
 画像はsource/images/ に格納することにします。
@@ -193,25 +178,22 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </pre></td><td class='code'><pre><code class=''><span class='line'>{% img /images/Ubuntu-GNOME-13-10.png 600 %}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <ul>
-<li>生成とデプロイ</li>
+  <li>
+    <p>生成とデプロイ</p>
+
+    <pre><code>  $ rake generate &amp;&amp; rake deploy
+</code></pre>
+  </li>
+  <li>
+    <p>新規ページの作成	</p>
+
+    <pre><code>  $ rake new_page[page-name]
+</code></pre>
+  </li>
+  <li>
+    <p>スタイルの変更</p>
+  </li>
 </ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate &amp;&amp; rake deploy</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<ul>
-<li>新規ページの作成</li>
-</ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[page-name]</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<ul>
-<li>スタイルの変更</li>
-</ul>
-
 
 <p>./octopress/source/stylesheets/ にスタイルシートがあります。
 スタイルシートのカスタマイズは<code>./octopress/saas/custom/</code>にあるファイルを編集します。</p>

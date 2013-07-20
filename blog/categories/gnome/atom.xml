@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | ktkr3d]]></title>
-  <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <title><![CDATA[Category: gnome | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/gnome/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
   <updated>2013-07-20T11:22:23+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
@@ -178,36 +178,6 @@ shell-version は3.9.4 を指定しました。</p>
 </span><span class='line'>  <span class="err">“</span><span class="nx">version</span><span class="err">”</span><span class="o">:</span> <span class="mi">1</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntu 13.10 Daily Build + Mir]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/"/>
-    <updated>2013-07-01T00:30:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png"><img src="/images/ubuntu<em>13</em>10_daily_build_mir_tn.png"></a></p>
-
-<p>https://launchpad.net/~mir-team/+archive/staging</p>
-
-<p>Ubuntu 13.10 Daily Build にMir を適用してみました。現時点では若干もたつく感じがしますが、今後改善されるでしょう。</p>
-
-<!-- more -->
-
-<pre><code>$ sudo apt-add-repository ppa:mir-team/staging
-$ sudo apt-get update
-$ sudo apt-get upgrade
-</code></pre>
-
-<p>特に資料を参考にしていないので、正式な手順ではないかもしれませんし、不十分かもしれません。</p>
-
-<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell.png"><img src="/images/ubuntu<em>13</em>10_daily_build_mir_gnome_shell_tn.png"></a></p>
-
-<p>GNOME Shell 3.8.3 で使った方が快適なような気がします。気のせいかもしれませんが。</p>
-
-<p>http://www.olli-ries.com/running-mir/</p>
-
-<p>ここにインストール方法が書いてありました。</p>
 ]]></content>
   </entry>
   

@@ -9,10 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://launchpad.net/~ricotz/+archive/testing GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。 GNOME Shell 3.9.4 のインストール 1
-2
-3
-$ sudo add-apt- &hellip;">
+  <meta name="description" content="https://launchpad.net/~ricotz/+archive/testing GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。 GNOME Shell 3.9.4 のインストール $ sudo add-apt- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -115,76 +112,66 @@ $(document).ready( function () {
   </header>
 
 
-<div class="entry-content"><p><a href="/images/gnome_shell_3_9_4.png"><img src="/images/gnome_shell_3_9_4_tn.png"></a></p>
+<div class="entry-content"><p><a href="/images/gnome_shell_3_9_4.png"><img src="/images/gnome_shell_3_9_4_tn.png" /></a></p>
 
-<p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
+<p>https://launchpad.net/~ricotz/+archive/testing</p>
 
 <p>GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。</p>
 
 <!-- more -->
 
+<h4 id="gnome-shell-394-">GNOME Shell 3.9.4 のインストール</h4>
 
-<p></p>
+<pre><code>$ sudo add-apt-repository ppa:ricotz/testing
+$ sudo apt-get update
+$ sudo apt-get install gnome-shell
+</code></pre>
 
-<h4>GNOME Shell 3.9.4 のインストール</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo add-apt-repository ppa:ricotz/testing
-</span><span class='line'>$ sudo apt-get update
-</span><span class='line'>$ sudo apt-get install gnome-shell</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>ドックの設定</h4>
-
+<h4 id="section">ドックの設定</h4>
 <p>前回のAWN に続き、このバージョンではCairo-Dock も動かなくなりました。Dash to Dock GNOME Shell 拡張も正常に動かないようです。Docky を使うことにしました。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install docky</span></code></pre></td></tr></table></div></figure>
+<pre><code>$ sudo apt-get install docky
+</code></pre>
 
+<h4 id="section-1">トップバーの非表示</h4>
 
-<h4>トップバーの非表示</h4>
-
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#97;&#117;&#116;&#111;&#104;&#105;&#x64;&#x65;&#x74;&#x6f;&#112;&#x62;&#x61;&#114;&#50;&#64;&#119;&#101;&#x72;&#x65;&#x77;&#111;&#108;&#x76;&#101;&#x73;&#x2e;&#117;&#x73;">&#x61;&#117;&#x74;&#111;&#104;&#x69;&#100;&#x65;&#116;&#x6f;&#112;&#x62;&#x61;&#x72;&#x32;&#64;&#x77;&#x65;&#114;&#x65;&#x77;&#x6f;&#x6c;&#x76;&#x65;&#115;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していたautohidetopbar2@werewolves.us の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
-<figure class='code'><figcaption><span>metadata.json </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto hide the top panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;extension-id&quot;</span><span class="o">:</span> <span class="s2">&quot;auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;gettext-domain&quot;</span><span class="o">:</span> <span class="s2">&quot;gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto Hide Top Panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;settings-schema&quot;</span><span class="o">:</span> <span class="s2">&quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;shell-version&quot;</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>  <span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.9.4&quot;</span>
-</span><span class='line'>  <span class="p">],</span>
-</span><span class='line'>  <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;uuid&quot;</span><span class="o">:</span> <span class="s2">&quot;autohidetopbar2@werewolves.us&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>metadata.json </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+</pre></td><td class="code"><pre><code class="js"><span class="line"><span class="p">{</span>
+</span><span class="line">  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto hide the top panel&quot;</span><span class="p">,</span>
+</span><span class="line">  <span class="s2">&quot;extension-id&quot;</span><span class="o">:</span> <span class="s2">&quot;auto-hide-top-panel&quot;</span><span class="p">,</span>
+</span><span class="line">  <span class="s2">&quot;gettext-domain&quot;</span><span class="o">:</span> <span class="s2">&quot;gnome-shell-extensions&quot;</span><span class="p">,</span>
+</span><span class="line">  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto Hide Top Panel&quot;</span><span class="p">,</span>
+</span><span class="line">  <span class="s2">&quot;settings-schema&quot;</span><span class="o">:</span> <span class="s2">&quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;</span><span class="p">,</span>
+</span><span class="line">  <span class="s2">&quot;shell-version&quot;</span><span class="o">:</span> <span class="p">[</span>
+</span><span class="line">	<span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
+</span><span class="line">	<span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
+</span><span class="line">	<span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
+</span><span class="line">	<span class="s2">&quot;3.9.4&quot;</span>
+</span><span class="line">  <span class="p">],</span>
+</span><span class="line">  <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="p">,</span>
+</span><span class="line">  <span class="s2">&quot;uuid&quot;</span><span class="o">:</span> <span class="s2">&quot;autohidetopbar2@werewolves.us&quot;</span><span class="p">,</span>
+</span><span class="line">  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 </div>
 
@@ -213,7 +200,7 @@ shell-version は3.9.4 を指定しました。</p>
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/linux/'>Linux</a>
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/gnome/'>gnome</a>
   
 </span>
 
@@ -278,7 +265,7 @@ shell-version は3.9.4 を指定しました。</p>
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/blog/'>blog (2)</a></li><li><a href='/blog/categories/linux/'>Linux (5)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/gnome/'>gnome (4)</a></li><li><a href='/blog/categories/linux/'>Linux (5)</a></li><li><a href='/blog/categories/octopress/'>octopress (2)</a></li></ul>
 </section>
 
 

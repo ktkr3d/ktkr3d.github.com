@@ -113,127 +113,124 @@ $(document).ready( function () {
   </header>
 
 
-<div class="entry-content"><p><a href="/images/zenity_octopress_menu.png"><img src="/images/zenity_octopress_menu.png"></a></p>
+<div class="entry-content"><p><a href="/images/zenity_octopress_menu.png"><img src="/images/zenity_octopress_menu.png" /></a></p>
 
 <p>OctoPress のフロントエンドをZenity で作ってみました。
 Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。</p>
 
 <!-- more -->
 
+<h4 id="zenity-">zenity スクリプト</h4>
 
-<h4>zenity スクリプト</h4>
-
-<p><a href="/images/zenity_octopress_new_post.png"><img src="/images/zenity_octopress_new_post.png"></a><br>
-<a href="/images/zenity_octopress_deploy.png"><img src="/images/zenity_octopress_deploy.png"></a></p>
+<p><a href="/images/zenity_octopress_new_post.png"><img src="/images/zenity_octopress_new_post.png" /></a><br />
+<a href="/images/zenity_octopress_deploy.png"><img src="/images/zenity_octopress_deploy.png" /></a></p>
 
 <p>Zenity のリストボックス、テキスト入力、プログレスバー等を利用して、フロントエンドを作成します。</p>
 
-<figure class='code'><figcaption><span>octopress_helper.sh </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">OCTOPRESS_DIR</span><span class="o">=</span>/mnt/common/github/octopress
-</span><span class='line'>
-</span><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/bin:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
-</span><span class='line'><span class="nb">source</span> <span class="nv">$HOME</span>/.rvm/scripts/rvm
-</span><span class='line'><span class="nb">cd</span> <span class="nv">$OCTOPRESS_DIR</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">while</span> :
-</span><span class='line'><span class="k">do</span>
-</span><span class='line'><span class="k">  </span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
-</span><span class='line'>  <span class="k">case</span> <span class="nv">$pick</span> in
-</span><span class='line'>      0<span class="o">)</span>
-</span><span class='line'>          <span class="nv">article_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
-</span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="nv">$article_title</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
-</span><span class='line'><span class="k">              </span>rake new_post<span class="o">[</span><span class="s2">&quot;$article_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>          <span class="k">fi</span>
-</span><span class='line'>          ;;
-</span><span class='line'>      1<span class="o">)</span>
-</span><span class='line'>          <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
-</span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="nv">$page_title</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
-</span><span class='line'><span class="k">              </span>rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>          <span class="k">fi</span>
-</span><span class='line'>          ;;
-</span><span class='line'>      2<span class="o">)</span>
-</span><span class='line'>          rake generate &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>          ;;
-</span><span class='line'>      3<span class="o">)</span>
-</span><span class='line'>          rake deploy &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>          ;;
-</span><span class='line'>      4<span class="o">)</span>
-</span><span class='line'>          nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;
-</span><span class='line'>          ;;
-</span><span class='line'>      *<span class="o">)</span>
-</span><span class='line'>          <span class="nb">break</span>
-</span><span class='line'>          ;;
-</span><span class='line'>  <span class="k">esac</span>
-</span><span class='line'><span class="k">done</span>
-</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>octopress_helper.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="c">#!/bin/bash</span>
+</span><span class="line">
+</span><span class="line"><span class="nv">OCTOPRESS_DIR</span><span class="o">=</span>/mnt/common/github/octopress
+</span><span class="line">
+</span><span class="line"><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/bin:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
+</span><span class="line"><span class="nb">source</span> <span class="nv">$HOME</span>/.rvm/scripts/rvm
+</span><span class="line"><span class="nb">cd</span> <span class="nv">$OCTOPRESS_DIR</span>
+</span><span class="line">
+</span><span class="line"><span class="k">while</span> :
+</span><span class="line"><span class="k">do</span>
+</span><span class="line"><span class="k">	</span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
+</span><span class="line">	<span class="k">case</span> <span class="nv">$pick</span> in
+</span><span class="line">		0<span class="o">)</span>
+</span><span class="line">			<span class="nv">article_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class="line">			<span class="k">if</span> <span class="o">[</span> <span class="nv">$article_title</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class="line"><span class="k">				</span>rake new_post<span class="o">[</span><span class="s2">&quot;$article_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class="line">			<span class="k">fi</span>
+</span><span class="line">			;;
+</span><span class="line">		1<span class="o">)</span>
+</span><span class="line">			<span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class="line">			<span class="k">if</span> <span class="o">[</span> <span class="nv">$page_title</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class="line"><span class="k">				</span>rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class="line">			<span class="k">fi</span>
+</span><span class="line">			;;
+</span><span class="line">		2<span class="o">)</span>
+</span><span class="line">			rake generate &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class="line">			;;
+</span><span class="line">		3<span class="o">)</span>
+</span><span class="line">			rake deploy &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class="line">			;;
+</span><span class="line">		4<span class="o">)</span>
+</span><span class="line">			nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;
+</span><span class="line">			;;
+</span><span class="line">		*<span class="o">)</span>
+</span><span class="line">			<span class="nb">break</span>
+</span><span class="line">			;;
+</span><span class="line">	<span class="k">esac</span>
+</span><span class="line"><span class="k">done</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h4>起動用ショートカットアイコン</h4>
+<h4 id="section">起動用ショートカットアイコン</h4>
 
 <p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。
 端末を非表示にする場合は<code>Terminal=false</code>とします。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[Desktop Entry]
-</span><span class='line'>Encoding=UTF-8
-</span><span class='line'>Name=OctoPress Helper
-</span><span class='line'>Exec=/mnt/common/home/Script/octopress_helper.sh
-</span><span class='line'>Icon=/usr/share/pixmaps/octopress.png
-</span><span class='line'>Terminal=true
-</span><span class='line'>Type=Application
-</span><span class='line'>Categories=Application;
-</span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">[Desktop Entry]
+</span><span class="line">Encoding=UTF-8
+</span><span class="line">Name=OctoPress Helper
+</span><span class="line">Exec=/mnt/common/home/Script/octopress_helper.sh
+</span><span class="line">Icon=/usr/share/pixmaps/octopress.png
+</span><span class="line">Terminal=true
+</span><span class="line">Type=Application
+</span><span class="line">Categories=Application;
+</span><span class="line">StartupNotify=false</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<h4>プレビュー</h4>
+<h4 id="section-1">プレビュー</h4>
 
 <p>私は <code>rake preview</code> をログイン時に常駐させて、ブラウザから <code>http://localhost:4000/</code> にアクセスしてレイアウト結果を確認しています。フォルダ内の変更が監視されるので、多少の負荷はあるかもしれません。</p>
 </div>
@@ -263,7 +260,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/blog/'>blog</a>
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>
   
 </span>
 
@@ -326,7 +323,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/blog/'>blog (2)</a></li><li><a href='/blog/categories/linux/'>Linux (5)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/gnome/'>gnome (4)</a></li><li><a href='/blog/categories/linux/'>Linux (5)</a></li><li><a href='/blog/categories/octopress/'>octopress (2)</a></li></ul>
 </section>
 
 
