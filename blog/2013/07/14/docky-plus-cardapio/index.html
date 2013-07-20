@@ -9,8 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。 電源ボタンが無いこと アプリケーションメニューがないこと Docky とCardapio の設定で上記を動くようにしてみました。 電源ボタンの設定
-一番右の「画面のロック」 &hellip;">
+  <meta name="description" content="Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。 電源ボタンが無いこと
+アプリケーションメニューがないこと Docky とCardapio の設定で上記を動くようにしてみました。 電源ボタンの設定 一番右の「画面のロック」 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -113,25 +113,31 @@ $(document).ready( function () {
   </header>
 
 
-<div class="entry-content"><p><a href="/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png" /></a></p>
+<div class="entry-content"><p><a href="/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png"></a></p>
 
 <p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
 
 <ol>
-  <li>電源ボタンが無いこと</li>
-  <li>アプリケーションメニューがないこと</li>
+<li>電源ボタンが無いこと</li>
+<li>アプリケーションメニューがないこと</li>
 </ol>
+
 
 <p>Docky とCardapio の設定で上記を動くようにしてみました。</p>
 
 <!-- more -->
 
-<h4 id="section">電源ボタンの設定</h4>
+
+<p></p>
+
+<h4>電源ボタンの設定</h4>
+
 <p>一番右の「画面のロック」アイコンを右クリックすることで、「画面のロック」、「ログアウト」、「サスペンド」、「再起動」、「シャットダウン」のようなサブメニューが表示されます。
 「画面のロック」のアイコン上でマウスのホイールボタンで上下にホイールすると、デフォルトの動作を指定できます。
 ボタン押下後に再起動かシャットダウンかを選択させる形式がよかったのですが、とりあえずこれで良しとしましょう。</p>
 
-<h4 id="cardapio-">Cardapio の設定</h4>
+<h4>Cardapio の設定</h4>
+
 <p>Cardapio を使ってDocky からアプリケーションメニューを表示することにします。</p>
 
 <pre><code>$ sudo add-apt-repository ppa:cardapio-team/unstable
@@ -143,21 +149,16 @@ $ sudo apt-get install cardapio
 cardapio を起動してみたところ、いくつかエラーが表示されたので、<code>/usr/lib/cardapio/Cardapio.py</code> を修正しました。</p>
 
 <ol>
-  <li>
-    <p>以下を追加<br />
-<code>from xdg import BaseDirectory</code></p>
-  </li>
-  <li>
-    <p>以下を置換<br />
-<code>DesktopEntry.xdg_config_home</code> -&gt; <code>BaseDirectory.xdg_config_home</code></p>
-  </li>
-  <li>
-    <p>以下を置換<br />
-<code>DesktopEntry.xdg_cache_home</code> -&gt; <code>BaseDirectory.xdg_cache_home</code></p>
-  </li>
+<li><p>以下を追加<br>
+<code>from xdg import BaseDirectory</code></p></li>
+<li><p>以下を置換<br>
+<code>DesktopEntry.xdg_config_home</code> &ndash;> <code>BaseDirectory.xdg_config_home</code></p></li>
+<li><p>以下を置換<br>
+<code>DesktopEntry.xdg_cache_home</code> &ndash;> <code>BaseDirectory.xdg_cache_home</code></p></li>
 </ol>
 
-<h4 id="docky-cardapio-">Docky へCardapio を登録</h4>
+
+<h4>Docky へCardapio を登録</h4>
 
 <p>cardapio-helper というDocky のヘルパーを使うと、Docky アイコンクリックで、Cardapio が起動されるはずなのですが、うまく動作しませんでした。
 仕方がないので、<code>/usr/share/applications/cardapio.desktop</code> をDocky にドラッグ&amp;ドロップして、メニューアイコンを登録しました。</p>
@@ -230,6 +231,10 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/07/20/a-plus-b/">A + B</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/15/zenity-octopress-helper/">Zenity OctoPress Helper</a>
       </li>
     
@@ -243,10 +248,6 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
     
       <li class="post">
         <a href="/blog/2013/07/13/gnome-shell-3-dot-9-4/">GNOME Shell 3.9.4</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/">Ubuntu 13.10 Daily Build + Mir</a>
       </li>
     
   </ul>

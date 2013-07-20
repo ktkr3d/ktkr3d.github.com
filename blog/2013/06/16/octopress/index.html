@@ -112,54 +112,50 @@ $(document).ready( function () {
   </header>
 
 
-<div class="entry-content"><p><img src="/images/octopress.png" /></p>
+<div class="entry-content"><p><img src="/images/octopress.png"></p>
 
-<p>http://ktkr3d.site11.com 上のWordPress からGitHub 上のOctopress にブログを移行してみました。
+<p><a href="http://ktkr3d.site11.com">http://ktkr3d.site11.com</a> 上のWordPress からGitHub 上のOctopress にブログを移行してみました。</p>
+
 <!-- more -->
-WordPress は便利なのですが、メモリ消費量が多くなってしまい、海外無料Webサービスでの運用が困難になってきました。（解決策はいろいろとあるとは思いますが。）</p>
+
+
+<p>WordPress は便利なのですが、メモリ消費量が多くなってしまい、海外無料Webサービスでの運用が困難になってきました。（解決策はいろいろとあるとは思いますが。）</p>
 
 <p>そこで、Github Pages + Octopress でブログサイトを構築してみることにしました。Markdown で記述していきますが、よく知らないので、これから覚えていくことにしましょう。</p>
 
-<h3 id="section">使い方のメモ</h3>
+<h3>使い方のメモ</h3>
 
-<p>http://octopress.org/docs/</p>
+<p><a href="http://octopress.org/docs/">http://octopress.org/docs/</a></p>
 
 <ul>
-  <li>
-    <p>新規記事の作成</p>
+<li><p>新規記事の作成</p>
 
-    <pre><code>  $ rake new_post["title"]
-</code></pre>
-  </li>
-  <li>
-    <p>記事の編集	</p>
-  </li>
+<pre><code>  $ rake new_post["title"]
+</code></pre></li>
+<li><p>記事の編集</p></li>
 </ul>
+
 
 <p>./octopress/source/_posts/*.markdown を編集します。
 画像はsource/images/ に格納することにします。
 画像の挿入は</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">{% img /images/Ubuntu-GNOME-13-10.png 600 %}</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{% img /images/Ubuntu-GNOME-13-10.png 600 %}</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
-  <li>
-    <p>生成とデプロイ</p>
+<li><p>生成とデプロイ</p>
 
-    <pre><code>  $ rake generate &amp;&amp; rake deploy
-</code></pre>
-  </li>
-  <li>
-    <p>新規ページの作成	</p>
+<pre><code>  $ rake generate &amp;&amp; rake deploy
+</code></pre></li>
+<li><p>新規ページの作成</p>
 
-    <pre><code>  $ rake new_page[page-name]
-</code></pre>
-  </li>
-  <li>
-    <p>スタイルの変更</p>
-  </li>
+<pre><code>  $ rake new_page[page-name]
+</code></pre></li>
+<li><p>スタイルの変更</p></li>
 </ul>
+
 
 <p>./octopress/source/stylesheets/ にスタイルシートがあります。
 スタイルシートのカスタマイズは<code>./octopress/saas/custom/</code>にあるファイルを編集します。</p>
@@ -234,6 +230,10 @@ WordPress は便利なのですが、メモリ消費量が多くなってしま�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/07/20/a-plus-b/">A + B</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/15/zenity-octopress-helper/">Zenity OctoPress Helper</a>
       </li>
     
@@ -247,10 +247,6 @@ WordPress は便利なのですが、メモリ消費量が多くなってしま�
     
       <li class="post">
         <a href="/blog/2013/07/13/gnome-shell-3-dot-9-4/">GNOME Shell 3.9.4</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/">Ubuntu 13.10 Daily Build + Mir</a>
       </li>
     
   </ul>

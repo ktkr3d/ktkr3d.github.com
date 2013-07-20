@@ -9,8 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Linux 2013年06月23日 ディストリビューション Ubuntu GNOME (http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/) 環境設定 ホームディレクトリの各フォルダ名を英語名に変更
-&lt;div class &hellip;">
+  <meta name="description" content="Linux 2013年06月23日 ディストリビューション Ubuntu GNOME
+(http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/) 環境設定 ホームディレクトリの各フォルダ名を英語名に変更 1 $ LANG=C xdg- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,123 +105,141 @@ $(document).ready( function () {
 <time datetime="2013-06-23T21:06:00+09:00" pubdate data-updated="true">2013年06月23日</time></p>
   </header>
   
-  <h4 id="section">ディストリビューション</h4>
+  <h4>ディストリビューション</h4>
 
 <ul>
-  <li>Ubuntu GNOME<br />
- (http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/)</li>
+<li>Ubuntu GNOME<br/>
+(<a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a>)</li>
 </ul>
 
-<h4 id="section-1">環境設定</h4>
+
+<h4>環境設定</h4>
 
 <ul>
-  <li>ホームディレクトリの各フォルダ名を英語名に変更<br />
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span></figure></notextile></li>
+<li>ホームディレクトリの各フォルダ名を英語名に変更</li>
 </ul>
-<p>&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">  $ LANG=C xdg-user-dirs-gtk-update</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/notextile&gt;&lt;/div&gt;
-- GNOME3 テーマ「Uncomplicated」を適用<br />
-http://gnome-look.org/content/show.php/?content=157986
-&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">$ sudo apt-get install gtk3-engines-unico gtk2-engines-murrine gtk2-engines-pixbuf
-</span><span class="line">$ cp -r uncomplicated/ ~/.local/share/themes/
-</span><span class="line">$ cp -r uncomplicated/ ~/.themes/</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<h4 id="section-2">リポジトリ</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  $ LANG=C xdg-user-dirs-gtk-update</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
-  <li>ppa:conky-companions/ppa</li>
-  <li>ppa:gnome3-team/gnome3</li>
-  <li>ppa:gnome3-team/gnome3-staging</li>
-  <li>ppa:irie/blender</li>
-  <li>ppa:nilarimogard/webupd8</li>
-  <li>ppa:shkn/xnoise</li>
-  <li>ppa:ubuntu-wine/ppa</li>
+<li>GNOME3 テーマ「Uncomplicated」を適用<br/>
+<a href="http://gnome-look.org/content/show.php/?content=157986">http://gnome-look.org/content/show.php/?content=157986</a></li>
 </ul>
 
-<h4 id="section-3">パッケージ</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install gtk3-engines-unico gtk2-engines-murrine gtk2-engines-pixbuf
+</span><span class='line'>$ cp -r uncomplicated/ ~/.local/share/themes/
+</span><span class='line'>$ cp -r uncomplicated/ ~/.themes/</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>リポジトリ</h4>
 
 <ul>
-  <li>audacity</li>
-  <li>avidemux</li>
-  <li>blender</li>
-  <li>build-essential</li>
-  <li>cairo-dock</li>
-  <li>codeblocks</li>
-  <li>conky</li>
-  <li>conkyForecast </li>
-  <li>firefox</li>
-  <li>geany </li>
-  <li>gimp</li>
-  <li>gitg</li>
-  <li>gnome-common</li>
-  <li>gnome-terminal</li>
-  <li>gnome-tweak-tool</li>
-  <li>gparted</li>
-  <li>grub </li>
-  <li>ibus-mozc </li>
-  <li>kid3-qt</li>
-  <li>manpages-ja</li>
-  <li>meld</li>
-  <li>nvidia-current</li>
-  <li>nkf</li>
-  <li>osd-lylic</li>
-  <li>peercast </li>
-  <li>poedit</li>
-  <li>synaptic</li>
-  <li>system-config-samba</li>
-  <li>thunderbird</li>
-  <li>unetbootin</li>
-  <li>vlc</li>
-  <li>wine </li>
-  <li>winff</li>
-  <li>xbmc</li>
-  <li>xnoise</li>
+<li>ppa:conky-companions/ppa</li>
+<li>ppa:gnome3-team/gnome3</li>
+<li>ppa:gnome3-team/gnome3-staging</li>
+<li>ppa:irie/blender</li>
+<li>ppa:nilarimogard/webupd8</li>
+<li>ppa:shkn/xnoise</li>
+<li>ppa:ubuntu-wine/ppa</li>
 </ul>
 
-<h4 id="gnome-shell-">GNOME Shell 拡張</h4>
+
+<h4>パッケージ</h4>
+
 <ul>
-  <li>Hide Top bar<br />
-https://extensions.gnome.org/extension/545/hide-top-bar/</li>
-  <li>Drop Down Terminal<br />
-https://extensions.gnome.org/extension/442/drop-down-terminal/</li>
+<li>audacity</li>
+<li>avidemux</li>
+<li>blender</li>
+<li>build-essential</li>
+<li>cairo-dock</li>
+<li>codeblocks</li>
+<li>conky</li>
+<li>conkyForecast</li>
+<li>firefox</li>
+<li>geany</li>
+<li>gimp</li>
+<li>gitg</li>
+<li>gnome-common</li>
+<li>gnome-terminal</li>
+<li>gnome-tweak-tool</li>
+<li>gparted</li>
+<li>grub</li>
+<li>ibus-mozc</li>
+<li>kid3-qt</li>
+<li>manpages-ja</li>
+<li>meld</li>
+<li>nvidia-current</li>
+<li>nkf</li>
+<li>osd-lylic</li>
+<li>peercast</li>
+<li>poedit</li>
+<li>synaptic</li>
+<li>system-config-samba</li>
+<li>thunderbird</li>
+<li>unetbootin</li>
+<li>vlc</li>
+<li>wine</li>
+<li>winff</li>
+<li>xbmc</li>
+<li>xnoise</li>
 </ul>
 
-<h4 id="firefox-">Firefox 拡張</h4>
+
+<h4>GNOME Shell 拡張</h4>
+
 <ul>
-  <li>Adblock Plus<br />
-https://addons.mozilla.org/ja/firefox/addon/1865/</li>
-  <li>chaika<br />
-http://chaika.xrea.jp/<br />
-http://bbs2ch.sourceforge.jp/uploader/</li>
-  <li>Download Statusbar<br />
-https://addons.mozilla.org/ja/firefox/addon/26/</li>
-  <li>Firebug<br />
-https://addons.mozilla.org/ja/firefox/addon/1843/</li>
-  <li>FireFTP<br />
-https://addons.mozilla.org/ja/firefox/addon/fireftp/</li>
-  <li>FireGestures<br />
-https://addons.mozilla.org/ja/firefox/addon/6366/</li>
-  <li>NewsFox<br />
-https://addons.mozilla.org/ja/firefox/addon/newsfox/</li>
-  <li>Stylish<br />
-https://addons.mozilla.org/ja/firefox/addon/2108/</li>
-  <li>SQLite Manager<br />
-https://addons.mozilla.org/ja/firefox/addon/sqlite-manager/</li>
-  <li>Tab Mix Plus<br />
-https://addons.mozilla.org/ja/firefox/addon/1122/</li>
-  <li>Text Link<br />
-https://addons.mozilla.org/ja/firefox/addon/1939/</li>
-  <li>Yoono<br />
-https://addons.mozilla.org/ja/firefox/addon/1833/</li>
+<li>Hide Top bar<br/>
+<a href="https://extensions.gnome.org/extension/545/hide-top-bar/">https://extensions.gnome.org/extension/545/hide-top-bar/</a></li>
+<li>Drop Down Terminal<br/>
+<a href="https://extensions.gnome.org/extension/442/drop-down-terminal/">https://extensions.gnome.org/extension/442/drop-down-terminal/</a></li>
 </ul>
 
-<h4 id="thunderbird-">Thunderbird 拡張</h4>
+
+<h4>Firefox 拡張</h4>
+
 <ul>
-  <li>Lightning<br />
-https://addons.mozilla.org/ja/thunderbird/addon/2313/</li>
+<li>Adblock Plus<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/1865/">https://addons.mozilla.org/ja/firefox/addon/1865/</a></li>
+<li>chaika<br/>
+<a href="http://chaika.xrea.jp/  ">http://chaika.xrea.jp/  </a>
+<a href="http://bbs2ch.sourceforge.jp/uploader/">http://bbs2ch.sourceforge.jp/uploader/</a></li>
+<li>Download Statusbar<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/26/">https://addons.mozilla.org/ja/firefox/addon/26/</a></li>
+<li>Firebug<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/1843/">https://addons.mozilla.org/ja/firefox/addon/1843/</a></li>
+<li>FireFTP<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/fireftp/">https://addons.mozilla.org/ja/firefox/addon/fireftp/</a></li>
+<li>FireGestures<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/6366/">https://addons.mozilla.org/ja/firefox/addon/6366/</a></li>
+<li>NewsFox<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/newsfox/">https://addons.mozilla.org/ja/firefox/addon/newsfox/</a></li>
+<li>Stylish<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/2108/">https://addons.mozilla.org/ja/firefox/addon/2108/</a></li>
+<li>SQLite Manager<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/sqlite-manager/">https://addons.mozilla.org/ja/firefox/addon/sqlite-manager/</a></li>
+<li>Tab Mix Plus<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/1122/">https://addons.mozilla.org/ja/firefox/addon/1122/</a></li>
+<li>Text Link<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/1939/">https://addons.mozilla.org/ja/firefox/addon/1939/</a></li>
+<li>Yoono<br/>
+<a href="https://addons.mozilla.org/ja/firefox/addon/1833/">https://addons.mozilla.org/ja/firefox/addon/1833/</a></li>
 </ul>
+
+
+<h4>Thunderbird 拡張</h4>
+
+<ul>
+<li>Lightning<br/>
+<a href="https://addons.mozilla.org/ja/thunderbird/addon/2313/">https://addons.mozilla.org/ja/thunderbird/addon/2313/</a></li>
+</ul>
+
 
   
     <footer>
@@ -271,6 +289,10 @@ https://addons.mozilla.org/ja/thunderbird/addon/2313/</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/07/20/a-plus-b/">A + B</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/15/zenity-octopress-helper/">Zenity OctoPress Helper</a>
       </li>
     
@@ -284,10 +306,6 @@ https://addons.mozilla.org/ja/thunderbird/addon/2313/</li>
     
       <li class="post">
         <a href="/blog/2013/07/13/gnome-shell-3-dot-9-4/">GNOME Shell 3.9.4</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/">Ubuntu 13.10 Daily Build + Mir</a>
       </li>
     
   </ul>

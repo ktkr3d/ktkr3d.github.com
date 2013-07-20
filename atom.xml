@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-20T11:22:23+09:00</updated>
+  <updated>2013-07-20T13:36:26+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -14,128 +14,146 @@
 
   
   <entry>
+    <title type="html"><![CDATA[a + b]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/20/a-plus-b/"/>
+    <updated>2013-07-20T13:35:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/20/a-plus-b</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Zenity OctoPress Helper]]></title>
     <link href="http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/"/>
     <updated>2013-07-15T13:26:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_octopress_menu.png"><img src="http://ktkr3d.github.io/images/zenity_octopress_menu.png" /></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_octopress_menu.png"><img src="http://ktkr3d.github.io/images/zenity_octopress_menu.png"></a></p>
 
 <p>OctoPress のフロントエンドをZenity で作ってみました。
 Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。</p>
 
 <!-- more -->
 
-<h4 id="zenity-">zenity スクリプト</h4>
 
-<p><a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="http://ktkr3d.github.io/images/zenity_octopress_new_post.png" /></a><br />
-<a href="http://ktkr3d.github.io/images/zenity_octopress_deploy.png"><img src="http://ktkr3d.github.io/images/zenity_octopress_deploy.png" /></a></p>
+<h4>zenity スクリプト</h4>
+
+<p><a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"></a><br>
+<a href="http://ktkr3d.github.io/images/zenity_octopress_deploy.png"><img src="http://ktkr3d.github.io/images/zenity_octopress_deploy.png"></a></p>
 
 <p>Zenity のリストボックス、テキスト入力、プログレスバー等を利用して、フロントエンドを作成します。</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>octopress_helper.sh </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-<span class="line-number">32</span>
-<span class="line-number">33</span>
-<span class="line-number">34</span>
-<span class="line-number">35</span>
-<span class="line-number">36</span>
-<span class="line-number">37</span>
-<span class="line-number">38</span>
-</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="c">#!/bin/bash</span>
-</span><span class="line">
-</span><span class="line"><span class="nv">OCTOPRESS_DIR</span><span class="o">=</span>/mnt/common/github/octopress
-</span><span class="line">
-</span><span class="line"><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/bin:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
-</span><span class="line"><span class="nb">source</span> <span class="nv">$HOME</span>/.rvm/scripts/rvm
-</span><span class="line"><span class="nb">cd</span> <span class="nv">$OCTOPRESS_DIR</span>
-</span><span class="line">
-</span><span class="line"><span class="k">while</span> :
-</span><span class="line"><span class="k">do</span>
-</span><span class="line"><span class="k">	</span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
-</span><span class="line">	<span class="k">case</span> <span class="nv">$pick</span> in
-</span><span class="line">		0<span class="o">)</span>
-</span><span class="line">			<span class="nv">article_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
-</span><span class="line">			<span class="k">if</span> <span class="o">[</span> <span class="nv">$article_title</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
-</span><span class="line"><span class="k">				</span>rake new_post<span class="o">[</span><span class="s2">&quot;$article_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class="line">			<span class="k">fi</span>
-</span><span class="line">			;;
-</span><span class="line">		1<span class="o">)</span>
-</span><span class="line">			<span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
-</span><span class="line">			<span class="k">if</span> <span class="o">[</span> <span class="nv">$page_title</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
-</span><span class="line"><span class="k">				</span>rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class="line">			<span class="k">fi</span>
-</span><span class="line">			;;
-</span><span class="line">		2<span class="o">)</span>
-</span><span class="line">			rake generate &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class="line">			;;
-</span><span class="line">		3<span class="o">)</span>
-</span><span class="line">			rake deploy &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class="line">			;;
-</span><span class="line">		4<span class="o">)</span>
-</span><span class="line">			nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;
-</span><span class="line">			;;
-</span><span class="line">		*<span class="o">)</span>
-</span><span class="line">			<span class="nb">break</span>
-</span><span class="line">			;;
-</span><span class="line">	<span class="k">esac</span>
-</span><span class="line"><span class="k">done</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><figcaption><span>octopress_helper.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">OCTOPRESS_DIR</span><span class="o">=</span>/mnt/common/github/octopress
+</span><span class='line'>
+</span><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/bin:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
+</span><span class='line'><span class="nb">source</span> <span class="nv">$HOME</span>/.rvm/scripts/rvm
+</span><span class='line'><span class="nb">cd</span> <span class="nv">$OCTOPRESS_DIR</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span> :
+</span><span class='line'><span class="k">do</span>
+</span><span class='line'><span class="k">  </span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Push&quot;</span> <span class="nb">false </span>5 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
+</span><span class='line'>  <span class="k">case</span> <span class="nv">$pick</span> in
+</span><span class='line'>      0<span class="o">)</span>
+</span><span class='line'>          <span class="nv">post_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="k">${#</span><span class="nv">post_title</span><span class="k">}</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">              </span>rake new_post<span class="o">[</span><span class="s2">&quot;$post_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          <span class="k">fi</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      1<span class="o">)</span>
+</span><span class='line'>          <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="k">${#</span><span class="nv">page_title</span><span class="k">}</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">              </span>rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          <span class="k">fi</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      2<span class="o">)</span>
+</span><span class='line'>          rake generate &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      3<span class="o">)</span>
+</span><span class='line'>          rake deploy &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      4<span class="o">)</span>
+</span><span class='line'>          git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#39;update&#39;</span> <span class="o">&amp;&amp;</span> git push -u origin <span class="nb">source</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Push&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      5<span class="o">)</span>
+</span><span class='line'>          nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;
+</span><span class='line'>          ;;
+</span><span class='line'>      *<span class="o">)</span>
+</span><span class='line'>          <span class="nb">break</span>
+</span><span class='line'>          ;;
+</span><span class='line'>  <span class="k">esac</span>
+</span><span class='line'><span class="k">done</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<h4 id="section">起動用ショートカットアイコン</h4>
+
+<h4>起動用ショートカットアイコン</h4>
 
 <p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。
 端末を非表示にする場合は<code>Terminal=false</code>とします。</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">[Desktop Entry]
-</span><span class="line">Encoding=UTF-8
-</span><span class="line">Name=OctoPress Helper
-</span><span class="line">Exec=/mnt/common/home/Script/octopress_helper.sh
-</span><span class="line">Icon=/usr/share/pixmaps/octopress.png
-</span><span class="line">Terminal=true
-</span><span class="line">Type=Application
-</span><span class="line">Categories=Application;
-</span><span class="line">StartupNotify=false</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Desktop Entry]
+</span><span class='line'>Encoding=UTF-8
+</span><span class='line'>Name=OctoPress Helper
+</span><span class='line'>Exec=/mnt/common/home/Script/octopress_helper.sh
+</span><span class='line'>Icon=/usr/share/pixmaps/octopress.png
+</span><span class='line'>Terminal=true
+</span><span class='line'>Type=Application
+</span><span class='line'>Categories=Application;
+</span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure>
 
-<h4 id="section-1">プレビュー</h4>
+
+<h4>プレビュー</h4>
 
 <p>私は <code>rake preview</code> をログイン時に常駐させて、ブラウザから <code>http://localhost:4000/</code> にアクセスしてレイアウト結果を確認しています。フォルダ内の変更が監視されるので、多少の負荷はあるかもしれません。</p>
 ]]></content>
@@ -146,40 +164,42 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
     <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
     <updated>2013-07-15T08:57:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png" /></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"></a></p>
 
 <p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
 
 <!-- more -->
 
-<h4 id="section">ロック画面のフォントの変更</h4>
+
+<h4>ロック画面のフォントの変更</h4>
 
 <p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="css"><span class="line"><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span>
-</span><span class="line">    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class="line">    <span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
-</span><span class="line">    <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
-</span><span class="line"><span class="p">}</span>
-</span><span class="line">
-</span><span class="line"><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span>
-</span><span class="line">    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class="line">    <span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<h4 id="section-1">設定の反映</h4>
+
+<h4>設定の反映</h4>
 
 <p>設定を反映するには、<code>Alt + F2</code> を押下、<code>r</code> を入力して<code>Enter</code>で、GNOME Shell を再起動します。</p>
 ]]></content>
@@ -190,25 +210,31 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
     <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
     <updated>2013-07-14T11:11:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="http://ktkr3d.github.io/images/docky_cardapio_tn.png" /></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="http://ktkr3d.github.io/images/docky_cardapio_tn.png"></a></p>
 
 <p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
 
 <ol>
-  <li>電源ボタンが無いこと</li>
-  <li>アプリケーションメニューがないこと</li>
+<li>電源ボタンが無いこと</li>
+<li>アプリケーションメニューがないこと</li>
 </ol>
+
 
 <p>Docky とCardapio の設定で上記を動くようにしてみました。</p>
 
 <!-- more -->
 
-<h4 id="section">電源ボタンの設定</h4>
+
+<p></p>
+
+<h4>電源ボタンの設定</h4>
+
 <p>一番右の「画面のロック」アイコンを右クリックすることで、「画面のロック」、「ログアウト」、「サスペンド」、「再起動」、「シャットダウン」のようなサブメニューが表示されます。
 「画面のロック」のアイコン上でマウスのホイールボタンで上下にホイールすると、デフォルトの動作を指定できます。
 ボタン押下後に再起動かシャットダウンかを選択させる形式がよかったのですが、とりあえずこれで良しとしましょう。</p>
 
-<h4 id="cardapio-">Cardapio の設定</h4>
+<h4>Cardapio の設定</h4>
+
 <p>Cardapio を使ってDocky からアプリケーションメニューを表示することにします。</p>
 
 <pre><code>$ sudo add-apt-repository ppa:cardapio-team/unstable
@@ -220,21 +246,16 @@ $ sudo apt-get install cardapio
 cardapio を起動してみたところ、いくつかエラーが表示されたので、<code>/usr/lib/cardapio/Cardapio.py</code> を修正しました。</p>
 
 <ol>
-  <li>
-    <p>以下を追加<br />
-<code>from xdg import BaseDirectory</code></p>
-  </li>
-  <li>
-    <p>以下を置換<br />
-<code>DesktopEntry.xdg_config_home</code> -&gt; <code>BaseDirectory.xdg_config_home</code></p>
-  </li>
-  <li>
-    <p>以下を置換<br />
-<code>DesktopEntry.xdg_cache_home</code> -&gt; <code>BaseDirectory.xdg_cache_home</code></p>
-  </li>
+<li><p>以下を追加<br>
+<code>from xdg import BaseDirectory</code></p></li>
+<li><p>以下を置換<br>
+<code>DesktopEntry.xdg_config_home</code> &ndash;> <code>BaseDirectory.xdg_config_home</code></p></li>
+<li><p>以下を置換<br>
+<code>DesktopEntry.xdg_cache_home</code> &ndash;> <code>BaseDirectory.xdg_cache_home</code></p></li>
 </ol>
 
-<h4 id="docky-cardapio-">Docky へCardapio を登録</h4>
+
+<h4>Docky へCardapio を登録</h4>
 
 <p>cardapio-helper というDocky のヘルパーを使うと、Docky アイコンクリックで、Cardapio が起動されるはずなのですが、うまく動作しませんでした。
 仕方がないので、<code>/usr/share/applications/cardapio.desktop</code> をDocky にドラッグ&amp;ドロップして、メニューアイコンを登録しました。</p>
@@ -246,66 +267,72 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
     <link href="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/"/>
     <updated>2013-07-13T09:36:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="http://ktkr3d.github.io/images/gnome_shell_3_9_4_tn.png" /></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="http://ktkr3d.github.io/images/gnome_shell_3_9_4_tn.png"></a></p>
 
-<p>https://launchpad.net/~ricotz/+archive/testing</p>
+<p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
 
 <p>GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。</p>
 
 <!-- more -->
 
-<h4 id="gnome-shell-394-">GNOME Shell 3.9.4 のインストール</h4>
+
+<p></p>
+
+<h4>GNOME Shell 3.9.4 のインストール</h4>
 
 <pre><code>$ sudo add-apt-repository ppa:ricotz/testing
 $ sudo apt-get update
 $ sudo apt-get install gnome-shell
 </code></pre>
 
-<h4 id="section">ドックの設定</h4>
+<h4>ドックの設定</h4>
+
 <p>前回のAWN に続き、このバージョンではCairo-Dock も動かなくなりました。Dash to Dock GNOME Shell 拡張も正常に動かないようです。Docky を使うことにしました。</p>
 
 <pre><code>$ sudo apt-get install docky
 </code></pre>
 
-<h4 id="section-1">トップバーの非表示</h4>
+<h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していたautohidetopbar2@werewolves.us の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#97;&#117;&#x74;&#111;&#x68;&#105;&#100;&#101;&#116;&#x6f;&#112;&#x62;&#x61;&#114;&#x32;&#x40;&#x77;&#101;&#114;&#101;&#119;&#x6f;&#x6c;&#x76;&#101;&#115;&#x2e;&#x75;&#x73;">&#x61;&#x75;&#x74;&#x6f;&#104;&#x69;&#100;&#x65;&#x74;&#x6f;&#x70;&#98;&#x61;&#114;&#x32;&#64;&#119;&#101;&#x72;&#101;&#x77;&#x6f;&#108;&#118;&#x65;&#x73;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>metadata.json </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-</pre></td><td class="code"><pre><code class="js"><span class="line"><span class="p">{</span>
-</span><span class="line">  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto hide the top panel&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;extension-id&quot;</span><span class="o">:</span> <span class="s2">&quot;auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;gettext-domain&quot;</span><span class="o">:</span> <span class="s2">&quot;gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto Hide Top Panel&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;settings-schema&quot;</span><span class="o">:</span> <span class="s2">&quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;shell-version&quot;</span><span class="o">:</span> <span class="p">[</span>
-</span><span class="line">	<span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
-</span><span class="line">	<span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
-</span><span class="line">	<span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
-</span><span class="line">	<span class="s2">&quot;3.9.4&quot;</span>
-</span><span class="line">  <span class="p">],</span>
-</span><span class="line">  <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;uuid&quot;</span><span class="o">:</span> <span class="s2">&quot;autohidetopbar2@werewolves.us&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><figcaption><span>metadata.json </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto hide the top panel&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;extension-id&quot;</span><span class="o">:</span> <span class="s2">&quot;auto-hide-top-panel&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;gettext-domain&quot;</span><span class="o">:</span> <span class="s2">&quot;gnome-shell-extensions&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto Hide Top Panel&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;settings-schema&quot;</span><span class="o">:</span> <span class="s2">&quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;shell-version&quot;</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>  <span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;3.9.4&quot;</span>
+</span><span class='line'>  <span class="p">],</span>
+</span><span class='line'>  <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;uuid&quot;</span><span class="o">:</span> <span class="s2">&quot;autohidetopbar2@werewolves.us&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
@@ -315,13 +342,16 @@ shell-version は3.9.4 を指定しました。</p>
     <link href="http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/"/>
     <updated>2013-07-01T00:30:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png"><img src="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_tn.png" /></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png"><img src="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_tn.png"></a></p>
 
-<p>https://launchpad.net/~mir-team/+archive/staging</p>
+<p><a href="https://launchpad.net/~mir-team/+archive/staging">https://launchpad.net/~mir-team/+archive/staging</a></p>
 
 <p>Ubuntu 13.10 Daily Build にMir を適用してみました。現時点では若干もたつく感じがしますが、今後改善されるでしょう。</p>
 
 <!-- more -->
+
+
+<p></p>
 
 <pre><code>$ sudo apt-add-repository ppa:mir-team/staging
 $ sudo apt-get update
@@ -330,11 +360,11 @@ $ sudo apt-get upgrade
 
 <p>特に資料を参考にしていないので、正式な手順ではないかもしれませんし、不十分かもしれません。</p>
 
-<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell.png"><img src="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell_tn.png" /></a></p>
+<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell.png"><img src="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell_tn.png"></a></p>
 
 <p>GNOME Shell 3.8.3 で使った方が快適なような気がします。気のせいかもしれませんが。</p>
 
-<p>http://www.olli-ries.com/running-mir/</p>
+<p><a href="http://www.olli-ries.com/running-mir/">http://www.olli-ries.com/running-mir/</a></p>
 
 <p>ここにインストール方法が書いてありました。</p>
 ]]></content>
@@ -345,54 +375,50 @@ $ sudo apt-get upgrade
     <link href="http://ktkr3d.github.io/blog/2013/06/16/octopress/"/>
     <updated>2013-06-16T12:34:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/octopress</id>
-    <content type="html"><![CDATA[<p><img src="http://ktkr3d.github.io/images/octopress.png" /></p>
+    <content type="html"><![CDATA[<p><img src="http://ktkr3d.github.io/images/octopress.png"></p>
 
-<p>http://ktkr3d.site11.com 上のWordPress からGitHub 上のOctopress にブログを移行してみました。
+<p><a href="http://ktkr3d.site11.com">http://ktkr3d.site11.com</a> 上のWordPress からGitHub 上のOctopress にブログを移行してみました。</p>
+
 <!-- more -->
-WordPress は便利なのですが、メモリ消費量が多くなってしまい、海外無料Webサービスでの運用が困難になってきました。（解決策はいろいろとあるとは思いますが。）</p>
+
+
+<p>WordPress は便利なのですが、メモリ消費量が多くなってしまい、海外無料Webサービスでの運用が困難になってきました。（解決策はいろいろとあるとは思いますが。）</p>
 
 <p>そこで、Github Pages + Octopress でブログサイトを構築してみることにしました。Markdown で記述していきますが、よく知らないので、これから覚えていくことにしましょう。</p>
 
-<h3 id="section">使い方のメモ</h3>
+<h3>使い方のメモ</h3>
 
-<p>http://octopress.org/docs/</p>
+<p><a href="http://octopress.org/docs/">http://octopress.org/docs/</a></p>
 
 <ul>
-  <li>
-    <p>新規記事の作成</p>
+<li><p>新規記事の作成</p>
 
-    <pre><code>  $ rake new_post["title"]
-</code></pre>
-  </li>
-  <li>
-    <p>記事の編集	</p>
-  </li>
+<pre><code>  $ rake new_post["title"]
+</code></pre></li>
+<li><p>記事の編集</p></li>
 </ul>
+
 
 <p>./octopress/source/_posts/*.markdown を編集します。
 画像はsource/images/ に格納することにします。
 画像の挿入は</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">{% img /images/Ubuntu-GNOME-13-10.png 600 %}</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{% img /images/Ubuntu-GNOME-13-10.png 600 %}</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
-  <li>
-    <p>生成とデプロイ</p>
+<li><p>生成とデプロイ</p>
 
-    <pre><code>  $ rake generate &amp;&amp; rake deploy
-</code></pre>
-  </li>
-  <li>
-    <p>新規ページの作成	</p>
+<pre><code>  $ rake generate &amp;&amp; rake deploy
+</code></pre></li>
+<li><p>新規ページの作成</p>
 
-    <pre><code>  $ rake new_page[page-name]
-</code></pre>
-  </li>
-  <li>
-    <p>スタイルの変更</p>
-  </li>
+<pre><code>  $ rake new_page[page-name]
+</code></pre></li>
+<li><p>スタイルの変更</p></li>
 </ul>
+
 
 <p>./octopress/source/stylesheets/ にスタイルシートがあります。
 スタイルシートのカスタマイズは<code>./octopress/saas/custom/</code>にあるファイルを編集します。</p>
@@ -406,13 +432,16 @@ WordPress は便利なのですが、メモリ消費量が多くなってしま�
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png"><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10_tn.png" /></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png"><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10_tn.png"></a></p>
 
-<p>http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</p>
+<p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a></p>
 
-<p>Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。kernel 3.9.0, GNOME Shell 3.8.2, Firefox 22.0 でした。
+<p>Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。kernel 3.9.0, GNOME Shell 3.8.2, Firefox 22.0 でした。</p>
+
 <!-- more -->
-いつものようにAvant Window Navigator を使いたかったのですが、うまく起動しなかったので、Cairo Dock に移行してみました。Cairo Dock は挙動が派手で好みではなかったのですが、テーマを変更して、詳細設定をしたらAWN みたいな挙動にすることができました。
+
+
+<p>いつものようにAvant Window Navigator を使いたかったのですが、うまく起動しなかったので、Cairo Dock に移行してみました。Cairo Dock は挙動が派手で好みではなかったのですが、テーマを変更して、詳細設定をしたらAWN みたいな挙動にすることができました。
 その他で気になったのは、Code::Blocks が起動しないことと、GTK+ テーマのリストボックスの挙動が少し不自然なことくらいでしょうか。そのうち、直るでしょう。</p>
 ]]></content>
   </entry>

@@ -112,66 +112,72 @@ $(document).ready( function () {
   </header>
 
 
-<div class="entry-content"><p><a href="/images/gnome_shell_3_9_4.png"><img src="/images/gnome_shell_3_9_4_tn.png" /></a></p>
+<div class="entry-content"><p><a href="/images/gnome_shell_3_9_4.png"><img src="/images/gnome_shell_3_9_4_tn.png"></a></p>
 
-<p>https://launchpad.net/~ricotz/+archive/testing</p>
+<p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
 
 <p>GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。</p>
 
 <!-- more -->
 
-<h4 id="gnome-shell-394-">GNOME Shell 3.9.4 のインストール</h4>
+
+<p></p>
+
+<h4>GNOME Shell 3.9.4 のインストール</h4>
 
 <pre><code>$ sudo add-apt-repository ppa:ricotz/testing
 $ sudo apt-get update
 $ sudo apt-get install gnome-shell
 </code></pre>
 
-<h4 id="section">ドックの設定</h4>
+<h4>ドックの設定</h4>
+
 <p>前回のAWN に続き、このバージョンではCairo-Dock も動かなくなりました。Dash to Dock GNOME Shell 拡張も正常に動かないようです。Docky を使うことにしました。</p>
 
 <pre><code>$ sudo apt-get install docky
 </code></pre>
 
-<h4 id="section-1">トップバーの非表示</h4>
+<h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していたautohidetopbar2@werewolves.us の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#97;&#117;&#x74;&#111;&#x68;&#105;&#100;&#101;&#116;&#x6f;&#112;&#x62;&#x61;&#114;&#x32;&#x40;&#x77;&#101;&#114;&#101;&#119;&#x6f;&#x6c;&#x76;&#101;&#115;&#x2e;&#x75;&#x73;">&#x61;&#x75;&#x74;&#x6f;&#104;&#x69;&#100;&#x65;&#x74;&#x6f;&#x70;&#98;&#x61;&#114;&#x32;&#64;&#119;&#101;&#x72;&#101;&#x77;&#x6f;&#108;&#118;&#x65;&#x73;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>metadata.json </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-</pre></td><td class="code"><pre><code class="js"><span class="line"><span class="p">{</span>
-</span><span class="line">  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto hide the top panel&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;extension-id&quot;</span><span class="o">:</span> <span class="s2">&quot;auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;gettext-domain&quot;</span><span class="o">:</span> <span class="s2">&quot;gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto Hide Top Panel&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;settings-schema&quot;</span><span class="o">:</span> <span class="s2">&quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;shell-version&quot;</span><span class="o">:</span> <span class="p">[</span>
-</span><span class="line">	<span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
-</span><span class="line">	<span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
-</span><span class="line">	<span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
-</span><span class="line">	<span class="s2">&quot;3.9.4&quot;</span>
-</span><span class="line">  <span class="p">],</span>
-</span><span class="line">  <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;uuid&quot;</span><span class="o">:</span> <span class="s2">&quot;autohidetopbar2@werewolves.us&quot;</span><span class="p">,</span>
-</span><span class="line">  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class='code'><figcaption><span>metadata.json </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto hide the top panel&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;extension-id&quot;</span><span class="o">:</span> <span class="s2">&quot;auto-hide-top-panel&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;gettext-domain&quot;</span><span class="o">:</span> <span class="s2">&quot;gnome-shell-extensions&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto Hide Top Panel&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;settings-schema&quot;</span><span class="o">:</span> <span class="s2">&quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;shell-version&quot;</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>  <span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;3.9.4&quot;</span>
+</span><span class='line'>  <span class="p">],</span>
+</span><span class='line'>  <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;uuid&quot;</span><span class="o">:</span> <span class="s2">&quot;autohidetopbar2@werewolves.us&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
@@ -242,6 +248,10 @@ shell-version は3.9.4 を指定しました。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/07/20/a-plus-b/">A + B</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/15/zenity-octopress-helper/">Zenity OctoPress Helper</a>
       </li>
     
@@ -255,10 +265,6 @@ shell-version は3.9.4 を指定しました。</p>
     
       <li class="post">
         <a href="/blog/2013/07/13/gnome-shell-3-dot-9-4/">GNOME Shell 3.9.4</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/">Ubuntu 13.10 Daily Build + Mir</a>
       </li>
     
   </ul>
