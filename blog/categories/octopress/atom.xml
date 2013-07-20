@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-20T13:37:37+09:00</updated>
+  <updated>2013-07-20T13:38:58+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -77,9 +77,6 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 <span class='line-number'>41</span>
 <span class='line-number'>42</span>
 <span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
 </span><span class='line'>
 </span><span class='line'>&lt;h1&gt;!/bin/bash&lt;/h1&gt;
@@ -93,7 +90,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>&lt;p&gt;while :
 </span><span class='line'><span class="k">do</span>&lt;/p&gt;
 </span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;pick<span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Push&quot;</span> <span class="nb">false </span>5 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;pick<span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
 </span><span class='line'><span class="k">case</span> <span class="nv">$pick</span> in
 </span><span class='line'>    0<span class="o">)</span>
 </span><span class='line'>        <span class="nv">post_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
@@ -114,9 +111,6 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>        rake deploy &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
 </span><span class='line'>        ;;
 </span><span class='line'>    4<span class="o">)</span>
-</span><span class='line'>        git add . &amp;amp;&amp;amp; git commit -m <span class="s1">&#39;update&#39;</span> &amp;amp;&amp;amp; git push -u origin <span class="nb">source</span> &amp;gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Push&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>        ;;
-</span><span class='line'>    5<span class="o">)</span>
 </span><span class='line'>        nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;amp;
 </span><span class='line'>        ;;
 </span><span class='line'>    *<span class="o">)</span>

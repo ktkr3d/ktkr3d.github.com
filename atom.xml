@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-07-20T13:37:37+09:00</updated>
+  <updated>2013-07-20T13:38:58+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -72,9 +72,6 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 <span class='line-number'>36</span>
 <span class='line-number'>37</span>
 <span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">OCTOPRESS_DIR</span><span class="o">=</span>/mnt/common/github/octopress
@@ -85,7 +82,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>
 </span><span class='line'><span class="k">while</span> :
 </span><span class='line'><span class="k">do</span>
-</span><span class='line'><span class="k">  </span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Push&quot;</span> <span class="nb">false </span>5 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
+</span><span class='line'><span class="k">  </span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>zenity --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Open Posts Folder&quot;</span><span class="k">)</span>;
 </span><span class='line'>  <span class="k">case</span> <span class="nv">$pick</span> in
 </span><span class='line'>      0<span class="o">)</span>
 </span><span class='line'>          <span class="nv">post_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
@@ -106,9 +103,6 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>          rake deploy &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
 </span><span class='line'>          ;;
 </span><span class='line'>      4<span class="o">)</span>
-</span><span class='line'>          git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#39;update&#39;</span> <span class="o">&amp;&amp;</span> git push -u origin <span class="nb">source</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Push&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
-</span><span class='line'>          ;;
-</span><span class='line'>      5<span class="o">)</span>
 </span><span class='line'>          nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;
 </span><span class='line'>          ;;
 </span><span class='line'>      *<span class="o">)</span>
@@ -285,7 +279,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#97;&#117;&#x74;&#111;&#x68;&#105;&#x64;&#101;&#x74;&#111;&#x70;&#98;&#97;&#x72;&#x32;&#64;&#119;&#101;&#x72;&#101;&#119;&#x6f;&#x6c;&#118;&#x65;&#115;&#x2e;&#x75;&#115;">&#x61;&#x75;&#116;&#x6f;&#104;&#105;&#100;&#x65;&#116;&#111;&#112;&#98;&#x61;&#114;&#x32;&#64;&#x77;&#x65;&#x72;&#x65;&#119;&#x6f;&#x6c;&#x76;&#101;&#x73;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#97;&#x75;&#x74;&#111;&#104;&#105;&#x64;&#101;&#x74;&#x6f;&#x70;&#x62;&#x61;&#x72;&#50;&#64;&#119;&#101;&#x72;&#101;&#x77;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#117;&#115;">&#x61;&#117;&#116;&#111;&#x68;&#x69;&#100;&#x65;&#116;&#111;&#112;&#x62;&#x61;&#x72;&#x32;&#64;&#119;&#x65;&#x72;&#101;&#x77;&#x6f;&#x6c;&#x76;&#x65;&#115;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
