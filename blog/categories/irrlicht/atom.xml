@@ -4,7 +4,7 @@
   <title><![CDATA[Category: irrlicht | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/irrlicht/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-04T04:29:43+09:00</updated>
+  <updated>2013-08-04T05:07:18+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -20,13 +20,16 @@
     <id>http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android</id>
     <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_ogl-es_android.png"><img src="/images/irrlicht_ogl-es_android_tn.png"></a></p>
 
-<p>Irrlicht ogl-es branch with Android device.</p>
+<p>Compiling Irrlicht ogl-es branch for Android.</p>
+
+<!-- more -->
+
 
 <h4>Environment</h4>
 
 <ul>
 <li>Android SDK: 22.0.5</li>
-<li>Android NDK: r8e</li>
+<li>Android NDK: r9</li>
 <li>Android Device: Android 4.1.2 (API level 16)</li>
 </ul>
 
@@ -41,7 +44,7 @@ extract<br></p>
 <h4>Compile Irrlicht Library</h4>
 
 <pre><code>$ cd source/irrlicht/Andorid
-$ ndk-build
+$ ndk-build -j4
 </code></pre>
 
 <p>&ndash;> lib/Android/libirrlicht.a</p>
@@ -50,7 +53,7 @@ $ ndk-build
 
 <pre><code>$ cd examples/17.HellowWorld_Mobile
 $ android update project --path . --target android-10
-$ ndk-build
+$ ndk-build -j4
 $ ant debug
 </code></pre>
 
