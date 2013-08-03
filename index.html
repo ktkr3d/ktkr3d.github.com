@@ -9,8 +9,9 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content=" OctoPress のフロントエンドをZenity で作ってみました。
-Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。 ">
+  <meta name="description" content="Irrlicht ogl-es branch with Android device. Environment Android SDK: 22.0.5
+Android NDK: r8e
+Android Device: Android 4.1.2 (API level 16) Download &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +88,78 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android/">Compiling Irrlicht Ogl-es Branch for Android</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-04T04:04:00+09:00" pubdate data-updated="true">2013年08月04日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/irrlicht_ogl-es_android.png"><img src="/images/irrlicht_ogl-es_android_tn.png"></a></p>
+
+<p>Irrlicht ogl-es branch with Android device.</p>
+
+<h4>Environment</h4>
+
+<ul>
+<li>Android SDK: 22.0.5</li>
+<li>Android NDK: r8e</li>
+<li>Android Device: Android 4.1.2 (API level 16)</li>
+</ul>
+
+
+<h4>Download Irrlicht ogl-es branch</h4>
+
+<p><code>http://sourceforge.net/p/irrlicht/code/4568/tree/branches/ogl-es/</code></p>
+
+<p>Download Snapshot<br>
+extract<br></p>
+
+<h4>Compile Irrlicht Library</h4>
+
+<pre><code>$ cd source/irrlicht/Andorid
+$ ndk-build
+</code></pre>
+
+<p>&ndash;> lib/Android/libirrlicht.a</p>
+
+<h4>Build example</h4>
+
+<pre><code>$ cd examples/17.HellowWorld_Mobile
+$ android update project --path . --target android-10
+$ ndk-build
+$ ant debug
+</code></pre>
+
+<p>&ndash;> examples/17.HellowWorld_Mobile/HelloWorldMobile-debug.apk</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -417,6 +490,10 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android/">Compiling Irrlicht Ogl-es Branch for Android</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/15/zenity-octopress-helper/">Zenity OctoPress Helper</a>
       </li>
     
@@ -432,15 +509,11 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
         <a href="/blog/2013/07/13/gnome-shell-3-dot-9-4/">GNOME Shell 3.9.4</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/">Ubuntu 13.10 Daily Build + Mir</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/gnome/'>gnome (4)</a></li><li><a href='/blog/categories/linux/'>Linux (5)</a></li><li><a href='/blog/categories/octopress/'>octopress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>android (1)</a></li><li><a href='/blog/categories/gnome/'>gnome (4)</a></li><li><a href='/blog/categories/irrlicht/'>irrlicht (1)</a></li><li><a href='/blog/categories/linux/'>Linux (5)</a></li><li><a href='/blog/categories/octopress/'>octopress (2)</a></li></ul>
 </section>
 
 
