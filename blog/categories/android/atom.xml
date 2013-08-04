@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-04T12:35:56+09:00</updated>
+  <updated>2013-08-04T15:01:18+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -22,7 +22,7 @@
 
 <ul>
 <li>Compiling Irrlicht ogl-es branch for Android on Ubuntu 13.10 x86_64.</li>
-<li>Native C/C++ Android Application without Java.</li>
+<li>Native C/C++ Android Application (Native Activity).</li>
 <li>Fullscreen</li>
 <li>Input Event Receiver</li>
 <li>True Type Font</li>
@@ -38,6 +38,7 @@
 <li>Android SDK: 22.0.5</li>
 <li>Android NDK: r9</li>
 <li>Android Device: Android 4.1.2 (API level 16)</li>
+<li>Irrlicht 1.9 [r4528]</li>
 </ul>
 
 
@@ -58,13 +59,17 @@ $ ndk-build -j4
 
 <h4>Build example</h4>
 
-<pre><code>$ cd examples/17.HellowWorld_Mobile
+<pre><code>$ cd examples/17.HelloWorld_Mobile
 $ android update project --path . --target android-16
 $ ndk-build -j4
 $ ant debug
 </code></pre>
 
 <p>&ndash;> examples/17.HellowWorld_Mobile/HelloWorldMobile-debug.apk</p>
+
+<h4>TrueType Font</h4>
+
+<p><code>include/irrUString.h</code>, <code>jni/CGUITTFont.h</code>, <code>jni/CGUITTFont.cpp</code></p>
 ]]></content>
   </entry>
   
