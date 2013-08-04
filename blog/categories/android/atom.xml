@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-04T05:07:18+09:00</updated>
+  <updated>2013-08-04T11:11:25+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -20,7 +20,13 @@
     <id>http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android</id>
     <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_ogl-es_android.png"><img src="/images/irrlicht_ogl-es_android_tn.png"></a></p>
 
-<p>Compiling Irrlicht ogl-es branch for Android.</p>
+<ul>
+<li>Compiling Irrlicht ogl-es branch for Android on Ubuntu 13.10 x86_64.</li>
+<li>Native C/C++ Android Application without Java.</li>
+<li>Fullscreen</li>
+<li>Input Event Receiver</li>
+</ul>
+
 
 <!-- more -->
 
@@ -52,7 +58,7 @@ $ ndk-build -j4
 <h4>Build example</h4>
 
 <pre><code>$ cd examples/17.HellowWorld_Mobile
-$ android update project --path . --target android-10
+$ android update project --path . --target android-16
 $ ndk-build -j4
 $ ant debug
 </code></pre>

@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Android 2013年08月04日 Android のバージョンとAPI レベル http://source.android.com/source/build-numbers.html 開発環境の設定 Android SDK ダウンロードと展開 http://developer. &hellip;">
+  <meta name="description" content="Android 2013年08月04日 Android のバージョンとAPI レベル http://source.android.com/source/build-numbers.html Android SDK の設定 ダウンロードと展開 http://developer.android. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,7 @@ $(document).ready( function () {
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
   <li><a href="/linux">Linux</a></li>
   <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
 </ul>
@@ -108,27 +109,36 @@ $(document).ready( function () {
 
 <p><a href="http://source.android.com/source/build-numbers.html">http://source.android.com/source/build-numbers.html</a></p>
 
-<h4>開発環境の設定</h4>
+<h4>Android SDK の設定</h4>
 
 <ul>
-<li>Android SDK
-      ダウンロードと展開
-      <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a>
-      &ndash;> /tools/android-sdk-linux
-      環境変数PATH の追加
-      $ export PATH=/tools/android-sdk-linux/tools:$PATH
-      $ export PATH=/tools/android-sdk-linux/platform-tools:$PATH
-      アップデート
-      $ android update sdk
-      $ android list target</li>
-<li><p>Android NDK
-      ダウンロードと展開
-      <a href="http://developer.android.com/sdk/ndk/index.html">http://developer.android.com/sdk/ndk/index.html</a>
-      &ndash;> /tools/android-ndk-r8b</p>
+<li><p>ダウンロードと展開</p>
 
-<pre><code>  $ tar -jxvf android-ndk-r8b-linux-x86.tar.bz2
-  環境変数PATH の追加
-  $ export PATH=/tools/android-ndk-r8b:$PATH
+<p>  <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a>
+  &ndash;> /tools/android-sdk-linux</p></li>
+<li><p>環境変数PATH の追加</p>
+
+<pre><code>  $ export PATH=/tools/android-sdk-linux/tools:$PATH
+  $ export PATH=/tools/android-sdk-linux/platform-tools:$PATH
+</code></pre></li>
+<li><p>アップデート</p>
+
+<pre><code>  $ android update sdk
+  $ android list target
+</code></pre></li>
+</ul>
+
+
+<h4>Android NDK の設定</h4>
+
+<ul>
+<li><p>ダウンロードと展開</p>
+
+<p>  <a href="http://developer.android.com/sdk/ndk/index.html">http://developer.android.com/sdk/ndk/index.html</a>
+  &ndash;> /tools/android-ndk-r9</p></li>
+<li><p>環境変数PATH の追加</p>
+
+<pre><code>  $ export PATH=/tools/android-ndk-r9:$PATH
 </code></pre></li>
 </ul>
 
@@ -139,37 +149,46 @@ $(document).ready( function () {
 
 <h4>デバッグ</h4>
 
-<pre><code>ログの取得開始
-$ adb logcat -s &lt;Tag名&gt;:*
-Android 端末でアプリケーションを実行する
-ログの取得終了
-Ctrl-C
-</code></pre>
+<ul>
+<li><p>ログの取得開始</p>
+
+<p>  $ adb logcat -s &lt;Tag名>:*
+  Android 端末でアプリケーションを実行する</p></li>
+<li><p>ログの取得終了</p>
+
+<p>  <code>Ctrl-C</code></p></li>
+</ul>
+
 
 <h4>Tips</h4>
 
-<p>フルスクリーン表示にするには
-AndroidManifest.xml でactivity タグのandroid:theme 属性を設定</p>
+<ul>
+<li><p>フルスクリーン表示にするには</p>
 
-<p>AndroidManifest.xml</p>
+<p>  AndroidManifest.xml でactivity タグのandroid:theme 属性を設定</p></li>
+</ul>
 
-<p>&lt;activity</p>
 
-<pre><code>android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-</code></pre>
+<figure class='code'><figcaption><span>AndroidManifest.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;activity</span>
+</span><span class='line'>    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Black.NoTitleBar.Fullscreen&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h4>実機のスクリーンキャプチャ</h4>
 
 <p>Wi-Fi 接続してから、Android SDK をインストールしたPC から</p>
 
-<p>$ export ADBHOST=192.168.0.4
+<pre><code>$ export ADBHOST=192.168.0.4
 $ adb devices
 * daemon not running. starting it now on port 5037 *
 * daemon started successfully *
 List of devices attached
-emulator-5554 device</p>
-
-<p>$ ddms</p>
+emulator-5554 device
+$ ddms
+</code></pre>
 
 <p>でddms を起動して、「Device」-「Screen Capture…」メニューから取得する。</p>
 
