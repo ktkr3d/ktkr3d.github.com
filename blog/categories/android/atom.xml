@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-04T15:21:27+09:00</updated>
+  <updated>2013-08-04T18:09:15+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -26,6 +26,7 @@
 <li>Fullscreen</li>
 <li>Input Event Receiver</li>
 <li>True Type Font</li>
+<li>OpenSL ES (Native Audio)</li>
 </ul>
 
 
