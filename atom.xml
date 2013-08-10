@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-11T04:19:54+09:00</updated>
+  <updated>2013-08-11T04:23:19+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -32,11 +32,11 @@ BinaryReader のロード処理で、プロセッサ種別に依存してうま�
 以前のバージョンのコンパイラ＋古いバージョンのAndroid デバイスでは動いていたような気がするのに。
 原因は単純なので修正しておきました。</p>
 
-<h4>Android NDK からのPowerManager へのアクセス</h4>
+<h4>Native Activity からのWakeLock の制御</h4>
 
 <p>少し経つと画面が暗くなって、画面が非表示状態になります。
-PowerManager で設定をWAKELOCK にすれば良さそうです。
-Android NDK のNativeActivity の場合はJNI を経由してPowerManager へアクセスするのかな。
+PowerManager のWakeLock を制御すれば良さそうです。
+Android NDK のNative Activity の場合はJNI を経由してPower Manager へアクセスするのかな。
 後で調べておこう。</p>
 ]]></content>
   </entry>
@@ -380,7 +380,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#97;&#117;&#116;&#x6f;&#104;&#x69;&#100;&#x65;&#116;&#111;&#112;&#x62;&#x61;&#114;&#x32;&#64;&#x77;&#x65;&#114;&#x65;&#119;&#x6f;&#108;&#x76;&#101;&#x73;&#46;&#117;&#115;">&#97;&#x75;&#116;&#111;&#104;&#x69;&#100;&#x65;&#x74;&#111;&#x70;&#98;&#97;&#114;&#x32;&#64;&#x77;&#x65;&#x72;&#x65;&#x77;&#x6f;&#x6c;&#x76;&#x65;&#115;&#x2e;&#117;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#97;&#117;&#116;&#111;&#104;&#x69;&#100;&#x65;&#x74;&#111;&#x70;&#x62;&#97;&#x72;&#x32;&#x40;&#x77;&#101;&#114;&#x65;&#x77;&#x6f;&#108;&#118;&#x65;&#x73;&#x2e;&#117;&#115;">&#x61;&#117;&#116;&#x6f;&#104;&#105;&#x64;&#x65;&#116;&#111;&#112;&#x62;&#97;&#x72;&#x32;&#x40;&#x77;&#101;&#x72;&#x65;&#x77;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>

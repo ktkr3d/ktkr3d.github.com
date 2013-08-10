@@ -4,7 +4,7 @@
   <title><![CDATA[Category: irrlicht | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/irrlicht/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-11T04:19:54+09:00</updated>
+  <updated>2013-08-11T04:23:19+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -32,11 +32,11 @@ BinaryReader のロード処理で、プロセッサ種別に依存してうま�
 以前のバージョンのコンパイラ＋古いバージョンのAndroid デバイスでは動いていたような気がするのに。
 原因は単純なので修正しておきました。</p>
 
-<h4>Android NDK からのPowerManager へのアクセス</h4>
+<h4>Native Activity からのWakeLock の制御</h4>
 
 <p>少し経つと画面が暗くなって、画面が非表示状態になります。
-PowerManager で設定をWAKELOCK にすれば良さそうです。
-Android NDK のNativeActivity の場合はJNI を経由してPowerManager へアクセスするのかな。
+PowerManager のWakeLock を制御すれば良さそうです。
+Android NDK のNative Activity の場合はJNI を経由してPower Manager へアクセスするのかな。
 後で調べておこう。</p>
 ]]></content>
   </entry>
