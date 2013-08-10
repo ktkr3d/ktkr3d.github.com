@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-11T04:06:33+09:00</updated>
+  <updated>2013-08-11T04:07:34+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Irrlicht Android Media Player]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player/"/>
+    <updated>2013-08-11T03:47:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player.png"><img src="/images/irrlicht_android_player_tn.png"></a></p>
+
+<p>Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。</p>
+
+<!-- more -->
+
+
+<h4>PMD とVMD のロード処理の修正</h4>
+
+<p>以前のソースコードがHDD の故障とともに消えてしまったので、コードやMakefile を書きなおしていたところ、うまくロードできないPMD、VMD があることに気が付きました。
+BinaryReader のロード処理で、プロセッサ種別に依存してうまく取り込めない(ARM CPU で構造体のアラインメントが異なる)のが原因のようです。<br/>
+以前のバージョンのコンパイラ＋古いバージョンのAndroid デバイスでは動いていたような気がするのに。
+原因は単純なので修正しておきました。</p>
+
+<h4>Android NDK からのPowerManager へのアクセス</h4>
+
+<p>少し経つと画面が暗くなって、画面が非表示状態になります。
+PowerManager で設定をWAKELOCK にすれば良さそうです。
+Android NDK のNativeActivity の場合はJNI を経由してPowerManager へアクセスするのかな。
+後で調べておこう。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Compiling Irrlicht ogl-es branch for Android]]></title>
