@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Android 2013年08月04日 Android のバージョンとAPI レベル http://source.android.com/source/build-numbers.html Android SDK の設定 ダウンロードと展開 http://developer.android. &hellip;">
+  <meta name="description" content="Android 2013年08月04日 Android のバージョンとAPI レベル http://source.android.com/source/build-numbers.html Android SDK の設定 1.ダウンロードと展開
+http://developer.android. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,66 +112,65 @@ $(document).ready( function () {
 
 <h4>Android SDK の設定</h4>
 
-<ul>
-<li><p>ダウンロードと展開</p>
+<p>1.ダウンロードと展開
+<code>http://developer.android.com/sdk/index.html</code>を<code>/tools/android-sdk-linux/</code>に展開する。</p>
 
-<p>  <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a>
-  &ndash;> /tools/android-sdk-linux</p></li>
-<li><p>環境変数PATH の追加</p>
+<p>2.環境変数PATH の追加</p>
 
-<pre><code>  $ export PATH=/tools/android-sdk-linux/tools:$PATH
-  $ export PATH=/tools/android-sdk-linux/platform-tools:$PATH
-</code></pre></li>
-<li><p>アップデート</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/tools/android-sdk-linux/tools:<span class="nv">$PATH</span>
+</span><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/tools/android-sdk-linux/platform-tools:<span class="nv">$PATH</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>  $ android update sdk
-  $ android list target
-</code></pre></li>
-</ul>
+
+<p>3.アップデート</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>android update sdk
+</span><span class='line'><span class="nv">$ </span>android list target
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4>Android NDK の設定</h4>
 
-<ul>
-<li><p>ダウンロードと展開</p>
-
-<p>  <a href="http://developer.android.com/sdk/ndk/index.html">http://developer.android.com/sdk/ndk/index.html</a>
-  &ndash;> /tools/android-ndk-r9</p></li>
-<li><p>環境変数PATH の追加</p>
-
-<pre><code>  $ export PATH=/tools/android-ndk-r9:$PATH
-</code></pre></li>
-</ul>
+<ol>
+<li><p>ダウンロードと展開
+<code>http://developer.android.com/sdk/ndk/index.html</code>を<code>/tools/android-ndk-r9</code>に展開する。</p></li>
+<li><p>環境変数PATH の追加</p></li>
+</ol>
 
 
-<h4>build.xml, local.properties, project.properties の生成</h4>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/tools/android-ndk-r9:<span class="nv">$PATH</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>android update project &mdash;path . &mdash;target android-10</p>
 
-<h4>デバッグ</h4>
+<h4>build.xml, local.properties, project.properties の生成/更新</h4>
 
-<ul>
-<li><p>ログの取得開始</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>android update project --path . --target android-10
+</span></code></pre></td></tr></table></div></figure>
 
-<p>  $ adb logcat -s &lt;Tag名>:*
-  Android 端末でアプリケーションを実行する</p></li>
-<li><p>ログの取得終了</p>
 
-<p>  <code>Ctrl-C</code></p></li>
-</ul>
+<h4>ビルド〜インストール〜ログの取得開始</h4>
 
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ndk-build -j4 <span class="o">&amp;&amp;</span> ant debug <span class="o">&amp;&amp;</span> adb -s &lt;デバイスID&gt; install -r bin/*-debug.apk <span class="o">&amp;&amp;</span> adb logcat -s &lt;Tag名&gt;:*
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>Ctrl-C</code>でログ取得終了</p>
 
 <h4>Tips</h4>
 
 <ul>
-<li><p>フルスクリーン表示にするには</p>
-
-<p>  AndroidManifest.xml でactivity タグのandroid:theme 属性を設定</p></li>
+<li>フルスクリーン表示にするには</li>
 </ul>
 
 
-<figure class='code'><figcaption><span>AndroidManifest.xml </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AndroidManifest.xml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;activity</span>
 </span><span class='line'>    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Black.NoTitleBar.Fullscreen&quot;</span>
@@ -179,18 +179,24 @@ $(document).ready( function () {
 
 <h4>実機のスクリーンキャプチャ</h4>
 
-<p>Wi-Fi 接続してから、Android SDK をインストールしたPC から</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">ADBHOST</span><span class="o">=</span>192.168.0.4
+</span><span class='line'><span class="nv">$ </span>adb devices
+</span><span class='line'>* daemon not running. starting it now on port 5037 *
+</span><span class='line'>* daemon started successfully *
+</span><span class='line'>List of devices attached
+</span><span class='line'>emulator-5554 device
+</span><span class='line'><span class="nv">$ </span>ddms
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>$ export ADBHOST=192.168.0.4
-$ adb devices
-* daemon not running. starting it now on port 5037 *
-* daemon started successfully *
-List of devices attached
-emulator-5554 device
-$ ddms
-</code></pre>
 
-<p>でddms を起動して、「Device」-「Screen Capture…」メニューから取得する。</p>
+<p>「Device」-「Screen Capture…」メニューから取得する。</p>
 
   
     <footer>
