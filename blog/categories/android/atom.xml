@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-13T18:46:44+09:00</updated>
+  <updated>2013-08-13T20:49:05+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -89,10 +89,14 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
 
 <h4>Download Irrlicht ogl-es branch</h4>
 
-<p><code>http://sourceforge.net/p/irrlicht/code/4568/tree/branches/ogl-es/</code></p>
+<p><code>http://sourceforge.net/p/irrlicht/code/</code></p>
 
-<p>Download Snapshot<br>
-extract<br></p>
+<ol>
+<li>Select <code>branches</code>, <code>ogl-es</code>, <code>Download Snapshot</code>.</li>
+<li>Download.</li>
+<li>Extract.</li>
+</ol>
+
 
 <h4>Compile Irrlicht Library</h4>
 

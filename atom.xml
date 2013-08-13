@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-13T18:46:44+09:00</updated>
+  <updated>2013-08-13T20:49:05+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -89,10 +89,14 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
 
 <h4>Download Irrlicht ogl-es branch</h4>
 
-<p><code>http://sourceforge.net/p/irrlicht/code/4568/tree/branches/ogl-es/</code></p>
+<p><code>http://sourceforge.net/p/irrlicht/code/</code></p>
 
-<p>Download Snapshot<br>
-extract<br></p>
+<ol>
+<li>Select <code>branches</code>, <code>ogl-es</code>, <code>Download Snapshot</code>.</li>
+<li>Download.</li>
+<li>Extract.</li>
+</ol>
+
 
 <h4>Compile Irrlicht Library</h4>
 
@@ -404,7 +408,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x61;&#117;&#116;&#x6f;&#x68;&#x69;&#x64;&#x65;&#x74;&#x6f;&#112;&#98;&#97;&#x72;&#50;&#x40;&#x77;&#101;&#114;&#x65;&#119;&#111;&#108;&#x76;&#x65;&#115;&#x2e;&#117;&#x73;">&#x61;&#117;&#116;&#x6f;&#104;&#x69;&#100;&#101;&#116;&#x6f;&#x70;&#x62;&#x61;&#x72;&#50;&#x40;&#119;&#x65;&#114;&#101;&#x77;&#x6f;&#108;&#x76;&#x65;&#115;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x61;&#117;&#x74;&#x6f;&#x68;&#x69;&#100;&#x65;&#x74;&#x6f;&#112;&#x62;&#x61;&#114;&#50;&#x40;&#x77;&#x65;&#114;&#x65;&#x77;&#x6f;&#x6c;&#118;&#x65;&#x73;&#x2e;&#117;&#x73;">&#97;&#117;&#116;&#111;&#104;&#x69;&#x64;&#x65;&#116;&#111;&#112;&#x62;&#x61;&#x72;&#50;&#x40;&#x77;&#x65;&#x72;&#101;&#x77;&#111;&#x6c;&#118;&#x65;&#x73;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
