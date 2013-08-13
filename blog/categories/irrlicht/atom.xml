@@ -4,7 +4,7 @@
   <title><![CDATA[Category: irrlicht | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/irrlicht/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-11T18:29:35+09:00</updated>
+  <updated>2013-08-13T14:51:48+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -80,21 +80,23 @@ extract<br></p>
 
 <h4>Compile Irrlicht Library</h4>
 
-<pre><code>$ cd source/irrlicht/Andorid
+<p><code>bash
+$ cd source/Irrlicht/Andorid
 $ ndk-build -j4
-</code></pre>
+</code></p>
 
-<p>&ndash;> lib/Android/libirrlicht.a</p>
+<p>&ndash;> <code>lib/Android/libirrlicht.a</code></p>
 
 <h4>Build example</h4>
 
-<pre><code>$ cd examples/17.HelloWorld_Mobile
+<p><code>bash
+$ cd examples/17.HelloWorld_Mobile
 $ android update project --path . --target android-16
 $ ndk-build -j4
 $ ant debug
-</code></pre>
+</code></p>
 
-<p>&ndash;> examples/17.HellowWorld_Mobile/HelloWorldMobile-debug.apk</p>
+<p>&ndash;> <code>examples/17.HellowWorld_Mobile/HelloWorldMobile-debug.apk</code></p>
 
 <h4>TrueType Font</h4>
 
