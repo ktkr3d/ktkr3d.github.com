@@ -133,6 +133,22 @@ BinaryReader のロード処理で、プロセッサ種別に依存してうま�
 PowerManager のWakeLock を制御すれば良さそうです。
 Android NDK のNative Activity の場合はJNI を経由してPower Manager へアクセスするのかな。
 後で調べておこう。</p>
+
+<h4>画面インタフェース</h4>
+
+<p><a href="/images/irrlicht_android_player_tab.png"><img src="/images/irrlicht_android_player_tab_tn.png"></a></p>
+
+<ul>
+<li><strong>パネル表示切替ボタン「⇅」</strong><br/>
+画面下部の設定用のインタフェースの表示を切り替える。曲目リスト、モデルリスト、環境設定のタブがある。</li>
+<li><strong>ミュート切替ボタン「♪」</strong><br/>
+音声の出力状態を切り替える。OpenSL ES の(*uriPlayerVolume)&ndash;>SetMute() をコールしている。</li>
+<li><strong>再生/停止切替ボタン「▶」</strong><br/>
+モーションと音声の再生/停止を切り替える。アニメーションスピードの切り替えと(*uriPlayerPlay)&ndash;>SetPlayState() をコールしている。</li>
+<li><strong>終了ボタン「×」</strong><br/>
+アプリケーションを終了する。</li>
+</ul>
+
 </div>
 
 
