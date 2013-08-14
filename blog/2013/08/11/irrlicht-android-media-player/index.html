@@ -142,11 +142,22 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
 <li><strong>ミュート切替ボタン「♪」</strong><br/>
 音声の出力状態を切り替える。OpenSL ES の(*uriPlayerVolume)&ndash;>SetMute() をコールしている。</li>
 <li><strong>再生/停止切替ボタン「▶」</strong><br/>
-モーションと音声の再生/停止を切り替える。アニメーションスピードの切り替えと(*uriPlayerPlay)&ndash;>SetPlayState() をコールしている。</li>
+モーションと音声の再生/停止を切り替える。アニメーションスピードの切り替えと(*uriPlayerPlay)&ndash;>SetPlayState() をコールしている。モデルまたは曲を変更した場合は最初から開始する。</li>
 <li><strong>終了ボタン「×」</strong><br/>
 アプリケーションを終了する。</li>
 <li><strong>カメラ位置スクロールバー</strong><br/>
 カメラの位置を前後させる。</li>
+</ul>
+
+
+<h4>TODO</h4>
+
+<ul>
+<li><code>state-&gt;onAppCmd</code> にコールバック関数を設定しているのにキックされない原因を調べる。</li>
+<li><code>pFileSystem-&gt;createFileList()</code> が失敗する原因を調べる。</li>
+<li>タスク復帰時に描画コンテキストをリストアする。</li>
+<li>GUI のSkin を変更する。</li>
+<li>Android 固有の入力イベントに対応する。</li>
 </ul>
 
 </div>
