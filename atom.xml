@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-14T21:04:33+09:00</updated>
+  <updated>2013-08-14T21:37:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player/"/>
     <updated>2013-08-11T03:47:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player.png"><img src="http://ktkr3d.github.io/images/irrlicht_android_player_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png"><img src="http://ktkr3d.github.io/images/irrlicht_android_player_tab_tn.png"></a></p>
 
 <p>Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。</p>
 
@@ -40,8 +40,6 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
 後で調べておこう。</p>
 
 <h4>画面インタフェース</h4>
-
-<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png"><img src="http://ktkr3d.github.io/images/irrlicht_android_player_tab_tn.png"></a></p>
 
 <ul>
 <li><strong>パネル表示切替ボタン「⇅」</strong><br/>
@@ -410,7 +408,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#97;&#117;&#116;&#111;&#104;&#x69;&#x64;&#x65;&#116;&#x6f;&#x70;&#x62;&#x61;&#114;&#50;&#x40;&#119;&#x65;&#x72;&#101;&#x77;&#111;&#108;&#x76;&#101;&#x73;&#x2e;&#117;&#115;">&#97;&#x75;&#116;&#x6f;&#x68;&#105;&#x64;&#101;&#116;&#111;&#x70;&#x62;&#x61;&#114;&#50;&#x40;&#119;&#x65;&#114;&#101;&#119;&#111;&#x6c;&#118;&#101;&#x73;&#46;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#97;&#117;&#x74;&#111;&#x68;&#x69;&#100;&#101;&#116;&#x6f;&#x70;&#x62;&#x61;&#114;&#50;&#x40;&#119;&#x65;&#114;&#x65;&#x77;&#x6f;&#108;&#118;&#101;&#x73;&#x2e;&#117;&#115;">&#x61;&#117;&#116;&#x6f;&#x68;&#x69;&#100;&#x65;&#x74;&#111;&#x70;&#98;&#x61;&#114;&#50;&#64;&#119;&#x65;&#114;&#x65;&#x77;&#x6f;&#x6c;&#118;&#101;&#x73;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>

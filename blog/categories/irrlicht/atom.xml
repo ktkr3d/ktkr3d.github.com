@@ -4,7 +4,7 @@
   <title><![CDATA[Category: irrlicht | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/irrlicht/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-14T21:04:33+09:00</updated>
+  <updated>2013-08-14T21:37:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player/"/>
     <updated>2013-08-11T03:47:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player.png"><img src="/images/irrlicht_android_player_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png"><img src="/images/irrlicht_android_player_tab_tn.png"></a></p>
 
 <p>Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。</p>
 
@@ -40,8 +40,6 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
 後で調べておこう。</p>
 
 <h4>画面インタフェース</h4>
-
-<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png"><img src="/images/irrlicht_android_player_tab_tn.png"></a></p>
 
 <ul>
 <li><strong>パネル表示切替ボタン「⇅」</strong><br/>
