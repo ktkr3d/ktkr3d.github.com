@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-13T20:49:05+09:00</updated>
+  <updated>2013-08-14T21:04:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -52,6 +52,8 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
 モーションと音声の再生/停止を切り替える。アニメーションスピードの切り替えと(*uriPlayerPlay)&ndash;>SetPlayState() をコールしている。</li>
 <li><strong>終了ボタン「×」</strong><br/>
 アプリケーションを終了する。</li>
+<li><strong>カメラ位置スクロールバー</strong><br/>
+カメラの位置を前後させる。</li>
 </ul>
 
 ]]></content>
