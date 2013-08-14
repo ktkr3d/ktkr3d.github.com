@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-08-14T22:57:21+09:00</updated>
+  <updated>2013-08-14T23:32:25+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -80,7 +80,7 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
 <li>Native C/C++ Android Application (Native Activity).</li>
 <li>Fullscreen (1080x1920)</li>
 <li>Input Event Receiver</li>
-<li>True Type Font</li>
+<li>True Type Font (FreeType2)</li>
 <li>OpenSL ES (Native Audio)</li>
 </ul>
 
@@ -419,7 +419,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x61;&#x75;&#116;&#111;&#104;&#x69;&#100;&#101;&#116;&#x6f;&#112;&#98;&#97;&#114;&#50;&#64;&#x77;&#101;&#x72;&#x65;&#119;&#111;&#108;&#118;&#x65;&#x73;&#x2e;&#x75;&#x73;">&#97;&#117;&#116;&#111;&#104;&#105;&#100;&#x65;&#116;&#111;&#x70;&#98;&#x61;&#114;&#50;&#x40;&#119;&#101;&#114;&#101;&#x77;&#111;&#x6c;&#x76;&#101;&#x73;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#x61;&#117;&#116;&#x6f;&#104;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#98;&#97;&#x72;&#50;&#64;&#x77;&#x65;&#114;&#x65;&#x77;&#x6f;&#x6c;&#118;&#x65;&#115;&#46;&#x75;&#115;">&#x61;&#x75;&#x74;&#x6f;&#x68;&#105;&#100;&#x65;&#116;&#111;&#x70;&#x62;&#x61;&#x72;&#x32;&#x40;&#x77;&#x65;&#114;&#x65;&#x77;&#x6f;&#108;&#118;&#101;&#115;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
