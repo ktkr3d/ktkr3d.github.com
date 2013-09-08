@@ -122,13 +122,17 @@ $(document).ready( function () {
 <pre><code>  $ LANG=C xdg-user-dirs-gtk-update
 </code></pre></li>
 <li><p>GNOME3 テーマ「Uncomplicated」を適用<br/>
-<a href="http://gnome-look.org/content/show.php/?content=157986">http://gnome-look.org/content/show.php/?content=157986</a></p>
-
-<pre><code>  $ sudo apt-get install gtk3-engines-unico gtk2-engines-murrine gtk2-engines-pixbuf
-  $ cp -r uncomplicated/ ~/.local/share/themes/
-  $ cp -r uncomplicated/ ~/.themes/
-</code></pre></li>
+<a href="http://gnome-look.org/content/show.php/?content=157986">http://gnome-look.org/content/show.php/?content=157986</a></p></li>
 </ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:noobslab/themes
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install uncomplicated
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4>リポジトリ</h4>
