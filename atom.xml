@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-10-06T21:02:51+09:00</updated>
+  <updated>2013-10-08T23:36:25+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[yad]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/10/08/yad/"/>
+    <updated>2013-10-08T23:26:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/10/08/yad</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_yad.png"><img src="http://ktkr3d.github.io/images/zenity_yad_tn.png"></a></p>
+
+<p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fedora 20]]></title>
@@ -466,7 +477,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#97;&#x75;&#x74;&#x6f;&#104;&#x69;&#100;&#x65;&#116;&#x6f;&#x70;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#101;&#114;&#x65;&#x77;&#111;&#x6c;&#118;&#101;&#x73;&#x2e;&#x75;&#115;">&#97;&#117;&#x74;&#111;&#x68;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#98;&#x61;&#114;&#50;&#x40;&#x77;&#x65;&#114;&#x65;&#x77;&#x6f;&#108;&#x76;&#101;&#115;&#x2e;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x61;&#x75;&#116;&#111;&#104;&#105;&#100;&#101;&#116;&#111;&#x70;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#x65;&#114;&#x65;&#x77;&#111;&#x6c;&#118;&#101;&#115;&#46;&#x75;&#115;">&#97;&#x75;&#x74;&#111;&#104;&#x69;&#100;&#101;&#116;&#111;&#x70;&#98;&#x61;&#114;&#50;&#x40;&#x77;&#x65;&#114;&#101;&#119;&#x6f;&#108;&#118;&#x65;&#115;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>

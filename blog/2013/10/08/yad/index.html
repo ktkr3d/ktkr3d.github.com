@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>GNOME Shell 3.9.4 - ktkr3d</title>
+  <title>yad - ktkr3d</title>
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://launchpad.net/~ricotz/+archive/testing GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。 GNOME Shell 3.9.4 のインストール $ sudo add-apt- &hellip;">
+  <meta name="description" content=" GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4">
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/2013/10/08/yad">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
@@ -90,7 +91,7 @@ $(document).ready( function () {
   
   <header>
     
-      <h1 class="entry-title">GNOME Shell 3.9.4</h1>
+      <h1 class="entry-title">Yad</h1>
     
     
       <p class="meta">
@@ -106,80 +107,16 @@ $(document).ready( function () {
   
 
 
-<time datetime="2013-07-13T09:36:00+09:00" pubdate data-updated="true">2013年07月13日</time>
+<time datetime="2013-10-08T23:26:00+09:00" pubdate data-updated="true">2013年10月08日</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="/images/gnome_shell_3_9_4.png"><img src="/images/gnome_shell_3_9_4_tn.png"></a></p>
+<div class="entry-content"><p><a href="/images/zenity_yad.png"><img src="/images/zenity_yad_tn.png"></a></p>
 
-<p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
-
-<p>GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。</p>
-
-<!-- more -->
-
-
-<p></p>
-
-<h4>GNOME Shell 3.9.4 のインストール</h4>
-
-<pre><code>$ sudo add-apt-repository ppa:ricotz/testing
-$ sudo apt-get update
-$ sudo apt-get install gnome-shell
-</code></pre>
-
-<h4>ドックの設定</h4>
-
-<p>前回のAWN に続き、このバージョンではCairo-Dock も動かなくなりました。Dash to Dock GNOME Shell 拡張も正常に動かないようです。Docky を使うことにしました。</p>
-
-<pre><code>$ sudo apt-get install docky
-</code></pre>
-
-<h4>トップバーの非表示</h4>
-
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x61;&#x75;&#116;&#111;&#104;&#105;&#100;&#101;&#116;&#111;&#x70;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#x65;&#114;&#x65;&#x77;&#111;&#x6c;&#118;&#101;&#115;&#46;&#x75;&#115;">&#97;&#x75;&#x74;&#111;&#104;&#x69;&#100;&#101;&#116;&#111;&#x70;&#98;&#x61;&#114;&#50;&#x40;&#x77;&#x65;&#114;&#101;&#119;&#x6f;&#108;&#118;&#x65;&#115;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
-shell-version は3.9.4 を指定しました。</p>
-
-<figure class='code'><figcaption><span>metadata.json </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto hide the top panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;extension-id&quot;</span><span class="o">:</span> <span class="s2">&quot;auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;gettext-domain&quot;</span><span class="o">:</span> <span class="s2">&quot;gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto Hide Top Panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;settings-schema&quot;</span><span class="o">:</span> <span class="s2">&quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;shell-version&quot;</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>  <span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.9.4&quot;</span>
-</span><span class='line'>  <span class="p">],</span>
-</span><span class='line'>  <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;uuid&quot;</span><span class="o">:</span> <span class="s2">&quot;autohidetopbar2@werewolves.us&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+<p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。</p>
 </div>
 
 
@@ -202,12 +139,12 @@ shell-version は3.9.4 を指定しました。</p>
   
 
 
-<time datetime="2013-07-13T09:36:00+09:00" pubdate data-updated="true">2013年07月13日</time>
+<time datetime="2013-10-08T23:26:00+09:00" pubdate data-updated="true">2013年10月08日</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/gnome/'>gnome</a>
+    <a class='category' href='/blog/categories/gtk-plus/'>GTK+</a>
   
 </span>
 
@@ -216,7 +153,7 @@ shell-version は3.9.4 を指定しました。</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2013/10/08/yad/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2013/10/08/yad/" >Tweet</a>
   
   
   
@@ -225,10 +162,8 @@ shell-version は3.9.4 を指定しました。</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/" title="Previous Post: Ubuntu 13.10 Daily Build + Mir">&laquo; Ubuntu 13.10 Daily Build + Mir</a>
+        <a class="basic-alignment left" href="/blog/2013/10/05/fedora-20/" title="Previous Post: Fedora 20">&laquo; Fedora 20</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/07/14/docky-plus-cardapio/" title="Next Post: Docky + Cardapio">Docky + Cardapio &raquo;</a>
       
     </p>
   </footer>
@@ -305,8 +240,8 @@ shell-version は3.9.4 を指定しました。</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/';
-        var disqus_url = 'http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/';
+        var disqus_identifier = 'http://ktkr3d.github.io/blog/2013/10/08/yad/';
+        var disqus_url = 'http://ktkr3d.github.io/blog/2013/10/08/yad/';
         var disqus_script = 'embed.js';
       
     (function () {

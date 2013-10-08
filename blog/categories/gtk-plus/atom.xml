@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: GTK+ | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/gtk-plus/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-10-08T23:36:25+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[yad]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/10/08/yad/"/>
+    <updated>2013-10-08T23:26:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/10/08/yad</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_yad.png"><img src="/images/zenity_yad_tn.png"></a></p>
+
+<p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。</p>
+]]></content>
+  </entry>
+  
+</feed>
