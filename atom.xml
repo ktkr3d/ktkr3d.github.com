@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-10-08T23:36:25+09:00</updated>
+  <updated>2013-10-12T21:09:57+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -21,6 +21,115 @@
     <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_yad.png"><img src="http://ktkr3d.github.io/images/zenity_yad_tn.png"></a></p>
 
 <p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。</p>
+
+<!-- more -->
+
+
+<h4>yad インストール</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install yad
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>yad スクリプト</h4>
+
+<figure class='code'><figcaption><span>octopress_helper_yad</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">OCTOPRESS_DIR</span><span class="o">=</span>/mnt/common/github/octopress
+</span><span class='line'>
+</span><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/bin:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
+</span><span class='line'><span class="nb">source</span> <span class="nv">$HOME</span>/.rvm/scripts/rvm
+</span><span class='line'><span class="nb">cd</span> <span class="nv">$OCTOPRESS_DIR</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span> :
+</span><span class='line'><span class="k">do</span>
+</span><span class='line'><span class="k">  </span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>yad --height<span class="o">=</span>300 --width<span class="o">=</span>300 --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Preview&quot;</span> <span class="nb">false </span>5 <span class="s2">&quot;Open Posts Folder&quot;</span> <span class="nb">false </span>6 <span class="s2">&quot;Push Source&quot;</span><span class="k">)</span>;
+</span><span class='line'>  <span class="k">case</span> <span class="nv">$pick</span> in
+</span><span class='line'>      0<span class="o">)</span>
+</span><span class='line'>          <span class="nv">post_title</span><span class="o">=</span><span class="k">$(</span>yad --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="k">${#</span><span class="nv">post_title</span><span class="k">}</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">              </span>rake new_post<span class="o">[</span><span class="s2">&quot;$post_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          <span class="k">fi</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      1<span class="o">)</span>
+</span><span class='line'>          <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>yad --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="k">${#</span><span class="nv">page_title</span><span class="k">}</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">              </span>rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          <span class="k">fi</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      2<span class="o">)</span>
+</span><span class='line'>          rake generate &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      3<span class="o">)</span>
+</span><span class='line'>          rake deploy &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      4<span class="o">)</span>
+</span><span class='line'>          rake preview &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;Preview&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      5<span class="o">)</span>
+</span><span class='line'>          nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;
+</span><span class='line'>          ;;
+</span><span class='line'>      6<span class="o">)</span>
+</span><span class='line'>          git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#39;update&#39;</span> <span class="o">&amp;&amp;</span> git push -u origin <span class="nb">source</span> &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;Push Source&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>          ;;
+</span><span class='line'>      *<span class="o">)</span>
+</span><span class='line'>          <span class="nb">break</span>
+</span><span class='line'>          ;;
+</span><span class='line'>  <span class="k">esac</span>
+</span><span class='line'><span class="k">done</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 ]]></content>
   </entry>
   
@@ -477,7 +586,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x61;&#x75;&#116;&#111;&#104;&#105;&#100;&#101;&#116;&#111;&#x70;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#x65;&#114;&#x65;&#x77;&#111;&#x6c;&#118;&#101;&#115;&#46;&#x75;&#115;">&#97;&#x75;&#x74;&#111;&#104;&#x69;&#100;&#101;&#116;&#111;&#x70;&#98;&#x61;&#114;&#50;&#x40;&#x77;&#x65;&#114;&#101;&#119;&#x6f;&#108;&#118;&#x65;&#115;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#97;&#117;&#116;&#111;&#x68;&#105;&#100;&#x65;&#x74;&#111;&#x70;&#x62;&#x61;&#x72;&#x32;&#x40;&#x77;&#101;&#x72;&#101;&#119;&#111;&#108;&#x76;&#x65;&#x73;&#x2e;&#117;&#115;">&#x61;&#117;&#116;&#x6f;&#x68;&#105;&#x64;&#x65;&#116;&#111;&#112;&#98;&#x61;&#x72;&#x32;&#x40;&#119;&#x65;&#114;&#101;&#119;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GTK+ | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/gtk-plus/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-10-08T23:36:25+09:00</updated>
+  <updated>2013-10-12T21:09:57+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -21,6 +21,70 @@
     <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_yad.png"><img src="/images/zenity_yad_tn.png"></a></p>
 
 <p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。</p>
+
+<!-- more -->
+
+
+<h4>yad インストール</h4>
+
+<p><code>bash
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+sudo apt-get update
+sudo apt-get install yad
+</code></p>
+
+<h4>yad スクリプト</h4>
+
+<p>``` bash octopress_helper_yad</p>
+
+<h1>!/bin/bash</h1>
+
+<p>OCTOPRESS_DIR=/mnt/common/github/octopress</p>
+
+<p>PATH=$PATH:$HOME/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm
+cd $OCTOPRESS_DIR</p>
+
+<p>while :
+do</p>
+
+<pre><code>pick=$(yad --height=300 --width=300 --list --title "OctoPress Helper" --text "Select Action." --radiolist --column Pick --column dummy --column Action --hide-column 2 true 0 "New Post" false 1 "New Page" false 2 "Generate" false 3 "Deploy" false 4 "Preview" false 5 "Open Posts Folder" false 6 "Push Source");
+case $pick in
+    0)
+        post_title=$(yad --entry --title="New Post" --text="Enter Title." )
+        if [ ${#post_title} &gt; 0 ] ; then
+            rake new_post["$post_title"] &gt;(yad --progress --title="New Post" --pulsate --auto-close --auto-kill)
+        fi
+        ;;
+    1) 
+        page_title=$(yad --entry --title="New Page" --text="Enter Title." )
+        if [ ${#page_title} &gt; 0 ] ; then
+            rake new_page["$page_title"] &gt;(yad --progress --title="New Page" --pulsate --auto-close --auto-kill)
+        fi
+        ;;
+    2)
+        rake generate &gt;(yad --progress --title="Generate" --pulsate --auto-close --auto-kill)
+        ;;
+    3)
+        rake deploy &gt;(yad --progress --title="Deploy" --pulsate --auto-close --auto-kill)
+        ;;
+    4)
+        rake preview &gt;(yad --progress --title="Preview" --pulsate --auto-close --auto-kill)
+        ;;
+    5)
+        nautilus $OCTOPRESS_DIR/source/_posts/ &amp;
+        ;;
+    6)
+        git add . &amp;&amp; git commit -m 'update' &amp;&amp; git push -u origin source &gt;(yad --progress --title="Push Source" --pulsate --auto-close --auto-kill)
+        ;;
+    *)
+        break
+        ;;
+esac
+</code></pre>
+
+<p>done
+```</p>
 ]]></content>
   </entry>
   
