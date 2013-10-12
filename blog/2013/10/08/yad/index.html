@@ -115,7 +115,8 @@ $(document).ready( function () {
 
 <div class="entry-content"><p><a href="/images/zenity_yad.png"><img src="/images/zenity_yad_tn.png"></a></p>
 
-<p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。</p>
+<p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。
+ただし、yad の&mdash;progress &mdash;pulsate オプションはzenity と仕様が異なるようなので、リストボックスを表示する部分のみに対してyad を使うことにしました。</p>
 
 <!-- more -->
 
@@ -131,7 +132,7 @@ $(document).ready( function () {
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h4>yad スクリプト</h4>
+<h4>yad &amp; zenity スクリプト</h4>
 
 <figure class='code'><figcaption><span>octopress_helper_yad</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -187,34 +188,34 @@ $(document).ready( function () {
 </span><span class='line'>
 </span><span class='line'><span class="k">while</span> :
 </span><span class='line'><span class="k">do</span>
-</span><span class='line'><span class="k">  </span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>yad --height<span class="o">=</span>300 --width<span class="o">=</span>300 --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Preview&quot;</span> <span class="nb">false </span>5 <span class="s2">&quot;Open Posts Folder&quot;</span> <span class="nb">false </span>6 <span class="s2">&quot;Push Source&quot;</span><span class="k">)</span>;
+</span><span class='line'><span class="k">  </span><span class="nv">pick</span><span class="o">=</span><span class="k">$(</span>yad --height<span class="o">=</span>300 --width<span class="o">=</span>300 --print-column<span class="o">=</span>2 --list --title <span class="s2">&quot;OctoPress Helper&quot;</span> --text <span class="s2">&quot;Select Action.&quot;</span> --radiolist --column Pick --column dummy --column Action --hide-column 2 <span class="nb">true </span>0 <span class="s2">&quot;New Post&quot;</span> <span class="nb">false </span>1 <span class="s2">&quot;New Page&quot;</span> <span class="nb">false </span>2 <span class="s2">&quot;Generate&quot;</span> <span class="nb">false </span>3 <span class="s2">&quot;Deploy&quot;</span> <span class="nb">false </span>4 <span class="s2">&quot;Preview&quot;</span> <span class="nb">false </span>5 <span class="s2">&quot;Open Posts Folder&quot;</span> <span class="nb">false </span>6 <span class="s2">&quot;Push Source&quot;</span><span class="k">)</span>;
 </span><span class='line'>  <span class="k">case</span> <span class="nv">$pick</span> in
-</span><span class='line'>      0<span class="o">)</span>
-</span><span class='line'>          <span class="nv">post_title</span><span class="o">=</span><span class="k">$(</span>yad --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>      <span class="s2">&quot;0|&quot;</span><span class="o">)</span>
+</span><span class='line'>          <span class="nv">post_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
 </span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="k">${#</span><span class="nv">post_title</span><span class="k">}</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
 </span><span class='line'><span class="k">              </span>rake new_post<span class="o">[</span><span class="s2">&quot;$post_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;New Post&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
 </span><span class='line'>          <span class="k">fi</span>
 </span><span class='line'>          ;;
-</span><span class='line'>      1<span class="o">)</span>
-</span><span class='line'>          <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>yad --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
+</span><span class='line'>      <span class="s2">&quot;1|&quot;</span><span class="o">)</span>
+</span><span class='line'>          <span class="nv">page_title</span><span class="o">=</span><span class="k">$(</span>zenity --entry --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --text<span class="o">=</span><span class="s2">&quot;Enter Title.&quot;</span> <span class="k">)</span>
 </span><span class='line'>          <span class="k">if</span> <span class="o">[</span> <span class="k">${#</span><span class="nv">page_title</span><span class="k">}</span> &gt; 0 <span class="o">]</span> ; <span class="k">then</span>
 </span><span class='line'><span class="k">              </span>rake new_page<span class="o">[</span><span class="s2">&quot;$page_title&quot;</span><span class="o">]</span> &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;New Page&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
 </span><span class='line'>          <span class="k">fi</span>
 </span><span class='line'>          ;;
-</span><span class='line'>      2<span class="o">)</span>
-</span><span class='line'>          rake generate &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>      <span class="s2">&quot;2|&quot;</span><span class="o">)</span>
+</span><span class='line'>          rake generate &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Generate&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
 </span><span class='line'>          ;;
-</span><span class='line'>      3<span class="o">)</span>
-</span><span class='line'>          rake deploy &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>      <span class="s2">&quot;3|&quot;</span><span class="o">)</span>
+</span><span class='line'>          rake deploy &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Deploy&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
 </span><span class='line'>          ;;
-</span><span class='line'>      4<span class="o">)</span>
-</span><span class='line'>          rake preview &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;Preview&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>      <span class="s2">&quot;4|&quot;</span><span class="o">)</span>
+</span><span class='line'>          rake preview &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Preview&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
 </span><span class='line'>          ;;
-</span><span class='line'>      5<span class="o">)</span>
+</span><span class='line'>      <span class="s2">&quot;5|&quot;</span><span class="o">)</span>
 </span><span class='line'>          nautilus <span class="nv">$OCTOPRESS_DIR</span>/source/_posts/ &amp;
 </span><span class='line'>          ;;
-</span><span class='line'>      6<span class="o">)</span>
-</span><span class='line'>          git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#39;update&#39;</span> <span class="o">&amp;&amp;</span> git push -u origin <span class="nb">source</span> &gt;<span class="o">(</span>yad --progress --title<span class="o">=</span><span class="s2">&quot;Push Source&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
+</span><span class='line'>      <span class="s2">&quot;6|&quot;</span><span class="o">)</span>
+</span><span class='line'>          git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s1">&#39;update&#39;</span> <span class="o">&amp;&amp;</span> git push -u origin <span class="nb">source</span> &gt;<span class="o">(</span>zenity --progress --title<span class="o">=</span><span class="s2">&quot;Push Source&quot;</span> --pulsate --auto-close --auto-kill<span class="o">)</span>
 </span><span class='line'>          ;;
 </span><span class='line'>      *<span class="o">)</span>
 </span><span class='line'>          <span class="nb">break</span>
