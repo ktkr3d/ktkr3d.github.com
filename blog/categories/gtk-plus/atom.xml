@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GTK+ | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/gtk-plus/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-10-12T21:21:02+09:00</updated>
+  <updated>2013-10-19T18:41:25+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -20,8 +20,8 @@
     <id>http://ktkr3d.github.io/blog/2013/10/08/yad</id>
     <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_yad.png"><img src="/images/zenity_yad_tn.png"></a></p>
 
-<p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の&mdash;list オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。
-ただし、yad の&mdash;progress &mdash;pulsate オプションはzenity と仕様が異なるようなので、リストボックスを表示する部分のみに対してyad を使うことにしました。</p>
+<p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の<code>--list</code> オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。
+ただし、yad の<code>--progress --pulsate</code> オプションはzenity と仕様が異なるようなので、リストボックスを表示する部分のみに対してyad を使うことにしました。</p>
 
 <!-- more -->
 
