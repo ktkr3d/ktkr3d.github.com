@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Conky | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/conky/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-02T12:17:58+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Conky Google Now]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/11/02/conky-google-now/"/>
+    <updated>2013-11-02T12:05:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/11/02/conky-google-now</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/conky_google_now.png"><img src="/images/conky_google_now_tn.png"></a></p>
+
+<p><a href="http://satya164.deviantart.com/art/Conky-Google-Now-366545753">http://satya164.deviantart.com/art/Conky-Google-Now-366545753</a></p>
+
+<p>ConkyForecast のスクリプトがうまく動かなくなったので、Conky Google Now に乗り換えてみました。
+フォントをOpen Sans Light に統一しようかと思いましたが、行間が空いてしまったので止めておきました。</p>
+
+<!-- more -->
+
+
+<p>``` text .conkyrc</p>
+
+<h1>Conky Google Now style</h1>
+
+<h1>Conky settings</h1>
+
+<p>background no
+update_interval 1
+double_buffer yes
+no_buffers yes</p>
+
+<h1>Window specifications</h1>
+
+<p>own_window yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_title
+own_window_colour 2D2D2D</p>
+
+<p>minimum_size 240</p>
+
+<h1>Alignment</h1>
+
+<p>alignment tr
+gap_x 10
+gap_y 10</p>
+
+<p>border_inner_margin 15
+border_outer_margin 0</p>
+
+<h1>Graphics settings</h1>
+
+<p>draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no</p>
+
+<h1>Text settings</h1>
+
+<p>use_xft yes
+xftalpha 0
+xftfont Open Sans Light:size=10</p>
+
+<p>override_utf8_locale yes</p>
+
+<p>imlib_cache_size 0</p>
+
+<h1>Color scheme</h1>
+
+<p>default_color DCDCDC</p>
+
+<p>color1 0099CC
+color2 9933CC
+color3 669900
+color4 FF8800
+color5 CC0000
+color6 AAAAAA
+color7 484848</p>
+
+<p>TEXT
+${font Open Sans Light:size=16}${time %G}/${time %m}/${time %d} (${font TakaoPGothic:size=16}${time %a}${voffset -4}${font Open Sans Light:size=16}) ${time %H}:${time %M}:${time %S}
+${voffset -15}${hr}${color}${voffset -5}</p>
+
+<h1>WEATHER</h1>
+
+<p>${execi 300 curl -s &ldquo;<a href="http://weather.yahooapis.com/forecastrss?w=1118370&amp;u=c">http://weather.yahooapis.com/forecastrss?w=1118370&amp;u=c</a>&rdquo; -o ~/.cache/weather.xml}${font Open Sans Light:size=15}${execi 300 grep &ldquo;yweather:location&rdquo; ~/.cache/weather.xml | grep -o &ldquo;city=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo;}, ${execi 300 grep "yweather:location&rdquo; ~/.cache/weather.xml | grep -o &ldquo;country=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo;}${font}
+${voffset -20}${font Open Sans Light:size=60}${alignr}${execi 300 grep "yweather:condition&rdquo; ~/.cache/weather.xml | grep -o &ldquo;temp=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo;}°${font}${voffset -15}
+${execi 300 cp -f ~/.conky-google-now/$(grep "yweather:condition&rdquo; ~/.cache/weather.xml | grep -o &ldquo;code=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo;).png ~/.cache/weather.png}${image ~/.cache/weather.png -p 0,80 -s 60x60}
+${execi 300 grep "yweather:condition&rdquo; ~/.cache/weather.xml | grep -o &ldquo;text=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | tr &lsquo;[a-z]&rsquo; &lsquo;[A-Z]&rsquo;}
+${image ~/.conky-google-now/wind.png -p 0,163 -s 15x15}${goto 35}${execi 300 grep "yweather:wind&rdquo; ~/.cache/weather.xml | grep -o &ldquo;speed=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo;}${execi 300 grep "yweather:units&rdquo; ~/.cache/weather.xml | grep -o &ldquo;speed=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo;}
+${image ~/.conky-google-now/humidity.png -p 0,183 -s 15x15}${goto 35}${execi 300 grep "yweather:atmosphere&rdquo; ~/.cache/weather.xml | grep -o &ldquo;humidity=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo;}%${voffset 10}
+${goto 18}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;day=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==1&rsquo; | tr &lsquo;[a-z]&rsquo; &lsquo;[A-Z]&rsquo;}${goto 73}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;day=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==2&rsquo; | tr &lsquo;[a-z]&rsquo; &lsquo;[A-Z]&rsquo;}${goto 128}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;day=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==3&rsquo; | tr &lsquo;[a-z]&rsquo; &lsquo;[A-Z]&rsquo;}${goto 183}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;day=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==4&rsquo; | tr &lsquo;[a-z]&rsquo; &lsquo;[A-Z]&rsquo;}${goto 238}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;day=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==5&rsquo; | tr &lsquo;[a-z]&rsquo; &lsquo;[A-Z]&rsquo;}
+${execi 300 cp -f ~/.conky-google-now/$(grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;code=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==1&rsquo;).png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 0,235 -s 30x30}${execi 300 cp -f ~/.conky-google-now/$(grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;code=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==2&rsquo;).png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 55,235 -s 30x30}${execi 300 cp -f ~/.conky-google-now/$(grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;code=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==3&rsquo;).png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 110,235 -s 30x30}${execi 300 cp -f ~/.conky-google-now/$(grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;code=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==4&rsquo;).png ~/.cache/weather-4.png}${image ~/.cache/weather-4.png -p 165,235 -s 30x30}${execi 300 cp -f ~/.conky-google-now/$(grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;code=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==5&rsquo;).png ~/.cache/weather-5.png}${image ~/.cache/weather-5.png -p 220,235 -s 30x30}${voffset 20}
+${color ffaaaa}${goto 20}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;high=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==1&rsquo;}°${goto 75}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;high=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==2&rsquo;}°${goto 130}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;high=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==3&rsquo;}°${goto 185}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;high=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==4&rsquo;}°${goto 240}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;high=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==5&rsquo;}°
+${color aaaaff}${goto 20}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;low=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==1&rsquo;}°${goto 75}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;low=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==2&rsquo;}°${goto 130}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;low=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==3&rsquo;}°${goto 185}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;low=\&rdquo;[^\&ldquo;]<em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]</em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]<em>&ldquo; | awk &lsquo;NR==4&rsquo;}°${goto 240}${execi 300 grep "yweather:forecast&rdquo; ~/.cache/weather.xml | grep -o &ldquo;low=\&rdquo;[^\&ldquo;]</em>\&rdquo;&ldquo; | grep -o &rdquo;\&ldquo;[^\&rdquo;]<em>\&ldquo;&rdquo; | grep -o &ldquo;[^\&rdquo;]</em>&ldquo; | awk &lsquo;NR==5&rsquo;}°</p>
+
+<h1><strong><em> SYSTEM </em></strong></h1>
+
+<p>${color AAAAAA}${voffset 16}${font DejaVu Sans:size=12}SYSTEM${font} ${hr}</p>
+
+<h1>${alignc 17}${font Arial Black:size=12}${nodename}${font}</h1>
+
+<p>${font StyleBats:size=10}i${font DejaVu Sans:size=10}   Distro:  ${alignr}${exec lsb_release -d | sed -e &rsquo;s/.*: //&lsquo; | awk &rsquo;{print $2,$3}&lsquo;}
+${font StyleBats:size=10}i${font DejaVu Sans:size=10}   Kernel:  ${alignr}${kernel}
+${font StyleBats:size=10}i${font DejaVu Sans:size=10}   Arch:  ${alignr}${machine}
+${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,60}
+${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU2: ${cpu cpu2}% ${alignr}${cpubar cpu2 8,60}
+${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU3: ${cpu cpu3}% ${alignr}${cpubar cpu3 8,60}
+${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU4: ${cpu cpu4}% ${alignr}${cpubar cpu4 8,60}
+${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU5: ${cpu cpu5}% ${alignr}${cpubar cpu5 8,60}
+${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU6: ${cpu cpu6}% ${alignr}${cpubar cpu6 8,60}
+${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU7: ${cpu cpu7}% ${alignr}${cpubar cpu7 8,60}
+${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU8: ${cpu cpu8}% ${alignr}${cpubar cpu8 8,60}
+${font StyleBats:size=10}g${font DejaVu Sans:size=10}   RAM: $memperc% ${alignr}${membar 8,60}
+${font StyleBats:size=10}j${font DejaVu Sans:size=10}   Swap: $swapperc% ${alignr}${swapbar 8,60}</p>
+
+<h1>${font Webdings:size=10}~${font DejaVu Sans:size=10}  Battery: ${battery_percent BAT0}% ${alignr}${battery_bar 8,60 BAT0}</h1>
+
+<p>${font StyleBats:size=10}q${font DejaVu Sans:size=10}   Uptime: ${alignr}${uptime}</p>
+
+<h1><strong><em> FILESYSTEM </em></strong></h1>
+
+<p>${voffset 16}${font DejaVu Sans:size=12}FILESYSTEM${font} ${hr}
+${font PizzaDude Bullets:size=10}m${font DejaVu Sans:size=10}   /:${alignr}${fs_type /}</p>
+
+<pre><code>    ${fs_used /} / ${fs_size /} ${alignr}${fs_bar 8,60 /}
+</code></pre>
+
+<p>${font PizzaDude Bullets:size=10}m${font DejaVu Sans:size=10}   /mnt/common:${alignr}${fs_type /mnt/common}</p>
+
+<pre><code>    ${fs_used /mnt/common} / ${fs_size /mnt/common} ${alignr}${fs_bar 8,60 /mnt/common}
+</code></pre>
+
+<h1><strong><em> NETWORK </em></strong></h1>
+
+<p>${voffset 16}${font DejaVu Sans:size=12}NETWORK${font} ${hr}
+${font PizzaDude Bullets:size=10}O${font DejaVu Sans:size=10}   Up: ${upspeed eth0} ${alignr}${upspeedgraph eth0 8,60 000000 000000}
+${font PizzaDude Bullets:size=10}U${font DejaVu Sans:size=10}   Down: ${downspeed eth0} ${alignr}${downspeedgraph eth0 8,60 000000 000000}
+${font PizzaDude Bullets:size=10}N${font DejaVu Sans:size=10}   Upload: ${alignr}${totalup eth0}
+${font PizzaDude Bullets:size=10}T${font DejaVu Sans:size=10}   Download: ${alignr}${totaldown eth0}</p>
+
+<h1>${font PizzaDude Bullets:size=10}Z${font DejaVu Sans:size=10}   Signal: ${wireless_link_qual eth0}% ${alignr}${wireless_link_bar 8,60 eth0}</h1>
+
+<p>${font PizzaDude Bullets:size=10}a${font DejaVu Sans:size=10}   Local IP: ${alignr}${addr eth0}
+${font PizzaDude Bullets:size=10}b${font DejaVu Sans:size=10}   Public IP: ${alignr}${execi 1800 ~/.conky/scripts/ip.sh}</p>
+
+<h1><strong><em> PROCESS </em></strong></h1>
+
+<p>${voffset 16}${font DejaVu Sans:size=12}PROCESSES${font DejaVu Sans:size=10} ${hr}
+NAME $alignr CPU%  MEM%
+${top name 1} $alignr ${top cpu 1}   ${top mem 1}
+${top name 2} $alignr ${top cpu 2}   ${top mem 2}
+${top name 3} $alignr ${top cpu 3}   ${top mem 3}
+${top name 4} $alignr ${top cpu 4}   ${top mem 4}
+${top name 5} $alignr ${top cpu 5}   ${top mem 5}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>
