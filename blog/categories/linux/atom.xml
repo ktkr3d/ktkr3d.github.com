@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-04T01:44:28+09:00</updated>
+  <updated>2013-11-04T21:46:53+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[minetest]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/11/04/minetest/"/>
+    <updated>2013-11-04T21:28:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/11/04/minetest</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest.png"><img src="/images/minetest_tn.png"></a></p>
+
+<p>minecraft のクローンmintest がUbuntu の標準リポジトリに登録されていたので、遊んでみました。
+minecraft はIrrlicht エンジンを利用して実装されています。</p>
+
+<!-- more -->
+
+
+<p>初期表示時に文字が表示されていなかったので、適当に操作します。</p>
+
+<ol>
+<li>左から二番目のタブ(マルチプレイヤー)を選択</li>
+<li>下のテキストボックスに、サーバのIP アドレスとポート番号を入力(<code>http://servers.minetest.net/</code>から適当に選ぶ)</li>
+<li>右上から二番目のテキストボックスにパスワードを入力</li>
+<li>右下のボタン(接続)を押下</li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fedora 20]]></title>
@@ -206,7 +231,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#97;&#117;&#116;&#111;&#104;&#x69;&#100;&#101;&#x74;&#x6f;&#112;&#x62;&#97;&#114;&#50;&#x40;&#119;&#x65;&#x72;&#101;&#119;&#111;&#x6c;&#x76;&#101;&#115;&#x2e;&#x75;&#x73;">&#x61;&#117;&#x74;&#x6f;&#104;&#105;&#x64;&#101;&#116;&#111;&#x70;&#x62;&#97;&#114;&#x32;&#64;&#119;&#101;&#114;&#x65;&#119;&#x6f;&#x6c;&#118;&#101;&#x73;&#46;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#97;&#x75;&#x74;&#111;&#104;&#x69;&#x64;&#x65;&#116;&#111;&#x70;&#98;&#97;&#x72;&#50;&#64;&#119;&#x65;&#114;&#101;&#x77;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#117;&#115;">&#x61;&#x75;&#116;&#111;&#x68;&#x69;&#100;&#101;&#116;&#111;&#112;&#98;&#x61;&#x72;&#50;&#64;&#x77;&#x65;&#x72;&#101;&#x77;&#x6f;&#x6c;&#x76;&#101;&#x73;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>metadata.json </span></figcaption>
@@ -245,43 +270,10 @@ shell-version は3.9.4 を指定しました。</p>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">],</span>
 </span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">url</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//fpmurphy.com/gnome-shell-extensions&lt;/a&gt;&amp;rdquo;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">uuid</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&amp;#x6d;&amp;#97;&amp;#x69;&amp;#108;&amp;#x74;&amp;#x6f;&amp;#58;&amp;#x61;&amp;#117;&amp;#116;&amp;#x6f;&amp;#104;&amp;#x69;&amp;#100;&amp;#x65;&amp;#116;&amp;#x6f;&amp;#x70;&amp;#98;&amp;#97;&amp;#114;&amp;#50;&amp;#64;&amp;#x77;&amp;#x65;&amp;#114;&amp;#x65;&amp;#119;&amp;#111;&amp;#x6c;&amp;#118;&amp;#x65;&amp;#x73;&amp;#46;&amp;#x75;&amp;#x73;&quot;</span><span class="o">&gt;&amp;</span><span class="err">#</span><span class="nx">x61</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">117</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">116</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x6f</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">104</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">105</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">100</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">116</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x6f</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">112</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">98</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">97</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">114</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">50</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">64</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">119</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x72</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">119</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">108</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">118</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x73</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x2e</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x75</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x73</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/a&gt;&amp;rdquo;,</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">uuid</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&amp;#109;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#116;&amp;#111;&amp;#58;&amp;#x61;&amp;#x75;&amp;#116;&amp;#x6f;&amp;#x68;&amp;#x69;&amp;#x64;&amp;#101;&amp;#116;&amp;#111;&amp;#x70;&amp;#x62;&amp;#x61;&amp;#114;&amp;#x32;&amp;#64;&amp;#x77;&amp;#101;&amp;#114;&amp;#x65;&amp;#x77;&amp;#x6f;&amp;#x6c;&amp;#118;&amp;#x65;&amp;#115;&amp;#46;&amp;#x75;&amp;#115;&quot;</span><span class="o">&gt;&amp;</span><span class="err">#</span><span class="nx">x61</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x75</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x74</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">104</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">105</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x64</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">116</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x6f</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x70</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">98</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">97</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">114</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x32</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">64</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x77</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">114</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x77</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x6f</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">108</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x76</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x73</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">46</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x75</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x73</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/a&gt;&amp;rdquo;,</span>
 </span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">version</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="mi">1</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntu 13.10 Daily Build + Mir]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/"/>
-    <updated>2013-07-01T00:30:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png"><img src="/images/ubuntu_13_10_daily_build_mir_tn.png"></a></p>
-
-<p><a href="https://launchpad.net/~mir-team/+archive/staging">https://launchpad.net/~mir-team/+archive/staging</a></p>
-
-<p>Ubuntu 13.10 Daily Build にMir を適用してみました。現時点では若干もたつく感じがしますが、今後改善されるでしょう。</p>
-
-<!-- more -->
-
-
-<p></p>
-
-<pre><code>$ sudo apt-add-repository ppa:mir-team/staging
-$ sudo apt-get update
-$ sudo apt-get upgrade
-</code></pre>
-
-<p>特に資料を参考にしていないので、正式な手順ではないかもしれませんし、不十分かもしれません。</p>
-
-<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell.png"><img src="/images/ubuntu_13_10_daily_build_mir_gnome_shell_tn.png"></a></p>
-
-<p>GNOME Shell 3.8.3 で使った方が快適なような気がします。気のせいかもしれませんが。</p>
-
-<p><a href="http://www.olli-ries.com/running-mir/">http://www.olli-ries.com/running-mir/</a></p>
-
-<p>ここにインストール方法が書いてありました。</p>
 ]]></content>
   </entry>
   
