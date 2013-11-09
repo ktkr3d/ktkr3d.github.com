@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-04T22:46:00+09:00</updated>
+  <updated>2013-11-09T09:02:41+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -14,11 +14,26 @@
 
   
   <entry>
+    <title type="html"><![CDATA[screenfetch]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/11/09/screenfetch/"/>
+    <updated>2013-11-09T08:56:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/11/09/screenfetch</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/screenfetch_debian.png"><img src="http://ktkr3d.github.io/images/screenfetch_debian_tn.png"></a></p>
+
+<p><a href="http://www.unixmen.com/find-system-information-screenfetch-tool/">http://www.unixmen.com/find-system-information-screenfetch-tool/</a></p>
+
+<p>ScreenFetch でシステム情報を表示してみました。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[minetest]]></title>
     <link href="http://ktkr3d.github.io/blog/2013/11/04/minetest/"/>
     <updated>2013-11-04T21:28:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/11/04/minetest</id>
     <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png"><img src="http://ktkr3d.github.io/images/minetest_ogl42_tn.png"></a></p>
+
+<p><a href="http://minetest.net/">http://minetest.net/</a></p>
 
 <p>minecraft のクローンmintest がUbuntu の標準リポジトリに登録されていたので、遊んでみました。
 minecraft はIrrlicht エンジンを利用して実装されています。
@@ -873,7 +888,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#x61;&#x75;&#x74;&#111;&#104;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#98;&#97;&#x72;&#x32;&#x40;&#x77;&#x65;&#x72;&#x65;&#119;&#x6f;&#x6c;&#x76;&#101;&#115;&#46;&#x75;&#115;">&#97;&#117;&#x74;&#111;&#x68;&#x69;&#100;&#101;&#x74;&#111;&#112;&#x62;&#x61;&#x72;&#x32;&#x40;&#119;&#x65;&#114;&#x65;&#119;&#x6f;&#x6c;&#x76;&#101;&#115;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#97;&#x75;&#116;&#111;&#104;&#x69;&#x64;&#101;&#x74;&#x6f;&#112;&#x62;&#97;&#x72;&#50;&#x40;&#x77;&#101;&#x72;&#x65;&#119;&#x6f;&#108;&#x76;&#x65;&#115;&#x2e;&#117;&#x73;">&#x61;&#117;&#x74;&#x6f;&#104;&#x69;&#x64;&#101;&#x74;&#x6f;&#x70;&#98;&#97;&#114;&#x32;&#x40;&#119;&#101;&#114;&#101;&#x77;&#x6f;&#108;&#x76;&#x65;&#x73;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json </span></figcaption>
