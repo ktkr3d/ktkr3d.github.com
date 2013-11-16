@@ -126,21 +126,21 @@ exitwp というスクリプトを使って、WordPrtess のデータをmarkdown
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>git clone https://github.com/thomasf/exitwp
-</span><span class='line'><span class="nb">cd </span>exitwp
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone https://github.com/thomasf/exitwp
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>exitwp
 </span></code></pre></td></tr></table></div></figure>
 
 
 <h4>バックアップデータを格納</h4>
 
-<p><code>wordpress-xml/wordpress.xml</code></p>
+<p><code>./wordpress-xml/wordpress.xml</code></p>
 
 <h4>前提環境を準備</h4>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install python-yaml python-bs4 python-html2text
-</span><span class='line'>sudo pip install --upgrade  -r pip_requirements.txt
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install python-yaml python-bs4 python-html2text
+</span><span class='line'><span class="nv">$ </span>sudo pip install --upgrade  -r pip_requirements.txt
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -151,7 +151,9 @@ exitwp というスクリプトを使って、WordPrtess のデータをmarkdown
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h4>Octopress へ取り込み</h4>
 
+<p><code>./build</code>ディレクトリ作成されたデータをOctopress のディレクトリにコピーしてGenerate &amp; Deploy します。</p>
 </div>
   
   
