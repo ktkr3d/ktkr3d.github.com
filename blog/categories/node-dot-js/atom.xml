@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Node.js | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -26,22 +26,33 @@
 <p>Node.js アプリをコマンドラインからデスクトップアプリとして実行するAppJS を試してみました。HTML, CSS, JavaScript でアプリケーションが実装できて、Windows, Mac(32bit のみ), Linux(x86/x86_64) に対応しています。Unity のグローバルメニューにも対応していました。Node.js のバージョンはv0.8 系が良いようです。Linux x86_64 の環境でv0.9.9 ではうまく動作しませんでした。</p>
 
 <ol>
-<li><p> Node.js v0.8.19 のインストール
-[shell gutter=&ldquo;false&rdquo;]
+<li> Node.js v0.8.19 のインストール</li>
+</ol>
+
+
+<p><code>shell
 $ source ~/.nvm/nvm.sh
 $ nvm install v0.8.19
-[/shell]</p></li>
-<li><p> AppJS のインストール
-[shell gutter=&ldquo;false&rdquo;]
+</code></p>
+
+<ol>
+<li> AppJS のインストール</li>
+</ol>
+
+
+<p><code>shell
 $ source ~/.nvm/nvm.sh
 $ nvm use v0.8.19
 $ npm install -g appjs
-[/shell]</p></li>
-<li><p> アプリケーションの準備
-[javascript title=&ldquo;~/appjs/app.js&rdquo;]
-// load appjs</p></li>
+</code></p>
+
+<ol>
+<li> アプリケーションの準備</li>
 </ol>
 
+
+<p>``` javascript ~/appjs/app.js
+// load appjs</p>
 
 <p>var appjs = require(&lsquo;appjs&rsquo;);</p>
 
@@ -89,9 +100,9 @@ if (e.keyIdentifier === 'F12' || e.keyCode === 74 &amp;&amp; e.metaKey &amp;&amp
 window.on(&lsquo;close&rsquo;, function(){
   console.log(&ldquo;Window Closed&rdquo;);
 });
-[/javascript]</p>
+```</p>
 
-<p>[html title=&ldquo;~/appjs/content/index.html&rdquo;]
+<p>``` html ~/appjs/content/index.html
 &lt;!doctype html>
 <html>
   <head></p>
@@ -111,19 +122,20 @@ window.on(&lsquo;close&rsquo;, function(){
 
 <p>  </body>
 </html>
-[/html]</p>
+```</p>
 
 <ol>
-<li> 実行
-[shell gutter=&ldquo;false&rdquo;]
+<li> 実行</li>
+</ol>
+
+
+<p><code>shell
 $ source ~/.nvm/nvm.sh
 $ nvm use v0.8.19
 $ export NODE_PATH=${NVM_PATH}_modules
 $ cd ~/appjs/
-$ node &mdash;harmony app.js
-[/shell]</li>
-</ol>
-
+$ node --harmony app.js
+</code></p>
 
 <p>サンプルでは、[F12]キーにwindow.frame.openDevTools() をアサインしていて、キー押下により開発ツールウィンドウが開くようになっています。
 <a href="/images/uploads/2013/02/node_devtool.png"><img src="/images/uploads/2013/02/node_devtool-600x470.png" alt="Node.js devtool" /></a></p>
@@ -149,27 +161,38 @@ $ node &mdash;harmony app.js
 <p>Node.js で実装された掲示板アプリscrumblr をインストールしてみました。socket.io を使っていて、複数のブラウザで掲示板をリアルタイムに共有できます。ちょっとしたメモをネットワークを介して共有するのに便利かもしれません。</p>
 
 <ol>
-<li><p> nvm のインストール
-[shell gutter=&ldquo;false&rdquo;]
+<li> nvm のインストール</li>
+</ol>
+
+
+<p><code>shell
 $ sudo apt-get install build-essential libssl-dev curl git
 $ git clone git://github.com/creationix/nvm.git ~/.nvm
-[/shell]</p></li>
-<li><p> scrumblr のインストール
-[bash gutter=&ldquo;false&rdquo;]
+</code></p>
+
+<ol>
+<li> scrumblr のインストール</li>
+</ol>
+
+
+<p><code>bash
 $ sudo apt-get install redis-server
 $ source ~/.nvm/nvm.sh
 $ nvm install v0.9.9
 $ nvm use v0.9.9
-$ git clone <a href="https://github.com/aliasaria/scrumblr">https://github.com/aliasaria/scrumblr</a> ~/scrumblr
+$ git clone https://github.com/aliasaria/scrumblr ~/scrumblr
 $ cd ~/scrumblr
 $ npm install
-[/bash]</p></li>
-<li><p> scrumblr サーバの実行
-[bash title=&ldquo;start_scrumblr.sh&rdquo;]</p>
+</code></p>
 
-<h1>!/bin/bash</h1></li>
+<ol>
+<li> scrumblr サーバの実行</li>
 </ol>
 
+
+<p>``` bash</p>
+
+<h1>!/bin/bash</h1>
 
 <h1>Start Scrumblr Server</h1>
 
@@ -179,7 +202,7 @@ $ npm install
 nvm use v0.9.9
 cd ~/scrumblr
 node server.js 3132
-[/bash]</p>
+```</p>
 
 <ol>
 <li> scrumblr の表示
@@ -210,28 +233,28 @@ $ git clone git://github.com/creationix/nvm.git ~/.nvm
 
 <h3>Node.js v0.6.21 とsourcemint のインストール</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
+<p><code>shell
 $ source ~/.nvm/nvm.sh
 $ nvm install v0.6.21
 $ nvm use v0.6.21
 $ npm install -g sm
-[/shell]</p>
+</code></p>
 
 <h3>Cound9 IDE のインストール</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ git clone <a href="https://github.com/ajaxorg/cloud9.git">https://github.com/ajaxorg/cloud9.git</a> ~/cloud9
+<p><code>shell
+$ git clone https://github.com/ajaxorg/cloud9.git ~/cloud9
 $ cd ~/cloud9
 $ sm install
-[/shell]</p>
+</code></p>
 
 <h3>Cound9 IDE の実行</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
+<p><code>shell
 $ source ~/.nvm/nvm.sh
 $ nvm use v0.6.21
 $ cd ~/cloud9/bin &amp;&amp; ./cloud9.sh
-[/shell]</p>
+</code></p>
 
 <h3>Cound9 IDE 画面の表示</h3>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MeeGo | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/meego/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -20,15 +20,16 @@
     <id>http://ktkr3d.github.io/blog/2011/04/28/meego-tablet-e381aee3839ee382a6e382b9e3839de382a4e383b3e382bf</id>
     <content type="html"><![CDATA[<p>meego.com 版のMeeGo Tablet 1.2 でマウスポインタが表示されなかったので、表示するように設定を変えてみた。</p>
 
-<p>/etc/sysconfig/uxlaunch
-[plain firstline=&ldquo;27&rdquo; highlight=&ldquo;30&rdquo;]
+<p>/etc/sysconfig/uxlaunch</p>
+
+<p>``` text
 session=/usr/bin/mutter &mdash;sm-disable
 user=meego
 session=/usr/bin/mcompositor</p>
 
 <h1>xopts=-nocursor</h1>
 
-<p>[/plain]</p>
+<p>```</p>
 
 <p>-nocursor を無効にする。</p>
 
@@ -57,18 +58,21 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
 
 <p>Inspiron duo に入れたIntel 版のMeeGo Tablet が動くようになった。</p>
 
-<p>隠しアクセスポイントに接続するには、一旦端末で、
-[shell gutter=&ldquo;false&rdquo;]</p>
+<p>隠しアクセスポイントに接続するには、一旦端末で、</p>
+
+<p>``` shell</p>
 
 <h1>iwconfig wlan0 essid <ESSID> key <KEY></h1>
 
-<p>[/shell]
-とするとWi-Fi の設定画面のアクセスポイント一覧に追加される。</p>
+<p>```</p>
 
-<p>画面のキャプチャは
-[shell gutter=&ldquo;false&rdquo;]
-$ xwd -root > ScreenShot.xwd
-[/shell]</p>
+<p>とするとWi-Fi の設定画面のアクセスポイント一覧に追加される。</p>
+
+<p>画面のキャプチャは</p>
+
+<p><code>shell
+$ xwd -root &gt; ScreenShot.xwd
+</code></p>
 
 <p>画面の切り替えは、Windows キー。パネル画面（横）、すべてのアプリケーション画面（縦）、実行中のアプリケーションの選択などができる。</p>
 

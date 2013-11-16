@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Conky | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/conky/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/11/02/conky-google-now/"/>
     <updated>2013-11-02T12:05:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/11/02/conky-google-now</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/conky_google_now.png"><img src="/images/conky_google_now_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/conky_google_now.png">{% img /images/conky_google_now_tn.png %}</a></p>
 
 <p><a href="http://satya164.deviantart.com/art/Conky-Google-Now-366545753">http://satya164.deviantart.com/art/Conky-Google-Now-366545753</a></p>
 

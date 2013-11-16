@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GNOME3 | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/gnome3/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -61,8 +61,9 @@ Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたの
 
 <h3>GNOME Shell Extension のバージョン指定の更新</h3>
 
-<p>Auto hide the top panel GNOME Shell Extension のバージョン指定を更新して、暫定的に動作させてみました。
-[plain title=&ldquo;.local/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json&rdquo; highlight=&ldquo;8&rdquo;]
+<p>Auto hide the top panel GNOME Shell Extension のバージョン指定を更新して、暫定的に動作させてみました。</p>
+
+<p>``` text .local/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json
 {
   &ldquo;description&rdquo;: &ldquo;Auto hide the top panel&rdquo;,
   &ldquo;extension-id&rdquo;: &ldquo;auto-hide-top-panel&rdquo;,
@@ -76,10 +77,10 @@ Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたの
 
 <p>  ],
   &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
-  &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x61;&#x75;&#116;&#x6f;&#x68;&#x69;&#x64;&#101;&#116;&#111;&#x70;&#98;&#x61;&#x72;&#50;&#x40;&#x77;&#101;&#114;&#x65;&#x77;&#111;&#x6c;&#118;&#x65;&#115;&#x2e;&#117;&#x73;">&#x61;&#x75;&#116;&#111;&#x68;&#x69;&#x64;&#101;&#x74;&#111;&#112;&#x62;&#x61;&#114;&#50;&#64;&#x77;&#x65;&#114;&#x65;&#x77;&#x6f;&#x6c;&#118;&#101;&#x73;&#x2e;&#117;&#115;</a>&rdquo;,
+  &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#97;&#117;&#116;&#111;&#x68;&#x69;&#x64;&#x65;&#x74;&#x6f;&#x70;&#98;&#97;&#x72;&#x32;&#64;&#119;&#x65;&#114;&#101;&#119;&#x6f;&#108;&#118;&#x65;&#x73;&#x2e;&#x75;&#x73;">&#97;&#117;&#x74;&#111;&#104;&#105;&#100;&#101;&#x74;&#x6f;&#x70;&#98;&#97;&#x72;&#50;&#64;&#119;&#x65;&#114;&#101;&#x77;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#x75;&#115;</a>&rdquo;,
   &ldquo;version&rdquo;: 1
 }
-[/plain]</p>
+```</p>
 ]]></content>
   </entry>
   
@@ -141,13 +142,13 @@ Dash to Dock のデフォルトのアニメーション設定は遅いので、�
 
 <p>GNOME Shell 3.6 では画面下端にマウスカーソルを持って行くと、メッセージトレイが表示されます。オートハイドに設定したドックアプリ(AWN)と併用していると、ドックアプリを操作したいのにメッセージトレイが表示されてしまって、困ります。GNOME Shell 3.6 に対応したGNOME Shell extension が見当たりませんでしたので、GNOME Shell をカスタマイズして、暫定的に画面右下隅をメッセージトレイのホットコーナーにしてみました。</p>
 
-<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;44&rdquo; highlight=&ldquo;46&rdquo;]
+<p><code>javascript /usr/share/gnome-shell/js/ui/messageTray.js
 // Time the user needs to leave the mouse on the bottom pixel row to open the tray
 //const TRAY_DWELL_TIME = 1000; // ms
 const TRAY_DWELL_TIME = 50; // ms
-[/javascript]</p>
+</code></p>
 
-<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;1538&rdquo; highlight=&ldquo;1541&rdquo;]</p>
+<p>``` javascript /usr/share/gnome-shell/js/ui/messageTray.js</p>
 
 <pre><code>_checkTrayDwell: function(x, y) {
     let monitor = Main.layoutManager.bottomMonitor;
@@ -159,9 +160,9 @@ const TRAY_DWELL_TIME = 50; // ms
                        y == monitor.y + monitor.height - 1);
 </code></pre>
 
-<p>[/javascript]</p>
+<p>```</p>
 
-<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;2118&rdquo; highlight=&ldquo;2120&rdquo;]</p>
+<p>``` javascript /usr/share/gnome-shell/js/ui/messageTray.js</p>
 
 <pre><code>    this._tween(this._desktopClone, '_desktopCloneState', State.SHOWN,
 </code></pre>
@@ -175,7 +176,7 @@ const TRAY_DWELL_TIME = 50; // ms
                 });
 </code></pre>
 
-<p>[/javascript]</p>
+<p>```</p>
 
 <p>GNOME Shell Extension にして投稿してくれる人がいるといいな。</p>
 ]]></content>

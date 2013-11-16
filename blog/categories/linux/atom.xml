@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/11/09/screenfetch/"/>
     <updated>2013-11-09T08:56:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/11/09/screenfetch</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/screenfetch_debian.png"><img src="/images/screenfetch_debian_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/screenfetch_debian.png">{% img /images/screenfetch_debian_tn.png %}</a></p>
 
 <p><a href="http://www.unixmen.com/find-system-information-screenfetch-tool/">http://www.unixmen.com/find-system-information-screenfetch-tool/</a></p>
 
@@ -31,7 +31,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/11/04/minetest/"/>
     <updated>2013-11-04T21:28:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/11/04/minetest</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png"><img src="/images/minetest_ogl42_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png">{% img /images/minetest_ogl42_tn.png %}</a></p>
 
 <p><a href="http://minetest.net/">http://minetest.net/</a></p>
 
@@ -56,7 +56,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
 
 <p>グラフィックがオンボードでATOM なOpenGL 1.4 の環境で動かしてみると、さすがに重かったです。</p>
 
-<p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png"><img src="/images/minetest_ogl14_tn.png"></a></p>
+<p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png">{% img /images/minetest_ogl14_tn.png %}</a></p>
 ]]></content>
   </entry>
   
@@ -65,7 +65,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
     <link href="http://ktkr3d.github.io/blog/2013/10/05/fedora-20/"/>
     <updated>2013-10-05T20:14:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/10/05/fedora-20</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png"><img src="/images/fedora_20_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png">{% img /images/fedora_20_tn.png %}</a></p>
 
 <p>Fedora 20 alpha + GNOME Shell 3.10 をインストールしてみました。</p>
 
@@ -112,7 +112,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
     <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
     <updated>2013-07-15T08:57:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png">{% img /images/gnome_shell_lock_screen.png %}</a></p>
 
 <p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
 
@@ -123,40 +123,24 @@ minetest はIrrlicht エンジンを利用して実装されています。
 
 <p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
-</span><span class='line'><span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>``` css /usr/share/gnome-shell/theme/gnome-shell.css
+.screen-shield-clock-time {</p>
+
+<pre><code>font-family: "DejaVu Sans";
+font-size: 64pt;
+text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
+</code></pre>
+
+<p>}</p>
+
+<p>.screen-shield-clock-date {</p>
+
+<pre><code>font-family: "DejaVu Sans";
+font-size: 24pt;
+</code></pre>
+
+<p>}
+```</p>
 
 <h4>設定の反映</h4>
 
@@ -169,7 +153,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
     <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
     <updated>2013-07-14T11:11:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png">{% img /images/docky_cardapio_tn.png %}</a></p>
 
 <p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GNOME | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/gnome/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/10/05/fedora-20/"/>
     <updated>2013-10-05T20:14:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/10/05/fedora-20</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png"><img src="/images/fedora_20_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png">{% img /images/fedora_20_tn.png %}</a></p>
 
 <p>Fedora 20 alpha + GNOME Shell 3.10 をインストールしてみました。</p>
 
@@ -65,7 +65,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
     <updated>2013-07-15T08:57:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png">{% img /images/gnome_shell_lock_screen.png %}</a></p>
 
 <p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
 
@@ -76,40 +76,24 @@
 
 <p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
-</span><span class='line'><span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>``` css /usr/share/gnome-shell/theme/gnome-shell.css
+.screen-shield-clock-time {</p>
+
+<pre><code>font-family: "DejaVu Sans";
+font-size: 64pt;
+text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
+</code></pre>
+
+<p>}</p>
+
+<p>.screen-shield-clock-date {</p>
+
+<pre><code>font-family: "DejaVu Sans";
+font-size: 24pt;
+</code></pre>
+
+<p>}
+```</p>
 
 <h4>設定の反映</h4>
 
@@ -122,7 +106,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
     <updated>2013-07-14T11:11:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png">{% img /images/docky_cardapio_tn.png %}</a></p>
 
 <p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
 
@@ -179,7 +163,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
     <link href="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/"/>
     <updated>2013-07-13T09:36:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="/images/gnome_shell_3_9_4_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png">{% img /images/gnome_shell_3_9_4_tn.png %}</a></p>
 
 <p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
 
@@ -206,49 +190,30 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#58;&#97;&#x75;&#x74;&#111;&#104;&#105;&#x64;&#x65;&#x74;&#x6f;&#112;&#98;&#x61;&#114;&#50;&#64;&#x77;&#101;&#114;&#x65;&#x77;&#111;&#x6c;&#118;&#x65;&#115;&#x2e;&#x75;&#x73;">&#x61;&#x75;&#x74;&#x6f;&#104;&#x69;&#x64;&#x65;&#116;&#x6f;&#112;&#x62;&#x61;&#114;&#50;&#x40;&#119;&#101;&#114;&#101;&#119;&#x6f;&#x6c;&#x76;&#x65;&#115;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#97;&#x75;&#x74;&#x6f;&#104;&#105;&#100;&#x65;&#116;&#111;&#x70;&#98;&#x61;&#x72;&#50;&#x40;&#x77;&#x65;&#x72;&#x65;&#119;&#x6f;&#108;&#118;&#101;&#x73;&#x2e;&#x75;&#115;">&#x61;&#117;&#116;&#111;&#104;&#105;&#x64;&#101;&#116;&#111;&#112;&#98;&#x61;&#x72;&#50;&#64;&#x77;&#x65;&#x72;&#101;&#119;&#111;&#108;&#x76;&#101;&#x73;&#x2e;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>metadata.json </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">description</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Auto</span> <span class="nx">hide</span> <span class="nx">the</span> <span class="nx">top</span> <span class="nx">panel</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">extension</span><span class="o">-</span><span class="nx">id</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">auto</span><span class="o">-</span><span class="nx">hide</span><span class="o">-</span><span class="nx">top</span><span class="o">-</span><span class="nx">panel</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">gettext</span><span class="o">-</span><span class="nx">domain</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">gnome</span><span class="o">-</span><span class="nx">shell</span><span class="o">-</span><span class="nx">extensions</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">name</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">Auto</span> <span class="nx">Hide</span> <span class="nx">Top</span> <span class="nx">Panel</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">settings</span><span class="o">-</span><span class="nx">schema</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">org</span><span class="p">.</span><span class="nx">gnome</span><span class="p">.</span><span class="nx">shell</span><span class="p">.</span><span class="nx">extensions</span><span class="p">.</span><span class="nx">auto</span><span class="o">-</span><span class="nx">hide</span><span class="o">-</span><span class="nx">top</span><span class="o">-</span><span class="nx">panel</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">shell</span><span class="o">-</span><span class="nx">version</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
-</span><span class='line'><span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
-</span><span class='line'><span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
-</span><span class='line'><span class="s2">&quot;3.9.4&quot;</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">],</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">url</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//fpmurphy.com/gnome-shell-extensions&lt;/a&gt;&amp;rdquo;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">uuid</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&amp;#x6d;&amp;#97;&amp;#x69;&amp;#x6c;&amp;#116;&amp;#111;&amp;#x3a;&amp;#x61;&amp;#x75;&amp;#116;&amp;#111;&amp;#104;&amp;#x69;&amp;#x64;&amp;#x65;&amp;#x74;&amp;#111;&amp;#112;&amp;#98;&amp;#97;&amp;#114;&amp;#50;&amp;#x40;&amp;#119;&amp;#101;&amp;#114;&amp;#x65;&amp;#119;&amp;#111;&amp;#108;&amp;#x76;&amp;#x65;&amp;#x73;&amp;#46;&amp;#117;&amp;#x73;&quot;</span><span class="o">&gt;&amp;</span><span class="err">#</span><span class="mi">97</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">117</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">116</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">104</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">105</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">100</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">116</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x70</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">98</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">97</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x72</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">50</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x40</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x77</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x72</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x65</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x77</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">111</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x6c</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x76</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">101</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x73</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x2e</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x75</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="nx">x73</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/a&gt;&amp;rdquo;,</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">version</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;</span><span class="o">:</span> <span class="mi">1</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>``` js metadata.json
+{
+  &ldquo;description&rdquo;: &ldquo;Auto hide the top panel&rdquo;,
+  &ldquo;extension-id&rdquo;: &ldquo;auto-hide-top-panel&rdquo;,
+  &ldquo;gettext-domain&rdquo;: &ldquo;gnome-shell-extensions&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Auto Hide Top Panel&rdquo;,
+  &ldquo;settings-schema&rdquo;: &ldquo;org.gnome.shell.extensions.auto-hide-top-panel&rdquo;,
+  &ldquo;shell-version&rdquo;: [</p>
+
+<pre><code>"3.5.92",
+"3.6",
+"3.6.1",
+"3.9.4"
+</code></pre>
+
+<p>  ],
+  &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
+  &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#97;&#x75;&#x74;&#111;&#x68;&#105;&#x64;&#101;&#x74;&#x6f;&#112;&#98;&#97;&#x72;&#x32;&#64;&#x77;&#x65;&#114;&#x65;&#119;&#x6f;&#x6c;&#x76;&#101;&#x73;&#46;&#x75;&#115;">&#97;&#117;&#116;&#x6f;&#x68;&#x69;&#100;&#x65;&#116;&#111;&#112;&#x62;&#97;&#x72;&#x32;&#x40;&#119;&#x65;&#114;&#x65;&#x77;&#111;&#108;&#x76;&#x65;&#x73;&#x2e;&#x75;&#x73;</a>&rdquo;,
+  &ldquo;version&rdquo;: 1
+}
+```</p>
 ]]></content>
   </entry>
   
@@ -257,7 +222,7 @@ shell-version は3.9.4 を指定しました。</p>
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png"><img src="/images/Ubuntu-GNOME-13-10_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png">{% img /images/Ubuntu-GNOME-13-10_tn.png %}</a></p>
 
 <p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a></p>
 

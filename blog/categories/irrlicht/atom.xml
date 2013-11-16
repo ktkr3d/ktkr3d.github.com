@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Irrlicht | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/irrlicht/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/11/04/minetest/"/>
     <updated>2013-11-04T21:28:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/11/04/minetest</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png"><img src="/images/minetest_ogl42_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png">{% img /images/minetest_ogl42_tn.png %}</a></p>
 
 <p><a href="http://minetest.net/">http://minetest.net/</a></p>
 
@@ -43,7 +43,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
 
 <p>グラフィックがオンボードでATOM なOpenGL 1.4 の環境で動かしてみると、さすがに重かったです。</p>
 
-<p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png"><img src="/images/minetest_ogl14_tn.png"></a></p>
+<p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png">{% img /images/minetest_ogl14_tn.png %}</a></p>
 ]]></content>
   </entry>
   
@@ -52,7 +52,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
     <link href="http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player/"/>
     <updated>2013-08-11T03:47:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png"><img src="/images/irrlicht_android_player_tab_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png">{% img /images/irrlicht_android_player_tab_tn.png %}</a></p>
 
 <p>Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。</p>
 
@@ -107,7 +107,7 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
     <link href="http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android/"/>
     <updated>2013-08-04T04:04:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_ogl-es_android.png"><img src="/images/irrlicht_ogl-es_android_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_ogl-es_android.png">{% img /images/irrlicht_ogl-es_android_tn.png %}</a></p>
 
 <ul>
 <li>Compiling Irrlicht ogl-es branch for Android on Ubuntu GNOME 13.10 x86_64.</li>
@@ -178,7 +178,7 @@ $ ant debug
 
 <p>Irrlicht 1.8 trunk でXEffects の影が有効にならなくなっていたので、XEffects のヘッダを修正してみた。Irrlicht 側のインタフェースが変わったのが原因かな。Irrlicht 1.8 ではXEffects を使っても画像が反転しないし、CGUITTFONT とも同時に使えるし、便利になったなぁ。環境はUbuntu 12.04 x86_64 + Irrlicht 1.8 trunk (SVN rev: 4170 ) + XEffects v1.3。</p>
 
-<p>[cpp title=&ldquo;EffectCB.h&rdquo; firstline=&ldquo;86&rdquo; highlight=&ldquo;91, 93, 97, 101, 105&rdquo;]
+<p>``` cpp EffectCB.h
 virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr::s32 userData)
 {</p>
 
@@ -218,7 +218,7 @@ virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr
 }
 </code></pre>
 
-<p>[/cpp]</p>
+<p>```</p>
 ]]></content>
   </entry>
   
@@ -232,37 +232,56 @@ virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr
 <p>Android 2.3 用のアプリをAndroid-x86 4.0.3 用にリビルドして、Inspiron duo 実機で動かしてみた。さすがにスマートフォンより動作が非常に軽快だけど、画面がiPod の広告みたいになってしまった。画像やフォントが表示されてないのは、なんでだろう。パスがずれているのかな。パスが違っていたらエラーになるはずなんだけど。ボタンイベントはタッチスクリーン上を指で押したら正しく動作した。</p>
 
 <ol>
-<li><p> Android 4.0.3 のターゲット情報は以下のとおり。ID は10。
-[shell gutter=&ldquo;false&rdquo;]
+<li> Android 4.0.3 のターゲット情報は以下のとおり。ID は10。</li>
+</ol>
+
+
+<p>``` shell
 $ android list target
-id: 10 or &ldquo;android-15&rdquo;
- Name: Android 4.0.3
+id: 10 or &ldquo;android-15&rdquo;</p>
+
+<pre><code> Name: Android 4.0.3
  Type: Platform
  API level: 15
  Revision: 3
  Skins: WXGA720, QVGA, WSVGA, WQVGA400, WQVGA432, HVGA, WVGA854, WXGA800, WVGA800 (default)
  ABIs : armeabi-v7a, x86
-[/shell]</p></li>
-<li><p> Application.mk でx86 を指定
-[plain title=&ldquo;Application.mk&rdquo; firstline=&ldquo;8&rdquo; highlight=&ldquo;9&rdquo;]</p>
+</code></pre>
+
+<p>```</p>
+
+<ol>
+<li> Application.mk でx86 を指定</li>
+</ol>
+
+
+<p>``` text Application.mk</p>
 
 <h1>APP_ABI := armeabi armeabi-v7a</h1>
 
 <p>APP_ABI := armeabi-v7a x86
-[/plain]</p></li>
-<li><p> プロジェクトをアップデート
-[shell gutter=&ldquo;false&rdquo;]
-$ android update project &mdash;path . &mdash;target 10
-[/shell]</p></li>
-<li><p> ビルド
-[shell gutter=&ldquo;false&rdquo;]
+```</p>
+
+<ol>
+<li> プロジェクトをアップデート</li>
+</ol>
+
+
+<p><code>shell
+$ android update project --path . --target 10
+</code></p>
+
+<ol>
+<li> ビルド</li>
+</ol>
+
+
+<p><code>shell
 $ ndk-build clean
 $ ndk-build -j 4
 $ ant clean
 $ ant debug
-[/shell]</p></li>
-</ol>
-
+</code></p>
 ]]></content>
   </entry>
   

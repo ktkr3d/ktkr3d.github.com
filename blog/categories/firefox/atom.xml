@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Firefox | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/firefox/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -35,28 +35,34 @@
 
 <h3>ビルド用依存パッケージの取得</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
+<p><code>shell
 $ sudo apt-get install mercurial ccache
 $ sudo apt-get build-dep firefox
-[/shell]</p>
+</code></p>
 
 <h3>開発版(19.0a1)をビルドする場合</h3>
 
 <ol>
-<li><p> 開発版ソースコードの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ cd /tools/apps/firefox/
-$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src-central
-$ cd src-central
-[/shell]</p></li>
-<li><p> mozconfig のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
-[/shell]</p></li>
+<li> 開発版ソースコードの取得</li>
 </ol>
 
 
-<p>[plain title=&ldquo;/tools/apps/firefox/src-central/.mozconfig&rdquo; highlight=&ldquo;11,12,13,15,20,21,22&rdquo;]
+<p><code>shell
+$ cd /tools/apps/firefox/
+$ hg clone http://hg.mozilla.org/mozilla-central/ src-central
+$ cd src-central
+</code></p>
+
+<ol>
+<li> mozconfig のカスタマイズ</li>
+</ol>
+
+
+<p><code>shell
+$ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
+</code></p>
+
+<p>``` text /tools/apps/firefox/src-central/.mozconfig
 . &ldquo;$topsrcdir/mobile/android/config/mozconfigs/common&rdquo;</p>
 
 <h1>Global options</h1>
@@ -96,25 +102,31 @@ ac_add_options &mdash;with-system-zlib</p>
 <h1>Use ccache</h1>
 
 <p>ac_add_options &mdash;with-ccache=/usr/bin/ccache
-[/plain]</p>
+```</p>
 
 <h3>リリース版(16.0.1)をビルドする場合</h3>
 
 <ol>
-<li><p> リリース版ソースコードの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ cd /tools/apps/firefox/
-$ hg clone <a href="http://hg.mozilla.org/releases/mozilla-release">http://hg.mozilla.org/releases/mozilla-release</a> src-release
-$ cd src-release
-[/shell]</p></li>
-<li><p> mozconfig のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
-[/shell]</p></li>
+<li> リリース版ソースコードの取得</li>
 </ol>
 
 
-<p>[plain title=&ldquo;/tools/apps/firefox/src-release/.mozconfig&rdquo; highlight=&ldquo;9,10,11,13,14,16,17,18,20,21&rdquo;]</p>
+<p><code>shell
+$ cd /tools/apps/firefox/
+$ hg clone http://hg.mozilla.org/releases/mozilla-release src-release
+$ cd src-release
+</code></p>
+
+<ol>
+<li> mozconfig のカスタマイズ</li>
+</ol>
+
+
+<p><code>shell
+$ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
+</code></p>
+
+<p>``` text /tools/apps/firefox/src-release/.mozconfig</p>
 
 <h1>Global options</h1>
 
@@ -145,20 +157,21 @@ ac_add_options &mdash;with-system-zlib</p>
 <h1>ac_add_options &mdash;enable-official-branding</h1>
 
 <p>ac_add_options &mdash;with-branding=mobile/android/branding/unofficial
-[/plain]</p>
+```</p>
 
 <h3>firefox のビルド</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
+<p><code>shell
 $ make -f client.mk build_and_deploy
-[/shell]</p>
+</code></p>
 
 <h3>インストール</h3>
 
-<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。
-[plain title=&ldquo;出力先&rdquo; gutter=&ldquo;false&rdquo;]
+<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。</p>
+
+<p><code>text 出力先
 ./obj-x86_64-unknown-linux-gnu/dist/
-[/plain]</p>
+</code></p>
 ]]></content>
   </entry>
   
@@ -173,27 +186,39 @@ $ make -f client.mk build_and_deploy
 Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386-linux-android 向けのmozconfig を見つけたけれど、そのままではうまくビルドできなかったので、修正して利用してみた。Android SDK/NDK の環境はできているので、その後から始めよう。ビルドする環境はUbuntu 12.04 x86_64。Android 端末は、Inspiron duo にandroid-x86-4.0-RC1-tegav2.iso をインストール済み。</p>
 
 <ol>
-<li><p> ビルドするための依存関係の取得
-[shell gutter=&ldquo;false&rdquo;]
+<li> ビルドするための依存関係の取得</li>
+</ol>
+
+
+<p><code>shell
 $ sudo apt-get install mercurial ccache
 $ sudo apt-get build-dep firefox
-[/shell]</p></li>
-<li><p> Firefox のソースの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src
-[/shell]</p></li>
-<li><p> MOZCONFIG のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
+</code></p>
+
+<ol>
+<li> Firefox のソースの取得</li>
+</ol>
+
+
+<p><code>shell
+$ hg clone http://hg.mozilla.org/mozilla-central/ src
+</code></p>
+
+<ol>
+<li> MOZCONFIG のカスタマイズ</li>
+</ol>
+
+
+<p><code>shell
 $ cd src
 $ gedit mozconfig-android-x86
-[/shell]
-[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
+</code></p>
+
+<p>``` text mozconfig-android-x86</p>
 
 <h1>Global options</h1>
 
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p></li>
-</ol>
-
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
 
 <h1>Build Fennec</h1>
 
@@ -240,31 +265,43 @@ ac_add_options &mdash;disable-update-packaging</p>
 <h1>branding</h1>
 
 <p>ac_add_options &mdash;with-branding=mobile/android/branding/beta
-[/plain]</p>
+```</p>
 
 <ol>
 <li><p> ロゴ画像の作成
 他のサイズのロゴ画像を参考にサイズ40x40 のPNG 形式画像を作成する。
 ./mobile/android/branding/beta/content/fennec_40x40.png</p></li>
-<li><p> インストール先のAndroid 端末を無線LAN で接続する。
-[shell gutter=&ldquo;false&rdquo;]
+<li><p> インストール先のAndroid 端末を無線LAN で接続する。</p></li>
+</ol>
+
+
+<p><code>shell
 $ export ADBHOST=192.168.0.4
 $ adb devices
-[/shell]</p></li>
-<li><p> ビルドとインストール
-[shell gutter=&ldquo;false&rdquo;]
+</code></p>
+
+<ol>
+<li> ビルドとインストール</li>
+</ol>
+
+
+<p><code>shell
 $ export MOZCONFIG=./mozconfig-android-x86
 $ make -f client.mk build_and_deploy
 $
-[/shell]
-インストーラパッケージは以下に生成される。
-./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p></li>
-<li><p> 次回ビルド時にソースを最新の状態にするには
-[shell gutter=&ldquo;false&rdquo;]
-$ hg pull -u
-[/shell]</p></li>
+</code></p>
+
+<p>インストーラパッケージは以下に生成される。
+./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p>
+
+<ol>
+<li> 次回ビルド時にソースを最新の状態にするには</li>
 </ol>
 
+
+<p><code>shell
+$ hg pull -u
+</code></p>
 
 <!-- more -->
 
@@ -278,7 +315,7 @@ $ hg pull -u
 </ul>
 
 
-<p>[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
+<p>``` text mozconfig-android-x86</p>
 
 <h1>Global options</h1>
 
@@ -329,8 +366,9 @@ ac_add_options &mdash;disable-update-packaging</p>
 <h1>mozilla</h1>
 
 <p>ac_add_options &mdash;with-branding=mobile/android/branding/nightly
-[/plain]
-about:buildconfig の内容
+```</p>
+
+<p>about:buildconfig の内容
 <a href="/images/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png"><img src="/images/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png" alt="android-x86 firefox fennec 16.0a1 buildconfig" /></a></p>
 ]]></content>
   </entry>
@@ -340,14 +378,17 @@ about:buildconfig の内容
     <link href="http://ktkr3d.github.io/blog/2012/06/09/firefox-13-newsfox/"/>
     <updated>2012-06-09T23:04:20+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/06/09/firefox-13-newsfox</id>
-    <content type="html"><![CDATA[<p>Firefox のアドオンNewsFox を使ってRSS を購読しているのだけど、Firefox を13.0 にアップデートしてから、時々マウスのボタンダウンイベントがキャプチャーされて無効化されてしまうような挙動があったので、やっつけで暫定対策してみた。<del>Linux でもWindows でも発生する(?)ので、NewsFox 側に問題がありそう。いろいろFirefox のバグ回避もしているようだし。</del>とりあえず、ドラッグ開始しないようにreturn してしまうことにした。NewsFox でドラッグアンドドロップなんて飾りですよ。
-[javascript title=&ldquo;newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js&rdquo; firstline=&ldquo;507&rdquo;]
+    <content type="html"><![CDATA[<p>Firefox のアドオンNewsFox を使ってRSS を購読しているのだけど、Firefox を13.0 にアップデートしてから、時々マウスのボタンダウンイベントがキャプチャーされて無効化されてしまうような挙動があったので、やっつけで暫定対策してみた。<del>Linux でもWindows でも発生する(?)ので、NewsFox 側に問題がありそう。いろいろFirefox のバグ回避もしているようだし。</del>とりあえず、ドラッグ開始しないようにreturn してしまうことにした。NewsFox でドラッグアンドドロップなんて飾りですよ。</p>
+
+<p><code>javascript newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js
 function dragIt(evt) { return;
-[/javascript]
-[javascript title=&ldquo;newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js&rdquo; firstline=&ldquo;987&rdquo;]
+</code></p>
+
+<p><code>javascript newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js
 function dragArt(evt) { return;
-[/javascript]
-他に古いAPI を使っているところもあるようだし、早くアップデート版がリリースされるといいな。</p>
+</code></p>
+
+<p>他に古いAPI を使っているところもあるようだし、早くアップデート版がリリースされるといいな。</p>
 
 <p>newsfox.xpi = {899DF1F8-2F43-4394-8315-37F6744E6319}.xpi</p>
 ]]></content>

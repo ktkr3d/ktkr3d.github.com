@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ogre3D | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/ogre3d/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -33,7 +33,7 @@ codeblocks 10.05</p>
 
 <p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
 
-<p>[plain gutter=&ldquo;false&rdquo;]
+<p><code>text
 コンパイル中: src/CharacterSample.cpp
 リンク中 動的ライブラリ: ../bin/Sample_Character.so
 /usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1' can not be used when making a shared object; recompile with -fPIC
@@ -41,17 +41,17 @@ obj/Release/src/CharacterSample.o: could not read symbols: Bad value
 collect2: ld はステータス 1 で終了しました
 プロセスはステータス 1 で終了しました (0 分 10 秒)
 0 個のエラー、 0 個の警告
-[/plain]</p>
+</code></p>
 
 <p>-fPIC オプションをつけたらビルドできた。</p>
 
-<p>[plain gutter=&ldquo;false&rdquo;]
+<p><code>text
 コンパイル中: src/CharacterSample.cpp
 リンク中 動的ライブラリ: ../bin/Sample_Character.so
 出力サイズは 232.84 KB
 プロセスはステータス 0 で終了しました (0 分 5 秒)
 0 個のエラー、 0 個の警告
-[/plain]</p>
+</code></p>
 ]]></content>
   </entry>
   

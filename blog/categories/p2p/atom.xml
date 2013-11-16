@@ -4,7 +4,7 @@
   <title><![CDATA[Category: P2P | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/p2p/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -32,7 +32,7 @@ P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTor
 
 <p>P2P なので、視聴者が増えた時に有利なようです。Peercast と同じような原理でしょうか。ポートを開ける手間がないのが、お手軽でよいかもしれません。手動でポートを開ける場合はUDP ports 31400-31499 らしいです。トレイアイコンをクリックすると、送受信のビットレートが表示されます。btlive コマンドのパラメタは以下のとおり。</p>
 
-<p>[bash gutter=&ldquo;false&rdquo;]
+<p>``` bash
 $ btlive &mdash;help
 usage: btlive [-h] [-v] [&mdash;force-version FORCED_VER] [-o OFFSET]</p>
 
@@ -105,7 +105,7 @@ usage: btlive [-h] [-v] [&mdash;force-version FORCED_VER] [-o OFFSET]</p>
 </code></pre>
 
 <p>  &mdash;nogui               Disable GUI/icon.
-[/bash]</p>
+```</p>
 ]]></content>
   </entry>
   

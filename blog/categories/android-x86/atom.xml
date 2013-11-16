@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android-x86 | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android-x86/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -24,7 +24,7 @@
 
 <p>新しいAndorid-x86 4.2.2 のISO イメージが公開されたので、いつものようにInspion duo にインストールしてみました。Ubuntu をインストール済みのパーティションにフォーマットせずにインストールして、GRUB に起動用のエントリを追加しました。</p>
 
-<p>[plain title=&ldquo;/etc/grub.d/40_custom&rdquo;]
+<p>``` text /etc/grub.d/40_custom
 menuentry &ldquo;Android-x86 4.2.2&rdquo; &mdash;class android &mdash;class os {</p>
 
 <pre><code>insmod ext2
@@ -35,11 +35,11 @@ initrd /android-4.2-test/initrd.img
 </code></pre>
 
 <p>}
-[/plain]</p>
+```</p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
+<p><code>shell
 $ sudo update-grub
-[/shell]</p>
+</code></p>
 
 <p>今回のビルドは普通のデスクトップPC でも容易に起動しそうな気がします。</p>
 
@@ -78,14 +78,15 @@ GRUB: インストールしない</p></li>
 <li><p>grldr.mbr</p></li>
 <li><p>menu.lst</p></li>
 <li><p>GRUB4DOS の設定
-GRUB4DOS でAndroid-x86 を起動できるようにC:\menu.lst を編集します。
-[plain title=&ldquo;C:¥menu.lst&rdquo;]
-timeout 3
-default /default</p></li>
+GRUB4DOS でAndroid-x86 を起動できるようにC:\menu.lst を編集します。</p></li>
 </ul>
 </li>
 </ol>
 
+
+<p>``` text C:¥menu.lst
+timeout 3
+default /default</p>
 
 <p>title Android-x86 4.2.1 on /dev/sda2
 root (hd0,1)
@@ -98,32 +99,38 @@ root (hd0,1)
 kernel /android-4.0-RC2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/android-4.0-RC2 DATA=
 initrd /android-4.0-RC2/initrd.img
 savedefault
-[/plain]
-※ 1番目のディスクの2番目のパーティション番号は(hd0,1) のように番号を-1した値になるので要注意です。
+```</p>
+
+<p>※ 1番目のディスクの2番目のパーティション番号は(hd0,1) のように番号を-1した値になるので要注意です。
 ※ 複数のバージョンを切り替えたい場合は複数件登録します。ただし、この起動の切り替えはタッチスクリーンが使えません。
 ※ タイムアウト時間は好みで秒数を指定します。0にするとGRUB4DOSの画面が表示されなくなります。</p>
 
 <ol>
 <li> Windows 8 ブートマネージャにGRUB4DOS を登録
-コマンドプロンプトアイコンを右クリックして、「管理者として実行」します。
-[shell gutter=&ldquo;false&rdquo;]
-
-<blockquote><p>bcdedit /create /d &ldquo;Android-x86&rdquo; /application BOOTSECTOR
-[/shell]
-上記コマンドで表示された値{☆}を以下のコマンドで使います。
-[shell gutter=&ldquo;false&rdquo;]
-bcdedit /set {☆} device partition=C:
-bcdedit /set {☆} path \grldr.mbr
-bcdedit /displayorder {☆} /addlast
-[/shell]</p></blockquote></li>
+コマンドプロンプトアイコンを右クリックして、「管理者として実行」します。</li>
 </ol>
 
 
-<p>ちなみに一旦別のブートローダにしてしまった後にWindows 8 のブートマネージャに戻すには、コマンドプロンプトアイコンを右クリックして、「管理者として実行」して、以下のコマンドを実行します。
-[shell gutter=&ldquo;false&rdquo;]</p>
+<p>``` shell</p>
+
+<blockquote><p>bcdedit /create /d &ldquo;Android-x86&rdquo; /application BOOTSECTOR
+```</p></blockquote>
+
+<p>上記コマンドで表示された値{☆}を以下のコマンドで使います。</p>
+
+<p>``` shell</p>
+
+<blockquote><p>bcdedit /set {☆} device partition=C:
+bcdedit /set {☆} path \grldr.mbr
+bcdedit /displayorder {☆} /addlast
+```</p></blockquote>
+
+<p>ちなみに一旦別のブートローダにしてしまった後にWindows 8 のブートマネージャに戻すには、コマンドプロンプトアイコンを右クリックして、「管理者として実行」して、以下のコマンドを実行します。</p>
+
+<p>``` shell</p>
 
 <blockquote><p>bcdboot C:\Windows
-[/shell]</p></blockquote>
+```</p></blockquote>
 ]]></content>
   </entry>
   
@@ -189,28 +196,34 @@ bcdedit /displayorder {☆} /addlast
 
 <h3>ビルド用依存パッケージの取得</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
+<p><code>shell
 $ sudo apt-get install mercurial ccache
 $ sudo apt-get build-dep firefox
-[/shell]</p>
+</code></p>
 
 <h3>開発版(19.0a1)をビルドする場合</h3>
 
 <ol>
-<li><p> 開発版ソースコードの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ cd /tools/apps/firefox/
-$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src-central
-$ cd src-central
-[/shell]</p></li>
-<li><p> mozconfig のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
-[/shell]</p></li>
+<li> 開発版ソースコードの取得</li>
 </ol>
 
 
-<p>[plain title=&ldquo;/tools/apps/firefox/src-central/.mozconfig&rdquo; highlight=&ldquo;11,12,13,15,20,21,22&rdquo;]
+<p><code>shell
+$ cd /tools/apps/firefox/
+$ hg clone http://hg.mozilla.org/mozilla-central/ src-central
+$ cd src-central
+</code></p>
+
+<ol>
+<li> mozconfig のカスタマイズ</li>
+</ol>
+
+
+<p><code>shell
+$ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
+</code></p>
+
+<p>``` text /tools/apps/firefox/src-central/.mozconfig
 . &ldquo;$topsrcdir/mobile/android/config/mozconfigs/common&rdquo;</p>
 
 <h1>Global options</h1>
@@ -250,25 +263,31 @@ ac_add_options &mdash;with-system-zlib</p>
 <h1>Use ccache</h1>
 
 <p>ac_add_options &mdash;with-ccache=/usr/bin/ccache
-[/plain]</p>
+```</p>
 
 <h3>リリース版(16.0.1)をビルドする場合</h3>
 
 <ol>
-<li><p> リリース版ソースコードの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ cd /tools/apps/firefox/
-$ hg clone <a href="http://hg.mozilla.org/releases/mozilla-release">http://hg.mozilla.org/releases/mozilla-release</a> src-release
-$ cd src-release
-[/shell]</p></li>
-<li><p> mozconfig のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
-[/shell]</p></li>
+<li> リリース版ソースコードの取得</li>
 </ol>
 
 
-<p>[plain title=&ldquo;/tools/apps/firefox/src-release/.mozconfig&rdquo; highlight=&ldquo;9,10,11,13,14,16,17,18,20,21&rdquo;]</p>
+<p><code>shell
+$ cd /tools/apps/firefox/
+$ hg clone http://hg.mozilla.org/releases/mozilla-release src-release
+$ cd src-release
+</code></p>
+
+<ol>
+<li> mozconfig のカスタマイズ</li>
+</ol>
+
+
+<p><code>shell
+$ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
+</code></p>
+
+<p>``` text /tools/apps/firefox/src-release/.mozconfig</p>
 
 <h1>Global options</h1>
 
@@ -299,20 +318,21 @@ ac_add_options &mdash;with-system-zlib</p>
 <h1>ac_add_options &mdash;enable-official-branding</h1>
 
 <p>ac_add_options &mdash;with-branding=mobile/android/branding/unofficial
-[/plain]</p>
+```</p>
 
 <h3>firefox のビルド</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
+<p><code>shell
 $ make -f client.mk build_and_deploy
-[/shell]</p>
+</code></p>
 
 <h3>インストール</h3>
 
-<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。
-[plain title=&ldquo;出力先&rdquo; gutter=&ldquo;false&rdquo;]
+<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。</p>
+
+<p><code>text 出力先
 ./obj-x86_64-unknown-linux-gnu/dist/
-[/plain]</p>
+</code></p>
 ]]></content>
   </entry>
   

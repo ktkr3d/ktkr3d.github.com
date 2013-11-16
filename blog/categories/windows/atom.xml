@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Windows | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/windows/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:06:08+09:00</updated>
+  <updated>2013-11-17T01:05:56+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -40,50 +40,76 @@
 </ol>
 
 
-<p>設定保存用のフォルダも作成
-[shell gutter=&ldquo;false&rdquo;]
+<p>設定保存用のフォルダも作成</p>
+
+<p><code>shell
 $ mkdir /PATHTO/Android-x86/tegav2/data
-[/shell]</p>
+</code></p>
 
 <ol>
-<li><p> Burg のインストール
-[shell gutter=&ldquo;false&rdquo;]
+<li> Burg のインストール</li>
+</ol>
+
+
+<p><code>shell
 $ sudo add-apt-repository ppa:n-muench/burg
 $ sudo apt-get update
 $ sudo apt-get install burg burg-themes
-[/shell]</p></li>
-<li><p> Burg のテーマfortune とAndroid 用アイコンをgnome-look.org からダウンロードしてテーマ変更
-[plain title=&ldquo;/etc/default/burg&rdquo;]
-GRUB_GFXMODE=1366x768
-GRUB_THEME=fortune
-[/plain]
-[plain title=&ldquo;/boot/burg/themes/fortune/icons/hover&rdquo; firstline=&ldquo;16&rdquo; highlight=&ldquo;17&rdquo;]
--slackware { image = &ldquo;$$/grey_slackware.png:$$/large_slackware.png&rdquo; }
--android { image = &ldquo;$$/grey_android.png:$$/large_android.png&rdquo; }
-}
-[/plain]</p></li>
-<li><p> Android-x86 用のブートエントリを追加
-[plain title=&ldquo;/etc/burg.d/40_custom&rdquo; firstline=&ldquo;6&rdquo;]
-menuentry &ldquo;Android-x86 4.0&rdquo; &mdash;class android &mdash;class os {
-insmod ext2
-set root=&lsquo;(hd0,3)&rsquo;
-search &mdash;no-floppy &mdash;fs-uuid &mdash;set MY-UU-ID
-echo &lsquo;Loading Android-x86 4.0 &hellip;&rsquo;
-linux /PATHTO/Android-x86/tegav2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/PATHTO/Android-x86/tegav2 DATA=
-initrd /PATHTO/Android-x86/tegav2/initrd.img
-}
-[/plain]</p></li>
-<li><p> Burg の設定を更新
-[plain gutter=&ldquo;false&rdquo;]
-$ sudo burg-install /dev/sda
-$ sudo update-burg
-[/plain]</p></li>
-<li><p> 設定が有効になっているかを確認
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo burg-emu -D
-[/shell]</p></li>
+</code></p>
+
+<ol>
+<li> Burg のテーマfortune とAndroid 用アイコンをgnome-look.org からダウンロードしてテーマ変更</li>
 </ol>
 
+
+<p><code>text /etc/default/burg
+GRUB_GFXMODE=1366x768
+GRUB_THEME=fortune
+</code></p>
+
+<p><code>text /boot/burg/themes/fortune/icons/hover
+  -slackware { image = "$$/grey_slackware.png:$$/large_slackware.png" }
+  -android { image = "$$/grey_android.png:$$/large_android.png" }
+}
+</code></p>
+
+<ol>
+<li> Android-x86 用のブートエントリを追加</li>
+</ol>
+
+
+<p>``` text /etc/burg.d/40_custom
+menuentry &ldquo;Android-x86 4.0&rdquo; &mdash;class android &mdash;class os {</p>
+
+<pre><code>insmod ext2
+set root='(hd0,3)'
+search --no-floppy --fs-uuid --set MY-UU-ID
+echo 'Loading Android-x86 4.0 ...'
+linux /PATHTO/Android-x86/tegav2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/PATHTO/Android-x86/tegav2 DATA=
+initrd /PATHTO/Android-x86/tegav2/initrd.img
+</code></pre>
+
+<p>}
+```</p>
+
+<ol>
+<li> Burg の設定を更新</li>
+</ol>
+
+
+<p><code>shell
+$ sudo burg-install /dev/sda
+$ sudo update-burg
+</code></p>
+
+<ol>
+<li> 設定が有効になっているかを確認</li>
+</ol>
+
+
+<p><code>shell
+$ sudo burg-emu -D
+</code></p>
 
 <h3>パーティションレイアウト</h3>
 
