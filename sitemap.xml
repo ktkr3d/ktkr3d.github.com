@@ -413,12 +413,6 @@
         <lastmod>2013-11-16T15:19:49+09:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://ktkr3d.github.io/blog/2011/06/15/peercast-radio-e38292mac-e381a7e58b95e3818be38197e381a6e381bfe3819f/
-        </loc>
-        <lastmod>2013-11-16T15:19:49+09:00</lastmod>
-    </url>
-    <url>
         <loc>http://ktkr3d.github.io/blog/2011/06/16/android-x86-3-1/</loc>
         <lastmod>2013-11-16T15:19:49+09:00</lastmod>
     </url>
@@ -432,10 +426,6 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2011/06/28/proun-3/</loc>
-        <lastmod>2013-11-16T15:19:49+09:00</lastmod>
-    </url>
-    <url>
-        <loc>http://ktkr3d.github.io/blog/2011/07/08/usl-5p-debian-5-0/</loc>
         <lastmod>2013-11-16T15:19:49+09:00</lastmod>
     </url>
     <url>
@@ -552,14 +542,6 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2012/03/08/android-x86-tegav2-physical-keyboard/</loc>
-        <lastmod>2013-11-16T15:19:49+09:00</lastmod>
-    </url>
-    <url>
-        <loc>http://ktkr3d.github.io/blog/2012/03/10/1648/</loc>
-        <lastmod>2013-11-16T15:19:49+09:00</lastmod>
-    </url>
-    <url>
-        <loc>http://ktkr3d.github.io/blog/2012/03/17/inspiron-duo-android-x86-4-0-headphone/</loc>
         <lastmod>2013-11-16T15:19:49+09:00</lastmod>
     </url>
     <url>
@@ -820,7 +802,7 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2013/11/16/wordpress-to-jekyll/</loc>
-        <lastmod>2013-11-16T15:29:26+09:00</lastmod>
+        <lastmod>2013-11-16T15:32:34+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/linux/</loc>
@@ -828,11 +810,11 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/</loc>
-        <lastmod>2013-11-16T15:29:26+09:00</lastmod>
+        <lastmod>2013-11-16T15:32:34+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/archives/</loc>
-        <lastmod>2013-11-16T15:29:26+09:00</lastmod>
+        <lastmod>2013-11-16T15:32:34+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/android/</loc>

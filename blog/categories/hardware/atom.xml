@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hardware | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/hardware/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Inspiron Duo で遊んでみよう]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/"/>
+    <updated>2011-03-31T23:12:18+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f</id>
+    <content type="html"><![CDATA[<p><a href="http://www.dell.com/us/p/inspiron-duo/pd">http://www.dell.com/us/p/inspiron-duo/pd</a></p>
+
+<p>Inspiron Duo でいろんなOS を動かして遊んでみよう。</p>
+
+<ul>
+<li><p>Fedora 15 (DE: GNOME Shell)</p></li>
+<li><p>Ubuntu 11.04 (DE: Unity)</p></li>
+<li><p>MeeGo 1.2 Tablet UX Pre-Alpha Release</p></li>
+<li><p>MeeGo v1.1 for Netbooks</p></li>
+<li><p>MeeGo v1.1 for In-Vehicle Infotainment</p></li>
+<li><p>Android-x86 2.2 / 2.3</p></li>
+<li><p>Splashtop OS 1.0</p></li>
+<li><p>Windows 7</p></li>
+<li><p>Windows XP</p></li>
+</ul>
+
+
+<!-- more -->
+
+
+<h3>外付けHDD のパーティションレイアウト</h3>
+
+<p>/dev/sdd1
+50GB
+ntfs
+Windows XP, SplashtopOS</p>
+
+<p>/dev/sdd2
+20GB
+fat32
+共有データ</p>
+
+<p>/dev/sdd3
+/dev/sdd5
+50GB
+ext4
+Ubuntu</p>
+
+<p>/dev/sdd6
+2GB
+swap
+swap</p>
+
+<p>/dev/sdd7
+20GB
+ext3
+Fedora</p>
+
+<p>/dev/sdd8
+20GB
+ext4
+MeeGo Netbook</p>
+
+<p>/dev/sdd9
+20GB
+ext4
+MeeGo Tablet</p>
+
+<p>/dev/sdd10
+20GB
+ext4
+Android-x86</p>
+
+<p>&ndash;
+50GB
+ext4
+空き</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[USB 無線LAN 子機を選んでみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/03/21/usb-e784a1e7b79alan-e5ad90e6a99fe38292e981b8e38293e381a7e381bfe3828b/"/>
+    <updated>2011-03-21T14:31:44+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/03/21/usb-e784a1e7b79alan-e5ad90e6a99fe38292e981b8e38293e381a7e381bfe3828b</id>
+    <content type="html"><![CDATA[<p><img src="http://buffalo.jp/export/sites/buffalo.jp/product/wireless-lan/client/wli-uc-gnm/parts/images/lineup/1.jpg" alt="WLI-UC-GNM" /></p>
+
+<p><a href="http://buffalo.jp/product/wireless-lan/client/wli-uc-gnm/">http://buffalo.jp/product/wireless-lan/client/wli-uc-gnm/</a></p>
+
+<p>必要に迫られてUSB 接続の無線LAN の子機を選んでみた。小さいことはいいことだけど、アンテナの性能が犠牲になって、受信感度が落ちるみたい。Linux での動作確認の報告あり。1,208円～なり。
+結果的にはアンテナ折りたたみ式のスティックタイプの方がよかったのかな。</p>
+]]></content>
+  </entry>
+  
+</feed>

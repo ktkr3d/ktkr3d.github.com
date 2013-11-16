@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Nightingale | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/nightingale/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Nightingale 1.11.0]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/03/07/nightingale-1-11-0/"/>
+    <updated>2012-03-07T00:40:48+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/03/07/nightingale-1-11-0</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/03/nightingale_1.11.0.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/03/nightingale_1.11.0.png" alt="nightingale 1.11.0" /></a></p>
+
+<p><a href="http://blog.getnightingale.com/2012/03/05/nightingale-1-11-0-our-first-official-release/">http://blog.getnightingale.com/2012/03/05/nightingale-1-11-0-our-first-official-release/</a></p>
+
+<p>Nightingale 1.11.0 がリリースされたのでUbuntu 11.10 x86_64 で使ってみた。</p>
+
+<ul>
+<li><p>Shoutcast アドオンが使える</p></li>
+<li><p>Songbird のフェザーPurple Rain に切り替えられる
+「表示」-「フェザー」-「Purple Rain」を選択する。</p></li>
+<li><p>マスストレージデバイス（Androidとか） と同期できる</p></li>
+<li><p>歌詞を表示できる</p></li>
+<li><p>動画を再生できる（プレビュー版より不安定かも）</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

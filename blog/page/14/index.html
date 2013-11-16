@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="
+ボーンの座標とかを修正してみた。
+四肢の動きが「遊星からの物体X」から「人型」に進化した。
+">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/page/14">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
+  <li><a href="/linux">Linux</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/02/kinect_1/">Kinect でミクさんを動かしてみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-02T23:06:52+09:00" pubdate data-updated="true">2011年01月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/miku_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/miku_kinect.png" alt="miku kinect" /></a>
+ボーンの座標とかを修正してみた。
+四肢の動きが「遊星からの物体X」から「人型」に進化した。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/27/faast_wow/">FAAST でWoW を操作してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-27T18:32:39+09:00" pubdate data-updated="true">2010年12月27日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/FAAST_WoW2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/FAAST_WoW2.png" alt="FAAST WoW kinect" /></a>
+<a href="http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f">http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f</a>
+OpenNI のフォーラムにKinect を使ってWorld of Warcraft を操作するFAAST(Flexible Action and Articulated Skeleton Toolkit) のデモがあったので試してみた。
+デフォルトでは体を傾けると前進/後退/右旋回/左旋回が設定されている。
+「left_arm_up」アクションを「0」キーにアサインして、Druid クラスのスペル「<a href="http://www.wowwiki.com/Mark_of_the_Wild"><img src="mt.cgi_files/Spell_nature_regeneration.png" alt="" />Mark of the Wild</a>」を唱えてみた。
+FAAST のホームページによるとマウスイベントのエミュレータ追加とLinux 版ポーティングも計画されているらしい。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/25/ogre3d_1/">まずはOgre3D でミクさんを表示してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-25T21:35:34+09:00" pubdate data-updated="true">2010年12月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_miku.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_miku.png" alt="ogre3d miku pmd" /></a>
+Kinect でミクさんを動かしてみようと思い、とりあえずOgre3D でミクさんを表示してみた
+Kinect に接続して動かしてみると、この世のものとは思えない動きをするようになった
+ボーンの見直しが必要だ&hellip;
+<strong>モデルの変換</strong>
+1. PMDEditor でPMD モデルのサイズ変更(x0.5)、位置変更(Y:-5)
+2. Pmd2OgreMesh (作者さんに感謝!!)で.pmd から.mesh, .mesh.xml, .skeleton, .skeleton.xml, .materialを生成
+3. XML データ修正
+&ndash; .skeleton.xml にSinbad.skeleton のanimation 13種類をダミーで挿入
+&ndash; .skeleton.xml 内のボーン名(bone000 等10個)をSinbad.skelton のボーン名(Root 等)に置換
+4. OgreXMLConverter で .skeleton.xml → .skeleton を再生成
+<strong>ソースの修正</strong>
+1. 剣メッシュ関連の処理(剣の表示や剣を抜く動作等)をコメントアウト
+2. マッピングしなかったボーン名(Stomach, Waist)についてはtransformBone() をコメントアウト
+3. setupbone() で指定する角度を修正</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/24/linux_kinect/">Linux でKinect Sinbad デモを動かしてみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-24T03:33:41+09:00" pubdate data-updated="true">2010年12月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/linux_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/linux_kinect.png" alt="linux kinect" /></a>
+OpenNI のSinbad デモ(SampleAppSinbad)のLinux 版が見つからなかったのでポーティングしてみた
+<strong>環境</strong>
+OS: Ubuntu 10.10 32bit
+Ogre3D: Ver. 1.7.2
+IDE: Code::Blocks 10.05
+GCC: 4.4.5
+<strong>改造前ソース</strong>
+<a href="https://github.com/OpenNI/SampleAppSinbad">https://github.com/OpenNI/SampleAppSinbad</a>
+<strong>主な修正点</strong>
+Sinbad:
+&ndash; Code::Blocks でOgre3D プロジェクト(コンソールアプリケーション)を作成
+&ndash; FileSystemLayerImpl_WIN32.cpp の代わりにFileSystemLayerImpl_Unix.cpp を使用
+&ndash; FileSystemLayerImpl_Unix.cpp でerrno.h のインクルードを追加
+&ndash; SampleBrowser.cpp でAllocConsole.h のインクルードを削除
+Sample_Character.so:
+&ndash; Code::Blocks でOgre3D プロジェクト(動的ライブラリ)を作成
+&ndash; WIN32 依存処理(time とか)を修正
+&ndash; XnSkeletonJoint のスコープを省略
+&ndash; Ogre オリジナルヘッダにOgreBites::YesNoSlider が含まれていないので、CharacterSample.h
+では&#8221;SdkSample.h&#8221;ではなく&#8221;../../Common/include/SdkSample.h&#8221;をインクルードする
+&ndash; openNi.xml のパス指定を修正
+&ndash; OpenNI とXnVNite をリンク
+ogre.cfg:
+&ndash; レンダラをOpenGL のみにする
+&ndash; 「Colour Depth」、「VSync Interval」のエントリを削除
+plugins.cfg:
+&ndash; Direct3D 系のレンダラのエントリをコメントアウト</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/23/ogre3d/">ついでにOgre3D を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-23T13:46:25+09:00" pubdate data-updated="true">2010年12月23日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_skeltal.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_skeltal.png" alt="ogre3d skeltal SampleBrowser" /></a>
+OpenNI のSampleAppSinbad デモがOgre3D で出来ていたので初めてOgre3D を触ってみた
+Ogre3D 自体はWindows でもLinux でも動くしエフェクトも揃ってそうなのでなかなか良さそう
+サンプルパッケージ(ogre-samples-bin)の実行は/usr/bin/SampleBrowser
+OpenNI のSampleAppSinbad デモはOgre3D のSampleBrowser
+のモジュール(Sample_Character)を改造しているようなので、WIN32
+依存のコード(SkeletonPoseDetector.h, SinbadCharacterController.h
+あたり)を修正すればLinux でも動くかもしれない
+Kinect を使った他のOpenNI のデモ自体はLinux でも動いたし</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/22/kinect/">Kinect を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-22T19:16:07+09:00" pubdate data-updated="true">2010年12月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/12/kinect_ogre3d.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/12/kinect_ogre3d.png" alt="kinect ogre3d" /></a>
+<a href="https://github.com/OpenNI/SampleAppSinbad">https://github.com/OpenNI/SampleAppSinbad</a>
+<a href="http://www.ogre3d.org/forums/viewtopic.php?f=11&amp;t=61571">http://www.ogre3d.org/forums/viewtopic.php?f=11&amp;t=61571</a>
+Kinect が話題になっていたのでOgre3D 版のデモ（ソース付き）を試してみた
+認識の精度が予想以上に高くて驚いた&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/26/anaglyph/">Anaglyph を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-26T00:34:01+09:00" pubdate data-updated="true">2010年11月26日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/anaglyph.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/anaglyph.png" alt="anaglyph irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=33463">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=33463</a>
+立体視(Anaglyph Rendering)を試してみた
+動きがあると立体感が顕著になっておもしろい
+右目を青、左目を赤でマスク
+少し離れてみるのがコツかも</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/18/blockout/">BlockOut II で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-18T01:23:53+09:00" pubdate data-updated="true">2010年11月18日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/blockout.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/blockout.png" alt="blockout" /></a>
+<a href="http://www.blockout.net/blockout2/">http://www.blockout.net/blockout2/</a>
+レトロな三次元テトリス
+高速で操作するのがおもしろい
+高難易度のデモを見ているだけでも楽しい</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/09/neverball/">Neverball で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-09T19:07:59+09:00" pubdate data-updated="true">2010年11月09日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/neverball.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/neverball.png" alt="neverball" /></a>
+<a href="http://neverball.org/">http://neverball.org/</a>
+<a href="http://neverball.org/screenshots.php">http://neverball.org/screenshots.php</a>
+ボードを傾けてコインを拾いながらボールをゴールに導く3D ゲーム
+低スペックなPC でもよく動く
+先の方のステージがとんでもないことになっている&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/01/meego/">MeeGo を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-01T23:39:42+09:00" pubdate data-updated="true">2010年11月01日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/ika_meego.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/ika_meego.png" alt="meego" /></a>
+<a href="http://meego.com/">http://meego.com/</a>
+<a href="http://distrowatch.com/table.php?distribution=meego">http://distrowatch.com/table.php?distribution=meego</a>
+ネットブック向けのディストリビューションMeeGo v1.1 for Netbooks
+動作は軽快で見た目もいいんだけど細かいところで少し癖があるかも
+パッケージ管理はRPM でzypper
+日本語入力はSCIM＋SKK
+ATOM 縛りでMoblin がインストールできなかったPC にもインストールできるかも
+ブートローダの書き込み中にフリーズする場合はフォーマットを変えるといける
+変更前 /boot: ext3, /: btrfs
+変更後 /boot: ext3, /: ext3
+<a href="http://ktkr3d.site11.com/?page_id=9">MeeGo/Smeegol メモ</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/15/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/13/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ktkr3d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

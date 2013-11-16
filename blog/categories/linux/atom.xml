@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[screenfetch]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/11/09/screenfetch/"/>
+    <updated>2013-11-09T08:56:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/11/09/screenfetch</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/screenfetch_debian.png"><img src="/images/screenfetch_debian_tn.png"></a></p>
+
+<p><a href="http://www.unixmen.com/find-system-information-screenfetch-tool/">http://www.unixmen.com/find-system-information-screenfetch-tool/</a></p>
+
+<p>ScreenFetch でシステム情報を表示してみました。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[minetest]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/11/04/minetest/"/>
+    <updated>2013-11-04T21:28:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/11/04/minetest</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png"><img src="/images/minetest_ogl42_tn.png"></a></p>
+
+<p><a href="http://minetest.net/">http://minetest.net/</a></p>
+
+<p>minecraft のクローンminetest がUbuntu の標準リポジトリに登録されていたので、遊んでみました。
+minetest はIrrlicht エンジンを利用して実装されています。
+動作は軽快ですが、一部文字が表示されない箇所がありました。</p>
+
+<!-- more -->
+
+
+<h4>サーバへの接続方法</h4>
+
+<p>初期画面の一部の文字が表示されていなかったので、適当に勘を働かせて操作してみます。</p>
+
+<ol>
+<li>左から二番目のタブ(マルチプレイヤー)を選択</li>
+<li>下のテキストボックスに、サーバのIP アドレスとポート番号を入力(<code>http://servers.minetest.net/</code>から適当に選ぶ)</li>
+<li>右上から二番目のテキストボックスにパスワードを入力</li>
+<li>右下のボタン(接続)を押下</li>
+</ol>
+
+
+<p>グラフィックがオンボードでATOM なOpenGL 1.4 の環境で動かしてみると、さすがに重かったです。</p>
+
+<p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png"><img src="/images/minetest_ogl14_tn.png"></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fedora 20]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/10/05/fedora-20/"/>
+    <updated>2013-10-05T20:14:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/10/05/fedora-20</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png"><img src="/images/fedora_20_tn.png"></a></p>
+
+<p>Fedora 20 alpha + GNOME Shell 3.10 をインストールしてみました。</p>
+
+<h4>Fedora 20 alpha</h4>
+
+<p><code>https://fedoraproject.org/ja/get-prerelease</code></p>
+
+<h4>RPM Fusion</h4>
+
+<p><code>http://rpmfusion.org/Configuration</code></p>
+
+<h4>その他の設定</h4>
+
+<ul>
+<li>Autohide Top Bar extension</li>
+<li>Cairo-Dock</li>
+<li>Bluetooth Keyboard</li>
+<li>VNC Server<br/>
+  <code>sudo yum install vino</code> を実行すると、[設定]&ndash;[共有]&ndash;[画面共有]メニューが有効になる。クライアントからはSSH トンネル経由で接続する。</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h4>Android からインターネット経由の通信と接続ツール</h4>
+
+<ul>
+<li>SSH (Connect Bot)
+  <code>https://play.google.com/store/apps/details?id=org.connectbot</code></li>
+<li>VNC over SSH (bVNC Free)
+  <code>https://play.google.com/store/apps/details?id=com.iiordanov.freebVNC</code><br/>
+  SSH 上で、ターゲットホストへ接続</li>
+<li>Samba over SSH (SSH Tunnel)
+  <code>https://play.google.com/store/apps/details?id=org.sshtunnel</code><br/>
+  SSH 上で、ローカルの10445 をリモートの445 にポートフォワード</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GNOME Shell Lock Screen]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
+    <updated>2013-07-15T08:57:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png"></a></p>
+
+<p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
+
+<!-- more -->
+
+
+<h4>ロック画面のフォントの変更</h4>
+
+<p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
+</span><span class='line'><span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>設定の反映</h4>
+
+<p>設定を反映するには、<code>Alt + F2</code> を押下、<code>r</code> を入力して<code>Enter</code>で、GNOME Shell を再起動します。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Docky + Cardapio]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
+    <updated>2013-07-14T11:11:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png"></a></p>
+
+<p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
+
+<ol>
+<li>電源ボタンが無いこと</li>
+<li>アプリケーションメニューがないこと</li>
+</ol>
+
+
+<p>Docky とCardapio の設定で上記を動くようにしてみました。</p>
+
+<!-- more -->
+
+
+<p></p>
+
+<h4>電源ボタンの設定</h4>
+
+<p>一番右の「画面のロック」アイコンを右クリックすることで、「画面のロック」、「ログアウト」、「サスペンド」、「再起動」、「シャットダウン」のようなサブメニューが表示されます。
+「画面のロック」のアイコン上でマウスのホイールボタンで上下にホイールすると、デフォルトの動作を指定できます。
+ボタン押下後に再起動かシャットダウンかを選択させる形式がよかったのですが、とりあえずこれで良しとしましょう。</p>
+
+<h4>Cardapio の設定</h4>
+
+<p>Cardapio を使ってDocky からアプリケーションメニューを表示することにします。</p>
+
+<pre><code>$ sudo add-apt-repository ppa:cardapio-team/unstable
+$ sudo apt-get update
+$ sudo apt-get install cardapio
+</code></pre>
+
+<p>saucy 向けのCardapio が存在しなかったので、ソフトウェアソースをquantal 向けに切り替えてインストールしました。
+cardapio を起動してみたところ、いくつかエラーが表示されたので、<code>/usr/lib/cardapio/Cardapio.py</code> を修正しました。</p>
+
+<ol>
+<li><p>以下を追加<br>
+<code>from xdg import BaseDirectory</code></p></li>
+<li><p>以下を置換<br>
+<code>DesktopEntry.xdg_config_home</code> &ndash;> <code>BaseDirectory.xdg_config_home</code></p></li>
+<li><p>以下を置換<br>
+<code>DesktopEntry.xdg_cache_home</code> &ndash;> <code>BaseDirectory.xdg_cache_home</code></p></li>
+</ol>
+
+
+<h4>Docky へCardapio を登録</h4>
+
+<p>cardapio-helper というDocky のヘルパーを使うと、Docky アイコンクリックで、Cardapio が起動されるはずなのですが、うまく動作しませんでした。
+仕方がないので、<code>/usr/share/applications/cardapio.desktop</code> をDocky にドラッグ&amp;ドロップして、メニューアイコンを登録しました。</p>
+]]></content>
+  </entry>
+  
+</feed>

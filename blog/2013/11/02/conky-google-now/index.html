@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Conky Google Now - ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="http://satya164.deviantart.com/art/Conky-Google-Now-366545753 ConkyForecast のスクリプトがうまく動かなくなったので、Conky Google Now に乗り換えてみました。
+フォントをOpen Sans Light &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/2013/11/02/conky-google-now">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
+  <li><a href="/linux">Linux</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Conky Google Now</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-02T12:05:00+09:00" pubdate data-updated="true">2013年11月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="/images/conky_google_now.png"><img src="/images/conky_google_now_tn.png"></a></p>
+
+<p><a href="http://satya164.deviantart.com/art/Conky-Google-Now-366545753">http://satya164.deviantart.com/art/Conky-Google-Now-366545753</a></p>
+
+<p>ConkyForecast のスクリプトがうまく動かなくなったので、Conky Google Now に乗り換えてみました。
+フォントをOpen Sans Light に統一しようかと思いましたが、行間が空いてしまったので止めておきました。</p>
+
+<!-- more -->
+
+
+
+
+<figure class='code'><figcaption><span>.conkyrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'># Conky Google Now style #
+</span><span class='line'>
+</span><span class='line'># Conky settings #
+</span><span class='line'>background no
+</span><span class='line'>update_interval 1
+</span><span class='line'>double_buffer yes
+</span><span class='line'>no_buffers yes
+</span><span class='line'>
+</span><span class='line'># Window specifications #
+</span><span class='line'>own_window yes
+</span><span class='line'>own_window_type normal
+</span><span class='line'>own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+</span><span class='line'>own_window_title
+</span><span class='line'>own_window_colour 2D2D2D
+</span><span class='line'>
+</span><span class='line'>minimum_size 220
+</span><span class='line'>maximum_width 220
+</span><span class='line'>
+</span><span class='line'># Alignment #
+</span><span class='line'>alignment tr
+</span><span class='line'>gap_x 10
+</span><span class='line'>gap_y 10
+</span><span class='line'>
+</span><span class='line'>border_inner_margin 15
+</span><span class='line'>border_outer_margin 0
+</span><span class='line'>
+</span><span class='line'># Graphics settings #
+</span><span class='line'>draw_shades no
+</span><span class='line'>draw_outline no
+</span><span class='line'>draw_borders no
+</span><span class='line'>draw_graph_borders no
+</span><span class='line'>
+</span><span class='line'># Text settings #
+</span><span class='line'>use_xft yes
+</span><span class='line'>xftalpha 0
+</span><span class='line'>xftfont Open Sans Light:size=10
+</span><span class='line'>
+</span><span class='line'>override_utf8_locale yes
+</span><span class='line'>
+</span><span class='line'>imlib_cache_size 0
+</span><span class='line'>
+</span><span class='line'># Color scheme #
+</span><span class='line'>default_color DCDCDC
+</span><span class='line'>
+</span><span class='line'>color1 0099CC
+</span><span class='line'>color2 9933CC
+</span><span class='line'>color3 669900
+</span><span class='line'>color4 FF8800
+</span><span class='line'>color5 CC0000
+</span><span class='line'>color6 AAAAAA
+</span><span class='line'>color7 484848
+</span><span class='line'>
+</span><span class='line'>TEXT
+</span><span class='line'>${font Open Sans Light:size=13}${time %G}/${time %m}/${time %d} (${font TakaoPGothic:size=13}${time %a}${voffset -2}${font Open Sans Light:size=13})${alignr}${time %H}:${time %M}:${time %S}
+</span><span class='line'>${voffset -10}${hr}${color}${voffset -5}
+</span><span class='line'># WEATHER
+</span><span class='line'>${execi 300 curl -s &quot;http://weather.yahooapis.com/forecastrss?w=1118370&amp;u=c&quot; -o ~/.cache/weather.xml}${font Open Sans Light:size=15}${execi 300 grep &quot;yweather:location&quot; ~/.cache/weather.xml | grep -o &quot;city=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot;}, ${execi 300 grep &quot;yweather:location&quot; ~/.cache/weather.xml | grep -o &quot;country=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot;}${font}
+</span><span class='line'>${voffset -20}${font Open Sans Light:size=48}${alignr}${execi 300 grep &quot;yweather:condition&quot; ~/.cache/weather.xml | grep -o &quot;temp=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot;}°${font}${voffset -15}
+</span><span class='line'>${execi 300 cp -f ~/.conky-google-now/$(grep &quot;yweather:condition&quot; ~/.cache/weather.xml | grep -o &quot;code=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot;).png ~/.cache/weather.png}${image ~/.cache/weather.png -p 0,60 -s 60x60}
+</span><span class='line'>${execi 300 grep &quot;yweather:condition&quot; ~/.cache/weather.xml | grep -o &quot;text=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | tr &#39;[a-z]&#39; &#39;[A-Z]&#39;}
+</span><span class='line'>${image ~/.conky-google-now/wind.png -p 0,140 -s 15x15}${goto 35}${execi 300 grep &quot;yweather:wind&quot; ~/.cache/weather.xml | grep -o &quot;speed=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot;}${execi 300 grep &quot;yweather:units&quot; ~/.cache/weather.xml | grep -o &quot;speed=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot;}
+</span><span class='line'>${image ~/.conky-google-now/humidity.png -p 0,160 -s 15x15}${goto 35}${execi 300 grep &quot;yweather:atmosphere&quot; ~/.cache/weather.xml | grep -o &quot;humidity=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot;}%${voffset 10}
+</span><span class='line'>${goto 18}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;day=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==1&#39; | tr &#39;[a-z]&#39; &#39;[A-Z]&#39;}${goto 60}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;day=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==2&#39; | tr &#39;[a-z]&#39; &#39;[A-Z]&#39;}${goto 105}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;day=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==3&#39; | tr &#39;[a-z]&#39; &#39;[A-Z]&#39;}${goto 150}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;day=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==4&#39; | tr &#39;[a-z]&#39; &#39;[A-Z]&#39;}${goto 195}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;day=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==5&#39; | tr &#39;[a-z]&#39; &#39;[A-Z]&#39;}
+</span><span class='line'>${execi 300 cp -f ~/.conky-google-now/$(grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;code=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==1&#39;).png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 0,210 -s 30x30}${execi 300 cp -f ~/.conky-google-now/$(grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;code=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==2&#39;).png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 45,210 -s 30x30}${execi 300 cp -f ~/.conky-google-now/$(grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;code=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==3&#39;).png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 90,210 -s 30x30}${execi 300 cp -f ~/.conky-google-now/$(grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;code=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==4&#39;).png ~/.cache/weather-4.png}${image ~/.cache/weather-4.png -p 135,210 -s 30x30}${execi 300 cp -f ~/.conky-google-now/$(grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;code=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==5&#39;).png ~/.cache/weather-5.png}${image ~/.cache/weather-5.png -p 180,210 -s 30x30}${voffset 20}
+</span><span class='line'>${color ffaaaa}${goto 20}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;high=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==1&#39;}°${goto 65}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;high=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==2&#39;}°${goto 110}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;high=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==3&#39;}°${goto 155}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;high=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==4&#39;}°${goto 200}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;high=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==5&#39;}°
+</span><span class='line'>${voffset -5}${color aaaaff}${goto 20}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;low=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==1&#39;}°${goto 65}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;low=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==2&#39;}°${goto 110}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;low=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==3&#39;}°${goto 155}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;low=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==4&#39;}°${goto 200}${execi 300 grep &quot;yweather:forecast&quot; ~/.cache/weather.xml | grep -o &quot;low=\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;\&quot;[^\&quot;]*\&quot;&quot; | grep -o &quot;[^\&quot;]*&quot; | awk &#39;NR==5&#39;}°
+</span><span class='line'># *** SYSTEM ***
+</span><span class='line'>${color AAAAAA}${voffset 16}${font DejaVu Sans:size=12}SYSTEM${font} ${hr}
+</span><span class='line'>#${alignc 17}${font Arial Black:size=12}${nodename}${font}
+</span><span class='line'>${font StyleBats:size=10}i${font DejaVu Sans:size=10}   Distro:  ${alignr}${exec lsb_release -d | sed -e &#39;s/.*: //&#39; | awk &#39;{print $2,$3}&#39;}
+</span><span class='line'>${font StyleBats:size=10}i${font DejaVu Sans:size=10}   Kernel:  ${alignr}${kernel}
+</span><span class='line'>${font StyleBats:size=10}i${font DejaVu Sans:size=10}   Arch:  ${alignr}${machine}
+</span><span class='line'>${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,60}
+</span><span class='line'>${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU2: ${cpu cpu2}% ${alignr}${cpubar cpu2 8,60}
+</span><span class='line'>${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU3: ${cpu cpu3}% ${alignr}${cpubar cpu3 8,60}
+</span><span class='line'>${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU4: ${cpu cpu4}% ${alignr}${cpubar cpu4 8,60}
+</span><span class='line'>${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU5: ${cpu cpu5}% ${alignr}${cpubar cpu5 8,60}
+</span><span class='line'>${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU6: ${cpu cpu6}% ${alignr}${cpubar cpu6 8,60}
+</span><span class='line'>${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU7: ${cpu cpu7}% ${alignr}${cpubar cpu7 8,60}
+</span><span class='line'>${font StyleBats:size=10}A${font DejaVu Sans:size=10}   CPU8: ${cpu cpu8}% ${alignr}${cpubar cpu8 8,60}
+</span><span class='line'>${font StyleBats:size=10}g${font DejaVu Sans:size=10}   RAM: $memperc% ${alignr}${membar 8,60}
+</span><span class='line'>${font StyleBats:size=10}j${font DejaVu Sans:size=10}   Swap: $swapperc% ${alignr}${swapbar 8,60}
+</span><span class='line'>#${font Webdings:size=10}~${font DejaVu Sans:size=10}  Battery: ${battery_percent BAT0}% ${alignr}${battery_bar 8,60 BAT0}
+</span><span class='line'>${font StyleBats:size=10}q${font DejaVu Sans:size=10}   Uptime: ${alignr}${uptime}
+</span><span class='line'># *** FILESYSTEM ***
+</span><span class='line'>${voffset 16}${font DejaVu Sans:size=12}FILESYSTEM${font} ${hr}
+</span><span class='line'>${font PizzaDude Bullets:size=10}m${font DejaVu Sans:size=10}   /:${alignr}${fs_type /}
+</span><span class='line'>        ${fs_used /} / ${fs_size /} ${alignr}${fs_bar 8,60 /}
+</span><span class='line'>${font PizzaDude Bullets:size=10}m${font DejaVu Sans:size=10}   /mnt/common:${alignr}${fs_type /mnt/common}
+</span><span class='line'>        ${fs_used /mnt/common} / ${fs_size /mnt/common} ${alignr}${fs_bar 8,60 /mnt/common}
+</span><span class='line'># *** NETWORK ***
+</span><span class='line'>${voffset 16}${font DejaVu Sans:size=12}NETWORK${font} ${hr}#
+</span><span class='line'>${if_existing /proc/net/route wlan0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}O${font DejaVu Sans:size=10}   Up: ${upspeed wlan0} ${alignr}${upspeedgraph wlan0 8,60 000000 000000}
+</span><span class='line'>${font PizzaDude Bullets:size=10}U${font DejaVu Sans:size=10}   Down: ${downspeed wlan0} ${alignr}${downspeedgraph wlan0 8,60 000000 000000}
+</span><span class='line'>${font PizzaDude Bullets:size=10}N${font DejaVu Sans:size=10}   Upload: ${alignr}${totalup wlan0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}T${font DejaVu Sans:size=10}   Download: ${alignr}${totaldown wlan0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}Z${font DejaVu Sans:size=10}   Signal: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}a${font DejaVu Sans:size=10}   Local IP: ${alignr}${addr wlan0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}b${font DejaVu Sans:size=10}   Public IP: ${alignr}${execi 1800 ~/.conky/scripts/ip.sh}#
+</span><span class='line'>${else}${if_existing /proc/net/route eth0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}O${font DejaVu Sans:size=10}   Up: ${upspeed eth0} ${alignr}${upspeedgraph eth0 8,60 000000 000000}
+</span><span class='line'>${font PizzaDude Bullets:size=10}U${font DejaVu Sans:size=10}   Down: ${downspeed eth0} ${alignr}${downspeedgraph eth0 8,60 000000 000000}
+</span><span class='line'>${font PizzaDude Bullets:size=10}N${font DejaVu Sans:size=10}   Upload: ${alignr}${totalup eth0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}T${font DejaVu Sans:size=10}   Download: ${alignr}${totaldown eth0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}a${font DejaVu Sans:size=10}   Local IP: ${alignr}${addr eth0}
+</span><span class='line'>${font PizzaDude Bullets:size=10}b${font DejaVu Sans:size=10}   Public IP: ${alignr}${execi 1800 ~/.conky/scripts/ip.sh}#
+</span><span class='line'>${endif}${endif}
+</span><span class='line'># *** PROCESS ***
+</span><span class='line'>${voffset 16}${font DejaVu Sans:size=12}PROCESSES${font DejaVu Sans:size=10} ${hr}
+</span><span class='line'>NAME $alignr CPU%  MEM%
+</span><span class='line'>${top name 1} $alignr ${top cpu 1}   ${top mem 1}
+</span><span class='line'>${top name 2} $alignr ${top cpu 2}   ${top mem 2}
+</span><span class='line'>${top name 3} $alignr ${top cpu 3}   ${top mem 3}
+</span><span class='line'>${top name 4} $alignr ${top cpu 4}   ${top mem 4}
+</span><span class='line'>${top name 5} $alignr ${top cpu 5}   ${top mem 5}
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="https://plus.google.com/118064786423053991892" rel="author">ktkr3d</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-02T12:05:00+09:00" pubdate data-updated="true">2013年11月02日</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/conky/'>Conky</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2013/11/02/conky-google-now/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2013/11/02/conky-google-now/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/10/08/yad/" title="Previous Post: yad">&laquo; yad</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/11/04/minetest/" title="Next Post: minetest">minetest &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ktkr3d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ktkr3d.github.io/blog/2013/11/02/conky-google-now/';
+        var disqus_url = 'http://ktkr3d.github.io/blog/2013/11/02/conky-google-now/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

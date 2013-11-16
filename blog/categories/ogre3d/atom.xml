@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ogre3D | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/ogre3d/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 11.10 + Ogre 1.7.3 + Kinect]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/"/>
+    <updated>2012-02-10T21:20:03+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
+
+<p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
+
+<p>Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
+OpenNI/NITE 1.5.2
+avin2-sensor 5.1.0.25
+Ogre3d 1.7.3
+gcc/g++ 4.6.1
+codeblocks 10.05</p>
+
+<p>ソースコードとロードモジュール: <a href="https://github.com/ktkr3d/sample-app-sinbad">https://github.com/ktkr3d/sample-app-sinbad</a></p>
+
+<p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
+
+<p>[plain gutter=&ldquo;false&rdquo;]
+コンパイル中: src/CharacterSample.cpp
+リンク中 動的ライブラリ: ../bin/Sample_Character.so
+/usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1' can not be used when making a shared object; recompile with -fPIC
+obj/Release/src/CharacterSample.o: could not read symbols: Bad value
+collect2: ld はステータス 1 で終了しました
+プロセスはステータス 1 で終了しました (0 分 10 秒)
+0 個のエラー、 0 個の警告
+[/plain]</p>
+
+<p>-fPIC オプションをつけたらビルドできた。</p>
+
+<p>[plain gutter=&ldquo;false&rdquo;]
+コンパイル中: src/CharacterSample.cpp
+リンク中 動的ライブラリ: ../bin/Sample_Character.so
+出力サイズは 232.84 KB
+プロセスはステータス 0 で終了しました (0 分 5 秒)
+0 個のエラー、 0 個の警告
+[/plain]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wine + Proun で遊んでみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/11/27/wine-proun/"/>
+    <updated>2011-11-27T22:47:52+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/11/27/wine-proun</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/wine_proun1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/wine_proun1.png" alt="wine proun" /></a></p>
+
+<p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
+<a href="http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049">http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049</a>
+<a href="http://www.proun-game.com/UserTracks.html">http://www.proun-game.com/UserTracks.html</a></p>
+
+<p>Wine を使ったらProun がLinux で動くようになっていたので、Ubuntu 11.10 x86_64(GNOME Shell) + Wine 1.3.28 + Proun(Patch v109 again, 19 October 2011)の環境で遊んでみた。
+いつの間にかユーザトラックが増えていた。
+ユーザトラック"Solar Coaster"が難しい。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Proun で遊んでみた3]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/06/28/proun-3/"/>
+    <updated>2011-06-28T00:23:34+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/06/28/proun-3</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/06/proun_archipelago.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/06/proun_archipelago.png" alt="proun archipelago" /></a></p>
+
+<p><a href="http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd">http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd</a></p>
+
+<p>proun のユーザトラックArchipelago がフォーラムに掲載されていたので遊んでみた。
+ファンタジーっぽいコースに見えるけど、なかなか難しくておもしろい。
+しかもこのコースはInspiron duo でも発生していた<a href="http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t=1038&amp;sid=a2b52fd4f493e88335b57fa70b5ba637">このエラー</a>が発生しないみたいなので、ビデオ環境が弱いPC　にも優しいかもしれない。
+これからもおもしろいコースが増えるといいな。</p>
+
+<p>クレジットを見ると、Proun はOgre3D で作られているけどサウンドはirrKlang だった。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Proun で遊んでみた2]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/06/25/proun-2/"/>
+    <updated>2011-06-25T12:51:16+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/06/25/proun-2</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/06/proun_ss2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/06/proun_ss2.png" alt="proun" /></a></p>
+
+<ul>
+<li><p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a></p></li>
+<li><p><a href="http://blog.oogst3d.net/">http://blog.oogst3d.net/</a></p></li>
+<li><p><a href="http://www.ronimo-games.com/forum/viewforum.php?f=7">http://www.ronimo-games.com/forum/viewforum.php?f=7</a></p></li>
+<li><p><a href="http://www.proun-game.com/UserTracks.html">http://www.proun-game.com/UserTracks.html</a></p></li>
+</ul>
+
+
+<p>Proun が2011.6.24 にリリースされたので遊んでみた。
+抽象的なコースが綺麗でBGM も軽快なのが楽しい。
+ゲームを進めていくとスピードがアップ(Fast &ndash;> Sonic &ndash;> Supersonic &ndash;> Speed of light)していってかなり難しくなる。
+ネットワーク上でのランキングやユーザトラック（コース）の拡張ができるようなので、長く遊べそう。
+正式版になって、フリーダウンロードとPay what you want($2, $5, $10, $20, any) から選択できるようになったので、PayPal で購入してみた。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Proun で遊んでみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/05/22/proun-e381a7e9818ae38293e381a7e381bfe3819f/"/>
+    <updated>2011-05-22T10:35:28+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/05/22/proun-e381a7e9818ae38293e381a7e381bfe3819f</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/proun.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/proun.png" alt="proun ogre3d" /></a></p>
+
+<p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
+Ogre3D で作られたレースゲームProun のベータ版で遊んでみた。
+2011年春にリリースされるらしい？</p>
+
+<p>プレイ動画を見ているだけでも楽しい。</p>
+]]></content>
+  </entry>
+  
+</feed>

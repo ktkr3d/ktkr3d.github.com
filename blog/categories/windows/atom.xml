@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Windows | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/windows/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Burg + Ubuntu 12.04 + Windows 8 + Android-x86 4.0]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/06/06/burg-ubuntu-12-04-windows-8-android-x86-4-0/"/>
+    <updated>2012-06-06T21:28:47+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/06/06/burg-ubuntu-12-04-windows-8-android-x86-4-0</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png" alt="burg windows 8 ubuntu 12.04 android-x86 4.0" /></a></p>
+
+<p>Ubuntu 12.04 とWindows 8 とAndroid-x86 4.0 のマルチブート環境を構築して、ブートローダをBurg にしてみた。<a href="/2011/05/07/burg-%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/">一年前</a>と同じことの繰り返しだけれど。</p>
+
+<h3>手順</h3>
+
+<ol>
+<li><p> Windows 8 RP をインストール</p></li>
+<li><p> Ubuntu 12.04 を/dev/sda3 にインストール
+ブートローダ(GRUB)を/dev/sda にインストール</p></li>
+<li><p> Android-x86 4.0 のISO の中にある以下の4つのファイルを/dev/sda3 (/PATHTO/Android-x86/tegav2/)にコピー</p>
+
+<ul>
+<li><p>initrd.img</p></li>
+<li><p>kernel</p></li>
+<li><p>ramdisk.img</p></li>
+<li><p>system.sfs</p></li>
+</ul>
+</li>
+</ol>
+
+
+<p>設定保存用のフォルダも作成
+[shell gutter=&ldquo;false&rdquo;]
+$ mkdir /PATHTO/Android-x86/tegav2/data
+[/shell]</p>
+
+<ol>
+<li><p> Burg のインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo add-apt-repository ppa:n-muench/burg
+$ sudo apt-get update
+$ sudo apt-get install burg burg-themes
+[/shell]</p></li>
+<li><p> Burg のテーマfortune とAndroid 用アイコンをgnome-look.org からダウンロードしてテーマ変更
+[plain title=&ldquo;/etc/default/burg&rdquo;]
+GRUB_GFXMODE=1366x768
+GRUB_THEME=fortune
+[/plain]
+[plain title=&ldquo;/boot/burg/themes/fortune/icons/hover&rdquo; firstline=&ldquo;16&rdquo; highlight=&ldquo;17&rdquo;]
+-slackware { image = &ldquo;$$/grey_slackware.png:$$/large_slackware.png&rdquo; }
+-android { image = &ldquo;$$/grey_android.png:$$/large_android.png&rdquo; }
+}
+[/plain]</p></li>
+<li><p> Android-x86 用のブートエントリを追加
+[plain title=&ldquo;/etc/burg.d/40_custom&rdquo; firstline=&ldquo;6&rdquo;]
+menuentry &ldquo;Android-x86 4.0&rdquo; &mdash;class android &mdash;class os {
+insmod ext2
+set root=&lsquo;(hd0,3)&rsquo;
+search &mdash;no-floppy &mdash;fs-uuid &mdash;set MY-UU-ID
+echo &lsquo;Loading Android-x86 4.0 &hellip;&rsquo;
+linux /PATHTO/Android-x86/tegav2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/PATHTO/Android-x86/tegav2 DATA=
+initrd /PATHTO/Android-x86/tegav2/initrd.img
+}
+[/plain]</p></li>
+<li><p> Burg の設定を更新
+[plain gutter=&ldquo;false&rdquo;]
+$ sudo burg-install /dev/sda
+$ sudo update-burg
+[/plain]</p></li>
+<li><p> 設定が有効になっているかを確認
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo burg-emu -D
+[/shell]</p></li>
+</ol>
+
+
+<h3>パーティションレイアウト</h3>
+
+<p>デバイス
+タイプ
+サイズ
+用途</p>
+
+<p>/dev/sda1
+ntfs
+0.35 GiB
+EFI</p>
+
+<p>/dev/sda2
+ntfs
+150.00 GiB
+Windows 8</p>
+
+<p>/dev/sda3
+ext4
+145.00 GiB
+Ubuntu 12.04,<br/>
+Andorid-x86 4.0</p>
+
+<p>/dev/sda4
+swap
+2.75 GiB
+Linux swap</p>
+
+<p>少し改善した手順は<a href="http://ktkr3d.site11.com/android-x86/">こちら</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Inspiron duo + Windows 8 64bit]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/06/05/inspiron-duo-windows-8-64bit/"/>
+    <updated>2012-06-05T04:27:56+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/06/05/inspiron-duo-windows-8-64bit</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_inspiron_duo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_inspiron_duo.png" alt="windows 8 inspiron duo" /></a></p>
+
+<p>Inspiron duo にWindows 8 Release Preview をインストールしてみた。Inspiron duo のCPU はDual Core ATOM N550 で64bit 対応しているので、Windows 8 の64bit 版がインストールできる。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_metro.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_metro.png" alt="windows 8 metro" /></a></p>
+
+<p>Inspiron duo のスクリーンは10.1 インチの1366x768 でMetro はこんな感じで表示された。タッチスクリーンで横にスライドする。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Windows 8 Release Preview 64bit]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/06/02/windows-8-release-preview-64bit/"/>
+    <updated>2012-06-02T00:15:41+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/06/02/windows-8-release-preview-64bit</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_boot_usb.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_boot_usb.png" alt="windows 8 boot usb" /></a>
+<a href="http://windows.microsoft.com/ja-JP/windows-8/download">http://windows.microsoft.com/ja-JP/windows-8/download</a>
+Linux の他にはWindows XP 32bit しか入っていないデスクトップPC にWindows 8 Release Preview 64bit をインストールしてみた。</p>
+
+<ol>
+<li><p> Windows XP 32bit 上でWindows 8 Release Preview 64bit ISO をダウンロード</p></li>
+<li><p> Windows XP 32bit に「Windows 7 USB/DVD ダウンロードツール」をインストール(過去にインストール済み)</p></li>
+<li><p> 32bit のbootsect.exe を「Windows 7 USB/DVD ダウンロードツール」と同じフォルダにコピー</p></li>
+<li><p> 「Windows 7 USB/DVD ダウンロードツール」を起動して、起動可能なUSB デバイスを作成</p></li>
+<li><p> USB デバイスでブートしてWindows 8 をインストール</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

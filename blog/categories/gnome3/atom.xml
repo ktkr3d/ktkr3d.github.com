@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: GNOME3 | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/gnome3/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Move the hot corner of the message tray]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/12/31/move-the-hot-corner-of-the-message-tray/"/>
+    <updated>2012-12-31T18:00:18+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/12/31/move-the-hot-corner-of-the-message-tray</id>
+    <content type="html"><![CDATA[<p><a href="http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked">http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked</a></p>
+
+<p>GNOME Shell 3.6 では画面下端にマウスカーソルを持って行くと、メッセージトレイが表示されます。オートハイドに設定したドックアプリ(AWN)と併用していると、ドックアプリを操作したいのにメッセージトレイが表示されてしまって、困ります。GNOME Shell 3.6 に対応したGNOME Shell extension が見当たりませんでしたので、GNOME Shell をカスタマイズして、暫定的に画面右下隅をメッセージトレイのホットコーナーにしてみました。</p>
+
+<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;44&rdquo; highlight=&ldquo;46&rdquo;]
+// Time the user needs to leave the mouse on the bottom pixel row to open the tray
+//const TRAY_DWELL_TIME = 1000; // ms
+const TRAY_DWELL_TIME = 50; // ms
+[/javascript]</p>
+
+<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;1538&rdquo; highlight=&ldquo;1541&rdquo;]</p>
+
+<pre><code>_checkTrayDwell: function(x, y) {
+    let monitor = Main.layoutManager.bottomMonitor;
+</code></pre>
+
+<p>//      let shouldDwell = (x >= monitor.x &amp;&amp; x &lt;= monitor.x + monitor.width &amp;&amp;</p>
+
+<pre><code>    let shouldDwell = (x &gt;= monitor.x &amp;&amp; x == monitor.x + monitor.width - 1 &amp;&amp;
+                       y == monitor.y + monitor.height - 1);
+</code></pre>
+
+<p>[/javascript]</p>
+
+<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;2118&rdquo; highlight=&ldquo;2120&rdquo;]</p>
+
+<pre><code>    this._tween(this._desktopClone, '_desktopCloneState', State.SHOWN,
+</code></pre>
+
+<p>//                  { y: -this.actor.height,</p>
+
+<pre><code>                { y: 0,
+                  time: ANIMATION_TIME,
+                  transition: 'easeOutQuad',
+                  onUpdate: Lang.bind(this, this._updateDesktopCloneClip)
+                });
+</code></pre>
+
+<p>[/javascript]</p>
+
+<p>GNOME Shell Extension にして投稿してくれる人がいるといいな。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu GNOME Remix 12.10 beta]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/09/29/ubuntu-gnome-remix-12-10-beta/"/>
+    <updated>2012-09-29T06:01:45+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/09/29/ubuntu-gnome-remix-12-10-beta</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_gnome_remix.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_gnome_remix-600x480.png" alt="ubuntu gnome remix 12.10 beta" /></a>
+<a href="https://wiki.ubuntu.com/UbuntuGNOME/ReleaseNotes/12.10Beta">https://wiki.ubuntu.com/UbuntuGNOME/ReleaseNotes/12.10Beta</a></p>
+
+<p>Ubuntu GNOME Remix 12.10 betaが公開されたので、インストールしてみました。
+Ubuntu のリポジトリを使いたいけれど、デスクトップ環境はGNOME Shell がよいので、今後、どちらをベースにして行くか悩みどころです。そこで、それぞれのデフォルトの構成を比較してみました。
+どちらをベースにしても大差なさそうですが、ブラウザにFirefox を使うので、Ubuntu をインストールしておいて、ppa:gnome3-team/gnome3 を追加する方が若干楽かもしれません。GDM のログイン画面やロック画面の外観が大幅に改善されていたので、LightDM からGDM に切り替えるのならば、Ubuntu GNOME Remix がよいかもしれません。</p>
+
+<p>Ubuntu</p>
+
+<p>Ubuntu GNOME Remix</p>
+
+<p>My Choice</p>
+
+<p>Unity</p>
+
+<p><strong>GNOME Shell</strong></p>
+
+<p><strong>GNOME Shell<br/>
++ AWN</strong></p>
+
+<p><strong>LightDM</strong></p>
+
+<p><strong>GDM</strong></p>
+
+<p><strong>?</strong></p>
+
+<p>software-center</p>
+
+<p>gpk-application</p>
+
+<p>synaptic</p>
+
+<p>nautilus 3.4</p>
+
+<p>nautilus 3.4</p>
+
+<p>nautilus 3.6</p>
+
+<p>gnome-disks</p>
+
+<p>gnome-disks</p>
+
+<p>gparted</p>
+
+<p>&ndash;</p>
+
+<p><strong>tweak-tool</strong></p>
+
+<p><strong>tweak-tool</strong></p>
+
+<p><strong>Firefox</strong></p>
+
+<p>epiphany-browser</p>
+
+<p><strong>Firefox</strong></p>
+
+<p>Evolution</p>
+
+<p>Evolution</p>
+
+<p>GMail</p>
+
+<p>Evolution</p>
+
+<p>Evolution</p>
+
+<p>Google Calendar</p>
+
+<p>Rhythmbox</p>
+
+<p>Rhythmbox</p>
+
+<p>Moc</p>
+
+<p>Totem</p>
+
+<p>Totem</p>
+
+<p>VLC</p>
+
+<p>EoG</p>
+
+<p>EoG</p>
+
+<p>EoG</p>
+
+<p>Gedit</p>
+
+<p>Gedit</p>
+
+<p>Kate</p>
+
+<p>Libre-writer</p>
+
+<p>AbiWord</p>
+
+<p>&ndash;</p>
+
+<p>Libre-calc</p>
+
+<p>Gnumeric</p>
+
+<p>&ndash;</p>
+
+<p>ibus-anthy</p>
+
+<p>ibus-anthy</p>
+
+<p>ibus-mozc</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Changing the date format in nautilus 3.6 list view]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/09/25/changing-the-date-format-in-nautilus-3-6-list-view/"/>
+    <updated>2012-09-25T06:45:38+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/09/25/changing-the-date-format-in-nautilus-3-6-list-view</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png" alt="nautilus 3.6 list view modification date" /></a>
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676898  ">https://bugzilla.gnome.org/show_bug.cgi?id=676898  </a>
+<a href="http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060">http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060</a></p>
+
+<p>nautilus 3.6 のリストビューでは、あえて更新日付の書式をシンプル(informal)にしているようです。これはこれでアリなのですが、やはり詳細表示されていた方が統一感があって使い勝手がよいような気がするので、昔のISO 日付書式になるようにカスタマイズしてみました。dpkg-buildpackage でfakeroot が効かなかったので、sudo で実行しています。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get build-dep nautilus
+$ mkdir nautilus &amp;&amp; cd nautilus
+$ apt-get source nautilus
+$ dpkg-source -x <em>.dsc
+$ cd nautilus-3.</em>
+[/shell]
+[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4484&rdquo; highlight=&ldquo;4489&rdquo;]</p>
+
+<h1>define TODAY_TIME_FORMAT_24 N_(&ldquo;%R&rdquo;)</h1>
+
+<h1>define TODAY_TIME_FORMAT N_(&ldquo;%-I:%M %P&rdquo;)</h1>
+
+<h1>define THIS_MONTH_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
+
+<h1>define THIS_YEAR_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
+
+<h1>define ANYTIME_TIME_FORMAT N_(&ldquo;%b %-d %Y&rdquo;)</h1>
+
+<h1>define ANYTIME_TIME_FORMAT_ISO N_(&ldquo;%Y-%m-%d %H:%M:%S&rdquo;)</h1>
+
+<h1>define FULL_FORMAT N_(&ldquo;%a, %b %e %Y %I:%M:%S %p&rdquo;)</h1>
+
+<h1>define FULL_FORMAT_24 N_(&ldquo;%a, %b %e %Y %T&rdquo;)</h1>
+
+<p>[/c]
+[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4538&rdquo; highlight=&ldquo;4541&rdquo;]</p>
+
+<pre><code>} else {
+    format = ANYTIME_TIME_FORMAT;
+}
+format = ANYTIME_TIME_FORMAT_ISO;
+</code></pre>
+
+<p>[/c]
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo dpkg-buildpackage -us -uc -nc -b
+$ sudo dpkg -i ../nautilus_3.*.deb
+[/shell]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GNOME Shell extension - Drop Down Terminal]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/09/24/gnome-shell-extension-drop-down-terminal/"/>
+    <updated>2012-09-24T21:17:32+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/09/24/gnome-shell-extension-drop-down-terminal</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension-600x337.png" alt="gnome shell extension drop down terminal" /></a>
+<a href="https://extensions.gnome.org/extension/442/drop-down-terminal/">https://extensions.gnome.org/extension/442/drop-down-terminal/</a></p>
+
+<p>Drop Down Terminal はGNOME Shell 3.5.2 (正確にはgjs >= 1.33.2 and vte3 >= 0.31, gnome-shell >= 3.2 らしい)以降で動作する、ターミナル画面を表示するためのGNOME Shell 拡張機能です。Ubuntu 12.10 + GNOME Shell 3.5.92 の環境で使ってみました。
+GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面の上部に半透明なターミナル画面が瞬時に表示されます。もう一度[F12]キーを押すとターミナル画面が隠れます。作者のコメントによると、キーバインドはgsettings やdconf-editor でカスタマイズできるようです。
+ちょっとしたターミナル操作をする場合にとても便利です。クリップボードからのペーストは[Shift]&ndash;[Insert]が使用できます。フォーカスが合っていない場合はマウスでクリックすると良いようです。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GNOME Shell Focus Effect Extension]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/08/22/gnome-shell-focus-effect-extension/"/>
+    <updated>2012-08-22T03:18:13+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/08/22/gnome-shell-focus-effect-extension</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/08/gnome_shell_extension_focus_effect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/08/gnome_shell_extension_focus_effect.png" alt="gnome shell extensio focus effect" /></a></p>
+
+<p><a href="https://github.com/paradoxxxzero/gnome-shell-focus-effects-extension">https://github.com/paradoxxxzero/gnome-shell-focus-effects-extension</a></p>
+
+<p><a href="http://www.upubuntu.com/2012/08/how-to-install-gnome-shell-focus-effect.html">http://www.upubuntu.com/2012/08/how-to-install-gnome-shell-focus-effect.html</a></p>
+
+<p>GNOME Shell のFocus Effect 拡張を使ってみた。フォーカスの切り替えでウィンドウがアニメーションする。なんか楽しい。非アクティブなウィンドウは少し傾いて、サイズが小さく、色はグレーになる。スクリプトはとても小さいので、何かに応用できるかもしれない。
+副作用としては、非アクティブなウィンドウの選択に少しコツがいるようだ。また、何回か切り替えを繰り返した時に、ウィンドウが画面外に移動してしまう。その時は、[Alt]&ndash;[Space]で「移動」を選択して、ウィンドウを元の位置に動かすと回復できる。</p>
+]]></content>
+  </entry>
+  
+</feed>

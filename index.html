@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="無料Webサービスに設置していたブログのデータが消されてしまったので、バックアップデータからGitHub に取り込むことにしました。
-exitwp というスクリプトを使って、WordPrtess のデータをJekyll に変換しました。 https://github.com/thomasf/ &hellip;">
+exitwp というスクリプトを使って、WordPrtess のデータをmarkdown に変換して、Octopress/Jekyll に取り込みました。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -118,14 +118,11 @@ $(document).ready( function () {
 
 
   <div class="entry-content"><p>無料Webサービスに設置していたブログのデータが消されてしまったので、バックアップデータからGitHub に取り込むことにしました。
-exitwp というスクリプトを使って、WordPrtess のデータをJekyll に変換しました。</p>
+exitwp というスクリプトを使って、WordPrtess のデータをmarkdown に変換して、Octopress/Jekyll に取り込みました。</p>
 
 <p><a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
 
-<ol>
-<li>exitwp を取得</li>
-</ol>
-
+<h4>exitwp を取得</h4>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -134,12 +131,11 @@ exitwp というスクリプトを使って、WordPrtess のデータをJekyll �
 </span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li><p>バックアップデータを格納
-<code>wordpress-xml/wordpress.xml</code></p></li>
-<li><p>前提環境を準備</p></li>
-</ol>
+<h4>バックアップデータを格納</h4>
 
+<p><code>wordpress-xml/wordpress.xml</code></p>
+
+<h4>前提環境を準備</h4>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -148,10 +144,7 @@ exitwp というスクリプトを使って、WordPrtess のデータをJekyll �
 </span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li>変換実行</li>
-</ol>
-
+<h4>変換実行</h4>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>python exitwp.py

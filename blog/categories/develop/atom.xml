@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Develop | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/develop/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MonoDevelop を試してみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2010/09/18/monodevelop/"/>
+    <updated>2010-09-18T01:30:11+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2010/09/18/monodevelop</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/monodevelop.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/monodevelop.png" alt="monodevelop" /></a>
+Unity のv3 からMonoDevelop でのステップ実行/変数ウォッチができるようになると聞いてMonoDevelop を試してみた(v2.6 でも単純な連携はできるんだけどね)はやく無償版ユーザにもUnity v3/ベータが公開されないかなぁ
+ちょっと使ってみた感じ</p>
+
+<ul>
+<li><p>Linux/Windows で使える</p></li>
+<li><p>MONO だけに.NET アプリが作れるみたい(作らないけどね)</p></li>
+<li><p>プロジェクトファイルがVC のソリューションファイル(.sln)っぽいのでWindows とLinux 共通なプロジェクトを作成するのに便利かもしれない(Code::Blocks でもできるけどやはりWindows はVC 使うだろうし)</p></li>
+<li><p>実行ディレクトリの指定をどこでするのかわからなかったけれど、通常実行はロードモジュール格納ディレクトリ、デバッグ実行はホームディレクトリ!?っぽい</p></li>
+<li><p>言語特有の細かい設定はできない代わりにいろいろな言語がプラグイン的に広くサポートできるようになっている</p></li>
+<li><p>Subversion のプラグインも付いている</p></li>
+</ul>
+
+
+<p>ちなみにWine 環境でのUnity の動作評価はBronze みたい
+<a href="http://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=11075">http://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=11075</a></p>
+]]></content>
+  </entry>
+  
+</feed>

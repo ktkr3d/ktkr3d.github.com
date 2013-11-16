@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: MeeGo | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/meego/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MeeGo Tablet 1.2 のマウスポインタ]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/04/28/meego-tablet-e381aee3839ee382a6e382b9e3839de382a4e383b3e382bf/"/>
+    <updated>2011-04-28T03:41:43+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/04/28/meego-tablet-e381aee3839ee382a6e382b9e3839de382a4e383b3e382bf</id>
+    <content type="html"><![CDATA[<p>meego.com 版のMeeGo Tablet 1.2 でマウスポインタが表示されなかったので、表示するように設定を変えてみた。</p>
+
+<p>/etc/sysconfig/uxlaunch
+[plain firstline=&ldquo;27&rdquo; highlight=&ldquo;30&rdquo;]
+session=/usr/bin/mutter &mdash;sm-disable
+user=meego
+session=/usr/bin/mcompositor</p>
+
+<h1>xopts=-nocursor</h1>
+
+<p>[/plain]</p>
+
+<p>-nocursor を無効にする。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/meego.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/meego.png" alt="meego tablet 1.2 lock" /></a></p>
+
+<p>マウスポインタはキャプチャされないみたい。ロック画面のデザインが少し変わったみたい。時刻がうまく調整できない？</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MeeGo Tablet で日本語]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/04/07/meego-tablet-e381a7e697a5e69cace8aa9e/"/>
+    <updated>2011-04-07T22:15:48+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/04/07/meego-tablet-e381a7e697a5e69cace8aa9e</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/meego_tablet_jp.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/meego_tablet_jp.png" alt="meego tablet japanese inspiron duo" /></a>
+MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、「メモ」アイコンが増えた。タッチスクリーンは反応せず。上部パネルのレイアウトは若干変わっている。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MeeGo Tablet を使ってみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/04/06/meego-tablet-e38292e4bdbfe381a3e381a6e381bfe3819f/"/>
+    <updated>2011-04-06T18:49:24+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/04/06/meego-tablet-e38292e4bdbfe381a3e381a6e381bfe3819f</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/all_apps.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/all_apps.png" alt="meego tablet inspiron duo" /></a></p>
+
+<p>Inspiron duo に入れたIntel 版のMeeGo Tablet が動くようになった。</p>
+
+<p>隠しアクセスポイントに接続するには、一旦端末で、
+[shell gutter=&ldquo;false&rdquo;]</p>
+
+<h1>iwconfig wlan0 essid <ESSID> key <KEY></h1>
+
+<p>[/shell]
+とするとWi-Fi の設定画面のアクセスポイント一覧に追加される。</p>
+
+<p>画面のキャプチャは
+[shell gutter=&ldquo;false&rdquo;]
+$ xwd -root > ScreenShot.xwd
+[/shell]</p>
+
+<p>画面の切り替えは、Windows キー。パネル画面（横）、すべてのアプリケーション画面（縦）、実行中のアプリケーションの選択などができる。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel1.png" alt="meego tablet inspiron duo" /></a></p>
+
+<p>パネルの配置を変えるには、タブの右上隅をドラッグ。パネルの設定を変えるには、タブをシングルクリック（パネルが回転する）</p>
+
+<p>標準で再生可能な形式はogg/ogv 。ffmpeg, ffmpeg2theora で変換すると簡単。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel3.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel3.png" alt="meego tablet inspiron duo" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MeeGo を試してみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2010/11/01/meego/"/>
+    <updated>2010-11-01T23:39:42+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2010/11/01/meego</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/ika_meego.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/ika_meego.png" alt="meego" /></a>
+<a href="http://meego.com/">http://meego.com/</a>
+<a href="http://distrowatch.com/table.php?distribution=meego">http://distrowatch.com/table.php?distribution=meego</a>
+ネットブック向けのディストリビューションMeeGo v1.1 for Netbooks
+動作は軽快で見た目もいいんだけど細かいところで少し癖があるかも
+パッケージ管理はRPM でzypper
+日本語入力はSCIM＋SKK
+ATOM 縛りでMoblin がインストールできなかったPC にもインストールできるかも
+ブートローダの書き込み中にフリーズする場合はフォーマットを変えるといける
+変更前 /boot: ext3, /: btrfs
+変更後 /boot: ext3, /: ext3
+<a href="http://ktkr3d.site11.com/?page_id=9">MeeGo/Smeegol メモ</a></p>
+]]></content>
+  </entry>
+  
+</feed>

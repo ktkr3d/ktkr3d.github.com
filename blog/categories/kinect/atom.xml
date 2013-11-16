@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Kinect | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/kinect/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 11.10 + Ogre 1.7.3 + Kinect]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/"/>
+    <updated>2012-02-10T21:20:03+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
+
+<p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
+
+<p>Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
+OpenNI/NITE 1.5.2
+avin2-sensor 5.1.0.25
+Ogre3d 1.7.3
+gcc/g++ 4.6.1
+codeblocks 10.05</p>
+
+<p>ソースコードとロードモジュール: <a href="https://github.com/ktkr3d/sample-app-sinbad">https://github.com/ktkr3d/sample-app-sinbad</a></p>
+
+<p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
+
+<p>[plain gutter=&ldquo;false&rdquo;]
+コンパイル中: src/CharacterSample.cpp
+リンク中 動的ライブラリ: ../bin/Sample_Character.so
+/usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1' can not be used when making a shared object; recompile with -fPIC
+obj/Release/src/CharacterSample.o: could not read symbols: Bad value
+collect2: ld はステータス 1 で終了しました
+プロセスはステータス 1 で終了しました (0 分 10 秒)
+0 個のエラー、 0 個の警告
+[/plain]</p>
+
+<p>-fPIC オプションをつけたらビルドできた。</p>
+
+<p>[plain gutter=&ldquo;false&rdquo;]
+コンパイル中: src/CharacterSample.cpp
+リンク中 動的ライブラリ: ../bin/Sample_Character.so
+出力サイズは 232.84 KB
+プロセスはステータス 0 で終了しました (0 分 5 秒)
+0 個のエラー、 0 個の警告
+[/plain]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 11.10 + Kinect + Irrlicht]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/02/05/ubuntu-11-10-kinect-irrlicht/"/>
+    <updated>2012-02-05T22:25:28+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/02/05/ubuntu-11-10-kinect-irrlicht</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_sinbad_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_sinbad_kinect.png" alt="irrlicht ubuntu 11.10 kinect NITE sinbad" /></a></p>
+
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730</a></p>
+
+<p>Ubuntu 11.10 x86_64 にKinect の環境を構築してIrrlicht と連動させてみた。モデルはOrge3D のキャラクターSinbad(Sinbad.mesh)を使おうと思うので、Kinect.cpp とCPlayer.cpp の中のボーン名を変更しておく。ogremesh のボーン名やモーションは取り込めたけど、テクスチャがうまく貼れてないのはなんでだろう。キャリブレーションに成功すると以下のログが表示される。
+[plain gutter=&ldquo;false&rdquo;]
+New User 1
+Calibration started for user 1
+Calibration complete, start tracking user 1
+[/plain]
+キャリブレーション後に動きが連動しないのはb3d, ms3d, X 形式でないからかな。</p>
+
+<p>Kinect の環境構築手順は<a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">Ubuntu 10.10 の時</a>と基本的に同じだけど、最近のLinux ではカーネルドライバを無効にしないといけないみたい。</p>
+
+<h3>Linux Kernel のKinect ドライバの無効化</h3>
+
+<p>/lib/modules/3.0.0-16-generic/kernel/drivers/media/video/gspca/gspca_kinect.ko
+まず、Linux Kernel 3.0 からKinect のカーネルドライバが組み込まれているので、あらかじめ無効にしておく。rmmod gspca_kinect かgspca_kinect.ko をリネームする。</p>
+
+<h3>OpenNI のインストール</h3>
+
+<ol>
+<li><p> <a href="https://github.com/OpenNI/OpenNI/tree/unstable">https://github.com/OpenNI/OpenNI/tree/unstable</a> からダウンロードして展開</p></li>
+<li><p> cd Platform/Linux/Build</p></li>
+<li><p> make
+ここで CreateRedist/RedistMaker に実行パーミッションを与えておく</p></li>
+<li><p> sudo make install</p></li>
+<li><p> Redist/*/install.sh を実行する</p></li>
+</ol>
+
+
+<h3>ドライバ(avin2)のインストール</h3>
+
+<ol>
+<li><p> <a href="https://github.com/avin2/SensorKinect">https://github.com/avin2/SensorKinect</a> からダウンロードして展開</p></li>
+<li><p> cd Platform/Linux/Build</p></li>
+<li><p> make
+ここで CreateRedist/RedistMaker に実行パーミッションを与えておく</p></li>
+<li><p> sudo make install</p></li>
+<li><p> Redist/*/install.sh を実行する</p></li>
+</ol>
+
+
+<h3>NITE のインストール</h3>
+
+<ol>
+<li><p> <a href="http://www.openni.org/Downloads/OpenNIModules.aspx">http://www.openni.org/Downloads/OpenNIModules.aspx</a> からダウンロードして展開（Ubuntu 10.10 用でも動く）</p></li>
+<li><p> sudo ./install.sh</p></li>
+</ol>
+
+
+<h3>サンプルを実行して動作確認</h3>
+
+<ul>
+<li><p>OpenNI のPlatform/Linux/Bin/ で、./NiViewer を実行</p></li>
+<li><p>NITE のSamples/Bin/x64-Release で、./Sample-Players を実行</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Kinect でミクさんを動かしてみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/01/02/kinect_1/"/>
+    <updated>2011-01-02T23:06:52+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/01/02/kinect_1</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/miku_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/miku_kinect.png" alt="miku kinect" /></a>
+ボーンの座標とかを修正してみた。
+四肢の動きが「遊星からの物体X」から「人型」に進化した。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FAAST でWoW を操作してみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2010/12/27/faast_wow/"/>
+    <updated>2010-12-27T18:32:39+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2010/12/27/faast_wow</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/FAAST_WoW2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/FAAST_WoW2.png" alt="FAAST WoW kinect" /></a>
+<a href="http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f">http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f</a>
+OpenNI のフォーラムにKinect を使ってWorld of Warcraft を操作するFAAST(Flexible Action and Articulated Skeleton Toolkit) のデモがあったので試してみた。
+デフォルトでは体を傾けると前進/後退/右旋回/左旋回が設定されている。
+「left_arm_up」アクションを「0」キーにアサインして、Druid クラスのスペル「<a href="http://www.wowwiki.com/Mark_of_the_Wild"><img src="mt.cgi_files/Spell_nature_regeneration.png" alt="" />Mark of the Wild</a>」を唱えてみた。
+FAAST のホームページによるとマウスイベントのエミュレータ追加とLinux 版ポーティングも計画されているらしい。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[まずはOgre3D でミクさんを表示してみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2010/12/25/ogre3d_1/"/>
+    <updated>2010-12-25T21:35:34+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2010/12/25/ogre3d_1</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_miku.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_miku.png" alt="ogre3d miku pmd" /></a>
+Kinect でミクさんを動かしてみようと思い、とりあえずOgre3D でミクさんを表示してみた
+Kinect に接続して動かしてみると、この世のものとは思えない動きをするようになった
+ボーンの見直しが必要だ&hellip;
+<strong>モデルの変換</strong>
+1. PMDEditor でPMD モデルのサイズ変更(x0.5)、位置変更(Y:-5)
+2. Pmd2OgreMesh (作者さんに感謝!!)で.pmd から.mesh, .mesh.xml, .skeleton, .skeleton.xml, .materialを生成
+3. XML データ修正
+&ndash; .skeleton.xml にSinbad.skeleton のanimation 13種類をダミーで挿入
+&ndash; .skeleton.xml 内のボーン名(bone000 等10個)をSinbad.skelton のボーン名(Root 等)に置換
+4. OgreXMLConverter で .skeleton.xml → .skeleton を再生成
+<strong>ソースの修正</strong>
+1. 剣メッシュ関連の処理(剣の表示や剣を抜く動作等)をコメントアウト
+2. マッピングしなかったボーン名(Stomach, Waist)についてはtransformBone() をコメントアウト
+3. setupbone() で指定する角度を修正</p>
+]]></content>
+  </entry>
+  
+</feed>

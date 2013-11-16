@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/
+Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地がよいので、しばらくFedora 15 を使ってみることにした。ただし、 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/page/13">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
+  <li><a href="/linux">Linux</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/21/fedora-15-e381a7e792b0e5a283e8a8ade5ae9a/">Fedora 15 Alpha で環境設定</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-21T21:41:08+09:00" pubdate data-updated="true">2011年03月21日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/fedora15a.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/fedora15a.png" alt="" /></a>
+<a href="http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/">http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/</a>
+Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地がよいので、しばらくFedora 15 を使ってみることにした。ただし、ソフトウェア更新をすると非常に高い確率で不具合が起こるので注意が必要だ。</p>
+
+<p>行き当たりばったりで環境設定をしてみた。</p>
+
+<ul>
+<li><p>RPM Fusion (Installing Free and Nonfree Repositories)を入れる</p></li>
+<li><p>ファイアウォール: system-config-firewall で設定</p></li>
+<li><p>lsb_release: redhat_lsb パッケージに入っている</p></li>
+<li><p>eth0: デバイス名はなぜか pci3p1 になった</p></li>
+<li><p>Gnome Shell は左上隅にカーソルを持って行った時の画面の切り替わりが楽しい!!</p></li>
+<li><p>個人向け環境設定はgnome-control-center で実行。上部パネルのユーザ名をクリックした時のメニューでも起動可。今のところ外観の設定ツールが充実していない。そのうち、増えると思う。</p></li>
+<li><p>Firefox 4.0 のFirebug アドオンは開発版1.7X.0b3 をインストール</p></li>
+<li><p>Firefox 4.0 のChaika アドオンは開発版r316 をインストール</p></li>
+<li><p>yoono (7.6.2 時点)がバギーかも。Firefox がクラッシュしたらプロファイルの中のyoono ディレクトリを退避して再起動。</p></li>
+<li><p>ウィンドウの最小化は[Alt]+[F9]</p></li>
+<li><p>mozc_tool は/usr/libexec/mozc_tool に入った</p></li>
+<li><p>自動で起動するアプリはgnome-session-properties で設定</p></li>
+<li><p>compiz が無くてもあまり困らない</p></li>
+</ul>
+
+
+<p>でも、まともに動くUbuntu 11.04 のGnome Shell スピンが出たら乗り換えると思う。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/21/usb-e784a1e7b79alan-e5ad90e6a99fe38292e981b8e38293e381a7e381bfe3828b/">USB 無線LAN 子機を選んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-21T14:31:44+09:00" pubdate data-updated="true">2011年03月21日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://buffalo.jp/export/sites/buffalo.jp/product/wireless-lan/client/wli-uc-gnm/parts/images/lineup/1.jpg" alt="WLI-UC-GNM" /></p>
+
+<p><a href="http://buffalo.jp/product/wireless-lan/client/wli-uc-gnm/">http://buffalo.jp/product/wireless-lan/client/wli-uc-gnm/</a></p>
+
+<p>必要に迫られてUSB 接続の無線LAN の子機を選んでみた。小さいことはいいことだけど、アンテナの性能が犠牲になって、受信感度が落ちるみたい。Linux での動作確認の報告あり。1,208円～なり。
+結果的にはアンテナ折りたたみ式のスティックタイプの方がよかったのかな。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/17/gnome-shell-e38292e382abe382b9e382bfe3839ee382a4e382ba/">Gnome Shell をカスタマイズ</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-17T21:06:57+09:00" pubdate data-updated="true">2011年03月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Gnome Shell の上部パネルには、曜日と時刻が表示されている。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/gnome_shell_panel_before.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/gnome_shell_panel_before.png" alt="gnome shell panel date time" /></a>
+日付も表示したいので、設定を探してみたら、
+/usr/share/gnome-shell/js/ui/dateMenu.js
+の中で、org.gnome.shell.clock のshow-date の値(論理値)を参照して日付表示の要否を判定しているようだった。
+とりあえず、true にして動かしてみた。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/gnome_shell_panel_after.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/gnome_shell_panel_after.png" alt="gnome shell panel date time" /></a>
+どこか見覚えのある、OS インストール直後にアップデートしていない時のような、残念な雰囲気のある表示になった。よくある書式にしてみた。
+[javascript firstline=&ldquo;186&rdquo;]
+showSeconds = true;
+clockFormat = _(&ldquo;%Y/%m/%d(%a) %H:%M:%S&rdquo;);
+[/javascript]
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/gnome_shell_panel_customized.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/gnome_shell_panel_customized.png" alt="gnome shell panel date time" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/13/worpress-e38292e8a9a6e38197e381a6e381bfe3819f/">WordPress を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-13T19:38:08+09:00" pubdate data-updated="true">2011年03月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>使用中のレンタルサーバのディスク容量が上限に到達しそうになったので、byethost.com に引越してみた。byethost.com 無料版ではPerl が使えないみたいなので、MovableType からWordPress に移行してみた。</p>
+
+<p>引越してみて、</p>
+
+<ul>
+<li><p>容量が大きくて安心</p></li>
+<li><p>商用契約もあるので安定してそう</p></li>
+<li><p>広告不要なのがうれしい</p></li>
+<li><p>ZIP をサーバ側で展開できるのは便利</p></li>
+<li><p>WordPress はプラグインが多くておもしろそう</p></li>
+</ul>
+
+
+<p>使い方に慣れたら、MovableType 3 のテーマをWordPress に移植して、IE 対応してみよう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/09/fedora-15-alpha-e38292e8a9a6e38197e381a6e381bfe3819f/">Fedora 15 Alpha を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-09T23:37:53+09:00" pubdate data-updated="true">2011年03月09日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/fedra15a.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/fedra15a.png" alt="fedra" /></a></p>
+
+<p><a href="http://news.softpedia.com/news/Fedora-15-Alpha-Is-Available-for-Download-188519.shtml">http://news.softpedia.com/news/Fedora-15-Alpha-Is-Available-for-Download-188519.shtml</a>
+<a href="http://distrowatch.com/table.php?distribution=fedora">http://distrowatch.com/table.php?distribution=fedora</a></p>
+
+<p>Fedora 15 のアルファ版が公開されていたので試してみた。
+カーネル2.6.38、xorg-server 1.9.99.1、デスクトップ環境がGNOME 3 になっていた。</p>
+
+<p>March 08, 2011 &ndash; Alpha release
+April 14, 2011 &ndash; Beta release
+May 17, 2011 &ndash; Final release</p>
+
+<p>openSUSE 11.4 も公開されたので、後で試してみよう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/13/gibson_screensaver/">Gibson Screensaver を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-13T15:53:02+09:00" pubdate data-updated="true">2011年02月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/02/gibson_screensaver2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/02/gibson_screensaver2.png" alt="gibson screensaver irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=42787">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=42787</a>
+Irrlicht で作られた、Tron の雰囲気があるWindows 用のスクリーンセーバーGibson Screensaver を試してみた。
+スクリーンセーバーだから自動操縦だけど、建物の間を進んだり、上昇して建物を見下ろしたりする。
+Windows のスクリーンセーバー形式(.scr)なので、Linux 上でもWine で動作する。［F10］キーでスクリーンショットを撮ることができる。ソースも付いてる。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/11/android-x86_23/">Android-x86 2.3(Ginger Bread)をビルドしてみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-11T19:50:17+09:00" pubdate data-updated="true">2011年02月11日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/02/gingerbread-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/02/gingerbread-x86.png" alt="android android-x86 2.3 gingerbread" /></a>
+<a href="http://www.android-x86.org/getsourcecode">http://www.android-x86.org/getsourcecode</a>
+android-x86 のサイトでAndroid 2.3(gingerbread)版のリポジトリが公開されているものの、ISO イメージが公開されていないので、自分でビルドしてみた。
+[text gutter=&ldquo;false&rdquo;]
+$ uname -a
+Linux localhost 2.6.37-android-x86+ #1 SMP PREEMPT Fri Feb 11 18:01:30 JST 2011 i686 GNU/Linux
+[/text]
+カーネルが2.6.37 系になったみたい。
+2.2版(Froyo-x86)にあったethernet 関連のモジュールが入っていない(?)せいか、そのままでは有線LAN がうまく動かないみたいだ。
+マウスの挙動も少し変かもしれない。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/06/android_30/">Android 3.0 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-06T13:14:51+09:00" pubdate data-updated="true">2011年02月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android_honeycomb.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android_honeycomb.png" alt="" /></a>
+<a href="http://developer.android.com/sdk/android-3.0-highlights.html">http://developer.android.com/sdk/android-3.0-highlights.html</a>
+環境構築をしていたらAndroid SDK 3.0 のPreview があったので、エミュレータでAndroid 3.0(Honeycomb)を起動してみた。
+実機やVM と比べるともっさりした感じ。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android_helloworld.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android_helloworld.png" alt="android 3.0 honeycomb hello world" /></a>
+はろーあんどろいど！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/05/android-x86/">Android-x86 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-05T12:42:40+09:00" pubdate data-updated="true">2011年02月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android-x86_hdmi.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android-x86_hdmi.png" alt="android android-x86" /></a>
+<a href="http://www.android-x86.org/">http://www.android-x86.org/</a>
+Android をx86 にポートしたAndroid-x86 のバージョン2.2(Froyo-x86) をネットブック実機と仮想環境の両方で試してみた。
+バージョン2.3(Gingerbread-x86) のブランチもあったけれど、さすがにAndroid 3.0 版(Honeycomb)はなかった。
+[text gutter=&ldquo;false&rdquo;]
+$ uname -a
+Linux localhost 2.6.35.7-android-x86+ #3 SMP PREEMPT Thu Jan 13 18:03:15 CST 2011 i686 GNU/Linux
+[/text]</p>
+
+<ul>
+<li><p>GRUB からの起動時にSD カードに見せかけるパーティションを追加指定(&ldquo;SDCARD=/dev/sdb2&rdquo; 等)</p></li>
+<li><p>音声、動画、有線LAN、キーボード、マウスは問題なかった</p></li>
+<li><p>手持ちのネットブックのカメラ、タッチスクリーン、無線LAN はうまく動かなかった</p></li>
+<li><p>App Store からのインストールはできたけれど、Android Market からのインストールができなかった（これは仕方なしか&hellip;）</p></li>
+</ul>
+
+
+<p>3.0 版もはやくリリースされないかな。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/13/ubuntu_1104/">Ubuntu 11.04 a を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-13T22:18:39+09:00" pubdate data-updated="true">2011年01月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>挙動が怪しいところがあるものの一通り動くようになっていた
+<a href="http://cdimage.ubuntu.com/">http://cdimage.ubuntu.com/</a>
+<strong>パッケージ</strong>
+&ndash; kernel 2.6.37
+&ndash; xorg-server 1.9.0
+&ndash; Unity
+&ndash; Firefox 4.0b
+* Firefox Sync が標準になってた
+* Tab Mix Plus の代わりにTab Utilities を利用
+* yoono が対応するまで代わりにyoono-desktop を利用
+(<a href="https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi/versions/">https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi/versions/</a>)
+* Textlink はinstall.rdf を書き換え
+* Stylish は後で探そう
+&ndash; Banshee 1.9
+<strong>気づき事項</strong>
+* 起動後とりあえずNautilus を起動すると他のアプリのメニュー表示が安定するみたい
+* サイドバーランチャーの登録処理が怪しい
+* 音量アプレットがうまく動作しないことがある
+* シャットダウン・リブートが完了しないことがある
+* GNOME メニューの表示仕様は今後改善されそう
+* fglrx はもう少し落ちついてから試そう
+アップデートが頻繁にあるので、このまま様子見</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/14/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/12/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ktkr3d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

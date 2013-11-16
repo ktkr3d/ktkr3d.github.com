@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Game | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/game/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Playing Diablo 3]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/07/04/playing_diablo_3/"/>
+    <updated>2012-07-04T07:35:27+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/07/04/playing_diablo_3</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/07/playing_a_wizard_in-diablo_3.jpg"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/07/playing_a_wizard_in-diablo_3.jpg" alt="playing a wizard in diablo 3" /></a></p>
+
+<p>Nightmare レベルをすべてWine 上で遊んできてレベル50 になったWizard。Hell レベルでは死にまくりだけど、アカウントはなんとか生きていたみたい。当分はWindows 上で遊ぶのがよいのかな。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wine + Diablo III]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/05/19/wine-diablo-iii/"/>
+    <updated>2012-05-19T19:23:37+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/05/19/wine-diablo-iii</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3.jpg"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3.jpg" alt="wine diablo3" /></a></p>
+
+<p>週末になったので、Diablo III で遊ぼう！</p>
+
+<p>Ubuntu 12.04 x86_64 + wine-1.5.4 + fglrx 8.960 の環境で遊んでみた。アップデータがうまく終了しなかったので、Windows のドライブをマウントして、インストールしたディレクトリに移動して、以下のコマンドで起動した。
+[shell gutter=&ldquo;false&rdquo;]
+$ wine Diablo\ III.exe -launch
+[/shell]
+たまにサウンドやグラフィックスに不具合があるものの、調子が良い時はWindows 上で動作している時とほとんど変わらない感じ。日本語も特に設定変更なしで入力できた。Z キーでズーム。スクリーンショットを撮る時は、GNOME のPrintScreen キーのショートカットを変更しておく。</p>
+
+<p>なんとなく、Diablo III はシューティングゲームの要素が取り込まれているような、WoW に似ているような感じがする。弾幕避け、地雷避けとか。初回難しくても、何回かトライするとBOSS や雑魚キャラの攻撃パターンみたいなものがわかってきて、クリアできるようになる。
+やっとアクトIIIまで到着した。何故か小指がつりそう。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wine + Diablo 3 Downloader]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/05/13/wine-diablo-3-downloader/"/>
+    <updated>2012-05-13T06:00:42+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/05/13/wine-diablo-3-downloader</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3_downloader.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3_downloader.png" alt="wine diablo 3" /></a>
+<a href="http://us.blizzard.com/en-us/games/d3/?rhtml=y">http://us.blizzard.com/en-us/games/d3/?rhtml=y</a></p>
+
+<p>2012/5/15 にDiablo 3 がリリースされるので、オンラインでデジタル版をPre-Order してみた。World of Warcraft の年間契約にDiablo 3 がバンドルされるという話もあったけれど、World of Warcraft は休止しているので、とりあえずDiablo 3 単品を購入。World of Warcraft はMists of Pandaria がリリースされたら少しだけ試してみよう。</p>
+
+<p>Diablo3 ゲーム本体はクローズドベータ版もWine で動いたので、製品版でも多分動作すると思う。今回はダウンロードからLinux 上で試してみよう。</p>
+
+<p>Diablo-III-8370-enUS-Installer-downloader.exe を右クリックして、Wine Windows Program Loader を選択。回線が細いので時間がかかるなぁ。その間に壁紙とConky をDiablo 仕様にしてみよう。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Diablo 3 ベータで遊んでみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/12/06/diablo3-beta/"/>
+    <updated>2011-12-06T23:09:46+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/12/06/diablo3-beta</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/diablo3_install.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/diablo3_install.png" alt="diablo 3 beta install" /></a></p>
+
+<p>Diablo 3 のベータテスタの抽選に当選したので、早速インストールしてみた。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/d3_demon_hunter.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/d3_demon_hunter.png" alt="diablo 3 beta demon hunter" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wine + Proun で遊んでみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/11/27/wine-proun/"/>
+    <updated>2011-11-27T22:47:52+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/11/27/wine-proun</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/wine_proun1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/wine_proun1.png" alt="wine proun" /></a></p>
+
+<p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
+<a href="http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049">http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049</a>
+<a href="http://www.proun-game.com/UserTracks.html">http://www.proun-game.com/UserTracks.html</a></p>
+
+<p>Wine を使ったらProun がLinux で動くようになっていたので、Ubuntu 11.10 x86_64(GNOME Shell) + Wine 1.3.28 + Proun(Patch v109 again, 19 October 2011)の環境で遊んでみた。
+いつの間にかユーザトラックが増えていた。
+ユーザトラック"Solar Coaster"が難しい。</p>
+]]></content>
+  </entry>
+  
+</feed>

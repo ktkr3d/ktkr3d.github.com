@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="http://community.kde.org/Plasma/Active/Installation http://community.kde.org/Plasma/Active/Contour/Installation
+Plasma Active Tablet パッケージのContour &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/page/12">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
+  <li><a href="/linux">Linux</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/14/plasma-active-contour/">Plasma/Active/Contour を試してみる</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-14T23:41:11+09:00" pubdate data-updated="true">2011年04月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/contour.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/contour.png" alt="contour kde plasma active tablet opensuse" /></a></p>
+
+<p><a href="http://community.kde.org/Plasma/Active/Installation  ">http://community.kde.org/Plasma/Active/Installation  </a>
+<a href="http://community.kde.org/Plasma/Active/Contour/Installation">http://community.kde.org/Plasma/Active/Contour/Installation</a>
+Plasma Active Tablet パッケージのContour がおもしろそうなのでInspiron duo で試してみる。</p>
+
+<ol>
+<li><p> openSUSE 11.4 をインストール
+<a href="http://software.opensuse.org/114/ja">http://software.opensuse.org/114/ja</a>
+KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて、Live USB を作った。</p></li>
+<li><p> Plasma/Active をインストール（不要だったかも）</p></li>
+</ol>
+
+
+<p>/etc/zypp/zypp.conf</p>
+
+<blockquote><p>solver.allowVendorChange = true</p></blockquote>
+
+<p>[shell gutter=&ldquo;false&rdquo;]</p>
+
+<h1>zypper ar <a href="http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/">http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/</a> kde-unstable</h1>
+
+<h1>zypper mr -p 100 kde-unstable</h1>
+
+<h1>zypper ar <a href="http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/">http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/</a> plasma-active</h1>
+
+<h1>zypper mr -p 101 plasma-active</h1>
+
+<h1>zypper refresh -f</h1>
+
+<h1>zypper in plasma-active:kdebase4-runtime plasma-tablet-config plasma-declarative-widgets</h1>
+
+<p>[/shell]</p>
+
+<ol>
+<li><p> Contour パッケージのインストール
+<a href="http://software.opensuse.org/">http://software.opensuse.org/</a> でcontour を1-クリック インストール</p></li>
+<li><p> Contour の自動起動設定
+<a href="http://software.opensuse.org/">http://software.opensuse.org/</a> でplasma-contour-config を1-クリック インストール
+(plasma-tablet プロセスが残っていたらkquitapp plasma-tablet で消しておく)</p></li>
+</ol>
+
+
+<p>おもしろそう！！使い方がよくわかんない！！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/09/gnome-3-e38292e8aabfe381b9e381a6e381bfe3819f/">GNOME Shell を拡張してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-09T10:17:03+09:00" pubdate data-updated="true">2011年04月09日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://wiki.archlinux.org/index.php/GNOME_3  ">https://wiki.archlinux.org/index.php/GNOME_3  </a>
+<a href="https://live.gnome.org/GnomeShell/CheatSheet  ">https://live.gnome.org/GnomeShell/CheatSheet  </a>
+<a href="http://www.webupd8.org/2011/04/gnome-shell-extensions-additional.html  ">http://www.webupd8.org/2011/04/gnome-shell-extensions-additional.html  </a>
+<a href="http://git.gnome.org/browse/gnome-shell-extensions/">http://git.gnome.org/browse/gnome-shell-extensions/</a></p>
+
+<p>GNOME Shell Extensions やGNOME 3 の便利な機能を使ってみよう。</p>
+
+<h3>GNOME Shell Extensions</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ git clone git://git.gnome.org/gnome-shell-extensions
+$ cd gnome-shell-extensions
+$ ./autogen.sh
+$ make
+$ sudo make install
+[/shell]</p>
+
+<ul>
+<li><p>alternate-tab: Alt+Tab 操作関連</p></li>
+<li><p>alternative-status-menu: 電源オフメニュー常時表示
+標準ではステータスメニューを開いて、「Alt」ボタンを押すと「サスペンド」が「電源オフ&hellip;」に切り替わる。alternative-status-menu を使うと「サスペンド」と「電源オフ」の両方が常に表示されるようになり、「Alt」ボタンを押すと「サスペンド」が「Hibernate」に切り替わる。必須!!</p></li>
+<li><p>dock: 右端にドックバーを表示（画面が狭くなった&hellip;微妙?）</p></li>
+<li><p>windowsNavigator: overview 画面上でALT+数字キーによりウィンドウ選択</p></li>
+</ul>
+
+
+<h3>GNOME 3</h3>
+
+<ul>
+<li><p>テーマのカスタマイズ
+gnome-tweak-tool またはsetting.ini</p></li>
+<li><p>スクリーンキャストを撮る
+Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li>
+<li><p>キー操作でoverview へ切り替える
+システム(Windows)キーまたはAlt+F1</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/08/ubuntu-11-04-e381a7gnome-shell/">Ubuntu 11.04 でGNOME Shell</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-08T00:40:12+09:00" pubdate data-updated="true">2011年04月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/ubuntu-natty-gnome-shell.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/ubuntu-natty-gnome-shell.png" alt="ubuntu 11.04 natty gnome shell" /></a></p>
+
+<p><a href="http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty">http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty</a></p>
+
+<p>Ubuntu 11.04 用のGNOME Shell を含むppa を見つけたので、早速インストールしてみた。ちゃんとローカライズもされている。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo add-apt-repository ppa:gnome3-team/gnome3
+$ sudo apt-get update
+$ sudo apt-get install gnome-shell
+[/shell]</p>
+
+<p>GDM でログインする際に「Ubuntu GNOME Shell Desktop」を選択する。</p>
+
+<p>上部パネルの日付、時刻の書式はスクリプトをカスタマイズ。シャットダウン系のメニューもスクリプトなので後で改造しよう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/07/meego-tablet-e381a7e697a5e69cace8aa9e/">MeeGo Tablet で日本語</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-07T22:15:48+09:00" pubdate data-updated="true">2011年04月07日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/meego_tablet_jp.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/meego_tablet_jp.png" alt="meego tablet japanese inspiron duo" /></a>
+MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、「メモ」アイコンが増えた。タッチスクリーンは反応せず。上部パネルのレイアウトは若干変わっている。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/06/meego-tablet-e38292e4bdbfe381a3e381a6e381bfe3819f/">MeeGo Tablet を使ってみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-06T18:49:24+09:00" pubdate data-updated="true">2011年04月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/all_apps.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/all_apps.png" alt="meego tablet inspiron duo" /></a></p>
+
+<p>Inspiron duo に入れたIntel 版のMeeGo Tablet が動くようになった。</p>
+
+<p>隠しアクセスポイントに接続するには、一旦端末で、
+[shell gutter=&ldquo;false&rdquo;]</p>
+
+<h1>iwconfig wlan0 essid <ESSID> key <KEY></h1>
+
+<p>[/shell]
+とするとWi-Fi の設定画面のアクセスポイント一覧に追加される。</p>
+
+<p>画面のキャプチャは
+[shell gutter=&ldquo;false&rdquo;]
+$ xwd -root > ScreenShot.xwd
+[/shell]</p>
+
+<p>画面の切り替えは、Windows キー。パネル画面（横）、すべてのアプリケーション画面（縦）、実行中のアプリケーションの選択などができる。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel1.png" alt="meego tablet inspiron duo" /></a></p>
+
+<p>パネルの配置を変えるには、タブの右上隅をドラッグ。パネルの設定を変えるには、タブをシングルクリック（パネルが回転する）</p>
+
+<p>標準で再生可能な形式はogg/ogv 。ffmpeg, ffmpeg2theora で変換すると簡単。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel3.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel3.png" alt="meego tablet inspiron duo" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/03/unity-e381aee383a1e3838be383a5e383bce8a1a8e7a4bae8a8ade5ae9a/">Unity のメニュー表示設定</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-03T23:52:43+09:00" pubdate data-updated="true">2011年04月03日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://askubuntu.com/questions/14815/unity-menu-desktop-design-how-will-it-act">http://askubuntu.com/questions/14815/unity-menu-desktop-design-how-will-it-act</a></p>
+
+<p>Ubuntu 11.04 で採用されたデスクトップ環境Unity ではアプリケーションメニューが上部のパネルに統合されて表示される。なかなか操作に慣れないので、一旦、元のメニュー表示に戻してみた。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get remove indicator-appmenu
+[/shell]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/03/inspiron-duo-e381a7alsa/">Inspiron Duo でALSA</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-03T22:08:04+09:00" pubdate data-updated="true">2011年04月03日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ubuntuforums.org/showthread.php?t=1658635">http://ubuntuforums.org/showthread.php?t=1658635</a></p>
+
+<p>Inspiron duo にLinux をインストールしてイヤフォンから音が出ないので調べてみたら、Ubuntu のフォーラムに解決方法が掲載されていた。model をdell とかdell-laptop にしても治らなかったのに、ideapad で解決するとは&hellip;</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo gedit /etc/modprobe.d/alsa-base.conf
+[/shell]</p>
+
+<blockquote><p>options snd-hda-intel model=ideapad</p></blockquote>
+
+<p>Fedora の場合は、/etc/modprobe.d/dist-alsa.conf を修正。</p>
+
+<p>他にもタッチスクリーンでのマルチタッチの設定とか、画面回転の設定とかがあるので試してみよう!!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/02/inspiron-duo/">Inspiron Duo でLinux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-02T03:19:29+09:00" pubdate data-updated="true">2011年04月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Ubuntu 11.04b1</h3>
+
+<p>natty-desktop-i386.iso
+普通に動いた。イヤフォンを繋いでも内臓スピーカーが動作してしまうのは後で調べよう。</p>
+
+<h3>Fedora 15a</h3>
+
+<p>Fedora-15-Nightly-20110401.17-i686-Live-desktop.iso
+普通に動いた。イヤフォンが優先されないのは同様。</p>
+
+<h3>MeeGo Tablet 1.2 のIntel 版</h3>
+
+<p>meego-tablet-ia32-pinetrail.iso
+ライブイメージで動作した。タッチパネルは使えたが、タッチスクリーンが使えなかった。イヤフォンが優先されないのは同様。アクセスポイントのリストは公開されているものが表示される。隠しアクセスポイントに接続するインタフェースがない？メニューを戻る操作がよくわからなかった。</p>
+
+<h3>MeeGo Tablet 1.2 の本家版</h3>
+
+<p>meego-tablet-ia32-pinetrail-1.1.99.0.20110330.3.img
+縦モードで起動。壁紙がかっこよい。タッチスクリーンが動作せず。残念。</p>
+
+<h3>MeeGo Netbook 1.2 の本家版</h3>
+
+<p>meego-netbook-ia32-1.1.99.0.20110330.3.img
+普通に動作。ソフトウェアリポジトリが貧弱なような気がする。標準でNTFS が参照不可。Fedora 版かopenSUSE 版に切り替えた方がよいかも。</p>
+
+<h3>Android-x86 2.2</h3>
+
+<p>android-x86-2.2-sparta.iso
+Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネットワークも日本語表示もOK。イヤフォンが優先されないのは他と同様。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/">Inspiron Duo で遊んでみよう</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-31T23:12:18+09:00" pubdate data-updated="true">2011年03月31日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.dell.com/us/p/inspiron-duo/pd">http://www.dell.com/us/p/inspiron-duo/pd</a></p>
+
+<p>Inspiron Duo でいろんなOS を動かして遊んでみよう。</p>
+
+<ul>
+<li><p>Fedora 15 (DE: GNOME Shell)</p></li>
+<li><p>Ubuntu 11.04 (DE: Unity)</p></li>
+<li><p>MeeGo 1.2 Tablet UX Pre-Alpha Release</p></li>
+<li><p>MeeGo v1.1 for Netbooks</p></li>
+<li><p>MeeGo v1.1 for In-Vehicle Infotainment</p></li>
+<li><p>Android-x86 2.2 / 2.3</p></li>
+<li><p>Splashtop OS 1.0</p></li>
+<li><p>Windows 7</p></li>
+<li><p>Windows XP</p></li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/22/wine-e381a7windows-e382a2e38397e383aae38292e4bdbfe381a3e381a6e381bfe3819f/">Wine でWindows アプリを使ってみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-22T23:31:50+09:00" pubdate data-updated="true">2011年03月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.winehq.org/  ">http://www.winehq.org/  </a>
+<a href="http://appdb.winehq.org/">http://appdb.winehq.org/</a></p>
+
+<ul>
+<li><p>サクラエディタ (<a href="http://sakura-editor.sourceforge.net/">http://sakura-editor.sourceforge.net/</a>)
+テキストエディタ。マクロや矩形処理とかいろいろと便利。Windows アプリなのにWine 対策用のオプション設定がある。</p></li>
+<li><p>World of Warcraft  (<a href="http://us.battle.net/wow/en/">http://us.battle.net/wow/en/</a>)
+世界で人気のMMORPG。Wine 側で対応優先度が非常に高いゲーム。最近はATI のビデオカードでも普通に動くようになった。</p></li>
+<li><p>lhaz (<a href="http://www.chitora.jp/lhaz.html">http://www.chitora.jp/lhaz.html</a>)
+日本語リソースを含むアーカイブやLHA 形式の展開に利用。Linux ネイティブのアーカイバの環境を揃えるよりもお手軽。</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/13/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/11/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ktkr3d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

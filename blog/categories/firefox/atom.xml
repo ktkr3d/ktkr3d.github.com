@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Firefox | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Android-x86 4.0.4 + Firefox (Fennec) 19.0a1 / 16.0.1]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/10/14/android-x86-4-0-4-firefox-fennec-19-0a1-16-0-1/"/>
+    <updated>2012-10-14T08:36:56+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/10/14/android-x86-4-0-4-firefox-fennec-19-0a1-16-0-1</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/android-x86_firefox_19.0a1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/android-x86_firefox_19.0a1-600x337.png" alt="android-x86 firefoex fennec 19.0a1 16.0.1" /></a></p>
+
+<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a></p>
+
+<p>Android-x86 4.0.4 (i386-linux-android) 向けにFirefox の開発バージョン19.0a1 と最新リリース版16.0.1 をビルドしてみました。ビルド環境はUbuntu 12.10 x86_64 です。手順は、<a href="/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">前回</a>とほとんど同じです。</p>
+
+<h3>ビルド用SDK の配置</h3>
+
+<ul>
+<li><p>/tools/android-sdk-linux</p></li>
+<li><p>/tools/android-ndk-r7c</p></li>
+<li><p>/tools/jdk1.6.0_35</p></li>
+</ul>
+
+
+<h3>ビルド用依存パッケージの取得</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install mercurial ccache
+$ sudo apt-get build-dep firefox
+[/shell]</p>
+
+<h3>開発版(19.0a1)をビルドする場合</h3>
+
+<ol>
+<li><p> 開発版ソースコードの取得
+[shell gutter=&ldquo;false&rdquo;]
+$ cd /tools/apps/firefox/
+$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src-central
+$ cd src-central
+[/shell]</p></li>
+<li><p> mozconfig のカスタマイズ
+[shell gutter=&ldquo;false&rdquo;]
+$ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
+[/shell]</p></li>
+</ol>
+
+
+<p>[plain title=&ldquo;/tools/apps/firefox/src-central/.mozconfig&rdquo; highlight=&ldquo;11,12,13,15,20,21,22&rdquo;]
+. &ldquo;$topsrcdir/mobile/android/config/mozconfigs/common&rdquo;</p>
+
+<h1>Global options</h1>
+
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
+
+<h1>Build Fennec</h1>
+
+<p>ac_add_options &mdash;enable-application=mobile/android</p>
+
+<h1>Android</h1>
+
+<p>ac_add_options &mdash;target=i386-linux-android
+ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r7c&rdquo;
+ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-14&rdquo;
+ac_add_options &mdash;with-android-version=14
+ac_add_options &mdash;with-system-zlib</p>
+
+<h1>ac_add_options &mdash;enable-update-channel=${MOZ_UPDATE_CHANNEL}</h1>
+
+<h1>IonMonkey disabled in bug 789373</h1>
+
+<p>ac_add_options &mdash;disable-ion</p>
+
+<p>export JAVA_HOME=/tools/jdk1.6.0_35</p>
+
+<h1>export MOZILLA_OFFICIAL=1</h1>
+
+<h1>export MOZ_TELEMETRY_REPORTING=1</h1>
+
+<p>ac_add_options &mdash;with-branding=mobile/android/branding/nightly</p>
+
+<h1>Treat warnings as errors in directories with FAIL_ON_WARNINGS.</h1>
+
+<p>ac_add_options &mdash;enable-warnings-as-errors</p>
+
+<h1>Use ccache</h1>
+
+<p>ac_add_options &mdash;with-ccache=/usr/bin/ccache
+[/plain]</p>
+
+<h3>リリース版(16.0.1)をビルドする場合</h3>
+
+<ol>
+<li><p> リリース版ソースコードの取得
+[shell gutter=&ldquo;false&rdquo;]
+$ cd /tools/apps/firefox/
+$ hg clone <a href="http://hg.mozilla.org/releases/mozilla-release">http://hg.mozilla.org/releases/mozilla-release</a> src-release
+$ cd src-release
+[/shell]</p></li>
+<li><p> mozconfig のカスタマイズ
+[shell gutter=&ldquo;false&rdquo;]
+$ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
+[/shell]</p></li>
+</ol>
+
+
+<p>[plain title=&ldquo;/tools/apps/firefox/src-release/.mozconfig&rdquo; highlight=&ldquo;9,10,11,13,14,16,17,18,20,21&rdquo;]</p>
+
+<h1>Global options</h1>
+
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
+
+<h1>Build Fennec</h1>
+
+<p>ac_add_options &mdash;enable-application=mobile/android</p>
+
+<h1>Android</h1>
+
+<p>ac_add_options &mdash;target=i386-linux-android
+ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r7c&rdquo;
+ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-14&rdquo;
+ac_add_options &mdash;with-android-version=14
+ac_add_options &mdash;with-system-zlib</p>
+
+<h1>ac_add_options &mdash;enable-updater</h1>
+
+<h1>ac_add_options &mdash;enable-update-channel=${MOZ_UPDATE_CHANNEL}</h1>
+
+<p>export JAVA_HOME=/tools/jdk1.6.0_35</p>
+
+<h1>export MOZILLA_OFFICIAL=1</h1>
+
+<h1>export MOZ_TELEMETRY_REPORTING=1</h1>
+
+<h1>ac_add_options &mdash;enable-official-branding</h1>
+
+<p>ac_add_options &mdash;with-branding=mobile/android/branding/unofficial
+[/plain]</p>
+
+<h3>firefox のビルド</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ make -f client.mk build_and_deploy
+[/shell]</p>
+
+<h3>インストール</h3>
+
+<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。
+[plain title=&ldquo;出力先&rdquo; gutter=&ldquo;false&rdquo;]
+./obj-x86_64-unknown-linux-gnu/dist/
+[/plain]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android-x86 4.0.3 + Firefox(Fennec) 16.0a1]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/"/>
+    <updated>2012-06-23T12:03:13+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png" alt="android-x86 4.0.3 firefox fennec 16.0a1" /></a></p>
+
+<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a>
+Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386-linux-android 向けのmozconfig を見つけたけれど、そのままではうまくビルドできなかったので、修正して利用してみた。Android SDK/NDK の環境はできているので、その後から始めよう。ビルドする環境はUbuntu 12.04 x86_64。Android 端末は、Inspiron duo にandroid-x86-4.0-RC1-tegav2.iso をインストール済み。</p>
+
+<ol>
+<li><p> ビルドするための依存関係の取得
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install mercurial ccache
+$ sudo apt-get build-dep firefox
+[/shell]</p></li>
+<li><p> Firefox のソースの取得
+[shell gutter=&ldquo;false&rdquo;]
+$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src
+[/shell]</p></li>
+<li><p> MOZCONFIG のカスタマイズ
+[shell gutter=&ldquo;false&rdquo;]
+$ cd src
+$ gedit mozconfig-android-x86
+[/shell]
+[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
+
+<h1>Global options</h1>
+
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p></li>
+</ol>
+
+
+<h1>Build Fennec</h1>
+
+<p>ac_add_options &mdash;enable-application=mobile/android</p>
+
+<h1>Android</h1>
+
+<p>ac_add_options &mdash;target=i386-linux-android
+ac_add_options &mdash;with-endian=little
+ac_add_options &mdash;with-android-ndk=&ldquo;$HOME/Projects/Android/android-ndk-r8&rdquo;
+ac_add_options &mdash;with-android-sdk=&ldquo;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&rdquo;
+ac_add_options &mdash;with-android-version=10
+ac_add_options &mdash;with-android-platform=&ldquo;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&rdquo;
+ac_add_options &mdash;with-system-zlib</p>
+
+<h1></h1>
+
+<p>ac_add_options &mdash;disable-auto-deps
+ac_add_options &mdash;disable-debug
+ac_add_options &mdash;disable-debug-symbols
+ac_add_options &mdash;disable-tests
+ac_add_options &mdash;disable-ipdl-tests
+ac_add_options &mdash;enable-strip
+ac_add_options &mdash;enable-install-strip</p>
+
+<h1>updater</h1>
+
+<p>ac_add_options &mdash;disable-updater
+ac_add_options &mdash;disable-update-channel
+ac_add_options &mdash;disable-update-packaging</p>
+
+<h1>crash reporter</h1>
+
+<p>ac_add_options &mdash;disable-crashreporter</p>
+
+<h1>maintenance service</h1>
+
+<p>ac_add_options &mdash;disable-maintenance-service</p>
+
+<h1>JDK</h1>
+
+<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
+
+<h1>branding</h1>
+
+<p>ac_add_options &mdash;with-branding=mobile/android/branding/beta
+[/plain]</p>
+
+<ol>
+<li><p> ロゴ画像の作成
+他のサイズのロゴ画像を参考にサイズ40x40 のPNG 形式画像を作成する。
+./mobile/android/branding/beta/content/fennec_40x40.png</p></li>
+<li><p> インストール先のAndroid 端末を無線LAN で接続する。
+[shell gutter=&ldquo;false&rdquo;]
+$ export ADBHOST=192.168.0.4
+$ adb devices
+[/shell]</p></li>
+<li><p> ビルドとインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ export MOZCONFIG=./mozconfig-android-x86
+$ make -f client.mk build_and_deploy
+$
+[/shell]
+インストーラパッケージは以下に生成される。
+./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p></li>
+<li><p> 次回ビルド時にソースを最新の状態にするには
+[shell gutter=&ldquo;false&rdquo;]
+$ hg pull -u
+[/shell]</p></li>
+</ol>
+
+
+<!-- more -->
+
+
+<p>いくつか気になることがあったので、修正してリビルドしてみた。</p>
+
+<ul>
+<li><p>about:buildconfig でAndroid SDK やAndroid NDK の絶対パスが見えてしまうので、/tools/ 下からシンボリックリンクを張った。</p></li>
+<li><p>branding をnightly に変更した。</p></li>
+<li><p>ロゴ画像を追加するのをやめた。（必要なかった。）</p></li>
+</ul>
+
+
+<p>[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
+
+<h1>Global options</h1>
+
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
+
+<h1>Build Fennec</h1>
+
+<p>ac_add_options &mdash;enable-application=mobile/android</p>
+
+<h1>Android</h1>
+
+<p>ac_add_options &mdash;target=i386-linux-android
+ac_add_options &mdash;with-endian=little
+ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r8&rdquo;
+ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-15&rdquo;
+ac_add_options &mdash;with-android-version=10
+ac_add_options &mdash;with-system-zlib
+ac_add_options &mdash;with-android-platform=&ldquo;/tools/android-ndk-r8/platforms/android-14/arch-x86&rdquo;</p>
+
+<h1></h1>
+
+<p>ac_add_options &mdash;disable-auto-deps
+ac_add_options &mdash;disable-debug
+ac_add_options &mdash;disable-debug-symbols
+ac_add_options &mdash;disable-tests
+ac_add_options &mdash;disable-ipdl-tests
+ac_add_options &mdash;enable-strip
+ac_add_options &mdash;enable-install-strip</p>
+
+<h1>updater</h1>
+
+<p>ac_add_options &mdash;disable-updater
+ac_add_options &mdash;disable-update-channel
+ac_add_options &mdash;disable-update-packaging</p>
+
+<h1>crash reporter</h1>
+
+<p>ac_add_options &mdash;disable-crashreporter</p>
+
+<h1>maintenance service</h1>
+
+<p>ac_add_options &mdash;disable-maintenance-service</p>
+
+<h1>JDK</h1>
+
+<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
+
+<h1>mozilla</h1>
+
+<p>ac_add_options &mdash;with-branding=mobile/android/branding/nightly
+[/plain]
+about:buildconfig の内容
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png" alt="android-x86 firefox fennec 16.0a1 buildconfig" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Firefox 13 + NewsFox ]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/06/09/firefox-13-newsfox/"/>
+    <updated>2012-06-09T23:04:20+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/06/09/firefox-13-newsfox</id>
+    <content type="html"><![CDATA[<p>Firefox のアドオンNewsFox を使ってRSS を購読しているのだけど、Firefox を13.0 にアップデートしてから、時々マウスのボタンダウンイベントがキャプチャーされて無効化されてしまうような挙動があったので、やっつけで暫定対策してみた。<del>Linux でもWindows でも発生する(?)ので、NewsFox 側に問題がありそう。いろいろFirefox のバグ回避もしているようだし。</del>とりあえず、ドラッグ開始しないようにreturn してしまうことにした。NewsFox でドラッグアンドドロップなんて飾りですよ。
+[javascript title=&ldquo;newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js&rdquo; firstline=&ldquo;507&rdquo;]
+function dragIt(evt) { return;
+[/javascript]
+[javascript title=&ldquo;newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js&rdquo; firstline=&ldquo;987&rdquo;]
+function dragArt(evt) { return;
+[/javascript]
+他に古いAPI を使っているところもあるようだし、早くアップデート版がリリースされるといいな。</p>
+
+<p>newsfox.xpi = {899DF1F8-2F43-4394-8315-37F6744E6319}.xpi</p>
+]]></content>
+  </entry>
+  
+</feed>

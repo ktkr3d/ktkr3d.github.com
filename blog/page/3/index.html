@@ -1,0 +1,1154 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="Unity 4.0 で作成したアプリをUbuntu 12.10 x86_64 上で動かしてみました。Unity 4.0 ではLinux 向けにネイティブアプリを出力できるようになっています。ビルドの設定では「x86」、「x86_64 」、「x86 + x86_64 (Universal)」 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/page/3">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
+  <li><a href="/linux">Linux</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/18/ubuntu-12-10-unity-4-0/">Ubuntu 12.10 + Unity 4.0</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-18T00:59:34+09:00" pubdate data-updated="true">2012年11月18日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_ubnuntu.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_ubnuntu-600x375.png" alt="ubuntu 12.10 unity 4.0" /></a></p>
+
+<p>Unity 4.0 で作成したアプリをUbuntu 12.10 x86_64 上で動かしてみました。Unity 4.0 ではLinux 向けにネイティブアプリを出力できるようになっています。ビルドの設定では「x86」、「x86_64 」、「x86 + x86_64 (Universal)」が選択できます。Windows 8 の環境では以下のように表示されました。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_build_settings.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_build_settings-600x560.png" alt="unity 4.0 build settings" /></a></p>
+
+<p>ちなみに、過去(2009年なのでバージョン2.6 かな)のバージョンのUnity で作成したIsland Demo のWindows 向けロードモジュールがハードディスクの中にあったのでWine で動かしてみました。問題なく動きました。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity_island_demo_2009_wine.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity_island_demo_2009_wine-600x375.png" alt="unity island demo 2009 wine" /></a></p>
+
+<p><strong>Edit:</strong>
+Unity 4.0 で出力されたLinux 用実行形式ファイルの情報はこんな感じ。
+[shell gutter=&ldquo;false&rdquo;]
+$ file MyFirst.x86*
+MyFirst.x86:    ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, BuildID[sha1]=0x650aeda57c5cf21ae3934e7a753eaef9ed525f2a, stripped
+MyFirst.x86_64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, BuildID[sha1]=0xa877bae6da45dc12eb314505bf5ec6bf96b3b503, stripped
+[/shell]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/15/unity-4-0-gnome-shell-3-6/">Unity 4.0 + GNOME Shell 3.6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-15T07:32:43+09:00" pubdate data-updated="true">2012年11月15日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity3d_4.0_wine.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity3d_4.0_wine-600x337.png" alt="unity 4.0 wine 1.5.17" /></a></p>
+
+<p><a href="http://blogs.unity3d.com/2012/11/13/unity-4-is-out/">http://blogs.unity3d.com/2012/11/13/unity-4-is-out/</a></p>
+
+<p>Unity 4.0 (デスクトップ環境のUnity ではなくUnity3D の方)がリリースされたので、フリー版をUbuntu 12.10 x86_64, Linux kernel 3.5.0, GNOME Shell 3.6.1 + Wine 1.5.17 の環境で試してみよう。</p>
+
+<p>つづく&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/11/ubuntu-12-10-hibernateresume/">Ubuntu 12.10 + Hibernate/Resume</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-11T21:30:33+09:00" pubdate data-updated="true">2012年11月11日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/ubuntu_12.10_hibernate.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/ubuntu_12.10_hibernate-600x264.png" alt="ubuntu 12.10 hibernate" /></a></p>
+
+<p><a href="https://help.ubuntu.com/community/SwapFaq#line-98">https://help.ubuntu.com/community/SwapFaq#line-98</a></p>
+
+<p>Ubuntu 12.10 をインストールしたネットブックInspiron duo をハイバネートするようにしてみました。ちなみにInspiron duo のディスプレイは、反転した状態でふたをしてもハイバネートやサスペンドしないようにできています。</p>
+
+<ol>
+<li> 目標
+ハイバネートでG1/S4 に遷移した後、元の状態に復帰することが目標です。詳しく知らないのですが、ACPI 電源状態は以下のようです。</li>
+</ol>
+
+
+<p>G0
+S0
+起動状態</p>
+
+<p>G1
+S1
+省電力</p>
+
+<p>S2
+CPU 電源OFF</p>
+
+<p>S3
+スタンバイ/スリープ(Suspend to RAM)</p>
+
+<p>S4
+ハイバネート(Suspend to Disk)</p>
+
+<p>G2
+S5
+ソフト電源OFF</p>
+
+<p>G3
+メカニカル電源OFF</p>
+
+<ol>
+<li><p> コマンドラインで試してみます
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo pm-hibernate
+[/shell]
+電源を入れても元の状態に復帰しないので、GRUB を設定することにします。</p></li>
+<li><p> GRUB の設定
+swap パーティションのUUID は/etc/fstab やgparted で調べておきます。
+[plain title=&ldquo;/etc/default/grub&rdquo; firstline=&ldquo;12&rdquo;]
+GRUB_CMDLINE_LINUX=&ldquo;resume=UUID=001d9fdb-7e31-40ab-af01-cb124b8bc710&rdquo;
+[/plain]
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo update-grub
+$ sudo update-initramfs -u
+[/shell]
+これでハイバネート後に復帰するようになりました。</p></li>
+<li><p> システム設定でハイバネートを選択できるようにします。
+[plain title=&ldquo;/etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla&rdquo;]
+[Re-enable hibernate by default]
+Identity=unix-user:*
+Action=org.freedesktop.upower.hibernate
+ResultActive=yes
+[/plain]</p></li>
+<li><p> GNOME Shell のメニューからハイバネート
+<a href="https://extensions.gnome.org/extension/5/alternative-status-menu/">https://extensions.gnome.org/extension/5/alternative-status-menu/</a>
+Suspend メニューは表示されますが、Hibernate メニューがでてきませんでした。なぜだろう。
+<strong>Edit:</strong>
+暫定的に表示するには&hellip;
+[plain title=&ldquo;~/.local/share/gnome-shell/extensions/alternative-status-menu@gnome-shell-extensions.gcampax.github.com/extension.js&rdquo; firstline=&ldquo;27&rdquo; highlight=&ldquo;29&rdquo;]
+function updateHibernate(object, pspec, item) {
+//item.actor.visible = object.get_can_hibernate() &amp;&amp; settings.get_boolean(&lsquo;allow-hibernate&rsquo;);
+item.actor.visible = object.get_can_hibernate();
+}
+[/plain]</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/24/openelec-2-0-mediatomb/">OpenELEC 2.0 + MediaTomb</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-24T20:41:37+09:00" pubdate data-updated="true">2012年10月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/openelec_2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/openelec_2-600x337.png" alt="OpenELEC 2.0 XBMC" /></a></p>
+
+<p><a href="http://openelec.tv/get-openelec  ">http://openelec.tv/get-openelec  </a>
+<a href="http://wiki.openelec.tv/index.php?title=Installation">http://wiki.openelec.tv/index.php?title=Installation</a></p>
+
+<p>OpenELEC (Open Embedded Linux Entertainment Center) はXBMC (旧名: XBox Media Center)の機能を持つ軽量なLinux ディストリビューションです。バージョン2.0 がリリースされたので、DLNA サーバのMediaTomb に繋げて試してみました。綺麗なテーマが多数用意されていて、動作は軽快でした。</p>
+
+<p>OpenELEC をインストールするネットブックInspiron Duo はION ではないATOM 64bit プロセッサのPC なので、Intel x86_64 向けのアーカイブをダウンロードしました。「マニュアルインストール-マルチブート」の手順を参考にして、8GB のUSB メモリに2つのパーティションを作成し、Ubuntu 12.10 のGRUB ブートローダから起動するように設定しています。</p>
+
+<h3>OpenELEC 2.0 のインストールと設定</h3>
+
+<ol>
+<li> USB メモリにパーティションを作成</li>
+</ol>
+
+
+<p>デバイス
+フォーマット
+サイズ
+ラベル
+ブートフラグ</p>
+
+<p>/dev/sdb1
+ext4
+1GB
+OE_SYSTEM
+*</p>
+
+<p>/dev/sdb2
+ext4
+7GB
+OE_DATA</p>
+
+<ol>
+<li><p> ファイルのコピー
+/dev/sdb1 の直下に以下の２つのファイルをコピーします。</p>
+
+<ul>
+<li><p>KERNEL</p></li>
+<li><p>SYSTEM</p></li>
+<li><p>クライアントのUbuntu でOpenELEC ブート用GRUB エントリの追加
+[plain title=&ldquo;/etc/grub.d/40_custom&rdquo;]
+menuentry &ldquo;OpenELEC 2.0&rdquo; {
+set root=(hd1,1)
+linux /KERNEL boot=/dev/sdb1 disk=/dev/sdb2 quiet
+}
+[/plain]</p></li>
+<li><p>クライアントのUbuntu でGRUB 設定の更新
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo update-grub
+[/shell]</p></li>
+<li><p>OpenELEC の起動
+クライアントPC を再起動して、GRUB の起動エントリからOpenELEC 2.0 を選択します。</p></li>
+<li><p>言語と時刻の設定</p></li>
+<li><p> [System]&ndash;[Settings]&ndash;[Appearance] の画面に進みます。</p></li>
+<li><p> [Skin]&ndash;[Fonts] を<strong>Arial based</strong> に設定します。</p></li>
+<li><p> [International]&ndash;[Language] をJapanese に設定します。</p></li>
+<li><p> 地域、タイムゾーン(国)、タイムゾーンを設定します。</p></li>
+<li><p>Wi-Fi の設定</p></li>
+<li><p> [プログラム]&ndash;[OpenELEC OS Settings]&ndash;[Network] の画面に進みます。</p></li>
+<li><p> Network Technology をWLAN に設定します。</p></li>
+<li><p> Network Interface をwlan0 に設定します。</p></li>
+<li><p> Static IP address, Network gateway, DNS server 1 を環境に合わせて設定します。</p></li>
+<li><p>音量調整
+ボリュームダウンは[Fn]&ndash;[F9]、ボリュームアップは[Fn]&ndash;[F10] でした。</p></li>
+</ul>
+</li>
+</ol>
+
+
+<h3>MediaTomb のインストールと設定</h3>
+
+<p>サーバのUbnutu でMediaTomb の環境を設定します。</p>
+
+<ol>
+<li><p> MediaTomb のインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install mediatomb
+[/shell]</p></li>
+<li><p> MediaTomb の環境設定</p></li>
+</ol>
+
+
+<p>[plain title=&ldquo;/etc/default/mediatomb&rdquo; firstline=&ldquo;17&rdquo; highlight=&ldquo;20&rdquo;]</p>
+
+<h1>The network interface for MediaTomb to bind to and for which the multicast</h1>
+
+<h1>routing entry should be added; &ldquo;&rdquo; if the route shouldn&rsquo;t be added at all.</h1>
+
+<h1>For example: INTERFACE=&ldquo;eth0&rdquo;</h1>
+
+<p>INTERFACE=&ldquo;eth0&rdquo;
+[/plain]</p>
+
+<p>[plain title=&ldquo;/etc/mediatomb/config.xml&rdquo; firstline=&ldquo;6&rdquo; highlight=&ldquo;7, 8&rdquo;]
+  <server></p>
+
+<pre><code>&lt;ui enabled="yes" show-tooltips="yes"&gt;
+   &lt;accounts enabled="yes" session-timeout="30"&gt;
+     &lt;account user="mediatomb" password="mediatomb"/&gt;
+   &lt;/accounts&gt;
+ &lt;/ui&gt;
+</code></pre>
+
+<p>[/plain]</p>
+
+<p>[plain title=&ldquo;/etc/mediatomb/config.xml&rdquo; firstline=&ldquo;51&rdquo; highlight=&ldquo;52, 53&rdquo;]
+  <import hidden-files="no"></p>
+
+<pre><code>&lt;filesystem-charset&gt;UTF-8&lt;/filesystem-charset&gt;
+&lt;metadata-charset&gt;UTF-8&lt;/metadata-charset&gt;
+&lt;scripting script-charset="UTF-8"&gt;
+</code></pre>
+
+<p>[/plain]</p>
+
+<p>[plain title=&ldquo;/etc/mediatomb/config.xml&rdquo; firstline=&ldquo;62&rdquo; highlight=&ldquo;64&rdquo;]
+  <mappings>
+  &lt;extension-mimetype ignore-unknown=&ldquo;no&rdquo;></p>
+
+<pre><code>&lt;map from="mp4" to="video/mp4"/&gt;
+&lt;map from="mp3" to="audio/mpeg"/&gt;
+&lt;map from="ogg" to="application/ogg"/&gt;
+&lt;map from="asf" to="video/x-ms-asf"/&gt;
+&lt;map from="asx" to="video/x-ms-asf"/&gt;
+&lt;map from="wma" to="audio/x-ms-wma"/&gt;
+&lt;map from="wax" to="audio/x-ms-wax"/&gt;
+&lt;map from="wmv" to="video/x-ms-wmv"/&gt;
+&lt;map from="wvx" to="video/x-ms-wvx"/&gt;
+&lt;map from="wm" to="video/x-ms-wm"/&gt;
+</code></pre>
+
+<p>[/plain]</p>
+
+<ol>
+<li><p> MediaTomb の再起動
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo service mediatomb restart
+[/shell]</p></li>
+<li><p> 公開するメディアの選択
+アプリケーションメニューの[サウンドとビデオ]&ndash;[MediaTomb] メニューを選択すると、ブラウザ上に環境設定画面が表示されるので、公開するフォルダを選択します。</p></li>
+</ol>
+
+
+<h3>OpenELEC からMediaTomb への接続</h3>
+
+<p>DLNA サーバのメディアを参照するには、以下のようにしました。</p>
+
+<ol>
+<li><p> [ビデオ]&ndash;[ファイル]の画面に進みます。</p></li>
+<li><p> [ビデオを追加&hellip;]&ndash;[参照]&ndash;[UPnP Devices]を選択します。</p></li>
+<li><p> MediaTomb というサーバ名が表示されますので、表示したい階層を選択して[OK]を押します。</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/14/android-x86-4-0-4-firefox-fennec-19-0a1-16-0-1/">Android-x86 4.0.4 + Firefox (Fennec) 19.0a1 / 16.0.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-14T08:36:56+09:00" pubdate data-updated="true">2012年10月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/android-x86_firefox_19.0a1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/android-x86_firefox_19.0a1-600x337.png" alt="android-x86 firefoex fennec 19.0a1 16.0.1" /></a></p>
+
+<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a></p>
+
+<p>Android-x86 4.0.4 (i386-linux-android) 向けにFirefox の開発バージョン19.0a1 と最新リリース版16.0.1 をビルドしてみました。ビルド環境はUbuntu 12.10 x86_64 です。手順は、<a href="/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">前回</a>とほとんど同じです。</p>
+
+<h3>ビルド用SDK の配置</h3>
+
+<ul>
+<li><p>/tools/android-sdk-linux</p></li>
+<li><p>/tools/android-ndk-r7c</p></li>
+<li><p>/tools/jdk1.6.0_35</p></li>
+</ul>
+
+
+<h3>ビルド用依存パッケージの取得</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install mercurial ccache
+$ sudo apt-get build-dep firefox
+[/shell]</p>
+
+<h3>開発版(19.0a1)をビルドする場合</h3>
+
+<ol>
+<li><p> 開発版ソースコードの取得
+[shell gutter=&ldquo;false&rdquo;]
+$ cd /tools/apps/firefox/
+$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src-central
+$ cd src-central
+[/shell]</p></li>
+<li><p> mozconfig のカスタマイズ
+[shell gutter=&ldquo;false&rdquo;]
+$ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
+[/shell]</p></li>
+</ol>
+
+
+<p>[plain title=&ldquo;/tools/apps/firefox/src-central/.mozconfig&rdquo; highlight=&ldquo;11,12,13,15,20,21,22&rdquo;]
+. &ldquo;$topsrcdir/mobile/android/config/mozconfigs/common&rdquo;</p>
+
+<h1>Global options</h1>
+
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
+
+<h1>Build Fennec</h1>
+
+<p>ac_add_options &mdash;enable-application=mobile/android</p>
+
+<h1>Android</h1>
+
+<p>ac_add_options &mdash;target=i386-linux-android
+ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r7c&rdquo;
+ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-14&rdquo;
+ac_add_options &mdash;with-android-version=14
+ac_add_options &mdash;with-system-zlib</p>
+
+<h1>ac_add_options &mdash;enable-update-channel=${MOZ_UPDATE_CHANNEL}</h1>
+
+<h1>IonMonkey disabled in bug 789373</h1>
+
+<p>ac_add_options &mdash;disable-ion</p>
+
+<p>export JAVA_HOME=/tools/jdk1.6.0_35</p>
+
+<h1>export MOZILLA_OFFICIAL=1</h1>
+
+<h1>export MOZ_TELEMETRY_REPORTING=1</h1>
+
+<p>ac_add_options &mdash;with-branding=mobile/android/branding/nightly</p>
+
+<h1>Treat warnings as errors in directories with FAIL_ON_WARNINGS.</h1>
+
+<p>ac_add_options &mdash;enable-warnings-as-errors</p>
+
+<h1>Use ccache</h1>
+
+<p>ac_add_options &mdash;with-ccache=/usr/bin/ccache
+[/plain]</p>
+
+<h3>リリース版(16.0.1)をビルドする場合</h3>
+
+<ol>
+<li><p> リリース版ソースコードの取得
+[shell gutter=&ldquo;false&rdquo;]
+$ cd /tools/apps/firefox/
+$ hg clone <a href="http://hg.mozilla.org/releases/mozilla-release">http://hg.mozilla.org/releases/mozilla-release</a> src-release
+$ cd src-release
+[/shell]</p></li>
+<li><p> mozconfig のカスタマイズ
+[shell gutter=&ldquo;false&rdquo;]
+$ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
+[/shell]</p></li>
+</ol>
+
+
+<p>[plain title=&ldquo;/tools/apps/firefox/src-release/.mozconfig&rdquo; highlight=&ldquo;9,10,11,13,14,16,17,18,20,21&rdquo;]</p>
+
+<h1>Global options</h1>
+
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
+
+<h1>Build Fennec</h1>
+
+<p>ac_add_options &mdash;enable-application=mobile/android</p>
+
+<h1>Android</h1>
+
+<p>ac_add_options &mdash;target=i386-linux-android
+ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r7c&rdquo;
+ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-14&rdquo;
+ac_add_options &mdash;with-android-version=14
+ac_add_options &mdash;with-system-zlib</p>
+
+<h1>ac_add_options &mdash;enable-updater</h1>
+
+<h1>ac_add_options &mdash;enable-update-channel=${MOZ_UPDATE_CHANNEL}</h1>
+
+<p>export JAVA_HOME=/tools/jdk1.6.0_35</p>
+
+<h1>export MOZILLA_OFFICIAL=1</h1>
+
+<h1>export MOZ_TELEMETRY_REPORTING=1</h1>
+
+<h1>ac_add_options &mdash;enable-official-branding</h1>
+
+<p>ac_add_options &mdash;with-branding=mobile/android/branding/unofficial
+[/plain]</p>
+
+<h3>firefox のビルド</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ make -f client.mk build_and_deploy
+[/shell]</p>
+
+<h3>インストール</h3>
+
+<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。
+[plain title=&ldquo;出力先&rdquo; gutter=&ldquo;false&rdquo;]
+./obj-x86_64-unknown-linux-gnu/dist/
+[/plain]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/11/openshot-video-editor-1-4-3/">Openshot Video Editor 1.4.3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-11T21:42:21+09:00" pubdate data-updated="true">2012年10月11日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/openshot_3d_text.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/openshot_3d_text-600x502.png" alt="openshot 1.4.3 3d text" /></a>
+<a href="http://www.openshot.org/">http://www.openshot.org/</a></p>
+
+<p>Openshot はオープンソースな動画編集ソフトウェアです。バージョン1.4.3 では、Blender と連携して、3D 効果やアニメーションが強化されたようです。テキストの3D 効果では日本語フォントもレンダリングできました。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;Openshot のインストール&rdquo;]
+$ sudo add-apt-repository ppa:jonoomph/openshot-edge
+$ sudo apt-get update
+$ sudo apt-get install openshot openshot-doc
+[/shell]</p>
+
+<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;Blender のインストール&rdquo;]
+$ sudo add-apt-repository ppa:irie/blender
+$ sudo apt-get update
+$ sudo apt-get install blender
+[/shell]</p>
+
+<p>例えば、[タイトル]&ndash;[新しい動画タイトル]メニューを選択して、テンプレートから「飛び散るテキスト」を選択します。タイトルには適当な文字列を入力し、フォントを指定して、[レンダリング]を実行します。時間がかかりますが、TrueType フォントが3D 化され、アニメーションしました。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/02/vlc-for-android-x86/">VLC for Android-x86</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-02T23:20:14+09:00" pubdate data-updated="true">2012年10月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/galaxias_vlc_for_android-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/galaxias_vlc_for_android-x86-600x337.png" alt="vlc for android-x86" /></a>
+<a href="http://nightlies.videolan.org/build/android-x86/">http://nightlies.videolan.org/build/android-x86/</a></p>
+
+<p>VLC for Android-x86 のデバッグ版が公開されていたので、使ってみました。実行環境は、Android-x86 4.0.4 RC2 tegav2 ビルドです。</p>
+
+<p>ビルドする手順は以下のようです。
+<a href="http://wiki.videolan.org/AndroidCompile">http://wiki.videolan.org/AndroidCompile</a></p>
+
+<p><strong>EDIT:</strong>
+VLC だと760p も全く問題なく再生できました。音量調節は上下にフリックします。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/29/ubuntu-gnome-remix-12-10-beta/">Ubuntu GNOME Remix 12.10 Beta</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-29T06:01:45+09:00" pubdate data-updated="true">2012年09月29日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_gnome_remix.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_gnome_remix-600x480.png" alt="ubuntu gnome remix 12.10 beta" /></a>
+<a href="https://wiki.ubuntu.com/UbuntuGNOME/ReleaseNotes/12.10Beta">https://wiki.ubuntu.com/UbuntuGNOME/ReleaseNotes/12.10Beta</a></p>
+
+<p>Ubuntu GNOME Remix 12.10 betaが公開されたので、インストールしてみました。
+Ubuntu のリポジトリを使いたいけれど、デスクトップ環境はGNOME Shell がよいので、今後、どちらをベースにして行くか悩みどころです。そこで、それぞれのデフォルトの構成を比較してみました。
+どちらをベースにしても大差なさそうですが、ブラウザにFirefox を使うので、Ubuntu をインストールしておいて、ppa:gnome3-team/gnome3 を追加する方が若干楽かもしれません。GDM のログイン画面やロック画面の外観が大幅に改善されていたので、LightDM からGDM に切り替えるのならば、Ubuntu GNOME Remix がよいかもしれません。</p>
+
+<p>Ubuntu</p>
+
+<p>Ubuntu GNOME Remix</p>
+
+<p>My Choice</p>
+
+<p>Unity</p>
+
+<p><strong>GNOME Shell</strong></p>
+
+<p><strong>GNOME Shell<br/>
++ AWN</strong></p>
+
+<p><strong>LightDM</strong></p>
+
+<p><strong>GDM</strong></p>
+
+<p><strong>?</strong></p>
+
+<p>software-center</p>
+
+<p>gpk-application</p>
+
+<p>synaptic</p>
+
+<p>nautilus 3.4</p>
+
+<p>nautilus 3.4</p>
+
+<p>nautilus 3.6</p>
+
+<p>gnome-disks</p>
+
+<p>gnome-disks</p>
+
+<p>gparted</p>
+
+<p>&ndash;</p>
+
+<p><strong>tweak-tool</strong></p>
+
+<p><strong>tweak-tool</strong></p>
+
+<p><strong>Firefox</strong></p>
+
+<p>epiphany-browser</p>
+
+<p><strong>Firefox</strong></p>
+
+<p>Evolution</p>
+
+<p>Evolution</p>
+
+<p>GMail</p>
+
+<p>Evolution</p>
+
+<p>Evolution</p>
+
+<p>Google Calendar</p>
+
+<p>Rhythmbox</p>
+
+<p>Rhythmbox</p>
+
+<p>Moc</p>
+
+<p>Totem</p>
+
+<p>Totem</p>
+
+<p>VLC</p>
+
+<p>EoG</p>
+
+<p>EoG</p>
+
+<p>EoG</p>
+
+<p>Gedit</p>
+
+<p>Gedit</p>
+
+<p>Kate</p>
+
+<p>Libre-writer</p>
+
+<p>AbiWord</p>
+
+<p>&ndash;</p>
+
+<p>Libre-calc</p>
+
+<p>Gnumeric</p>
+
+<p>&ndash;</p>
+
+<p>ibus-anthy</p>
+
+<p>ibus-anthy</p>
+
+<p>ibus-mozc</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/25/changing-the-date-format-in-nautilus-3-6-list-view/">Changing the Date Format in Nautilus 3.6 List View</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-25T06:45:38+09:00" pubdate data-updated="true">2012年09月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png" alt="nautilus 3.6 list view modification date" /></a>
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676898  ">https://bugzilla.gnome.org/show_bug.cgi?id=676898  </a>
+<a href="http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060">http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060</a></p>
+
+<p>nautilus 3.6 のリストビューでは、あえて更新日付の書式をシンプル(informal)にしているようです。これはこれでアリなのですが、やはり詳細表示されていた方が統一感があって使い勝手がよいような気がするので、昔のISO 日付書式になるようにカスタマイズしてみました。dpkg-buildpackage でfakeroot が効かなかったので、sudo で実行しています。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get build-dep nautilus
+$ mkdir nautilus &amp;&amp; cd nautilus
+$ apt-get source nautilus
+$ dpkg-source -x <em>.dsc
+$ cd nautilus-3.</em>
+[/shell]
+[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4484&rdquo; highlight=&ldquo;4489&rdquo;]</p>
+
+<h1>define TODAY_TIME_FORMAT_24 N_(&ldquo;%R&rdquo;)</h1>
+
+<h1>define TODAY_TIME_FORMAT N_(&ldquo;%-I:%M %P&rdquo;)</h1>
+
+<h1>define THIS_MONTH_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
+
+<h1>define THIS_YEAR_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
+
+<h1>define ANYTIME_TIME_FORMAT N_(&ldquo;%b %-d %Y&rdquo;)</h1>
+
+<h1>define ANYTIME_TIME_FORMAT_ISO N_(&ldquo;%Y-%m-%d %H:%M:%S&rdquo;)</h1>
+
+<h1>define FULL_FORMAT N_(&ldquo;%a, %b %e %Y %I:%M:%S %p&rdquo;)</h1>
+
+<h1>define FULL_FORMAT_24 N_(&ldquo;%a, %b %e %Y %T&rdquo;)</h1>
+
+<p>[/c]
+[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4538&rdquo; highlight=&ldquo;4541&rdquo;]</p>
+
+<pre><code>} else {
+    format = ANYTIME_TIME_FORMAT;
+}
+format = ANYTIME_TIME_FORMAT_ISO;
+</code></pre>
+
+<p>[/c]
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo dpkg-buildpackage -us -uc -nc -b
+$ sudo dpkg -i ../nautilus_3.*.deb
+[/shell]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/24/gnome-shell-extension-drop-down-terminal/">GNOME Shell Extension - Drop Down Terminal</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-24T21:17:32+09:00" pubdate data-updated="true">2012年09月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension-600x337.png" alt="gnome shell extension drop down terminal" /></a>
+<a href="https://extensions.gnome.org/extension/442/drop-down-terminal/">https://extensions.gnome.org/extension/442/drop-down-terminal/</a></p>
+
+<p>Drop Down Terminal はGNOME Shell 3.5.2 (正確にはgjs >= 1.33.2 and vte3 >= 0.31, gnome-shell >= 3.2 らしい)以降で動作する、ターミナル画面を表示するためのGNOME Shell 拡張機能です。Ubuntu 12.10 + GNOME Shell 3.5.92 の環境で使ってみました。
+GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面の上部に半透明なターミナル画面が瞬時に表示されます。もう一度[F12]キーを押すとターミナル画面が隠れます。作者のコメントによると、キーバインドはgsettings やdconf-editor でカスタマイズできるようです。
+ちょっとしたターミナル操作をする場合にとても便利です。クリップボードからのペーストは[Shift]&ndash;[Insert]が使用できます。フォーカスが合っていない場合はマウスでクリックすると良いようです。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/4/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ktkr3d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Android | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T15:33:18+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Irrlicht Android Media Player]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player/"/>
+    <updated>2013-08-11T03:47:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png"><img src="/images/irrlicht_android_player_tab_tn.png"></a></p>
+
+<p>Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。</p>
+
+<!-- more -->
+
+
+<h4>PMD とVMD のロード処理の修正</h4>
+
+<p>以前のソースコードがHDD の故障とともに消えてしまったので、コードやMakefile を書きなおしていたところ、うまくロードできないPMD、VMD があることに気が付きました。
+BinaryReader のロード処理で、プロセッサ種別に依存してうまく取り込めない(ARM CPU で構造体のアラインメントが異なる)のが原因のようです。<br/>
+以前のバージョンのコンパイラ＋古いバージョンのAndroid デバイスでは動いていたような気がするのに。
+原因は単純なので修正しておきました。</p>
+
+<h4>Native Activity からのWakeLock の制御</h4>
+
+<p>少し経つと画面が暗くなって、画面が非表示状態になります。
+PowerManager のWakeLock を制御すれば良さそうです。
+Android NDK のNative Activity の場合はJNI を経由してPower Manager へアクセスするのかな。
+後で調べておこう。</p>
+
+<h4>画面インタフェース</h4>
+
+<ul>
+<li><strong>パネル表示切替ボタン「⇅」</strong><br/>
+画面下部の設定用のインタフェースの表示/非表示を切り替える。曲目リスト、モデルリスト、環境設定のタブがある。</li>
+<li><strong>ミュート切替ボタン「♪」</strong><br/>
+音声の出力状態を切り替える。OpenSL ES の<code>(*uriPlayerVolume)-&gt;SetMute()</code>をコールしている。</li>
+<li><strong>再生/停止切替ボタン「▶」</strong><br/>
+モーションと音声の再生/停止を切り替える。アニメーションスピードの切り替えと<code>(*uriPlayerPlay)-&gt;SetPlayState()</code>をコールしている。モデルまたは曲を変更した場合は最初から開始する。</li>
+<li><strong>終了ボタン「×」</strong><br/>
+アプリケーションを終了する。</li>
+<li><strong>カメラ位置スクロールバー</strong><br/>
+カメラの位置を前後させる。</li>
+</ul>
+
+
+<h4>TODO</h4>
+
+<ul>
+<li><code>state-&gt;onAppCmd</code> にコールバック関数を設定しているのにキックされない原因を調べる。</li>
+<li><code>pFileSystem-&gt;createFileList()</code> が失敗する原因を調べる。</li>
+<li>タスク復帰時に描画コンテキストをリストアする。</li>
+<li>GUI のSkin を変更する。</li>
+<li>Android 固有の入力イベントに対応する。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Compiling Irrlicht ogl-es branch for Android]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android/"/>
+    <updated>2013-08-04T04:04:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_ogl-es_android.png"><img src="/images/irrlicht_ogl-es_android_tn.png"></a></p>
+
+<ul>
+<li>Compiling Irrlicht ogl-es branch for Android on Ubuntu GNOME 13.10 x86_64.</li>
+<li>Native C/C++ Android Application (Native Activity).</li>
+<li>Fullscreen (1080x1920)</li>
+<li>Input Event Receiver</li>
+<li>True Type Font (FreeType2)</li>
+<li>OpenSL ES (Native Audio)</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h4>Environment</h4>
+
+<ul>
+<li>Android SDK: 22.0.5</li>
+<li>Android NDK: r9</li>
+<li>Android Device: Android 4.1.2 (API level 16)</li>
+<li>Irrlicht 1.9 [r4528]</li>
+</ul>
+
+
+<h4>Download Irrlicht ogl-es branch</h4>
+
+<p><code>http://sourceforge.net/p/irrlicht/code/</code></p>
+
+<ol>
+<li>Select <code>branches</code>, <code>ogl-es</code>, <code>Download Snapshot</code>.</li>
+<li>Download.</li>
+<li>Extract.</li>
+</ol>
+
+
+<h4>Compile Irrlicht Library</h4>
+
+<p><code>bash
+$ cd source/Irrlicht/Andorid
+$ ndk-build -j4
+</code></p>
+
+<p>&ndash;> <code>lib/Android/libirrlicht.a</code></p>
+
+<h4>Build example</h4>
+
+<p><code>bash
+$ cd examples/17.HelloWorld_Mobile
+$ android update project --path . --target android-16
+$ ndk-build -j4
+$ ant debug
+</code></p>
+
+<p>&ndash;> <code>examples/17.HellowWorld_Mobile/HelloWorldMobile-debug.apk</code></p>
+
+<h4>TrueType Font</h4>
+
+<p><code>include/irrUString.h</code>, <code>jni/CGUITTFont.h</code>, <code>jni/CGUITTFont.cpp</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building Android 4.1 for x86 on Ubuntu 12.04]]></title>
+    <link href="http://ktkr3d.github.io/blog/2012/07/12/building-android-4-1-for-x86-on-ubuntu-12-04/"/>
+    <updated>2012-07-12T00:17:01+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2012/07/12/building-android-4-1-for-x86-on-ubuntu-12-04</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/07/android_4.1.1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/07/android_4.1.1.png" alt="android 4.1.1 x86" /></a></p>
+
+<p><a href="http://source.android.com/source/download.html  ">http://source.android.com/source/download.html  </a>
+<a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a></p>
+
+<p>Android 4.1 Jelly Bean のソースが公開されたのでビルドしてみた。<del>./build/target/product/generic_x86.mk があるので、使わせていただこう。</del>ビルド環境はUbuntu 12.04 x86_64。<del>インストール先はInspiron duo (Dual Core Atom N550, 1366x768, Touch Screen + Keyboard)。</del></p>
+
+<ol>
+<li><p> 前提パッケージをインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline-gplv2-dev lib32z1-dev
+$ sudo apt-get install gcc-multilib g++-multilib libc6-i386 libc6-dev-i386
+[/shell]</p></li>
+<li><p> JDK をインストール
+Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin にパスを通しておく。</p></li>
+<li><p> repo をインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ mkdir ~/bin
+$ PATH=~/bin:$PATH
+$ curl <a href="http://android.git.kernel.org/repo">http://android.git.kernel.org/repo</a> > ~/bin/repo
+$ chmod a+x ~/bin/repo
+[/shell]</p></li>
+<li><p> ソースを取得(Android 4.1(Jelly Bean) の場合)
+[shell gutter=&ldquo;false&rdquo;]
+$ mkdir jellybean-x86
+$ cd jellybean-x86
+$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b android-4.1.1_r1
+$ repo sync
+[/shell]</p></li>
+<li><p> ビルド
+[shell gutter=&ldquo;false&rdquo;]
+$ source build/envsetup.sh
+$ lunch generic_x86-eng
+$ make -j8
+[/shell]
+./out/target/product/generic_x86/ にバイナリが作成されるので、GRUB から起動してあげればOK!、と思うけど、時間が掛かりそうなので、明日の朝確認しようzzz。</p></li>
+</ol>
+
+
+<p>generic_x86-eng で失敗したので、lunch の選択肢に従って、full_x86-eng でやり直してみよう。make の実行は、C/C++ の部分は多重度を8 にして、Java の部分は多重度を1 にできるとCPU とメモリが有効活用できて効率的なんだけど、できないのかな。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ source build/envsetup.sh
+$ lunch vbox_x86-eng
+$ make android_disk_vdi -j1
+$
+[/shell]
+VirtualBox イメージ(android_data_disk.vdi, android_system_disk.vdi)の生成と起動はできた。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android 4.0 をビルドしてみよう（その1）]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/11/16/android-4-0/"/>
+    <updated>2011-11-16T04:22:55+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/11/16/android-4-0</id>
+    <content type="html"><![CDATA[<p><a href="http://source.android.com/source/download.html">http://source.android.com/source/download.html</a>
+Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので、Ubuntu 11.10 64bit の環境でビルドしてみよう。手順はAndroid 2.3 の時と同じみたい。今回から（?）実験的に32bit 環境での手順も記載されている。
+はやくAndroid-x86 にも取り込まれないかな。</p>
+
+<ol>
+<li><p> 環境の構築
+<a href="http://source.android.com/source/initializing.html">http://source.android.com/source/initializing.html</a>
+前提パッケージlib32readline5-dev が見つからないのは、とりあえず無視してみる。</p></li>
+<li><p> ソースコードのダウンロード
+<a href="http://source.android.com/source/downloading.html">http://source.android.com/source/downloading.html</a>
+今回もrepo を使ったダウンロードが遅い。</p></li>
+<li><p> ソースコードのビルド
+<a href="http://source.android.com/source/building.html">http://source.android.com/source/building.html</a></p></li>
+</ol>
+
+
+<p>source.android.com に繋がりにくい時があるので、手順はhtml で保存しておいた方がよさそう。
+ダウンロードが終わらないので、今日（今朝）はここまで。</p>
+
+<p><strong>update:</strong>
+エミュレータでAndroid 4.0 Ice Cream Sandwich を動かしてみた。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android_4_ics.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android_4_ics.png" alt="android 4 ice cream sandwich" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android NDK で日本語表示してみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/08/10/android-ndk/"/>
+    <updated>2011-08-10T21:55:28+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/08/10/android-ndk</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_freetype.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_freetype.png" alt="android ndk irrlicht pmd vmd freetype" /></a></p>
+
+<p>Proton SDK 上のIrrlicht ではGUIEnvironment がうまく取得できなかったので、Proton SDK を外した。素のIrrlicht にしたら、画像や文字の表示に問題なかった。ついでに、FreeType を取り込んでTrueType のフォントで日本語を表示してみた。
+Proton SDK を外したら、なぜかIrrlicht 上の幅と高さが半分くらいになってしまったので、直さないと。GLES2 にも移行したいところ。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_fullscreen.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_fullscreen.png" alt="android ndk irrlicht pmd vmd fullscreen" /></a></p>
+
+<p>AndroidManifest.xml を修正したら、フルスクリーンになって最大解像度が有効になった。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/08/android_ndk_pmd_homerun.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/08/android_ndk_pmd_homerun.png" alt="android ndk pmd vmd irrlicht freetype" /></a></p>
+
+<p>いろいろなボタンをつけてみた。</p>
+]]></content>
+  </entry>
+  
+</feed>
