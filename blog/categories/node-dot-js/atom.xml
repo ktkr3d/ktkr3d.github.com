@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Node.js | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T23:22:46+09:00</updated>
+  <updated>2013-11-16T23:38:40+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -203,10 +203,10 @@ node server.js 3132
 
 <h3>Node Version Manager のインストール</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
+<p><code>sh
 $ sudo apt-get install build-essential libssl-dev curl git
 $ git clone git://github.com/creationix/nvm.git ~/.nvm
-[/shell]</p>
+</code></p>
 
 <h3>Node.js v0.6.21 とsourcemint のインストール</h3>
 

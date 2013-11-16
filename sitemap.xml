@@ -405,18 +405,12 @@
         <lastmod>2013-11-16T21:02:19+09:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://ktkr3d.github.io/blog/2011/06/15/peercast-radio-e38292mac-e381a7e58b95e3818be38197e381a6e381bfe3819f/
-        </loc>
-        <lastmod>2013-11-16T15:19:49+09:00</lastmod>
-    </url>
-    <url>
         <loc>http://ktkr3d.github.io/blog/2011/06/16/android-x86-3-1/</loc>
         <lastmod>2013-11-16T21:02:19+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2011/06/22/haiku-r1-a3/</loc>
-        <lastmod>2013-11-16T21:02:20+09:00</lastmod>
+        <lastmod>2013-11-16T23:31:20+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2011/06/25/proun-2/</loc>
@@ -425,10 +419,6 @@
     <url>
         <loc>http://ktkr3d.github.io/blog/2011/06/28/proun-3/</loc>
         <lastmod>2013-11-16T21:02:20+09:00</lastmod>
-    </url>
-    <url>
-        <loc>http://ktkr3d.github.io/blog/2011/07/08/usl-5p-debian-5-0/</loc>
-        <lastmod>2013-11-16T15:19:49+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2011/07/27/proton-sdk/</loc>
@@ -545,14 +535,6 @@
     <url>
         <loc>http://ktkr3d.github.io/blog/2012/03/08/android-x86-tegav2-physical-keyboard/</loc>
         <lastmod>2013-11-16T21:02:21+09:00</lastmod>
-    </url>
-    <url>
-        <loc>http://ktkr3d.github.io/blog/2012/03/10/1648/</loc>
-        <lastmod>2013-11-16T15:19:49+09:00</lastmod>
-    </url>
-    <url>
-        <loc>http://ktkr3d.github.io/blog/2012/03/17/inspiron-duo-android-x86-4-0-headphone/</loc>
-        <lastmod>2013-11-16T15:19:49+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2012/03/25/kubuntu-active-12-04/</loc>
@@ -766,7 +748,7 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2013/02/10/cloud9-ide/</loc>
-        <lastmod>2013-11-16T23:22:15+09:00</lastmod>
+        <lastmod>2013-11-16T23:23:52+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2013/02/10/scrumblr/</loc>
@@ -792,15 +774,15 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2013/03/14/ubuntu-gnome-13-04-daily-build/</loc>
-        <lastmod>2013-11-16T21:02:25+09:00</lastmod>
+        <lastmod>2013-11-16T23:36:26+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2013/03/17/create-a-shortcut-key-in-xnoise/</loc>
-        <lastmod>2013-11-16T21:02:25+09:00</lastmod>
+        <lastmod>2013-11-16T23:35:43+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2013/03/17/bittorrent-live-beta/</loc>
-        <lastmod>2013-11-16T21:02:25+09:00</lastmod>
+        <lastmod>2013-11-16T23:35:11+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2013/03/24/conkyforecast-japanese-translation/</loc>
@@ -808,7 +790,7 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2013/06/01/android-studio/</loc>
-        <lastmod>2013-11-16T21:02:25+09:00</lastmod>
+        <lastmod>2013-11-16T23:33:29+09:00</lastmod>
     </url>
     <url>
         <loc>
@@ -880,11 +862,11 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/</loc>
-        <lastmod>2013-11-16T23:22:15+09:00</lastmod>
+        <lastmod>2013-11-16T23:36:26+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/archives/</loc>
-        <lastmod>2013-11-16T23:22:15+09:00</lastmod>
+        <lastmod>2013-11-16T23:36:26+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/android/</loc>

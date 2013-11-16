@@ -9,10 +9,10 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186
-CRadiosityGenerator クラスを使ってみた(とりあえず光反射は3回にしてみた)
-モデルと光源を工夫するともっといい画像が撮れそう
-内部でXEffects &hellip;">
+  <meta name="description" content="http://www.billardgl.de/
+3D のビリヤードゲーム
+F1〜F8 キーで画面がかっこよくくるくる回転する
+Ubuntu のタブレットPC デモ動画に載っていたのでリポジトリにあるのかと思いきや無く、ホームページのdeb パッケージのリンクも切れていて、alien もdeb &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +90,194 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/16/billardgl/">BillardGL で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-16T14:16:12+09:00" pubdate data-updated="true">2010年10月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/10/biilardgl.png"><img src="/images/uploads/2010/10/biilardgl.png" alt="billardgl" /></a>
+<a href="http://www.billardgl.de/">http://www.billardgl.de/</a>
+3D のビリヤードゲーム
+F1〜F8 キーで画面がかっこよくくるくる回転する
+Ubuntu のタブレットPC デモ動画に載っていたのでリポジトリにあるのかと思いきや無く、ホームページのdeb パッケージのリンクも切れていて、alien もdeb パッケージを生成できなかったのでソースからビルドしてみた
+src/bmp.cpp の修正</p>
+
+<pre><code>&lt;code&gt;#include &lt;iostream&gt;
+using namespace std;
+#include &lt;fstream&gt;&lt;/code&gt;
+</code></pre>
+
+<p>リンクするライブラリ
+Xxf86vm; GL; GLU; glut;
+リソースファイルのコピー
+src/Texturen → /usr/share/BillardGL/Texturen
+src/lang → /usr/share/BillardGL/lang
+追記: Ubuntu でのパッケージ名はbillard-gl だった
+追記2: openSUSE にあるfoobillard も同様によくできている</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/30/caph/">Caph で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-30T00:37:59+09:00" pubdate data-updated="true">2010年09月30日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/09/caph.png"><img src="/images/uploads/2010/09/caph.png" alt="caph" /></a>
+<a href="http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml">http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml</a>
+マウスで描いた軌跡で作った物体を使って解くパズルゲーム
+物理エンジンのリアルな動きがおもしろいー
+README のとおりにやってうまく動かなかったのでちょっと修正
+src/draw.c(299): png_get_IHDR() のheight が変な値を返すので変数h の値を修正(64bit OS 上でのpng_uint_32 型の処理にバグがあるのかな)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/18/monodevelop/">MonoDevelop を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-18T01:30:11+09:00" pubdate data-updated="true">2010年09月18日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/09/monodevelop.png"><img src="/images/uploads/2010/09/monodevelop.png" alt="monodevelop" /></a>
+Unity のv3 からMonoDevelop でのステップ実行/変数ウォッチができるようになると聞いてMonoDevelop を試してみた(v2.6 でも単純な連携はできるんだけどね)はやく無償版ユーザにもUnity v3/ベータが公開されないかなぁ
+ちょっと使ってみた感じ</p>
+
+<ul>
+<li><p>Linux/Windows で使える</p></li>
+<li><p>MONO だけに.NET アプリが作れるみたい(作らないけどね)</p></li>
+<li><p>プロジェクトファイルがVC のソリューションファイル(.sln)っぽいのでWindows とLinux 共通なプロジェクトを作成するのに便利かもしれない(Code::Blocks でもできるけどやはりWindows はVC 使うだろうし)</p></li>
+<li><p>実行ディレクトリの指定をどこでするのかわからなかったけれど、通常実行はロードモジュール格納ディレクトリ、デバッグ実行はホームディレクトリ!?っぽい</p></li>
+<li><p>言語特有の細かい設定はできない代わりにいろいろな言語がプラグイン的に広くサポートできるようになっている</p></li>
+<li><p>Subversion のプラグインも付いている</p></li>
+</ul>
+
+
+<p>ちなみにWine 環境でのUnity の動作評価はBronze みたい
+<a href="http://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=11075">http://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=11075</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/12/puzzle_game/">Puzzle Game で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-12T16:31:24+09:00" pubdate data-updated="true">2010年09月12日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/09/puzzle_game.png"><img src="/images/uploads/2010/09/puzzle_game.png" alt="" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=36539">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=36539</a>
+いわゆる倉庫番の3D 版
+ほのぼの
+レベルエディタ機能もついてる！！
+PuzzleGame.exe -e mylevel.lev
+./PuzzleGame.linux -e mylevel.ev</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -427,183 +615,6 @@ GUI はxml 化、フォントはgun4fc.ttf</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/04/irrlamb/">Irrlamb で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-04T21:58:43+09:00" pubdate data-updated="true">2010年09月04日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/09/irrlamb.png"><img src="/images/uploads/2010/09/irrlamb.png" alt="irrlamb irrlicht" /></a>
-irrlamb で遊んでみた
-面クリアタイプの3D アクションゲームで、ちょっと慣れが必要だけれどおもしろい!!
-物理エンジンはBullet を使っている
-画面構成がかっこよくて、リプレイ機能もある
-<a href="http://code.google.com/p/irrlamb/">http://code.google.com/p/irrlamb/</a>
-<a href="http://www.youtube.com/profile?user=irrlamb">http://www.youtube.com/profile?user=irrlamb</a>
-ubuntu lucid/universe のリポジトリにlibirrlicht1.7,
-libirrlicht-dev(/usr/include/irrlicht, /usr/lib/libirrlicht.a,
-/usr/lib/libirrlicht.so とか), libirrlicht1.7-dbg,
-libirrlicht-doc(リファレンスとexamples)
-のパッケージ(1.7+dfsg1-1)があることを初めて知った・・・いつできたんだろう
-ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/31/b-momi/">モーションキャプチャデータを試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-31T21:11:20+09:00" pubdate data-updated="true">2010年08月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/08/motion_capture.png"><img src="/images/uploads/2010/08/motion_capture.png" alt="motion capture irrlicht" /></a>
-モーションキャプチャデータBVH をB-MoMi でVMD に変換して動かしてみた
-さすがに動きが自然でなめらかだ
-<a href="http://atupdate.web.fc2.com/">http://atupdate.web.fc2.com/</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/29/spark/">SPARK を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-29T22:25:50+09:00" pubdate data-updated="true">2010年08月29日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/03/SPARKFire.png"><img src="/images/uploads/2011/03/SPARKFire.png" alt="irrlicht SPARK" /></a>
-SPARK のエフェクトを試してみた
-綺麗なエフェクトがいろいろあって楽しい!!
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754</a>
-<a href="http://spark.developpez.com/">http://spark.developpez.com/</a>
-<a href="http://www.youtube.com/watch?v=7lJu2rf3Ras">http://www.youtube.com/watch?v=7lJu2rf3Ras</a>
-Linux + Code::Blocks でデモをビルドする手順</p>
-
-<ol>
-<li><p> Code::Blocks 用のワークスペース「SPARK.workspace」を開く</p></li>
-<li><p> 「SPARK Engine CORE LIB」プロジェクトを開いてWIN32 のマクロを外して「libSPARK.a」をビルド</p></li>
-<li><p> 「SPARK Engine IRR LIB」プロジェクトを開いてWIN32 のマクロを外して「libSPARK_IRR.a」をビルド</p></li>
-<li><p> デモのプロジェクトを作成して、ソース内の「\」を「/」に置換してビルド(libSPARK.a, libSPARK_IRR.a をリンク)</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/28/buggyrace/">BuggyRace で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-28T13:44:18+09:00" pubdate data-updated="true">2010年08月28日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/08/BuggyRace.png"><img src="/images/uploads/2010/08/BuggyRace.png" alt="BuggyRace irrlicht" /></a>
-IrrCg のひと(黄色のバギーに乗っていると思われる)が作ったカーレースゲームBuggyRace で遊んでみた
-<a href="http://buggy-race.pl/">http://buggy-race.pl/</a>
-マップやオブジェクトはb3d 形式でシェーダはirrCg、サウンドはogg 形式でOpenAL で再生している
-ほのぼのしてるけど完成度は高いなぁ</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/18/">&larr; Older</a>
@@ -644,7 +655,7 @@ IrrCg のひと(黄色のバギーに乗っていると思われる)が作った
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -653,6 +664,10 @@ IrrCg のひと(黄色のバギーに乗っていると思われる)が作った
 </section>
  
  
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
 
 <section>
   <h1>GitHub Repos</h1>
