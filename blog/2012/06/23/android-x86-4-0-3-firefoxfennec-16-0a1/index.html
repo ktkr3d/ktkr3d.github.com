@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Android-x86 4.0.3 + Firefox(Fennec) 16.0a1 - ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="https://wiki.mozilla.org/Mobile/Fennec/Android
+Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386- &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
+  <li><a href="/linux">Linux</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Android-x86 4.0.3 + Firefox(Fennec) 16.0a1</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-23T12:03:13+09:00" pubdate data-updated="true">2012年06月23日</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png" alt="android-x86 4.0.3 firefox fennec 16.0a1" /></a></p>
+
+<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a>
+Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386-linux-android 向けのmozconfig を見つけたけれど、そのままではうまくビルドできなかったので、修正して利用してみた。Android SDK/NDK の環境はできているので、その後から始めよう。ビルドする環境はUbuntu 12.04 x86_64。Android 端末は、Inspiron duo にandroid-x86-4.0-RC1-tegav2.iso をインストール済み。</p>
+
+<ol>
+<li><p> ビルドするための依存関係の取得
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install mercurial ccache
+$ sudo apt-get build-dep firefox
+[/shell]</p></li>
+<li><p> Firefox のソースの取得
+[shell gutter=&ldquo;false&rdquo;]
+$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src
+[/shell]</p></li>
+<li><p> MOZCONFIG のカスタマイズ
+[shell gutter=&ldquo;false&rdquo;]
+$ cd src
+$ gedit mozconfig-android-x86
+[/shell]
+[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
+
+<h1>Global options</h1>
+
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p></li>
+</ol>
+
+
+<h1>Build Fennec</h1>
+
+<p>ac_add_options &mdash;enable-application=mobile/android</p>
+
+<h1>Android</h1>
+
+<p>ac_add_options &mdash;target=i386-linux-android
+ac_add_options &mdash;with-endian=little
+ac_add_options &mdash;with-android-ndk=&ldquo;$HOME/Projects/Android/android-ndk-r8&rdquo;
+ac_add_options &mdash;with-android-sdk=&ldquo;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&rdquo;
+ac_add_options &mdash;with-android-version=10
+ac_add_options &mdash;with-android-platform=&ldquo;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&rdquo;
+ac_add_options &mdash;with-system-zlib</p>
+
+<h1></h1>
+
+<p>ac_add_options &mdash;disable-auto-deps
+ac_add_options &mdash;disable-debug
+ac_add_options &mdash;disable-debug-symbols
+ac_add_options &mdash;disable-tests
+ac_add_options &mdash;disable-ipdl-tests
+ac_add_options &mdash;enable-strip
+ac_add_options &mdash;enable-install-strip</p>
+
+<h1>updater</h1>
+
+<p>ac_add_options &mdash;disable-updater
+ac_add_options &mdash;disable-update-channel
+ac_add_options &mdash;disable-update-packaging</p>
+
+<h1>crash reporter</h1>
+
+<p>ac_add_options &mdash;disable-crashreporter</p>
+
+<h1>maintenance service</h1>
+
+<p>ac_add_options &mdash;disable-maintenance-service</p>
+
+<h1>JDK</h1>
+
+<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
+
+<h1>branding</h1>
+
+<p>ac_add_options &mdash;with-branding=mobile/android/branding/beta
+[/plain]</p>
+
+<ol>
+<li><p> ロゴ画像の作成
+他のサイズのロゴ画像を参考にサイズ40x40 のPNG 形式画像を作成する。
+./mobile/android/branding/beta/content/fennec_40x40.png</p></li>
+<li><p> インストール先のAndroid 端末を無線LAN で接続する。
+[shell gutter=&ldquo;false&rdquo;]
+$ export ADBHOST=192.168.0.4
+$ adb devices
+[/shell]</p></li>
+<li><p> ビルドとインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ export MOZCONFIG=./mozconfig-android-x86
+$ make -f client.mk build_and_deploy
+$
+[/shell]
+インストーラパッケージは以下に生成される。
+./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p></li>
+<li><p> 次回ビルド時にソースを最新の状態にするには
+[shell gutter=&ldquo;false&rdquo;]
+$ hg pull -u
+[/shell]</p></li>
+</ol>
+
+
+<!-- more -->
+
+
+<p>いくつか気になることがあったので、修正してリビルドしてみた。</p>
+
+<ul>
+<li><p>about:buildconfig でAndroid SDK やAndroid NDK の絶対パスが見えてしまうので、/tools/ 下からシンボリックリンクを張った。</p></li>
+<li><p>branding をnightly に変更した。</p></li>
+<li><p>ロゴ画像を追加するのをやめた。（必要なかった。）</p></li>
+</ul>
+
+
+<p>[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
+
+<h1>Global options</h1>
+
+<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
+
+<h1>Build Fennec</h1>
+
+<p>ac_add_options &mdash;enable-application=mobile/android</p>
+
+<h1>Android</h1>
+
+<p>ac_add_options &mdash;target=i386-linux-android
+ac_add_options &mdash;with-endian=little
+ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r8&rdquo;
+ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-15&rdquo;
+ac_add_options &mdash;with-android-version=10
+ac_add_options &mdash;with-system-zlib
+ac_add_options &mdash;with-android-platform=&ldquo;/tools/android-ndk-r8/platforms/android-14/arch-x86&rdquo;</p>
+
+<h1></h1>
+
+<p>ac_add_options &mdash;disable-auto-deps
+ac_add_options &mdash;disable-debug
+ac_add_options &mdash;disable-debug-symbols
+ac_add_options &mdash;disable-tests
+ac_add_options &mdash;disable-ipdl-tests
+ac_add_options &mdash;enable-strip
+ac_add_options &mdash;enable-install-strip</p>
+
+<h1>updater</h1>
+
+<p>ac_add_options &mdash;disable-updater
+ac_add_options &mdash;disable-update-channel
+ac_add_options &mdash;disable-update-packaging</p>
+
+<h1>crash reporter</h1>
+
+<p>ac_add_options &mdash;disable-crashreporter</p>
+
+<h1>maintenance service</h1>
+
+<p>ac_add_options &mdash;disable-maintenance-service</p>
+
+<h1>JDK</h1>
+
+<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
+
+<h1>mozilla</h1>
+
+<p>ac_add_options &mdash;with-branding=mobile/android/branding/nightly
+[/plain]
+about:buildconfig の内容
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png" alt="android-x86 firefox fennec 16.0a1 buildconfig" /></a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="https://plus.google.com/118064786423053991892" rel="author">ktkr3d</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-23T12:03:13+09:00" pubdate data-updated="true">2012年06月23日</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android-x86/'>Android-x86</a>, <a class='category' href='/blog/categories/firefox/'>Firefox</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/06/17/android-ndk-android-x86-4-0-3/" title="Previous Post: Android NDK + Android-x86 4.0.3">&laquo; Android NDK + Android-x86 4.0.3</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/30/irrlicht-1-8-trunk-xeffects/" title="Next Post: Irrlicht 1.8 trunk + XEffects">Irrlicht 1.8 trunk + XEffects &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (86)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ktkr3d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/';
+        var disqus_url = 'http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
