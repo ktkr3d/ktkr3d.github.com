@@ -123,7 +123,7 @@ $(document).ready( function () {
 <p>[plain title=&ldquo;/usr/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json&rdquo; highlight=&ldquo;2&rdquo;]
 {
    &ldquo;shell-version&rdquo;: [ &ldquo;3.4&rdquo;, &ldquo;3.2.0&rdquo;, &ldquo;3.2&rdquo;, &ldquo;3.2.1&rdquo; ],
-   &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x61;&#117;&#116;&#111;&#104;&#105;&#x64;&#101;&#x74;&#x6f;&#x70;&#98;&#97;&#114;&#x32;&#x40;&#119;&#x65;&#114;&#101;&#119;&#x6f;&#x6c;&#x76;&#x65;&#115;&#x2e;&#117;&#115;">&#97;&#x75;&#x74;&#111;&#x68;&#x69;&#100;&#x65;&#116;&#111;&#x70;&#x62;&#x61;&#x72;&#50;&#64;&#119;&#x65;&#114;&#x65;&#x77;&#111;&#108;&#118;&#x65;&#x73;&#46;&#x75;&#115;</a>&rdquo;,
+   &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x61;&#x75;&#116;&#111;&#104;&#x69;&#100;&#x65;&#x74;&#x6f;&#x70;&#x62;&#97;&#114;&#50;&#64;&#119;&#x65;&#x72;&#x65;&#x77;&#111;&#x6c;&#x76;&#x65;&#115;&#46;&#x75;&#x73;">&#x61;&#117;&#x74;&#x6f;&#x68;&#x69;&#x64;&#101;&#x74;&#111;&#x70;&#x62;&#x61;&#114;&#x32;&#64;&#x77;&#x65;&#114;&#101;&#119;&#x6f;&#108;&#118;&#x65;&#x73;&#x2e;&#x75;&#x73;</a>&rdquo;,
    &ldquo;name&rdquo;: &ldquo;Auto Hide Top Panel&rdquo;,
    &ldquo;description&rdquo;: &ldquo;Auto hide the top panel&rdquo;,
    &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
@@ -228,110 +228,6 @@ Ubuntu 11.10 のデフォルトのリモートデスクトップビューアだ�
 <p><a href="/images/uploads/2012/03/kubuntu-active_apps.png"><img src="/images/uploads/2012/03/kubuntu-active_apps.png" alt="kubuntu active apps" /></a></p>
 
 <p>上部のパネルは二段階に展開できて、実行中のタスクとインストールされているアプリケーションの一覧を表示できる。画面キャプチャしたら、実行中のタスクのサムネイル表示がアイコン表示になったのはどうしてだろう？</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/17/inspiron-duo-android-x86-4-0-headphone/">Inspiron Duo + Android-x86 4.0 でヘッドフォン</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-17T04:26:05+09:00" pubdate data-updated="true">2012年03月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Inspiron duo + Android-x86 4.0 の環境でヘッドフォンジャックにプラグを挿した時に内部スピーカーをミュートするように設定してみた。
-普通のLinux カーネルではalsa-base.conf などにmodel=ideapad を指定すれば良いけれど、Android-x86 では./kernel/sound/pci/hda/patch_realtek.c にmodel のプリセットが定義されているみたいだ。</p>
-
-<p>[cpp firstline=&ldquo;18470&rdquo; highlight=&ldquo;18478&rdquo; title=&ldquo;./kernel/sound/pci/hda/patch_realtek.c&rdquo;]
-/<em>
- * configuration and preset
- </em>/
-static const char * const alc662_models[ALC662_MODEL_LAST] = {</p>
-
-<pre><code>    [ALC662_3ST_2ch_DIG]    = "3stack-dig",
-    [ALC662_3ST_6ch_DIG]    = "3stack-6ch-dig",
-    [ALC662_3ST_6ch]        = "3stack-6ch",
-    [ALC662_5ST_DIG]        = "5stack-dig",
-    [ALC662_LENOVO_101E]    = "lenovo-101e",
-    [ALC662_ASUS_EEEPC_P701] = "eeepc-p701",
-    [ALC662_ASUS_EEEPC_EP20] = "eeepc-ep20",
-</code></pre>
-
-<p>[/cpp]</p>
-
-<p>ideapad に相当する指定は、lenovo-101e みたいなので、 以下を設定する。</p>
-
-<p>[plain title=&ldquo;./device/tegatech/tegav2/tegav2_info&rdquo;]
-SNDDEV=&ldquo;snd-hda-intel model=lenovo-101e position_fix=1 enable=yes&rdquo;
-[/plain]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/10/1648/">No Content Found</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-10T13:05:54+09:00" pubdate data-updated="true">2012年03月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>AMD Catalyst 12.2 on Ubuntu 11.10</p>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-sudo apt-get build-dep fglrx
-wget <a href="http://www2.ati.com/drivers/linux/amd-driver-installer-12-2-x86.x86_64.run">http://www2.ati.com/drivers/linux/amd-driver-installer-12-2-x86.x86_64.run</a>
-chmod 755 amd-driver-installer-12-2-x86.x86_64.run
-./amd-driver-installer-12-2-x86.x86_64.run &mdash;buildpkg Ubuntu/precise
-sudo dpkg -i fglrx_8.950-0ubuntu1_amd64.deb fglrx-amdcccle_8.950-0ubuntu1_amd64.deb fglrx-dev_8.950-0ubuntu1_amd64.deb
-[/shell]</p>
 </div>
   
   
@@ -735,6 +631,128 @@ $ sudo cp firmware/fwbin/70012/</em> /lib/firmware/
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/12/irrlicht-lensflare-effect/">Irrlicht + Lens Flare Effect</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-12T12:58:28+09:00" pubdate data-updated="true">2012年02月12日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/irrlicht_lensflare.png"><img src="/images/uploads/2012/02/irrlicht_lensflare.png" alt="irrlicht lens flare" /></a></p>
+
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728</a></p>
+
+<p>Irrlicht フォーラムにレンズフレアのサンプルがあったのでLinux で試してみた。</p>
+
+<p>Irrlicht 1.8.0
+gcc/g++ 4.6.1</p>
+
+<p>一点修正。</p>
+
+<p>[cpp firstline=&ldquo;28&rdquo; highlight=&ldquo;29&rdquo; title=&ldquo;LensFlareSceneNode.h&rdquo;]</p>
+
+<pre><code>    // constructor
+    SFlareData(E_FLARE_TYPE type, float position, float scale, video::SColor color)
+</code></pre>
+
+<p>[/cpp]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/">Ubuntu 11.10 + Ogre 1.7.3 + Kinect</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-10T21:20:03+09:00" pubdate data-updated="true">2012年02月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="/images/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
+
+<p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
+
+<p>Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
+OpenNI/NITE 1.5.2
+avin2-sensor 5.1.0.25
+Ogre3d 1.7.3
+gcc/g++ 4.6.1
+codeblocks 10.05</p>
+
+<p>ソースコードとロードモジュール: <a href="https://github.com/ktkr3d/sample-app-sinbad">https://github.com/ktkr3d/sample-app-sinbad</a></p>
+
+<p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
+
+<p>[plain gutter=&ldquo;false&rdquo;]
+コンパイル中: src/CharacterSample.cpp
+リンク中 動的ライブラリ: ../bin/Sample_Character.so
+/usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1&#8217; can not be used when making a shared object; recompile with -fPIC
+obj/Release/src/CharacterSample.o: could not read symbols: Bad value
+collect2: ld はステータス 1 で終了しました
+プロセスはステータス 1 で終了しました (0 分 10 秒)
+0 個のエラー、 0 個の警告
+[/plain]</p>
+
+<p>-fPIC オプションをつけたらビルドできた。</p>
+
+<p>[plain gutter=&ldquo;false&rdquo;]
+コンパイル中: src/CharacterSample.cpp
+リンク中 動的ライブラリ: ../bin/Sample_Character.so
+出力サイズは 232.84 KB
+プロセスはステータス 0 で終了しました (0 分 5 秒)
+0 個のエラー、 0 個の警告
+[/plain]</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -775,7 +793,7 @@ $ sudo cp firmware/fwbin/70012/</em> /lib/firmware/
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -784,10 +802,6 @@ $ sudo cp firmware/fwbin/70012/</em> /lib/firmware/
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
 
 <section>
   <h1>GitHub Repos</h1>
