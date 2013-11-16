@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Proton SDK 上のIrrlicht ではGUIEnvironment がうまく取得できなかったので、Proton SDK を外した。素のIrrlicht にしたら、画像や文字の表示に問題なかった。ついでに、FreeType を取り込んでTrueType のフォントで日本語を表示してみた &hellip;">
+  <meta name="description" content="http://www.protonsdk.com/ Proton SDK を使って、Android NDK で実装されたIrrlicht のQuake マップデモをAndroid 端末実機で実行してみた。スクリーン上に「方向キー」、「ポインティング用のパッド」、「メニュー画面へ戻るボタン」 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,97 +93,6 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/08/10/android-ndk/">Android NDK で日本語表示してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-10T21:55:28+09:00" pubdate data-updated="true">2011年08月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_freetype.png"><img src="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_freetype.png" alt="android ndk irrlicht pmd vmd freetype" /></a></p>
-
-<p>Proton SDK 上のIrrlicht ではGUIEnvironment がうまく取得できなかったので、Proton SDK を外した。素のIrrlicht にしたら、画像や文字の表示に問題なかった。ついでに、FreeType を取り込んでTrueType のフォントで日本語を表示してみた。
-Proton SDK を外したら、なぜかIrrlicht 上の幅と高さが半分くらいになってしまったので、直さないと。GLES2 にも移行したいところ。</p>
-
-<p><a href="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_fullscreen.png"><img src="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_fullscreen.png" alt="android ndk irrlicht pmd vmd fullscreen" /></a></p>
-
-<p>AndroidManifest.xml を修正したら、フルスクリーンになって最大解像度が有効になった。</p>
-
-<p><a href="/images/uploads/2011/08/android_ndk_pmd_homerun.png"><img src="/images/uploads/2011/08/android_ndk_pmd_homerun.png" alt="android ndk pmd vmd irrlicht freetype" /></a></p>
-
-<p>いろいろなボタンをつけてみた。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/31/android-ndk-pmd/">Android NDK でPMD モデルを表示してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-31T10:46:13+09:00" pubdate data-updated="true">2011年07月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd.png" alt="android ndk irrlicht pmd proton sdk" /></a></p>
-
-<p>Proton SDK にIrrlicht とBullet とboost が入っていたので、irrmmd も混ぜてMMD のPMD モデルを表示してみた。boost がちょっと古そうだったので、Linux マシンに入っている物で差し替えた。VMD も組み込んでみた。Android NDK といえど、重いモデルや激しいモーションで性能がでないだろうから、チューニングしないと。Proton SDK を外したら早くなるかな？CPU が古いARM だから仕方なしかな。</p>
-
-<p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd_vmd.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd_vmd.png" alt="android ndk irrlicht pmd vmd proton sdk" /></a></p>
-
-<p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd_menu.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd_menu.png" alt="android ndk irrlicht proton sdk" /></a></p>
-
-<p>サンプルプログラムに「PMD and VMD」メニューを追加してみた。ついでに位置ずれも修正。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2011/07/27/proton-sdk/">Android NDK を試してみた</a></h1>
     
     
@@ -232,77 +141,6 @@ ant install の代わりにant debug でパッケージを生成して止まる�
 <p>Proton SDK はXFree86 1.1 ライセンスで提供されていて、各種プラットフォームに対応しているみたい。Bullet ライブラリも取り込まれているようなので、何か作るのには便利かも。</p>
 
 <p><a href="/images/uploads/2011/07/proton_android_irrlicht_menu.png"><img src="/images/uploads/2011/07/proton_android_irrlicht_menu.png" alt="" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/08/usl-5p-debian-5-0/">USL-5P にdebian 5.0 を入れてみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-08T04:53:50+09:00" pubdate data-updated="true">2011年07月08日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.si-linux.co.jp/wiki/cat/index.php?DebianSH">http://www.si-linux.co.jp/wiki/cat/index.php?DebianSH</a></p>
-
-<p>IO-DATA のUSL-5P に入れていたdebian がいつの間にか古くなってきたので、debian 5.0(lenny)にアップデートしてみた。CPU がSuperH-4 プロセッサなので、専用のリポジトリを使う。</p>
-
-<p>[plain gutter=&ldquo;false&rdquo; title=&ldquo;/etc/apt/sources.list&rdquo;]
-deb <a href="http://www.si-linux.co.jp/pub/debian-lenny-sh4">http://www.si-linux.co.jp/pub/debian-lenny-sh4</a> lenny main contrib non-free
-deb-src <a href="http://ftp.debian.org/debian/">http://ftp.debian.org/debian/</a> lenny main contrib non-free
-deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> lenny/updates main contrib non-free
-deb-src <a href="http://volatile.debian.org/debian-volatile">http://volatile.debian.org/debian-volatile</a> lenny/volatile main contrib non-free
-[/plain]</p>
-
-<p>[shell gutter=&ldquo;false&rdquo;]</p>
-
-<h1>apt-get update</h1>
-
-<h1>apt-get upgrade</h1>
-
-<h1>apt-get dist-upgrade</h1>
-
-<p>[/shell]</p>
-
-<p>時刻も合わせておこう
-[shell gutter=&ldquo;false&rdquo;]</p>
-
-<h1>ntpdate ntp1.jst.mfeed.ad.jp</h1>
-
-<h1>hwclock &mdash;systohc</h1>
-
-<p>[/shell]</p>
-
-<p>l2tpd も入れておこう
-[shell gutter=&ldquo;false&rdquo;]</p>
-
-<h1>apt-get install l2tpd</h1>
-
-<p>[/shell]</p>
 </div>
   
   
@@ -497,65 +335,6 @@ NTFS、EXT4 に対する読み/書きマウントが可能。
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/06/15/peercast-radio-e38292mac-e381a7e58b95e3818be38197e381a6e381bfe3819f/">Peercast Radio をMac で動かしてみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-15T21:31:47+09:00" pubdate data-updated="true">2011年06月15日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/?page_id=11">http://ktkr3d.site11.com/?page_id=11</a></p>
-
-<p>Firefox でPeercast の配信を選局するアドオン「Peercast Radio for Firefox」をMac OS X 10.6.7 で試してみたら、改造なしで動作した。Firefox のアドオンだし、難しいことをしていないから当然か。
-Mac OS X 用のPeercast 本体はCocoaYP さんのビルドをお借りした。外部プレイヤーにはVLC Media Player を選び、外部プレイヤー設定画面の「外部プレイヤー1(MMSストリーム)」を以下のように設定した。</p>
-
-<ul>
-<li><p>場所
-[plain gutter=&ldquo;false&rdquo;]
-/Applications/VLC.app/Contents/MacOS/VLC
-[/plain]</p></li>
-<li><p>「mms: の代わりにmmsh: を使用する」をチェック！</p></li>
-</ul>
-
-
-<p>Linux と同様にmmsh: にすると再生待ちが発生しないみたい。
-Quick Time Player のパスには空白が入るから、少し修正が必要そう。</p>
-
-<p>最近の更新は、以下のとおり。</p>
-
-<ul>
-<li><p><a href="http://ktkr3d.site11.com/archives/peercast_radio_4ff_0.1.0a5_20110524.xpi">0.1.0a5 (2011/05/24)</a> Firefox 5.0 対応</p></li>
-<li><p><a href="http://ktkr3d.site11.com/archives/peercast_radio_4ff_0.1.0a4_20110212.xpi">0.1.0a4 (2011/02/12)</a> Firefox 4.0 対応、Ustream イエローページ追加</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2011/06/05/puzzle-moppet/">Puzzle Moppet で遊んでみた</a></h1>
     
     
@@ -585,6 +364,221 @@ Quick Time Player のパスには空白が入るから、少し修正が必要�
 Puzzle Moppet のフリー版で遊んでみた。
 <a href="http://ktkr3d.site11.com/2010/09/12/puzzle_game/">以前遊んだIrrlicht で作られたゲーム</a>が商用化されたみたい。
 商用版は14.95 US$ とのこと。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/05/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f7/">GNOME Shell を拡張してみた7</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-05T06:54:21+09:00" pubdate data-updated="true">2011年06月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><p><a href="https://bugzilla.gnome.org/show_bug.cgi?id=643662">https://bugzilla.gnome.org/show_bug.cgi?id=643662</a></p></li>
+<li><p><a href="https://bugzilla.gnome.org/attachment.cgi?id=186893">https://bugzilla.gnome.org/attachment.cgi?id=186893</a></p></li>
+</ul>
+
+
+<p>GNOME Shell の上部パネルをauto hide にしてみた。
+将来的には設定を切り替えられるようになるのかな。</p>
+
+<p>dock 拡張もauto hide にしたいなぁ。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/04/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f6/">GNOME Shell を拡張してみた6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-04T23:24:31+09:00" pubdate data-updated="true">2011年06月04日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/06/gnome-shell-extension-weather2.png"><img src="/images/uploads/2011/06/gnome-shell-extension-weather2.png" alt="gnome shell extension weather" /></a></p>
+
+<ul>
+<li><p><a href="http://www.webupd8.org/2011/06/another-gnome-shell-weather-extension.html">http://www.webupd8.org/2011/06/another-gnome-shell-weather-extension.html</a></p></li>
+<li><p><a href="http://www.fpmurphy.com/gnome-shell-extensions/">http://www.fpmurphy.com/gnome-shell-extensions/</a></p></li>
+</ul>
+
+
+<p>別のお天気拡張に変更してみた。</p>
+
+<p>こちらの拡張では、</p>
+
+<ul>
+<li><p>現在の天気が正しく動作する</p></li>
+<li><p>5日分の天気予報が表示される</p></li>
+<li><p>現在地の指定が簡単(&lsquo;tokyo&rsquo; のように)</p></li>
+<li><p><a href="http://www.worldweatheronline.com">http://www.worldweatheronline.com</a> の利用キーが必要(無料で登録はとても簡単)</p></li>
+</ul>
+
+
+<p>今後修正されると思うけれど、バージョン1.1 では、</p>
+
+<ul>
+<li><p>現在の気温の単位(摂氏/華氏)が設定と逆になってしまう単純なバグがある(以下のように修正してみた)
+[plain firstline=&ldquo;132&rdquo;]
+let currTemperature = new St.Label({ text: (MUNITS > 0 ? curr[0].temp_C + &lsquo;C&rsquo; : curr[0].temp_F + &lsquo;F&rsquo;) });
+[/plain]</p></li>
+<li><p>動作や表示スタイルが他の拡張の影響を受けてしまうことがある</p></li>
+<li><p>ローカルタイムが考慮されてない?</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/03/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f5/">GNOME Shell を拡張してみた5</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-03T06:10:59+09:00" pubdate data-updated="true">2011年06月03日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/06/system_monitor.png"><img src="/images/uploads/2011/06/system_monitor.png" alt="gnome shell extension system monitor" /></a>
+<a href="http://www.webupd8.org/2011/05/system-monitor-extension-puts-ram-swap.html">http://www.webupd8.org/2011/05/system-monitor-extension-puts-ram-swap.html</a>
+GNOME Shell のシステムモニタ拡張を追加してみた。
+通信速度を表示できて便利。
+パネル上にリアルタイムに値を表示できるものの幅をとってしまうので非表示の設定にしてみた。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/30/gnome-shell-extension-e38292e5bea9e6b4bbe38195e3819be381a6e381bfe3819f/">GNOME Shell Extension を復活させてみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-30T22:15:07+09:00" pubdate data-updated="true">2011年05月30日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>GNOME Shell を3.0.2 にしたらdock が消えたので復活させてみた。</p>
+
+<ul>
+<li><p>Ubuntu 11.04 の場合
+/usr/local/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/metadata.json</p></li>
+<li><p>Fedora 15, openSUSE 11.4 の場合
+/usr/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/metadata.json</p></li>
+</ul>
+
+
+<p>[plain highlight=&ldquo;6&rdquo;]
+{
+&ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#100;&#111;&#x63;&#107;&#x40;&#103;&#110;&#111;&#x6d;&#101;&#x2d;&#x73;&#x68;&#101;&#108;&#x6c;&#45;&#x65;&#120;&#116;&#x65;&#x6e;&#115;&#105;&#x6f;&#x6e;&#115;&#x2e;&#103;&#x6e;&#111;&#109;&#x65;&#46;&#111;&#x72;&#103;">&#x64;&#x6f;&#x63;&#x6b;&#64;&#103;&#110;&#111;&#109;&#x65;&#x2d;&#115;&#104;&#x65;&#x6c;&#x6c;&#x2d;&#101;&#120;&#116;&#101;&#x6e;&#115;&#x69;&#111;&#110;&#115;&#46;&#x67;&#x6e;&#111;&#109;&#x65;&#x2e;&#x6f;&#x72;&#103;</a>&rdquo;,
+&ldquo;name&rdquo;: &ldquo;Dock&rdquo;,
+&ldquo;description&rdquo;: &ldquo;A dock for the GNOME Shell &mdash; displays favorite and running applications&rdquo;,
+&ldquo;original-author&rdquo;: &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#116;&#99;&#108;&#x61;&#101;&#115;&#x73;&#111;&#110;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#116;&#x63;&#x6c;&#x61;&#x65;&#115;&#x73;&#111;&#x6e;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a>&rdquo;,
+&ldquo;shell-version&rdquo;: [ &ldquo;3.0.1&rdquo; ],
+&ldquo;localedir&rdquo;: &ldquo;/usr/local/share/locale&rdquo;,
+&ldquo;url&rdquo;: &ldquo;<a href="http://git.gnome.org/gnome-shell-extensions">http://git.gnome.org/gnome-shell-extensions</a>&rdquo;
+}
+[/plain]
+を以下のように修正した。
+[plain firstline=&ldquo;6&rdquo; highlight=&ldquo;6&rdquo;]
+&ldquo;shell-version&rdquo;: [ &ldquo;3.0&rdquo; ],
+[/plain]
+または、
+[plain firstline=&ldquo;6&rdquo; highlight=&ldquo;6&rdquo;]
+&ldquo;shell-version&rdquo;: [ &ldquo;3.0.1&rdquo;, &ldquo;3.0.2&rdquo; ],
+[/plain]</p>
 </div>
   
   
@@ -632,7 +626,7 @@ Puzzle Moppet のフリー版で遊んでみた。
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -641,40 +635,6 @@ Puzzle Moppet のフリー版で遊んでみた。
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'ktkr3d',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 
 

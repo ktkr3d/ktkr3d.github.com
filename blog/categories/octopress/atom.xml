@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T23:38:40+09:00</updated>
+  <updated>2013-11-17T00:02:39+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/11/16/wordpress-to-jekyll/"/>
     <updated>2013-11-16T15:23:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/11/16/wordpress-to-jekyll</id>
-    <content type="html"><![CDATA[<p>無料Webサービスに設置していたブログのデータが消されてしまったので、バックアップデータからGitHub に取り込むことにしました。
+    <content type="html"><![CDATA[<p>無料Webサービスに設置していたブログのデータが消されてしまったので、バックアップデータをGitHub Pages に取り込むことにしました。
 exitwp というスクリプトを使って、WordPress のデータをmarkdown に変換して、Octopress/Jekyll に取り込みました。</p>
 
 <p><a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
