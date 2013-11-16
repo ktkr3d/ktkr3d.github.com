@@ -9,8 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://community.kde.org/Plasma/Active/Installation http://community.kde.org/Plasma/Active/Contour/Installation
-Plasma Active Tablet パッケージのContour &hellip;">
+  <meta name="description" content="http://www.mozilla.com/en-US/firefox/5.0/whatsnew/
+http://www.webupd8.org/2011/05/firefox-5-beta-channel-ubuntu-ppa.html Firefox 5 のベータ2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,7 +94,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/04/14/plasma-active-contour/">Plasma/Active/Contour を試してみる</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/05/24/firefox-5-beta-2-e38292e8a9a6e38197e381a6e381bfe3819f/">Firefox 5 Beta 2 を試してみた</a></h1>
     
     
       <p class="meta">
@@ -110,179 +110,60 @@ $(document).ready( function () {
   
 
 
-<time datetime="2011-04-14T23:41:11+09:00" pubdate data-updated="true">2011年04月14日</time>
+<time datetime="2011-05-24T10:49:26+09:00" pubdate data-updated="true">2011年05月24日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/contour.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/contour.png" alt="contour kde plasma active tablet opensuse" /></a></p>
-
-<p><a href="http://community.kde.org/Plasma/Active/Installation  ">http://community.kde.org/Plasma/Active/Installation  </a>
-<a href="http://community.kde.org/Plasma/Active/Contour/Installation">http://community.kde.org/Plasma/Active/Contour/Installation</a>
-Plasma Active Tablet パッケージのContour がおもしろそうなのでInspiron duo で試してみる。</p>
-
-<ol>
-<li><p> openSUSE 11.4 をインストール
-<a href="http://software.opensuse.org/114/ja">http://software.opensuse.org/114/ja</a>
-KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて、Live USB を作った。</p></li>
-<li><p> Plasma/Active をインストール（不要だったかも）</p></li>
-</ol>
-
-
-<p>/etc/zypp/zypp.conf</p>
-
-<blockquote><p>solver.allowVendorChange = true</p></blockquote>
-
-<p>[shell gutter=&ldquo;false&rdquo;]</p>
-
-<h1>zypper ar <a href="http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/">http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/</a> kde-unstable</h1>
-
-<h1>zypper mr -p 100 kde-unstable</h1>
-
-<h1>zypper ar <a href="http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/">http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/</a> plasma-active</h1>
-
-<h1>zypper mr -p 101 plasma-active</h1>
-
-<h1>zypper refresh -f</h1>
-
-<h1>zypper in plasma-active:kdebase4-runtime plasma-tablet-config plasma-declarative-widgets</h1>
-
-<p>[/shell]</p>
-
-<ol>
-<li><p> Contour パッケージのインストール
-<a href="http://software.opensuse.org/">http://software.opensuse.org/</a> でcontour を1-クリック インストール</p></li>
-<li><p> Contour の自動起動設定
-<a href="http://software.opensuse.org/">http://software.opensuse.org/</a> でplasma-contour-config を1-クリック インストール
-(plasma-tablet プロセスが残っていたらkquitapp plasma-tablet で消しておく)</p></li>
-</ol>
-
-
-<p>おもしろそう！！使い方がよくわかんない！！</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/09/gnome-3-e38292e8aabfe381b9e381a6e381bfe3819f/">GNOME Shell を拡張してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-09T10:17:03+09:00" pubdate data-updated="true">2011年04月09日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://wiki.archlinux.org/index.php/GNOME_3  ">https://wiki.archlinux.org/index.php/GNOME_3  </a>
-<a href="https://live.gnome.org/GnomeShell/CheatSheet  ">https://live.gnome.org/GnomeShell/CheatSheet  </a>
-<a href="http://www.webupd8.org/2011/04/gnome-shell-extensions-additional.html  ">http://www.webupd8.org/2011/04/gnome-shell-extensions-additional.html  </a>
-<a href="http://git.gnome.org/browse/gnome-shell-extensions/">http://git.gnome.org/browse/gnome-shell-extensions/</a></p>
-
-<p>GNOME Shell Extensions やGNOME 3 の便利な機能を使ってみよう。</p>
-
-<h3>GNOME Shell Extensions</h3>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ git clone git://git.gnome.org/gnome-shell-extensions
-$ cd gnome-shell-extensions
-$ ./autogen.sh
-$ make
-$ sudo make install
-[/shell]</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/firefox5beta.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/firefox5beta.png" alt="firefox 5 beta" /></a></p>
 
 <ul>
-<li><p>alternate-tab: Alt+Tab 操作関連</p></li>
-<li><p>alternative-status-menu: 電源オフメニュー常時表示
-標準ではステータスメニューを開いて、「Alt」ボタンを押すと「サスペンド」が「電源オフ&hellip;」に切り替わる。alternative-status-menu を使うと「サスペンド」と「電源オフ」の両方が常に表示されるようになり、「Alt」ボタンを押すと「サスペンド」が「Hibernate」に切り替わる。必須!!</p></li>
-<li><p>dock: 右端にドックバーを表示（画面が狭くなった&hellip;微妙?）</p></li>
-<li><p>windowsNavigator: overview 画面上でALT+数字キーによりウィンドウ選択</p></li>
+<li><p><a href="http://www.mozilla.com/en-US/firefox/5.0/whatsnew/">http://www.mozilla.com/en-US/firefox/5.0/whatsnew/</a></p></li>
+<li><p><a href="http://www.webupd8.org/2011/05/firefox-5-beta-channel-ubuntu-ppa.html">http://www.webupd8.org/2011/05/firefox-5-beta-channel-ubuntu-ppa.html</a></p></li>
 </ul>
 
 
-<h3>GNOME 3</h3>
+<p>Firefox 5 のベータ2 が公開されていたので試してみた。</p>
 
 <ul>
-<li><p>テーマのカスタマイズ
-gnome-tweak-tool またはsetting.ini</p></li>
-<li><p>スクリーンキャストを撮る
-Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li>
-<li><p>キー操作でoverview へ切り替える
-システム(Windows)キーまたはAlt+F1</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/08/ubuntu-11-04-e381a7gnome-shell/">Ubuntu 11.04 でGNOME Shell</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-08T00:40:12+09:00" pubdate data-updated="true">2011年04月08日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/ubuntu-natty-gnome-shell.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/ubuntu-natty-gnome-shell.png" alt="ubuntu 11.04 natty gnome shell" /></a></p>
-
-<p><a href="http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty">http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty</a></p>
-
-<p>Ubuntu 11.04 用のGNOME Shell を含むppa を見つけたので、早速インストールしてみた。ちゃんとローカライズもされている。</p>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo add-apt-repository ppa:gnome3-team/gnome3
+<li><p>リポジトリの追加
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo add-apt-repository ppa:mozillateam/firefox-next
 $ sudo apt-get update
-$ sudo apt-get install gnome-shell
-[/shell]</p>
+[/shell]</p></li>
+<li><p>firefox をインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install firefox
+[/shell]</p></li>
+<li><p>または既存のFirefox 4 からアップグレード
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get upgrade
+[/shell]</p></li>
+</ul>
 
-<p>GDM でログインする際に「Ubuntu GNOME Shell Desktop」を選択する。</p>
 
-<p>上部パネルの日付、時刻の書式はスクリプトをカスタマイズ。シャットダウン系のメニューもスクリプトなので後で改造しよう。</p>
+<p>なにが変わるかというと、</p>
+
+<blockquote><p>The latest version of Firefox Beta has the following changes:</p>
+
+<ul>
+<li><p>Added support for <strong>CSS animations</strong></p></li>
+<li><p>Added support for <strong>switching Firefox development channels</strong></p></li>
+<li><p>The Do-Not-Track header preference has been moved to increase discoverability</p></li>
+<li><p>Improved canvas, JavaScript, memory, and networking performance</p></li>
+<li><p>Improved standards support for HTML5, XHR, MathML, SMIL, and canvas</p></li>
+<li><p>Improved spell checking for some locales</p></li>
+<li><p><strong>Improved desktop environment integration for Linux users</strong></p></li>
+</ul>
+</blockquote>
+
+<p>詳細なリストは、
+<a href="http://www.mozilla.com/en-US/firefox/5.0/releasenotes/buglist.html">http://www.mozilla.com/en-US/firefox/5.0/releasenotes/buglist.html</a>
+チャンネル(Aurora/Beta/Release)の切り替えはバージョン情報ダイアログから。</p>
+
+<p>Firefox5 に未対応なアドオンもゴニョゴニョすればたいてい動きそうだ。</p>
 </div>
   
   
@@ -295,7 +176,7 @@ $ sudo apt-get install gnome-shell
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/04/07/meego-tablet-e381a7e697a5e69cace8aa9e/">MeeGo Tablet で日本語</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/05/23/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f4/">GNOME Shell を拡張してみた4</a></h1>
     
     
       <p class="meta">
@@ -311,15 +192,30 @@ $ sudo apt-get install gnome-shell
   
 
 
-<time datetime="2011-04-07T22:15:48+09:00" pubdate data-updated="true">2011年04月07日</time>
+<time datetime="2011-05-23T23:38:30+09:00" pubdate data-updated="true">2011年05月23日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/meego_tablet_jp.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/meego_tablet_jp.png" alt="meego tablet japanese inspiron duo" /></a>
-MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、「メモ」アイコンが増えた。タッチスクリーンは反応せず。上部パネルのレイアウトは若干変わっている。</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/Screenshot-weather.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/Screenshot-weather.png" alt="gnome shell extension weather" /></a></p>
+
+<ul>
+<li><p><a href="http://www.webupd8.org/2011/05/gnome-shell-weather-extension.html">http://www.webupd8.org/2011/05/gnome-shell-weather-extension.html</a></p></li>
+<li><p><a href="https://github.com/simon04/gnome-shell-extension-weather">https://github.com/simon04/gnome-shell-extension-weather</a></p></li>
+</ul>
+
+
+<p>天気を表示する拡張を入れてみた。
+<a href="http://weather.yahoo.com/">http://weather.yahoo.com/</a> で地域を検索して、RSS のリンクに含まれる地域コードをextension.js に設定する。東京はJAXX0085、大阪はJAXX0071 になる。
+[plain firstline=&ldquo;47&rdquo; highlight=&ldquo;48&rdquo;]
+const UNITS = &lsquo;c&rsquo;; // Units for temperature (case sensitive). f: Fahrenheit. c: Celsius
+const YAHOO_ID = &lsquo;JAXX0085&rsquo;;
+const WEATHER_URL = &lsquo;<a href="http://weather.yahooapis.com/forecastjson?u=">http://weather.yahooapis.com/forecastjson?u=</a>&rsquo; + UNITS + &lsquo;&amp;p=&rsquo; + YAHOO_ID;
+const FORECAST_URL = &lsquo;<a href="http://query.yahooapis.com/v1/public/yql?format=json&amp;q=select%20item.forecast%20from%20weather.forecast%20where%20location%3D%22">http://query.yahooapis.com/v1/public/yql?format=json&amp;q=select%20item.forecast%20from%20weather.forecast%20where%20location%3D%22</a>&rsquo; + YAHOO_ID + &lsquo;%22%20%20and%20u=&ldquo;&rsquo; + UNITS + &lsquo;&rdquo;&rsquo;;
+[/plain]
+リアルタイムの気温が怪しいんだけど、どこから拾ってきているんだろう&hellip;</p>
 </div>
   
   
@@ -332,7 +228,7 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/04/06/meego-tablet-e38292e4bdbfe381a3e381a6e381bfe3819f/">MeeGo Tablet を使ってみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/05/23/gnome-tweak-tool-3-0-4-e38292e8a9a6e38197e381a6e381bfe3819f/">Gnome-tweak-tool 3.0.4 を試してみた</a></h1>
     
     
       <p class="meta">
@@ -348,38 +244,343 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
   
 
 
-<time datetime="2011-04-06T18:49:24+09:00" pubdate data-updated="true">2011年04月06日</time>
+<time datetime="2011-05-23T22:58:52+09:00" pubdate data-updated="true">2011年05月23日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/all_apps.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/all_apps.png" alt="meego tablet inspiron duo" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/Screenshot-Tweak-Tool.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/Screenshot-Tweak-Tool.png" alt="gnome tweak tool 3.0.4 extension" /></a></p>
 
-<p>Inspiron duo に入れたIntel 版のMeeGo Tablet が動くようになった。</p>
+<p><a href="http://git.gnome.org/browse/gnome-tweak-tool">http://git.gnome.org/browse/gnome-tweak-tool</a>
+予告通り、3.0.4 でGNOME Shell Extensions の拡張の管理ができるようになっていた。
+ON/OFF を切り替えると、再起動を促すボタンが表示されるので便利。</p>
+</div>
+  
+  
 
-<p>隠しアクセスポイントに接続するには、一旦端末で、
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/22/proun-e381a7e9818ae38293e381a7e381bfe3819f/">Proun で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-22T10:35:28+09:00" pubdate data-updated="true">2011年05月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/proun.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/proun.png" alt="proun ogre3d" /></a></p>
+
+<p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
+Ogre3D で作られたレースゲームProun のベータ版で遊んでみた。
+2011年春にリリースされるらしい？</p>
+
+<p>プレイ動画を見ているだけでも楽しい。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/18/0-a-d-e381a7e9818ae38293e381a7e381bfe3828b/">0 A.D. で遊んでみる</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-18T05:13:57+09:00" pubdate data-updated="true">2011年05月18日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/0ad_256.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/0ad_256.png" alt="0 A.D." /></a>
+<a href="http://wildfiregames.com/0ad/">http://wildfiregames.com/0ad/</a></p>
+
+<p>フリーでオープンソースでクロスプラットフォーム(Windows, Linux, Mac)なリアルタイムストラテジーゲーム0 A.D. で遊んでみよう。</p>
+
+<ul>
+<li><p>Ubuntu 版の安定版のインストール
+[shell gutter=&ldquo;false&rdquo;]
+sudo add-apt-repository ppa:wfg/0ad
+sudo apt-get update
+sudo apt-get install 0ad
+[/shell]</p></li>
+<li><p>Ubuntu 版のより新しい開発版のインストール
+[shell gutter=&ldquo;false&rdquo;]
+sudo add-apt-repository ppa:wfg/0ad.dev
+sudo apt-get update
+sudo apt-get install 0ad 0ad-data
+[/shell]</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/16/gnome-shell-e381aee38386e383bce3839ee38292e5a489e69bb4e38197e381a6e381bfe3819f/">GNOME Shell のテーマを選んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-16T01:14:58+09:00" pubdate data-updated="true">2011年05月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/gnome-shell-extension-theme-selector.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/gnome-shell-extension-theme-selector.png" alt="gnome shell extension theme selector" /></a></p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/gnome-shell-extension-theme-selector-ubuntu.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/gnome-shell-extension-theme-selector-ubuntu.png" alt="gnome shell extension theme selector ubuntu" /></a></p>
+
+<p><a href="http://blog.fpmurphy.com/2011/04/gnome-shell-theme-selector-preview.html">http://blog.fpmurphy.com/2011/04/gnome-shell-theme-selector-preview.html</a></p>
+
+<p>GNOME Shell のテーマを変更する拡張を見つけたので、Fedora15 とUbuntu 11.04 で試してみた。Atolm テーマが選べるようになったよ！！</p>
+
+<p><a href="http://www.fpmurphy.com/gnome-shell-extensions/">http://www.fpmurphy.com/gnome-shell-extensions/</a> の下の最新のthemeselector のアーカイブをダウンロードして、README に従って設定した。</p>
+
+<ol>
+<li><p> /usr/share/glib-2.0/org.gnome.shell.extensions.user-theme.gschema.xml を作成。
+[plain]
+&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?>
+<schemalist gettext-domain="gnome-shell-extensions">
+<schema path="/org/gnome/shell/extensions/user-theme/" id="org.gnome.shell.extensions.user-theme">
+<key type="s" name="name">
+  <default>&ldquo;&rdquo;</default>
+  <summary>Theme name</summary>
+  <description>The name of the current shell theme</description>
+</key>
+</schema>
+</schemalist>
+[/plain]</p></li>
+<li><p> glib-compile-schemas を実行する。
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo glib-compile-schemas /usr/share/glib-2.0
+[/shell]</p></li>
+<li><p> $HOME/.themes/ ディレクトリを作成して、アーカイブの中のテーマを展開する。</p></li>
+<li><p> $HOME/.local/share/gnome-shell/extensions/themeselector@fpmurphy.com/ ディレクトリを作成して、アーカイブの中のextension.js とmetadata.json を展開する。</p></li>
+<li><p> [Alt]+[F2]を押して、r を入力して、[Enter] を押す。</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/14/gnome-shell-e68ba1e5bcb5e38292e4bd9ce3828de38186/">GNOME Shell 拡張を作ってみよう</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-14T06:50:02+09:00" pubdate data-updated="true">2011年05月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/my_gnome_shell_extension.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/my_gnome_shell_extension.png" alt="gnome shell extension" /></a></p>
+
+<p><a href="http://live.gnome.org/GnomeShell/Extensions  ">http://live.gnome.org/GnomeShell/Extensions  </a>
+<a href="http://blog.fpmurphy.com/2011/04/gnome-3-shell-extensions.html">http://blog.fpmurphy.com/2011/04/gnome-3-shell-extensions.html</a></p>
+
+<p>まずは、上部のパネルをクリックすると一定時間メッセージを表示するHello World 的な物から！！とりあえず日本語はunescape() してみた。</p>
+
+<h3>拡張を格納するディレクトリ</h3>
+
+<p>~/.local/share/gnome-shell/extensions/hello-world@ktkr3d.site11.com/</p>
+
+<h3>extension.js ファイル</h3>
+
+<p>[plain]
+// Sample extension code, makes clicking on the panel show a message
+const St = imports.gi.St;
+const Mainloop = imports.mainloop;</p>
+
+<p>const Gettext = imports.gettext.domain(&lsquo;gnome-shell-extensions&rsquo;);
+const _ = Gettext.gettext;</p>
+
+<p>const Main = imports.ui.main;</p>
+
+<p>function _showHello() {</p>
+
+<pre><code>let text = new St.Label({ style_class: 'helloworld-label', text: _(unescape("%uFF0F%u4EBA%u25D5%u203F%u203F%u25D5%u4EBA%uFF3C%u300C%u50D5%u3068%u5951%u7D04%u3057%u3066%u9B54%u6CD5%u5C11%u5973%u306B%u306A%u3063%u3066%u3088%uFF01%uFF01%u300D")) });
+let monitor = global.get_primary_monitor();
+global.stage.add_actor(text);
+text.set_position(Math.floor (monitor.width / 2 - text.width / 2), Math.floor(monitor.height / 2 - text.height / 2));
+Mainloop.timeout_add(3000, function () { text.destroy(); });
+</code></pre>
+
+<p>}</p>
+
+<p>// Put your extension initialization code here
+function main(metadata) {</p>
+
+<pre><code>imports.gettext.bindtextdomain('gnome-shell-extensions', metadata.localedir);
+
+Main.panel.actor.reactive = true;
+Main.panel.actor.connect('button-release-event', _showHello);
+</code></pre>
+
+<p>}
+[/plain]</p>
+
+<h3>metadata.json ファイル</h3>
+
+<p>[plain]
+{
+ &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#104;&#x65;&#108;&#108;&#x6f;&#45;&#119;&#111;&#114;&#108;&#x64;&#64;&#x6b;&#116;&#107;&#114;&#51;&#x64;&#46;&#115;&#x69;&#116;&#101;&#x31;&#49;&#46;&#99;&#x6f;&#109;">&#104;&#x65;&#108;&#x6c;&#x6f;&#45;&#119;&#111;&#x72;&#x6c;&#100;&#x40;&#107;&#116;&#107;&#x72;&#51;&#100;&#x2e;&#115;&#x69;&#116;&#x65;&#x31;&#49;&#46;&#99;&#111;&#109;</a>&rdquo;,
+ &ldquo;name&rdquo;: &ldquo;Hello, World!&rdquo;,
+ &ldquo;description&rdquo;: &ldquo;An example extension to show how it works. Shows Hello, world when clicking on the top panel.&rdquo;,
+ &ldquo;shell-version&rdquo;: [ &ldquo;3.0&rdquo; ],
+ &ldquo;localedir&rdquo;: &ldquo;/usr/local/share/locale&rdquo;,
+ &ldquo;url&rdquo;: &ldquo;<a href="http://ktkr3d.site11.com">http://ktkr3d.site11.com</a>&rdquo;
+}
+[/plain]</p>
+
+<h3>stylesheet.class ファイル</h3>
+
+<p>[plain]
+/<em> Example stylesheet </em>/
+.helloworld-label {</p>
+
+<pre><code>font-size: 36px;
+font-weight: bold;
+color: #ffffff;
+background-color: rgba(10,10,10,0.7);
+border-radius: 5px;
+</code></pre>
+
+<p>}
+[/plain]
+拡張を有効にするには、[Alt]+[F2]でrを入力して[Enter]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/13/pc-bsd-e38292e8a9a6e38197e381a6e381bfe3819f/">PC-BSD を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-13T00:43:52+09:00" pubdate data-updated="true">2011年05月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/pc-bsd.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/pc-bsd.png" alt="PC-BSD 8.2" /></a></p>
+
+<p><a href="http://www.pcbsd.org/">http://www.pcbsd.org/</a></p>
+
+<p>FreeBSD をインストールしてみたけれど、PC-BSD の方が何かと楽そうなので、PC-BSD 8.2 をインストールしてみた。インストール前に基本パーティションを作っておくと、インストールが楽かも。
 [shell gutter=&ldquo;false&rdquo;]</p>
 
-<h1>iwconfig wlan0 essid <ESSID> key <KEY></h1>
-
-<p>[/shell]
-とするとWi-Fi の設定画面のアクセスポイント一覧に追加される。</p>
-
-<p>画面のキャプチャは
-[shell gutter=&ldquo;false&rdquo;]
-$ xwd -root > ScreenShot.xwd
+<blockquote><p>uname -a
 [/shell]</p>
 
-<p>画面の切り替えは、Windows キー。パネル画面（横）、すべてのアプリケーション画面（縦）、実行中のアプリケーションの選択などができる。</p>
+<p>FreeBSD **** 8.2-RELEASE FreeBSD 8.2-RELEASE #7: Wed Feb 16 12:19:08 PST 2011     root@build8x32.pcbsd.org:/usr/obj/usr/local_storage/pcbsd-build82/fbsd-source/8.2/sys/PCBSD  i386</p></blockquote>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel1.png" alt="meego tablet inspiron duo" /></a></p>
-
-<p>パネルの配置を変えるには、タブの右上隅をドラッグ。パネルの設定を変えるには、タブをシングルクリック（パネルが回転する）</p>
-
-<p>標準で再生可能な形式はogg/ogv 。ffmpeg, ffmpeg2theora で変換すると簡単。
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel3.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/04/panel3.png" alt="meego tablet inspiron duo" /></a></p>
+<p>デスクトップ環境はKDE で、Firefox, Thunderbird, VLC 等をインストール時に追加できる。特に設定しなくても日本語も使えるし、mp3 も再生できる。GRUB からのチェインロードも問題無し。すごく頑張ってると思う。
+Inspiron duo の1366x768 の解像度に設定すると、ディスプレイが表示されなくなってしまうので、とりあえずVESA で凌ごう。Linux と比べてドライバ(ディスプレイ、ファイルシステム)の情報は少ないかも。
+ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じがした。</p>
 </div>
   
   
@@ -392,7 +593,7 @@ $ xwd -root > ScreenShot.xwd
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/04/03/unity-e381aee383a1e3838be383a5e383bce8a1a8e7a4bae8a8ade5ae9a/">Unity のメニュー表示設定</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/05/11/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f3/">GNOME Shell を拡張してみた3</a></h1>
     
     
       <p class="meta">
@@ -408,190 +609,28 @@ $ xwd -root > ScreenShot.xwd
   
 
 
-<time datetime="2011-04-03T23:52:43+09:00" pubdate data-updated="true">2011年04月03日</time>
+<time datetime="2011-05-11T01:18:16+09:00" pubdate data-updated="true">2011年05月11日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://askubuntu.com/questions/14815/unity-menu-desktop-design-how-will-it-act">http://askubuntu.com/questions/14815/unity-menu-desktop-design-how-will-it-act</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/places-menu_drive-menu.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/places-menu_drive-menu.png" alt="gnome shell extensions places menu drive menu" /></a></p>
 
-<p>Ubuntu 11.04 で採用されたデスクトップ環境Unity ではアプリケーションメニューが上部のパネルに統合されて表示される。なかなか操作に慣れないので、一旦、元のメニュー表示に戻してみた。</p>
+<p><a href="http://git.gnome.org/browse/gnome-shell-extensions/">http://git.gnome.org/browse/gnome-shell-extensions/</a></p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get remove indicator-appmenu
-[/shell]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/03/inspiron-duo-e381a7alsa/">Inspiron Duo でALSA</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-03T22:08:04+09:00" pubdate data-updated="true">2011年04月03日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ubuntuforums.org/showthread.php?t=1658635">http://ubuntuforums.org/showthread.php?t=1658635</a></p>
-
-<p>Inspiron duo にLinux をインストールしてイヤフォンから音が出ないので調べてみたら、Ubuntu のフォーラムに解決方法が掲載されていた。model をdell とかdell-laptop にしても治らなかったのに、ideapad で解決するとは&hellip;</p>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo gedit /etc/modprobe.d/alsa-base.conf
-[/shell]</p>
-
-<blockquote><p>options snd-hda-intel model=ideapad</p></blockquote>
-
-<p>Fedora の場合は、/etc/modprobe.d/dist-alsa.conf を修正。</p>
-
-<p>他にもタッチスクリーンでのマルチタッチの設定とか、画面回転の設定とかがあるので試してみよう!!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/02/inspiron-duo/">Inspiron Duo でLinux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-02T03:19:29+09:00" pubdate data-updated="true">2011年04月02日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Ubuntu 11.04b1</h3>
-
-<p>natty-desktop-i386.iso
-普通に動いた。イヤフォンを繋いでも内臓スピーカーが動作してしまうのは後で調べよう。</p>
-
-<h3>Fedora 15a</h3>
-
-<p>Fedora-15-Nightly-20110401.17-i686-Live-desktop.iso
-普通に動いた。イヤフォンが優先されないのは同様。</p>
-
-<h3>MeeGo Tablet 1.2 のIntel 版</h3>
-
-<p>meego-tablet-ia32-pinetrail.iso
-ライブイメージで動作した。タッチパネルは使えたが、タッチスクリーンが使えなかった。イヤフォンが優先されないのは同様。アクセスポイントのリストは公開されているものが表示される。隠しアクセスポイントに接続するインタフェースがない？メニューを戻る操作がよくわからなかった。</p>
-
-<h3>MeeGo Tablet 1.2 の本家版</h3>
-
-<p>meego-tablet-ia32-pinetrail-1.1.99.0.20110330.3.img
-縦モードで起動。壁紙がかっこよい。タッチスクリーンが動作せず。残念。</p>
-
-<h3>MeeGo Netbook 1.2 の本家版</h3>
-
-<p>meego-netbook-ia32-1.1.99.0.20110330.3.img
-普通に動作。ソフトウェアリポジトリが貧弱なような気がする。標準でNTFS が参照不可。Fedora 版かopenSUSE 版に切り替えた方がよいかも。</p>
-
-<h3>Android-x86 2.2</h3>
-
-<p>android-x86-2.2-sparta.iso
-Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネットワークも日本語表示もOK。イヤフォンが優先されないのは他と同様。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/">Inspiron Duo で遊んでみよう</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-31T23:12:18+09:00" pubdate data-updated="true">2011年03月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.dell.com/us/p/inspiron-duo/pd">http://www.dell.com/us/p/inspiron-duo/pd</a></p>
-
-<p>Inspiron Duo でいろんなOS を動かして遊んでみよう。</p>
+<p>GNOME Shell をさらに拡張してみた。</p>
 
 <ul>
-<li><p>Fedora 15 (DE: GNOME Shell)</p></li>
-<li><p>Ubuntu 11.04 (DE: Unity)</p></li>
-<li><p>MeeGo 1.2 Tablet UX Pre-Alpha Release</p></li>
-<li><p>MeeGo v1.1 for Netbooks</p></li>
-<li><p>MeeGo v1.1 for In-Vehicle Infotainment</p></li>
-<li><p>Android-x86 2.2 / 2.3</p></li>
-<li><p>Splashtop OS 1.0</p></li>
-<li><p>Windows 7</p></li>
-<li><p>Windows XP</p></li>
+<li><p>Places menu (フォルダの形のアイコン)
+主なディレクトリ、お気に入りディレクトリの表示</p></li>
+<li><p>Drive menu (丸い形のアイコン)
+リムーバブルドライブの表示</p></li>
 </ul>
 
-
 </div>
   
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/">続きを読む &rarr;</a>
-    </footer>
   
 
 
@@ -602,7 +641,7 @@ Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネッ�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/03/22/wine-e381a7windows-e382a2e38397e383aae38292e4bdbfe381a3e381a6e381bfe3819f/">Wine でWindows アプリを使ってみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/05/10/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f2/">GNOME Shell を拡張してみた2</a></h1>
     
     
       <p class="meta">
@@ -618,23 +657,28 @@ Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネッ�
   
 
 
-<time datetime="2011-03-22T23:31:50+09:00" pubdate data-updated="true">2011年03月22日</time>
+<time datetime="2011-05-10T00:17:38+09:00" pubdate data-updated="true">2011年05月10日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://www.winehq.org/  ">http://www.winehq.org/  </a>
-<a href="http://appdb.winehq.org/">http://appdb.winehq.org/</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/gnome-shell-extensions2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/gnome-shell-extensions2.png" alt="gnome shell extensions" /></a></p>
+
+<p><a href="http://intgat.tigress.co.uk/rmy/extensions/index.html">http://intgat.tigress.co.uk/rmy/extensions/index.html</a></p>
+
+<p>GNOME Shell をさらに拡張してみた。</p>
 
 <ul>
-<li><p>サクラエディタ (<a href="http://sakura-editor.sourceforge.net/">http://sakura-editor.sourceforge.net/</a>)
-テキストエディタ。マクロや矩形処理とかいろいろと便利。Windows アプリなのにWine 対策用のオプション設定がある。</p></li>
-<li><p>World of Warcraft  (<a href="http://us.battle.net/wow/en/">http://us.battle.net/wow/en/</a>)
-世界で人気のMMORPG。Wine 側で対応優先度が非常に高いゲーム。最近はATI のビデオカードでも普通に動くようになった。</p></li>
-<li><p>lhaz (<a href="http://www.chitora.jp/lhaz.html">http://www.chitora.jp/lhaz.html</a>)
-日本語リソースを含むアーカイブやLHA 形式の展開に利用。Linux ネイティブのアーカイバの環境を揃えるよりもお手軽。</p></li>
+<li><p>Move the clock
+時計の位置を変更</p></li>
+<li><p>Favourites in panel
+お気に入りをパネルに表示</p></li>
+<li><p>Applications menu in panel
+アプリケーションメニューをパネルに表示</p></li>
+<li><p>Disable dynamic workspaces
+ダイナミックワークスペースを無効に</p></li>
 </ul>
 
 </div>
@@ -684,7 +728,7 @@ Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネッ�
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

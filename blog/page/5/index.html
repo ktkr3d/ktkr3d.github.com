@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Irrlicht 1.8 trunk でXEffects の影が有効にならなくなっていたので、XEffects のヘッダを修正してみた。Irrlicht 側のインタフェースが変わったのが原因かな。Irrlicht 1.8 ではXEffects を使っても画像が反転しないし、CGUITTFONT &hellip;">
+  <meta name="description" content="http://nightlies.videolan.org/build/android-x86/ VLC for Android-x86 のデバッグ版が公開されていたので、使ってみました。実行環境は、Android-x86 4.0.4 RC2 tegav2 ビルドです。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,7 +93,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/06/30/irrlicht-1-8-trunk-xeffects/">Irrlicht 1.8 Trunk + XEffects</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/10/02/vlc-for-android-x86/">VLC for Android-x86</a></h1>
     
     
       <p class="meta">
@@ -109,58 +109,247 @@ $(document).ready( function () {
   
 
 
-<time datetime="2012-06-30T22:08:59+09:00" pubdate data-updated="true">2012年06月30日</time>
+<time datetime="2012-10-02T23:20:14+09:00" pubdate data-updated="true">2012年10月02日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/irrlicht_1.8_xeffects.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/irrlicht_1.8_xeffects.png" alt="irrlicht 1.8 xeffects" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/galaxias_vlc_for_android-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/galaxias_vlc_for_android-x86-600x337.png" alt="vlc for android-x86" /></a>
+<a href="http://nightlies.videolan.org/build/android-x86/">http://nightlies.videolan.org/build/android-x86/</a></p>
 
-<p>Irrlicht 1.8 trunk でXEffects の影が有効にならなくなっていたので、XEffects のヘッダを修正してみた。Irrlicht 側のインタフェースが変わったのが原因かな。Irrlicht 1.8 ではXEffects を使っても画像が反転しないし、CGUITTFONT とも同時に使えるし、便利になったなぁ。環境はUbuntu 12.04 x86_64 + Irrlicht 1.8 trunk (SVN rev: 4170 ) + XEffects v1.3。</p>
+<p>VLC for Android-x86 のデバッグ版が公開されていたので、使ってみました。実行環境は、Android-x86 4.0.4 RC2 tegav2 ビルドです。</p>
 
-<p>[cpp title=&ldquo;EffectCB.h&rdquo; firstline=&ldquo;86&rdquo; highlight=&ldquo;91, 93, 97, 101, 105&rdquo;]
-virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr::s32 userData)
-{</p>
+<p>ビルドする手順は以下のようです。
+<a href="http://wiki.videolan.org/AndroidCompile">http://wiki.videolan.org/AndroidCompile</a></p>
 
-<pre><code>if(services-&gt;getVideoDriver()-&gt;getDriverType() == irr::video::EDT_OPENGL)
-{
-</code></pre>
+<p><strong>EDIT:</strong>
+VLC だと760p も全く問題なく再生できました。音量調節は上下にフリックします。</p>
+</div>
+  
+  
 
-<p>//      irr::f32 TexVar = 0;</p>
 
-<pre><code>    irr::s32 TexVar = 0;
-</code></pre>
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/29/ubuntu-gnome-remix-12-10-beta/">Ubuntu GNOME Remix 12.10 Beta</a></h1>
+    
+    
+      <p class="meta">
+        
 
-<p>//      services->setPixelShaderConstant(&ldquo;ColorMapSampler&rdquo;, (irr::f32*)(&amp;TexVar), 1);</p>
 
-<pre><code>    services-&gt;setPixelShaderConstant("ColorMapSampler", &amp;TexVar, 1);
 
-    TexVar = 1;
-</code></pre>
 
-<p>//      services->setPixelShaderConstant(&ldquo;ScreenMapSampler&rdquo;, (irr::f32*)(&amp;TexVar), 1);</p>
 
-<pre><code>    services-&gt;setPixelShaderConstant("ScreenMapSampler", &amp;TexVar, 1);
 
-    TexVar = 2;
-</code></pre>
 
-<p>//      services->setPixelShaderConstant(&ldquo;DepthMapSampler&rdquo;, (irr::f32*)(&amp;TexVar), 1);</p>
 
-<pre><code>    services-&gt;setPixelShaderConstant("DepthMapSampler", &amp;TexVar, 1);
+  
 
-    TexVar = 3;
-</code></pre>
 
-<p>//      services->setPixelShaderConstant(&ldquo;UserMapSampler&rdquo;, (irr::f32*)(&amp;TexVar), 1);</p>
+<time datetime="2012-09-29T06:01:45+09:00" pubdate data-updated="true">2012年09月29日</time>
+        
+      </p>
+    
+  </header>
 
-<pre><code>    services-&gt;setPixelShaderConstant("UserMapSampler", &amp;TexVar, 1);
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_gnome_remix.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_gnome_remix-600x480.png" alt="ubuntu gnome remix 12.10 beta" /></a>
+<a href="https://wiki.ubuntu.com/UbuntuGNOME/ReleaseNotes/12.10Beta">https://wiki.ubuntu.com/UbuntuGNOME/ReleaseNotes/12.10Beta</a></p>
+
+<p>Ubuntu GNOME Remix 12.10 betaが公開されたので、インストールしてみました。
+Ubuntu のリポジトリを使いたいけれど、デスクトップ環境はGNOME Shell がよいので、今後、どちらをベースにして行くか悩みどころです。そこで、それぞれのデフォルトの構成を比較してみました。
+どちらをベースにしても大差なさそうですが、ブラウザにFirefox を使うので、Ubuntu をインストールしておいて、ppa:gnome3-team/gnome3 を追加する方が若干楽かもしれません。GDM のログイン画面やロック画面の外観が大幅に改善されていたので、LightDM からGDM に切り替えるのならば、Ubuntu GNOME Remix がよいかもしれません。</p>
+
+<p>Ubuntu</p>
+
+<p>Ubuntu GNOME Remix</p>
+
+<p>My Choice</p>
+
+<p>Unity</p>
+
+<p><strong>GNOME Shell</strong></p>
+
+<p><strong>GNOME Shell<br/>
++ AWN</strong></p>
+
+<p><strong>LightDM</strong></p>
+
+<p><strong>GDM</strong></p>
+
+<p><strong>?</strong></p>
+
+<p>software-center</p>
+
+<p>gpk-application</p>
+
+<p>synaptic</p>
+
+<p>nautilus 3.4</p>
+
+<p>nautilus 3.4</p>
+
+<p>nautilus 3.6</p>
+
+<p>gnome-disks</p>
+
+<p>gnome-disks</p>
+
+<p>gparted</p>
+
+<p>&ndash;</p>
+
+<p><strong>tweak-tool</strong></p>
+
+<p><strong>tweak-tool</strong></p>
+
+<p><strong>Firefox</strong></p>
+
+<p>epiphany-browser</p>
+
+<p><strong>Firefox</strong></p>
+
+<p>Evolution</p>
+
+<p>Evolution</p>
+
+<p>GMail</p>
+
+<p>Evolution</p>
+
+<p>Evolution</p>
+
+<p>Google Calendar</p>
+
+<p>Rhythmbox</p>
+
+<p>Rhythmbox</p>
+
+<p>Moc</p>
+
+<p>Totem</p>
+
+<p>Totem</p>
+
+<p>VLC</p>
+
+<p>EoG</p>
+
+<p>EoG</p>
+
+<p>EoG</p>
+
+<p>Gedit</p>
+
+<p>Gedit</p>
+
+<p>Kate</p>
+
+<p>Libre-writer</p>
+
+<p>AbiWord</p>
+
+<p>&ndash;</p>
+
+<p>Libre-calc</p>
+
+<p>Gnumeric</p>
+
+<p>&ndash;</p>
+
+<p>ibus-anthy</p>
+
+<p>ibus-anthy</p>
+
+<p>ibus-mozc</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/25/changing-the-date-format-in-nautilus-3-6-list-view/">Changing the Date Format in Nautilus 3.6 List View</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-25T06:45:38+09:00" pubdate data-updated="true">2012年09月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png" alt="nautilus 3.6 list view modification date" /></a>
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676898  ">https://bugzilla.gnome.org/show_bug.cgi?id=676898  </a>
+<a href="http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060">http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060</a></p>
+
+<p>nautilus 3.6 のリストビューでは、あえて更新日付の書式をシンプル(informal)にしているようです。これはこれでアリなのですが、やはり詳細表示されていた方が統一感があって使い勝手がよいような気がするので、昔のISO 日付書式になるようにカスタマイズしてみました。dpkg-buildpackage でfakeroot が効かなかったので、sudo で実行しています。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get build-dep nautilus
+$ mkdir nautilus &amp;&amp; cd nautilus
+$ apt-get source nautilus
+$ dpkg-source -x <em>.dsc
+$ cd nautilus-3.</em>
+[/shell]
+[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4484&rdquo; highlight=&ldquo;4489&rdquo;]</p>
+
+<h1>define TODAY_TIME_FORMAT_24 N_(&ldquo;%R&rdquo;)</h1>
+
+<h1>define TODAY_TIME_FORMAT N_(&ldquo;%-I:%M %P&rdquo;)</h1>
+
+<h1>define THIS_MONTH_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
+
+<h1>define THIS_YEAR_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
+
+<h1>define ANYTIME_TIME_FORMAT N_(&ldquo;%b %-d %Y&rdquo;)</h1>
+
+<h1>define ANYTIME_TIME_FORMAT_ISO N_(&ldquo;%Y-%m-%d %H:%M:%S&rdquo;)</h1>
+
+<h1>define FULL_FORMAT N_(&ldquo;%a, %b %e %Y %I:%M:%S %p&rdquo;)</h1>
+
+<h1>define FULL_FORMAT_24 N_(&ldquo;%a, %b %e %Y %T&rdquo;)</h1>
+
+<p>[/c]
+[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4538&rdquo; highlight=&ldquo;4541&rdquo;]</p>
+
+<pre><code>} else {
+    format = ANYTIME_TIME_FORMAT;
 }
+format = ANYTIME_TIME_FORMAT_ISO;
 </code></pre>
 
-<p>[/cpp]</p>
+<p>[/c]
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo dpkg-buildpackage -us -uc -nc -b
+$ sudo dpkg -i ../nautilus_3.*.deb
+[/shell]</p>
 </div>
   
   
@@ -173,7 +362,7 @@ virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">Android-x86 4.0.3 + Firefox(Fennec) 16.0a1</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/09/24/gnome-shell-extension-drop-down-terminal/">GNOME Shell Extension - Drop Down Terminal</a></h1>
     
     
       <p class="meta">
@@ -189,118 +378,21 @@ virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr
   
 
 
-<time datetime="2012-06-23T12:03:13+09:00" pubdate data-updated="true">2012年06月23日</time>
+<time datetime="2012-09-24T21:17:32+09:00" pubdate data-updated="true">2012年09月24日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png" alt="android-x86 4.0.3 firefox fennec 16.0a1" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension-600x337.png" alt="gnome shell extension drop down terminal" /></a>
+<a href="https://extensions.gnome.org/extension/442/drop-down-terminal/">https://extensions.gnome.org/extension/442/drop-down-terminal/</a></p>
 
-<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a>
-Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386-linux-android 向けのmozconfig を見つけたけれど、そのままではうまくビルドできなかったので、修正して利用してみた。Android SDK/NDK の環境はできているので、その後から始めよう。ビルドする環境はUbuntu 12.04 x86_64。Android 端末は、Inspiron duo にandroid-x86-4.0-RC1-tegav2.iso をインストール済み。</p>
-
-<ol>
-<li><p> ビルドするための依存関係の取得
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install mercurial ccache
-$ sudo apt-get build-dep firefox
-[/shell]</p></li>
-<li><p> Firefox のソースの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src
-[/shell]</p></li>
-<li><p> MOZCONFIG のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cd src
-$ gedit mozconfig-android-x86
-[/shell]
-[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
-
-<h1>Global options</h1>
-
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p></li>
-</ol>
-
-
-<h1>Build Fennec</h1>
-
-<p>ac_add_options &mdash;enable-application=mobile/android</p>
-
-<h1>Android</h1>
-
-<p>ac_add_options &mdash;target=i386-linux-android
-ac_add_options &mdash;with-endian=little
-ac_add_options &mdash;with-android-ndk=&ldquo;$HOME/Projects/Android/android-ndk-r8&rdquo;
-ac_add_options &mdash;with-android-sdk=&ldquo;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&rdquo;
-ac_add_options &mdash;with-android-version=10
-ac_add_options &mdash;with-android-platform=&ldquo;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&rdquo;
-ac_add_options &mdash;with-system-zlib</p>
-
-<h1></h1>
-
-<p>ac_add_options &mdash;disable-auto-deps
-ac_add_options &mdash;disable-debug
-ac_add_options &mdash;disable-debug-symbols
-ac_add_options &mdash;disable-tests
-ac_add_options &mdash;disable-ipdl-tests
-ac_add_options &mdash;enable-strip
-ac_add_options &mdash;enable-install-strip</p>
-
-<h1>updater</h1>
-
-<p>ac_add_options &mdash;disable-updater
-ac_add_options &mdash;disable-update-channel
-ac_add_options &mdash;disable-update-packaging</p>
-
-<h1>crash reporter</h1>
-
-<p>ac_add_options &mdash;disable-crashreporter</p>
-
-<h1>maintenance service</h1>
-
-<p>ac_add_options &mdash;disable-maintenance-service</p>
-
-<h1>JDK</h1>
-
-<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
-
-<h1>branding</h1>
-
-<p>ac_add_options &mdash;with-branding=mobile/android/branding/beta
-[/plain]</p>
-
-<ol>
-<li><p> ロゴ画像の作成
-他のサイズのロゴ画像を参考にサイズ40x40 のPNG 形式画像を作成する。
-./mobile/android/branding/beta/content/fennec_40x40.png</p></li>
-<li><p> インストール先のAndroid 端末を無線LAN で接続する。
-[shell gutter=&ldquo;false&rdquo;]
-$ export ADBHOST=192.168.0.4
-$ adb devices
-[/shell]</p></li>
-<li><p> ビルドとインストール
-[shell gutter=&ldquo;false&rdquo;]
-$ export MOZCONFIG=./mozconfig-android-x86
-$ make -f client.mk build_and_deploy
-$
-[/shell]
-インストーラパッケージは以下に生成される。
-./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p></li>
-<li><p> 次回ビルド時にソースを最新の状態にするには
-[shell gutter=&ldquo;false&rdquo;]
-$ hg pull -u
-[/shell]</p></li>
-</ol>
-
-
+<p>Drop Down Terminal はGNOME Shell 3.5.2 (正確にはgjs >= 1.33.2 and vte3 >= 0.31, gnome-shell >= 3.2 らしい)以降で動作する、ターミナル画面を表示するためのGNOME Shell 拡張機能です。Ubuntu 12.10 + GNOME Shell 3.5.92 の環境で使ってみました。
+GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面の上部に半透明なターミナル画面が瞬時に表示されます。もう一度[F12]キーを押すとターミナル画面が隠れます。作者のコメントによると、キーバインドはgsettings やdconf-editor でカスタマイズできるようです。
+ちょっとしたターミナル操作をする場合にとても便利です。クリップボードからのペーストは[Shift]&ndash;[Insert]が使用できます。フォーカスが合っていない場合はマウスでクリックすると良いようです。</p>
 </div>
   
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">続きを読む &rarr;</a>
-    </footer>
   
 
 
@@ -311,7 +403,7 @@ $ hg pull -u
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/06/17/android-ndk-android-x86-4-0-3/">Android NDK + Android-x86 4.0.3</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/09/16/ubuntu-12-10-certificate-authority/">Ubuntu 12.10 + Certificate Authority</a></h1>
     
     
       <p class="meta">
@@ -327,49 +419,17 @@ $ hg pull -u
   
 
 
-<time datetime="2012-06-17T18:54:52+09:00" pubdate data-updated="true">2012年06月17日</time>
+<time datetime="2012-09-16T23:59:35+09:00" pubdate data-updated="true">2012年09月16日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android_ndk_android-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android_ndk_android-x86.png" alt="android ndk android-x86 irrlicht" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_ca.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_ca-600x337.png" alt="ubuntu 12.10 certificate authority openssl ssl client" /></a></p>
 
-<p>Android 2.3 用のアプリをAndroid-x86 4.0.3 用にリビルドして、Inspiron duo 実機で動かしてみた。さすがにスマートフォンより動作が非常に軽快だけど、画面がiPod の広告みたいになってしまった。画像やフォントが表示されてないのは、なんでだろう。パスがずれているのかな。パスが違っていたらエラーになるはずなんだけど。ボタンイベントはタッチスクリーン上を指で押したら正しく動作した。</p>
-
-<ol>
-<li><p> Android 4.0.3 のターゲット情報は以下のとおり。ID は10。
-[shell gutter=&ldquo;false&rdquo;]
-$ android list target
-id: 10 or &ldquo;android-15&rdquo;
- Name: Android 4.0.3
- Type: Platform
- API level: 15
- Revision: 3
- Skins: WXGA720, QVGA, WSVGA, WQVGA400, WQVGA432, HVGA, WVGA854, WXGA800, WVGA800 (default)
- ABIs : armeabi-v7a, x86
-[/shell]</p></li>
-<li><p> Application.mk でx86 を指定
-[plain title=&ldquo;Application.mk&rdquo; firstline=&ldquo;8&rdquo; highlight=&ldquo;9&rdquo;]</p>
-
-<h1>APP_ABI := armeabi armeabi-v7a</h1>
-
-<p>APP_ABI := armeabi-v7a x86
-[/plain]</p></li>
-<li><p> プロジェクトをアップデート
-[shell gutter=&ldquo;false&rdquo;]
-$ android update project &mdash;path . &mdash;target 10
-[/shell]</p></li>
-<li><p> ビルド
-[shell gutter=&ldquo;false&rdquo;]
-$ ndk-build clean
-$ ndk-build -j 4
-$ ant clean
-$ ant debug
-[/shell]</p></li>
-</ol>
-
+<p>Ubuntu 12.10 x86_64 の環境にオレオレ認証局を構築してクライアント証明書認証してみた。サーバはApache2 でクライアントはUbuntu 12.04 x86_64 上のFirefox。クライアントPC 側のネットワークはスマートフォンのWiMAX + Wi-Fi テザリングからインターネットに接続して、ダイナミックDNS でアドレス解決したサーバに到達する構成で試してみた。設定手順は、以下のページ。
+<a href="http://ktkr3d.site11.com/ca/">http://ktkr3d.site11.com/ca/</a></p>
 </div>
   
   
@@ -382,7 +442,7 @@ $ ant debug
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/06/09/firefox-13-newsfox/">Firefox 13 + NewsFox</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/09/04/rebuild-avant-window-navigator-package-2/">Rebuild Avant-window-navigator Package</a></h1>
     
     
       <p class="meta">
@@ -398,417 +458,257 @@ $ ant debug
   
 
 
-<time datetime="2012-06-09T23:04:20+09:00" pubdate data-updated="true">2012年06月09日</time>
+<time datetime="2012-09-04T21:27:52+09:00" pubdate data-updated="true">2012年09月04日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Firefox のアドオンNewsFox を使ってRSS を購読しているのだけど、Firefox を13.0 にアップデートしてから、時々マウスのボタンダウンイベントがキャプチャーされて無効化されてしまうような挙動があったので、やっつけで暫定対策してみた。<del>Linux でもWindows でも発生する(?)ので、NewsFox 側に問題がありそう。いろいろFirefox のバグ回避もしているようだし。</del>とりあえず、ドラッグ開始しないようにreturn してしまうことにした。NewsFox でドラッグアンドドロップなんて飾りですよ。
-[javascript title=&ldquo;newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js&rdquo; firstline=&ldquo;507&rdquo;]
-function dragIt(evt) { return;
-[/javascript]
-[javascript title=&ldquo;newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js&rdquo; firstline=&ldquo;987&rdquo;]
-function dragArt(evt) { return;
-[/javascript]
-他に古いAPI を使っているところもあるようだし、早くアップデート版がリリースされるといいな。</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/awn_without_plus_icon.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/awn_without_plus_icon.png" alt="avant window navigator without a green plus icon" /></a></p>
 
-<p>newsfox.xpi = {899DF1F8-2F43-4394-8315-37F6744E6319}.xpi</p>
-</div>
-  
-  
+<p><a href="https://bugs.launchpad.net/awn/+bug/990774  ">https://bugs.launchpad.net/awn/+bug/990774  </a>
+<a href="https://bugs.launchpad.net/awn/+bug/990774/comments/15">https://bugs.launchpad.net/awn/+bug/990774/comments/15</a></p>
 
+<p>Ubuntu 12.04/12.10 のAvant Window Navigator で表示される謎のプラスアイコンを消してみた。これですっきり。</p>
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/06/burg-ubuntu-12-04-windows-8-android-x86-4-0/">Burg + Ubuntu 12.04 + Windows 8 + Android-x86 4.0</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-06T21:28:47+09:00" pubdate data-updated="true">2012年06月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png" alt="burg windows 8 ubuntu 12.04 android-x86 4.0" /></a></p>
-
-<p>Ubuntu 12.04 とWindows 8 とAndroid-x86 4.0 のマルチブート環境を構築して、ブートローダをBurg にしてみた。<a href="/2011/05/07/burg-%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/">一年前</a>と同じことの繰り返しだけれど。</p>
-
-<h3>手順</h3>
-
-<ol>
-<li><p> Windows 8 RP をインストール</p></li>
-<li><p> Ubuntu 12.04 を/dev/sda3 にインストール
-ブートローダ(GRUB)を/dev/sda にインストール</p></li>
-<li><p> Android-x86 4.0 のISO の中にある以下の4つのファイルを/dev/sda3 (/PATHTO/Android-x86/tegav2/)にコピー</p>
-
-<ul>
-<li><p>initrd.img</p></li>
-<li><p>kernel</p></li>
-<li><p>ramdisk.img</p></li>
-<li><p>system.sfs</p></li>
-</ul>
-</li>
-</ol>
-
-
-<p>設定保存用のフォルダも作成
-[shell gutter=&ldquo;false&rdquo;]
-$ mkdir /PATHTO/Android-x86/tegav2/data
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get build-dep avant-window-navigator
+$ sudo apt-get -b source avant-window-navigator
+$ sudo dpkg -i *.deb
 [/shell]</p>
 
-<ol>
-<li><p> Burg のインストール
+<h3>追記(2012/11/10)</h3>
+
+<p><a href="https://bugs.launchpad.net/awn/+bug/990774/comments/21">https://bugs.launchpad.net/awn/+bug/990774/comments/21</a>
+リビルドしなくても、以下のコマンドで解決しました。
 [shell gutter=&ldquo;false&rdquo;]
-$ sudo add-apt-repository ppa:n-muench/burg
-$ sudo apt-get update
-$ sudo apt-get install burg burg-themes
-[/shell]</p></li>
-<li><p> Burg のテーマfortune とAndroid 用アイコンをgnome-look.org からダウンロードしてテーマ変更
-[plain title=&ldquo;/etc/default/burg&rdquo;]
-GRUB_GFXMODE=1366x768
-GRUB_THEME=fortune
-[/plain]
-[plain title=&ldquo;/boot/burg/themes/fortune/icons/hover&rdquo; firstline=&ldquo;16&rdquo; highlight=&ldquo;17&rdquo;]
--slackware { image = &ldquo;$$/grey_slackware.png:$$/large_slackware.png&rdquo; }
--android { image = &ldquo;$$/grey_android.png:$$/large_android.png&rdquo; }
-}
-[/plain]</p></li>
-<li><p> Android-x86 用のブートエントリを追加
-[plain title=&ldquo;/etc/burg.d/40_custom&rdquo; firstline=&ldquo;6&rdquo;]
-menuentry &ldquo;Android-x86 4.0&rdquo; &mdash;class android &mdash;class os {
-insmod ext2
-set root=&lsquo;(hd0,3)&rsquo;
-search &mdash;no-floppy &mdash;fs-uuid &mdash;set MY-UU-ID
-echo &lsquo;Loading Android-x86 4.0 &hellip;&rsquo;
-linux /PATHTO/Android-x86/tegav2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/PATHTO/Android-x86/tegav2 DATA=
-initrd /PATHTO/Android-x86/tegav2/initrd.img
-}
-[/plain]</p></li>
-<li><p> Burg の設定を更新
+$ sudo apt-get install libdesktop-agnostic-cfg-gconf
+[/shell]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/22/gnome-shell-focus-effect-extension/">GNOME Shell Focus Effect Extension</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-22T03:18:13+09:00" pubdate data-updated="true">2012年08月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/08/gnome_shell_extension_focus_effect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/08/gnome_shell_extension_focus_effect.png" alt="gnome shell extensio focus effect" /></a></p>
+
+<p><a href="https://github.com/paradoxxxzero/gnome-shell-focus-effects-extension">https://github.com/paradoxxxzero/gnome-shell-focus-effects-extension</a></p>
+
+<p><a href="http://www.upubuntu.com/2012/08/how-to-install-gnome-shell-focus-effect.html">http://www.upubuntu.com/2012/08/how-to-install-gnome-shell-focus-effect.html</a></p>
+
+<p>GNOME Shell のFocus Effect 拡張を使ってみた。フォーカスの切り替えでウィンドウがアニメーションする。なんか楽しい。非アクティブなウィンドウは少し傾いて、サイズが小さく、色はグレーになる。スクリプトはとても小さいので、何かに応用できるかもしれない。
+副作用としては、非アクティブなウィンドウの選択に少しコツがいるようだ。また、何回か切り替えを繰り返した時に、ウィンドウが画面外に移動してしまう。その時は、[Alt]&ndash;[Space]で「移動」を選択して、ウィンドウを元の位置に動かすと回復できる。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/05/ubuntu-12-10-alpha3-gnome-shell-3-5-4/">Ubuntu 12.10 Alpha3 + GNOME Shell 3.5.4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-05T21:11:46+09:00" pubdate data-updated="true">2012年08月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/08/ubuntu_12_10_alpha3_gnome_shell_3_5_4.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/08/ubuntu_12_10_alpha3_gnome_shell_3_5_4.png" alt="ubuntu 12.10 alpha3 GNOME Shell 3.5.4" /></a>
+<a href="http://cdimage.ubuntu.com/releases/quantal/">http://cdimage.ubuntu.com/releases/quantal/</a>
+Ubuntu 12.10 alpha 3 x86_64 にGNOME Shell 3.5.4 を入れてみた。</p>
+
+<ul>
+<li><p>Linux Kernel が3.5.0 になった。</p></li>
+<li><p>nautilus のGUI が変更されたみたい。</p></li>
+<li><p>マウントポイントが/media から/run/media/$USER に移動したみたい。</p></li>
+<li><p>firefox が15.0 に。Tab Utilities アドオンの挙動が少し変かもしれないので、Tab Mix Plus に移行。</p></li>
+<li><p>GIMP が2.8 に。</p></li>
+<li><p>アップデートマネージャがSoftware Updater に名前が変わった。</p></li>
+<li><p>alpha3 時点でnVidia のGPU 環境でLive CD うまくブートしないみたい。</p></li>
+</ul>
+
+
+<p>いつものようにカスタマイズ</p>
+
+<ul>
+<li><p>フォルダを英語名に。</p></li>
+<li><p>Avant Window Navigator を常駐。</p></li>
+<li><p>conky を設定。conkyforecast は古いバージョンのものを使用。</p></li>
+<li><p>Gnome Shell のAuto Hide Top Panel 拡張はmetadata.json の対応バージョンを3.5.4 にした。</p></li>
+</ul>
+
+
+<p>EDIT:
+nVidia のGPU でも起動時のカーネルパラメータにnouveau.modeset=0 を追加したら普通に起動できた。</p>
+
+<p>EDIT2:
+overlay-scrollbar を削除するとログインできなくなるみたいだ。あわてず、Ctrl+Alt+F1 で、sudo apt-cache search overlay-scrollbar してパッケージ名を探して、sudo apt-get install でインストール。
+[shell gutter=&ldquo;false&rdquo;]
+$ echo export LIBOVERLAY_SCROLLBAR=0 >> ~/.xprofile
+[/shell]</p>
+
+<p>EDIT3:
+nautilus でファイルの新規作成をするには、$HOME/Templates にテンプレートファイルを入れておくとアプリケーションメニューやコンテキストメニューにNew Document メニューが表示されるようになるみたい。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/29/ubuntu-12-04-pov-ray-3-7-0-rc6-2/">Ubuntu 12.04 + POV-Ray 3.7.0 RC6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-29T21:17:07+09:00" pubdate data-updated="true">2012年07月29日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/07/multiobj_alt_demo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/07/multiobj_alt_demo.png" alt="ubuntu 12.04 pov-ray 3.7.0 rc6" /></a></p>
+
+<p><a href="http://www.povray.org/beta/source/  ">http://www.povray.org/beta/source/  </a>
+<a href="http://www.povray.org/beta/source/unix-src-INSTALL.txt">http://www.povray.org/beta/source/unix-src-INSTALL.txt</a>
+POV-Ray 3.7.0 RC6 を試してみた。環境はUbuntu 12.04 x86_64, Intel® Core™ i7 CPU 930 @ 2.80GHz × 8。</p>
+
+<p>64bit OS の場合は./configure の際に&#8221;&mdash;with-boost-thread=boost_thread-mt&#8221; オプションを付けるといいらしい。3.7 からマルチスレッドに対応したらしい。
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install build-essential
+$ wget <a href="http://www.povray.org/redirect/www.povray.org/beta/source/povray-3.7.0.RC6.tar.gz">http://www.povray.org/redirect/www.povray.org/beta/source/povray-3.7.0.RC6.tar.gz</a>
+$ tar -zxvf povray-3.7.0.RC6.tar.gz
+$ cd povray-3.7.0.RC6
+$ ./configure &mdash;with-boost-thread=boost_thread-mt COMPILED_BY=&ldquo;yourname <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#121;&#x6f;&#x75;&#114;&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#115;&#x6f;&#x6d;&#x65;&#119;&#104;&#x65;&#x72;&#x65;&#x2e;&#99;&#x6f;&#109;">&#121;&#x6f;&#x75;&#114;&#x65;&#109;&#x61;&#105;&#108;&#64;&#x73;&#111;&#109;&#x65;&#119;&#x68;&#101;&#114;&#x65;&#x2e;&#x63;&#111;&#109;</a>&rdquo;
+$ make
+$ sudo make install
+[/shell]</p>
+
+<p>POV-Ray Object Collection のサンプルをダウンロードしてレンダリング。
+<a href="http://lib.povray.org/searchcollection/index.php  ">http://lib.povray.org/searchcollection/index.php  </a>
+<a href="http://manpages.ubuntu.com/manpages/precise/man1/povray.1.html">http://manpages.ubuntu.com/manpages/precise/man1/povray.1.html</a></p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ povray +W800 +H600 +A0.1 multiobj_alt_demo.pov
+[/shell]</p>
+
+<p>右の立方体のレンダリング結果がサンプル画像とちょっと違うのは気のせいか？</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/25/telnet-nyancat/">Telnet + Nyancat</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-25T22:49:02+09:00" pubdate data-updated="true">2012年07月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/07/telnet_nyancat.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/07/telnet_nyancat.png" alt="telnet nyancat" /></a></p>
+
+<p><a href="http://www.omgubuntu.co.uk/2012/07/how-to-run-nyan-cat-in-the-terminal">http://www.omgubuntu.co.uk/2012/07/how-to-run-nyan-cat-in-the-terminal</a></p>
+
+<p>telnet でnyancat してみた。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ telnet miku.acm.uiuc.edu
+[/shell]</p>
+
+<p>終了はエスケープキーを忘れずに。
 [plain gutter=&ldquo;false&rdquo;]
-$ sudo burg-install /dev/sda
-$ sudo update-burg
-[/plain]</p></li>
-<li><p> 設定が有効になっているかを確認
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo burg-emu -D
-[/shell]</p></li>
-</ol>
-
-
-<h3>パーティションレイアウト</h3>
-
-<p>デバイス
-タイプ
-サイズ
-用途</p>
-
-<p>/dev/sda1
-ntfs
-0.35 GiB
-EFI</p>
-
-<p>/dev/sda2
-ntfs
-150.00 GiB
-Windows 8</p>
-
-<p>/dev/sda3
-ext4
-145.00 GiB
-Ubuntu 12.04,<br/>
-Andorid-x86 4.0</p>
-
-<p>/dev/sda4
-swap
-2.75 GiB
-Linux swap</p>
-
-<p>少し改善した手順は<a href="http://ktkr3d.site11.com/android-x86/">こちら</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/05/inspiron-duo-windows-8-64bit/">Inspiron Duo + Windows 8 64bit</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-05T04:27:56+09:00" pubdate data-updated="true">2012年06月05日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_inspiron_duo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_inspiron_duo.png" alt="windows 8 inspiron duo" /></a></p>
-
-<p>Inspiron duo にWindows 8 Release Preview をインストールしてみた。Inspiron duo のCPU はDual Core ATOM N550 で64bit 対応しているので、Windows 8 の64bit 版がインストールできる。</p>
-
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_metro.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_metro.png" alt="windows 8 metro" /></a></p>
-
-<p>Inspiron duo のスクリーンは10.1 インチの1366x768 でMetro はこんな感じで表示された。タッチスクリーンで横にスライドする。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/02/windows-8-release-preview-64bit/">Windows 8 Release Preview 64bit</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-02T00:15:41+09:00" pubdate data-updated="true">2012年06月02日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_boot_usb.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_boot_usb.png" alt="windows 8 boot usb" /></a>
-<a href="http://windows.microsoft.com/ja-JP/windows-8/download">http://windows.microsoft.com/ja-JP/windows-8/download</a>
-Linux の他にはWindows XP 32bit しか入っていないデスクトップPC にWindows 8 Release Preview 64bit をインストールしてみた。</p>
-
-<ol>
-<li><p> Windows XP 32bit 上でWindows 8 Release Preview 64bit ISO をダウンロード</p></li>
-<li><p> Windows XP 32bit に「Windows 7 USB/DVD ダウンロードツール」をインストール(過去にインストール済み)</p></li>
-<li><p> 32bit のbootsect.exe を「Windows 7 USB/DVD ダウンロードツール」と同じフォルダにコピー</p></li>
-<li><p> 「Windows 7 USB/DVD ダウンロードツール」を起動して、起動可能なUSB デバイスを作成</p></li>
-<li><p> USB デバイスでブートしてWindows 8 をインストール</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/31/moc-music-on-console/">MOC (Music on Console)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-31T19:59:21+09:00" pubdate data-updated="true">2012年05月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/moc.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/moc.png" alt="moc music on console mocp" /></a></p>
-
-<p><a href="http://moc.daper.net/">http://moc.daper.net/</a>
-軽量なコンソール型のメディアプレーヤーMOC(Music On Console)を使ってみた。コマンドはmocp で、mocp を実行するとメディアを再生するサーバと操作用のクライアント画面が同時に起動する。クライアント画面を終了してもサーバはメディアの再生を継続するような仕組みになっている。moc-ffmpeg-plugin をインストールするとWMA, RealAudio, MP4, AAC 等のフォーマットの再生も可能。イコライザがついていたり、歌詞表示ができたり、テーマ変更もできたりする。日本語のタグやファイル名も表示可能。軽量だからwine で動かしているアプリケーションへの影響も少ないようだ。</p>
-
-<ul>
-<li><p>インストール
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install moc moc-ffmpeg-plugin
-[/shell]</p></li>
-<li><p>起動とサーバの停止
-[shell gutter=&ldquo;false&rdquo;]
-$ mocp
-$ mocp -x
-[/shell]
-オプションの詳細はman mocp で。</p></li>
-<li><p>よく使うキー操作
-[h][?] キーボードショートカット一覧を表示</p></li>
-</ul>
-
-
-<p>[ENTER] メディアの再生、フォルダの選択等
-[SPACE] ポーズ
-[q] mocp クライアント画面を終了(サーバは実行のまま)
-[Q] mocp クライアント画面を終了(サーバも終了)
-[TAB] 左ペイン(ファイルリスト)と右ペイン(プレイリスト)を移動
-[l] 選択しているペインのレイアウトを最大に
-[,][&lt;] ボリュームダウン(5%, 1%)
-[.][>] ボリュームアップ(5%, 1%)</p>
-
-<p>[o] URL を開く
-[R] リピート再生の切り替え
-[S] シャッフル再生の切り替え
-[A] プレイリストに追加(ディレクトリは再帰的に)
-[L] 歌詞表示(歌詞ファイルはメディアと同じファイル名で拡張子無し)</p>
-
-<ul>
-<li><p>インターネットラジオの聞き方
-SHOUTcast で探して、ローカルにpls ファイルを保存して、開いたり、[o]で直接URL を入力したり。</p></li>
-<li><p>moc で再生中のメディアの情報をConky に表示するには
-mocp -Q でいろいろな情報を取得して表示することができる。
-[plain title=&ldquo;~/.conkyrc&rdquo; firstline=&ldquo;124&rdquo;]
-${if_running mocp}${font DejaVu Sans}MUSIC (moc)${font} ${hr 2}
-${font :size=10}${execi 5 mocp -Q %title | nkf -w -F36-0}${endif}
-[/plain]</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/23/ubuntu-12-04-owncloud-4-0/">Ubuntu 12.04 + ownCloud 4.0</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-23T22:54:15+09:00" pubdate data-updated="true">2012年05月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/owncloud_android.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/owncloud_android.png" alt="owncloud android" /></a></p>
-
-<p><a href="http://owncloud.org/">http://owncloud.org/</a></p>
-
-<p>ownCloud 4.0 が公開されたので、Ubuntu 12.04 をサーバにして、LAN 上のUbuntu とAndroid からアクセスしてみた。</p>
-
-<p><a href="http://www.webupd8.org/2011/10/owncloud-2-your-personal-cloud-server.html">http://www.webupd8.org/2011/10/owncloud-2-your-personal-cloud-server.html</a>
-インストール方法はownCloud2 のインストール手順を参考にしてみたら、なんの迷いもなくできた。いつもwebupd8 はわかりやすくて便利だなぁ。日本語化は左下の「設定アイコン」->「Personal(個人設定)」で「Language(言語)」を「Japanese(日本語)」に設定する。</p>
-
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/owncloud_ubuntu.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/owncloud_ubuntu.png" alt="owncloud ubuntu chromium" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/19/wine-diablo-iii/">Wine + Diablo III</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-19T19:23:37+09:00" pubdate data-updated="true">2012年05月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3.jpg"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3.jpg" alt="wine diablo3" /></a></p>
-
-<p>週末になったので、Diablo III で遊ぼう！</p>
-
-<p>Ubuntu 12.04 x86_64 + wine-1.5.4 + fglrx 8.960 の環境で遊んでみた。アップデータがうまく終了しなかったので、Windows のドライブをマウントして、インストールしたディレクトリに移動して、以下のコマンドで起動した。
-[shell gutter=&ldquo;false&rdquo;]
-$ wine Diablo\ III.exe -launch
-[/shell]
-たまにサウンドやグラフィックスに不具合があるものの、調子が良い時はWindows 上で動作している時とほとんど変わらない感じ。日本語も特に設定変更なしで入力できた。Z キーでズーム。スクリーンショットを撮る時は、GNOME のPrintScreen キーのショートカットを変更しておく。</p>
-
-<p>なんとなく、Diablo III はシューティングゲームの要素が取り込まれているような、WoW に似ているような感じがする。弾幕避け、地雷避けとか。初回難しくても、何回かトライするとBOSS や雑魚キャラの攻撃パターンみたいなものがわかってきて、クリアできるようになる。
-やっとアクトIIIまで到着した。何故か小指がつりそう。</p>
+^]quit
+[/plain]</p>
 </div>
   
   
@@ -856,7 +756,7 @@ $ wine Diablo\ III.exe -launch
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

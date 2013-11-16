@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GNOME3 | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/gnome3/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T16:32:12+09:00</updated>
+  <updated>2013-11-16T16:54:37+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,125 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu GNOME 13.04 daily build]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/03/14/ubuntu-gnome-13-04-daily-build/"/>
+    <updated>2013-03-14T23:09:21+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/03/14/ubuntu-gnome-13-04-daily-build</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/Ubuntu_GNOME_installer.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/Ubuntu_GNOME_installer-600x443.png" alt="Ubuntu GNOME installer" /></a></p>
+
+<p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a>
+Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたので試してみました。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 13.04 + GNOME Shell 3.7.5]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/02/08/ubuntu-13-04-gnome-shell-3-7-5/"/>
+    <updated>2013-02-08T06:28:05+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/02/08/ubuntu-13-04-gnome-shell-3-7-5</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/ubuntu_13.04_gnome_shell_3.7.5.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/ubuntu_13.04_gnome_shell_3.7.5-600x337.png" alt="ubuntu_13.04_gnome_shell_3.7.5" /></a></p>
+
+<p><a href="https://launchpad.net/~gnome3-team/+archive/gnome3  ">https://launchpad.net/~gnome3-team/+archive/gnome3  </a>
+<a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
+
+<p>Ubuntu 13.04 x86_64 デイリービルドにGNOME Shell 3.7.5 をインストールしてみました。</p>
+
+<h3>手順</h3>
+
+<p>以下のPPA をソフトウェアソースに追加して、gnome-shell パッケージをインストール/アップデートします。</p>
+
+<ul>
+<li><p>ppa:gnome3-team/gnome3</p></li>
+<li><p>ppa:ricotz/testing</p></li>
+</ul>
+
+
+<h3>GNOME Shell 3.7.5 のチェンジログ</h3>
+
+<p><a href="http://ftp.acc.umu.se/pub/GNOME/sources/gnome-shell/3.7/gnome-shell-3.7.5.news">http://ftp.acc.umu.se/pub/GNOME/sources/gnome-shell/3.7/gnome-shell-3.7.5.news</a>
+* MessageTray: pass keyboard events to tray icons
+* network: add support for virtual devices
+* gdm: Allow right-clicking buttons for left-handed users
+* Make list search results span all available horizontal space
+* Make Show-Applications button depress when held down
+* Set a max width on search results
+* Reserve scrollbar allocation for automatic policy
+* Improve scaling algorithm for window thumbnails</p>
+
+<h3>GNOME Shell Extension のバージョン指定の更新</h3>
+
+<p>Auto hide the top panel GNOME Shell Extension のバージョン指定を更新して、暫定的に動作させてみました。
+[plain title=&ldquo;.local/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json&rdquo; highlight=&ldquo;8&rdquo;]
+{
+  &ldquo;description&rdquo;: &ldquo;Auto hide the top panel&rdquo;,
+  &ldquo;extension-id&rdquo;: &ldquo;auto-hide-top-panel&rdquo;,
+  &ldquo;gettext-domain&rdquo;: &ldquo;gnome-shell-extensions&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Auto Hide Top Panel&rdquo;,
+  &ldquo;settings-schema&rdquo;: &ldquo;org.gnome.shell.extensions.auto-hide-top-panel&rdquo;,
+  &ldquo;shell-version&rdquo;: [</p>
+
+<pre><code>"3.5.92", "3.6.1", "3.6", "3.7.5"
+</code></pre>
+
+<p>  ],
+  &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
+  &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#97;&#x75;&#116;&#x6f;&#x68;&#x69;&#100;&#101;&#x74;&#111;&#112;&#x62;&#97;&#114;&#x32;&#64;&#119;&#101;&#x72;&#101;&#x77;&#x6f;&#108;&#118;&#x65;&#115;&#46;&#x75;&#115;">&#97;&#117;&#116;&#x6f;&#x68;&#x69;&#100;&#101;&#x74;&#x6f;&#x70;&#98;&#x61;&#x72;&#50;&#x40;&#119;&#101;&#x72;&#101;&#x77;&#111;&#108;&#118;&#101;&#115;&#x2e;&#117;&#x73;</a>&rdquo;,
+  &ldquo;version&rdquo;: 1
+}
+[/plain]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 13.04 + GNOME Shell]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/01/26/ubuntu-13-04-gnome-shell/"/>
+    <updated>2013-01-26T21:45:06+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/01/26/ubuntu-13-04-gnome-shell</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/01/ubuntu_13_04_gnome_shell.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/01/ubuntu_13_04_gnome_shell-600x375.png" alt="ubuntu 13.04 raring ringtail gnome shell" /></a></p>
+
+<p><a href="http://cdimage.ubuntu.com/daily-live/">http://cdimage.ubuntu.com/daily-live/</a></p>
+
+<p>Ubuntu 13.04 Raring Ringtail のデイリービルドがライブISO イメージで公開されていますので、そろそろ環境構築をし始めます。デスクトップ環境はGNOME Shell にします。</p>
+
+<ul>
+<li><p>Linux Kernel は3.8.0 でした。</p></li>
+<li><p>GNOME Shell  (ppa:gnome3-team/gnome3)は3.6.2 のままでした。今後、3.8 に向けて更新されると思います。</p></li>
+<li><p>Avant Window Navigator パッケージが登録されていませんでした。公式リポジトリから消えるかもしれません。</p></li>
+<li><p>Code::Blocks が12.11　になっていました。</p></li>
+</ul>
+
+
+<p>Avant Window Navigator が消えていて残念でした。これを契機にGNOME Shell 拡張のDash to Dock に移行しましょうか。
+Dash to Dock のデフォルトのアニメーション設定は遅いので、設定で少し速くなるように変更しました。クリック感がないのと、ドックからアプリケーションを一括で閉じられないのが気になりますが、慣れでしょうか。しばらく触ってみて物足りなければ、自前でビルドするか、CairoDock を使うと思います。</p>
+
+<p><strong>EDIT:</strong></p>
+
+<h3>Avant Window Navigator</h3>
+
+<p><a href="http://www.webupd8.org/2012/11/how-to-install-avant-window-navigator.html">http://www.webupd8.org/2012/11/how-to-install-avant-window-navigator.html</a>
+やはり少し不便なので、webupd8 のリポジトリ(quantal)を利用してAWN をインストールしてみました。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/01/ubuntu_13_04_gnome_shell_awn.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/01/ubuntu_13_04_gnome_shell_awn-600x375.png" alt="ubuntu 13.04 gnome shell awn" /></a></p>
+
+<h3>Quit from Dash 拡張</h3>
+
+<p><a href="https://extensions.gnome.org/extension/559/quit-from-dash/">https://extensions.gnome.org/extension/559/quit-from-dash/</a>
+調べてみたら、Quit from Dash 拡張を使えば、Dash to Dock からでも複数起動した同種のアプリケーションを一括して終了させることができました。</p>
+
+<h3>現在使用中のGNOME Shell Extension</h3>
+
+<ul>
+<li><p>Auto hide top panel</p></li>
+<li><p>Drop down terminal</p></li>
+<li><p>GMail Notify</p></li>
+<li><p>メッセージトレイのカスタマイズ
+<a href="http://ktkr3d.site11.com/2012/12/31/move-the-hot-corner-of-the-message-tray/">http://ktkr3d.site11.com/2012/12/31/move-the-hot-corner-of-the-message-tray/</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Move the hot corner of the message tray]]></title>
@@ -176,89 +295,6 @@ Ubuntu のリポジトリを使いたいけれど、デスクトップ環境はG
 <p>ibus-anthy</p>
 
 <p>ibus-mozc</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Changing the date format in nautilus 3.6 list view]]></title>
-    <link href="http://ktkr3d.github.io/blog/2012/09/25/changing-the-date-format-in-nautilus-3-6-list-view/"/>
-    <updated>2012-09-25T06:45:38+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2012/09/25/changing-the-date-format-in-nautilus-3-6-list-view</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png" alt="nautilus 3.6 list view modification date" /></a>
-<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676898  ">https://bugzilla.gnome.org/show_bug.cgi?id=676898  </a>
-<a href="http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060">http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060</a></p>
-
-<p>nautilus 3.6 のリストビューでは、あえて更新日付の書式をシンプル(informal)にしているようです。これはこれでアリなのですが、やはり詳細表示されていた方が統一感があって使い勝手がよいような気がするので、昔のISO 日付書式になるようにカスタマイズしてみました。dpkg-buildpackage でfakeroot が効かなかったので、sudo で実行しています。</p>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get build-dep nautilus
-$ mkdir nautilus &amp;&amp; cd nautilus
-$ apt-get source nautilus
-$ dpkg-source -x <em>.dsc
-$ cd nautilus-3.</em>
-[/shell]
-[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4484&rdquo; highlight=&ldquo;4489&rdquo;]</p>
-
-<h1>define TODAY_TIME_FORMAT_24 N_(&ldquo;%R&rdquo;)</h1>
-
-<h1>define TODAY_TIME_FORMAT N_(&ldquo;%-I:%M %P&rdquo;)</h1>
-
-<h1>define THIS_MONTH_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
-
-<h1>define THIS_YEAR_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
-
-<h1>define ANYTIME_TIME_FORMAT N_(&ldquo;%b %-d %Y&rdquo;)</h1>
-
-<h1>define ANYTIME_TIME_FORMAT_ISO N_(&ldquo;%Y-%m-%d %H:%M:%S&rdquo;)</h1>
-
-<h1>define FULL_FORMAT N_(&ldquo;%a, %b %e %Y %I:%M:%S %p&rdquo;)</h1>
-
-<h1>define FULL_FORMAT_24 N_(&ldquo;%a, %b %e %Y %T&rdquo;)</h1>
-
-<p>[/c]
-[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4538&rdquo; highlight=&ldquo;4541&rdquo;]</p>
-
-<pre><code>} else {
-    format = ANYTIME_TIME_FORMAT;
-}
-format = ANYTIME_TIME_FORMAT_ISO;
-</code></pre>
-
-<p>[/c]
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo dpkg-buildpackage -us -uc -nc -b
-$ sudo dpkg -i ../nautilus_3.*.deb
-[/shell]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GNOME Shell extension - Drop Down Terminal]]></title>
-    <link href="http://ktkr3d.github.io/blog/2012/09/24/gnome-shell-extension-drop-down-terminal/"/>
-    <updated>2012-09-24T21:17:32+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2012/09/24/gnome-shell-extension-drop-down-terminal</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension-600x337.png" alt="gnome shell extension drop down terminal" /></a>
-<a href="https://extensions.gnome.org/extension/442/drop-down-terminal/">https://extensions.gnome.org/extension/442/drop-down-terminal/</a></p>
-
-<p>Drop Down Terminal はGNOME Shell 3.5.2 (正確にはgjs >= 1.33.2 and vte3 >= 0.31, gnome-shell >= 3.2 らしい)以降で動作する、ターミナル画面を表示するためのGNOME Shell 拡張機能です。Ubuntu 12.10 + GNOME Shell 3.5.92 の環境で使ってみました。
-GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面の上部に半透明なターミナル画面が瞬時に表示されます。もう一度[F12]キーを押すとターミナル画面が隠れます。作者のコメントによると、キーバインドはgsettings やdconf-editor でカスタマイズできるようです。
-ちょっとしたターミナル操作をする場合にとても便利です。クリップボードからのペーストは[Shift]&ndash;[Insert]が使用できます。フォーカスが合っていない場合はマウスでクリックすると良いようです。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GNOME Shell Focus Effect Extension]]></title>
-    <link href="http://ktkr3d.github.io/blog/2012/08/22/gnome-shell-focus-effect-extension/"/>
-    <updated>2012-08-22T03:18:13+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2012/08/22/gnome-shell-focus-effect-extension</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/08/gnome_shell_extension_focus_effect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/08/gnome_shell_extension_focus_effect.png" alt="gnome shell extensio focus effect" /></a></p>
-
-<p><a href="https://github.com/paradoxxxzero/gnome-shell-focus-effects-extension">https://github.com/paradoxxxzero/gnome-shell-focus-effects-extension</a></p>
-
-<p><a href="http://www.upubuntu.com/2012/08/how-to-install-gnome-shell-focus-effect.html">http://www.upubuntu.com/2012/08/how-to-install-gnome-shell-focus-effect.html</a></p>
-
-<p>GNOME Shell のFocus Effect 拡張を使ってみた。フォーカスの切り替えでウィンドウがアニメーションする。なんか楽しい。非アクティブなウィンドウは少し傾いて、サイズが小さく、色はグレーになる。スクリプトはとても小さいので、何かに応用できるかもしれない。
-副作用としては、非アクティブなウィンドウの選択に少しコツがいるようだ。また、何回か切り替えを繰り返した時に、ウィンドウが画面外に移動してしまう。その時は、[Alt]&ndash;[Space]で「移動」を選択して、ウィンドウを元の位置に動かすと回復できる。</p>
 ]]></content>
   </entry>
   

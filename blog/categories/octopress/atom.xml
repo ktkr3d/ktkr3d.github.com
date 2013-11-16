@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T16:32:12+09:00</updated>
+  <updated>2013-11-16T16:54:37+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[WordPress to Jekyll]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/11/16/wordpress-to-jekyll/"/>
+    <updated>2013-11-16T15:23:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/11/16/wordpress-to-jekyll</id>
+    <content type="html"><![CDATA[<p>無料Webサービスに設置していたブログのデータが消されてしまったので、バックアップデータからGitHub に取り込むことにしました。
+exitwp というスクリプトを使って、WordPress のデータをmarkdown に変換して、Octopress/Jekyll に取り込みました。</p>
+
+<p><a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
+
+<h4>exitwp を取得</h4>
+
+<p><code>sh
+$ git clone https://github.com/thomasf/exitwp
+$ cd exitwp
+</code></p>
+
+<h4>バックアップデータを格納</h4>
+
+<p><code>./wordpress-xml/wordpress.xml</code></p>
+
+<h4>前提パッケージをインストール</h4>
+
+<p><code>sh
+$ sudo apt-get install python-yaml python-bs4 python-html2text
+$ sudo pip install --upgrade  -r pip_requirements.txt
+</code></p>
+
+<h4>変換実行</h4>
+
+<p><code>sh
+$ python exitwp.py
+</code></p>
+
+<h4>Octopress/Jekyll へ取り込み</h4>
+
+<p><code>./build/</code>ディレクトリに作成されたデータをOctopress/Jekyll のディレクトリにコピーしてGenerate &amp; Deploy します。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Zenity OctoPress Helper]]></title>

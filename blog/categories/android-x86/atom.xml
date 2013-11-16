@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android-x86 | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android-x86/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T16:32:12+09:00</updated>
+  <updated>2013-11-16T16:54:37+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,120 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Android-x86 4.2.2]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/02/28/android-x86-4-2-2/"/>
+    <updated>2013-02-28T22:18:41+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/02/28/android-x86-4-2-2</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2_duo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2_duo.png" alt="android-x86 4.2.2 inspiron duo" /></a></p>
+
+<p><a href="http://www.android-x86.org/releases/build-20130228">http://www.android-x86.org/releases/build-20130228</a></p>
+
+<p>新しいAndorid-x86 4.2.2 のISO イメージが公開されたので、いつものようにInspion duo にインストールしてみました。Ubuntu をインストール済みのパーティションにフォーマットせずにインストールして、GRUB に起動用のエントリを追加しました。</p>
+
+<p>[plain title=&ldquo;/etc/grub.d/40_custom&rdquo;]
+menuentry &ldquo;Android-x86 4.2.2&rdquo; &mdash;class android &mdash;class os {</p>
+
+<pre><code>insmod ext2
+set root='(hd0,3)'
+echo 'Loading Android-x86 4.2.2 ...'
+linux /android-4.2-test/kernel root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-4.2-test DATA=
+initrd /android-4.2-test/initrd.img
+</code></pre>
+
+<p>}
+[/plain]</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo update-grub
+[/shell]</p>
+
+<p>今回のビルドは普通のデスクトップPC でも容易に起動しそうな気がします。</p>
+
+<h3>EDIT</h3>
+
+<p>デスクトップPC にインストールして、別のPC からAirDroid 経由で参照してみました。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2.png" alt="android-x86 4.2.2" /></a></p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/airdroid.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/airdroid.png" alt="airdroid android 4.2.2" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Windows 8 Boot Manager + GRUB4DOS + Android-x86]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86/"/>
+    <updated>2013-01-19T22:38:11+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86</id>
+    <content type="html"><![CDATA[<p>Windows 8 のブートマネージャからAndorid-x86 を起動する環境を、できるだけWindows 環境でできる手段で構築してみました。Andorid-x86 を起動する際にはGRUB がチェインロードされるような表示になります。Windows 8 のブートマネージャはタッチスクリーンが有効なので、キーボードを使わないで起動するOS を選択できますね。(ご質問いただいたので考えてみました)</p>
+
+<ol>
+<li><p> Windows 8 のインストール
+Windows 8 をインストールします。私の環境では、以下のようなパーティション構成になりました。
+第1パーティション(/dev/sda1) ntfs
+第2パーティション(/dev/sda2) ntfs Windows 8</p></li>
+<li><p> Andorid-x86 のインストール
+Android-x86 をWindows 8 のインストールされているNTFS パーティションにインストールします。もちろん、別のパーティションにインストールしても構いません。
+インストール先: /dev/sda2
+フォーマット: しない
+GRUB: インストールしない</p></li>
+<li><p> GRUB4DOS のダウンロード
+<a href="http://sourceforge.net/projects/grub4dos/files/GRUB4DOS/">http://sourceforge.net/projects/grub4dos/files/GRUB4DOS/</a> からgrub4dos-0.4.4.zip をダウンロードして、ZIP内の以下の4つのファイルをC:\ に展開します。</p>
+
+<ul>
+<li><p>default</p></li>
+<li><p>grldr</p></li>
+<li><p>grldr.mbr</p></li>
+<li><p>menu.lst</p></li>
+<li><p>GRUB4DOS の設定
+GRUB4DOS でAndroid-x86 を起動できるようにC:\menu.lst を編集します。
+[plain title=&ldquo;C:¥menu.lst&rdquo;]
+timeout 3
+default /default</p></li>
+</ul>
+</li>
+</ol>
+
+
+<p>title Android-x86 4.2.1 on /dev/sda2
+root (hd0,1)
+kernel /android-4.2-20121205/kernel root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-4.2-20121205 DATA=
+initrd /android-4.2-20121205/initrd.img
+savedefault</p>
+
+<p>title Android-x86 4.0.4 on /dev/sda2
+root (hd0,1)
+kernel /android-4.0-RC2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/android-4.0-RC2 DATA=
+initrd /android-4.0-RC2/initrd.img
+savedefault
+[/plain]
+※ 1番目のディスクの2番目のパーティション番号は(hd0,1) のように番号を-1した値になるので要注意です。
+※ 複数のバージョンを切り替えたい場合は複数件登録します。ただし、この起動の切り替えはタッチスクリーンが使えません。
+※ タイムアウト時間は好みで秒数を指定します。0にするとGRUB4DOSの画面が表示されなくなります。</p>
+
+<ol>
+<li> Windows 8 ブートマネージャにGRUB4DOS を登録
+コマンドプロンプトアイコンを右クリックして、「管理者として実行」します。
+[shell gutter=&ldquo;false&rdquo;]
+
+<blockquote><p>bcdedit /create /d &ldquo;Android-x86&rdquo; /application BOOTSECTOR
+[/shell]
+上記コマンドで表示された値{☆}を以下のコマンドで使います。
+[shell gutter=&ldquo;false&rdquo;]
+bcdedit /set {☆} device partition=C:
+bcdedit /set {☆} path \grldr.mbr
+bcdedit /displayorder {☆} /addlast
+[/shell]</p></blockquote></li>
+</ol>
+
+
+<p>ちなみに一旦別のブートローダにしてしまった後にWindows 8 のブートマネージャに戻すには、コマンドプロンプトアイコンを右クリックして、「管理者として実行」して、以下のコマンドを実行します。
+[shell gutter=&ldquo;false&rdquo;]</p>
+
+<blockquote><p>bcdboot C:\Windows
+[/shell]</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Android-x86 4.2.1]]></title>
@@ -217,223 +331,6 @@ $ make -f client.mk build_and_deploy
 
 <p><strong>EDIT:</strong>
 VLC だと760p も全く問題なく再生できました。音量調節は上下にフリックします。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android-x86 4.0.3 + Firefox(Fennec) 16.0a1]]></title>
-    <link href="http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/"/>
-    <updated>2012-06-23T12:03:13+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png" alt="android-x86 4.0.3 firefox fennec 16.0a1" /></a></p>
-
-<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a>
-Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386-linux-android 向けのmozconfig を見つけたけれど、そのままではうまくビルドできなかったので、修正して利用してみた。Android SDK/NDK の環境はできているので、その後から始めよう。ビルドする環境はUbuntu 12.04 x86_64。Android 端末は、Inspiron duo にandroid-x86-4.0-RC1-tegav2.iso をインストール済み。</p>
-
-<ol>
-<li><p> ビルドするための依存関係の取得
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install mercurial ccache
-$ sudo apt-get build-dep firefox
-[/shell]</p></li>
-<li><p> Firefox のソースの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src
-[/shell]</p></li>
-<li><p> MOZCONFIG のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cd src
-$ gedit mozconfig-android-x86
-[/shell]
-[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
-
-<h1>Global options</h1>
-
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p></li>
-</ol>
-
-
-<h1>Build Fennec</h1>
-
-<p>ac_add_options &mdash;enable-application=mobile/android</p>
-
-<h1>Android</h1>
-
-<p>ac_add_options &mdash;target=i386-linux-android
-ac_add_options &mdash;with-endian=little
-ac_add_options &mdash;with-android-ndk=&ldquo;$HOME/Projects/Android/android-ndk-r8&rdquo;
-ac_add_options &mdash;with-android-sdk=&ldquo;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&rdquo;
-ac_add_options &mdash;with-android-version=10
-ac_add_options &mdash;with-android-platform=&ldquo;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&rdquo;
-ac_add_options &mdash;with-system-zlib</p>
-
-<h1></h1>
-
-<p>ac_add_options &mdash;disable-auto-deps
-ac_add_options &mdash;disable-debug
-ac_add_options &mdash;disable-debug-symbols
-ac_add_options &mdash;disable-tests
-ac_add_options &mdash;disable-ipdl-tests
-ac_add_options &mdash;enable-strip
-ac_add_options &mdash;enable-install-strip</p>
-
-<h1>updater</h1>
-
-<p>ac_add_options &mdash;disable-updater
-ac_add_options &mdash;disable-update-channel
-ac_add_options &mdash;disable-update-packaging</p>
-
-<h1>crash reporter</h1>
-
-<p>ac_add_options &mdash;disable-crashreporter</p>
-
-<h1>maintenance service</h1>
-
-<p>ac_add_options &mdash;disable-maintenance-service</p>
-
-<h1>JDK</h1>
-
-<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
-
-<h1>branding</h1>
-
-<p>ac_add_options &mdash;with-branding=mobile/android/branding/beta
-[/plain]</p>
-
-<ol>
-<li><p> ロゴ画像の作成
-他のサイズのロゴ画像を参考にサイズ40x40 のPNG 形式画像を作成する。
-./mobile/android/branding/beta/content/fennec_40x40.png</p></li>
-<li><p> インストール先のAndroid 端末を無線LAN で接続する。
-[shell gutter=&ldquo;false&rdquo;]
-$ export ADBHOST=192.168.0.4
-$ adb devices
-[/shell]</p></li>
-<li><p> ビルドとインストール
-[shell gutter=&ldquo;false&rdquo;]
-$ export MOZCONFIG=./mozconfig-android-x86
-$ make -f client.mk build_and_deploy
-$
-[/shell]
-インストーラパッケージは以下に生成される。
-./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p></li>
-<li><p> 次回ビルド時にソースを最新の状態にするには
-[shell gutter=&ldquo;false&rdquo;]
-$ hg pull -u
-[/shell]</p></li>
-</ol>
-
-
-<!-- more -->
-
-
-<p>いくつか気になることがあったので、修正してリビルドしてみた。</p>
-
-<ul>
-<li><p>about:buildconfig でAndroid SDK やAndroid NDK の絶対パスが見えてしまうので、/tools/ 下からシンボリックリンクを張った。</p></li>
-<li><p>branding をnightly に変更した。</p></li>
-<li><p>ロゴ画像を追加するのをやめた。（必要なかった。）</p></li>
-</ul>
-
-
-<p>[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
-
-<h1>Global options</h1>
-
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
-
-<h1>Build Fennec</h1>
-
-<p>ac_add_options &mdash;enable-application=mobile/android</p>
-
-<h1>Android</h1>
-
-<p>ac_add_options &mdash;target=i386-linux-android
-ac_add_options &mdash;with-endian=little
-ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r8&rdquo;
-ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-15&rdquo;
-ac_add_options &mdash;with-android-version=10
-ac_add_options &mdash;with-system-zlib
-ac_add_options &mdash;with-android-platform=&ldquo;/tools/android-ndk-r8/platforms/android-14/arch-x86&rdquo;</p>
-
-<h1></h1>
-
-<p>ac_add_options &mdash;disable-auto-deps
-ac_add_options &mdash;disable-debug
-ac_add_options &mdash;disable-debug-symbols
-ac_add_options &mdash;disable-tests
-ac_add_options &mdash;disable-ipdl-tests
-ac_add_options &mdash;enable-strip
-ac_add_options &mdash;enable-install-strip</p>
-
-<h1>updater</h1>
-
-<p>ac_add_options &mdash;disable-updater
-ac_add_options &mdash;disable-update-channel
-ac_add_options &mdash;disable-update-packaging</p>
-
-<h1>crash reporter</h1>
-
-<p>ac_add_options &mdash;disable-crashreporter</p>
-
-<h1>maintenance service</h1>
-
-<p>ac_add_options &mdash;disable-maintenance-service</p>
-
-<h1>JDK</h1>
-
-<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
-
-<h1>mozilla</h1>
-
-<p>ac_add_options &mdash;with-branding=mobile/android/branding/nightly
-[/plain]
-about:buildconfig の内容
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png" alt="android-x86 firefox fennec 16.0a1 buildconfig" /></a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android NDK + Android-x86 4.0.3]]></title>
-    <link href="http://ktkr3d.github.io/blog/2012/06/17/android-ndk-android-x86-4-0-3/"/>
-    <updated>2012-06-17T18:54:52+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2012/06/17/android-ndk-android-x86-4-0-3</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android_ndk_android-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android_ndk_android-x86.png" alt="android ndk android-x86 irrlicht" /></a></p>
-
-<p>Android 2.3 用のアプリをAndroid-x86 4.0.3 用にリビルドして、Inspiron duo 実機で動かしてみた。さすがにスマートフォンより動作が非常に軽快だけど、画面がiPod の広告みたいになってしまった。画像やフォントが表示されてないのは、なんでだろう。パスがずれているのかな。パスが違っていたらエラーになるはずなんだけど。ボタンイベントはタッチスクリーン上を指で押したら正しく動作した。</p>
-
-<ol>
-<li><p> Android 4.0.3 のターゲット情報は以下のとおり。ID は10。
-[shell gutter=&ldquo;false&rdquo;]
-$ android list target
-id: 10 or &ldquo;android-15&rdquo;
- Name: Android 4.0.3
- Type: Platform
- API level: 15
- Revision: 3
- Skins: WXGA720, QVGA, WSVGA, WQVGA400, WQVGA432, HVGA, WVGA854, WXGA800, WVGA800 (default)
- ABIs : armeabi-v7a, x86
-[/shell]</p></li>
-<li><p> Application.mk でx86 を指定
-[plain title=&ldquo;Application.mk&rdquo; firstline=&ldquo;8&rdquo; highlight=&ldquo;9&rdquo;]</p>
-
-<h1>APP_ABI := armeabi armeabi-v7a</h1>
-
-<p>APP_ABI := armeabi-v7a x86
-[/plain]</p></li>
-<li><p> プロジェクトをアップデート
-[shell gutter=&ldquo;false&rdquo;]
-$ android update project &mdash;path . &mdash;target 10
-[/shell]</p></li>
-<li><p> ビルド
-[shell gutter=&ldquo;false&rdquo;]
-$ ndk-build clean
-$ ndk-build -j 4
-$ ant clean
-$ ant debug
-[/shell]</p></li>
-</ol>
-
 ]]></content>
   </entry>
   

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: P2P | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/p2p/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T16:54:37+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[BitTorrent Live Beta]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/03/17/bittorrent-live-beta/"/>
+    <updated>2013-03-17T22:55:37+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/03/17/bittorrent-live-beta</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/BitTorrentLive_Beta.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/BitTorrentLive_Beta-600x375.png" alt="BitTorrent Live" /></a></p>
+
+<p><a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a>
+P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTorrent Live」のオープンベータテストが開始されたので、試してみました。Windows/Mac/Ubuntu 用のクライアントプログラムBTLive が配布されており、私はUbuntu 64bit 用をダウンロードしてインストールしました。インストールから視聴までの手順は以下のとおりです。</p>
+
+<ol>
+<li><p> <a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a> の一番下のリンクから各OS 用のクライアントプログラムをダウンロードして、インストールします。</p></li>
+<li><p> [アプリケーション]&ndash;[インターネット]&ndash;[BTLive]を起動します。</p></li>
+<li><p> <a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a> で公開されているチャンネルを視聴します。アカウントを登録すれば、配信もできます。配信はWebCam かエンコーダ等のアプリが利用できます。</p></li>
+</ol>
+
+
+<p>P2P なので、視聴者が増えた時に有利なようです。Peercast と同じような原理でしょうか。ポートを開ける手間がないのが、お手軽でよいかもしれません。手動でポートを開ける場合はUDP ports 31400-31499 らしいです。トレイアイコンをクリックすると、送受信のビットレートが表示されます。btlive コマンドのパラメタは以下のとおり。</p>
+
+<p>[bash gutter=&ldquo;false&rdquo;]
+$ btlive &mdash;help
+usage: btlive [-h] [-v] [&mdash;force-version FORCED_VER] [-o OFFSET]</p>
+
+<pre><code>          [-j TRACKER|SWARMPUBKEY] [--no-crashlog-reporting]
+          [--no-stats-thread] [--no-bench-thread] [--no-update-thread]
+          [--no-headless-thread] [--no-nat-detection] [--no-rtmp-server]
+          [--no-http-server] [--no-local-discovery] [--no-sysreqs]
+          [--ignore-headless | --force-headless] [--staging-bench]
+          [--staging-dau] [--staging-onair] [--testing-mode] [--nogui]
+</code></pre>
+
+<p>optional arguments:
+  -h, &mdash;help            show this help message and exit
+  -v, &mdash;version         show program&rsquo;s version number and exit
+  &mdash;force-version FORCED_VER</p>
+
+<pre><code>                    Forces Live to think that it is another version
+                    number. Must follow format 0.4.11.1234.
+</code></pre>
+
+<p>  -o OFFSET, &mdash;offset OFFSET</p>
+
+<pre><code>                    RTMP Server port offset (from 1935). A value of 100 is
+                    commonly used for sourcing.
+</code></pre>
+
+<p>  -j TRACKER|SWARMPUBKEY, &mdash;join TRACKER|SWARMPUBKEY</p>
+
+<pre><code>                    Swarm to autojoin on launch. Specify the tracker and
+                    the swarm public key, separated by a pipe symbol
+                    ('|').
+</code></pre>
+
+<p>  &mdash;no-crashlog-reporting</p>
+
+<pre><code>                    Disable all communication with the crashlog server.
+</code></pre>
+
+<p>  &mdash;no-stats-thread     Disable debugging statistics being reported to</p>
+
+<pre><code>                    graphite/statsd.
+</code></pre>
+
+<p>  &mdash;no-bench-thread     Disable bench statistics.
+  &mdash;no-update-thread    Disable autoupdate checking.
+  &mdash;no-headless-thread  Disable all communication with the automation server.
+  &mdash;no-nat-detection    Disable NAT detection on launch.
+  &mdash;no-rtmp-server      Disable RTMP server.
+  &mdash;no-http-server      Disable HTTP server.
+  &mdash;no-local-discovery  Disable local peer discovery.
+  &mdash;no-sysreqs          Disable system requirements for launch/install.
+  &mdash;ignore-headless     Set headless_enabled pref to off and ignore any</p>
+
+<pre><code>                    scheduled tests.
+</code></pre>
+
+<p>  &mdash;force-headless      Set headless_enabled pref to on and join any scheduled</p>
+
+<pre><code>                    tests.
+</code></pre>
+
+<p>  &mdash;staging-bench       Use staging bench server for bench statistics.
+  &mdash;staging-dau         Use staging server for autoupdate.
+  &mdash;staging-onair       Use staging server for on-air messaging.
+  &mdash;testing-mode        Disable all non-essential network communication.</p>
+
+<pre><code>                    Implies --no-crashlog-reporting, --no-nat-detection,
+                    --no-stats-thread, --no-update-thread, --no-headless-
+                    thread, and --no-sysreqs.
+</code></pre>
+
+<p>  &mdash;nogui               Disable GUI/icon.
+[/bash]</p>
+]]></content>
+  </entry>
+  
+</feed>

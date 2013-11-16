@@ -9,11 +9,9 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="
-http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=40262
-UK ではミクさんが話題みたいだけど、これを作ったのもUK の人みたい
-irrCg を使っていてリアルタイムにアニメーションする
-">
+  <meta name="description" content="http://www.android-x86.org/getsourcecode
+android-x86 のサイトでAndroid 2.3(gingerbread)版のリポジトリが公開されているものの、ISO イメージが公開されていないので、自分でビルドしてみた。
+[text gutter=& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,7 +95,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/10/23/post_11/">ミクさんのデモを試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/02/11/android-x86_23/">Android-x86 2.3(Ginger Bread)をビルドしてみた</a></h1>
     
     
       <p class="meta">
@@ -113,17 +111,23 @@ $(document).ready( function () {
   
 
 
-<time datetime="2010-10-23T22:33:38+09:00" pubdate data-updated="true">2010年10月23日</time>
+<time datetime="2011-02-11T19:50:17+09:00" pubdate data-updated="true">2011年02月11日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/10/miku.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/10/miku.png" alt="miku irrlicht" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=40262">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=40262</a>
-UK ではミクさんが話題みたいだけど、これを作ったのもUK の人みたい
-irrCg を使っていてリアルタイムにアニメーションする</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/02/gingerbread-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/02/gingerbread-x86.png" alt="android android-x86 2.3 gingerbread" /></a>
+<a href="http://www.android-x86.org/getsourcecode">http://www.android-x86.org/getsourcecode</a>
+android-x86 のサイトでAndroid 2.3(gingerbread)版のリポジトリが公開されているものの、ISO イメージが公開されていないので、自分でビルドしてみた。
+[text gutter=&ldquo;false&rdquo;]
+$ uname -a
+Linux localhost 2.6.37-android-x86+ #1 SMP PREEMPT Fri Feb 11 18:01:30 JST 2011 i686 GNU/Linux
+[/text]
+カーネルが2.6.37 系になったみたい。
+2.2版(Froyo-x86)にあったethernet 関連のモジュールが入っていない(?)せいか、そのままでは有線LAN がうまく動かないみたいだ。
+マウスの挙動も少し変かもしれない。</p>
 </div>
   
   
@@ -136,7 +140,7 @@ irrCg を使っていてリアルタイムにアニメーションする</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/10/17/blood_water/">Blood & Water を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/02/06/android_30/">Android 3.0 を試してみた</a></h1>
     
     
       <p class="meta">
@@ -152,24 +156,19 @@ irrCg を使っていてリアルタイムにアニメーションする</p>
   
 
 
-<time datetime="2010-10-17T17:06:32+09:00" pubdate data-updated="true">2010年10月17日</time>
+<time datetime="2011-02-06T13:14:51+09:00" pubdate data-updated="true">2011年02月06日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/10/water.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/10/water.png" alt="blood water irrlicht" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624</a>
-Water エフェクトは水面のゆらぎや反射がうまく表現されていて近距離でも遠距離でも見栄えがする
-Blood エフェクト(KEY1〜KEY5)は使いどころが限られるかも
-DirectX/HLSL 以外にも同じトピック内にOpenGL/GLSL にコンバートされたスクリプトも掲載されているけれど少し修正が必要でレンダリングがチープ&hellip;
-改造すればHLSL 版と同様なことが実現できそうなんだけど
-media/shaders/blood_ps.glsl
-uniform float time; → float time;
-varying vec2 texCoord; → vec2 texCoord;
-media/shaders/water_ps.glsl
-varying vec2 texCoords; → vec2 texCoords;</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android_honeycomb.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android_honeycomb.png" alt="" /></a>
+<a href="http://developer.android.com/sdk/android-3.0-highlights.html">http://developer.android.com/sdk/android-3.0-highlights.html</a>
+環境構築をしていたらAndroid SDK 3.0 のPreview があったので、エミュレータでAndroid 3.0(Honeycomb)を起動してみた。
+実機やVM と比べるともっさりした感じ。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android_helloworld.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android_helloworld.png" alt="android 3.0 honeycomb hello world" /></a>
+はろーあんどろいど！</p>
 </div>
   
   
@@ -182,7 +181,7 @@ varying vec2 texCoords; → vec2 texCoords;</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/10/16/billardgl/">BillardGL で遊んでみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/02/05/android-x86/">Android-x86 を試してみた</a></h1>
     
     
       <p class="meta">
@@ -198,124 +197,31 @@ varying vec2 texCoords; → vec2 texCoords;</p>
   
 
 
-<time datetime="2010-10-16T14:16:12+09:00" pubdate data-updated="true">2010年10月16日</time>
+<time datetime="2011-02-05T12:42:40+09:00" pubdate data-updated="true">2011年02月05日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/10/biilardgl.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/10/biilardgl.png" alt="billardgl" /></a>
-<a href="http://www.billardgl.de/">http://www.billardgl.de/</a>
-3D のビリヤードゲーム
-F1〜F8 キーで画面がかっこよくくるくる回転する
-Ubuntu のタブレットPC デモ動画に載っていたのでリポジトリにあるのかと思いきや無く、ホームページのdeb パッケージのリンクも切れていて、alien もdeb パッケージを生成できなかったのでソースからビルドしてみた
-src/bmp.cpp の修正</p>
-
-<pre><code>&lt;code&gt;#include &lt;iostream&gt;
-using namespace std;
-#include &lt;fstream&gt;&lt;/code&gt;
-</code></pre>
-
-<p>リンクするライブラリ
-Xxf86vm; GL; GLU; glut;
-リソースファイルのコピー
-src/Texturen → /usr/share/BillardGL/Texturen
-src/lang → /usr/share/BillardGL/lang
-追記: Ubuntu でのパッケージ名はbillard-gl だった
-追記2: openSUSE にあるfoobillard も同様によくできている</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/30/caph/">Caph で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-30T00:37:59+09:00" pubdate data-updated="true">2010年09月30日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/caph.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/caph.png" alt="caph" /></a>
-<a href="http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml">http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml</a>
-マウスで描いた軌跡で作った物体を使って解くパズルゲーム
-物理エンジンのリアルな動きがおもしろいー
-README のとおりにやってうまく動かなかったのでちょっと修正
-src/draw.c(299): png_get_IHDR() のheight が変な値を返すので変数h の値を修正(64bit OS 上でのpng_uint_32 型の処理にバグがあるのかな)</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/18/monodevelop/">MonoDevelop を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-18T01:30:11+09:00" pubdate data-updated="true">2010年09月18日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/monodevelop.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/monodevelop.png" alt="monodevelop" /></a>
-Unity のv3 からMonoDevelop でのステップ実行/変数ウォッチができるようになると聞いてMonoDevelop を試してみた(v2.6 でも単純な連携はできるんだけどね)はやく無償版ユーザにもUnity v3/ベータが公開されないかなぁ
-ちょっと使ってみた感じ</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android-x86_hdmi.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/android-x86_hdmi.png" alt="android android-x86" /></a>
+<a href="http://www.android-x86.org/">http://www.android-x86.org/</a>
+Android をx86 にポートしたAndroid-x86 のバージョン2.2(Froyo-x86) をネットブック実機と仮想環境の両方で試してみた。
+バージョン2.3(Gingerbread-x86) のブランチもあったけれど、さすがにAndroid 3.0 版(Honeycomb)はなかった。
+[text gutter=&ldquo;false&rdquo;]
+$ uname -a
+Linux localhost 2.6.35.7-android-x86+ #3 SMP PREEMPT Thu Jan 13 18:03:15 CST 2011 i686 GNU/Linux
+[/text]</p>
 
 <ul>
-<li><p>Linux/Windows で使える</p></li>
-<li><p>MONO だけに.NET アプリが作れるみたい(作らないけどね)</p></li>
-<li><p>プロジェクトファイルがVC のソリューションファイル(.sln)っぽいのでWindows とLinux 共通なプロジェクトを作成するのに便利かもしれない(Code::Blocks でもできるけどやはりWindows はVC 使うだろうし)</p></li>
-<li><p>実行ディレクトリの指定をどこでするのかわからなかったけれど、通常実行はロードモジュール格納ディレクトリ、デバッグ実行はホームディレクトリ!?っぽい</p></li>
-<li><p>言語特有の細かい設定はできない代わりにいろいろな言語がプラグイン的に広くサポートできるようになっている</p></li>
-<li><p>Subversion のプラグインも付いている</p></li>
+<li><p>GRUB からの起動時にSD カードに見せかけるパーティションを追加指定(&ldquo;SDCARD=/dev/sdb2&rdquo; 等)</p></li>
+<li><p>音声、動画、有線LAN、キーボード、マウスは問題なかった</p></li>
+<li><p>手持ちのネットブックのカメラ、タッチスクリーン、無線LAN はうまく動かなかった</p></li>
+<li><p>App Store からのインストールはできたけれど、Android Market からのインストールができなかった（これは仕方なしか&hellip;）</p></li>
 </ul>
 
 
-<p>ちなみにWine 環境でのUnity の動作評価はBronze みたい
-<a href="http://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=11075">http://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=11075</a></p>
+<p>3.0 版もはやくリリースされないかな。</p>
 </div>
   
   
@@ -328,7 +234,7 @@ Unity のv3 からMonoDevelop でのステップ実行/変数ウォッチがで�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/12/puzzle_game/">Puzzle Game で遊んでみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/01/13/ubuntu_1104/">Ubuntu 11.04 a を試してみた</a></h1>
     
     
       <p class="meta">
@@ -344,20 +250,35 @@ Unity のv3 からMonoDevelop でのステップ実行/変数ウォッチがで�
   
 
 
-<time datetime="2010-09-12T16:31:24+09:00" pubdate data-updated="true">2010年09月12日</time>
+<time datetime="2011-01-13T22:18:39+09:00" pubdate data-updated="true">2011年01月13日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/puzzle_game.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/puzzle_game.png" alt="" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=36539">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=36539</a>
-いわゆる倉庫番の3D 版
-ほのぼの
-レベルエディタ機能もついてる！！
-PuzzleGame.exe -e mylevel.lev
-./PuzzleGame.linux -e mylevel.ev</p>
+  <div class="entry-content"><p>挙動が怪しいところがあるものの一通り動くようになっていた
+<a href="http://cdimage.ubuntu.com/">http://cdimage.ubuntu.com/</a>
+<strong>パッケージ</strong>
+&ndash; kernel 2.6.37
+&ndash; xorg-server 1.9.0
+&ndash; Unity
+&ndash; Firefox 4.0b
+* Firefox Sync が標準になってた
+* Tab Mix Plus の代わりにTab Utilities を利用
+* yoono が対応するまで代わりにyoono-desktop を利用
+(<a href="https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi/versions/">https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi/versions/</a>)
+* Textlink はinstall.rdf を書き換え
+* Stylish は後で探そう
+&ndash; Banshee 1.9
+<strong>気づき事項</strong>
+* 起動後とりあえずNautilus を起動すると他のアプリのメニュー表示が安定するみたい
+* サイドバーランチャーの登録処理が怪しい
+* 音量アプレットがうまく動作しないことがある
+* シャットダウン・リブートが完了しないことがある
+* GNOME メニューの表示仕様は今後改善されそう
+* fglrx はもう少し落ちついてから試そう
+アップデートが頻繁にあるので、このまま様子見</p>
 </div>
   
   
@@ -370,7 +291,7 @@ PuzzleGame.exe -e mylevel.lev
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/12/post_10/">ラジオシティを試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/01/02/kinect_1/">Kinect でミクさんを動かしてみた</a></h1>
     
     
       <p class="meta">
@@ -386,20 +307,16 @@ PuzzleGame.exe -e mylevel.lev
   
 
 
-<time datetime="2010-09-12T15:52:02+09:00" pubdate data-updated="true">2010年09月12日</time>
+<time datetime="2011-01-02T23:06:52+09:00" pubdate data-updated="true">2011年01月02日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/gpurad.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/gpurad.png" alt="gpurad irrlicht" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186</a>
-CRadiosityGenerator クラスを使ってみた(とりあえず光反射は3回にしてみた)
-モデルと光源を工夫するともっといい画像が撮れそう
-内部でXEffects を使用している
-shader model 2.0 対応のGPU 限定になるみたい
-ファイル名&#8221;MainBuilding.irrmesh&#8221; がmain.cpp 内と異なっているので修正した</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/miku_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/miku_kinect.png" alt="miku kinect" /></a>
+ボーンの座標とかを修正してみた。
+四肢の動きが「遊星からの物体X」から「人型」に進化した。</p>
 </div>
   
   
@@ -412,7 +329,7 @@ shader model 2.0 対応のGPU 限定になるみたい
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/12/terrain_pager/">Terrain Pager を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/12/27/faast_wow/">FAAST でWoW を操作してみた</a></h1>
     
     
       <p class="meta">
@@ -428,20 +345,19 @@ shader model 2.0 対応のGPU 限定になるみたい
   
 
 
-<time datetime="2010-09-12T10:25:53+09:00" pubdate data-updated="true">2010年09月12日</time>
+<time datetime="2010-12-27T18:32:39+09:00" pubdate data-updated="true">2010年12月27日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/iterrain.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/iterrain.png" alt="iterrain irrlicht" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29356">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29356</a>
-広大なマップを格子状に区切って近隣部分のみ表示することによってメモリの節約と性能の向上を図るもののよう
-Fog と一緒に使うべきだけどわかりにくいのでFog を外してみた
-シームレスなマップの切り替えに使えそう</p>
-
-<h1>他にも同じような実装を見かけたような気がするけれど失念&hellip;</h1>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/FAAST_WoW2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/FAAST_WoW2.png" alt="FAAST WoW kinect" /></a>
+<a href="http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f">http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f</a>
+OpenNI のフォーラムにKinect を使ってWorld of Warcraft を操作するFAAST(Flexible Action and Articulated Skeleton Toolkit) のデモがあったので試してみた。
+デフォルトでは体を傾けると前進/後退/右旋回/左旋回が設定されている。
+「left_arm_up」アクションを「0」キーにアサインして、Druid クラスのスペル「<a href="http://www.wowwiki.com/Mark_of_the_Wild"><img src="mt.cgi_files/Spell_nature_regeneration.png" alt="" />Mark of the Wild</a>」を唱えてみた。
+FAAST のホームページによるとマウスイベントのエミュレータ追加とLinux 版ポーティングも計画されているらしい。</p>
 </div>
   
   
@@ -454,7 +370,7 @@ Fog と一緒に使うべきだけどわかりにくいのでFog を外してみ
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/11/shader/">シェーダラッパをちょっと試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/12/25/ogre3d_1/">まずはOgre3D でミクさんを表示してみた</a></h1>
     
     
       <p class="meta">
@@ -470,55 +386,28 @@ Fog と一緒に使うべきだけどわかりにくいのでFog を外してみ
   
 
 
-<time datetime="2010-09-11T23:53:32+09:00" pubdate data-updated="true">2010年09月11日</time>
+<time datetime="2010-12-25T21:35:34+09:00" pubdate data-updated="true">2010年12月25日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Irrlicht で使えるシェーダラッパをRadeon でちょっとだけ試してみた</p>
-
-<p>XEffects
-irrCg</p>
-
-<p>Normal
-VSM
-Forward
-Deferred</p>
-
-<p>Windows
-DirectX
-OK
-OK
-OK
-OK</p>
-
-<p>OpenGL
-OK
-OK
-OK
-OK</p>
-
-<p>Linux
-OpenGL/fglrx
-OK
-OK
-OK
-?</p>
-
-<p>OpenGL/OSS</p>
-
-<h2>OK</h2>
-
-<p>OK
-?</p>
-
-<p>Linux + Radeon の組み合わせはやっぱりまだ鬼門なのかな&hellip;
-? はうまく描画されない
-&ndash; はIrrlicht 内で落ちる
-OSSは今後の実装/改善に期待かな
-<a href="http://www.x.org/wiki/RadeonFeature">http://www.x.org/wiki/RadeonFeature</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_miku.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_miku.png" alt="ogre3d miku pmd" /></a>
+Kinect でミクさんを動かしてみようと思い、とりあえずOgre3D でミクさんを表示してみた
+Kinect に接続して動かしてみると、この世のものとは思えない動きをするようになった
+ボーンの見直しが必要だ&hellip;
+<strong>モデルの変換</strong>
+1. PMDEditor でPMD モデルのサイズ変更(x0.5)、位置変更(Y:-5)
+2. Pmd2OgreMesh (作者さんに感謝!!)で.pmd から.mesh, .mesh.xml, .skeleton, .skeleton.xml, .materialを生成
+3. XML データ修正
+&ndash; .skeleton.xml にSinbad.skeleton のanimation 13種類をダミーで挿入
+&ndash; .skeleton.xml 内のボーン名(bone000 等10個)をSinbad.skelton のボーン名(Root 等)に置換
+4. OgreXMLConverter で .skeleton.xml → .skeleton を再生成
+<strong>ソースの修正</strong>
+1. 剣メッシュ関連の処理(剣の表示や剣を抜く動作等)をコメントアウト
+2. マッピングしなかったボーン名(Stomach, Waist)についてはtransformBone() をコメントアウト
+3. setupbone() で指定する角度を修正</p>
 </div>
   
   
@@ -531,7 +420,7 @@ OSSは今後の実装/改善に期待かな
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/11/irrcg/">irrCg を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/12/24/linux_kinect/">Linux でKinect Sinbad デモを動かしてみた</a></h1>
     
     
       <p class="meta">
@@ -547,30 +436,125 @@ OSSは今後の実装/改善に期待かな
   
 
 
-<time datetime="2010-09-11T01:02:18+09:00" pubdate data-updated="true">2010年09月11日</time>
+<time datetime="2010-12-24T03:33:41+09:00" pubdate data-updated="true">2010年12月24日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/cg.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/cg.png" alt="irrcg irrlicht" /></a>
-nVidia のCg 言語のシェーダラッパirrCg を試してみた
-Radeon でも使える
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=23676">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=23676</a>
-<a href="http://code.google.com/p/irrcg/">http://code.google.com/p/irrcg/</a>
-1. Cg のライブラリをダウンロード
-nVidia(<a href="http://developer.nvidia.com/object/cg_download.html">http://developer.nvidia.com/object/cg_download.html</a>)
-2-a. irrCg 0.7.1 の場合
-IrrCgExtensionHandler.h に以下を追加</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/linux_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/linux_kinect.png" alt="linux kinect" /></a>
+OpenNI のSinbad デモ(SampleAppSinbad)のLinux 版が見つからなかったのでポーティングしてみた
+<strong>環境</strong>
+OS: Ubuntu 10.10 32bit
+Ogre3D: Ver. 1.7.2
+IDE: Code::Blocks 10.05
+GCC: 4.4.5
+<strong>改造前ソース</strong>
+<a href="https://github.com/OpenNI/SampleAppSinbad">https://github.com/OpenNI/SampleAppSinbad</a>
+<strong>主な修正点</strong>
+Sinbad:
+&ndash; Code::Blocks でOgre3D プロジェクト(コンソールアプリケーション)を作成
+&ndash; FileSystemLayerImpl_WIN32.cpp の代わりにFileSystemLayerImpl_Unix.cpp を使用
+&ndash; FileSystemLayerImpl_Unix.cpp でerrno.h のインクルードを追加
+&ndash; SampleBrowser.cpp でAllocConsole.h のインクルードを削除
+Sample_Character.so:
+&ndash; Code::Blocks でOgre3D プロジェクト(動的ライブラリ)を作成
+&ndash; WIN32 依存処理(time とか)を修正
+&ndash; XnSkeletonJoint のスコープを省略
+&ndash; Ogre オリジナルヘッダにOgreBites::YesNoSlider が含まれていないので、CharacterSample.h
+では&#8221;SdkSample.h&#8221;ではなく&#8221;../../Common/include/SdkSample.h&#8221;をインクルードする
+&ndash; openNi.xml のパス指定を修正
+&ndash; OpenNI とXnVNite をリンク
+ogre.cfg:
+&ndash; レンダラをOpenGL のみにする
+&ndash; 「Colour Depth」、「VSync Interval」のエントリを削除
+plugins.cfg:
+&ndash; Direct3D 系のレンダラのエントリをコメントアウト</p>
+</div>
+  
+  
 
-<pre><code>&lt;code&gt;#include "GL/glx.h"&lt;/code&gt;
-</code></pre>
 
-<p>2-b. irrCg 0.8 from SVN の場合
-IrrCg.h 内の宣言とexample 内のmain.cpp 内で継承した関数の宣言が不一致なのでヘッダを元に修正、Pixel はFragment にする
-3. ケースセンシティブなところをとりあえず対処
-./cg/NormalMapping.cg をコピーして./cg/normalmapping.cg を作る</p>
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/23/ogre3d/">ついでにOgre3D を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-23T13:46:25+09:00" pubdate data-updated="true">2010年12月23日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_skeltal.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_skeltal.png" alt="ogre3d skeltal SampleBrowser" /></a>
+OpenNI のSampleAppSinbad デモがOgre3D で出来ていたので初めてOgre3D を触ってみた
+Ogre3D 自体はWindows でもLinux でも動くしエフェクトも揃ってそうなのでなかなか良さそう
+サンプルパッケージ(ogre-samples-bin)の実行は/usr/bin/SampleBrowser
+OpenNI のSampleAppSinbad デモはOgre3D のSampleBrowser
+のモジュール(Sample_Character)を改造しているようなので、WIN32
+依存のコード(SkeletonPoseDetector.h, SinbadCharacterController.h
+あたり)を修正すればLinux でも動くかもしれない
+Kinect を使った他のOpenNI のデモ自体はLinux でも動いたし</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/22/kinect/">Kinect を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-22T19:16:07+09:00" pubdate data-updated="true">2010年12月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/12/kinect_ogre3d.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/12/kinect_ogre3d.png" alt="kinect ogre3d" /></a>
+<a href="https://github.com/OpenNI/SampleAppSinbad">https://github.com/OpenNI/SampleAppSinbad</a>
+<a href="http://www.ogre3d.org/forums/viewtopic.php?f=11&amp;t=61571">http://www.ogre3d.org/forums/viewtopic.php?f=11&amp;t=61571</a>
+Kinect が話題になっていたのでOgre3D 版のデモ（ソース付き）を試してみた
+認識の精度が予想以上に高くて驚いた&hellip;</p>
 </div>
   
   
@@ -618,7 +602,7 @@ IrrCg.h 内の宣言とexample 内のmain.cpp 内で継承した関数の宣言�
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

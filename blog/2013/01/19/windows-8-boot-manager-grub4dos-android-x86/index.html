@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Windows 8 Boot Manager + GRUB4DOS + Android-x86 - ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="Windows 8 のブートマネージャからAndorid-x86 を起動する環境を、できるだけWindows 環境でできる手段で構築してみました。Andorid-x86 を起動する際にはGRUB がチェインロードされるような表示になります。Windows 8 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
+  <li><a href="/linux">Linux</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Windows 8 Boot Manager + GRUB4DOS + Android-x86</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-19T22:38:11+09:00" pubdate data-updated="true">2013年01月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Windows 8 のブートマネージャからAndorid-x86 を起動する環境を、できるだけWindows 環境でできる手段で構築してみました。Andorid-x86 を起動する際にはGRUB がチェインロードされるような表示になります。Windows 8 のブートマネージャはタッチスクリーンが有効なので、キーボードを使わないで起動するOS を選択できますね。(ご質問いただいたので考えてみました)</p>
+
+<ol>
+<li><p> Windows 8 のインストール
+Windows 8 をインストールします。私の環境では、以下のようなパーティション構成になりました。
+第1パーティション(/dev/sda1) ntfs
+第2パーティション(/dev/sda2) ntfs Windows 8</p></li>
+<li><p> Andorid-x86 のインストール
+Android-x86 をWindows 8 のインストールされているNTFS パーティションにインストールします。もちろん、別のパーティションにインストールしても構いません。
+インストール先: /dev/sda2
+フォーマット: しない
+GRUB: インストールしない</p></li>
+<li><p> GRUB4DOS のダウンロード
+<a href="http://sourceforge.net/projects/grub4dos/files/GRUB4DOS/">http://sourceforge.net/projects/grub4dos/files/GRUB4DOS/</a> からgrub4dos-0.4.4.zip をダウンロードして、ZIP内の以下の4つのファイルをC:\ に展開します。</p>
+
+<ul>
+<li><p>default</p></li>
+<li><p>grldr</p></li>
+<li><p>grldr.mbr</p></li>
+<li><p>menu.lst</p></li>
+<li><p>GRUB4DOS の設定
+GRUB4DOS でAndroid-x86 を起動できるようにC:\menu.lst を編集します。
+[plain title=&ldquo;C:¥menu.lst&rdquo;]
+timeout 3
+default /default</p></li>
+</ul>
+</li>
+</ol>
+
+
+<p>title Android-x86 4.2.1 on /dev/sda2
+root (hd0,1)
+kernel /android-4.2-20121205/kernel root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-4.2-20121205 DATA=
+initrd /android-4.2-20121205/initrd.img
+savedefault</p>
+
+<p>title Android-x86 4.0.4 on /dev/sda2
+root (hd0,1)
+kernel /android-4.0-RC2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/android-4.0-RC2 DATA=
+initrd /android-4.0-RC2/initrd.img
+savedefault
+[/plain]
+※ 1番目のディスクの2番目のパーティション番号は(hd0,1) のように番号を-1した値になるので要注意です。
+※ 複数のバージョンを切り替えたい場合は複数件登録します。ただし、この起動の切り替えはタッチスクリーンが使えません。
+※ タイムアウト時間は好みで秒数を指定します。0にするとGRUB4DOSの画面が表示されなくなります。</p>
+
+<ol>
+<li> Windows 8 ブートマネージャにGRUB4DOS を登録
+コマンドプロンプトアイコンを右クリックして、「管理者として実行」します。
+[shell gutter=&ldquo;false&rdquo;]
+
+<blockquote><p>bcdedit /create /d &ldquo;Android-x86&rdquo; /application BOOTSECTOR
+[/shell]
+上記コマンドで表示された値{☆}を以下のコマンドで使います。
+[shell gutter=&ldquo;false&rdquo;]
+bcdedit /set {☆} device partition=C:
+bcdedit /set {☆} path \grldr.mbr
+bcdedit /displayorder {☆} /addlast
+[/shell]</p></blockquote></li>
+</ol>
+
+
+<p>ちなみに一旦別のブートローダにしてしまった後にWindows 8 のブートマネージャに戻すには、コマンドプロンプトアイコンを右クリックして、「管理者として実行」して、以下のコマンドを実行します。
+[shell gutter=&ldquo;false&rdquo;]</p>
+
+<blockquote><p>bcdboot C:\Windows
+[/shell]</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="https://plus.google.com/118064786423053991892" rel="author">ktkr3d</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-19T22:38:11+09:00" pubdate data-updated="true">2013年01月19日</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android-x86/'>Android-x86</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb/" title="Previous Post: Ubuntu 12.10 + Calipso CMS (node.js, express, MongoDB)">&laquo; Ubuntu 12.10 + Calipso CMS (node.js, express, MongoDB)</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/26/ubuntu-13-04-gnome-shell/" title="Next Post: Ubuntu 13.04 + GNOME Shell">Ubuntu 13.04 + GNOME Shell &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ktkr3d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ktkr3d.github.io/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86/';
+        var disqus_url = 'http://ktkr3d.github.io/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

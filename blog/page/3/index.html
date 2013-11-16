@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Unity 4.0 で作成したアプリをUbuntu 12.10 x86_64 上で動かしてみました。Unity 4.0 ではLinux 向けにネイティブアプリを出力できるようになっています。ビルドの設定では「x86」、「x86_64 」、「x86 + x86_64 (Universal)」 &hellip;">
+  <meta name="description" content="xnoise http://www.xnoise-media-player.com/
+xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.7.90 の環境で試してみました。GStreamer を利用した音楽、ビデオ、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,7 +94,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/18/ubuntu-12-10-unity-4-0/">Ubuntu 12.10 + Unity 4.0</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/03/10/xnoise-media-player-0-2-16-mediterraneannight-gtk-theme-2/">Xnoise Media Player 0.2.16 + MediterraneanNight GTK+ Theme</a></h1>
     
     
       <p class="meta">
@@ -109,866 +110,787 @@ $(document).ready( function () {
   
 
 
-<time datetime="2012-11-18T00:59:34+09:00" pubdate data-updated="true">2012年11月18日</time>
+<time datetime="2013-03-10T12:14:59+09:00" pubdate data-updated="true">2013年03月10日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_ubnuntu.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_ubnuntu-600x375.png" alt="ubuntu 12.10 unity 4.0" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/xnoise.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/xnoise.png" alt="xnoise media player 0.2.16" /></a></p>
 
-<p>Unity 4.0 で作成したアプリをUbuntu 12.10 x86_64 上で動かしてみました。Unity 4.0 ではLinux 向けにネイティブアプリを出力できるようになっています。ビルドの設定では「x86」、「x86_64 」、「x86 + x86_64 (Universal)」が選択できます。Windows 8 の環境では以下のように表示されました。</p>
+<h3>xnoise</h3>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_build_settings.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_build_settings-600x560.png" alt="unity 4.0 build settings" /></a></p>
+<p><a href="http://www.xnoise-media-player.com/">http://www.xnoise-media-player.com/</a>
+xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.7.90 の環境で試してみました。GStreamer を利用した音楽、ビデオ、インターネットストリームの再生が可能で、軽快に動作します。シンプルで整ったデザインになっています。また、コンテキストメニューに登録されている機能(ID3 タグ編集、親フォルダ表示)が便利です。</p>
 
-<p>ちなみに、過去(2009年なのでバージョン2.6 かな)のバージョンのUnity で作成したIsland Demo のWindows 向けロードモジュールがハードディスクの中にあったのでWine で動かしてみました。問題なく動きました。</p>
+<p>[bash gutter=&ldquo;false&rdquo;]
+$ sudo add-apt-repository ppa:shkn/xnoise
+$ sudo apt-get update
+$ sudo apt-get install xnoise
+[/bash]</p>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity_island_demo_2009_wine.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity_island_demo_2009_wine-600x375.png" alt="unity island demo 2009 wine" /></a></p>
-
-<p><strong>Edit:</strong>
-Unity 4.0 で出力されたLinux 用実行形式ファイルの情報はこんな感じ。
-[shell gutter=&ldquo;false&rdquo;]
-$ file MyFirst.x86*
-MyFirst.x86:    ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, BuildID[sha1]=0x650aeda57c5cf21ae3934e7a753eaef9ed525f2a, stripped
-MyFirst.x86_64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, BuildID[sha1]=0xa877bae6da45dc12eb314505bf5ec6bf96b3b503, stripped
-[/shell]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/15/unity-4-0-gnome-shell-3-6/">Unity 4.0 + GNOME Shell 3.6</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-15T07:32:43+09:00" pubdate data-updated="true">2012年11月15日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity3d_4.0_wine.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity3d_4.0_wine-600x337.png" alt="unity 4.0 wine 1.5.17" /></a></p>
-
-<p><a href="http://blogs.unity3d.com/2012/11/13/unity-4-is-out/">http://blogs.unity3d.com/2012/11/13/unity-4-is-out/</a></p>
-
-<p>Unity 4.0 (デスクトップ環境のUnity ではなくUnity3D の方)がリリースされたので、フリー版をUbuntu 12.10 x86_64, Linux kernel 3.5.0, GNOME Shell 3.6.1 + Wine 1.5.17 の環境で試してみよう。</p>
-
-<p>つづく&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/11/ubuntu-12-10-hibernateresume/">Ubuntu 12.10 + Hibernate/Resume</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-11T21:30:33+09:00" pubdate data-updated="true">2012年11月11日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/ubuntu_12.10_hibernate.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/ubuntu_12.10_hibernate-600x264.png" alt="ubuntu 12.10 hibernate" /></a></p>
-
-<p><a href="https://help.ubuntu.com/community/SwapFaq#line-98">https://help.ubuntu.com/community/SwapFaq#line-98</a></p>
-
-<p>Ubuntu 12.10 をインストールしたネットブックInspiron duo をハイバネートするようにしてみました。ちなみにInspiron duo のディスプレイは、反転した状態でふたをしてもハイバネートやサスペンドしないようにできています。</p>
-
-<ol>
-<li> 目標
-ハイバネートでG1/S4 に遷移した後、元の状態に復帰することが目標です。詳しく知らないのですが、ACPI 電源状態は以下のようです。</li>
-</ol>
-
-
-<p>G0
-S0
-起動状態</p>
-
-<p>G1
-S1
-省電力</p>
-
-<p>S2
-CPU 電源OFF</p>
-
-<p>S3
-スタンバイ/スリープ(Suspend to RAM)</p>
-
-<p>S4
-ハイバネート(Suspend to Disk)</p>
-
-<p>G2
-S5
-ソフト電源OFF</p>
-
-<p>G3
-メカニカル電源OFF</p>
-
-<ol>
-<li><p> コマンドラインで試してみます
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo pm-hibernate
-[/shell]
-電源を入れても元の状態に復帰しないので、GRUB を設定することにします。</p></li>
-<li><p> GRUB の設定
-swap パーティションのUUID は/etc/fstab やgparted で調べておきます。
-[plain title=&ldquo;/etc/default/grub&rdquo; firstline=&ldquo;12&rdquo;]
-GRUB_CMDLINE_LINUX=&ldquo;resume=UUID=001d9fdb-7e31-40ab-af01-cb124b8bc710&rdquo;
-[/plain]
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo update-grub
-$ sudo update-initramfs -u
-[/shell]
-これでハイバネート後に復帰するようになりました。</p></li>
-<li><p> システム設定でハイバネートを選択できるようにします。
-[plain title=&ldquo;/etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla&rdquo;]
-[Re-enable hibernate by default]
-Identity=unix-user:*
-Action=org.freedesktop.upower.hibernate
-ResultActive=yes
-[/plain]</p></li>
-<li><p> GNOME Shell のメニューからハイバネート
-<a href="https://extensions.gnome.org/extension/5/alternative-status-menu/">https://extensions.gnome.org/extension/5/alternative-status-menu/</a>
-Suspend メニューは表示されますが、Hibernate メニューがでてきませんでした。なぜだろう。
-<strong>Edit:</strong>
-暫定的に表示するには&hellip;
-[plain title=&ldquo;~/.local/share/gnome-shell/extensions/alternative-status-menu@gnome-shell-extensions.gcampax.github.com/extension.js&rdquo; firstline=&ldquo;27&rdquo; highlight=&ldquo;29&rdquo;]
-function updateHibernate(object, pspec, item) {
-//item.actor.visible = object.get_can_hibernate() &amp;&amp; settings.get_boolean(&lsquo;allow-hibernate&rsquo;);
-item.actor.visible = object.get_can_hibernate();
-}
-[/plain]</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/24/openelec-2-0-mediatomb/">OpenELEC 2.0 + MediaTomb</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-24T20:41:37+09:00" pubdate data-updated="true">2012年10月24日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/openelec_2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/openelec_2-600x337.png" alt="OpenELEC 2.0 XBMC" /></a></p>
-
-<p><a href="http://openelec.tv/get-openelec  ">http://openelec.tv/get-openelec  </a>
-<a href="http://wiki.openelec.tv/index.php?title=Installation">http://wiki.openelec.tv/index.php?title=Installation</a></p>
-
-<p>OpenELEC (Open Embedded Linux Entertainment Center) はXBMC (旧名: XBox Media Center)の機能を持つ軽量なLinux ディストリビューションです。バージョン2.0 がリリースされたので、DLNA サーバのMediaTomb に繋げて試してみました。綺麗なテーマが多数用意されていて、動作は軽快でした。</p>
-
-<p>OpenELEC をインストールするネットブックInspiron Duo はION ではないATOM 64bit プロセッサのPC なので、Intel x86_64 向けのアーカイブをダウンロードしました。「マニュアルインストール-マルチブート」の手順を参考にして、8GB のUSB メモリに2つのパーティションを作成し、Ubuntu 12.10 のGRUB ブートローダから起動するように設定しています。</p>
-
-<h3>OpenELEC 2.0 のインストールと設定</h3>
-
-<ol>
-<li> USB メモリにパーティションを作成</li>
-</ol>
-
-
-<p>デバイス
-フォーマット
-サイズ
-ラベル
-ブートフラグ</p>
-
-<p>/dev/sdb1
-ext4
-1GB
-OE_SYSTEM
-*</p>
-
-<p>/dev/sdb2
-ext4
-7GB
-OE_DATA</p>
-
-<ol>
-<li><p> ファイルのコピー
-/dev/sdb1 の直下に以下の２つのファイルをコピーします。</p>
+<p><strong>主な機能:</strong></p>
 
 <ul>
-<li><p>KERNEL</p></li>
-<li><p>SYSTEM</p></li>
-<li><p>クライアントのUbuntu でOpenELEC ブート用GRUB エントリの追加
-[plain title=&ldquo;/etc/grub.d/40_custom&rdquo;]
-menuentry &ldquo;OpenELEC 2.0&rdquo; {
-set root=(hd1,1)
-linux /KERNEL boot=/dev/sdb1 disk=/dev/sdb2 quiet
-}
-[/plain]</p></li>
-<li><p>クライアントのUbuntu でGRUB 設定の更新
-[shell gutter=&ldquo;false&rdquo;]
+<li><p>メディアライブラリの高速な検索</p></li>
+<li><p>アルバムアートグリッド表示</p></li>
+<li><p>GStreamer を利用した音楽、ビデオ、ストリーム再生</p></li>
+<li><p>イコライザ(プリセット付)</p></li>
+<li><p>「最近再生された」「最も再生された」スマートプレイリスト</p></li>
+<li><p>ID3 タグ編集</p></li>
+<li><p>自動アルバムアート取得</p></li>
+<li><p>軽量で高速</p></li>
+<li><p>プラグイン(MPRIS、Magnatune、Last.fm、歌詞表示、通知、Ubuntu との連携)</p></li>
+</ul>
+
+
+<p><strong>Tips:</strong></p>
+
+<ul>
+<li><p>アルバムアート表示への切り替えは左上のX ロゴアイコンを押します。</p></li>
+<li><p>インターネットストリームの追加は設定画面でURL を追加します。メイン画面左側のストリームライブラリ一覧に表示されたURL をクリックするとストリームに別名をつけることができます。</p></li>
+<li><p>メニューバーの非表示は設定画面から実行します。(&lsquo;Use menu button&rsquo; ではわかりにくい&hellip;)</p></li>
+<li><p>停止ボタンの非表示は設定画面から実行します。</p></li>
+<li><p>トラックリストの列をカスタマイズするには、列名の上で右クリックして、各項目の表示/非表示を切り替えます。</p></li>
+<li><p>音が鳴らない場合は、一度、イコライザを表示してみるとよいかもしれません。</p></li>
+<li><p>日本語化用のja.po を作って(作りかけて)みました。
+<a href="https://github.com/ktkr3d/xnoise-ja">https://github.com/ktkr3d/xnoise-ja</a>
+[bash gutter=&ldquo;false&rdquo;]
+$ msgfmt -o ja.mo ja.po
+$ sudo cp ja.mo /usr/share/locale/ja/LC_MESSAGES/xnoise.mo
+[/bash]</p></li>
+</ul>
+
+
+<h3>MediterraneanNight</h3>
+
+<p><a href="http://gnome-look.org/content/show.php/?content=156782">http://gnome-look.org/content/show.php/?content=156782</a>
+今までGTK+ のテーマにGNOME Shell 標準のAdwaita を利用していましたが、選択箇所の文字が背景色と同じになって読めなくて困っていました。そこで、<a href="http://gnome-look.org/">http://gnome-look.org/</a> でGTK+ テーマを探したところ、MediterraneanNight がよさそうでしたので、あわせて利用してみました。ダウンロードしたアーカイブを~/.themes/ と~/.local/share/themes/ に展開して、gnome-tweak-tool の[テーマ]&ndash;[GTK+ テーマ]からテーマを選択して、適用します。
+なお、このテーマは、GTK3 にunico-engine を、GTK2 にgtk2-engines-murrine とgtk2-engines-pixbuf を使用しますが、Ubuntu ではgtk2-engines-pixbuf がインストールされていませんでしたので、追加しておきます。
+[bash gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install gtk2-engines-pixbuf
+[/bash]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/28/android-x86-4-2-2/">Android-x86 4.2.2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-28T22:18:41+09:00" pubdate data-updated="true">2013年02月28日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2_duo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2_duo.png" alt="android-x86 4.2.2 inspiron duo" /></a></p>
+
+<p><a href="http://www.android-x86.org/releases/build-20130228">http://www.android-x86.org/releases/build-20130228</a></p>
+
+<p>新しいAndorid-x86 4.2.2 のISO イメージが公開されたので、いつものようにInspion duo にインストールしてみました。Ubuntu をインストール済みのパーティションにフォーマットせずにインストールして、GRUB に起動用のエントリを追加しました。</p>
+
+<p>[plain title=&ldquo;/etc/grub.d/40_custom&rdquo;]
+menuentry &ldquo;Android-x86 4.2.2&rdquo; &mdash;class android &mdash;class os {</p>
+
+<pre><code>insmod ext2
+set root='(hd0,3)'
+echo 'Loading Android-x86 4.2.2 ...'
+linux /android-4.2-test/kernel root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-4.2-test DATA=
+initrd /android-4.2-test/initrd.img
+</code></pre>
+
+<p>}
+[/plain]</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
 $ sudo update-grub
+[/shell]</p>
+
+<p>今回のビルドは普通のデスクトップPC でも容易に起動しそうな気がします。</p>
+
+<h3>EDIT</h3>
+
+<p>デスクトップPC にインストールして、別のPC からAirDroid 経由で参照してみました。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2.png" alt="android-x86 4.2.2" /></a></p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/airdroid.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/airdroid.png" alt="airdroid android 4.2.2" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/19/gitg-and-geanyvc/">Gitg and GeanyVC</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-19T18:14:48+09:00" pubdate data-updated="true">2013年02月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/gitg_without_overlay_scroll_bar.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/gitg_without_overlay_scroll_bar.png" alt="gitg without overlay scroll bar" /></a></p>
+
+<p>Ubuntu 13.04 + GNOME Shell 3.7.5 で、Git クライアントを試してみました。</p>
+
+<ul>
+<li><p>Git クライアント一覧
+<a href="https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces">https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces</a></p></li>
+<li><p>Git クライアント機能比較
+<a href="https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Summary_.28feature_matrix.29">https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Summary_.28feature_matrix.29</a></p></li>
+</ul>
+
+
+<h3>gitg</h3>
+
+<p>プッシュもできて使いやすそうです。日本語のpo を公開されている方がいらっしゃいましたので、利用させていただきました。
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install gitg
+$ wget <a href="https://raw.github.com/miyucy/gitg-ja/master/ja.po">https://raw.github.com/miyucy/gitg-ja/master/ja.po</a>
+$ sed -e &ldquo;s/, fuzzy//&rdquo; ja.po | grep -v &ldquo;^#$&rdquo; > ja.po.cf
+$ msgfmt -o gitg.mo ja.po.cf
+$ sudo cp gitg.mo /usr/share/locale/ja/LC_MESSAGES/
+[/shell]
+<a href="http://sourceforge.jp/projects/freshmeat_gitg/howto/usage">http://sourceforge.jp/projects/freshmeat_gitg/howto/usage</a></p>
+
+<ul>
+<li><p>プッシュ
+ローカルブランチのアイコン(オレンジ色)を右クリックして、[ブランチをプッシュ]サブメニューから選択します。</p></li>
+<li><p>プル
+[ファイル]&ndash;[Repository Properties]でリモートのURL を選んで[フェッチ]、[ブランチ]ドロップダウンリストを変更してリモートブランチを表示、リモートブランチのアイコンをローカルのブランチのアイコンにドラッグ、[マージ]を選択します。</p></li>
+</ul>
+
+
+<p>ただし、オーバーレイスクロールバーが有効になっていると、各ペインの背景色が黒くなってしまうようです。オーバーレイスクロールバーを無効にしておきます。
+[shell gutter=&ldquo;false&rdquo;]
+$ echo export LIBOVERLAY_SCROLLBAR=0 >> ~/.xprofile
+[/shell]
+/usr/share/gitg/ui/gitg-window.ui をカスタマイズすれば対処できるのかもしれませんが、よくわかりませんでした。</p>
+
+<h3>GeanyVC</h3>
+
+<p>私はテキストエディタにGeany を利用しているので、コミットならGeanyVC プラグインが利用できます。
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install geany-plugin-vc
+[/shell]
+インストールしたら、Geany の[ツール]&ndash;[プラグインマネージャ]でGeanyVC プラグインを有効にした後で、[ツール]&ndash;[VC]メニューから操作します。</p>
+
+<h3>RabbitVCS</h3>
+
+<p>Ubuntu 13.04 のリポジトリにはパッケージがなく、12.10 のパッケージもNautilus のバージョンが新しいため(?)にうまく動きませんでした。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/10/appjs/">AppJS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-10T22:12:07+09:00" pubdate data-updated="true">2013年02月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/appjs.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/appjs-600x457.png" alt="AppJS Node.js" /></a>
+<a href="http://appjs.org/  ">http://appjs.org/  </a>
+<a href="https://github.com/appjs/appjs  ">https://github.com/appjs/appjs  </a>
+<a href="https://github.com/appjs/appjs/wiki">https://github.com/appjs/appjs/wiki</a></p>
+
+<p>Node.js アプリをコマンドラインからデスクトップアプリとして実行するAppJS を試してみました。HTML, CSS, JavaScript でアプリケーションが実装できて、Windows, Mac(32bit のみ), Linux(x86/x86_64) に対応しています。Unity のグローバルメニューにも対応していました。Node.js のバージョンはv0.8 系が良いようです。Linux x86_64 の環境でv0.9.9 ではうまく動作しませんでした。</p>
+
+<ol>
+<li><p> Node.js v0.8.19 のインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm install v0.8.19
 [/shell]</p></li>
-<li><p>OpenELEC の起動
-クライアントPC を再起動して、GRUB の起動エントリからOpenELEC 2.0 を選択します。</p></li>
-<li><p>言語と時刻の設定</p></li>
-<li><p> [System]&ndash;[Settings]&ndash;[Appearance] の画面に進みます。</p></li>
-<li><p> [Skin]&ndash;[Fonts] を<strong>Arial based</strong> に設定します。</p></li>
-<li><p> [International]&ndash;[Language] をJapanese に設定します。</p></li>
-<li><p> 地域、タイムゾーン(国)、タイムゾーンを設定します。</p></li>
-<li><p>Wi-Fi の設定</p></li>
-<li><p> [プログラム]&ndash;[OpenELEC OS Settings]&ndash;[Network] の画面に進みます。</p></li>
-<li><p> Network Technology をWLAN に設定します。</p></li>
-<li><p> Network Interface をwlan0 に設定します。</p></li>
-<li><p> Static IP address, Network gateway, DNS server 1 を環境に合わせて設定します。</p></li>
-<li><p>音量調整
-ボリュームダウンは[Fn]&ndash;[F9]、ボリュームアップは[Fn]&ndash;[F10] でした。</p></li>
+<li><p> AppJS のインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm use v0.8.19
+$ npm install -g appjs
+[/shell]</p></li>
+<li><p> アプリケーションの準備
+[javascript title=&ldquo;~/appjs/app.js&rdquo;]
+// load appjs</p></li>
+</ol>
+
+
+<p>var appjs = require(&lsquo;appjs&rsquo;);</p>
+
+<p>// serve static files from a directory
+appjs.serveFilesFrom(__dirname + &lsquo;/content&rsquo;);</p>
+
+<p>// handle requests from the browser
+appjs.router.post(&lsquo;/&rsquo;, function(request, response, next){
+  response.send(&lsquo;Hey! How are you &rsquo; + request.post(&lsquo;firstname&rsquo;));
+})</p>
+
+<p>// create a window
+var window = appjs.createWindow({
+  width: 640,
+  height: 460,
+  alpha: false,
+});</p>
+
+<p>// prepare the window when first created
+window.on(&lsquo;create&rsquo;, function(){
+  console.log(&ldquo;Window Created&rdquo;);
+  // window.frame controls the desktop window
+  window.frame.show().center();
+});</p>
+
+<p>// the window is ready when the DOM is loaded
+window.on(&lsquo;ready&rsquo;, function(){
+  console.log(&ldquo;Window Ready&rdquo;);
+  // directly interact with the DOM
+  window.process = process;
+  window.module = module;</p>
+
+<p>  window.addEventListener(&lsquo;keydown&rsquo;, function(e){</p>
+
+<pre><code>// show chrome devtools on f12 or commmand+option+j
+if (e.keyIdentifier === 'F12' || e.keyCode === 74 &amp;&amp; e.metaKey &amp;&amp; e.altKey) {
+  window.frame.openDevTools();
+}
+</code></pre>
+
+<p>  });
+});</p>
+
+<p>// cleanup code when window is closed
+window.on(&lsquo;close&rsquo;, function(){
+  console.log(&ldquo;Window Closed&rdquo;);
+});
+[/javascript]</p>
+
+<p>[html title=&ldquo;~/appjs/content/index.html&rdquo;]
+&lt;!doctype html>
+<html>
+  <head></p>
+
+<pre><code>&lt;title&gt;Hello World!&lt;/title&gt;
+</code></pre>
+
+<p>  </head>
+  <body></p>
+
+<pre><code>&lt;form action="/" method="POST"&gt;
+  &lt;input name="firstname" type="text" placeholder="Firstname"/&gt;
+  &lt;input name="lastname" type="text" placeholder="Lastname"/&gt;
+  &lt;input type="submit"/&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>  </body>
+</html>
+[/html]</p>
+
+<ol>
+<li> 実行
+[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm use v0.8.19
+$ export NODE_PATH=${NVM_PATH}_modules
+$ cd ~/appjs/
+$ node &mdash;harmony app.js
+[/shell]</li>
+</ol>
+
+
+<p>サンプルでは、[F12]キーにwindow.frame.openDevTools() をアサインしていて、キー押下により開発ツールウィンドウが開くようになっています。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/node_devtool.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/node_devtool-600x470.png" alt="Node.js devtool" /></a></p>
+
+<p><strong>EDIT:</strong></p>
+
+<h3>サンプルのカスタマイズ</h3>
+
+<p>HelloWorld サンプルをカスタマイズしてみました。日本語表示、メニュー構成の変更、ファイルオープンダイアログ、lame/speaker パッケージを使ったMP3 の再生など。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/hello_world_appjs.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/hello_world_appjs-600x457.png" alt="hello world appjs" /></a>
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/mp3player_js.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/mp3player_js.png" alt="mp3 player node.js" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/10/scrumblr/">Scrumblr</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-10T19:58:59+09:00" pubdate data-updated="true">2013年02月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/scrumblr.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/scrumblr-600x337.png" alt="scrumblr node.js" /></a>
+<a href="https://github.com/aliasaria/scrumblr">https://github.com/aliasaria/scrumblr</a></p>
+
+<p>Node.js で実装された掲示板アプリscrumblr をインストールしてみました。socket.io を使っていて、複数のブラウザで掲示板をリアルタイムに共有できます。ちょっとしたメモをネットワークを介して共有するのに便利かもしれません。</p>
+
+<ol>
+<li><p> nvm のインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install build-essential libssl-dev curl git
+$ git clone git://github.com/creationix/nvm.git ~/.nvm
+[/shell]</p></li>
+<li><p> scrumblr のインストール
+[bash gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install redis-server
+$ source ~/.nvm/nvm.sh
+$ nvm install v0.9.9
+$ nvm use v0.9.9
+$ git clone <a href="https://github.com/aliasaria/scrumblr">https://github.com/aliasaria/scrumblr</a> ~/scrumblr
+$ cd ~/scrumblr
+$ npm install
+[/bash]</p></li>
+<li><p> scrumblr サーバの実行
+[bash title=&ldquo;start_scrumblr.sh&rdquo;]</p>
+
+<h1>!/bin/bash</h1></li>
+</ol>
+
+
+<h1>Start Scrumblr Server</h1>
+
+<h1><a href="http://localhost:3132">http://localhost:3132</a></h1>
+
+<p>source ~/.nvm/nvm.sh
+nvm use v0.9.9
+cd ~/scrumblr
+node server.js 3132
+[/bash]</p>
+
+<ol>
+<li> scrumblr の表示
+ブラウザで<a href="http://localhost:3132">http://localhost:3132</a> を開きます。</li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/10/cloud9-ide/">Cloud9 IDE</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-10T00:10:48+09:00" pubdate data-updated="true">2013年02月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/cloud9_ide.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/cloud9_ide-600x454.png" alt="Cloud9 IDE" /></a></p>
+
+<p><a href="https://github.com/ajaxorg/cloud9  ">https://github.com/ajaxorg/cloud9  </a>
+<a href="http://nodejs.org/dist/">http://nodejs.org/dist/</a></p>
+
+<p>Node.js の統合開発環境であるCloude9 IDE をローカル環境に構築してみました。Cloude9 IDE の動作前提となるNode.js のバージョンは古めなので、nvm(Node Version Manager)を利用して、Node.js v0.6.21 をインストールしました。ちなみに現在の最新のNode.js のバージョンはv0.9.9 のようです。</p>
+
+<h3>Node Version Manager のインストール</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install build-essential libssl-dev curl git
+$ git clone git://github.com/creationix/nvm.git ~/.nvm
+[/shell]</p>
+
+<h3>Node.js v0.6.21 とsourcemint のインストール</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm install v0.6.21
+$ nvm use v0.6.21
+$ npm install -g sm
+[/shell]</p>
+
+<h3>Cound9 IDE のインストール</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ git clone <a href="https://github.com/ajaxorg/cloud9.git">https://github.com/ajaxorg/cloud9.git</a> ~/cloud9
+$ cd ~/cloud9
+$ sm install
+[/shell]</p>
+
+<h3>Cound9 IDE の実行</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm use v0.6.21
+$ cd ~/cloud9/bin &amp;&amp; ./cloud9.sh
+[/shell]</p>
+
+<h3>Cound9 IDE 画面の表示</h3>
+
+<p>ブラウザで<a href="http://localhost:3131/">http://localhost:3131/</a> を開く。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/08/ubuntu-13-04-gnome-shell-3-7-5/">Ubuntu 13.04 + GNOME Shell 3.7.5</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-08T06:28:05+09:00" pubdate data-updated="true">2013年02月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/ubuntu_13.04_gnome_shell_3.7.5.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/ubuntu_13.04_gnome_shell_3.7.5-600x337.png" alt="ubuntu_13.04_gnome_shell_3.7.5" /></a></p>
+
+<p><a href="https://launchpad.net/~gnome3-team/+archive/gnome3  ">https://launchpad.net/~gnome3-team/+archive/gnome3  </a>
+<a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
+
+<p>Ubuntu 13.04 x86_64 デイリービルドにGNOME Shell 3.7.5 をインストールしてみました。</p>
+
+<h3>手順</h3>
+
+<p>以下のPPA をソフトウェアソースに追加して、gnome-shell パッケージをインストール/アップデートします。</p>
+
+<ul>
+<li><p>ppa:gnome3-team/gnome3</p></li>
+<li><p>ppa:ricotz/testing</p></li>
+</ul>
+
+
+<h3>GNOME Shell 3.7.5 のチェンジログ</h3>
+
+<p><a href="http://ftp.acc.umu.se/pub/GNOME/sources/gnome-shell/3.7/gnome-shell-3.7.5.news">http://ftp.acc.umu.se/pub/GNOME/sources/gnome-shell/3.7/gnome-shell-3.7.5.news</a>
+* MessageTray: pass keyboard events to tray icons
+* network: add support for virtual devices
+* gdm: Allow right-clicking buttons for left-handed users
+* Make list search results span all available horizontal space
+* Make Show-Applications button depress when held down
+* Set a max width on search results
+* Reserve scrollbar allocation for automatic policy
+* Improve scaling algorithm for window thumbnails</p>
+
+<h3>GNOME Shell Extension のバージョン指定の更新</h3>
+
+<p>Auto hide the top panel GNOME Shell Extension のバージョン指定を更新して、暫定的に動作させてみました。
+[plain title=&ldquo;.local/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json&rdquo; highlight=&ldquo;8&rdquo;]
+{
+  &ldquo;description&rdquo;: &ldquo;Auto hide the top panel&rdquo;,
+  &ldquo;extension-id&rdquo;: &ldquo;auto-hide-top-panel&rdquo;,
+  &ldquo;gettext-domain&rdquo;: &ldquo;gnome-shell-extensions&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Auto Hide Top Panel&rdquo;,
+  &ldquo;settings-schema&rdquo;: &ldquo;org.gnome.shell.extensions.auto-hide-top-panel&rdquo;,
+  &ldquo;shell-version&rdquo;: [</p>
+
+<pre><code>"3.5.92", "3.6.1", "3.6", "3.7.5"
+</code></pre>
+
+<p>  ],
+  &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
+  &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x61;&#x75;&#116;&#111;&#104;&#x69;&#x64;&#x65;&#116;&#x6f;&#112;&#x62;&#97;&#114;&#50;&#64;&#x77;&#101;&#114;&#101;&#119;&#x6f;&#108;&#118;&#101;&#115;&#x2e;&#x75;&#x73;">&#97;&#117;&#116;&#x6f;&#104;&#105;&#x64;&#x65;&#x74;&#x6f;&#x70;&#x62;&#x61;&#x72;&#x32;&#x40;&#x77;&#x65;&#114;&#101;&#x77;&#111;&#108;&#118;&#101;&#115;&#46;&#117;&#x73;</a>&rdquo;,
+  &ldquo;version&rdquo;: 1
+}
+[/plain]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/26/ubuntu-13-04-gnome-shell/">Ubuntu 13.04 + GNOME Shell</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-26T21:45:06+09:00" pubdate data-updated="true">2013年01月26日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/01/ubuntu_13_04_gnome_shell.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/01/ubuntu_13_04_gnome_shell-600x375.png" alt="ubuntu 13.04 raring ringtail gnome shell" /></a></p>
+
+<p><a href="http://cdimage.ubuntu.com/daily-live/">http://cdimage.ubuntu.com/daily-live/</a></p>
+
+<p>Ubuntu 13.04 Raring Ringtail のデイリービルドがライブISO イメージで公開されていますので、そろそろ環境構築をし始めます。デスクトップ環境はGNOME Shell にします。</p>
+
+<ul>
+<li><p>Linux Kernel は3.8.0 でした。</p></li>
+<li><p>GNOME Shell  (ppa:gnome3-team/gnome3)は3.6.2 のままでした。今後、3.8 に向けて更新されると思います。</p></li>
+<li><p>Avant Window Navigator パッケージが登録されていませんでした。公式リポジトリから消えるかもしれません。</p></li>
+<li><p>Code::Blocks が12.11　になっていました。</p></li>
+</ul>
+
+
+<p>Avant Window Navigator が消えていて残念でした。これを契機にGNOME Shell 拡張のDash to Dock に移行しましょうか。
+Dash to Dock のデフォルトのアニメーション設定は遅いので、設定で少し速くなるように変更しました。クリック感がないのと、ドックからアプリケーションを一括で閉じられないのが気になりますが、慣れでしょうか。しばらく触ってみて物足りなければ、自前でビルドするか、CairoDock を使うと思います。</p>
+
+<p><strong>EDIT:</strong></p>
+
+<h3>Avant Window Navigator</h3>
+
+<p><a href="http://www.webupd8.org/2012/11/how-to-install-avant-window-navigator.html">http://www.webupd8.org/2012/11/how-to-install-avant-window-navigator.html</a>
+やはり少し不便なので、webupd8 のリポジトリ(quantal)を利用してAWN をインストールしてみました。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/01/ubuntu_13_04_gnome_shell_awn.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/01/ubuntu_13_04_gnome_shell_awn-600x375.png" alt="ubuntu 13.04 gnome shell awn" /></a></p>
+
+<h3>Quit from Dash 拡張</h3>
+
+<p><a href="https://extensions.gnome.org/extension/559/quit-from-dash/">https://extensions.gnome.org/extension/559/quit-from-dash/</a>
+調べてみたら、Quit from Dash 拡張を使えば、Dash to Dock からでも複数起動した同種のアプリケーションを一括して終了させることができました。</p>
+
+<h3>現在使用中のGNOME Shell Extension</h3>
+
+<ul>
+<li><p>Auto hide top panel</p></li>
+<li><p>Drop down terminal</p></li>
+<li><p>GMail Notify</p></li>
+<li><p>メッセージトレイのカスタマイズ
+<a href="http://ktkr3d.site11.com/2012/12/31/move-the-hot-corner-of-the-message-tray/">http://ktkr3d.site11.com/2012/12/31/move-the-hot-corner-of-the-message-tray/</a></p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86/">Windows 8 Boot Manager + GRUB4DOS + Android-x86</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-19T22:38:11+09:00" pubdate data-updated="true">2013年01月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Windows 8 のブートマネージャからAndorid-x86 を起動する環境を、できるだけWindows 環境でできる手段で構築してみました。Andorid-x86 を起動する際にはGRUB がチェインロードされるような表示になります。Windows 8 のブートマネージャはタッチスクリーンが有効なので、キーボードを使わないで起動するOS を選択できますね。(ご質問いただいたので考えてみました)</p>
+
+<ol>
+<li><p> Windows 8 のインストール
+Windows 8 をインストールします。私の環境では、以下のようなパーティション構成になりました。
+第1パーティション(/dev/sda1) ntfs
+第2パーティション(/dev/sda2) ntfs Windows 8</p></li>
+<li><p> Andorid-x86 のインストール
+Android-x86 をWindows 8 のインストールされているNTFS パーティションにインストールします。もちろん、別のパーティションにインストールしても構いません。
+インストール先: /dev/sda2
+フォーマット: しない
+GRUB: インストールしない</p></li>
+<li><p> GRUB4DOS のダウンロード
+<a href="http://sourceforge.net/projects/grub4dos/files/GRUB4DOS/">http://sourceforge.net/projects/grub4dos/files/GRUB4DOS/</a> からgrub4dos-0.4.4.zip をダウンロードして、ZIP内の以下の4つのファイルをC:\ に展開します。</p>
+
+<ul>
+<li><p>default</p></li>
+<li><p>grldr</p></li>
+<li><p>grldr.mbr</p></li>
+<li><p>menu.lst</p></li>
+<li><p>GRUB4DOS の設定
+GRUB4DOS でAndroid-x86 を起動できるようにC:\menu.lst を編集します。
+[plain title=&ldquo;C:¥menu.lst&rdquo;]
+timeout 3
+default /default</p></li>
 </ul>
 </li>
 </ol>
 
 
-<h3>MediaTomb のインストールと設定</h3>
+<p>title Android-x86 4.2.1 on /dev/sda2
+root (hd0,1)
+kernel /android-4.2-20121205/kernel root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-4.2-20121205 DATA=
+initrd /android-4.2-20121205/initrd.img
+savedefault</p>
 
-<p>サーバのUbnutu でMediaTomb の環境を設定します。</p>
-
-<ol>
-<li><p> MediaTomb のインストール
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install mediatomb
-[/shell]</p></li>
-<li><p> MediaTomb の環境設定</p></li>
-</ol>
-
-
-<p>[plain title=&ldquo;/etc/default/mediatomb&rdquo; firstline=&ldquo;17&rdquo; highlight=&ldquo;20&rdquo;]</p>
-
-<h1>The network interface for MediaTomb to bind to and for which the multicast</h1>
-
-<h1>routing entry should be added; &ldquo;&rdquo; if the route shouldn&rsquo;t be added at all.</h1>
-
-<h1>For example: INTERFACE=&ldquo;eth0&rdquo;</h1>
-
-<p>INTERFACE=&ldquo;eth0&rdquo;
-[/plain]</p>
-
-<p>[plain title=&ldquo;/etc/mediatomb/config.xml&rdquo; firstline=&ldquo;6&rdquo; highlight=&ldquo;7, 8&rdquo;]
-  <server></p>
-
-<pre><code>&lt;ui enabled="yes" show-tooltips="yes"&gt;
-   &lt;accounts enabled="yes" session-timeout="30"&gt;
-     &lt;account user="mediatomb" password="mediatomb"/&gt;
-   &lt;/accounts&gt;
- &lt;/ui&gt;
-</code></pre>
-
-<p>[/plain]</p>
-
-<p>[plain title=&ldquo;/etc/mediatomb/config.xml&rdquo; firstline=&ldquo;51&rdquo; highlight=&ldquo;52, 53&rdquo;]
-  <import hidden-files="no"></p>
-
-<pre><code>&lt;filesystem-charset&gt;UTF-8&lt;/filesystem-charset&gt;
-&lt;metadata-charset&gt;UTF-8&lt;/metadata-charset&gt;
-&lt;scripting script-charset="UTF-8"&gt;
-</code></pre>
-
-<p>[/plain]</p>
-
-<p>[plain title=&ldquo;/etc/mediatomb/config.xml&rdquo; firstline=&ldquo;62&rdquo; highlight=&ldquo;64&rdquo;]
-  <mappings>
-  &lt;extension-mimetype ignore-unknown=&ldquo;no&rdquo;></p>
-
-<pre><code>&lt;map from="mp4" to="video/mp4"/&gt;
-&lt;map from="mp3" to="audio/mpeg"/&gt;
-&lt;map from="ogg" to="application/ogg"/&gt;
-&lt;map from="asf" to="video/x-ms-asf"/&gt;
-&lt;map from="asx" to="video/x-ms-asf"/&gt;
-&lt;map from="wma" to="audio/x-ms-wma"/&gt;
-&lt;map from="wax" to="audio/x-ms-wax"/&gt;
-&lt;map from="wmv" to="video/x-ms-wmv"/&gt;
-&lt;map from="wvx" to="video/x-ms-wvx"/&gt;
-&lt;map from="wm" to="video/x-ms-wm"/&gt;
-</code></pre>
-
-<p>[/plain]</p>
+<p>title Android-x86 4.0.4 on /dev/sda2
+root (hd0,1)
+kernel /android-4.0-RC2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/android-4.0-RC2 DATA=
+initrd /android-4.0-RC2/initrd.img
+savedefault
+[/plain]
+※ 1番目のディスクの2番目のパーティション番号は(hd0,1) のように番号を-1した値になるので要注意です。
+※ 複数のバージョンを切り替えたい場合は複数件登録します。ただし、この起動の切り替えはタッチスクリーンが使えません。
+※ タイムアウト時間は好みで秒数を指定します。0にするとGRUB4DOSの画面が表示されなくなります。</p>
 
 <ol>
-<li><p> MediaTomb の再起動
+<li> Windows 8 ブートマネージャにGRUB4DOS を登録
+コマンドプロンプトアイコンを右クリックして、「管理者として実行」します。
 [shell gutter=&ldquo;false&rdquo;]
-$ sudo service mediatomb restart
-[/shell]</p></li>
-<li><p> 公開するメディアの選択
-アプリケーションメニューの[サウンドとビデオ]&ndash;[MediaTomb] メニューを選択すると、ブラウザ上に環境設定画面が表示されるので、公開するフォルダを選択します。</p></li>
-</ol>
 
-
-<h3>OpenELEC からMediaTomb への接続</h3>
-
-<p>DLNA サーバのメディアを参照するには、以下のようにしました。</p>
-
-<ol>
-<li><p> [ビデオ]&ndash;[ファイル]の画面に進みます。</p></li>
-<li><p> [ビデオを追加&hellip;]&ndash;[参照]&ndash;[UPnP Devices]を選択します。</p></li>
-<li><p> MediaTomb というサーバ名が表示されますので、表示したい階層を選択して[OK]を押します。</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/14/android-x86-4-0-4-firefox-fennec-19-0a1-16-0-1/">Android-x86 4.0.4 + Firefox (Fennec) 19.0a1 / 16.0.1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-14T08:36:56+09:00" pubdate data-updated="true">2012年10月14日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/android-x86_firefox_19.0a1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/android-x86_firefox_19.0a1-600x337.png" alt="android-x86 firefoex fennec 19.0a1 16.0.1" /></a></p>
-
-<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a></p>
-
-<p>Android-x86 4.0.4 (i386-linux-android) 向けにFirefox の開発バージョン19.0a1 と最新リリース版16.0.1 をビルドしてみました。ビルド環境はUbuntu 12.10 x86_64 です。手順は、<a href="/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">前回</a>とほとんど同じです。</p>
-
-<h3>ビルド用SDK の配置</h3>
-
-<ul>
-<li><p>/tools/android-sdk-linux</p></li>
-<li><p>/tools/android-ndk-r7c</p></li>
-<li><p>/tools/jdk1.6.0_35</p></li>
-</ul>
-
-
-<h3>ビルド用依存パッケージの取得</h3>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install mercurial ccache
-$ sudo apt-get build-dep firefox
-[/shell]</p>
-
-<h3>開発版(19.0a1)をビルドする場合</h3>
-
-<ol>
-<li><p> 開発版ソースコードの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ cd /tools/apps/firefox/
-$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src-central
-$ cd src-central
-[/shell]</p></li>
-<li><p> mozconfig のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
-[/shell]</p></li>
-</ol>
-
-
-<p>[plain title=&ldquo;/tools/apps/firefox/src-central/.mozconfig&rdquo; highlight=&ldquo;11,12,13,15,20,21,22&rdquo;]
-. &ldquo;$topsrcdir/mobile/android/config/mozconfigs/common&rdquo;</p>
-
-<h1>Global options</h1>
-
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
-
-<h1>Build Fennec</h1>
-
-<p>ac_add_options &mdash;enable-application=mobile/android</p>
-
-<h1>Android</h1>
-
-<p>ac_add_options &mdash;target=i386-linux-android
-ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r7c&rdquo;
-ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-14&rdquo;
-ac_add_options &mdash;with-android-version=14
-ac_add_options &mdash;with-system-zlib</p>
-
-<h1>ac_add_options &mdash;enable-update-channel=${MOZ_UPDATE_CHANNEL}</h1>
-
-<h1>IonMonkey disabled in bug 789373</h1>
-
-<p>ac_add_options &mdash;disable-ion</p>
-
-<p>export JAVA_HOME=/tools/jdk1.6.0_35</p>
-
-<h1>export MOZILLA_OFFICIAL=1</h1>
-
-<h1>export MOZ_TELEMETRY_REPORTING=1</h1>
-
-<p>ac_add_options &mdash;with-branding=mobile/android/branding/nightly</p>
-
-<h1>Treat warnings as errors in directories with FAIL_ON_WARNINGS.</h1>
-
-<p>ac_add_options &mdash;enable-warnings-as-errors</p>
-
-<h1>Use ccache</h1>
-
-<p>ac_add_options &mdash;with-ccache=/usr/bin/ccache
-[/plain]</p>
-
-<h3>リリース版(16.0.1)をビルドする場合</h3>
-
-<ol>
-<li><p> リリース版ソースコードの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ cd /tools/apps/firefox/
-$ hg clone <a href="http://hg.mozilla.org/releases/mozilla-release">http://hg.mozilla.org/releases/mozilla-release</a> src-release
-$ cd src-release
-[/shell]</p></li>
-<li><p> mozconfig のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
-[/shell]</p></li>
-</ol>
-
-
-<p>[plain title=&ldquo;/tools/apps/firefox/src-release/.mozconfig&rdquo; highlight=&ldquo;9,10,11,13,14,16,17,18,20,21&rdquo;]</p>
-
-<h1>Global options</h1>
-
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
-
-<h1>Build Fennec</h1>
-
-<p>ac_add_options &mdash;enable-application=mobile/android</p>
-
-<h1>Android</h1>
-
-<p>ac_add_options &mdash;target=i386-linux-android
-ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r7c&rdquo;
-ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-14&rdquo;
-ac_add_options &mdash;with-android-version=14
-ac_add_options &mdash;with-system-zlib</p>
-
-<h1>ac_add_options &mdash;enable-updater</h1>
-
-<h1>ac_add_options &mdash;enable-update-channel=${MOZ_UPDATE_CHANNEL}</h1>
-
-<p>export JAVA_HOME=/tools/jdk1.6.0_35</p>
-
-<h1>export MOZILLA_OFFICIAL=1</h1>
-
-<h1>export MOZ_TELEMETRY_REPORTING=1</h1>
-
-<h1>ac_add_options &mdash;enable-official-branding</h1>
-
-<p>ac_add_options &mdash;with-branding=mobile/android/branding/unofficial
-[/plain]</p>
-
-<h3>firefox のビルド</h3>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ make -f client.mk build_and_deploy
-[/shell]</p>
-
-<h3>インストール</h3>
-
-<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。
-[plain title=&ldquo;出力先&rdquo; gutter=&ldquo;false&rdquo;]
-./obj-x86_64-unknown-linux-gnu/dist/
-[/plain]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/11/openshot-video-editor-1-4-3/">Openshot Video Editor 1.4.3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-11T21:42:21+09:00" pubdate data-updated="true">2012年10月11日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/openshot_3d_text.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/openshot_3d_text-600x502.png" alt="openshot 1.4.3 3d text" /></a>
-<a href="http://www.openshot.org/">http://www.openshot.org/</a></p>
-
-<p>Openshot はオープンソースな動画編集ソフトウェアです。バージョン1.4.3 では、Blender と連携して、3D 効果やアニメーションが強化されたようです。テキストの3D 効果では日本語フォントもレンダリングできました。</p>
-
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;Openshot のインストール&rdquo;]
-$ sudo add-apt-repository ppa:jonoomph/openshot-edge
-$ sudo apt-get update
-$ sudo apt-get install openshot openshot-doc
-[/shell]</p>
-
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;Blender のインストール&rdquo;]
-$ sudo add-apt-repository ppa:irie/blender
-$ sudo apt-get update
-$ sudo apt-get install blender
-[/shell]</p>
-
-<p>例えば、[タイトル]&ndash;[新しい動画タイトル]メニューを選択して、テンプレートから「飛び散るテキスト」を選択します。タイトルには適当な文字列を入力し、フォントを指定して、[レンダリング]を実行します。時間がかかりますが、TrueType フォントが3D 化され、アニメーションしました。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/02/vlc-for-android-x86/">VLC for Android-x86</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-02T23:20:14+09:00" pubdate data-updated="true">2012年10月02日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/galaxias_vlc_for_android-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/galaxias_vlc_for_android-x86-600x337.png" alt="vlc for android-x86" /></a>
-<a href="http://nightlies.videolan.org/build/android-x86/">http://nightlies.videolan.org/build/android-x86/</a></p>
-
-<p>VLC for Android-x86 のデバッグ版が公開されていたので、使ってみました。実行環境は、Android-x86 4.0.4 RC2 tegav2 ビルドです。</p>
-
-<p>ビルドする手順は以下のようです。
-<a href="http://wiki.videolan.org/AndroidCompile">http://wiki.videolan.org/AndroidCompile</a></p>
-
-<p><strong>EDIT:</strong>
-VLC だと760p も全く問題なく再生できました。音量調節は上下にフリックします。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/29/ubuntu-gnome-remix-12-10-beta/">Ubuntu GNOME Remix 12.10 Beta</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-29T06:01:45+09:00" pubdate data-updated="true">2012年09月29日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_gnome_remix.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/ubuntu_gnome_remix-600x480.png" alt="ubuntu gnome remix 12.10 beta" /></a>
-<a href="https://wiki.ubuntu.com/UbuntuGNOME/ReleaseNotes/12.10Beta">https://wiki.ubuntu.com/UbuntuGNOME/ReleaseNotes/12.10Beta</a></p>
-
-<p>Ubuntu GNOME Remix 12.10 betaが公開されたので、インストールしてみました。
-Ubuntu のリポジトリを使いたいけれど、デスクトップ環境はGNOME Shell がよいので、今後、どちらをベースにして行くか悩みどころです。そこで、それぞれのデフォルトの構成を比較してみました。
-どちらをベースにしても大差なさそうですが、ブラウザにFirefox を使うので、Ubuntu をインストールしておいて、ppa:gnome3-team/gnome3 を追加する方が若干楽かもしれません。GDM のログイン画面やロック画面の外観が大幅に改善されていたので、LightDM からGDM に切り替えるのならば、Ubuntu GNOME Remix がよいかもしれません。</p>
-
-<p>Ubuntu</p>
-
-<p>Ubuntu GNOME Remix</p>
-
-<p>My Choice</p>
-
-<p>Unity</p>
-
-<p><strong>GNOME Shell</strong></p>
-
-<p><strong>GNOME Shell<br/>
-+ AWN</strong></p>
-
-<p><strong>LightDM</strong></p>
-
-<p><strong>GDM</strong></p>
-
-<p><strong>?</strong></p>
-
-<p>software-center</p>
-
-<p>gpk-application</p>
-
-<p>synaptic</p>
-
-<p>nautilus 3.4</p>
-
-<p>nautilus 3.4</p>
-
-<p>nautilus 3.6</p>
-
-<p>gnome-disks</p>
-
-<p>gnome-disks</p>
-
-<p>gparted</p>
-
-<p>&ndash;</p>
-
-<p><strong>tweak-tool</strong></p>
-
-<p><strong>tweak-tool</strong></p>
-
-<p><strong>Firefox</strong></p>
-
-<p>epiphany-browser</p>
-
-<p><strong>Firefox</strong></p>
-
-<p>Evolution</p>
-
-<p>Evolution</p>
-
-<p>GMail</p>
-
-<p>Evolution</p>
-
-<p>Evolution</p>
-
-<p>Google Calendar</p>
-
-<p>Rhythmbox</p>
-
-<p>Rhythmbox</p>
-
-<p>Moc</p>
-
-<p>Totem</p>
-
-<p>Totem</p>
-
-<p>VLC</p>
-
-<p>EoG</p>
-
-<p>EoG</p>
-
-<p>EoG</p>
-
-<p>Gedit</p>
-
-<p>Gedit</p>
-
-<p>Kate</p>
-
-<p>Libre-writer</p>
-
-<p>AbiWord</p>
-
-<p>&ndash;</p>
-
-<p>Libre-calc</p>
-
-<p>Gnumeric</p>
-
-<p>&ndash;</p>
-
-<p>ibus-anthy</p>
-
-<p>ibus-anthy</p>
-
-<p>ibus-mozc</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/25/changing-the-date-format-in-nautilus-3-6-list-view/">Changing the Date Format in Nautilus 3.6 List View</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-25T06:45:38+09:00" pubdate data-updated="true">2012年09月25日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/nautilus_list_view.png" alt="nautilus 3.6 list view modification date" /></a>
-<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676898  ">https://bugzilla.gnome.org/show_bug.cgi?id=676898  </a>
-<a href="http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060">http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060</a></p>
-
-<p>nautilus 3.6 のリストビューでは、あえて更新日付の書式をシンプル(informal)にしているようです。これはこれでアリなのですが、やはり詳細表示されていた方が統一感があって使い勝手がよいような気がするので、昔のISO 日付書式になるようにカスタマイズしてみました。dpkg-buildpackage でfakeroot が効かなかったので、sudo で実行しています。</p>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get build-dep nautilus
-$ mkdir nautilus &amp;&amp; cd nautilus
-$ apt-get source nautilus
-$ dpkg-source -x <em>.dsc
-$ cd nautilus-3.</em>
+<blockquote><p>bcdedit /create /d &ldquo;Android-x86&rdquo; /application BOOTSECTOR
 [/shell]
-[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4484&rdquo; highlight=&ldquo;4489&rdquo;]</p>
-
-<h1>define TODAY_TIME_FORMAT_24 N_(&ldquo;%R&rdquo;)</h1>
-
-<h1>define TODAY_TIME_FORMAT N_(&ldquo;%-I:%M %P&rdquo;)</h1>
-
-<h1>define THIS_MONTH_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
-
-<h1>define THIS_YEAR_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
-
-<h1>define ANYTIME_TIME_FORMAT N_(&ldquo;%b %-d %Y&rdquo;)</h1>
-
-<h1>define ANYTIME_TIME_FORMAT_ISO N_(&ldquo;%Y-%m-%d %H:%M:%S&rdquo;)</h1>
-
-<h1>define FULL_FORMAT N_(&ldquo;%a, %b %e %Y %I:%M:%S %p&rdquo;)</h1>
-
-<h1>define FULL_FORMAT_24 N_(&ldquo;%a, %b %e %Y %T&rdquo;)</h1>
-
-<p>[/c]
-[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4538&rdquo; highlight=&ldquo;4541&rdquo;]</p>
-
-<pre><code>} else {
-    format = ANYTIME_TIME_FORMAT;
-}
-format = ANYTIME_TIME_FORMAT_ISO;
-</code></pre>
-
-<p>[/c]
+上記コマンドで表示された値{☆}を以下のコマンドで使います。
 [shell gutter=&ldquo;false&rdquo;]
-$ sudo dpkg-buildpackage -us -uc -nc -b
-$ sudo dpkg -i ../nautilus_3.*.deb
-[/shell]</p>
+bcdedit /set {☆} device partition=C:
+bcdedit /set {☆} path \grldr.mbr
+bcdedit /displayorder {☆} /addlast
+[/shell]</p></blockquote></li>
+</ol>
+
+
+<p>ちなみに一旦別のブートローダにしてしまった後にWindows 8 のブートマネージャに戻すには、コマンドプロンプトアイコンを右クリックして、「管理者として実行」して、以下のコマンドを実行します。
+[shell gutter=&ldquo;false&rdquo;]</p>
+
+<blockquote><p>bcdboot C:\Windows
+[/shell]</p></blockquote>
 </div>
   
   
@@ -981,7 +903,7 @@ $ sudo dpkg -i ../nautilus_3.*.deb
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/09/24/gnome-shell-extension-drop-down-terminal/">GNOME Shell Extension - Drop Down Terminal</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb/">Ubuntu 12.10 + Calipso CMS (node.js, Express, MongoDB)</a></h1>
     
     
       <p class="meta">
@@ -997,19 +919,69 @@ $ sudo dpkg -i ../nautilus_3.*.deb
   
 
 
-<time datetime="2012-09-24T21:17:32+09:00" pubdate data-updated="true">2012年09月24日</time>
+<time datetime="2013-01-12T21:10:34+09:00" pubdate data-updated="true">2013年01月12日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/09/drop_down_terminal_gnome_shell_extension-600x337.png" alt="gnome shell extension drop down terminal" /></a>
-<a href="https://extensions.gnome.org/extension/442/drop-down-terminal/">https://extensions.gnome.org/extension/442/drop-down-terminal/</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/01/Calipso_CMS.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/01/Calipso_CMS-600x482.png" alt="calipso node.js express mongodb ubuntu" /></a></p>
 
-<p>Drop Down Terminal はGNOME Shell 3.5.2 (正確にはgjs >= 1.33.2 and vte3 >= 0.31, gnome-shell >= 3.2 らしい)以降で動作する、ターミナル画面を表示するためのGNOME Shell 拡張機能です。Ubuntu 12.10 + GNOME Shell 3.5.92 の環境で使ってみました。
-GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面の上部に半透明なターミナル画面が瞬時に表示されます。もう一度[F12]キーを押すとターミナル画面が隠れます。作者のコメントによると、キーバインドはgsettings やdconf-editor でカスタマイズできるようです。
-ちょっとしたターミナル操作をする場合にとても便利です。クリップボードからのペーストは[Shift]&ndash;[Insert]が使用できます。フォーカスが合っていない場合はマウスでクリックすると良いようです。</p>
+<p><a href="https://github.com/cliftonc/calipso">https://github.com/cliftonc/calipso</a></p>
+
+<p>Calipso はnode.js(サーバサイドJavaScript)、express(node.js 上のフレームワーク)、MongoDB で構築されたシンプルなCMS アプリです。node.js のお試し用にUbuntu 12.10 上でCalipso 0.3.17 の環境を構築してみました。</p>
+
+<ol>
+<li><p> パッケージのインストール
+Ubuntu オフィシャルリポジトリのnode.js はバージョンが古いのでPPA のリポジトリを追加します。
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo add-apt-repository ppa:chris-lea/node.js<br/>
+$ sudo apt-get update<br/>
+$ sudo apt-get install nodejs npm mongodb
+[/shell]</p></li>
+<li><p> Calipso のインストールの前に
+このままの状態でCalipso のインストールを進めると、node コマンドが見つからない旨のメッセージを出力して、途中で終了してしまいます。Debian/Ubuntu には別にnode コマンドがあるため、node.js のコマンドはnodejs になっているようです。暫定的にシンボリックリンクを作成しておきます。作成したシンボリックリンク(/usr/bin/node)は後で消しておきます。
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo ln -s /usr/bin/nodejs /usr/bin/node
+[/shell]</p></li>
+<li><p> Calipso のインストールと起動
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo npm install -g node-gyp
+$ sudo npm install -g calipso
+$ sudo calipso site /var/www/MySite
+$ cd /var/www/MySite
+$ sudo calipso server
+[/shell]</p></li>
+<li><p> ブラウザからアクセス
+<a href="http://localhost:3000">http://localhost:3000</a>
+表示されたウィザードに従って、データベースの作成、アカウントの作成をします。表示に関しては、一応、日本語設定が用意されています。</p></li>
+<li><p> nginx からリバースプロキシで接続
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install nginx
+[/shell]</p></li>
+</ol>
+
+
+<p>[plain title=&ldquo;/etc/nginx/sites-available/default&rdquo; firstline=&ldquo;30&rdquo; highlight=&ldquo;33,36&rdquo;]</p>
+
+<pre><code>location / {
+    # First attempt to serve request as file, then
+    # as directory, then fall back to displaying a 404.
+    #try_files $uri $uri/ /index.html;
+    # Uncomment to enable naxsi on this location
+    # include /etc/nginx/naxsi.rules
+    proxy_pass http://localhost:3000/;
+}
+</code></pre>
+
+<p>[/plain]</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo /etc/init.d/nginx reload
+$ sudo /etc/init.d/nginx restart
+[/shell]
+<a href="http://localhost">http://localhost</a> からアクセスできるようになります。</p>
 </div>
   
   
@@ -1057,7 +1029,7 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

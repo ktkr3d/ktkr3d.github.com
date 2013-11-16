@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ConkyForecast Japanese Translation - ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="https://github.com/ktkr3d/conkyforecast-ja ConkyForecast 用の日本語PO ファイルを作成して、Conky-HTC を日本語化してみました。また、Conky-HTC の表示用スクリプトを整理してみました。 パッケージのインストール
+http &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/2013/03/24/conkyforecast-japanese-translation">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/android">Android</a></li>
+  <li><a href="/linux">Linux</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">ConkyForecast Japanese Translation</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-24T09:36:01+09:00" pubdate data-updated="true">2013年03月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/conkyforecast_japanese.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/conkyforecast_japanese.png" alt="conkyforecast japanese" /></a></p>
+
+<p><a href="https://github.com/ktkr3d/conkyforecast-ja">https://github.com/ktkr3d/conkyforecast-ja</a></p>
+
+<p>ConkyForecast 用の日本語PO ファイルを作成して、Conky-HTC を日本語化してみました。また、Conky-HTC の表示用スクリプトを整理してみました。</p>
+
+<ol>
+<li><p> パッケージのインストール
+<a href="http://ktkr3d.site11.com/2011/10/09/conky-htc/">http://ktkr3d.site11.com/2011/10/09/conky-htc/</a>
+conky, conkyForecast, Conky-HTC パッケージをインストールして以下の構成にしておきます。
+[plain title=&ldquo;フォルダ/ファイル構成&rdquo; gutter=&ldquo;false&rdquo;]
+~/
+├── .fonts/
+├── .images/
+├── .conkyForecast.config
+├── .conkyrc
+├── .conky_start
+└── .vreme.template
+[/plain]</p></li>
+<li><p> conkyForecast の日本語化
+[bash gutter=&ldquo;false&rdquo;]
+$ wget <a href="https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecast.po">https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecast.po</a>
+$ wget <a href="https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecastWU.po">https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecastWU.po</a>
+$ msgfmt -o conkyForecast.mo conkyForecast.po
+$ msgfmt -o conkyForecastWU.mo conkyForecastWU.po
+$ sudo mkdir -p /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
+$ sudo cp *.mo /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
+[/bash]</p></li>
+<li><p> ~/.conkyForecast.config の編集
+[plain title=&ldquo;~/.conkyForecast.config&rdquo; highlight=&ldquo;4,5,16,19&rdquo;]</p>
+
+<h1>=============================================</h1>
+
+<h1>EXPERT SETTINGS, NOT REQUIRED TO BE ALTERED</h1>
+
+<h1>=============================================</h1>
+
+<h1>BASE_XOAP_URL = <a href="http://xoap.weather.com/weather/local/">http://xoap.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=5&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m</h1>
+
+<p>BASE_XOAP_URL = <a href="http://xml.weather.com/weather/local/">http://xml.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=10&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m
+MAXIMUM_DAYS_FORECAST = 10</p></li>
+</ol>
+
+
+<h1>===============================================</h1>
+
+<h1>USER SETTINGS, EDIT BASED ON DOCUMENTED SETUP</h1>
+
+<h1>===============================================</h1>
+
+<p>CACHE_FOLDERPATH = /tmp/
+CONNECTION_TIMEOUT = 5
+EXPIRY_MINUTES = 30
+TIME_FORMAT = %H:%M
+DATE_FORMAT = %Y-%m-%d
+LOCALE = ja
+XOAP_PARTNER_ID =
+XOAP_LICENCE_KEY =
+DEFAULT_LOCATION = JAXX0085
+AUTO_NIGHT = False
+PROXY_HOST =
+PROXY_PORT = 8080
+PROXY_USERNAME =
+PROXY_PASSWORD =
+[/plain]</p>
+
+<ol>
+<li> ~/.conkyrc の編集
+[plain title=&ldquo;~/.conkyrc&rdquo; firstline=&ldquo;48&rdquo;]
+
+<h1>Time</h1>
+
+${voffset 35}${goto 39}${font Helvetica LT Std:style=Condensed:size=60}${color 434343}${time %H}${goto 140}${color 434343}${time %M}${font Helvetica LT Std:style=Condensed:size=18}${color ffffff}${goto 225}${time %S}
+
+<h1>Date</h1>
+
+${voffset 47}${font TakaoPGothic:size=8}${alignr 80}${time %G}/${time %m}/${time %d} (${time %a})
+
+<h1>City Name</h1>
+
+${voffset -40}${goto 22}${exec conkyForecast &mdash;datatype=CN}
+
+<h1>Conditions Text, Current Temp</h1>
+
+${goto 22}${execi 1800 conkyForecast &mdash;datatype=CT}${voffset -20}${goto 200}${font Helvetica LT Std:size=24}${execi 1800 conkyForecast -u &mdash;datatype=HT}
+
+<h1>High Temp, Low Temp of Today</h1>
+
+${voffset -15}${font Helvetica LT Std:style=Condensed:size=10}#
+${goto 200}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=0}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=0}
+
+<h1>High Temp, Low Temp of Next 5 Days</h1>
+
+${voffset 53}${font Helvetica LT Std:style=Condensed:size=8}#
+${goto  25}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=1}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=1}#
+${goto  70}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=2}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=2}#
+${goto 115}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=3}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=3}#
+${goto 160}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=4}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=4}#
+${goto 205}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=5}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=5}
+
+<h1>Day of Week</h1>
+
+<p>${font TakaoPGothic:size=8}${color ffffff}#
+${goto  37}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=1}#
+${goto  82}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=2}#
+${goto 127}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=3}#
+${goto 172}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=4}#
+${goto 217}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=5}
+${image ~/.images/base.png -p 12,30 -s 238x140}
+${image ~/.images/base.png -p 12,190 -s 238x55}
+${image ~/.images/flip_bg.png -p 30,10 -s 100x110}
+${image ~/.images/flip_bg.png -p 130,10 -s 100x110}
+${execpi 1800 conkyForecast &mdash;template=~/.vreme.template}
+[/plain]
+行中/行末に# を挿入すると次の行と連結(改行をエスケープ)できます。
+今日の最高/最低気温を取得するために「&mdash;startday=0」を指定してみましたが、値は無効かもしれません。</p></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="https://plus.google.com/118064786423053991892" rel="author">ktkr3d</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-24T09:36:01+09:00" pubdate data-updated="true">2013年03月24日</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2013/03/24/conkyforecast-japanese-translation/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2013/03/24/conkyforecast-japanese-translation/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/17/bittorrent-live-beta/" title="Previous Post: BitTorrent Live Beta">&laquo; BitTorrent Live Beta</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/06/01/android-studio/" title="Next Post: Android Studio">Android Studio &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+<section>
+  <h1>GitHub Cards</h1>
+  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ktkr3d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ktkr3d.github.io/blog/2013/03/24/conkyforecast-japanese-translation/';
+        var disqus_url = 'http://ktkr3d.github.io/blog/2013/03/24/conkyforecast-japanese-translation/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

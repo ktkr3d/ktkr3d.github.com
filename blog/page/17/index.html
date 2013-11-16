@@ -9,11 +9,10 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="irrWeatherManager を試してみた
-雲も発生できるみたい
-プラネタリウムにもなるとおもしろいかも
-http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39503
-多謝: irrWeatherManager のひと &hellip;">
+  <meta name="description" content="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186
+CRadiosityGenerator クラスを使ってみた(とりあえず光反射は3回にしてみた)
+モデルと光源を工夫するともっといい画像が撮れそう
+内部でXEffects &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,7 +96,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/17/irrweathermanager/">irrWeatherManager を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/12/post_10/">ラジオシティを試してみた</a></h1>
     
     
       <p class="meta">
@@ -113,20 +112,20 @@ $(document).ready( function () {
   
 
 
-<time datetime="2010-08-17T21:20:36+09:00" pubdate data-updated="true">2010年08月17日</time>
+<time datetime="2010-09-12T15:52:02+09:00" pubdate data-updated="true">2010年09月12日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/08/weather.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/08/weather.png" alt="irrweather irrlicht" /></a>
-irrWeatherManager を試してみた
-雲も発生できるみたい
-プラネタリウムにもなるとおもしろいかも
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39503">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39503</a>
-多謝: irrWeatherManager のひと
-早送りすると太陽がぶれる・・・</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/gpurad.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/gpurad.png" alt="gpurad irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186</a>
+CRadiosityGenerator クラスを使ってみた(とりあえず光反射は3回にしてみた)
+モデルと光源を工夫するともっといい画像が撮れそう
+内部でXEffects を使用している
+shader model 2.0 対応のGPU 限定になるみたい
+ファイル名&#8221;MainBuilding.irrmesh&#8221; がmain.cpp 内と異なっているので修正した</p>
 </div>
   
   
@@ -139,7 +138,7 @@ irrWeatherManager を試してみた
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/16/irrlicht_30/">Irrlicht 30秒間デモシリーズ</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/12/terrain_pager/">Terrain Pager を試してみた</a></h1>
     
     
       <p class="meta">
@@ -155,25 +154,20 @@ irrWeatherManager を試してみた
   
 
 
-<time datetime="2010-08-16T01:31:02+09:00" pubdate data-updated="true">2010年08月16日</time>
+<time datetime="2010-09-12T10:25:53+09:00" pubdate data-updated="true">2010年09月12日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://www.nicovideo.jp/mylist/20556972">【ニコニコ動画】</a>
-ニコニコ動画にニコニコ風味なデモ動画を投稿してみた</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/iterrain.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/iterrain.png" alt="iterrain irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29356">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29356</a>
+広大なマップを格子状に区切って近隣部分のみ表示することによってメモリの節約と性能の向上を図るもののよう
+Fog と一緒に使うべきだけどわかりにくいのでFog を外してみた
+シームレスなマップの切り替えに使えそう</p>
 
-<ul>
-<li><p>参考URL付き!</p></li>
-<li><p>PC にやさしい15fps 仕様!</p></li>
-<li><p>少し痛めのBGM!</p></li>
-<li><p>あえて解説なし!!</p></li>
-</ul>
-
-
-<p><a href="http://www.nicovideofire.jp/keyword/?kw=Irrlicht+30%E7%A7%92%E9%96%93%E3%83%87%E3%83%A2">ニコニコ動画非会員向けリンク</a></p>
+<h1>他にも同じような実装を見かけたような気がするけれど失念&hellip;</h1>
 </div>
   
   
@@ -186,7 +180,7 @@ irrWeatherManager を試してみた
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/10/xeffects/">XEffects 使ってみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/11/shader/">シェーダラッパをちょっと試してみた</a></h1>
     
     
       <p class="meta">
@@ -202,19 +196,55 @@ irrWeatherManager を試してみた
   
 
 
-<time datetime="2010-08-10T19:33:38+09:00" pubdate data-updated="true">2010年08月10日</time>
+<time datetime="2010-09-11T23:53:32+09:00" pubdate data-updated="true">2010年09月11日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/xeffects.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/xeffects.png" alt="xeffects irrlicht" /></a>
-XEffects のShader を使ってみた
-もうちょっとライトを明るくした方がいいのかも
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=30631">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=30631</a>
-多謝: XEffects のひと
-2D イメージの描画と相性悪いかも?(PNG垂直反転したり、ARToolKit の描画がうまくいかなかったり)</p>
+  <div class="entry-content"><p>Irrlicht で使えるシェーダラッパをRadeon でちょっとだけ試してみた</p>
+
+<p>XEffects
+irrCg</p>
+
+<p>Normal
+VSM
+Forward
+Deferred</p>
+
+<p>Windows
+DirectX
+OK
+OK
+OK
+OK</p>
+
+<p>OpenGL
+OK
+OK
+OK
+OK</p>
+
+<p>Linux
+OpenGL/fglrx
+OK
+OK
+OK
+?</p>
+
+<p>OpenGL/OSS</p>
+
+<h2>OK</h2>
+
+<p>OK
+?</p>
+
+<p>Linux + Radeon の組み合わせはやっぱりまだ鬼門なのかな&hellip;
+? はうまく描画されない
+&ndash; はIrrlicht 内で落ちる
+OSSは今後の実装/改善に期待かな
+<a href="http://www.x.org/wiki/RadeonFeature">http://www.x.org/wiki/RadeonFeature</a></p>
 </div>
   
   
@@ -227,7 +257,7 @@ XEffects のShader を使ってみた
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/03/sunflow/">Sunflow でレンダリングしてみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/11/irrcg/">irrCg を試してみた</a></h1>
     
     
       <p class="meta">
@@ -243,15 +273,30 @@ XEffects のShader を使ってみた
   
 
 
-<time datetime="2010-08-03T06:56:59+09:00" pubdate data-updated="true">2010年08月03日</time>
+<time datetime="2010-09-11T01:02:18+09:00" pubdate data-updated="true">2010年09月11日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/08/sunflow_alien.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/08/sunflow_alien.png" alt="sunflow" /></a>
-Software Center にあったSunflow というソフトでサンプルのエイリアンをレンダリングしてみた</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/cg.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/cg.png" alt="irrcg irrlicht" /></a>
+nVidia のCg 言語のシェーダラッパirrCg を試してみた
+Radeon でも使える
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=23676">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=23676</a>
+<a href="http://code.google.com/p/irrcg/">http://code.google.com/p/irrcg/</a>
+1. Cg のライブラリをダウンロード
+nVidia(<a href="http://developer.nvidia.com/object/cg_download.html">http://developer.nvidia.com/object/cg_download.html</a>)
+2-a. irrCg 0.7.1 の場合
+IrrCgExtensionHandler.h に以下を追加</p>
+
+<pre><code>&lt;code&gt;#include "GL/glx.h"&lt;/code&gt;
+</code></pre>
+
+<p>2-b. irrCg 0.8 from SVN の場合
+IrrCg.h 内の宣言とexample 内のmain.cpp 内で継承した関数の宣言が不一致なのでヘッダを元に修正、Pixel はFragment にする
+3. ケースセンシティブなところをとりあえず対処
+./cg/NormalMapping.cg をコピーして./cg/normalmapping.cg を作る</p>
 </div>
   
   
@@ -264,7 +309,7 @@ Software Center にあったSunflow というソフトでサンプルのエイ�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/07/25/post_9/">ディスプレイ上を歩いてみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/08/irrlicht/">Irrlicht アプリをデスクトップ背景で動かしてみた</a></h1>
     
     
       <p class="meta">
@@ -280,18 +325,57 @@ Software Center にあったSunflow というソフトでサンプルのエイ�
   
 
 
-<time datetime="2010-07-25T00:04:43+09:00" pubdate data-updated="true">2010年07月25日</time>
+<time datetime="2010-09-08T22:41:19+09:00" pubdate data-updated="true">2010年09月08日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/07/artk_test.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/07/artk_test.png" alt="artoolkit irrlicht" /></a>
-Irrlicht + ARToolKit を使ってディスプレイの中から出て歩いてみた
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=30000">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=30000</a>
-このスレより元スレの方がシンプルな気もするけれど・・・
-多謝: irrAR のひと、ARToolKit のひと</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/background.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/background.png" alt="xwinwrap irrlicht" /></a>
+xwinwrap を使ってIrrlicht のアプリケーションをデスクトップの背景にしてみた
+createDeviceEx() でルートウィンドウのWindow ID を設定してあげるとよいみたい
+ディスプレイドライバとの相性(?)がある<strike>のと、conky が見えなくなってしまう</strike>のが残念</p>
+
+<ol>
+<li><p> xwinwrap を拾ってきてインストールする</p></li>
+<li><p> コマンドパラメタからWindow ID を設定できるようにする
+[cpp]
+SIrrlichtCreationParameters params;
+params.DriverType = video::EDT_OPENGL;
+params.WindowSize = core::dimension2d&lt;u32&gt;(800, 600);
+params.Bits = 32;
+params.Fullscreen = false;
+params.Stencilbuffer = false;
+params.Vsync = false;
+params.AntiAlias = false;
+for(int i = 0; i &lt; argc; i++) {
+if(strcmp(argv[i], &ldquo;-wid&rdquo;) == 0)
+    params.WindowId = (void<em>)strtol(argv[i+1], NULL, 16);
+if(strcmp(argv[i], &ldquo;-fullscreen&rdquo;) == 0)
+    params.Fullscreen = true;
+if(strcmp(argv[i], &ldquo;-width&rdquo;) == 0)
+    params.WindowSize.Width = strtol(argv[i+1], NULL, 10);
+if(strcmp(argv[i], &ldquo;-height&rdquo;) == 0)
+    params.WindowSize.Height = strtol(argv[i+1], NULL, 10);
+}
+IrrlichtDevice </em>device = createDeviceEx(params);
+[/cpp]</p></li>
+<li><p> 実行する
+[shell gutter=&ldquo;false&rdquo;]
+$ xwinwrap -ni -fs -s -st -sp -b -nf &mdash; ./myApp -wid WID -fullscreen -width 1024 -height 768
+[/shell]</p></li>
+</ol>
+
+
+<p>同じように動画ファイルをデスクトップで再生できた
+[shell gutter=&ldquo;false&rdquo;]
+$ xwinwrap -ni -fs -s -st -sp -b -nf &mdash; mplayer -wid WID -quiet -loop 0 -fs -shuffle ~/Videos/BGV/*
+[/shell]
+Web カメラでキャプチャした映像もデスクトップに設定できた
+[shell gutter=&ldquo;false&rdquo;]
+$ xwinwrap -ni -fs -s -st -sp -b -nf &mdash; mplayer  -wid WID tv:// -tv driver=v4l2:width=1024:height=768
+[/shell]</p>
 </div>
   
   
@@ -304,7 +388,7 @@ Irrlicht + ARToolKit を使ってディスプレイの中から出て歩いて�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/07/23/flv/">FLV を再生してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/07/h-craft_championship/">H-Craft Championship で遊んでみた</a></h1>
     
     
       <p class="meta">
@@ -320,18 +404,22 @@ Irrlicht + ARToolKit を使ってディスプレイの中から出て歩いて�
   
 
 
-<time datetime="2010-07-23T02:45:43+09:00" pubdate data-updated="true">2010年07月23日</time>
+<time datetime="2010-09-07T21:22:55+09:00" pubdate data-updated="true">2010年09月07日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/07/no_thank_you.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/07/no_thank_you.png" alt="murmuurvideo irrlicht" /></a>
-Irrlicht 上でFLV 再生ktkr!!
-音声も再生される!!
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=34844">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=34844</a>
-多謝: murmuurVIDEO のひと</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/hcraft.jpg"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/hcraft.jpg" alt="hcraft irrlicht" /></a>
+F-Zero/wipEout ライクな3D レースゲームでデモ版と商用版がある
+2006 年リリースだからかなり古いけど画面が綺麗で完成度が高い
+操作に慣れると気持ちいい
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=17871">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=17871</a>
+<a href="http://www.irrgheist.com/">http://www.irrgheist.com/</a>
+サウンドはwav とogg でOpenAL
+モデルはX とobj
+GUI はxml 化、フォントはgun4fc.ttf</p>
 </div>
   
   
@@ -344,7 +432,7 @@ Irrlicht 上でFLV 再生ktkr!!
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/07/23/post_8/">サーキットを駆け抜けてみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/04/irrlamb/">Irrlamb で遊んでみた</a></h1>
     
     
       <p class="meta">
@@ -360,16 +448,26 @@ Irrlicht 上でFLV 再生ktkr!!
   
 
 
-<time datetime="2010-07-23T01:07:29+09:00" pubdate data-updated="true">2010年07月23日</time>
+<time datetime="2010-09-04T21:58:43+09:00" pubdate data-updated="true">2010年09月04日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/07/racetrack.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/07/racetrack.png" alt="racetrack irrlicht" /></a>
-サーキットの素材を見つけたので仲間４人＋２台（機？）と駆け抜けてみた
-多謝: 素材作成者の方</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/irrlamb.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/irrlamb.png" alt="irrlamb irrlicht" /></a>
+irrlamb で遊んでみた
+面クリアタイプの3D アクションゲームで、ちょっと慣れが必要だけれどおもしろい!!
+物理エンジンはBullet を使っている
+画面構成がかっこよくて、リプレイ機能もある
+<a href="http://code.google.com/p/irrlamb/">http://code.google.com/p/irrlamb/</a>
+<a href="http://www.youtube.com/profile?user=irrlamb">http://www.youtube.com/profile?user=irrlamb</a>
+ubuntu lucid/universe のリポジトリにlibirrlicht1.7,
+libirrlicht-dev(/usr/include/irrlicht, /usr/lib/libirrlicht.a,
+/usr/lib/libirrlicht.so とか), libirrlicht1.7-dbg,
+libirrlicht-doc(リファレンスとexamples)
+のパッケージ(1.7+dfsg1-1)があることを初めて知った・・・いつできたんだろう
+ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
 </div>
   
   
@@ -382,7 +480,7 @@ Irrlicht 上でFLV 再生ktkr!!
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/07/23/post_7/">音楽室に入ってみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/08/31/b-momi/">モーションキャプチャデータを試してみた</a></h1>
     
     
       <p class="meta">
@@ -398,16 +496,17 @@ Irrlicht 上でFLV 再生ktkr!!
   
 
 
-<time datetime="2010-07-23T01:05:29+09:00" pubdate data-updated="true">2010年07月23日</time>
+<time datetime="2010-08-31T21:11:20+09:00" pubdate data-updated="true">2010年08月31日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/07/musicroom.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/07/musicroom.png" alt="irrlicht" /></a>
-音楽室の素材を見つけたので音楽室に入ってみた
-多謝: 素材作成者の方</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/08/motion_capture.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/08/motion_capture.png" alt="motion capture irrlicht" /></a>
+モーションキャプチャデータBVH をB-MoMi でVMD に変換して動かしてみた
+さすがに動きが自然でなめらかだ
+<a href="http://atupdate.web.fc2.com/">http://atupdate.web.fc2.com/</a></p>
 </div>
   
   
@@ -420,7 +519,7 @@ Irrlicht 上でFLV 再生ktkr!!
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/07/18/post_5/">物理演算を試してみる</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/08/29/spark/">SPARK を試してみた</a></h1>
     
     
       <p class="meta">
@@ -436,16 +535,28 @@ Irrlicht 上でFLV 再生ktkr!!
   
 
 
-<time datetime="2010-07-18T14:58:15+09:00" pubdate data-updated="true">2010年07月18日</time>
+<time datetime="2010-08-29T22:25:50+09:00" pubdate data-updated="true">2010年08月29日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/bullet.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/bullet.png" alt="bullet irrlicht" /></a>
-Bullet のサンプルを実行してみる
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39007">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39007</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/SPARKFire.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/SPARKFire.png" alt="irrlicht SPARK" /></a>
+SPARK のエフェクトを試してみた
+綺麗なエフェクトがいろいろあって楽しい!!
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754</a>
+<a href="http://spark.developpez.com/">http://spark.developpez.com/</a>
+<a href="http://www.youtube.com/watch?v=7lJu2rf3Ras">http://www.youtube.com/watch?v=7lJu2rf3Ras</a>
+Linux + Code::Blocks でデモをビルドする手順</p>
+
+<ol>
+<li><p> Code::Blocks 用のワークスペース「SPARK.workspace」を開く</p></li>
+<li><p> 「SPARK Engine CORE LIB」プロジェクトを開いてWIN32 のマクロを外して「libSPARK.a」をビルド</p></li>
+<li><p> 「SPARK Engine IRR LIB」プロジェクトを開いてWIN32 のマクロを外して「libSPARK_IRR.a」をビルド</p></li>
+<li><p> デモのプロジェクトを作成して、ソース内の「\」を「/」に置換してビルド(libSPARK.a, libSPARK_IRR.a をリンク)</p></li>
+</ol>
+
 </div>
   
   
@@ -458,7 +569,7 @@ Bullet のサンプルを実行してみる
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/07/14/post_2/">潜入してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/08/28/buggyrace/">BuggyRace で遊んでみた</a></h1>
     
     
       <p class="meta">
@@ -474,15 +585,18 @@ Bullet のサンプルを実行してみる
   
 
 
-<time datetime="2010-07-14T02:28:34+09:00" pubdate data-updated="true">2010年07月14日</time>
+<time datetime="2010-08-28T13:44:18+09:00" pubdate data-updated="true">2010年08月28日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/07/snake.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/07/snake.png" alt="irrlicht" /></a>
-小さくなって知らない世界に潜入してみた</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/08/BuggyRace.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/08/BuggyRace.png" alt="BuggyRace irrlicht" /></a>
+IrrCg のひと(黄色のバギーに乗っていると思われる)が作ったカーレースゲームBuggyRace で遊んでみた
+<a href="http://buggy-race.pl/">http://buggy-race.pl/</a>
+マップやオブジェクトはb3d 形式でシェーダはirrCg、サウンドはogg 形式でOpenAL で再生している
+ほのぼのしてるけど完成度は高いなぁ</p>
 </div>
   
   
@@ -530,7 +644,7 @@ Bullet のサンプルを実行してみる
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

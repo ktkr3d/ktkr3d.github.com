@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://blog.getnightingale.com/2012/03/05/nightingale-1-11-0-our-first-official-release/ Nightingale 1.11.0 がリリースされたのでUbuntu 11.10 x86_64 で使ってみた。 &hellip;">
+  <meta name="description" content="http://windows.microsoft.com/ja-JP/windows-8/download
+Linux の他にはWindows XP 32bit しか入っていないデスクトップPC にWindows 8 Release Preview 64bit をインストールしてみた。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,7 +94,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/07/nightingale-1-11-0/">Nightingale 1.11.0</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/06/02/windows-8-release-preview-64bit/">Windows 8 Release Preview 64bit</a></h1>
     
     
       <p class="meta">
@@ -109,27 +110,24 @@ $(document).ready( function () {
   
 
 
-<time datetime="2012-03-07T00:40:48+09:00" pubdate data-updated="true">2012年03月07日</time>
+<time datetime="2012-06-02T00:15:41+09:00" pubdate data-updated="true">2012年06月02日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/03/nightingale_1.11.0.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/03/nightingale_1.11.0.png" alt="nightingale 1.11.0" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_boot_usb.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_boot_usb.png" alt="windows 8 boot usb" /></a>
+<a href="http://windows.microsoft.com/ja-JP/windows-8/download">http://windows.microsoft.com/ja-JP/windows-8/download</a>
+Linux の他にはWindows XP 32bit しか入っていないデスクトップPC にWindows 8 Release Preview 64bit をインストールしてみた。</p>
 
-<p><a href="http://blog.getnightingale.com/2012/03/05/nightingale-1-11-0-our-first-official-release/">http://blog.getnightingale.com/2012/03/05/nightingale-1-11-0-our-first-official-release/</a></p>
-
-<p>Nightingale 1.11.0 がリリースされたのでUbuntu 11.10 x86_64 で使ってみた。</p>
-
-<ul>
-<li><p>Shoutcast アドオンが使える</p></li>
-<li><p>Songbird のフェザーPurple Rain に切り替えられる
-「表示」-「フェザー」-「Purple Rain」を選択する。</p></li>
-<li><p>マスストレージデバイス（Androidとか） と同期できる</p></li>
-<li><p>歌詞を表示できる</p></li>
-<li><p>動画を再生できる（プレビュー版より不安定かも）</p></li>
-</ul>
+<ol>
+<li><p> Windows XP 32bit 上でWindows 8 Release Preview 64bit ISO をダウンロード</p></li>
+<li><p> Windows XP 32bit に「Windows 7 USB/DVD ダウンロードツール」をインストール(過去にインストール済み)</p></li>
+<li><p> 32bit のbootsect.exe を「Windows 7 USB/DVD ダウンロードツール」と同じフォルダにコピー</p></li>
+<li><p> 「Windows 7 USB/DVD ダウンロードツール」を起動して、起動可能なUSB デバイスを作成</p></li>
+<li><p> USB デバイスでブートしてWindows 8 をインストール</p></li>
+</ol>
 
 </div>
   
@@ -143,7 +141,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/02/my-android-x86-4-0-rc1-for-inspiron-duo/">My Android-x86 4.0 RC1 for Inspiron Duo</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/05/31/moc-music-on-console/">MOC (Music on Console)</a></h1>
     
     
       <p class="meta">
@@ -159,536 +157,58 @@ $(document).ready( function () {
   
 
 
-<time datetime="2012-03-02T23:31:26+09:00" pubdate data-updated="true">2012年03月02日</time>
+<time datetime="2012-05-31T19:59:21+09:00" pubdate data-updated="true">2012年05月31日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Indpiron duo でandroid-x86 4.0 RC1 のtegav2 ビルドがほぼ動くので微調整してみよう。</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/moc.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/moc.png" alt="moc music on console mocp" /></a></p>
 
-<ol>
-<li><p> repo でandroid-x86 のソースコードを拾ってきて展開する。
+<p><a href="http://moc.daper.net/">http://moc.daper.net/</a>
+軽量なコンソール型のメディアプレーヤーMOC(Music On Console)を使ってみた。コマンドはmocp で、mocp を実行するとメディアを再生するサーバと操作用のクライアント画面が同時に起動する。クライアント画面を終了してもサーバはメディアの再生を継続するような仕組みになっている。moc-ffmpeg-plugin をインストールするとWMA, RealAudio, MP4, AAC 等のフォーマットの再生も可能。イコライザがついていたり、歌詞表示ができたり、テーマ変更もできたりする。日本語のタグやファイル名も表示可能。軽量だからwine で動かしているアプリケーションへの影響も少ないようだ。</p>
+
+<ul>
+<li><p>インストール
 [shell gutter=&ldquo;false&rdquo;]
-$ repo init -u <a href="http://git.android-x86.org/manifest">http://git.android-x86.org/manifest</a> -b ics-x86
-$ repo sync
+$ sudo apt-get install moc moc-ffmpeg-plugin
 [/shell]</p></li>
-<li><p> キーボードの調整
-tegav2 ビルドではキーレイアウトは以下のようになっている。
-[plain title=&ldquo;./device/tegatech/tegav2/AT_Translated_Set_2_keyboard.kl&rdquo; firstline=&ldquo;10&rdquo;]
-key 1     HOME          WAKE_DROPPED
-key 114   VOLUME_DOWN
-key 115   VOLUME_UP
-key 125   APP_SWITCH
-key 127   ESCAPE        WAKE_DROPPED
-[/plain]
-それ以外のキーも動作するように、このファイルをコピーしないようにする。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2.mk&rdquo; firstline=&ldquo;5&rdquo; highlight=&ldquo;7,8&rdquo;]
-PRODUCT_COPY_FILES := \
-$(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \</p></li>
-</ol>
-
-
-<h1>$(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \</h1>
-
-<p>[/plain]</p>
-
-<ol>
-<li> SDCARD の認識
-tegav2 ビルドではfstab の設定が以下のようになっている。
-[plain title=&ldquo;./device/tegatech/tegav2/vold.fstab&rdquo;]
-dev_mount sdcard  /mnt/MicroSD auto /devices/pci0000:00/0000:00:1d.7/usb1/1-5/1-5:1.0
-dev_mount usb     /mnt/USB     auto
-[/plain]
-デバイスの指定を外す。
-[plain title=&ldquo;./device/tegatech/tegav2/vold.fstab&rdquo; highlight=&ldquo;1&rdquo;]
-dev_mount sdcard  /mnt/MicroSD auto
-dev_mount usb     /mnt/USB     auto
-[/plain]
-または、このファイルもコピーしないようにする。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2.mk&rdquo; firstline=&ldquo;5&rdquo; highlight=&ldquo;6,7&rdquo;]
-PRODUCT_COPY_FILES := \</li>
-</ol>
-
-
-<h1>$(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \</h1>
-
-<h1>$(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \</h1>
-
-<p>[/plain]</p>
-
-<ol>
-<li><p> スピーカーの調整
-ヘッドフォンを繋いでもPC のスピーカーがミュートしない。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2_defconfig&rdquo; firstline=&ldquo;2124&rdquo; highlight=&ldquo;2128,2129,2140,2141&rdquo;]
-CONFIG_SND_HDA_INTEL=m
-CONFIG_SND_HDA_HWDEP=y
-CONFIG_SND_HDA_RECONFIG=y</p>
-
-<h1>CONFIG_SND_HDA_INPUT_BEEP is not set</h1>
-
-<h1>CONFIG_SND_HDA_INPUT_JACK=y</h1>
-
-<h1>CONFIG_SND_HDA_PATCH_LOADER=y</h1>
-
-CONFIG_SND_HDA_CODEC_REALTEK=y
-CONFIG_SND_HDA_CODEC_ANALOG is not set
-CONFIG_SND_HDA_CODEC_SIGMATEL=y
-CONFIG_SND_HDA_CODEC_VIA=y
-CONFIG_SND_HDA_CODEC_HDMI=y
-CONFIG_SND_HDA_CODEC_CIRRUS=y
-CONFIG_SND_HDA_CODEC_CONEXANT=y
-CONFIG_SND_HDA_CODEC_CA0110=y
-CONFIG_SND_HDA_CODEC_CMEDIA=y
-CONFIG_SND_HDA_CODEC_SI3054=y
-
-<h1>CONFIG_SND_HDA_GENERIC is not set</h1>
-
-<p>CONFIG_SND_HDA_GENERIC=y
-CONFIG_SND_HDA_POWER_SAVE=y
-CONFIG_SND_HDA_POWER_SAVE_DEFAULT=3
-[/plain]
-とりあえず過去のsparta_defconfig を参考にsnd_hda 関連を書き換える。</p></li>
-<li><p> ISO イメージの作成
-ファイルの編集が済んだらビルド。メモリが少ないので多重度は1に。
+<li><p>起動とサーバの停止
 [shell gutter=&ldquo;false&rdquo;]
-$ make -j1 iso_img TARGET_PRODUCT=tegav2
-$
-[/shell]</p></li>
-</ol>
-
-
-<p>キーボード入力ができるようになったけれど、仮想キーボードが表示されなくなったので、キーマッピングを追加するようにした方がよさそう。また、スピーカーの音は改善されなく、初期インストールアプリも減ってしまったので、見直しが必要だ。
-tegav2.mk を見て、電源ボタンダブルクリックでシャットダウンする設定になっているのに気がついた。</p>
-
-<p>EDIT1:
-他のLinux と同様にオプションを追加してみよう。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2_info&rdquo; firstline=&ldquo;16&rdquo;]</p>
-
-<pre><code>SNDDEV="snd-hda-intel model=ideapad" 
-</code></pre>
-
-<p>[/plain]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/28/inspiron-duo-android-x86-4-0-rc1/">Inspiron Duo + Android-x86 4.0 RC1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-28T23:01:43+09:00" pubdate data-updated="true">2012年02月28日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_version.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_version.png" alt="android-x86 4.0 rc1 version" /></a></p>
-
-<p><a href="http://www.android-x86.org/releases/releasenote-4-0-rc1">http://www.android-x86.org/releases/releasenote-4-0-rc1</a></p>
-
-<p>Android-x86 4.0 RC1 がリリースされたので試してみた。tegav2 のビルドをInspiron duo 実機で動かしてみた。</p>
-
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_youtube.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_youtube.png" alt="android-x86 4.0 rc1 yout ube" /></a></p>
-
-<p>Youtube の動画一覧画面はタッチスクリーンでヌルヌルスライドする。</p>
-
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_uname.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_uname.png" alt="android-x86 40 rc1 terminal uname" /></a></p>
-
-<p>ターミナルの打鍵時にカチカチなる。</p>
-
-<h3>動いたこと</h3>
-
-<ul>
-<li><p>Win7/Ubuntu/Android-x86/某OS のマルチブート（内蔵HDDのGPT環境）</p></li>
-<li><p>タッチスクリーン（キャリブレーションOK）</p></li>
-<li><p>Wi-Fi</p></li>
-<li><p>Android Market</p></li>
-<li><p>日本語入力</p></li>
-<li><p>マウスカーソル表示</p></li>
-<li><p>ターミナル</p></li>
-<li><p>Youtube</p></li>
-<li><p>Mobo Player</p></li>
-<li><p>2chMate</p></li>
-<li><p>Songbird</p></li>
-<li><p>Seesmic</p></li>
-<li><p>Google map</p></li>
-</ul>
-
-
-<h3>設定が必要そうなこと</h3>
-
-<ul>
-<li><p>イヤフォンを挿してもスピーカーから音声が出力されてしまう(ビルドパラメタかカーネルパラメタでなんとかなりそう)</p></li>
-<li><p>キーボード入力(ビルドパラメタかカーネルパラメタでなんとかなりそう)</p></li>
-</ul>
-
-
-<p>sparta ビルドが復活すればInspiron duo での完成度があがると思う。</p>
-
-<p><strong>Edit1:</strong>
-<a href="http://groups.google.com/group/android-x86/browse_thread/thread/79d37d425a950d93?hl=en">http://groups.google.com/group/android-x86/browse_thread/thread/79d37d425a950d93?hl=en</a>
-Esc キー, スーパーキー(Windows)等は有効なので、
-/system/usr/keylayout/AT_Translate*
-に設定を追加すればなんとかできそう。</p>
-
-<p>スピーカーについては、以前からsnd-hda-intel の設定に依存しているだけなので解決できそう。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/20/inspiron-duo-ubuntu-11-10-crystal-hd/">Inspiron Duo + Ubuntu 11.10 + Crystal HD</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-20T00:17:33+09:00" pubdate data-updated="true">2012年02月20日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Inspiron duo 上のUbuntu 11.10 x86_64 にBroadcom Crystal HD Decoder Driver を組み込んでみた。</p>
-
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;必要なパッケージのインストール&rdquo;]
-$ sudo apt-get install build-essential g++ automake autoconf libtool libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-[/shell]</p>
-
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ソースの取得&rdquo;]
-$ git clone git://linuxtv.org/jarod/crystalhd.git
-[/shell]</p>
-
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ドライバーのインストール&rdquo;]
-$ cd driver/linux/
-$ autoconf
-$ ./configure
-$ make
-$ sudo make install
+$ mocp
+$ mocp -x
 [/shell]
-コンパイル時に警告がでるので、とりあえず-w をつけた。</p>
-
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ライブラリのインストール&rdquo;]
-$ cd linux_lib/libcrystalhd/
-$ make
-$ sudo make install
-[/shell]</p>
-
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;gstreamer プラグインのインストール&rdquo;]
-$ cd filters/gst/gst-plugin/
-$ ./autogen.sh
-$ make
-$ sudo make install
-[/shell]</p>
-
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ファームウェアのコピー&rdquo;]
-$ sudo cp firmware/fwbin/70015/<em> /lib/firmware/
-$ sudo cp firmware/fwbin/70012/</em> /lib/firmware/
-[/shell]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/12/irrlicht-lensflare-effect/">Irrlicht + Lens Flare Effect</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-12T12:58:28+09:00" pubdate data-updated="true">2012年02月12日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_lensflare.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_lensflare.png" alt="irrlicht lens flare" /></a></p>
-
-<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728</a></p>
-
-<p>Irrlicht フォーラムにレンズフレアのサンプルがあったのでLinux で試してみた。</p>
-
-<p>Irrlicht 1.8.0
-gcc/g++ 4.6.1</p>
-
-<p>一点修正。</p>
-
-<p>[cpp firstline=&ldquo;28&rdquo; highlight=&ldquo;29&rdquo; title=&ldquo;LensFlareSceneNode.h&rdquo;]</p>
-
-<pre><code>    // constructor
-    SFlareData(E_FLARE_TYPE type, float position, float scale, video::SColor color)
-</code></pre>
-
-<p>[/cpp]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/">Ubuntu 11.10 + Ogre 1.7.3 + Kinect</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-10T21:20:03+09:00" pubdate data-updated="true">2012年02月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
-
-<p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
-
-<p>Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
-OpenNI/NITE 1.5.2
-avin2-sensor 5.1.0.25
-Ogre3d 1.7.3
-gcc/g++ 4.6.1
-codeblocks 10.05</p>
-
-<p>ソースコードとロードモジュール: <a href="https://github.com/ktkr3d/sample-app-sinbad">https://github.com/ktkr3d/sample-app-sinbad</a></p>
-
-<p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
-
-<p>[plain gutter=&ldquo;false&rdquo;]
-コンパイル中: src/CharacterSample.cpp
-リンク中 動的ライブラリ: ../bin/Sample_Character.so
-/usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1&#8217; can not be used when making a shared object; recompile with -fPIC
-obj/Release/src/CharacterSample.o: could not read symbols: Bad value
-collect2: ld はステータス 1 で終了しました
-プロセスはステータス 1 で終了しました (0 分 10 秒)
-0 個のエラー、 0 個の警告
-[/plain]</p>
-
-<p>-fPIC オプションをつけたらビルドできた。</p>
-
-<p>[plain gutter=&ldquo;false&rdquo;]
-コンパイル中: src/CharacterSample.cpp
-リンク中 動的ライブラリ: ../bin/Sample_Character.so
-出力サイズは 232.84 KB
-プロセスはステータス 0 で終了しました (0 分 5 秒)
-0 個のエラー、 0 個の警告
-[/plain]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/07/ubuntu-11-10-blender-2-61/">Ubuntu 11.10 + Blender 2.61</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-07T05:05:26+09:00" pubdate data-updated="true">2012年02月07日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_11.10_blender_2.61.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_11.10_blender_2.61.png" alt="ubuntu 11.10 blender 2.61" /></a></p>
-
-<p><a href="https://launchpad.net/~irie/+archive/blender">https://launchpad.net/~irie/+archive/blender</a></p>
-
-<p>Ubuntu 11.10 x86_64 にblender 2.61 を入れてみた。
-blender 2.6 での日本語化は、</p>
-
-<ol>
-<li><p> 「File」-「User Preferences」メニューで「System」タブを選択</p></li>
-<li><p> 「International Fonts」をチェック</p></li>
-<li><p> 「Language」で「Japanese(日本語)」を選択</p></li>
-<li><p> 「Interface」と「Tooltip」をチェック</p></li>
-<li><p> 「デフォルトとして保存」を押す</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/05/ubuntu-11-10-kinect-irrlicht/">Ubuntu 11.10 + Kinect + Irrlicht</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-05T22:25:28+09:00" pubdate data-updated="true">2012年02月05日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_sinbad_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_sinbad_kinect.png" alt="irrlicht ubuntu 11.10 kinect NITE sinbad" /></a></p>
-
-<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730</a></p>
-
-<p>Ubuntu 11.10 x86_64 にKinect の環境を構築してIrrlicht と連動させてみた。モデルはOrge3D のキャラクターSinbad(Sinbad.mesh)を使おうと思うので、Kinect.cpp とCPlayer.cpp の中のボーン名を変更しておく。ogremesh のボーン名やモーションは取り込めたけど、テクスチャがうまく貼れてないのはなんでだろう。キャリブレーションに成功すると以下のログが表示される。
-[plain gutter=&ldquo;false&rdquo;]
-New User 1
-Calibration started for user 1
-Calibration complete, start tracking user 1
-[/plain]
-キャリブレーション後に動きが連動しないのはb3d, ms3d, X 形式でないからかな。</p>
-
-<p>Kinect の環境構築手順は<a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">Ubuntu 10.10 の時</a>と基本的に同じだけど、最近のLinux ではカーネルドライバを無効にしないといけないみたい。</p>
-
-<h3>Linux Kernel のKinect ドライバの無効化</h3>
-
-<p>/lib/modules/3.0.0-16-generic/kernel/drivers/media/video/gspca/gspca_kinect.ko
-まず、Linux Kernel 3.0 からKinect のカーネルドライバが組み込まれているので、あらかじめ無効にしておく。rmmod gspca_kinect かgspca_kinect.ko をリネームする。</p>
-
-<h3>OpenNI のインストール</h3>
-
-<ol>
-<li><p> <a href="https://github.com/OpenNI/OpenNI/tree/unstable">https://github.com/OpenNI/OpenNI/tree/unstable</a> からダウンロードして展開</p></li>
-<li><p> cd Platform/Linux/Build</p></li>
-<li><p> make
-ここで CreateRedist/RedistMaker に実行パーミッションを与えておく</p></li>
-<li><p> sudo make install</p></li>
-<li><p> Redist/*/install.sh を実行する</p></li>
-</ol>
-
-
-<h3>ドライバ(avin2)のインストール</h3>
-
-<ol>
-<li><p> <a href="https://github.com/avin2/SensorKinect">https://github.com/avin2/SensorKinect</a> からダウンロードして展開</p></li>
-<li><p> cd Platform/Linux/Build</p></li>
-<li><p> make
-ここで CreateRedist/RedistMaker に実行パーミッションを与えておく</p></li>
-<li><p> sudo make install</p></li>
-<li><p> Redist/*/install.sh を実行する</p></li>
-</ol>
-
-
-<h3>NITE のインストール</h3>
-
-<ol>
-<li><p> <a href="http://www.openni.org/Downloads/OpenNIModules.aspx">http://www.openni.org/Downloads/OpenNIModules.aspx</a> からダウンロードして展開（Ubuntu 10.10 用でも動く）</p></li>
-<li><p> sudo ./install.sh</p></li>
-</ol>
-
-
-<h3>サンプルを実行して動作確認</h3>
+オプションの詳細はman mocp で。</p></li>
+<li><p>よく使うキー操作
+[h][?] キーボードショートカット一覧を表示</p></li>
+</ul>
+
+
+<p>[ENTER] メディアの再生、フォルダの選択等
+[SPACE] ポーズ
+[q] mocp クライアント画面を終了(サーバは実行のまま)
+[Q] mocp クライアント画面を終了(サーバも終了)
+[TAB] 左ペイン(ファイルリスト)と右ペイン(プレイリスト)を移動
+[l] 選択しているペインのレイアウトを最大に
+[,][&lt;] ボリュームダウン(5%, 1%)
+[.][>] ボリュームアップ(5%, 1%)</p>
+
+<p>[o] URL を開く
+[R] リピート再生の切り替え
+[S] シャッフル再生の切り替え
+[A] プレイリストに追加(ディレクトリは再帰的に)
+[L] 歌詞表示(歌詞ファイルはメディアと同じファイル名で拡張子無し)</p>
 
 <ul>
-<li><p>OpenNI のPlatform/Linux/Bin/ で、./NiViewer を実行</p></li>
-<li><p>NITE のSamples/Bin/x64-Release で、./Sample-Players を実行</p></li>
+<li><p>インターネットラジオの聞き方
+SHOUTcast で探して、ローカルにpls ファイルを保存して、開いたり、[o]で直接URL を入力したり。</p></li>
+<li><p>moc で再生中のメディアの情報をConky に表示するには
+mocp -Q でいろいろな情報を取得して表示することができる。
+[plain title=&ldquo;~/.conkyrc&rdquo; firstline=&ldquo;124&rdquo;]
+${if_running mocp}${font DejaVu Sans}MUSIC (moc)${font} ${hr 2}
+${font :size=10}${execi 5 mocp -Q %title | nkf -w -F36-0}${endif}
+[/plain]</p></li>
 </ul>
 
 </div>
@@ -703,7 +223,7 @@ Calibration complete, start tracking user 1
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/02/04/ubuntu-12-04-precise-pangolin-alpha-2-gnome-shell/">Ubuntu 12.04 Precise Pangolin Alpha 2 + GNOME Shell</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/05/23/ubuntu-12-04-owncloud-4-0/">Ubuntu 12.04 + ownCloud 4.0</a></h1>
     
     
       <p class="meta">
@@ -719,18 +239,23 @@ Calibration complete, start tracking user 1
   
 
 
-<time datetime="2012-02-04T19:24:50+09:00" pubdate data-updated="true">2012年02月04日</time>
+<time datetime="2012-05-23T22:54:15+09:00" pubdate data-updated="true">2012年05月23日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu12.04.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu12.04.png" alt="ubuntu 12.04 precise pangolin apha 2 gnome shell" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/owncloud_android.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/owncloud_android.png" alt="owncloud android" /></a></p>
 
-<p><a href="http://cdimage.ubuntu.com/releases/12.04/alpha-2/">http://cdimage.ubuntu.com/releases/12.04/alpha-2/</a></p>
+<p><a href="http://owncloud.org/">http://owncloud.org/</a></p>
 
-<p>Ubuntu 12.04 Precise Pangolin のアルファ2 がリリースされたので、インストールしてみた。Linux カーネル は3.2。GNOME Shell も入れてみた。インストーラや一部のパッケージの動作がおかしいけれど、普通に使えそうな感じ。</p>
+<p>ownCloud 4.0 が公開されたので、Ubuntu 12.04 をサーバにして、LAN 上のUbuntu とAndroid からアクセスしてみた。</p>
+
+<p><a href="http://www.webupd8.org/2011/10/owncloud-2-your-personal-cloud-server.html">http://www.webupd8.org/2011/10/owncloud-2-your-personal-cloud-server.html</a>
+インストール方法はownCloud2 のインストール手順を参考にしてみたら、なんの迷いもなくできた。いつもwebupd8 はわかりやすくて便利だなぁ。日本語化は左下の「設定アイコン」->「Personal(個人設定)」で「Language(言語)」を「Japanese(日本語)」に設定する。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/owncloud_ubuntu.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/owncloud_ubuntu.png" alt="owncloud ubuntu chromium" /></a></p>
 </div>
   
   
@@ -743,7 +268,7 @@ Calibration complete, start tracking user 1
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/01/29/ubuntu-11-10-gnome-shell-catalyst-12-1/">Ubuntu 11.10 + GNOME Shell + Catalyst 12.1</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/05/19/wine-diablo-iii/">Wine + Diablo III</a></h1>
     
     
       <p class="meta">
@@ -759,27 +284,354 @@ Calibration complete, start tracking user 1
   
 
 
-<time datetime="2012-01-29T11:46:04+09:00" pubdate data-updated="true">2012年01月29日</time>
+<time datetime="2012-05-19T19:23:37+09:00" pubdate data-updated="true">2012年05月19日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/01/gnome_shell_catalyst_12.1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/01/gnome_shell_catalyst_12.1.png" alt="gnome shell catalyst 12.1 fglrx 8.930 ubuntu 11.10" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3.jpg"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3.jpg" alt="wine diablo3" /></a></p>
 
-<p>AMD Catalyst™ Proprietary Display Driver &ndash; Linux x86 &amp; Linux x86_64 の12.1 (fglrx 8.930)がリリースされたのでUbuntu 11.10 x86_64 の環境にインストールしてみた。GNOME Shell での画面のちらつきが無くなり、これでUnity とはサヨナラだ。</p>
+<p>週末になったので、Diablo III で遊ぼう！</p>
 
-<p>既にfglrx やfglrx-updates がインストールされていたらアンインストールしておいて、</p>
+<p>Ubuntu 12.04 x86_64 + wine-1.5.4 + fglrx 8.960 の環境で遊んでみた。アップデータがうまく終了しなかったので、Windows のドライブをマウントして、インストールしたディレクトリに移動して、以下のコマンドで起動した。
+[shell gutter=&ldquo;false&rdquo;]
+$ wine Diablo\ III.exe -launch
+[/shell]
+たまにサウンドやグラフィックスに不具合があるものの、調子が良い時はWindows 上で動作している時とほとんど変わらない感じ。日本語も特に設定変更なしで入力できた。Z キーでズーム。スクリーンショットを撮る時は、GNOME のPrintScreen キーのショートカットを変更しておく。</p>
+
+<p>なんとなく、Diablo III はシューティングゲームの要素が取り込まれているような、WoW に似ているような感じがする。弾幕避け、地雷避けとか。初回難しくても、何回かトライするとBOSS や雑魚キャラの攻撃パターンみたいなものがわかってきて、クリアできるようになる。
+やっとアクトIIIまで到着した。何故か小指がつりそう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/13/wine-diablo-3-downloader/">Wine + Diablo 3 Downloader</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-13T06:00:42+09:00" pubdate data-updated="true">2012年05月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3_downloader.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/wine_diablo3_downloader.png" alt="wine diablo 3" /></a>
+<a href="http://us.blizzard.com/en-us/games/d3/?rhtml=y">http://us.blizzard.com/en-us/games/d3/?rhtml=y</a></p>
+
+<p>2012/5/15 にDiablo 3 がリリースされるので、オンラインでデジタル版をPre-Order してみた。World of Warcraft の年間契約にDiablo 3 がバンドルされるという話もあったけれど、World of Warcraft は休止しているので、とりあえずDiablo 3 単品を購入。World of Warcraft はMists of Pandaria がリリースされたら少しだけ試してみよう。</p>
+
+<p>Diablo3 ゲーム本体はクローズドベータ版もWine で動いたので、製品版でも多分動作すると思う。今回はダウンロードからLinux 上で試してみよう。</p>
+
+<p>Diablo-III-8370-enUS-Installer-downloader.exe を右クリックして、Wine Windows Program Loader を選択。回線が細いので時間がかかるなぁ。その間に壁紙とConky をDiablo 仕様にしてみよう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/06/ubuntu-12-04-conky-1-9-0/">Ubuntu 12.04 + Conky 1.9.0</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-06T01:08:48+09:00" pubdate data-updated="true">2012年05月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/ubuntu_12.04_conky_1.9.0.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/ubuntu_12.04_conky_1.9.0.png" alt="ubuntu 12.04 conky 1.9.0" /></a></p>
+
+<p><a href="http://conky.sourceforge.net/">http://conky.sourceforge.net/</a></p>
+
+<p>Ubuntu 12.04 のConky 1.8.1 の挙動が怪しい(アップタイムより大きい更新間隔で実行するexeci 等が原因でcore dump する過去の不具合に似ている)のでconky 1.9.0 のソースを取得してインストールしてみた。configure するとインストール済みの開発用ライブラリに応じて使える機能が追加されるので、適宜、開発用ライブラリを追加しておく。configure の際には、画像を表示するので、&mdash;enable-imlib2 もつけてみた。デフォルトでは、/usr/local/bin/conky にインストールされる。これでエラーが出なくなってすっきり。</p>
 
 <p>[shell gutter=&ldquo;false&rdquo;]
-$ wget <a href="http://www2.ati.com/drivers/linux/amd-driver-installer-12-1-x86.x86_64.run">http://www2.ati.com/drivers/linux/amd-driver-installer-12-1-x86.x86_64.run</a>
-$ chmod 755 amd-driver-installer-12-1-x86.x86_64.run
-$ ./amd-driver-installer-12-1-x86.x86_64.run &mdash;buildpkg Ubuntu/oneiric
-$ sudo dpkg -i fglrx_8.930-0ubuntu1_amd64.deb fglrx-amdcccle_8.930-0ubuntu1_amd64.deb fglrx-dev_8.930-0ubuntu1_amd64.deb
+$ ./configure &mdash;enable-imlib2
+$ make
+$ sudo make install
 [/shell]</p>
 
-<p>GNOME Shell に切り替えてAuto Hide Top Panel 拡張を入れれば、トップパネルを隠せる。</p>
+<p>また、conkyForecast は以下の手順で設定した。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo add-apt-repository ppa:conky-companions/ppa
+$ sudo apt-get update
+$ sudo apt-get install conkyforecast
+$ cp /usr/share/conkyforecast/conkyForecast.config ~/.conkyForecast.config
+[/shell]</p>
+
+<p>xoap.weather.com ではなく、xml.weather.com から取得。地域は東京(JAXX0085)を設定。</p>
+
+<p>[plain title=&ldquo;~/.conkyForecast.config&rdquo; highlight=&ldquo;4, 5, 6, 19&rdquo;]</p>
+
+<h1>=============================================</h1>
+
+<h1>EXPERT SETTINGS, NOT REQUIRED TO BE ALTERED</h1>
+
+<h1>=============================================</h1>
+
+<h1>BASE_XOAP_URL = <a href="http://xoap.weather.com/weather/local/">http://xoap.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=5&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m</h1>
+
+<p>BASE_XOAP_URL = <a href="http://xml.weather.com/weather/local/">http://xml.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=10&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m
+MAXIMUM_DAYS_FORECAST = 5</p>
+
+<h1>===============================================</h1>
+
+<h1>USER SETTINGS, EDIT BASED ON DOCUMENTED SETUP</h1>
+
+<h1>===============================================</h1>
+
+<p>CACHE_FOLDERPATH = /tmp/
+CONNECTION_TIMEOUT = 5
+EXPIRY_MINUTES = 30
+TIME_FORMAT = %H:%M
+DATE_FORMAT = %Y-%m-%d
+LOCALE = en
+XOAP_PARTNER_ID =
+XOAP_LICENCE_KEY =
+DEFAULT_LOCATION = JAXX0085
+AUTO_NIGHT = False
+PROXY_HOST =
+PROXY_PORT = 8080
+PROXY_USERNAME =
+PROXY_PASSWORD =
+[/plain]</p>
+
+<p>天気予報の文言を日本語で表示するには、/usr/share/conkyforecast/locale/ja/* を作成しておいて、.conkyForecast.config でLOCALE = ja を設定すればよさそう。中国語(zh)をサンプルにして作成すれば、少し楽かも。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/03/webilder-wallpaper-changer/">Webilder - Wallpaper Changer</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-03T19:27:26+09:00" pubdate data-updated="true">2012年05月03日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/webilder.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/webilder.png" alt="weblider  wallpaper changer" /></a>
+<a href="http://www.webilder.org/">http://www.webilder.org/</a>
+壁紙を自動で変更してくれるWebilder を使ってみた。あらかじめタグを指定しておくと、Flickr から関連する壁紙を自動的にダウンロードして、指定した時間間隔で切り替えてくれる。パネルに常駐したアイコンから手動でのダウンロードや壁紙切り替えもできる。
+今回はOneiric 用の.deb を使ってインストールしてみた。Ubuntu 12.04 + GNOME Shell 3.4 の環境でダウンロード中にエラーが発生するけれど、ダウンロードは成功しているみたいなので気にしないでおこう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/02/irrlicht-chopper-scene-node-control/">Irrlicht + Chopper Scene Node & Control</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-02T18:47:10+09:00" pubdate data-updated="true">2012年05月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/irrlicht_chopper.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/irrlicht_chopper.png" alt="irrlicht chopper scene node simple chopper control" /></a></p>
+
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46226">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46226</a>
+<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46250">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46250</a></p>
+
+<p>Irrlicht Forum にヘリコプターを操縦するデモがあったので、動かしてみた。ヘリコプターのモデルはBell UH-1 Iroquois (<a href="http://en.wikipedia.org/wiki/Bell_UH-1_Iroquois">http://en.wikipedia.org/wiki/Bell_UH-1_Iroquois</a>)という機体みたい。慣性があって、ゆったりと動き出す。赤い線がデバッグ用の垂直線。キー操作は以下。
+F1〜F10: カメラの切り替え
+W/S: pitchDown/pitchUp
+H: hover
+Q/E: rollLeft/rollRight
+R: resetRoll &amp; resetPitch
+A/D: turnLeft/turnRight
+Z: brake
+X: stop
+C: throttle</p>
+
+<p>Blender 2.4 を使って、ヘリコプターのモデルを.ac 形式から.obj 形式に変換した。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/02/ubuntu-gnome-shell-remix-12-04/">Ubuntu GNOME Shell Remix 12.04</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-02T02:54:29+09:00" pubdate data-updated="true">2012年05月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/05/ubnutu_gnome_shell_remix_12.04.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/05/ubnutu_gnome_shell_remix_12.04.png" alt="ubnutu gnome shell remix 12.04" /></a></p>
+
+<p><a href="http://ubuntu-gs-remix.sourceforge.net/p/download/">http://ubuntu-gs-remix.sourceforge.net/p/download/</a></p>
+
+<p>Ubuntu GNOME Shell Remix 12.04 をクリーンインストールしてみた。
+Unity デスクトップ環境や不要な設定(オーバーレイスクロールバーとか)が省略できてすっきり。
+いつものようにトップパネルを隠して、Avant Window Navigator とConky を設定してみた。</p>
+
+<p>オリジナルのUbuntu と比べると、システム設定画面に次の二つのアイコンが無いみたい。</p>
+
+<ul>
+<li><p>ユーザー向け &ndash; プライバシー</p></li>
+<li><p>システム &ndash; 管理サービス</p></li>
+</ul>
+
+
+<p>よく見ると、各カテゴリのアイキャッチアイコンが利用不可状態になっている。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/22/ubuntu-12-04-conky/">Ubuntu 12.04 + Conky</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-22T11:32:40+09:00" pubdate data-updated="true">2012年04月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/04/ubuntu_12.04_conky.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/04/ubuntu_12.04_conky.png" alt="ubuntu 12.04 conky" /></a></p>
+
+<p>Ubuntu 12.04 のConky 1.8.1 の環境で、自前の.conkyrc の文字が表示されなくなったので、暫定対策してみた。試してみたところ、Droid Sans が認識されなくなっているみたいなので、省略してみた。fonts-droid はインストール済みでフォント名も変わってないと思うのだけど。</p>
+
+<p>[plain title=&ldquo;~/.conkyrc&rdquo; firstline=&ldquo;48&rdquo; highlight=&ldquo;49&rdquo;]</p>
+
+<h1>xftfont Droid Sans:size=10</h1>
+
+<pre><code>xftfont :size=10
+</code></pre>
+
+<p>[/plain]</p>
+
+<p>Ubuntu 11.10 + Conky 1.8.1 では正常に表示されるし、DejaVu Sans はうまく処理されているようなので、Conky 自体の問題ではないかもしれない。ConkyForecast やパブリックIP アドレス取得スクリプト等の通信処理も若干不安定みたいだけど、Ubuntu 12.04 リリース時には安定していたらいいな。</p>
 </div>
   
   
@@ -827,7 +679,7 @@ $ sudo dpkg -i fglrx_8.930-0ubuntu1_amd64.deb fglrx-amdcccle_8.930-0ubuntu1_amd6
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

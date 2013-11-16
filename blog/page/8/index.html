@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://irrlicht.convextech.ca/ Linux(Ubuntu 11.10 x86_64 + fglrx 8.991 + OpenGL/GLSL 3.3 + XEffects 1.3 + OpenAL 1.13 + cAudio 2.1.0 + Bullet 2.7.6 &hellip;">
+  <meta name="description" content="ここ数日のアップデートでUbuntu 12.04 のGNOME Shell が安定しだしたので、個人的に最も重要なAutohide Top Panel extension を動くようにしてみた。手順は3.2 用のextension を導入して、対応バージョン情報を変更するだけ。 [plain &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,7 +93,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/01/08/irrlicht-1-8-0_llinux/">Irrlicht 1.8.0 (Trunk) をLinux で試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/04/19/gnome-shell-3-4-autohide-top-panel-extension/">GNOME Shell 3.4 + Autohide Top Panel Extension</a></h1>
     
     
       <p class="meta">
@@ -109,18 +109,30 @@ $(document).ready( function () {
   
 
 
-<time datetime="2012-01-08T15:32:36+09:00" pubdate data-updated="true">2012年01月08日</time>
+<time datetime="2012-04-19T23:09:06+09:00" pubdate data-updated="true">2012年04月19日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/01/irrlicht_1.8.0_trunk_linux.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/01/irrlicht_1.8.0_trunk_linux.png" alt="irrlicht 1.8.0 trunk linux xeffects" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/04/autohidetoppanel.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/04/autohidetoppanel.png" alt="autohide top panel gnome shell extension" /></a></p>
 
-<p><a href="http://irrlicht.convextech.ca/">http://irrlicht.convextech.ca/</a></p>
+<p>ここ数日のアップデートでUbuntu 12.04 のGNOME Shell が安定しだしたので、個人的に最も重要なAutohide Top Panel extension を動くようにしてみた。手順は3.2 用のextension を導入して、対応バージョン情報を変更するだけ。</p>
 
-<p>Linux(Ubuntu 11.10 x86_64 + fglrx 8.991 + OpenGL/GLSL 3.3 + XEffects 1.3 + OpenAL 1.13 + cAudio 2.1.0 + Bullet 2.7.6 + FreeType 2.4.4)にIrrlicht のtrunk(1.8.0 svn4028)版を入れて実行してみた。changeslog.txt を見てみると、機能追加と多くの不具合修正が含まれているようだ。</p>
+<p>[plain title=&ldquo;/usr/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json&rdquo; highlight=&ldquo;2&rdquo;]
+{
+   &ldquo;shell-version&rdquo;: [ &ldquo;3.4&rdquo;, &ldquo;3.2.0&rdquo;, &ldquo;3.2&rdquo;, &ldquo;3.2.1&rdquo; ],
+   &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#97;&#x75;&#x74;&#x6f;&#x68;&#x69;&#x64;&#101;&#116;&#x6f;&#x70;&#x62;&#x61;&#x72;&#x32;&#64;&#119;&#101;&#114;&#101;&#x77;&#x6f;&#x6c;&#118;&#x65;&#115;&#x2e;&#117;&#x73;">&#x61;&#117;&#x74;&#x6f;&#x68;&#x69;&#100;&#101;&#116;&#111;&#112;&#x62;&#x61;&#x72;&#50;&#x40;&#119;&#x65;&#x72;&#x65;&#x77;&#x6f;&#108;&#x76;&#101;&#x73;&#46;&#117;&#115;</a>&rdquo;,
+   &ldquo;name&rdquo;: &ldquo;Auto Hide Top Panel&rdquo;,
+   &ldquo;description&rdquo;: &ldquo;Auto hide the top panel&rdquo;,
+   &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
+   &ldquo;original-authors&rdquo;: [ &ldquo;Finnbarr P. Murphy&rdquo;, &ldquo;Kevin R. Kane&rdquo; ],
+   &ldquo;locale&rdquo;: &ldquo;locale&rdquo;
+}
+[/plain]</p>
+
+<p>上記の修正をした後、セッションを再起動して、拡張を有効にする。パネルをダブルクリックすると、自動的に隠すか、常時表示するかを切り替えられる。後はConky が安定したらUbuntu 12.04 + GNOME Shell に移行してもよさそう。</p>
 </div>
   
   
@@ -133,7 +145,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/12/20/nightingale/">Nightingale を使ってみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/04/04/remmina/">Remmina を使ってみた</a></h1>
     
     
       <p class="meta">
@@ -149,68 +161,398 @@ $(document).ready( function () {
   
 
 
-<time datetime="2011-12-20T20:10:39+09:00" pubdate data-updated="true">2011年12月20日</time>
+<time datetime="2012-04-04T01:25:17+09:00" pubdate data-updated="true">2012年04月04日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/nightingale_linux.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/nightingale_linux.png" alt="nightingale linux" /></a>
-<a href="http://getnightingale.com">http://getnightingale.com</a>
-Nightingale 1.8.1 が公開されたのでUbuntu 11.10 で使ってみた。アドオンも続々移植されているので期待。Linux x86_64 にもネイティブで対応。OGV 以外のビデオも再生可能。</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/04/remmina_preference.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/04/remmina_preference.png" alt="remmina preference" /></a></p>
+
+<p>Ubuntu 12.04 のデフォルトのリモートデスクトップビューアRemmina を使ってみた。
+Ubuntu 11.10 のデフォルトのリモートデスクトップビューアだったVinagre よりも操作性が良くて、パフォーマンスも良い気がする。もちろんUbuntu 11.10 でも利用できる。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/04/remmina_plugins.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/04/remmina_plugins.png" alt="remmina plugins" /></a></p>
+
+<p>標準セットでRDP/VNC/SSH のプロトコルをサポートしている。また、プラグインで拡張できるようになっていて、他にも以下のパッケージが用意されていた。</p>
+
+<ul>
+<li><p>remmina-plugin-telepathy</p></li>
+<li><p>remmina-plugin-gnome</p></li>
+<li><p>remmina-plugin-xdmcp</p></li>
+<li><p>remmina-plugin-nx</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/25/kubuntu-active-12-04/">Kubuntu-Active 12.04</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-25T20:12:47+09:00" pubdate data-updated="true">2012年03月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/03/kubuntu-active.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/03/kubuntu-active.png" alt="kubuntu active 12.04" /></a></p>
+
+<p><a href="http://cdimage.ubuntu.com/kubuntu-active/daily-live/current/">http://cdimage.ubuntu.com/kubuntu-active/daily-live/current/</a></p>
+
+<p>KDE のPlasma Active がKubuntu ベースで公開されたのでインストールしてみた。<a href="http://ktkr3d.site11.com/2011/04/14/plasma-active-contour/">一年くらい前にOpenSUSE ベースのものを試した時</a>は使い方がよくわからなかったけど、何となく使い方がわかってきた。ウィジェットやショートカットの置き方とか、ワークスペースの作り方とか。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/03/kubuntu-active_apps.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/03/kubuntu-active_apps.png" alt="kubuntu active apps" /></a></p>
+
+<p>上部のパネルは二段階に展開できて、実行中のタスクとインストールされているアプリケーションの一覧を表示できる。画面キャプチャしたら、実行中のタスクのサムネイル表示がアイコン表示になったのはどうしてだろう？</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/08/android-x86-tegav2-physical-keyboard/">Inspiron Duo + Android-x86 4.0 で仮想+物理キーボード入力</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-08T04:02:40+09:00" pubdate data-updated="true">2012年03月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/03/android-x86_4.0_virtual_physical_keyboard.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/03/android-x86_4.0_virtual_physical_keyboard.png" alt="android-x86 4.0 virtual physical keyboard inspiron duo" /></a></p>
+
+<p>Inspiron duo 上のandroid-x86 4.0 tegav2 ビルドを物理キーボードと仮想キーボードで使えるようにしてみた。</p>
+
+<p>./device/tegatech/tegav2/AT_Translated_Set_2_keyboard.kl にキーレイアウトを追加すると、</p>
+
+<ul>
+<li><p>仮想キーボード入力中に物理キーボード入力できる。</p></li>
+<li><p>タスクトレイのキーボード設定から、仮想キーボードを隠して物理キーボード入力に切り替えることができる。</p></li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/08/android-x86-tegav2-physical-keyboard/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/07/nightingale-1-11-0/">Nightingale 1.11.0</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-07T00:40:48+09:00" pubdate data-updated="true">2012年03月07日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/03/nightingale_1.11.0.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/03/nightingale_1.11.0.png" alt="nightingale 1.11.0" /></a></p>
+
+<p><a href="http://blog.getnightingale.com/2012/03/05/nightingale-1-11-0-our-first-official-release/">http://blog.getnightingale.com/2012/03/05/nightingale-1-11-0-our-first-official-release/</a></p>
+
+<p>Nightingale 1.11.0 がリリースされたのでUbuntu 11.10 x86_64 で使ってみた。</p>
+
+<ul>
+<li><p>Shoutcast アドオンが使える</p></li>
+<li><p>Songbird のフェザーPurple Rain に切り替えられる
+「表示」-「フェザー」-「Purple Rain」を選択する。</p></li>
+<li><p>マスストレージデバイス（Androidとか） と同期できる</p></li>
+<li><p>歌詞を表示できる</p></li>
+<li><p>動画を再生できる（プレビュー版より不安定かも）</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/02/my-android-x86-4-0-rc1-for-inspiron-duo/">My Android-x86 4.0 RC1 for Inspiron Duo</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-02T23:31:26+09:00" pubdate data-updated="true">2012年03月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Indpiron duo でandroid-x86 4.0 RC1 のtegav2 ビルドがほぼ動くので微調整してみよう。</p>
 
 <ol>
-<li><p> 実行するには
+<li><p> repo でandroid-x86 のソースコードを拾ってきて展開する。
 [shell gutter=&ldquo;false&rdquo;]
-$ ./nightingale
+$ repo init -u <a href="http://git.android-x86.org/manifest">http://git.android-x86.org/manifest</a> -b ics-x86
+$ repo sync
 [/shell]</p></li>
-<li><p> 日本語表示に切り替えるには
-[File]&ndash;[Language]&ndash;[日本語]を選択して再起動</p></li>
-<li><p> アイコンをアプリケーションメニューに登録するには
-[shell gutter=&ldquo;false&rdquo;]
-$ alacarte
-[/shell]
-または、
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo ln -s $PWD/nightingale /usr/bin/nightingale
-$ sudo cp $PWD/chrome/icons/default/default.xpm /usr/share/pixmaps/nightingale.xpm
-$ sudo vi /usr/share/applications/nightingale.desktop
-[/shell]
-[plain title=&ldquo;/usr/share/applications/nightingale.desktop&rdquo;]
-[Desktop Entry]
-Name=Nightingale
-Comment=Nightingale Media Player
-Exec=nightingale
-Icon=nightingale.xpm
-Terminal=0
-Type=Application
-Encoding=UTF-8
-Categories=AudioVideo;Player;
-[/plain]</p></li>
+<li><p> キーボードの調整
+tegav2 ビルドではキーレイアウトは以下のようになっている。
+[plain title=&ldquo;./device/tegatech/tegav2/AT_Translated_Set_2_keyboard.kl&rdquo; firstline=&ldquo;10&rdquo;]
+key 1     HOME          WAKE_DROPPED
+key 114   VOLUME_DOWN
+key 115   VOLUME_UP
+key 125   APP_SWITCH
+key 127   ESCAPE        WAKE_DROPPED
+[/plain]
+それ以外のキーも動作するように、このファイルをコピーしないようにする。
+[plain title=&ldquo;./device/tegatech/tegav2/tegav2.mk&rdquo; firstline=&ldquo;5&rdquo; highlight=&ldquo;7,8&rdquo;]
+PRODUCT_COPY_FILES := \
+$(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \</p></li>
 </ol>
 
 
-<p><a href="http://forum.getnightingale.com/thread-174.html">http://forum.getnightingale.com/thread-174.html</a>
-フォーラム&#8221;Songbird Extensions to port?&ldquo;で、有志の人たちがSongbird 用のアドオンを移植しているみたい。</p>
+<h1>$(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \</h1>
+
+<p>[/plain]</p>
+
+<ol>
+<li> SDCARD の認識
+tegav2 ビルドではfstab の設定が以下のようになっている。
+[plain title=&ldquo;./device/tegatech/tegav2/vold.fstab&rdquo;]
+dev_mount sdcard  /mnt/MicroSD auto /devices/pci0000:00/0000:00:1d.7/usb1/1-5/1-5:1.0
+dev_mount usb     /mnt/USB     auto
+[/plain]
+デバイスの指定を外す。
+[plain title=&ldquo;./device/tegatech/tegav2/vold.fstab&rdquo; highlight=&ldquo;1&rdquo;]
+dev_mount sdcard  /mnt/MicroSD auto
+dev_mount usb     /mnt/USB     auto
+[/plain]
+または、このファイルもコピーしないようにする。
+[plain title=&ldquo;./device/tegatech/tegav2/tegav2.mk&rdquo; firstline=&ldquo;5&rdquo; highlight=&ldquo;6,7&rdquo;]
+PRODUCT_COPY_FILES := \</li>
+</ol>
+
+
+<h1>$(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \</h1>
+
+<h1>$(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \</h1>
+
+<p>[/plain]</p>
+
+<ol>
+<li><p> スピーカーの調整
+ヘッドフォンを繋いでもPC のスピーカーがミュートしない。
+[plain title=&ldquo;./device/tegatech/tegav2/tegav2_defconfig&rdquo; firstline=&ldquo;2124&rdquo; highlight=&ldquo;2128,2129,2140,2141&rdquo;]
+CONFIG_SND_HDA_INTEL=m
+CONFIG_SND_HDA_HWDEP=y
+CONFIG_SND_HDA_RECONFIG=y</p>
+
+<h1>CONFIG_SND_HDA_INPUT_BEEP is not set</h1>
+
+<h1>CONFIG_SND_HDA_INPUT_JACK=y</h1>
+
+<h1>CONFIG_SND_HDA_PATCH_LOADER=y</h1>
+
+CONFIG_SND_HDA_CODEC_REALTEK=y
+CONFIG_SND_HDA_CODEC_ANALOG is not set
+CONFIG_SND_HDA_CODEC_SIGMATEL=y
+CONFIG_SND_HDA_CODEC_VIA=y
+CONFIG_SND_HDA_CODEC_HDMI=y
+CONFIG_SND_HDA_CODEC_CIRRUS=y
+CONFIG_SND_HDA_CODEC_CONEXANT=y
+CONFIG_SND_HDA_CODEC_CA0110=y
+CONFIG_SND_HDA_CODEC_CMEDIA=y
+CONFIG_SND_HDA_CODEC_SI3054=y
+
+<h1>CONFIG_SND_HDA_GENERIC is not set</h1>
+
+<p>CONFIG_SND_HDA_GENERIC=y
+CONFIG_SND_HDA_POWER_SAVE=y
+CONFIG_SND_HDA_POWER_SAVE_DEFAULT=3
+[/plain]
+とりあえず過去のsparta_defconfig を参考にsnd_hda 関連を書き換える。</p></li>
+<li><p> ISO イメージの作成
+ファイルの編集が済んだらビルド。メモリが少ないので多重度は1に。
+[shell gutter=&ldquo;false&rdquo;]
+$ make -j1 iso_img TARGET_PRODUCT=tegav2
+$
+[/shell]</p></li>
+</ol>
+
+
+<p>キーボード入力ができるようになったけれど、仮想キーボードが表示されなくなったので、キーマッピングを追加するようにした方がよさそう。また、スピーカーの音は改善されなく、初期インストールアプリも減ってしまったので、見直しが必要だ。
+tegav2.mk を見て、電源ボタンダブルクリックでシャットダウンする設定になっているのに気がついた。</p>
+
+<p>EDIT1:
+他のLinux と同様にオプションを追加してみよう。
+[plain title=&ldquo;./device/tegatech/tegav2/tegav2_info&rdquo; firstline=&ldquo;16&rdquo;]</p>
+
+<pre><code>SNDDEV="snd-hda-intel model=ideapad" 
+</code></pre>
+
+<p>[/plain]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/28/inspiron-duo-android-x86-4-0-rc1/">Inspiron Duo + Android-x86 4.0 RC1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-28T23:01:43+09:00" pubdate data-updated="true">2012年02月28日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_version.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_version.png" alt="android-x86 4.0 rc1 version" /></a></p>
+
+<p><a href="http://www.android-x86.org/releases/releasenote-4-0-rc1">http://www.android-x86.org/releases/releasenote-4-0-rc1</a></p>
+
+<p>Android-x86 4.0 RC1 がリリースされたので試してみた。tegav2 のビルドをInspiron duo 実機で動かしてみた。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_youtube.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_youtube.png" alt="android-x86 4.0 rc1 yout ube" /></a></p>
+
+<p>Youtube の動画一覧画面はタッチスクリーンでヌルヌルスライドする。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_uname.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/android-x86_uname.png" alt="android-x86 40 rc1 terminal uname" /></a></p>
+
+<p>ターミナルの打鍵時にカチカチなる。</p>
+
+<h3>動いたこと</h3>
 
 <ul>
-<li><p>試して動いたもの</p>
+<li><p>Win7/Ubuntu/Android-x86/某OS のマルチブート（内蔵HDDのGPT環境）</p></li>
+<li><p>タッチスクリーン（キャリブレーションOK）</p></li>
+<li><p>Wi-Fi</p></li>
+<li><p>Android Market</p></li>
+<li><p>日本語入力</p></li>
+<li><p>マウスカーソル表示</p></li>
+<li><p>ターミナル</p></li>
+<li><p>Youtube</p></li>
+<li><p>Mobo Player</p></li>
+<li><p>2chMate</p></li>
+<li><p>Songbird</p></li>
+<li><p>Seesmic</p></li>
+<li><p>Google map</p></li>
+</ul>
+
+
+<h3>設定が必要そうなこと</h3>
 
 <ul>
-<li><p>MashTape</p></li>
-<li><p>MediaFlow</p></li>
-<li><p>MLyrics</p></li>
-</ul>
-</li>
-<li><p>試してないもの</p>
-
-<ul>
-<li>SHOUTCast Radio</li>
-</ul>
-</li>
+<li><p>イヤフォンを挿してもスピーカーから音声が出力されてしまう(ビルドパラメタかカーネルパラメタでなんとかなりそう)</p></li>
+<li><p>キーボード入力(ビルドパラメタかカーネルパラメタでなんとかなりそう)</p></li>
 </ul>
 
+
+<p>sparta ビルドが復活すればInspiron duo での完成度があがると思う。</p>
+
+<p><strong>Edit1:</strong>
+<a href="http://groups.google.com/group/android-x86/browse_thread/thread/79d37d425a950d93?hl=en">http://groups.google.com/group/android-x86/browse_thread/thread/79d37d425a950d93?hl=en</a>
+Esc キー, スーパーキー(Windows)等は有効なので、
+/system/usr/keylayout/AT_Translate*
+に設定を追加すればなんとかできそう。</p>
+
+<p>スピーカーについては、以前からsnd-hda-intel の設定に依存しているだけなので解決できそう。</p>
 </div>
   
   
@@ -223,7 +565,7 @@ Categories=AudioVideo;Player;
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/12/12/wordpress-3-3/">WordPress 3.3 を導入してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/02/20/inspiron-duo-ubuntu-11-10-crystal-hd/">Inspiron Duo + Ubuntu 11.10 + Crystal HD</a></h1>
     
     
       <p class="meta">
@@ -239,261 +581,49 @@ Categories=AudioVideo;Player;
   
 
 
-<time datetime="2011-12-12T03:09:04+09:00" pubdate data-updated="true">2011年12月12日</time>
+<time datetime="2012-02-20T00:17:33+09:00" pubdate data-updated="true">2012年02月20日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>WordPress 3.3 にアップデートしたらダッシュボードが使いやすくなってた。</p>
+  <div class="entry-content"><p>Inspiron duo 上のUbuntu 11.10 x86_64 にBroadcom Crystal HD Decoder Driver を組み込んでみた。</p>
 
-<blockquote><p>WordPress 3.3 へようこそ
-最新版への更新ありがとうございます ! WordPress 3.3 を使うとあなたのルックス、性格、そして Web パブリッシングエクスペリエンスが向上します。いえ、実は最後の項目だけですが、まあいいでしょう :)</p></blockquote>
-
-<p>サイトを引っ越してPHP のMemory Limit が64MB になったのでプラグインを追加してみた。</p>
-
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/wptouch.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/wptouch.png" alt="wordpress wptouch" /></a></p>
-
-<ul>
-<li><p>WPtouch
-スマートフォン向けテーマ</p></li>
-<li><p>NextGEN Gallery
-画像の一覧やスライドショー表示用のカスタムタグ、ウィジェット
-作ってみた<a href="http://ktkr3d.site11.com/gallery/">ギャラリーページ</a></p></li>
-<li><p>WP-PageNavi
-ページめくりナビゲーション</p></li>
-<li><p>SyntaxHighlighter Evolved
-コード表示の整形</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/09/android-x86-4-0-ics/">Android-x86 4.0 ICS を実機で試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-09T04:03:08+09:00" pubdate data-updated="true">2011年12月09日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/android-x86_4.0_ics_asuslaptop.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/android-x86_4.0_ics_asuslaptop.png" alt="android-x86 4.0 ics asus laptop" /></a></p>
-
-<p>Android-x86 4.0 ICS のISO イメージが公開されていたので実機(Inspiron duo)で試してみた。
-ASUS Laptop 用のビルドが安定していた。AMD Brazos 用のビルドやTegav2 用のビルドでタッチスクリーンが動作したので、ビルドの設定(カーネルオプションとか)次第でより適合したビルドを作成できそう。Android-x86 のsparta(Inspiron duo)版ビルドの初期メンテナの人が年末年始でメンテナンスしてくれるみたいなので、期待して待っていよう。</p>
-
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/android-x86_4.0_ics_asuslaptop_ver.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/android-x86_4.0_ics_asuslaptop_ver.png" alt="android-x86 4.0 ics asus laptop ver" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/06/diablo3-beta/">Diablo 3 ベータで遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-06T23:09:46+09:00" pubdate data-updated="true">2011年12月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/diablo3_install.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/diablo3_install.png" alt="diablo 3 beta install" /></a></p>
-
-<p>Diablo 3 のベータテスタの抽選に当選したので、早速インストールしてみた。</p>
-
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/d3_demon_hunter.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/d3_demon_hunter.png" alt="diablo 3 beta demon hunter" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/28/android-x86-4-0-ics-2/">Android-x86 4.0 ICS を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-28T22:10:46+09:00" pubdate data-updated="true">2011年11月28日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android-x86_4.0_ics_vm.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android-x86_4.0_ics_vm.png" alt="android-x86 4.0 ics vm" /></a>
-<a href="http://www.borncity.com/blog/2011/11/28/android-x86-ice-cream-sandwich-von-vmlite/">http://www.borncity.com/blog/2011/11/28/android-x86-ice-cream-sandwich-von-vmlite/</a>
-Android-x86 4.0 ICS(Ice Cream Sandwich)の仮想マシンイメージらしきものが公開されていたので、試してみた。</p>
-
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android-x86_4.0_ics_vm_ver.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android-x86_4.0_ics_vm_ver.png" alt="android-x86 4.0 ics vm version" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/27/wine-proun/">Wine + Proun で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-27T22:47:52+09:00" pubdate data-updated="true">2011年11月27日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/wine_proun1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/wine_proun1.png" alt="wine proun" /></a></p>
-
-<p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
-<a href="http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049">http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049</a>
-<a href="http://www.proun-game.com/UserTracks.html">http://www.proun-game.com/UserTracks.html</a></p>
-
-<p>Wine を使ったらProun がLinux で動くようになっていたので、Ubuntu 11.10 x86_64(GNOME Shell) + Wine 1.3.28 + Proun(Patch v109 again, 19 October 2011)の環境で遊んでみた。
-いつの間にかユーザトラックが増えていた。
-ユーザトラック&#8221;Solar Coaster&#8221;が難しい。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/22/android-x86-3-2-honeycomb/">Android-x86 3.2 Honeycomb を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-22T02:19:50+09:00" pubdate data-updated="true">2011年11月22日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android-x86_3.2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android-x86_3.2.png" alt="android-x86 3.2 honeycomb" /></a></p>
-
-<p><a href="http://code.google.com/p/android-x86/downloads/list">http://code.google.com/p/android-x86/downloads/list</a>
-<a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-3.2-RC2-asus_laptop.iso">http://code.google.com/p/android-x86/downloads/detail?name=android-x86-3.2-RC2-asus_laptop.iso</a></p>
-
-<p>Android のx86 ポート、Android-x86 3.2 Honeycomb RC2 のISO イメージが公開されていたので、android-x86-3.2-RC2-asus_laptop.iso を実機(DELL Inspiron Duo)と仮想環境で実行してみた。
-DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日本語表示、サウンド、YouTube での動画再生等が動作した。</p>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-app_68@laptop:/ $ uname -a
-Linux localhost 3.0.1-android-x86-asus-laptop+ #3 SMP PREEMPT Sun Nov 13 04:33:58 CST 2011 i686 GNU/Linux
+<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;必要なパッケージのインストール&rdquo;]
+$ sudo apt-get install build-essential g++ automake autoconf libtool libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
 [/shell]</p>
 
-<p><strong>update:</strong>
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android-x86_3.2_inspiron_duo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android-x86_3.2_inspiron_duo.png" alt="android-x86 3.2 inspiron duo" /></a>
-実機のスクリーンキャプチャは、Wi-Fi 接続してから、Android SDK をインストールしたPC から
-[shell gutter=&ldquo;false&rdquo;]
-$ export ADBHOST=192.168.0.4
-$ adb devices
-* daemon not running. starting it now on port 5037 *
-* daemon started successfully *
-List of devices attached
-emulator-5554   device</p>
+<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ソースの取得&rdquo;]
+$ git clone git://linuxtv.org/jarod/crystalhd.git
+[/shell]</p>
 
-<p>$ ddms
+<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ドライバーのインストール&rdquo;]
+$ cd driver/linux/
+$ autoconf
+$ ./configure
+$ make
+$ sudo make install
 [/shell]
-でddms を起動して、「Device」-「Screen Capture&hellip;」メニューから取得する。</p>
+コンパイル時に警告がでるので、とりあえず-w をつけた。</p>
+
+<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ライブラリのインストール&rdquo;]
+$ cd linux_lib/libcrystalhd/
+$ make
+$ sudo make install
+[/shell]</p>
+
+<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;gstreamer プラグインのインストール&rdquo;]
+$ cd filters/gst/gst-plugin/
+$ ./autogen.sh
+$ make
+$ sudo make install
+[/shell]</p>
+
+<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ファームウェアのコピー&rdquo;]
+$ sudo cp firmware/fwbin/70015/<em> /lib/firmware/
+$ sudo cp firmware/fwbin/70012/</em> /lib/firmware/
+[/shell]</p>
 </div>
   
   
@@ -506,7 +636,7 @@ emulator-5554   device</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/11/16/android-4-0/">Android 4.0 をビルドしてみよう（その1）</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/02/12/irrlicht-lensflare-effect/">Irrlicht + Lens Flare Effect</a></h1>
     
     
       <p class="meta">
@@ -522,35 +652,31 @@ emulator-5554   device</p>
   
 
 
-<time datetime="2011-11-16T04:22:55+09:00" pubdate data-updated="true">2011年11月16日</time>
+<time datetime="2012-02-12T12:58:28+09:00" pubdate data-updated="true">2012年02月12日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://source.android.com/source/download.html">http://source.android.com/source/download.html</a>
-Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので、Ubuntu 11.10 64bit の環境でビルドしてみよう。手順はAndroid 2.3 の時と同じみたい。今回から（?）実験的に32bit 環境での手順も記載されている。
-はやくAndroid-x86 にも取り込まれないかな。</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_lensflare.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_lensflare.png" alt="irrlicht lens flare" /></a></p>
 
-<ol>
-<li><p> 環境の構築
-<a href="http://source.android.com/source/initializing.html">http://source.android.com/source/initializing.html</a>
-前提パッケージlib32readline5-dev が見つからないのは、とりあえず無視してみる。</p></li>
-<li><p> ソースコードのダウンロード
-<a href="http://source.android.com/source/downloading.html">http://source.android.com/source/downloading.html</a>
-今回もrepo を使ったダウンロードが遅い。</p></li>
-<li><p> ソースコードのビルド
-<a href="http://source.android.com/source/building.html">http://source.android.com/source/building.html</a></p></li>
-</ol>
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728</a></p>
 
+<p>Irrlicht フォーラムにレンズフレアのサンプルがあったのでLinux で試してみた。</p>
 
-<p>source.android.com に繋がりにくい時があるので、手順はhtml で保存しておいた方がよさそう。
-ダウンロードが終わらないので、今日（今朝）はここまで。</p>
+<p>Irrlicht 1.8.0
+gcc/g++ 4.6.1</p>
 
-<p><strong>update:</strong>
-エミュレータでAndroid 4.0 Ice Cream Sandwich を動かしてみた。
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android_4_ics.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android_4_ics.png" alt="android 4 ice cream sandwich" /></a></p>
+<p>一点修正。</p>
+
+<p>[cpp firstline=&ldquo;28&rdquo; highlight=&ldquo;29&rdquo; title=&ldquo;LensFlareSceneNode.h&rdquo;]</p>
+
+<pre><code>    // constructor
+    SFlareData(E_FLARE_TYPE type, float position, float scale, video::SColor color)
+</code></pre>
+
+<p>[/cpp]</p>
 </div>
   
   
@@ -563,7 +689,7 @@ Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/11/06/linux-mint-12/">Linux Mint 12 を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/">Ubuntu 11.10 + Ogre 1.7.3 + Kinect</a></h1>
     
     
       <p class="meta">
@@ -579,21 +705,47 @@ Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので�
   
 
 
-<time datetime="2011-11-06T12:18:05+09:00" pubdate data-updated="true">2011年11月06日</time>
+<time datetime="2012-02-10T21:20:03+09:00" pubdate data-updated="true">2012年02月10日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/linux_mint_12_gnome_shell.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/linux_mint_12_gnome_shell.png" alt="linux mint 12 gnome shell" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
 
-<p><a href="http://ohheyitslou.blogspot.com/2011/11/tutorial-how-to-install-linux-mint-12.html">http://ohheyitslou.blogspot.com/2011/11/tutorial-how-to-install-linux-mint-12.html</a></p>
+<p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
 
-<p><a href="http://blog.linuxmint.com/?p=1851">http://blog.linuxmint.com/?p=1851</a></p>
+<p>Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
+OpenNI/NITE 1.5.2
+avin2-sensor 5.1.0.25
+Ogre3d 1.7.3
+gcc/g++ 4.6.1
+codeblocks 10.05</p>
 
-<p>Ubuntu ベースで人気のディストリビューションLinux Mint のバージョン12 RC1 版が2011.11.11 にリリースされるようなので、リポジトリを更新してひと足お先に試してみた。(Daily Builds は公開されてないみたい？)
-Linux Mint ではMint GNOME Shell Extensions (MGSE) でGNOME Shell の拡張機能が整理されていて、GNOME Shell 上でクラシックメニューのようなものを提供している。Ubuntu 同様、fglrx を組み込むと一部の画像やテキストがうまく描画されないのは仕方なしか。</p>
+<p>ソースコードとロードモジュール: <a href="https://github.com/ktkr3d/sample-app-sinbad">https://github.com/ktkr3d/sample-app-sinbad</a></p>
+
+<p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
+
+<p>[plain gutter=&ldquo;false&rdquo;]
+コンパイル中: src/CharacterSample.cpp
+リンク中 動的ライブラリ: ../bin/Sample_Character.so
+/usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1&#8217; can not be used when making a shared object; recompile with -fPIC
+obj/Release/src/CharacterSample.o: could not read symbols: Bad value
+collect2: ld はステータス 1 で終了しました
+プロセスはステータス 1 で終了しました (0 分 10 秒)
+0 個のエラー、 0 個の警告
+[/plain]</p>
+
+<p>-fPIC オプションをつけたらビルドできた。</p>
+
+<p>[plain gutter=&ldquo;false&rdquo;]
+コンパイル中: src/CharacterSample.cpp
+リンク中 動的ライブラリ: ../bin/Sample_Character.so
+出力サイズは 232.84 KB
+プロセスはステータス 0 で終了しました (0 分 5 秒)
+0 個のエラー、 0 個の警告
+[/plain]</p>
 </div>
   
   
@@ -641,7 +793,7 @@ Linux Mint ではMint GNOME Shell Extensions (MGSE) でGNOME Shell の拡張機�
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

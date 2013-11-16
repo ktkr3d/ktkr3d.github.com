@@ -9,9 +9,13 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="xwinwrap を使ってIrrlicht のアプリケーションをデスクトップの背景にしてみた
-createDeviceEx() でルートウィンドウのWindow ID を設定してあげるとよいみたい
-ディスプレイドライバとの相性(?)があるのと、conky が見えなくなってしまうのが残念 &hellip;">
+  <meta name="description" content="
+http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=33463
+立体視(Anaglyph Rendering)を試してみた
+動きがあると立体感が顕著になっておもしろい
+右目を青、左目を赤でマスク
+少し離れてみるのがコツかも
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,7 +99,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/08/irrlicht/">Irrlicht アプリをデスクトップ背景で動かしてみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/11/26/anaglyph/">Anaglyph を試してみた</a></h1>
     
     
       <p class="meta">
@@ -111,57 +115,19 @@ $(document).ready( function () {
   
 
 
-<time datetime="2010-09-08T22:41:19+09:00" pubdate data-updated="true">2010年09月08日</time>
+<time datetime="2010-11-26T00:34:01+09:00" pubdate data-updated="true">2010年11月26日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/background.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/background.png" alt="xwinwrap irrlicht" /></a>
-xwinwrap を使ってIrrlicht のアプリケーションをデスクトップの背景にしてみた
-createDeviceEx() でルートウィンドウのWindow ID を設定してあげるとよいみたい
-ディスプレイドライバとの相性(?)がある<strike>のと、conky が見えなくなってしまう</strike>のが残念</p>
-
-<ol>
-<li><p> xwinwrap を拾ってきてインストールする</p></li>
-<li><p> コマンドパラメタからWindow ID を設定できるようにする
-[cpp]
-SIrrlichtCreationParameters params;
-params.DriverType = video::EDT_OPENGL;
-params.WindowSize = core::dimension2d&lt;u32&gt;(800, 600);
-params.Bits = 32;
-params.Fullscreen = false;
-params.Stencilbuffer = false;
-params.Vsync = false;
-params.AntiAlias = false;
-for(int i = 0; i &lt; argc; i++) {
-if(strcmp(argv[i], &ldquo;-wid&rdquo;) == 0)
-    params.WindowId = (void<em>)strtol(argv[i+1], NULL, 16);
-if(strcmp(argv[i], &ldquo;-fullscreen&rdquo;) == 0)
-    params.Fullscreen = true;
-if(strcmp(argv[i], &ldquo;-width&rdquo;) == 0)
-    params.WindowSize.Width = strtol(argv[i+1], NULL, 10);
-if(strcmp(argv[i], &ldquo;-height&rdquo;) == 0)
-    params.WindowSize.Height = strtol(argv[i+1], NULL, 10);
-}
-IrrlichtDevice </em>device = createDeviceEx(params);
-[/cpp]</p></li>
-<li><p> 実行する
-[shell gutter=&ldquo;false&rdquo;]
-$ xwinwrap -ni -fs -s -st -sp -b -nf &mdash; ./myApp -wid WID -fullscreen -width 1024 -height 768
-[/shell]</p></li>
-</ol>
-
-
-<p>同じように動画ファイルをデスクトップで再生できた
-[shell gutter=&ldquo;false&rdquo;]
-$ xwinwrap -ni -fs -s -st -sp -b -nf &mdash; mplayer -wid WID -quiet -loop 0 -fs -shuffle ~/Videos/BGV/*
-[/shell]
-Web カメラでキャプチャした映像もデスクトップに設定できた
-[shell gutter=&ldquo;false&rdquo;]
-$ xwinwrap -ni -fs -s -st -sp -b -nf &mdash; mplayer  -wid WID tv:// -tv driver=v4l2:width=1024:height=768
-[/shell]</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/anaglyph.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/anaglyph.png" alt="anaglyph irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=33463">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=33463</a>
+立体視(Anaglyph Rendering)を試してみた
+動きがあると立体感が顕著になっておもしろい
+右目を青、左目を赤でマスク
+少し離れてみるのがコツかも</p>
 </div>
   
   
@@ -174,7 +140,7 @@ $ xwinwrap -ni -fs -s -st -sp -b -nf &mdash; mplayer  -wid WID tv:// -tv driver=
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/07/h-craft_championship/">H-Craft Championship で遊んでみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/11/18/blockout/">BlockOut II で遊んでみた</a></h1>
     
     
       <p class="meta">
@@ -190,22 +156,18 @@ $ xwinwrap -ni -fs -s -st -sp -b -nf &mdash; mplayer  -wid WID tv:// -tv driver=
   
 
 
-<time datetime="2010-09-07T21:22:55+09:00" pubdate data-updated="true">2010年09月07日</time>
+<time datetime="2010-11-18T01:23:53+09:00" pubdate data-updated="true">2010年11月18日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/hcraft.jpg"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/hcraft.jpg" alt="hcraft irrlicht" /></a>
-F-Zero/wipEout ライクな3D レースゲームでデモ版と商用版がある
-2006 年リリースだからかなり古いけど画面が綺麗で完成度が高い
-操作に慣れると気持ちいい
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=17871">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=17871</a>
-<a href="http://www.irrgheist.com/">http://www.irrgheist.com/</a>
-サウンドはwav とogg でOpenAL
-モデルはX とobj
-GUI はxml 化、フォントはgun4fc.ttf</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/blockout.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/blockout.png" alt="blockout" /></a>
+<a href="http://www.blockout.net/blockout2/">http://www.blockout.net/blockout2/</a>
+レトロな三次元テトリス
+高速で操作するのがおもしろい
+高難易度のデモを見ているだけでも楽しい</p>
 </div>
   
   
@@ -218,7 +180,7 @@ GUI はxml 化、フォントはgun4fc.ttf</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/04/irrlamb/">Irrlamb で遊んでみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/11/09/neverball/">Neverball で遊んでみた</a></h1>
     
     
       <p class="meta">
@@ -234,26 +196,19 @@ GUI はxml 化、フォントはgun4fc.ttf</p>
   
 
 
-<time datetime="2010-09-04T21:58:43+09:00" pubdate data-updated="true">2010年09月04日</time>
+<time datetime="2010-11-09T19:07:59+09:00" pubdate data-updated="true">2010年11月09日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/irrlamb.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/irrlamb.png" alt="irrlamb irrlicht" /></a>
-irrlamb で遊んでみた
-面クリアタイプの3D アクションゲームで、ちょっと慣れが必要だけれどおもしろい!!
-物理エンジンはBullet を使っている
-画面構成がかっこよくて、リプレイ機能もある
-<a href="http://code.google.com/p/irrlamb/">http://code.google.com/p/irrlamb/</a>
-<a href="http://www.youtube.com/profile?user=irrlamb">http://www.youtube.com/profile?user=irrlamb</a>
-ubuntu lucid/universe のリポジトリにlibirrlicht1.7,
-libirrlicht-dev(/usr/include/irrlicht, /usr/lib/libirrlicht.a,
-/usr/lib/libirrlicht.so とか), libirrlicht1.7-dbg,
-libirrlicht-doc(リファレンスとexamples)
-のパッケージ(1.7+dfsg1-1)があることを初めて知った・・・いつできたんだろう
-ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/neverball.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/neverball.png" alt="neverball" /></a>
+<a href="http://neverball.org/">http://neverball.org/</a>
+<a href="http://neverball.org/screenshots.php">http://neverball.org/screenshots.php</a>
+ボードを傾けてコインを拾いながらボールをゴールに導く3D ゲーム
+低スペックなPC でもよく動く
+先の方のステージがとんでもないことになっている&hellip;</p>
 </div>
   
   
@@ -266,7 +221,7 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/31/b-momi/">モーションキャプチャデータを試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/11/01/meego/">MeeGo を試してみた</a></h1>
     
     
       <p class="meta">
@@ -282,17 +237,25 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
   
 
 
-<time datetime="2010-08-31T21:11:20+09:00" pubdate data-updated="true">2010年08月31日</time>
+<time datetime="2010-11-01T23:39:42+09:00" pubdate data-updated="true">2010年11月01日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/08/motion_capture.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/08/motion_capture.png" alt="motion capture irrlicht" /></a>
-モーションキャプチャデータBVH をB-MoMi でVMD に変換して動かしてみた
-さすがに動きが自然でなめらかだ
-<a href="http://atupdate.web.fc2.com/">http://atupdate.web.fc2.com/</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/11/ika_meego.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/11/ika_meego.png" alt="meego" /></a>
+<a href="http://meego.com/">http://meego.com/</a>
+<a href="http://distrowatch.com/table.php?distribution=meego">http://distrowatch.com/table.php?distribution=meego</a>
+ネットブック向けのディストリビューションMeeGo v1.1 for Netbooks
+動作は軽快で見た目もいいんだけど細かいところで少し癖があるかも
+パッケージ管理はRPM でzypper
+日本語入力はSCIM＋SKK
+ATOM 縛りでMoblin がインストールできなかったPC にもインストールできるかも
+ブートローダの書き込み中にフリーズする場合はフォーマットを変えるといける
+変更前 /boot: ext3, /: btrfs
+変更後 /boot: ext3, /: ext3
+<a href="http://ktkr3d.site11.com/?page_id=9">MeeGo/Smeegol メモ</a></p>
 </div>
   
   
@@ -305,7 +268,7 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/29/spark/">SPARK を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/10/23/post_11/">ミクさんのデモを試してみた</a></h1>
     
     
       <p class="meta">
@@ -321,28 +284,17 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
   
 
 
-<time datetime="2010-08-29T22:25:50+09:00" pubdate data-updated="true">2010年08月29日</time>
+<time datetime="2010-10-23T22:33:38+09:00" pubdate data-updated="true">2010年10月23日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/SPARKFire.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/SPARKFire.png" alt="irrlicht SPARK" /></a>
-SPARK のエフェクトを試してみた
-綺麗なエフェクトがいろいろあって楽しい!!
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754</a>
-<a href="http://spark.developpez.com/">http://spark.developpez.com/</a>
-<a href="http://www.youtube.com/watch?v=7lJu2rf3Ras">http://www.youtube.com/watch?v=7lJu2rf3Ras</a>
-Linux + Code::Blocks でデモをビルドする手順</p>
-
-<ol>
-<li><p> Code::Blocks 用のワークスペース「SPARK.workspace」を開く</p></li>
-<li><p> 「SPARK Engine CORE LIB」プロジェクトを開いてWIN32 のマクロを外して「libSPARK.a」をビルド</p></li>
-<li><p> 「SPARK Engine IRR LIB」プロジェクトを開いてWIN32 のマクロを外して「libSPARK_IRR.a」をビルド</p></li>
-<li><p> デモのプロジェクトを作成して、ソース内の「\」を「/」に置換してビルド(libSPARK.a, libSPARK_IRR.a をリンク)</p></li>
-</ol>
-
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/10/miku.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/10/miku.png" alt="miku irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=40262">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=40262</a>
+UK ではミクさんが話題みたいだけど、これを作ったのもUK の人みたい
+irrCg を使っていてリアルタイムにアニメーションする</p>
 </div>
   
   
@@ -355,7 +307,7 @@ Linux + Code::Blocks でデモをビルドする手順</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/28/buggyrace/">BuggyRace で遊んでみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/10/17/blood_water/">Blood & Water を試してみた</a></h1>
     
     
       <p class="meta">
@@ -371,18 +323,24 @@ Linux + Code::Blocks でデモをビルドする手順</p>
   
 
 
-<time datetime="2010-08-28T13:44:18+09:00" pubdate data-updated="true">2010年08月28日</time>
+<time datetime="2010-10-17T17:06:32+09:00" pubdate data-updated="true">2010年10月17日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/08/BuggyRace.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/08/BuggyRace.png" alt="BuggyRace irrlicht" /></a>
-IrrCg のひと(黄色のバギーに乗っていると思われる)が作ったカーレースゲームBuggyRace で遊んでみた
-<a href="http://buggy-race.pl/">http://buggy-race.pl/</a>
-マップやオブジェクトはb3d 形式でシェーダはirrCg、サウンドはogg 形式でOpenAL で再生している
-ほのぼのしてるけど完成度は高いなぁ</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/10/water.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/10/water.png" alt="blood water irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624</a>
+Water エフェクトは水面のゆらぎや反射がうまく表現されていて近距離でも遠距離でも見栄えがする
+Blood エフェクト(KEY1〜KEY5)は使いどころが限られるかも
+DirectX/HLSL 以外にも同じトピック内にOpenGL/GLSL にコンバートされたスクリプトも掲載されているけれど少し修正が必要でレンダリングがチープ&hellip;
+改造すればHLSL 版と同様なことが実現できそうなんだけど
+media/shaders/blood_ps.glsl
+uniform float time; → float time;
+varying vec2 texCoord; → vec2 texCoord;
+media/shaders/water_ps.glsl
+varying vec2 texCoords; → vec2 texCoords;</p>
 </div>
   
   
@@ -395,7 +353,7 @@ IrrCg のひと(黄色のバギーに乗っていると思われる)が作った
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/25/videomaster/">VideoMaster を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/10/16/billardgl/">BillardGL で遊んでみた</a></h1>
     
     
       <p class="meta">
@@ -411,19 +369,32 @@ IrrCg のひと(黄色のバギーに乗っていると思われる)が作った
   
 
 
-<time datetime="2010-08-25T18:10:23+09:00" pubdate data-updated="true">2010年08月25日</time>
+<time datetime="2010-10-16T14:16:12+09:00" pubdate data-updated="true">2010年10月16日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/VideoPlayer.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/VideoPlayer.png" alt="irrlicht theora video master" /></a>
-VideoMaster クラスを使ってTheora(OGV/OGG)形式の動画を再生してみた
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39693">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39693</a>
-&ndash; IImage, ITexture のインタフェースがあるのでIGUIEnvironment, ISceneManager ともに使い易そう
-&ndash; gcc でコンパイルする時はgoto の処理と#include のパスを書き換えた方がよいかも
-&ndash; リンクするライブラリはlibopenal, libtheoraplayer</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/10/biilardgl.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/10/biilardgl.png" alt="billardgl" /></a>
+<a href="http://www.billardgl.de/">http://www.billardgl.de/</a>
+3D のビリヤードゲーム
+F1〜F8 キーで画面がかっこよくくるくる回転する
+Ubuntu のタブレットPC デモ動画に載っていたのでリポジトリにあるのかと思いきや無く、ホームページのdeb パッケージのリンクも切れていて、alien もdeb パッケージを生成できなかったのでソースからビルドしてみた
+src/bmp.cpp の修正</p>
+
+<pre><code>&lt;code&gt;#include &lt;iostream&gt;
+using namespace std;
+#include &lt;fstream&gt;&lt;/code&gt;
+</code></pre>
+
+<p>リンクするライブラリ
+Xxf86vm; GL; GLU; glut;
+リソースファイルのコピー
+src/Texturen → /usr/share/BillardGL/Texturen
+src/lang → /usr/share/BillardGL/lang
+追記: Ubuntu でのパッケージ名はbillard-gl だった
+追記2: openSUSE にあるfoobillard も同様によくできている</p>
 </div>
   
   
@@ -436,7 +407,7 @@ VideoMaster クラスを使ってTheora(OGV/OGG)形式の動画を再生して�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/24/shield_effect/">Shield Effect を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/30/caph/">Caph で遊んでみた</a></h1>
     
     
       <p class="meta">
@@ -452,17 +423,19 @@ VideoMaster クラスを使ってTheora(OGV/OGG)形式の動画を再生して�
   
 
 
-<time datetime="2010-08-24T00:43:39+09:00" pubdate data-updated="true">2010年08月24日</time>
+<time datetime="2010-09-30T00:37:59+09:00" pubdate data-updated="true">2010年09月30日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/08/ShieldEffect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/08/ShieldEffect.png" alt="ShieldEffect irrlicht" /></a>
-球状のシールド（亀A）とメッシュの形状を覆うようなシールド（亀B）のエフェクトを試してみた
-シールドに直撃した後に周りに伝播するアニメーションがいい感じ
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=38544">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=38544</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/caph.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/caph.png" alt="caph" /></a>
+<a href="http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml">http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml</a>
+マウスで描いた軌跡で作った物体を使って解くパズルゲーム
+物理エンジンのリアルな動きがおもしろいー
+README のとおりにやってうまく動かなかったのでちょっと修正
+src/draw.c(299): png_get_IHDR() のheight が変な値を返すので変数h の値を修正(64bit OS 上でのpng_uint_32 型の処理にバグがあるのかな)</p>
 </div>
   
   
@@ -475,7 +448,7 @@ VideoMaster クラスを使ってTheora(OGV/OGG)形式の動画を再生して�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/23/caudio_openal/">cAudio(OpenAL ラッパ)を試してみた</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/18/monodevelop/">MonoDevelop を試してみた</a></h1>
     
     
       <p class="meta">
@@ -491,17 +464,29 @@ VideoMaster クラスを使ってTheora(OGV/OGG)形式の動画を再生して�
   
 
 
-<time datetime="2010-08-23T03:44:49+09:00" pubdate data-updated="true">2010年08月23日</time>
+<time datetime="2010-09-18T01:30:11+09:00" pubdate data-updated="true">2010年09月18日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://caudio.deathtouchstudios.com/">http://caudio.deathtouchstudios.com/</a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=37754">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=37754</a>
-mp3 のプラグインもあって簡単にサウンドを扱える
-irrKlang の代わりに使えそう</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/monodevelop.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/monodevelop.png" alt="monodevelop" /></a>
+Unity のv3 からMonoDevelop でのステップ実行/変数ウォッチができるようになると聞いてMonoDevelop を試してみた(v2.6 でも単純な連携はできるんだけどね)はやく無償版ユーザにもUnity v3/ベータが公開されないかなぁ
+ちょっと使ってみた感じ</p>
+
+<ul>
+<li><p>Linux/Windows で使える</p></li>
+<li><p>MONO だけに.NET アプリが作れるみたい(作らないけどね)</p></li>
+<li><p>プロジェクトファイルがVC のソリューションファイル(.sln)っぽいのでWindows とLinux 共通なプロジェクトを作成するのに便利かもしれない(Code::Blocks でもできるけどやはりWindows はVC 使うだろうし)</p></li>
+<li><p>実行ディレクトリの指定をどこでするのかわからなかったけれど、通常実行はロードモジュール格納ディレクトリ、デバッグ実行はホームディレクトリ!?っぽい</p></li>
+<li><p>言語特有の細かい設定はできない代わりにいろいろな言語がプラグイン的に広くサポートできるようになっている</p></li>
+<li><p>Subversion のプラグインも付いている</p></li>
+</ul>
+
+
+<p>ちなみにWine 環境でのUnity の動作評価はBronze みたい
+<a href="http://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=11075">http://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=11075</a></p>
 </div>
   
   
@@ -514,7 +499,7 @@ irrKlang の代わりに使えそう</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/08/19/ode_i_can_fly/">ODE でI Can Fly!!</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/09/12/puzzle_game/">Puzzle Game で遊んでみた</a></h1>
     
     
       <p class="meta">
@@ -530,24 +515,20 @@ irrKlang の代わりに使えそう</p>
   
 
 
-<time datetime="2010-08-19T08:41:48+09:00" pubdate data-updated="true">2010年08月19日</time>
+<time datetime="2010-09-12T16:31:24+09:00" pubdate data-updated="true">2010年09月12日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/flight.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/flight.png" alt="irrlicht ode" /></a>
-ODE を使ったフライトシミュレータっぽいのを試してみた
-これはおもしろい!!
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=26526">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=26526</a>
-コンパイルエラーがでるけどちょこっと修正すればOK!!
-&ndash; template を使う時にクラス名とメンバ名を異なるようにする
-&ndash; SMeshBufferLightMap の代わりにCDynamicMeshBuffer を使う
-&ndash; irrlicht.h をインクルードしてあげる
-ここで使われているステートマシンのコードは次のトピックのvitek のポスト(#3)にあるリンク先のもののようだ
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=19949#109893">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=19949#109893</a>
-これもコンパイルエラーがでるけど簡単に修正できる</p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/09/puzzle_game.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/09/puzzle_game.png" alt="" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=36539">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=36539</a>
+いわゆる倉庫番の3D 版
+ほのぼの
+レベルエディタ機能もついてる！！
+PuzzleGame.exe -e mylevel.lev
+./PuzzleGame.linux -e mylevel.ev</p>
 </div>
   
   
@@ -595,7 +576,7 @@ ODE を使ったフライトシミュレータっぽいのを試してみた
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

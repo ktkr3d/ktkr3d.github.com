@@ -323,7 +323,7 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb/">Ubuntu 12.10 + Calipso CMS (node.js, Express, MongoDB)</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/06/01/android-studio/">Android Studio</a></h1>
     
     
       <p class="meta">
@@ -339,69 +339,177 @@ $(document).ready( function () {
   
 
 
-<time datetime="2013-01-12T21:10:34+09:00" pubdate data-updated="true">2013年01月12日</time>
+<time datetime="2013-06-01T15:55:52+09:00" pubdate data-updated="true">2013年06月01日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/01/Calipso_CMS.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/01/Calipso_CMS-600x482.png" alt="calipso node.js express mongodb ubuntu" /></a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/06/android-studo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/06/android-studo.png" alt="android-studo" /></a>
+<a href="http://developer.android.com/sdk/installing/studio.html">http://developer.android.com/sdk/installing/studio.html</a></p>
 
-<p><a href="https://github.com/cliftonc/calipso">https://github.com/cliftonc/calipso</a></p>
+<p>Android Studio でサンプルアプリを作って動かしてみました。
+Linux 版のアーカイブをダウンロードして展開し、android-studio/bin/studio.sh を実行します。ウィザードに従っていくと、サンプルアプリのapk ファイルが生成されます。</p>
 
-<p>Calipso はnode.js(サーバサイドJavaScript)、express(node.js 上のフレームワーク)、MongoDB で構築されたシンプルなCMS アプリです。node.js のお試し用にUbuntu 12.10 上でCalipso 0.3.17 の環境を構築してみました。</p>
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/06/android_studio_project.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/06/android_studio_project-600x550.png" alt="android_studio_project" /></a></p>
+
+<p>インストールして実行すると、こんな感じになりました。実行環境はAndroid 4.1.2 です。</p>
+
+<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/06/my_app.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/06/my_app-600x337.png" alt="my_app" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/24/conkyforecast-japanese-translation/">ConkyForecast Japanese Translation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-24T09:36:01+09:00" pubdate data-updated="true">2013年03月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/conkyforecast_japanese.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/conkyforecast_japanese.png" alt="conkyforecast japanese" /></a></p>
+
+<p><a href="https://github.com/ktkr3d/conkyforecast-ja">https://github.com/ktkr3d/conkyforecast-ja</a></p>
+
+<p>ConkyForecast 用の日本語PO ファイルを作成して、Conky-HTC を日本語化してみました。また、Conky-HTC の表示用スクリプトを整理してみました。</p>
 
 <ol>
 <li><p> パッケージのインストール
-Ubuntu オフィシャルリポジトリのnode.js はバージョンが古いのでPPA のリポジトリを追加します。
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo add-apt-repository ppa:chris-lea/node.js<br/>
-$ sudo apt-get update<br/>
-$ sudo apt-get install nodejs npm mongodb
-[/shell]</p></li>
-<li><p> Calipso のインストールの前に
-このままの状態でCalipso のインストールを進めると、node コマンドが見つからない旨のメッセージを出力して、途中で終了してしまいます。Debian/Ubuntu には別にnode コマンドがあるため、node.js のコマンドはnodejs になっているようです。暫定的にシンボリックリンクを作成しておきます。作成したシンボリックリンク(/usr/bin/node)は後で消しておきます。
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo ln -s /usr/bin/nodejs /usr/bin/node
-[/shell]</p></li>
-<li><p> Calipso のインストールと起動
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo npm install -g node-gyp
-$ sudo npm install -g calipso
-$ sudo calipso site /var/www/MySite
-$ cd /var/www/MySite
-$ sudo calipso server
-[/shell]</p></li>
-<li><p> ブラウザからアクセス
-<a href="http://localhost:3000">http://localhost:3000</a>
-表示されたウィザードに従って、データベースの作成、アカウントの作成をします。表示に関しては、一応、日本語設定が用意されています。</p></li>
-<li><p> nginx からリバースプロキシで接続
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install nginx
-[/shell]</p></li>
+<a href="http://ktkr3d.site11.com/2011/10/09/conky-htc/">http://ktkr3d.site11.com/2011/10/09/conky-htc/</a>
+conky, conkyForecast, Conky-HTC パッケージをインストールして以下の構成にしておきます。
+[plain title=&ldquo;フォルダ/ファイル構成&rdquo; gutter=&ldquo;false&rdquo;]
+~/
+├── .fonts/
+├── .images/
+├── .conkyForecast.config
+├── .conkyrc
+├── .conky_start
+└── .vreme.template
+[/plain]</p></li>
+<li><p> conkyForecast の日本語化
+[bash gutter=&ldquo;false&rdquo;]
+$ wget <a href="https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecast.po">https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecast.po</a>
+$ wget <a href="https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecastWU.po">https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecastWU.po</a>
+$ msgfmt -o conkyForecast.mo conkyForecast.po
+$ msgfmt -o conkyForecastWU.mo conkyForecastWU.po
+$ sudo mkdir -p /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
+$ sudo cp *.mo /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
+[/bash]</p></li>
+<li><p> ~/.conkyForecast.config の編集
+[plain title=&ldquo;~/.conkyForecast.config&rdquo; highlight=&ldquo;4,5,16,19&rdquo;]</p>
+
+<h1>=============================================</h1>
+
+<h1>EXPERT SETTINGS, NOT REQUIRED TO BE ALTERED</h1>
+
+<h1>=============================================</h1>
+
+<h1>BASE_XOAP_URL = <a href="http://xoap.weather.com/weather/local/">http://xoap.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=5&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m</h1>
+
+<p>BASE_XOAP_URL = <a href="http://xml.weather.com/weather/local/">http://xml.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=10&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m
+MAXIMUM_DAYS_FORECAST = 10</p></li>
 </ol>
 
 
-<p>[plain title=&ldquo;/etc/nginx/sites-available/default&rdquo; firstline=&ldquo;30&rdquo; highlight=&ldquo;33,36&rdquo;]</p>
+<h1>===============================================</h1>
 
-<pre><code>location / {
-    # First attempt to serve request as file, then
-    # as directory, then fall back to displaying a 404.
-    #try_files $uri $uri/ /index.html;
-    # Uncomment to enable naxsi on this location
-    # include /etc/nginx/naxsi.rules
-    proxy_pass http://localhost:3000/;
-}
-</code></pre>
+<h1>USER SETTINGS, EDIT BASED ON DOCUMENTED SETUP</h1>
 
-<p>[/plain]</p>
+<h1>===============================================</h1>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo /etc/init.d/nginx reload
-$ sudo /etc/init.d/nginx restart
-[/shell]
-<a href="http://localhost">http://localhost</a> からアクセスできるようになります。</p>
+<p>CACHE_FOLDERPATH = /tmp/
+CONNECTION_TIMEOUT = 5
+EXPIRY_MINUTES = 30
+TIME_FORMAT = %H:%M
+DATE_FORMAT = %Y-%m-%d
+LOCALE = ja
+XOAP_PARTNER_ID =
+XOAP_LICENCE_KEY =
+DEFAULT_LOCATION = JAXX0085
+AUTO_NIGHT = False
+PROXY_HOST =
+PROXY_PORT = 8080
+PROXY_USERNAME =
+PROXY_PASSWORD =
+[/plain]</p>
+
+<ol>
+<li> ~/.conkyrc の編集
+[plain title=&ldquo;~/.conkyrc&rdquo; firstline=&ldquo;48&rdquo;]
+
+<h1>Time</h1>
+
+${voffset 35}${goto 39}${font Helvetica LT Std:style=Condensed:size=60}${color 434343}${time %H}${goto 140}${color 434343}${time %M}${font Helvetica LT Std:style=Condensed:size=18}${color ffffff}${goto 225}${time %S}
+
+<h1>Date</h1>
+
+${voffset 47}${font TakaoPGothic:size=8}${alignr 80}${time %G}/${time %m}/${time %d} (${time %a})
+
+<h1>City Name</h1>
+
+${voffset -40}${goto 22}${exec conkyForecast &mdash;datatype=CN}
+
+<h1>Conditions Text, Current Temp</h1>
+
+${goto 22}${execi 1800 conkyForecast &mdash;datatype=CT}${voffset -20}${goto 200}${font Helvetica LT Std:size=24}${execi 1800 conkyForecast -u &mdash;datatype=HT}
+
+<h1>High Temp, Low Temp of Today</h1>
+
+${voffset -15}${font Helvetica LT Std:style=Condensed:size=10}#
+${goto 200}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=0}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=0}
+
+<h1>High Temp, Low Temp of Next 5 Days</h1>
+
+${voffset 53}${font Helvetica LT Std:style=Condensed:size=8}#
+${goto  25}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=1}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=1}#
+${goto  70}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=2}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=2}#
+${goto 115}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=3}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=3}#
+${goto 160}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=4}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=4}#
+${goto 205}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=5}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=5}
+
+<h1>Day of Week</h1>
+
+<p>${font TakaoPGothic:size=8}${color ffffff}#
+${goto  37}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=1}#
+${goto  82}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=2}#
+${goto 127}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=3}#
+${goto 172}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=4}#
+${goto 217}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=5}
+${image ~/.images/base.png -p 12,30 -s 238x140}
+${image ~/.images/base.png -p 12,190 -s 238x55}
+${image ~/.images/flip_bg.png -p 30,10 -s 100x110}
+${image ~/.images/flip_bg.png -p 130,10 -s 100x110}
+${execpi 1800 conkyForecast &mdash;template=~/.vreme.template}
+[/plain]
+行中/行末に# を挿入すると次の行と連結(改行をエスケープ)できます。
+今日の最高/最低気温を取得するために「&mdash;startday=0」を指定してみましたが、値は無効かもしれません。</p></li>
+</ol>
+
 </div>
   
   
@@ -414,7 +522,7 @@ $ sudo /etc/init.d/nginx restart
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/04/moc-2-5-0-beta1-patch-r2519r2520/">Moc 2.5.0 Beta1 + Patch R2519/r2520</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/03/17/bittorrent-live-beta/">BitTorrent Live Beta</a></h1>
     
     
       <p class="meta">
@@ -430,29 +538,167 @@ $ sudo /etc/init.d/nginx restart
   
 
 
-<time datetime="2013-01-04T23:39:52+09:00" pubdate data-updated="true">2013年01月04日</time>
+<time datetime="2013-03-17T22:55:37+09:00" pubdate data-updated="true">2013年03月17日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://moc.daper.net/node/850">http://moc.daper.net/node/850</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/BitTorrentLive_Beta.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/BitTorrentLive_Beta-600x375.png" alt="BitTorrent Live" /></a></p>
 
-<p>moc (music on console) はコンソールで動作する軽量な音楽プレイヤーです。マルチバイト文字に依存してトリム位置がずれるバグがありましたが、解決(2.5.0 beta1 + patch r2519/r2520)されました。これで日本語のパスやタグが入っていてもレイアウトが崩れなくなりました。現時点でのUbuntu のリポジトリに存在するmoc のバージョンは2.5.0 alpha4 + svn20120224-1ubuntu1 ですので、最新のソースを取得して、コンパイル、インストールしてみました。</p>
+<p><a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a>
+P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTorrent Live」のオープンベータテストが開始されたので、試してみました。Windows/Mac/Ubuntu 用のクライアントプログラムBTLive が配布されており、私はUbuntu 64bit 用をダウンロードしてインストールしました。インストールから視聴までの手順は以下のとおりです。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get build-dep moc
-$ svn co svn://daper.net/moc/trunk
-$ cd trunk
+<ol>
+<li><p> <a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a> の一番下のリンクから各OS 用のクライアントプログラムをダウンロードして、インストールします。</p></li>
+<li><p> [アプリケーション]&ndash;[インターネット]&ndash;[BTLive]を起動します。</p></li>
+<li><p> <a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a> で公開されているチャンネルを視聴します。アカウントを登録すれば、配信もできます。配信はWebCam かエンコーダ等のアプリが利用できます。</p></li>
+</ol>
+
+
+<p>P2P なので、視聴者が増えた時に有利なようです。Peercast と同じような原理でしょうか。ポートを開ける手間がないのが、お手軽でよいかもしれません。手動でポートを開ける場合はUDP ports 31400-31499 らしいです。トレイアイコンをクリックすると、送受信のビットレートが表示されます。btlive コマンドのパラメタは以下のとおり。</p>
+
+<p>[bash gutter=&ldquo;false&rdquo;]
+$ btlive &mdash;help
+usage: btlive [-h] [-v] [&mdash;force-version FORCED_VER] [-o OFFSET]</p>
+
+<pre><code>          [-j TRACKER|SWARMPUBKEY] [--no-crashlog-reporting]
+          [--no-stats-thread] [--no-bench-thread] [--no-update-thread]
+          [--no-headless-thread] [--no-nat-detection] [--no-rtmp-server]
+          [--no-http-server] [--no-local-discovery] [--no-sysreqs]
+          [--ignore-headless | --force-headless] [--staging-bench]
+          [--staging-dau] [--staging-onair] [--testing-mode] [--nogui]
+</code></pre>
+
+<p>optional arguments:
+  -h, &mdash;help            show this help message and exit
+  -v, &mdash;version         show program&rsquo;s version number and exit
+  &mdash;force-version FORCED_VER</p>
+
+<pre><code>                    Forces Live to think that it is another version
+                    number. Must follow format 0.4.11.1234.
+</code></pre>
+
+<p>  -o OFFSET, &mdash;offset OFFSET</p>
+
+<pre><code>                    RTMP Server port offset (from 1935). A value of 100 is
+                    commonly used for sourcing.
+</code></pre>
+
+<p>  -j TRACKER|SWARMPUBKEY, &mdash;join TRACKER|SWARMPUBKEY</p>
+
+<pre><code>                    Swarm to autojoin on launch. Specify the tracker and
+                    the swarm public key, separated by a pipe symbol
+                    ('|').
+</code></pre>
+
+<p>  &mdash;no-crashlog-reporting</p>
+
+<pre><code>                    Disable all communication with the crashlog server.
+</code></pre>
+
+<p>  &mdash;no-stats-thread     Disable debugging statistics being reported to</p>
+
+<pre><code>                    graphite/statsd.
+</code></pre>
+
+<p>  &mdash;no-bench-thread     Disable bench statistics.
+  &mdash;no-update-thread    Disable autoupdate checking.
+  &mdash;no-headless-thread  Disable all communication with the automation server.
+  &mdash;no-nat-detection    Disable NAT detection on launch.
+  &mdash;no-rtmp-server      Disable RTMP server.
+  &mdash;no-http-server      Disable HTTP server.
+  &mdash;no-local-discovery  Disable local peer discovery.
+  &mdash;no-sysreqs          Disable system requirements for launch/install.
+  &mdash;ignore-headless     Set headless_enabled pref to off and ignore any</p>
+
+<pre><code>                    scheduled tests.
+</code></pre>
+
+<p>  &mdash;force-headless      Set headless_enabled pref to on and join any scheduled</p>
+
+<pre><code>                    tests.
+</code></pre>
+
+<p>  &mdash;staging-bench       Use staging bench server for bench statistics.
+  &mdash;staging-dau         Use staging server for autoupdate.
+  &mdash;staging-onair       Use staging server for on-air messaging.
+  &mdash;testing-mode        Disable all non-essential network communication.</p>
+
+<pre><code>                    Implies --no-crashlog-reporting, --no-nat-detection,
+                    --no-stats-thread, --no-update-thread, --no-headless-
+                    thread, and --no-sysreqs.
+</code></pre>
+
+<p>  &mdash;nogui               Disable GUI/icon.
+[/bash]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/17/create-a-shortcut-key-in-xnoise/">Create a Shortcut Key in Xnoise</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T12:48:45+09:00" pubdate data-updated="true">2013年03月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/xnoise_shortcut_key.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/xnoise_shortcut_key-600x408.png" alt="xnoise shortcut key" /></a></p>
+
+<p>先日のアップデートでxnoise のメディアブラウザ表示/非表示切り替えボタンが無くなりました。ボタンがメディアブラウザの上に被っていたので邪魔ではあったのですが、無いと不便です。そこで、簡単にメディアブラウザの表示/非表示を切り替えるためのショートカットキー(F9)を追加してみました。xnoise はVala 言語で実装されているようですので、valac パッケージをインストールして、ビルドしています。</p>
+
+<ol>
+<li><p> valac のインストールとソースコードの取得
+[bash gutter=&ldquo;false&rdquo;]
+$ sudo apt-get build-dep xnoise
+$ sudo apt-get install valac
+$ git clone <a href="https://bitbucket.org/shuerhaaken/xnoise.git">https://bitbucket.org/shuerhaaken/xnoise.git</a>
+[/bash]</p></li>
+<li><p> ソースコードの修正
+[plain title=&ldquo;./xnoise/libxnoise/MainWindow/xnoise-main-window.vala&rdquo; firstline=&ldquo;919&rdquo; highlight=&ldquo;919,920,921,922&rdquo;]
+        case Gdk.Key.F9: {
+            toggle_media_browser_visibility();
+            return true;
+        }
+        case Gdk.Key.F11: {
+            this.toggle_mainwindow_fullscreen();
+            return true;
+        }
+[/plain]</p></li>
+<li><p> ビルドとインストール
+[bash gutter=&ldquo;false&rdquo;]
+$ cd xnoise
 $ ./autogen.sh
-$ ./configure &mdash;prefix=/usr
-$ make -j4
+$ make
 $ sudo make install
-[/shell]</p>
+[/bash]</p></li>
+</ol>
 
-<p>過去の記事
-<a href="http://ktkr3d.site11.com/2012/05/31/moc-music-on-console/">http://ktkr3d.site11.com/2012/05/31/moc-music-on-console/</a></p>
 </div>
   
   
@@ -465,7 +711,7 @@ $ sudo make install
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/12/31/move-the-hot-corner-of-the-message-tray/">Move the Hot Corner of the Message Tray</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/03/14/ubuntu-gnome-13-04-daily-build/">Ubuntu GNOME 13.04 Daily Build</a></h1>
     
     
       <p class="meta">
@@ -481,231 +727,17 @@ $ sudo make install
   
 
 
-<time datetime="2012-12-31T18:00:18+09:00" pubdate data-updated="true">2012年12月31日</time>
+<time datetime="2013-03-14T23:09:21+09:00" pubdate data-updated="true">2013年03月14日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked">http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked</a></p>
+  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/Ubuntu_GNOME_installer.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/Ubuntu_GNOME_installer-600x443.png" alt="Ubuntu GNOME installer" /></a></p>
 
-<p>GNOME Shell 3.6 では画面下端にマウスカーソルを持って行くと、メッセージトレイが表示されます。オートハイドに設定したドックアプリ(AWN)と併用していると、ドックアプリを操作したいのにメッセージトレイが表示されてしまって、困ります。GNOME Shell 3.6 に対応したGNOME Shell extension が見当たりませんでしたので、GNOME Shell をカスタマイズして、暫定的に画面右下隅をメッセージトレイのホットコーナーにしてみました。</p>
-
-<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;44&rdquo; highlight=&ldquo;46&rdquo;]
-// Time the user needs to leave the mouse on the bottom pixel row to open the tray
-//const TRAY_DWELL_TIME = 1000; // ms
-const TRAY_DWELL_TIME = 50; // ms
-[/javascript]</p>
-
-<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;1538&rdquo; highlight=&ldquo;1541&rdquo;]</p>
-
-<pre><code>_checkTrayDwell: function(x, y) {
-    let monitor = Main.layoutManager.bottomMonitor;
-</code></pre>
-
-<p>//      let shouldDwell = (x >= monitor.x &amp;&amp; x &lt;= monitor.x + monitor.width &amp;&amp;</p>
-
-<pre><code>    let shouldDwell = (x &gt;= monitor.x &amp;&amp; x == monitor.x + monitor.width - 1 &amp;&amp;
-                       y == monitor.y + monitor.height - 1);
-</code></pre>
-
-<p>[/javascript]</p>
-
-<p>[javascript title=&ldquo;/usr/share/gnome-shell/js/ui/messageTray.js&rdquo; firstline=&ldquo;2118&rdquo; highlight=&ldquo;2120&rdquo;]</p>
-
-<pre><code>    this._tween(this._desktopClone, '_desktopCloneState', State.SHOWN,
-</code></pre>
-
-<p>//                  { y: -this.actor.height,</p>
-
-<pre><code>                { y: 0,
-                  time: ANIMATION_TIME,
-                  transition: 'easeOutQuad',
-                  onUpdate: Lang.bind(this, this._updateDesktopCloneClip)
-                });
-</code></pre>
-
-<p>[/javascript]</p>
-
-<p>GNOME Shell Extension にして投稿してくれる人がいるといいな。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/26/android-x86-4-2-1/">Android-x86 4.2.1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-26T22:15:23+09:00" pubdate data-updated="true">2012年12月26日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/12/android-x86_4.2.1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/12/android-x86_4.2.1-600x337.png" alt="android-x86 4.2.1" /></a></p>
-
-<p><a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso">http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso</a></p>
-
-<p>Android-x86 4.2.1 が公開されたのでInspiron Duo にインストールして、Windows 8 64bit やUbuntu 12.10 x86_64 とのマルチブート環境を構築してみました。Android-x86 4.2 では過去の問題が改善されていることを確認できました。ファーストリリースだけあって、まだ動かない/動作が不安定になるアプリがあるみたい。方向キー二度押ししても画面が回転しなくなったみたい。</p>
-
-<h3>改善された過去の問題</h3>
-
-<ul>
-<li><p>物理/仮想キーボードの切り替え、キーマップの改善</p></li>
-<li><p>更新がおかしかった時計の改善</p></li>
-<li><p>電源ボタン二度押ししなくても電源メニュー表示</p></li>
-</ul>
-
-
-<h3>Google Play からインストールしたアプリ</h3>
-
-<ul>
-<li><p>ES ファイルエクスプローラ</p></li>
-<li><p>Google ドライブ</p></li>
-<li><p>VLC</p></li>
-<li><p>XiiaLive</p></li>
-<li><p>Seesmic</p></li>
-</ul>
-
-
-<h3>自前でビルドしたアプリ</h3>
-
-<ul>
-<li>Fennec (Firefox) 19.0</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/08/thunderbird-gmail-google-calendar-google-tasks/">Thunderbird + GMail + Google Calendar + Google Tasks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-08T17:41:05+09:00" pubdate data-updated="true">2012年12月08日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Thunderbird とGoogle のメール、カレンダー、TODO を同期してみました。</p>
-
-<h3>Thunderbird のインストール</h3>
-
-<p>thunderbird をインストールします。</p>
-
-<h3>Thunderbird アドオンのインストール</h3>
-
-<p>Thunderbirdで、
-[アドオン]メニューから下記のアドオンを検索してインストールします。</p>
-
-<ul>
-<li><p>Lightning
-<a href="https://addons.mozilla.org/ja/thunderbird/addon/lightning/">https://addons.mozilla.org/ja/thunderbird/addon/lightning/</a></p></li>
-<li><p>Provider for Google Calendar
-<a href="https://addons.mozilla.org/ja/thunderbird/addon/provider-for-google-calendar/">https://addons.mozilla.org/ja/thunderbird/addon/provider-for-google-calendar/</a></p></li>
-<li><p>Google Tasks Sync
-<a href="https://addons.mozilla.org/ja/thunderbird/addon/google-tasks-sync/">https://addons.mozilla.org/ja/thunderbird/addon/google-tasks-sync/</a></p></li>
-<li><p>Google Contacts
-<a href="https://addons.mozilla.org/ja/thunderbird/addon/google-contacts/">https://addons.mozilla.org/ja/thunderbird/addon/google-contacts/</a></p></li>
-</ul>
-
-
-<h3>メールアカウントの設定</h3>
-
-<p>Thunderbird で、</p>
-
-<ol>
-<li><p> [新規作成]&ndash;[既存のメールアカウント&hellip;]メニューを選択</p></li>
-<li><p> Google のアカウント情報を指定</p></li>
-</ol>
-
-
-<h3>Google カレンダーのアドレスの取得</h3>
-
-<p>Google カレンダーで、</p>
-
-<ol>
-<li><p> [設定]メニューを選択</p></li>
-<li><p> [カレンダー]タブをクリック</p></li>
-<li><p> [このカレンダーを共有]リンクをクリック</p></li>
-<li><p> [カレンダーの情報]タブをクリック</p></li>
-<li><p> カレンダーのアドレスの[XML]リンクを右クリックして[リンクのURLをコピー]</p></li>
-</ol>
-
-
-<h3>カレンダーの同期設定</h3>
-
-<p>Thunderbird で、</p>
-
-<ol>
-<li><p> [新規作成]&ndash;[カレンダー&hellip;]メニューを選択</p>
-
-<ul>
-<li><p>カレンダーの保存先: ネットワークのサーバに保存する</p></li>
-<li><p>フォーマット: Google カレンダー</p></li>
-<li><p>場所: 上記手順で取得したGoogle カレンダーのアドレス</p></li>
-<li><p>オフラインサポート: チェック</p></li>
-<li><p>パスワードマネージャにこのパスワードを保存する。: チェック</p></li>
-<li><p>カレンダー名を設定</p></li>
-</ul>
-</li>
-</ol>
-
-
-<h3>TODO の同期設定</h3>
-
-<p>Thunderbird で、</p>
-
-<ol>
-<li><p> 右下ペインの「Google Tasks Sync」の「Click here to get started.」をクリック</p></li>
-<li><p> アカウント情報を指定してログイン</p></li>
-<li><p> [アクセスを許可]をクリック</p></li>
-</ol>
-
+<p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a>
+Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたので試してみました。</p>
 </div>
   
   
@@ -753,7 +785,7 @@ const TRAY_DWELL_TIME = 50; // ms
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (8)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (15)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (25)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (85)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/octopress/'>Octopress (2)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

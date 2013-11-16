@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Node.js | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-16T16:54:37+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AppJS]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/02/10/appjs/"/>
+    <updated>2013-02-10T22:12:07+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/02/10/appjs</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/appjs.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/appjs-600x457.png" alt="AppJS Node.js" /></a>
+<a href="http://appjs.org/  ">http://appjs.org/  </a>
+<a href="https://github.com/appjs/appjs  ">https://github.com/appjs/appjs  </a>
+<a href="https://github.com/appjs/appjs/wiki">https://github.com/appjs/appjs/wiki</a></p>
+
+<p>Node.js アプリをコマンドラインからデスクトップアプリとして実行するAppJS を試してみました。HTML, CSS, JavaScript でアプリケーションが実装できて、Windows, Mac(32bit のみ), Linux(x86/x86_64) に対応しています。Unity のグローバルメニューにも対応していました。Node.js のバージョンはv0.8 系が良いようです。Linux x86_64 の環境でv0.9.9 ではうまく動作しませんでした。</p>
+
+<ol>
+<li><p> Node.js v0.8.19 のインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm install v0.8.19
+[/shell]</p></li>
+<li><p> AppJS のインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm use v0.8.19
+$ npm install -g appjs
+[/shell]</p></li>
+<li><p> アプリケーションの準備
+[javascript title=&ldquo;~/appjs/app.js&rdquo;]
+// load appjs</p></li>
+</ol>
+
+
+<p>var appjs = require(&lsquo;appjs&rsquo;);</p>
+
+<p>// serve static files from a directory
+appjs.serveFilesFrom(__dirname + &lsquo;/content&rsquo;);</p>
+
+<p>// handle requests from the browser
+appjs.router.post(&lsquo;/&rsquo;, function(request, response, next){
+  response.send(&lsquo;Hey! How are you &rsquo; + request.post(&lsquo;firstname&rsquo;));
+})</p>
+
+<p>// create a window
+var window = appjs.createWindow({
+  width: 640,
+  height: 460,
+  alpha: false,
+});</p>
+
+<p>// prepare the window when first created
+window.on(&lsquo;create&rsquo;, function(){
+  console.log(&ldquo;Window Created&rdquo;);
+  // window.frame controls the desktop window
+  window.frame.show().center();
+});</p>
+
+<p>// the window is ready when the DOM is loaded
+window.on(&lsquo;ready&rsquo;, function(){
+  console.log(&ldquo;Window Ready&rdquo;);
+  // directly interact with the DOM
+  window.process = process;
+  window.module = module;</p>
+
+<p>  window.addEventListener(&lsquo;keydown&rsquo;, function(e){</p>
+
+<pre><code>// show chrome devtools on f12 or commmand+option+j
+if (e.keyIdentifier === 'F12' || e.keyCode === 74 &amp;&amp; e.metaKey &amp;&amp; e.altKey) {
+  window.frame.openDevTools();
+}
+</code></pre>
+
+<p>  });
+});</p>
+
+<p>// cleanup code when window is closed
+window.on(&lsquo;close&rsquo;, function(){
+  console.log(&ldquo;Window Closed&rdquo;);
+});
+[/javascript]</p>
+
+<p>[html title=&ldquo;~/appjs/content/index.html&rdquo;]
+&lt;!doctype html>
+<html>
+  <head></p>
+
+<pre><code>&lt;title&gt;Hello World!&lt;/title&gt;
+</code></pre>
+
+<p>  </head>
+  <body></p>
+
+<pre><code>&lt;form action="/" method="POST"&gt;
+  &lt;input name="firstname" type="text" placeholder="Firstname"/&gt;
+  &lt;input name="lastname" type="text" placeholder="Lastname"/&gt;
+  &lt;input type="submit"/&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>  </body>
+</html>
+[/html]</p>
+
+<ol>
+<li> 実行
+[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm use v0.8.19
+$ export NODE_PATH=${NVM_PATH}_modules
+$ cd ~/appjs/
+$ node &mdash;harmony app.js
+[/shell]</li>
+</ol>
+
+
+<p>サンプルでは、[F12]キーにwindow.frame.openDevTools() をアサインしていて、キー押下により開発ツールウィンドウが開くようになっています。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/node_devtool.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/node_devtool-600x470.png" alt="Node.js devtool" /></a></p>
+
+<p><strong>EDIT:</strong></p>
+
+<h3>サンプルのカスタマイズ</h3>
+
+<p>HelloWorld サンプルをカスタマイズしてみました。日本語表示、メニュー構成の変更、ファイルオープンダイアログ、lame/speaker パッケージを使ったMP3 の再生など。
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/hello_world_appjs.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/hello_world_appjs-600x457.png" alt="hello world appjs" /></a>
+<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/mp3player_js.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/mp3player_js.png" alt="mp3 player node.js" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[scrumblr]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/02/10/scrumblr/"/>
+    <updated>2013-02-10T19:58:59+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/02/10/scrumblr</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/scrumblr.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/scrumblr-600x337.png" alt="scrumblr node.js" /></a>
+<a href="https://github.com/aliasaria/scrumblr">https://github.com/aliasaria/scrumblr</a></p>
+
+<p>Node.js で実装された掲示板アプリscrumblr をインストールしてみました。socket.io を使っていて、複数のブラウザで掲示板をリアルタイムに共有できます。ちょっとしたメモをネットワークを介して共有するのに便利かもしれません。</p>
+
+<ol>
+<li><p> nvm のインストール
+[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install build-essential libssl-dev curl git
+$ git clone git://github.com/creationix/nvm.git ~/.nvm
+[/shell]</p></li>
+<li><p> scrumblr のインストール
+[bash gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install redis-server
+$ source ~/.nvm/nvm.sh
+$ nvm install v0.9.9
+$ nvm use v0.9.9
+$ git clone <a href="https://github.com/aliasaria/scrumblr">https://github.com/aliasaria/scrumblr</a> ~/scrumblr
+$ cd ~/scrumblr
+$ npm install
+[/bash]</p></li>
+<li><p> scrumblr サーバの実行
+[bash title=&ldquo;start_scrumblr.sh&rdquo;]</p>
+
+<h1>!/bin/bash</h1></li>
+</ol>
+
+
+<h1>Start Scrumblr Server</h1>
+
+<h1><a href="http://localhost:3132">http://localhost:3132</a></h1>
+
+<p>source ~/.nvm/nvm.sh
+nvm use v0.9.9
+cd ~/scrumblr
+node server.js 3132
+[/bash]</p>
+
+<ol>
+<li> scrumblr の表示
+ブラウザで<a href="http://localhost:3132">http://localhost:3132</a> を開きます。</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cloud9 IDE]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/02/10/cloud9-ide/"/>
+    <updated>2013-02-10T00:10:48+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/02/10/cloud9-ide</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/cloud9_ide.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/cloud9_ide-600x454.png" alt="Cloud9 IDE" /></a></p>
+
+<p><a href="https://github.com/ajaxorg/cloud9  ">https://github.com/ajaxorg/cloud9  </a>
+<a href="http://nodejs.org/dist/">http://nodejs.org/dist/</a></p>
+
+<p>Node.js の統合開発環境であるCloude9 IDE をローカル環境に構築してみました。Cloude9 IDE の動作前提となるNode.js のバージョンは古めなので、nvm(Node Version Manager)を利用して、Node.js v0.6.21 をインストールしました。ちなみに現在の最新のNode.js のバージョンはv0.9.9 のようです。</p>
+
+<h3>Node Version Manager のインストール</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install build-essential libssl-dev curl git
+$ git clone git://github.com/creationix/nvm.git ~/.nvm
+[/shell]</p>
+
+<h3>Node.js v0.6.21 とsourcemint のインストール</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm install v0.6.21
+$ nvm use v0.6.21
+$ npm install -g sm
+[/shell]</p>
+
+<h3>Cound9 IDE のインストール</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ git clone <a href="https://github.com/ajaxorg/cloud9.git">https://github.com/ajaxorg/cloud9.git</a> ~/cloud9
+$ cd ~/cloud9
+$ sm install
+[/shell]</p>
+
+<h3>Cound9 IDE の実行</h3>
+
+<p>[shell gutter=&ldquo;false&rdquo;]
+$ source ~/.nvm/nvm.sh
+$ nvm use v0.6.21
+$ cd ~/cloud9/bin &amp;&amp; ./cloud9.sh
+[/shell]</p>
+
+<h3>Cound9 IDE 画面の表示</h3>
+
+<p>ブラウザで<a href="http://localhost:3131/">http://localhost:3131/</a> を開く。</p>
+]]></content>
+  </entry>
+  
+</feed>
