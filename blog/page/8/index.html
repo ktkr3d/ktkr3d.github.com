@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="ここ数日のアップデートでUbuntu 12.04 のGNOME Shell が安定しだしたので、個人的に最も重要なAutohide Top Panel extension を動くようにしてみた。手順は3.2 用のextension を導入して、対応バージョン情報を変更するだけ。 [plain &hellip;">
+  <meta name="description" content="ここ数日のアップデートでUbuntu 12.04 のGNOME Shell が安定しだしたので、個人的に最も重要なAutohide Top Panel extension を動くようにしてみた。手順は3.2 用のextension を導入して、対応バージョン情報を変更するだけ。 /usr/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -120,17 +120,26 @@ $(document).ready( function () {
 
 <p>ここ数日のアップデートでUbuntu 12.04 のGNOME Shell が安定しだしたので、個人的に最も重要なAutohide Top Panel extension を動くようにしてみた。手順は3.2 用のextension を導入して、対応バージョン情報を変更するだけ。</p>
 
-<p>[plain title=&ldquo;/usr/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json&rdquo; highlight=&ldquo;2&rdquo;]
-{
-   &ldquo;shell-version&rdquo;: [ &ldquo;3.4&rdquo;, &ldquo;3.2.0&rdquo;, &ldquo;3.2&rdquo;, &ldquo;3.2.1&rdquo; ],
-   &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#x61;&#x75;&#x74;&#111;&#x68;&#105;&#100;&#x65;&#x74;&#x6f;&#112;&#x62;&#97;&#x72;&#50;&#x40;&#x77;&#x65;&#114;&#101;&#119;&#111;&#x6c;&#118;&#101;&#x73;&#x2e;&#117;&#x73;">&#97;&#x75;&#116;&#x6f;&#104;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#98;&#97;&#x72;&#50;&#x40;&#x77;&#x65;&#114;&#101;&#x77;&#111;&#108;&#118;&#x65;&#115;&#46;&#117;&#x73;</a>&rdquo;,
-   &ldquo;name&rdquo;: &ldquo;Auto Hide Top Panel&rdquo;,
-   &ldquo;description&rdquo;: &ldquo;Auto hide the top panel&rdquo;,
-   &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
-   &ldquo;original-authors&rdquo;: [ &ldquo;Finnbarr P. Murphy&rdquo;, &ldquo;Kevin R. Kane&rdquo; ],
-   &ldquo;locale&rdquo;: &ldquo;locale&rdquo;
-}
-[/plain]</p>
+<figure class='code'><figcaption><span>/usr/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>{
+</span><span class='line'>   &quot;shell-version&quot;: [ &quot;3.4&quot;, &quot;3.2.0&quot;, &quot;3.2&quot;, &quot;3.2.1&quot; ],
+</span><span class='line'>   &quot;uuid&quot;: &quot;autohidetopbar2@werewolves.us&quot;,
+</span><span class='line'>   &quot;name&quot;: &quot;Auto Hide Top Panel&quot;,
+</span><span class='line'>   &quot;description&quot;: &quot;Auto hide the top panel&quot;,
+</span><span class='line'>   &quot;url&quot;: &quot;http://fpmurphy.com/gnome-shell-extensions&quot;,
+</span><span class='line'>   &quot;original-authors&quot;: [ &quot;Finnbarr P. Murphy&quot;, &quot;Kevin R. Kane&quot; ],
+</span><span class='line'>   &quot;locale&quot;: &quot;locale&quot;
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>上記の修正をした後、セッションを再起動して、拡張を有効にする。パネルをダブルクリックすると、自動的に隠すか、常時表示するかを切り替えられる。後はConky が安定したらUbuntu 12.04 + GNOME Shell に移行してもよさそう。</p>
 </div>
@@ -228,110 +237,6 @@ Ubuntu 11.10 のデフォルトのリモートデスクトップビューアだ�
 <p><a href="/images/uploads/2012/03/kubuntu-active_apps.png"><img src="/images/uploads/2012/03/kubuntu-active_apps.png" alt="kubuntu active apps" /></a></p>
 
 <p>上部のパネルは二段階に展開できて、実行中のタスクとインストールされているアプリケーションの一覧を表示できる。画面キャプチャしたら、実行中のタスクのサムネイル表示がアイコン表示になったのはどうしてだろう？</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/17/inspiron-duo-android-x86-4-0-headphone/">Inspiron Duo + Android-x86 4.0 でヘッドフォン</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-17T04:26:05+09:00" pubdate data-updated="true">2012年03月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Inspiron duo + Android-x86 4.0 の環境でヘッドフォンジャックにプラグを挿した時に内部スピーカーをミュートするように設定してみた。
-普通のLinux カーネルではalsa-base.conf などにmodel=ideapad を指定すれば良いけれど、Android-x86 では./kernel/sound/pci/hda/patch_realtek.c にmodel のプリセットが定義されているみたいだ。</p>
-
-<p>[cpp firstline=&ldquo;18470&rdquo; highlight=&ldquo;18478&rdquo; title=&ldquo;./kernel/sound/pci/hda/patch_realtek.c&rdquo;]
-/<em>
- * configuration and preset
- </em>/
-static const char * const alc662_models[ALC662_MODEL_LAST] = {</p>
-
-<pre><code>    [ALC662_3ST_2ch_DIG]    = "3stack-dig",
-    [ALC662_3ST_6ch_DIG]    = "3stack-6ch-dig",
-    [ALC662_3ST_6ch]        = "3stack-6ch",
-    [ALC662_5ST_DIG]        = "5stack-dig",
-    [ALC662_LENOVO_101E]    = "lenovo-101e",
-    [ALC662_ASUS_EEEPC_P701] = "eeepc-p701",
-    [ALC662_ASUS_EEEPC_EP20] = "eeepc-ep20",
-</code></pre>
-
-<p>[/cpp]</p>
-
-<p>ideapad に相当する指定は、lenovo-101e みたいなので、 以下を設定する。</p>
-
-<p>[plain title=&ldquo;./device/tegatech/tegav2/tegav2_info&rdquo;]
-SNDDEV=&ldquo;snd-hda-intel model=lenovo-101e position_fix=1 enable=yes&rdquo;
-[/plain]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/10/1648/">No Content Found</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-10T13:05:54+09:00" pubdate data-updated="true">2012年03月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>AMD Catalyst 12.2 on Ubuntu 11.10</p>
-
-<p>[shell gutter=&ldquo;false&rdquo;]
-sudo apt-get build-dep fglrx
-wget <a href="http://www2.ati.com/drivers/linux/amd-driver-installer-12-2-x86.x86_64.run">http://www2.ati.com/drivers/linux/amd-driver-installer-12-2-x86.x86_64.run</a>
-chmod 755 amd-driver-installer-12-2-x86.x86_64.run
-./amd-driver-installer-12-2-x86.x86_64.run &mdash;buildpkg Ubuntu/precise
-sudo dpkg -i fglrx_8.950-0ubuntu1_amd64.deb fglrx-amdcccle_8.950-0ubuntu1_amd64.deb fglrx-dev_8.950-0ubuntu1_amd64.deb
-[/shell]</p>
 </div>
   
   
@@ -471,107 +376,158 @@ sudo dpkg -i fglrx_8.950-0ubuntu1_amd64.deb fglrx-amdcccle_8.950-0ubuntu1_amd64.
   <div class="entry-content"><p>Indpiron duo でandroid-x86 4.0 RC1 のtegav2 ビルドがほぼ動くので微調整してみよう。</p>
 
 <ol>
-<li><p> repo でandroid-x86 のソースコードを拾ってきて展開する。
-[shell gutter=&ldquo;false&rdquo;]
-$ repo init -u <a href="http://git.android-x86.org/manifest">http://git.android-x86.org/manifest</a> -b ics-x86
-$ repo sync
-[/shell]</p></li>
-<li><p> キーボードの調整
-tegav2 ビルドではキーレイアウトは以下のようになっている。
-[plain title=&ldquo;./device/tegatech/tegav2/AT_Translated_Set_2_keyboard.kl&rdquo; firstline=&ldquo;10&rdquo;]
-key 1     HOME          WAKE_DROPPED
-key 114   VOLUME_DOWN
-key 115   VOLUME_UP
-key 125   APP_SWITCH
-key 127   ESCAPE        WAKE_DROPPED
-[/plain]
-それ以外のキーも動作するように、このファイルをコピーしないようにする。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2.mk&rdquo; firstline=&ldquo;5&rdquo; highlight=&ldquo;7,8&rdquo;]
-PRODUCT_COPY_FILES := \
-$(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \</p></li>
+<li> repo でandroid-x86 のソースコードを拾ってきて展開する。</li>
 </ol>
 
 
-<h1>$(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \</h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>repo init -u http://git.android-x86.org/manifest -b ics-x86
+</span><span class='line'><span class="nv">$ </span>repo sync
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[/plain]</p>
+
+<ol>
+<li> キーボードの調整
+tegav2 ビルドではキーレイアウトは以下のようになっている。</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/AT_Translated_Set_2_keyboard.kl</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>key 1     HOME          WAKE_DROPPED
+</span><span class='line'>key 114   VOLUME_DOWN
+</span><span class='line'>key 115   VOLUME_UP
+</span><span class='line'>key 125   APP_SWITCH
+</span><span class='line'>key 127   ESCAPE        WAKE_DROPPED
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>それ以外のキーも動作するように、このファイルをコピーしないようにする。</p>
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2.mk</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>PRODUCT_COPY_FILES := \
+</span><span class='line'>    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+</span><span class='line'>
+</span><span class='line'>#    $(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ol>
 <li> SDCARD の認識
-tegav2 ビルドではfstab の設定が以下のようになっている。
-[plain title=&ldquo;./device/tegatech/tegav2/vold.fstab&rdquo;]
-dev_mount sdcard  /mnt/MicroSD auto /devices/pci0000:00/0000:00:1d.7/usb1/1-5/1-5:1.0
-dev_mount usb     /mnt/USB     auto
-[/plain]
-デバイスの指定を外す。
-[plain title=&ldquo;./device/tegatech/tegav2/vold.fstab&rdquo; highlight=&ldquo;1&rdquo;]
-dev_mount sdcard  /mnt/MicroSD auto
-dev_mount usb     /mnt/USB     auto
-[/plain]
-または、このファイルもコピーしないようにする。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2.mk&rdquo; firstline=&ldquo;5&rdquo; highlight=&ldquo;6,7&rdquo;]
-PRODUCT_COPY_FILES := \</li>
+tegav2 ビルドではfstab の設定が以下のようになっている。</li>
 </ol>
 
 
-<h1>$(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \</h1>
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/vold.fstab</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>dev_mount sdcard  /mnt/MicroSD auto /devices/pci0000:00/0000:00:1d.7/usb1/1-5/1-5:1.0
+</span><span class='line'>dev_mount usb     /mnt/USB     auto
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>$(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \</h1>
 
-<p>[/plain]</p>
+<p>デバイスの指定を外す。</p>
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/vold.fstab</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>dev_mount sdcard  /mnt/MicroSD auto
+</span><span class='line'>dev_mount usb     /mnt/USB     auto
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>または、このファイルもコピーしないようにする。</p>
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2.mk</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>PRODUCT_COPY_FILES := \
+</span><span class='line'>
+</span><span class='line'>#    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+</span><span class='line'>#    $(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ol>
-<li><p> スピーカーの調整
-ヘッドフォンを繋いでもPC のスピーカーがミュートしない。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2_defconfig&rdquo; firstline=&ldquo;2124&rdquo; highlight=&ldquo;2128,2129,2140,2141&rdquo;]
-CONFIG_SND_HDA_INTEL=m
-CONFIG_SND_HDA_HWDEP=y
-CONFIG_SND_HDA_RECONFIG=y</p>
-
-<h1>CONFIG_SND_HDA_INPUT_BEEP is not set</h1>
-
-<h1>CONFIG_SND_HDA_INPUT_JACK=y</h1>
-
-<h1>CONFIG_SND_HDA_PATCH_LOADER=y</h1>
-
-CONFIG_SND_HDA_CODEC_REALTEK=y
-CONFIG_SND_HDA_CODEC_ANALOG is not set
-CONFIG_SND_HDA_CODEC_SIGMATEL=y
-CONFIG_SND_HDA_CODEC_VIA=y
-CONFIG_SND_HDA_CODEC_HDMI=y
-CONFIG_SND_HDA_CODEC_CIRRUS=y
-CONFIG_SND_HDA_CODEC_CONEXANT=y
-CONFIG_SND_HDA_CODEC_CA0110=y
-CONFIG_SND_HDA_CODEC_CMEDIA=y
-CONFIG_SND_HDA_CODEC_SI3054=y
-
-<h1>CONFIG_SND_HDA_GENERIC is not set</h1>
-
-<p>CONFIG_SND_HDA_GENERIC=y
-CONFIG_SND_HDA_POWER_SAVE=y
-CONFIG_SND_HDA_POWER_SAVE_DEFAULT=3
-[/plain]
-とりあえず過去のsparta_defconfig を参考にsnd_hda 関連を書き換える。</p></li>
-<li><p> ISO イメージの作成
-ファイルの編集が済んだらビルド。メモリが少ないので多重度は1に。
-[shell gutter=&ldquo;false&rdquo;]
-$ make -j1 iso_img TARGET_PRODUCT=tegav2
-$
-[/shell]</p></li>
+<li> スピーカーの調整
+ヘッドフォンを繋いでもPC のスピーカーがミュートしない。</li>
 </ol>
+
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2_defconfig</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>CONFIG_SND_HDA_INTEL=m
+</span><span class='line'>CONFIG_SND_HDA_HWDEP=y
+</span><span class='line'>CONFIG_SND_HDA_RECONFIG=y
+</span><span class='line'># CONFIG_SND_HDA_INPUT_BEEP is not set
+</span><span class='line'># CONFIG_SND_HDA_INPUT_JACK=y
+</span><span class='line'># CONFIG_SND_HDA_PATCH_LOADER=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_REALTEK=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_ANALOG is not set
+</span><span class='line'>CONFIG_SND_HDA_CODEC_SIGMATEL=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_VIA=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_HDMI=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_CIRRUS=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_CONEXANT=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_CA0110=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_CMEDIA=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_SI3054=y
+</span><span class='line'># CONFIG_SND_HDA_GENERIC is not set
+</span><span class='line'>CONFIG_SND_HDA_GENERIC=y
+</span><span class='line'>CONFIG_SND_HDA_POWER_SAVE=y
+</span><span class='line'>CONFIG_SND_HDA_POWER_SAVE_DEFAULT=3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とりあえず過去のsparta_defconfig を参考にsnd_hda 関連を書き換える。</p>
+
+<ol>
+<li> ISO イメージの作成
+ファイルの編集が済んだらビルド。メモリが少ないので多重度は1に。</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>make -j1 iso_img <span class="nv">TARGET_PRODUCT</span><span class="o">=</span>tegav2
+</span><span class='line'><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>キーボード入力ができるようになったけれど、仮想キーボードが表示されなくなったので、キーマッピングを追加するようにした方がよさそう。また、スピーカーの音は改善されなく、初期インストールアプリも減ってしまったので、見直しが必要だ。
 tegav2.mk を見て、電源ボタンダブルクリックでシャットダウンする設定になっているのに気がついた。</p>
 
 <p>EDIT1:
-他のLinux と同様にオプションを追加してみよう。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2_info&rdquo; firstline=&ldquo;16&rdquo;]</p>
+他のLinux と同様にオプションを追加してみよう。</p>
 
-<pre><code>SNDDEV="snd-hda-intel model=ideapad" 
-</code></pre>
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2_info</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>SNDDEV=&quot;snd-hda-intel model=ideapad&quot;
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[/plain]</p>
 </div>
   
   
@@ -694,40 +650,202 @@ Esc キー, スーパーキー(Windows)等は有効なので、
 
   <div class="entry-content"><p>Inspiron duo 上のUbuntu 11.10 x86_64 にBroadcom Crystal HD Decoder Driver を組み込んでみた。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;必要なパッケージのインストール&rdquo;]
-$ sudo apt-get install build-essential g++ automake autoconf libtool libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-[/shell]</p>
+<figure class='code'><figcaption><span>必要なパッケージのインストール</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install build-essential g++ automake autoconf libtool libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ソースの取得&rdquo;]
-$ git clone git://linuxtv.org/jarod/crystalhd.git
-[/shell]</p>
 
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ドライバーのインストール&rdquo;]
-$ cd driver/linux/
-$ autoconf
-$ ./configure
-$ make
-$ sudo make install
-[/shell]
-コンパイル時に警告がでるので、とりあえず-w をつけた。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ライブラリのインストール&rdquo;]
-$ cd linux_lib/libcrystalhd/
-$ make
-$ sudo make install
-[/shell]</p>
 
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;gstreamer プラグインのインストール&rdquo;]
-$ cd filters/gst/gst-plugin/
-$ ./autogen.sh
-$ make
-$ sudo make install
-[/shell]</p>
+<figure class='code'><figcaption><span>ソースの取得</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone git://linuxtv.org/jarod/crystalhd.git
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[shell gutter=&ldquo;false&rdquo; title=&ldquo;ファームウェアのコピー&rdquo;]
-$ sudo cp firmware/fwbin/70015/<em> /lib/firmware/
-$ sudo cp firmware/fwbin/70012/</em> /lib/firmware/
-[/shell]</p>
+
+
+
+<figure class='code'><figcaption><span>ドライバーのインストール</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>driver/linux/
+</span><span class='line'><span class="nv">$ </span>autoconf
+</span><span class='line'><span class="nv">$ </span>./configure
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>コンパイル時に警告がでるので、とりあえず-w をつけた。</p>
+
+<figure class='code'><figcaption><span>ライブラリのインストール</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>linux_lib/libcrystalhd/
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>gstreamer プラグインのインストール</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>filters/gst/gst-plugin/
+</span><span class='line'><span class="nv">$ </span>./autogen.sh
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>ファームウェアのコピー</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo cp firmware/fwbin/70015/* /lib/firmware/
+</span><span class='line'><span class="nv">$ </span>sudo cp firmware/fwbin/70012/* /lib/firmware/
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/12/irrlicht-lensflare-effect/">Irrlicht + Lens Flare Effect</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-12T12:58:28+09:00" pubdate data-updated="true">2012年02月12日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/irrlicht_lensflare.png"><img src="/images/uploads/2012/02/irrlicht_lensflare.png" alt="irrlicht lens flare" /></a></p>
+
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728</a></p>
+
+<p>Irrlicht フォーラムにレンズフレアのサンプルがあったのでLinux で試してみた。</p>
+
+<p>Irrlicht 1.8.0
+gcc/g++ 4.6.1</p>
+
+<p>一点修正。</p>
+
+<figure class='code'><figcaption><span>LensFlareSceneNode.h</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'>  <span class="c1">// constructor</span>
+</span><span class='line'>  <span class="n">SFlareData</span><span class="p">(</span><span class="n">E_FLARE_TYPE</span> <span class="n">type</span><span class="p">,</span> <span class="kt">float</span> <span class="n">position</span><span class="p">,</span> <span class="kt">float</span> <span class="n">scale</span><span class="p">,</span> <span class="n">video</span><span class="o">::</span><span class="n">SColor</span> <span class="n">color</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/">Ubuntu 11.10 + Ogre 1.7.3 + Kinect</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-10T21:20:03+09:00" pubdate data-updated="true">2012年02月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="/images/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
+
+<p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
+
+<p>Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
+OpenNI/NITE 1.5.2
+avin2-sensor 5.1.0.25
+Ogre3d 1.7.3
+gcc/g++ 4.6.1
+codeblocks 10.05</p>
+
+<p>ソースコードとロードモジュール: <a href="https://github.com/ktkr3d/sample-app-sinbad">https://github.com/ktkr3d/sample-app-sinbad</a></p>
+
+<p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>コンパイル中: src/CharacterSample.cpp
+</span><span class='line'>リンク中 動的ライブラリ: ../bin/Sample_Character.so
+</span><span class='line'>/usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1&#39; can not be used when making a shared object; recompile with -fPIC
+</span><span class='line'>obj/Release/src/CharacterSample.o: could not read symbols: Bad value
+</span><span class='line'>collect2: ld はステータス 1 で終了しました
+</span><span class='line'>プロセスはステータス 1 で終了しました (0 分 10 秒)
+</span><span class='line'>0 個のエラー、 0 個の警告
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>-fPIC オプションをつけたらビルドできた。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>コンパイル中: src/CharacterSample.cpp
+</span><span class='line'>リンク中 動的ライブラリ: ../bin/Sample_Character.so
+</span><span class='line'>出力サイズは 232.84 KB
+</span><span class='line'>プロセスはステータス 0 で終了しました (0 分 5 秒)
+</span><span class='line'>0 個のエラー、 0 個の警告
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 </div>
   
   
@@ -775,7 +893,7 @@ $ sudo cp firmware/fwbin/70012/</em> /lib/firmware/
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -784,40 +902,6 @@ $ sudo cp firmware/fwbin/70012/</em> /lib/firmware/
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'ktkr3d',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 
 

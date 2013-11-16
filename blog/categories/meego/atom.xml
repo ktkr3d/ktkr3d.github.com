@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MeeGo | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/meego/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -60,7 +60,7 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
 
 <p>隠しアクセスポイントに接続するには、一旦端末で、</p>
 
-<p>``` shell</p>
+<p>``` sh</p>
 
 <h1>iwconfig wlan0 essid <ESSID> key <KEY></h1>
 
@@ -70,7 +70,7 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
 
 <p>画面のキャプチャは</p>
 
-<p><code>shell
+<p><code>sh
 $ xwd -root &gt; ScreenShot.xwd
 </code></p>
 

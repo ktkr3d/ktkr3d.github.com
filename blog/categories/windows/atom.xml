@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Windows | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/windows/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -42,7 +42,7 @@
 
 <p>設定保存用のフォルダも作成</p>
 
-<p><code>shell
+<p><code>sh
 $ mkdir /PATHTO/Android-x86/tegav2/data
 </code></p>
 
@@ -51,7 +51,7 @@ $ mkdir /PATHTO/Android-x86/tegav2/data
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ sudo add-apt-repository ppa:n-muench/burg
 $ sudo apt-get update
 $ sudo apt-get install burg burg-themes
@@ -97,7 +97,7 @@ initrd /PATHTO/Android-x86/tegav2/initrd.img
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ sudo burg-install /dev/sda
 $ sudo update-burg
 </code></p>
@@ -107,7 +107,7 @@ $ sudo update-burg
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ sudo burg-emu -D
 </code></p>
 

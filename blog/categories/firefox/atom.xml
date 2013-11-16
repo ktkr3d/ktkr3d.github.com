@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Firefox | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/firefox/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -35,7 +35,7 @@
 
 <h3>ビルド用依存パッケージの取得</h3>
 
-<p><code>shell
+<p><code>sh
 $ sudo apt-get install mercurial ccache
 $ sudo apt-get build-dep firefox
 </code></p>
@@ -47,7 +47,7 @@ $ sudo apt-get build-dep firefox
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cd /tools/apps/firefox/
 $ hg clone http://hg.mozilla.org/mozilla-central/ src-central
 $ cd src-central
@@ -58,7 +58,7 @@ $ cd src-central
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
 </code></p>
 
@@ -111,7 +111,7 @@ ac_add_options &mdash;with-system-zlib</p>
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cd /tools/apps/firefox/
 $ hg clone http://hg.mozilla.org/releases/mozilla-release src-release
 $ cd src-release
@@ -122,7 +122,7 @@ $ cd src-release
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
 </code></p>
 
@@ -161,7 +161,7 @@ ac_add_options &mdash;with-system-zlib</p>
 
 <h3>firefox のビルド</h3>
 
-<p><code>shell
+<p><code>sh
 $ make -f client.mk build_and_deploy
 </code></p>
 
@@ -190,7 +190,7 @@ Android-x86 用のFirefox がPlay ストアに登録されていないので、�
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ sudo apt-get install mercurial ccache
 $ sudo apt-get build-dep firefox
 </code></p>
@@ -200,7 +200,7 @@ $ sudo apt-get build-dep firefox
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ hg clone http://hg.mozilla.org/mozilla-central/ src
 </code></p>
 
@@ -209,7 +209,7 @@ $ hg clone http://hg.mozilla.org/mozilla-central/ src
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cd src
 $ gedit mozconfig-android-x86
 </code></p>
@@ -275,7 +275,7 @@ ac_add_options &mdash;disable-update-packaging</p>
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ export ADBHOST=192.168.0.4
 $ adb devices
 </code></p>
@@ -285,7 +285,7 @@ $ adb devices
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ export MOZCONFIG=./mozconfig-android-x86
 $ make -f client.mk build_and_deploy
 $
@@ -299,7 +299,7 @@ $
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ hg pull -u
 </code></p>
 

@@ -120,97 +120,166 @@ $(document).ready( function () {
 Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386-linux-android 向けのmozconfig を見つけたけれど、そのままではうまくビルドできなかったので、修正して利用してみた。Android SDK/NDK の環境はできているので、その後から始めよう。ビルドする環境はUbuntu 12.04 x86_64。Android 端末は、Inspiron duo にandroid-x86-4.0-RC1-tegav2.iso をインストール済み。</p>
 
 <ol>
-<li><p> ビルドするための依存関係の取得
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install mercurial ccache
-$ sudo apt-get build-dep firefox
-[/shell]</p></li>
-<li><p> Firefox のソースの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src
-[/shell]</p></li>
-<li><p> MOZCONFIG のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cd src
-$ gedit mozconfig-android-x86
-[/shell]
-[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
-
-<h1>Global options</h1>
-
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p></li>
+<li> ビルドするための依存関係の取得</li>
 </ol>
 
 
-<h1>Build Fennec</h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install mercurial ccache
+</span><span class='line'><span class="nv">$ </span>sudo apt-get build-dep firefox
+</span></code></pre></td></tr></table></div></figure>
 
-<p>ac_add_options &mdash;enable-application=mobile/android</p>
 
-<h1>Android</h1>
+<ol>
+<li> Firefox のソースの取得</li>
+</ol>
 
-<p>ac_add_options &mdash;target=i386-linux-android
-ac_add_options &mdash;with-endian=little
-ac_add_options &mdash;with-android-ndk=&ldquo;$HOME/Projects/Android/android-ndk-r8&rdquo;
-ac_add_options &mdash;with-android-sdk=&ldquo;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&rdquo;
-ac_add_options &mdash;with-android-version=10
-ac_add_options &mdash;with-android-platform=&ldquo;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&rdquo;
-ac_add_options &mdash;with-system-zlib</p>
 
-<h1></h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>hg clone http://hg.mozilla.org/mozilla-central/ src
+</span></code></pre></td></tr></table></div></figure>
 
-<p>ac_add_options &mdash;disable-auto-deps
-ac_add_options &mdash;disable-debug
-ac_add_options &mdash;disable-debug-symbols
-ac_add_options &mdash;disable-tests
-ac_add_options &mdash;disable-ipdl-tests
-ac_add_options &mdash;enable-strip
-ac_add_options &mdash;enable-install-strip</p>
 
-<h1>updater</h1>
+<ol>
+<li> MOZCONFIG のカスタマイズ</li>
+</ol>
 
-<p>ac_add_options &mdash;disable-updater
-ac_add_options &mdash;disable-update-channel
-ac_add_options &mdash;disable-update-packaging</p>
 
-<h1>crash reporter</h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>src
+</span><span class='line'><span class="nv">$ </span>gedit mozconfig-android-x86
+</span></code></pre></td></tr></table></div></figure>
 
-<p>ac_add_options &mdash;disable-crashreporter</p>
 
-<h1>maintenance service</h1>
 
-<p>ac_add_options &mdash;disable-maintenance-service</p>
 
-<h1>JDK</h1>
+<figure class='code'><figcaption><span>mozconfig-android-x86</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'># Global options
+</span><span class='line'>mk_add_options MOZ_MAKE_FLAGS=&quot;-j4&quot;
+</span><span class='line'>
+</span><span class='line'># Build Fennec
+</span><span class='line'>ac_add_options --enable-application=mobile/android
+</span><span class='line'>
+</span><span class='line'># Android
+</span><span class='line'>ac_add_options --target=i386-linux-android
+</span><span class='line'>ac_add_options --with-endian=little
+</span><span class='line'>ac_add_options --with-android-ndk=&quot;$HOME/Projects/Android/android-ndk-r8&quot;
+</span><span class='line'>ac_add_options --with-android-sdk=&quot;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&quot;
+</span><span class='line'>ac_add_options --with-android-version=10
+</span><span class='line'>ac_add_options --with-android-platform=&quot;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&quot;
+</span><span class='line'>ac_add_options --with-system-zlib
+</span><span class='line'>
+</span><span class='line'>#
+</span><span class='line'>ac_add_options --disable-auto-deps
+</span><span class='line'>ac_add_options --disable-debug
+</span><span class='line'>ac_add_options --disable-debug-symbols
+</span><span class='line'>ac_add_options --disable-tests
+</span><span class='line'>ac_add_options --disable-ipdl-tests
+</span><span class='line'>ac_add_options --enable-strip
+</span><span class='line'>ac_add_options --enable-install-strip
+</span><span class='line'>
+</span><span class='line'># updater
+</span><span class='line'>ac_add_options --disable-updater
+</span><span class='line'>ac_add_options --disable-update-channel
+</span><span class='line'>ac_add_options --disable-update-packaging
+</span><span class='line'>
+</span><span class='line'># crash reporter
+</span><span class='line'>ac_add_options --disable-crashreporter
+</span><span class='line'>
+</span><span class='line'># maintenance service
+</span><span class='line'>ac_add_options --disable-maintenance-service
+</span><span class='line'>
+</span><span class='line'># JDK
+</span><span class='line'>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
+</span><span class='line'>
+</span><span class='line'># branding
+</span><span class='line'>ac_add_options --with-branding=mobile/android/branding/beta
+</span></code></pre></td></tr></table></div></figure>
 
-<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
-
-<h1>branding</h1>
-
-<p>ac_add_options &mdash;with-branding=mobile/android/branding/beta
-[/plain]</p>
 
 <ol>
 <li><p> ロゴ画像の作成
 他のサイズのロゴ画像を参考にサイズ40x40 のPNG 形式画像を作成する。
 ./mobile/android/branding/beta/content/fennec_40x40.png</p></li>
-<li><p> インストール先のAndroid 端末を無線LAN で接続する。
-[shell gutter=&ldquo;false&rdquo;]
-$ export ADBHOST=192.168.0.4
-$ adb devices
-[/shell]</p></li>
-<li><p> ビルドとインストール
-[shell gutter=&ldquo;false&rdquo;]
-$ export MOZCONFIG=./mozconfig-android-x86
-$ make -f client.mk build_and_deploy
-$
-[/shell]
-インストーラパッケージは以下に生成される。
-./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p></li>
-<li><p> 次回ビルド時にソースを最新の状態にするには
-[shell gutter=&ldquo;false&rdquo;]
-$ hg pull -u
-[/shell]</p></li>
+<li><p> インストール先のAndroid 端末を無線LAN で接続する。</p></li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">ADBHOST</span><span class="o">=</span>192.168.0.4
+</span><span class='line'><span class="nv">$ </span>adb devices
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ビルドとインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">MOZCONFIG</span><span class="o">=</span>./mozconfig-android-x86
+</span><span class='line'><span class="nv">$ </span>make -f client.mk build_and_deploy
+</span><span class='line'><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>インストーラパッケージは以下に生成される。
+./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p>
+
+<ol>
+<li> 次回ビルド時にソースを最新の状態にするには</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>hg pull -u
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 
 <!-- more -->
@@ -225,59 +294,90 @@ $ hg pull -u
 </ul>
 
 
-<p>[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
+<figure class='code'><figcaption><span>mozconfig-android-x86</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'># Global options
+</span><span class='line'>mk_add_options MOZ_MAKE_FLAGS=&quot;-j4&quot;
+</span><span class='line'>
+</span><span class='line'># Build Fennec
+</span><span class='line'>ac_add_options --enable-application=mobile/android
+</span><span class='line'>
+</span><span class='line'># Android
+</span><span class='line'>ac_add_options --target=i386-linux-android
+</span><span class='line'>ac_add_options --with-endian=little
+</span><span class='line'>ac_add_options --with-android-ndk=&quot;/tools/android-ndk-r8&quot;
+</span><span class='line'>ac_add_options --with-android-sdk=&quot;/tools/android-sdk-linux/platforms/android-15&quot;
+</span><span class='line'>ac_add_options --with-android-version=10
+</span><span class='line'>ac_add_options --with-system-zlib
+</span><span class='line'>ac_add_options --with-android-platform=&quot;/tools/android-ndk-r8/platforms/android-14/arch-x86&quot;
+</span><span class='line'>
+</span><span class='line'>#
+</span><span class='line'>ac_add_options --disable-auto-deps
+</span><span class='line'>ac_add_options --disable-debug
+</span><span class='line'>ac_add_options --disable-debug-symbols
+</span><span class='line'>ac_add_options --disable-tests
+</span><span class='line'>ac_add_options --disable-ipdl-tests
+</span><span class='line'>ac_add_options --enable-strip
+</span><span class='line'>ac_add_options --enable-install-strip
+</span><span class='line'>
+</span><span class='line'># updater
+</span><span class='line'>ac_add_options --disable-updater
+</span><span class='line'>ac_add_options --disable-update-channel
+</span><span class='line'>ac_add_options --disable-update-packaging
+</span><span class='line'>
+</span><span class='line'># crash reporter
+</span><span class='line'>ac_add_options --disable-crashreporter
+</span><span class='line'>
+</span><span class='line'># maintenance service
+</span><span class='line'>ac_add_options --disable-maintenance-service
+</span><span class='line'>
+</span><span class='line'># JDK
+</span><span class='line'>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
+</span><span class='line'>
+</span><span class='line'># mozilla
+</span><span class='line'>ac_add_options --with-branding=mobile/android/branding/nightly
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>Global options</h1>
 
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p>
-
-<h1>Build Fennec</h1>
-
-<p>ac_add_options &mdash;enable-application=mobile/android</p>
-
-<h1>Android</h1>
-
-<p>ac_add_options &mdash;target=i386-linux-android
-ac_add_options &mdash;with-endian=little
-ac_add_options &mdash;with-android-ndk=&ldquo;/tools/android-ndk-r8&rdquo;
-ac_add_options &mdash;with-android-sdk=&ldquo;/tools/android-sdk-linux/platforms/android-15&rdquo;
-ac_add_options &mdash;with-android-version=10
-ac_add_options &mdash;with-system-zlib
-ac_add_options &mdash;with-android-platform=&ldquo;/tools/android-ndk-r8/platforms/android-14/arch-x86&rdquo;</p>
-
-<h1></h1>
-
-<p>ac_add_options &mdash;disable-auto-deps
-ac_add_options &mdash;disable-debug
-ac_add_options &mdash;disable-debug-symbols
-ac_add_options &mdash;disable-tests
-ac_add_options &mdash;disable-ipdl-tests
-ac_add_options &mdash;enable-strip
-ac_add_options &mdash;enable-install-strip</p>
-
-<h1>updater</h1>
-
-<p>ac_add_options &mdash;disable-updater
-ac_add_options &mdash;disable-update-channel
-ac_add_options &mdash;disable-update-packaging</p>
-
-<h1>crash reporter</h1>
-
-<p>ac_add_options &mdash;disable-crashreporter</p>
-
-<h1>maintenance service</h1>
-
-<p>ac_add_options &mdash;disable-maintenance-service</p>
-
-<h1>JDK</h1>
-
-<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
-
-<h1>mozilla</h1>
-
-<p>ac_add_options &mdash;with-branding=mobile/android/branding/nightly
-[/plain]
-about:buildconfig の内容
+<p>about:buildconfig の内容
 <a href="/images/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png"><img src="/images/uploads/2012/06/android-x86_firefox_fennec_16.0a1_buildconfig.png" alt="android-x86 firefox fennec 16.0a1 buildconfig" /></a></p>
 </div>
 
@@ -371,7 +471,7 @@ about:buildconfig の内容
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -380,40 +480,6 @@ about:buildconfig の内容
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'ktkr3d',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 
 

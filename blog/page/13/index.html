@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://live.gnome.org/GnomeShell/Extensions http://blog.fpmurphy.com/2011/04/gnome-3-shell-extensions.html まずは、上部のパネルをクリックすると一定時間メッセージを表示するHello &hellip;">
+  <meta name="description" content="http://hexahop.sourceforge.net/ http://www.omgubuntu.co.uk/2011/05/download-of-the-week/ パズルゲームHex-a-Hop で遊んでみた。マウスかQWEASD キーで移動。U キーでアンドゥ。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,266 +93,6 @@ $(document).ready( function () {
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/05/14/gnome-shell-e68ba1e5bcb5e38292e4bd9ce3828de38186/">GNOME Shell 拡張を作ってみよう</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-14T06:50:02+09:00" pubdate data-updated="true">2011年05月14日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/05/my_gnome_shell_extension.png"><img src="/images/uploads/2011/05/my_gnome_shell_extension.png" alt="gnome shell extension" /></a></p>
-
-<p><a href="http://live.gnome.org/GnomeShell/Extensions  ">http://live.gnome.org/GnomeShell/Extensions  </a>
-<a href="http://blog.fpmurphy.com/2011/04/gnome-3-shell-extensions.html">http://blog.fpmurphy.com/2011/04/gnome-3-shell-extensions.html</a></p>
-
-<p>まずは、上部のパネルをクリックすると一定時間メッセージを表示するHello World 的な物から！！とりあえず日本語はunescape() してみた。</p>
-
-<h3>拡張を格納するディレクトリ</h3>
-
-<p>~/.local/share/gnome-shell/extensions/hello-world@ktkr3d.site11.com/</p>
-
-<h3>extension.js ファイル</h3>
-
-<p>[plain]
-// Sample extension code, makes clicking on the panel show a message
-const St = imports.gi.St;
-const Mainloop = imports.mainloop;</p>
-
-<p>const Gettext = imports.gettext.domain(&lsquo;gnome-shell-extensions&rsquo;);
-const _ = Gettext.gettext;</p>
-
-<p>const Main = imports.ui.main;</p>
-
-<p>function _showHello() {</p>
-
-<pre><code>let text = new St.Label({ style_class: 'helloworld-label', text: _(unescape("%uFF0F%u4EBA%u25D5%u203F%u203F%u25D5%u4EBA%uFF3C%u300C%u50D5%u3068%u5951%u7D04%u3057%u3066%u9B54%u6CD5%u5C11%u5973%u306B%u306A%u3063%u3066%u3088%uFF01%uFF01%u300D")) });
-let monitor = global.get_primary_monitor();
-global.stage.add_actor(text);
-text.set_position(Math.floor (monitor.width / 2 - text.width / 2), Math.floor(monitor.height / 2 - text.height / 2));
-Mainloop.timeout_add(3000, function () { text.destroy(); });
-</code></pre>
-
-<p>}</p>
-
-<p>// Put your extension initialization code here
-function main(metadata) {</p>
-
-<pre><code>imports.gettext.bindtextdomain('gnome-shell-extensions', metadata.localedir);
-
-Main.panel.actor.reactive = true;
-Main.panel.actor.connect('button-release-event', _showHello);
-</code></pre>
-
-<p>}
-[/plain]</p>
-
-<h3>metadata.json ファイル</h3>
-
-<p>[plain]
-{
- &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x68;&#x65;&#x6c;&#108;&#x6f;&#45;&#119;&#111;&#114;&#108;&#x64;&#64;&#107;&#x74;&#x6b;&#114;&#x33;&#x64;&#46;&#x73;&#105;&#x74;&#101;&#x31;&#49;&#46;&#99;&#111;&#x6d;">&#104;&#101;&#x6c;&#108;&#x6f;&#x2d;&#x77;&#x6f;&#x72;&#108;&#x64;&#64;&#x6b;&#x74;&#107;&#114;&#x33;&#100;&#x2e;&#115;&#105;&#116;&#101;&#x31;&#x31;&#46;&#x63;&#x6f;&#109;</a>&rdquo;,
- &ldquo;name&rdquo;: &ldquo;Hello, World!&rdquo;,
- &ldquo;description&rdquo;: &ldquo;An example extension to show how it works. Shows Hello, world when clicking on the top panel.&rdquo;,
- &ldquo;shell-version&rdquo;: [ &ldquo;3.0&rdquo; ],
- &ldquo;localedir&rdquo;: &ldquo;/usr/local/share/locale&rdquo;,
- &ldquo;url&rdquo;: &ldquo;<a href="http://ktkr3d.site11.com">http://ktkr3d.site11.com</a>&rdquo;
-}
-[/plain]</p>
-
-<h3>stylesheet.class ファイル</h3>
-
-<p>[plain]
-/<em> Example stylesheet </em>/
-.helloworld-label {</p>
-
-<pre><code>font-size: 36px;
-font-weight: bold;
-color: #ffffff;
-background-color: rgba(10,10,10,0.7);
-border-radius: 5px;
-</code></pre>
-
-<p>}
-[/plain]
-拡張を有効にするには、[Alt]+[F2]でrを入力して[Enter]</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/13/pc-bsd-e38292e8a9a6e38197e381a6e381bfe3819f/">PC-BSD を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-13T00:43:52+09:00" pubdate data-updated="true">2011年05月13日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/05/pc-bsd.png"><img src="/images/uploads/2011/05/pc-bsd.png" alt="PC-BSD 8.2" /></a></p>
-
-<p><a href="http://www.pcbsd.org/">http://www.pcbsd.org/</a></p>
-
-<p>FreeBSD をインストールしてみたけれど、PC-BSD の方が何かと楽そうなので、PC-BSD 8.2 をインストールしてみた。インストール前に基本パーティションを作っておくと、インストールが楽かも。
-[shell gutter=&ldquo;false&rdquo;]</p>
-
-<blockquote><p>uname -a
-[/shell]</p>
-
-<p>FreeBSD **** 8.2-RELEASE FreeBSD 8.2-RELEASE #7: Wed Feb 16 12:19:08 PST 2011     root@build8x32.pcbsd.org:/usr/obj/usr/local_storage/pcbsd-build82/fbsd-source/8.2/sys/PCBSD  i386</p></blockquote>
-
-<p>デスクトップ環境はKDE で、Firefox, Thunderbird, VLC 等をインストール時に追加できる。特に設定しなくても日本語も使えるし、mp3 も再生できる。GRUB からのチェインロードも問題無し。すごく頑張ってると思う。
-Inspiron duo の1366x768 の解像度に設定すると、ディスプレイが表示されなくなってしまうので、とりあえずVESA で凌ごう。Linux と比べてドライバ(ディスプレイ、ファイルシステム)の情報は少ないかも。
-ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じがした。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/11/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f3/">GNOME Shell を拡張してみた3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-11T01:18:16+09:00" pubdate data-updated="true">2011年05月11日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/05/places-menu_drive-menu.png"><img src="/images/uploads/2011/05/places-menu_drive-menu.png" alt="gnome shell extensions places menu drive menu" /></a></p>
-
-<p><a href="http://git.gnome.org/browse/gnome-shell-extensions/">http://git.gnome.org/browse/gnome-shell-extensions/</a></p>
-
-<p>GNOME Shell をさらに拡張してみた。</p>
-
-<ul>
-<li><p>Places menu (フォルダの形のアイコン)
-主なディレクトリ、お気に入りディレクトリの表示</p></li>
-<li><p>Drive menu (丸い形のアイコン)
-リムーバブルドライブの表示</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/10/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f2/">GNOME Shell を拡張してみた2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-10T00:17:38+09:00" pubdate data-updated="true">2011年05月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/05/gnome-shell-extensions2.png"><img src="/images/uploads/2011/05/gnome-shell-extensions2.png" alt="gnome shell extensions" /></a></p>
-
-<p><a href="http://intgat.tigress.co.uk/rmy/extensions/index.html">http://intgat.tigress.co.uk/rmy/extensions/index.html</a></p>
-
-<p>GNOME Shell をさらに拡張してみた。</p>
-
-<ul>
-<li><p>Move the clock
-時計の位置を変更</p></li>
-<li><p>Favourites in panel
-お気に入りをパネルに表示</p></li>
-<li><p>Applications menu in panel
-アプリケーションメニューをパネルに表示</p></li>
-<li><p>Disable dynamic workspaces
-ダイナミックワークスペースを無効に</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2011/05/08/hex-a-hop-e381a7e9818ae38293e381a7e381bfe3819f/">Hex-a-Hop で遊んでみた</a></h1>
     
     
@@ -383,15 +123,21 @@ ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じが�
 
 <p>パズルゲームHex-a-Hop で遊んでみた。マウスかQWEASD キーで移動。U キーでアンドゥ。ヘルプ画面は上下矢印キーでページ移動。紫色のタイルはトランポリン。レベルをクリアすると、マップ画面で次のレベルを選べるようになる。</p>
 
-<p>Ubuntu でのインストールは、
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install hex-a-hop
-[/shell]
-実行するには、
-[shell gutter=&ldquo;false&rdquo;]
-$ /usr/games/hex-a-hop
-[/shell]
-/usr/games/ にインストールされるので/usr/games/ にパスを通しておくか、/usr/share/applications/hex-a-hop.desktop のEXEC= 行を絶対パス指定にするといいかも。</p>
+<p>Ubuntu でのインストールは、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install hex-a-hop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行するには、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>/usr/games/hex-a-hop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>/usr/games/ にインストールされるので/usr/games/ にパスを通しておくか、/usr/share/applications/hex-a-hop.desktop のEXEC= 行を絶対パス指定にするといいかも。</p>
 
 </div>
   
@@ -446,34 +192,65 @@ $ /usr/games/hex-a-hop
 
 <ol>
 <li><p> burg をインストール</p></li>
-<li><p> /etc/default/burg でテーマを設定
-[plain highlight=&ldquo;2&rdquo;]
-GRUB_GFXMODE=1366x768
-GRUB_THEME=fortune
-[/plain]</p></li>
+<li><p> /etc/default/burg でテーマを設定</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>GRUB_GFXMODE=1366x768
+</span><span class='line'>GRUB_THEME=fortune
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
 <li><p> 追加するOS のアイコンファイルを作成
 カラーとグレイスケールのPNG ファイル（128x128, RGB モード）を用意して、テーマディレクトリ内のicons ディレクトリに格納</p></li>
-<li><p> 追加するOS に対応する定義をhover ファイルに追加
-[plain firstline=&ldquo;16&rdquo; highlight=&ldquo;17,18&rdquo;]
--slackware { image = &ldquo;$$/grey_slackware.png:$$/large_slackware.png&rdquo; }
--android { image = &ldquo;$$/grey_android.png:$$/large_android.png&rdquo; }
--meego { image = &ldquo;$$/grey_meego.png:$$/large_meego.png&rdquo; }
-}
-[/plain]</p></li>
-<li><p> /boot/burg/burg.cfg 内のmenuentry でクラスを指定
-[plain firstline=&ldquo;143&rdquo; highlight=&ldquo;143&rdquo;]
-menuentry &ldquo;MeeGo Tablet 1.2 (on /dev/sda9)&rdquo; &mdash;class meego &mdash;class os &mdash;group group_/dev/sda9 {
-insmod ext2
-set root=&lsquo;(hd0,9)&rsquo;
-search &mdash;no-floppy &mdash;fs-uuid &mdash;set d6dc4505-c05f-434a-af52-8cd3d543b03f
-linux /boot/vmlinuz-2.6.38.2-8.1-adaptation-pinetrail root=/dev/sda9
-}
-[/plain]</p></li>
-<li><p> 試してみる！
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo burg-emu -D
-[/shell]</p></li>
+<li><p> 追加するOS に対応する定義をhover ファイルに追加</p></li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>  -slackware { image = &quot;$$/grey_slackware.png:$$/large_slackware.png&quot; }
+</span><span class='line'>  -android { image = &quot;$$/grey_android.png:$$/large_android.png&quot; }
+</span><span class='line'>  -meego { image = &quot;$$/grey_meego.png:$$/large_meego.png&quot; }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> /boot/burg/burg.cfg 内のmenuentry でクラスを指定</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>menuentry &quot;MeeGo Tablet 1.2 (on /dev/sda9)&quot; --class meego --class os --group group_/dev/sda9 {
+</span><span class='line'>  insmod ext2
+</span><span class='line'>  set root=&#39;(hd0,9)&#39;
+</span><span class='line'>  search --no-floppy --fs-uuid --set d6dc4505-c05f-434a-af52-8cd3d543b03f
+</span><span class='line'>  linux /boot/vmlinuz-2.6.38.2-8.1-adaptation-pinetrail root=/dev/sda9
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> 試してみる！</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-emu -D
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
   
@@ -512,15 +289,18 @@ $ sudo burg-emu -D
 
   <div class="entry-content"><p>meego.com 版のMeeGo Tablet 1.2 でマウスポインタが表示されなかったので、表示するように設定を変えてみた。</p>
 
-<p>/etc/sysconfig/uxlaunch
-[plain firstline=&ldquo;27&rdquo; highlight=&ldquo;30&rdquo;]
-session=/usr/bin/mutter &mdash;sm-disable
-user=meego
-session=/usr/bin/mcompositor</p>
+<p>/etc/sysconfig/uxlaunch</p>
 
-<h1>xopts=-nocursor</h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>session=/usr/bin/mutter --sm-disable
+</span><span class='line'>user=meego
+</span><span class='line'>session=/usr/bin/mcompositor
+</span><span class='line'>#xopts=-nocursor
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[/plain]</p>
 
 <p>-nocursor を無効にする。</p>
 
@@ -624,21 +404,20 @@ KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて�
 
 <blockquote><p>solver.allowVendorChange = true</p></blockquote>
 
-<p>[shell gutter=&ldquo;false&rdquo;]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># zypper ar http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/ kde-unstable</span>
+</span><span class='line'><span class="c"># zypper mr -p 100 kde-unstable</span>
+</span><span class='line'><span class="c"># zypper ar http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/ plasma-active</span>
+</span><span class='line'><span class="c"># zypper mr -p 101 plasma-active</span>
+</span><span class='line'><span class="c"># zypper refresh -f</span>
+</span><span class='line'><span class="c"># zypper in plasma-active:kdebase4-runtime plasma-tablet-config plasma-declarative-widgets</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>zypper ar <a href="http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/">http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/</a> kde-unstable</h1>
-
-<h1>zypper mr -p 100 kde-unstable</h1>
-
-<h1>zypper ar <a href="http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/">http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/</a> plasma-active</h1>
-
-<h1>zypper mr -p 101 plasma-active</h1>
-
-<h1>zypper refresh -f</h1>
-
-<h1>zypper in plasma-active:kdebase4-runtime plasma-tablet-config plasma-declarative-widgets</h1>
-
-<p>[/shell]</p>
 
 <ol>
 <li><p> Contour パッケージのインストール
@@ -694,13 +473,18 @@ KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて�
 
 <h3>GNOME Shell Extensions</h3>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ git clone git://git.gnome.org/gnome-shell-extensions
-$ cd gnome-shell-extensions
-$ ./autogen.sh
-$ make
-$ sudo make install
-[/shell]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone git://git.gnome.org/gnome-shell-extensions
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>gnome-shell-extensions
+</span><span class='line'><span class="nv">$ </span>./autogen.sh
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
 <li><p>alternate-tab: Alt+Tab 操作関連</p></li>
@@ -721,6 +505,202 @@ Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li
 <li><p>キー操作でoverview へ切り替える
 システム(Windows)キーまたはAlt+F1</p></li>
 </ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/08/ubuntu-11-04-e381a7gnome-shell/">Ubuntu 11.04 でGNOME Shell</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-08T00:40:12+09:00" pubdate data-updated="true">2011年04月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/04/ubuntu-natty-gnome-shell.png"><img src="/images/uploads/2011/04/ubuntu-natty-gnome-shell.png" alt="ubuntu 11.04 natty gnome shell" /></a></p>
+
+<p><a href="http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty">http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty</a></p>
+
+<p>Ubuntu 11.04 用のGNOME Shell を含むppa を見つけたので、早速インストールしてみた。ちゃんとローカライズもされている。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:gnome3-team/gnome3
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install gnome-shell
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>GDM でログインする際に「Ubuntu GNOME Shell Desktop」を選択する。</p>
+
+<p>上部パネルの日付、時刻の書式はスクリプトをカスタマイズ。シャットダウン系のメニューもスクリプトなので後で改造しよう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/07/meego-tablet-e381a7e697a5e69cace8aa9e/">MeeGo Tablet で日本語</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-07T22:15:48+09:00" pubdate data-updated="true">2011年04月07日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/04/meego_tablet_jp.png"><img src="/images/uploads/2011/04/meego_tablet_jp.png" alt="meego tablet japanese inspiron duo" /></a>
+MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、「メモ」アイコンが増えた。タッチスクリーンは反応せず。上部パネルのレイアウトは若干変わっている。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/06/meego-tablet-e38292e4bdbfe381a3e381a6e381bfe3819f/">MeeGo Tablet を使ってみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-06T18:49:24+09:00" pubdate data-updated="true">2011年04月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/04/all_apps.png"><img src="/images/uploads/2011/04/all_apps.png" alt="meego tablet inspiron duo" /></a></p>
+
+<p>Inspiron duo に入れたIntel 版のMeeGo Tablet が動くようになった。</p>
+
+<p>隠しアクセスポイントに接続するには、一旦端末で、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># iwconfig wlan0 essid &lt;ESSID&gt; key &lt;KEY&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とするとWi-Fi の設定画面のアクセスポイント一覧に追加される。</p>
+
+<p>画面のキャプチャは</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>xwd -root &gt; ScreenShot.xwd
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>画面の切り替えは、Windows キー。パネル画面（横）、すべてのアプリケーション画面（縦）、実行中のアプリケーションの選択などができる。</p>
+
+<p><a href="/images/uploads/2011/04/panel1.png"><img src="/images/uploads/2011/04/panel1.png" alt="meego tablet inspiron duo" /></a></p>
+
+<p>パネルの配置を変えるには、タブの右上隅をドラッグ。パネルの設定を変えるには、タブをシングルクリック（パネルが回転する）</p>
+
+<p>標準で再生可能な形式はogg/ogv 。ffmpeg, ffmpeg2theora で変換すると簡単。
+<a href="/images/uploads/2011/04/panel3.png"><img src="/images/uploads/2011/04/panel3.png" alt="meego tablet inspiron duo" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/03/unity-e381aee383a1e3838be383a5e383bce8a1a8e7a4bae8a8ade5ae9a/">Unity のメニュー表示設定</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-03T23:52:43+09:00" pubdate data-updated="true">2011年04月03日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://askubuntu.com/questions/14815/unity-menu-desktop-design-how-will-it-act">http://askubuntu.com/questions/14815/unity-menu-desktop-design-how-will-it-act</a></p>
+
+<p>Ubuntu 11.04 で採用されたデスクトップ環境Unity ではアプリケーションメニューが上部のパネルに統合されて表示される。なかなか操作に慣れないので、一旦、元のメニュー表示に戻してみた。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get remove indicator-appmenu
+</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
@@ -769,7 +749,7 @@ Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -778,40 +758,6 @@ Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'ktkr3d',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 
 

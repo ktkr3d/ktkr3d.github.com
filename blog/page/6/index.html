@@ -201,46 +201,81 @@ Firefox のアドオンで何かあったような気がする。</p></li>
 <p>Android 4.1 Jelly Bean のソースが公開されたのでビルドしてみた。<del>./build/target/product/generic_x86.mk があるので、使わせていただこう。</del>ビルド環境はUbuntu 12.04 x86_64。<del>インストール先はInspiron duo (Dual Core Atom N550, 1366x768, Touch Screen + Keyboard)。</del></p>
 
 <ol>
-<li><p> 前提パッケージをインストール
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline-gplv2-dev lib32z1-dev
-$ sudo apt-get install gcc-multilib g++-multilib libc6-i386 libc6-dev-i386
-[/shell]</p></li>
-<li><p> JDK をインストール
-Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin にパスを通しておく。</p></li>
-<li><p> repo をインストール
-[shell gutter=&ldquo;false&rdquo;]
-$ mkdir ~/bin
-$ PATH=~/bin:$PATH
-$ curl <a href="http://android.git.kernel.org/repo">http://android.git.kernel.org/repo</a> > ~/bin/repo
-$ chmod a+x ~/bin/repo
-[/shell]</p></li>
-<li><p> ソースを取得(Android 4.1(Jelly Bean) の場合)
-[shell gutter=&ldquo;false&rdquo;]
-$ mkdir jellybean-x86
-$ cd jellybean-x86
-$ repo init -u <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a> -b android-4.1.1_r1
-$ repo sync
-[/shell]</p></li>
-<li><p> ビルド
-[shell gutter=&ldquo;false&rdquo;]
-$ source build/envsetup.sh
-$ lunch generic_x86-eng
-$ make -j8
-[/shell]
-./out/target/product/generic_x86/ にバイナリが作成されるので、GRUB から起動してあげればOK!、と思うけど、時間が掛かりそうなので、明日の朝確認しようzzz。</p></li>
+<li> 前提パッケージをインストール</li>
 </ol>
 
 
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline-gplv2-dev lib32z1-dev
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install gcc-multilib g++-multilib libc6-i386 libc6-dev-i386
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li><p> JDK をインストール
+Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin にパスを通しておく。</p></li>
+<li><p> repo をインストール</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>mkdir ~/bin
+</span><span class='line'><span class="nv">$ PATH</span><span class="o">=</span>~/bin:<span class="nv">$PATH</span>
+</span><span class='line'><span class="nv">$ </span>curl http://android.git.kernel.org/repo &gt; ~/bin/repo
+</span><span class='line'><span class="nv">$ </span>chmod a+x ~/bin/repo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ソースを取得(Android 4.1(Jelly Bean) の場合)</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>mkdir jellybean-x86
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>jellybean-x86
+</span><span class='line'><span class="nv">$ </span>repo init -u https://android.googlesource.com/platform/manifest -b android-4.1.1_r1
+</span><span class='line'><span class="nv">$ </span>repo sync
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ビルド</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source </span>build/envsetup.sh
+</span><span class='line'><span class="nv">$ </span>lunch generic_x86-eng
+</span><span class='line'><span class="nv">$ </span>make -j8
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>./out/target/product/generic_x86/ にバイナリが作成されるので、GRUB から起動してあげればOK!、と思うけど、時間が掛かりそうなので、明日の朝確認しようzzz。</p>
+
 <p>generic_x86-eng で失敗したので、lunch の選択肢に従って、full_x86-eng でやり直してみよう。make の実行は、C/C++ の部分は多重度を8 にして、Java の部分は多重度を1 にできるとCPU とメモリが有効活用できて効率的なんだけど、できないのかな。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ source build/envsetup.sh
-$ lunch vbox_x86-eng
-$ make android_disk_vdi -j1
-$
-[/shell]
-VirtualBox イメージ(android_data_disk.vdi, android_system_disk.vdi)の生成と起動はできた。</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source </span>build/envsetup.sh
+</span><span class='line'><span class="nv">$ </span>lunch vbox_x86-eng
+</span><span class='line'><span class="nv">$ </span>make android_disk_vdi -j1
+</span><span class='line'><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>VirtualBox イメージ(android_data_disk.vdi, android_system_disk.vdi)の生成と起動はできた。</p>
 </div>
   
   
@@ -282,81 +317,125 @@ VirtualBox イメージ(android_data_disk.vdi, android_system_disk.vdi)の生成
 GRUB 1.99 以降と違って、Burg は有効なカーネルのエントリーをすべて表示してしまうので、表示したい起動エントリーについてはGrub Customizer で選択した。</p>
 
 <ol>
-<li> Clonezilla 用の起動エントリーを追加。
-[plain title=&ldquo;/etc/burg.d/40_custom&rdquo; highlight=&ldquo;14,15,16,17,18,19,20&rdquo;]
-
-<h1>!/bin/sh</h1>
-
-exec tail -n +3 $0
-
-<h1>This file provides an easy way to add custom menu entries.  Simply type the</h1>
-
-<h1>menu entries you want to add after this comment.  Be careful not to change</h1>
-
-<h1>the &lsquo;exec tail&rsquo; line above.</h1>
-
-<p>menuentry &ldquo;Android-x86 4.0.3&rdquo; &mdash;class android &mdash;class os {
-insmod ext2
-set root=&lsquo;(hd0,3)&rsquo;
-echo    &lsquo;Loading Android-x86 4.0.3 &hellip;&rsquo;
-linux /android-4.0-RC1/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/android-4.0-RC1 DATA=
-initrd /android-4.0-RC1/initrd.img
-}</p></li>
+<li> Clonezilla 用の起動エントリーを追加。</li>
 </ol>
 
 
-<p>menuentry &ldquo;Clonezilla 20120620&rdquo; &mdash;class iso &mdash;class os {</p>
+<figure class='code'><figcaption><span>/etc/burg.d/40_custom</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>#!/bin/sh
+</span><span class='line'>exec tail -n +3 $0
+</span><span class='line'># This file provides an easy way to add custom menu entries.  Simply type the
+</span><span class='line'># menu entries you want to add after this comment.  Be careful not to change
+</span><span class='line'># the &#39;exec tail&#39; line above.
+</span><span class='line'>menuentry &quot;Android-x86 4.0.3&quot; --class android --class os {
+</span><span class='line'>  insmod ext2
+</span><span class='line'>  set root=&#39;(hd0,3)&#39;
+</span><span class='line'>  echo    &#39;Loading Android-x86 4.0.3 ...&#39;
+</span><span class='line'>  linux /android-4.0-RC1/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/android-4.0-RC1 DATA=
+</span><span class='line'>  initrd /android-4.0-RC1/initrd.img
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>menuentry &quot;Clonezilla 20120620&quot; --class iso --class os {
+</span><span class='line'>  insmod ext2
+</span><span class='line'>  set root=&#39;(hd0,3)&#39;
+</span><span class='line'>  loopback loop &quot;/Clonezilla/clonezilla-live-20120620-precise.iso&quot;
+</span><span class='line'>  linux (loop)/live/vmlinuz boot=live live-config union=aufs nolocales noprompt gfxpayload=800x600x16 ip=frommedia findiso=&quot;/Clonezilla/clonezilla-live-20120620-precise.iso&quot;
+</span><span class='line'>  initrd (loop)/live/initrd.img
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>insmod ext2
-set root='(hd0,3)'
-loopback loop "/Clonezilla/clonezilla-live-20120620-precise.iso" 
-linux (loop)/live/vmlinuz boot=live live-config union=aufs nolocales noprompt gfxpayload=800x600x16 ip=frommedia findiso="/Clonezilla/clonezilla-live-20120620-precise.iso"
-initrd (loop)/live/initrd.img
-</code></pre>
-
-<p>}
-[/plain]</p>
 
 <ol>
-<li> ISO 用のアイコンが表示されるようにBurg のテーマを修正。
-[plain title=&ldquo;/boot/burg/themes/fortune/icons/hover&rdquo; highlight=&ldquo;18&rdquo;]
-+class
-{
--windows { image = &ldquo;$$/grey_windows.png:$$/large_windows.png&rdquo; }
--ubuntu { image = &ldquo;$$/grey_ubuntu.png:$$/large_ubuntu.png&rdquo; }
--debian { image = &ldquo;$$/grey_debian.png:$$/large_debian.png&rdquo; }
--suse { image = &ldquo;$$/grey_opensuse.png:$$/large_opensuse.png&rdquo; }
--freebsd { image = &ldquo;$$/grey_freebsd.png:$$/large_freebsd.png&rdquo; }
--macosx { image = &ldquo;$$/grey_osx.png:$$/large_osx.png&rdquo; }
--gentoo { image = &ldquo;$$/grey_gentoo.png:$$/large_gentoo.png&rdquo; }
--linuxmint { image = &ldquo;$$/grey_linuxmint.png:$$/large_linuxmint.png&rdquo; }
--mandrake { image = &ldquo;$$/grey_mandrake.png:$$/large_mandrake.png&rdquo; }
--arch { image = &ldquo;$$/grey_arch.png:$$/large_arch.png&rdquo; }
--fedora { image = &ldquo;$$/grey_fedora.png:$$/large_fedora.png&rdquo; }
--pclinuxos { image = &ldquo;$$/grey_pclinuxos.png:$$/large_pclinuxos.png&rdquo; }
--sabayon { image = &ldquo;$$/grey_sabayon.png:$$/large_sabayon.png&rdquo; }
--slackware { image = &ldquo;$$/grey_slackware.png:$$/large_slackware.png&rdquo; }
--android { image = &ldquo;$$/grey_android.png:$$/large_android.png&rdquo; }
--iso { image = &ldquo;$$/grey_iso.png:$$/large_iso.png&rdquo; }
-}</li>
+<li> ISO 用のアイコンが表示されるようにBurg のテーマを修正。</li>
 </ol>
 
 
-<p>-include &ldquo;../custom/icon_hover&rdquo;
-[/plain]</p>
+<figure class='code'><figcaption><span>/boot/burg/themes/fortune/icons/hover</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>+class
+</span><span class='line'>{
+</span><span class='line'>  -windows { image = &quot;$$/grey_windows.png:$$/large_windows.png&quot; }
+</span><span class='line'>  -ubuntu { image = &quot;$$/grey_ubuntu.png:$$/large_ubuntu.png&quot; }
+</span><span class='line'>  -debian { image = &quot;$$/grey_debian.png:$$/large_debian.png&quot; }
+</span><span class='line'>  -suse { image = &quot;$$/grey_opensuse.png:$$/large_opensuse.png&quot; }
+</span><span class='line'>  -freebsd { image = &quot;$$/grey_freebsd.png:$$/large_freebsd.png&quot; }
+</span><span class='line'>  -macosx { image = &quot;$$/grey_osx.png:$$/large_osx.png&quot; }
+</span><span class='line'>  -gentoo { image = &quot;$$/grey_gentoo.png:$$/large_gentoo.png&quot; }
+</span><span class='line'>  -linuxmint { image = &quot;$$/grey_linuxmint.png:$$/large_linuxmint.png&quot; }
+</span><span class='line'>  -mandrake { image = &quot;$$/grey_mandrake.png:$$/large_mandrake.png&quot; }
+</span><span class='line'>  -arch { image = &quot;$$/grey_arch.png:$$/large_arch.png&quot; }
+</span><span class='line'>  -fedora { image = &quot;$$/grey_fedora.png:$$/large_fedora.png&quot; }
+</span><span class='line'>  -pclinuxos { image = &quot;$$/grey_pclinuxos.png:$$/large_pclinuxos.png&quot; }
+</span><span class='line'>  -sabayon { image = &quot;$$/grey_sabayon.png:$$/large_sabayon.png&quot; }
+</span><span class='line'>  -slackware { image = &quot;$$/grey_slackware.png:$$/large_slackware.png&quot; }
+</span><span class='line'>  -android { image = &quot;$$/grey_android.png:$$/large_android.png&quot; }
+</span><span class='line'>  -iso { image = &quot;$$/grey_iso.png:$$/large_iso.png&quot; }
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>-include &quot;../custom/icon_hover&quot;
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ol>
-<li><p> burg.cfg を更新
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo update-burg
-[/shell]</p></li>
+<li> burg.cfg を更新</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo update-burg
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
 <li><p> Grub Customizer で表示したい起動エントリーを選択する。
 Grub Customizer はBurg が有効である場合に検知して、確認してくるので、Burg を更新するように選択する。</p></li>
-<li><p> 設定の確認
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo burg-emu -D
-[/shell]</p></li>
+<li><p> 設定の確認</p></li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-emu -D
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
   
@@ -435,47 +514,50 @@ $ sudo burg-emu -D
 
 <p>Irrlicht 1.8 trunk でXEffects の影が有効にならなくなっていたので、XEffects のヘッダを修正してみた。Irrlicht 側のインタフェースが変わったのが原因かな。Irrlicht 1.8 ではXEffects を使っても画像が反転しないし、CGUITTFONT とも同時に使えるし、便利になったなぁ。環境はUbuntu 12.04 x86_64 + Irrlicht 1.8 trunk (SVN rev: 4170 ) + XEffects v1.3。</p>
 
-<p>[cpp title=&ldquo;EffectCB.h&rdquo; firstline=&ldquo;86&rdquo; highlight=&ldquo;91, 93, 97, 101, 105&rdquo;]
-virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr::s32 userData)
-{</p>
+<figure class='code'><figcaption><span>EffectCB.h</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnSetConstants</span><span class="p">(</span><span class="n">irr</span><span class="o">::</span><span class="n">video</span><span class="o">::</span><span class="n">IMaterialRendererServices</span><span class="o">*</span> <span class="n">services</span><span class="p">,</span> <span class="n">irr</span><span class="o">::</span><span class="n">s32</span> <span class="n">userData</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">services</span><span class="o">-&gt;</span><span class="n">getVideoDriver</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getDriverType</span><span class="p">()</span> <span class="o">==</span> <span class="n">irr</span><span class="o">::</span><span class="n">video</span><span class="o">::</span><span class="n">EDT_OPENGL</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'><span class="c1">//       irr::f32 TexVar = 0;</span>
+</span><span class='line'>      <span class="n">irr</span><span class="o">::</span><span class="n">s32</span> <span class="n">TexVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//       services-&gt;setPixelShaderConstant(&quot;ColorMapSampler&quot;, (irr::f32*)(&amp;TexVar), 1);</span>
+</span><span class='line'>      <span class="n">services</span><span class="o">-&gt;</span><span class="n">setPixelShaderConstant</span><span class="p">(</span><span class="s">&quot;ColorMapSampler&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">TexVar</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">TexVar</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//       services-&gt;setPixelShaderConstant(&quot;ScreenMapSampler&quot;, (irr::f32*)(&amp;TexVar), 1);</span>
+</span><span class='line'>      <span class="n">services</span><span class="o">-&gt;</span><span class="n">setPixelShaderConstant</span><span class="p">(</span><span class="s">&quot;ScreenMapSampler&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">TexVar</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">TexVar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//       services-&gt;setPixelShaderConstant(&quot;DepthMapSampler&quot;, (irr::f32*)(&amp;TexVar), 1);</span>
+</span><span class='line'>      <span class="n">services</span><span class="o">-&gt;</span><span class="n">setPixelShaderConstant</span><span class="p">(</span><span class="s">&quot;DepthMapSampler&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">TexVar</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">TexVar</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//       services-&gt;setPixelShaderConstant(&quot;UserMapSampler&quot;, (irr::f32*)(&amp;TexVar), 1);</span>
+</span><span class='line'>      <span class="n">services</span><span class="o">-&gt;</span><span class="n">setPixelShaderConstant</span><span class="p">(</span><span class="s">&quot;UserMapSampler&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">TexVar</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>if(services-&gt;getVideoDriver()-&gt;getDriverType() == irr::video::EDT_OPENGL)
-{
-</code></pre>
-
-<p>//      irr::f32 TexVar = 0;</p>
-
-<pre><code>    irr::s32 TexVar = 0;
-</code></pre>
-
-<p>//      services->setPixelShaderConstant(&ldquo;ColorMapSampler&rdquo;, (irr::f32*)(&amp;TexVar), 1);</p>
-
-<pre><code>    services-&gt;setPixelShaderConstant("ColorMapSampler", &amp;TexVar, 1);
-
-    TexVar = 1;
-</code></pre>
-
-<p>//      services->setPixelShaderConstant(&ldquo;ScreenMapSampler&rdquo;, (irr::f32*)(&amp;TexVar), 1);</p>
-
-<pre><code>    services-&gt;setPixelShaderConstant("ScreenMapSampler", &amp;TexVar, 1);
-
-    TexVar = 2;
-</code></pre>
-
-<p>//      services->setPixelShaderConstant(&ldquo;DepthMapSampler&rdquo;, (irr::f32*)(&amp;TexVar), 1);</p>
-
-<pre><code>    services-&gt;setPixelShaderConstant("DepthMapSampler", &amp;TexVar, 1);
-
-    TexVar = 3;
-</code></pre>
-
-<p>//      services->setPixelShaderConstant(&ldquo;UserMapSampler&rdquo;, (irr::f32*)(&amp;TexVar), 1);</p>
-
-<pre><code>    services-&gt;setPixelShaderConstant("UserMapSampler", &amp;TexVar, 1);
-}
-</code></pre>
-
-<p>[/cpp]</p>
 </div>
   
   
@@ -517,97 +599,166 @@ virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr
 Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386-linux-android 向けのmozconfig を見つけたけれど、そのままではうまくビルドできなかったので、修正して利用してみた。Android SDK/NDK の環境はできているので、その後から始めよう。ビルドする環境はUbuntu 12.04 x86_64。Android 端末は、Inspiron duo にandroid-x86-4.0-RC1-tegav2.iso をインストール済み。</p>
 
 <ol>
-<li><p> ビルドするための依存関係の取得
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install mercurial ccache
-$ sudo apt-get build-dep firefox
-[/shell]</p></li>
-<li><p> Firefox のソースの取得
-[shell gutter=&ldquo;false&rdquo;]
-$ hg clone <a href="http://hg.mozilla.org/mozilla-central/">http://hg.mozilla.org/mozilla-central/</a> src
-[/shell]</p></li>
-<li><p> MOZCONFIG のカスタマイズ
-[shell gutter=&ldquo;false&rdquo;]
-$ cd src
-$ gedit mozconfig-android-x86
-[/shell]
-[plain title=&ldquo;mozconfig-android-x86&rdquo;]</p>
-
-<h1>Global options</h1>
-
-<p>mk_add_options MOZ_MAKE_FLAGS=&ldquo;-j4&rdquo;</p></li>
+<li> ビルドするための依存関係の取得</li>
 </ol>
 
 
-<h1>Build Fennec</h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install mercurial ccache
+</span><span class='line'><span class="nv">$ </span>sudo apt-get build-dep firefox
+</span></code></pre></td></tr></table></div></figure>
 
-<p>ac_add_options &mdash;enable-application=mobile/android</p>
 
-<h1>Android</h1>
+<ol>
+<li> Firefox のソースの取得</li>
+</ol>
 
-<p>ac_add_options &mdash;target=i386-linux-android
-ac_add_options &mdash;with-endian=little
-ac_add_options &mdash;with-android-ndk=&ldquo;$HOME/Projects/Android/android-ndk-r8&rdquo;
-ac_add_options &mdash;with-android-sdk=&ldquo;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&rdquo;
-ac_add_options &mdash;with-android-version=10
-ac_add_options &mdash;with-android-platform=&ldquo;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&rdquo;
-ac_add_options &mdash;with-system-zlib</p>
 
-<h1></h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>hg clone http://hg.mozilla.org/mozilla-central/ src
+</span></code></pre></td></tr></table></div></figure>
 
-<p>ac_add_options &mdash;disable-auto-deps
-ac_add_options &mdash;disable-debug
-ac_add_options &mdash;disable-debug-symbols
-ac_add_options &mdash;disable-tests
-ac_add_options &mdash;disable-ipdl-tests
-ac_add_options &mdash;enable-strip
-ac_add_options &mdash;enable-install-strip</p>
 
-<h1>updater</h1>
+<ol>
+<li> MOZCONFIG のカスタマイズ</li>
+</ol>
 
-<p>ac_add_options &mdash;disable-updater
-ac_add_options &mdash;disable-update-channel
-ac_add_options &mdash;disable-update-packaging</p>
 
-<h1>crash reporter</h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>src
+</span><span class='line'><span class="nv">$ </span>gedit mozconfig-android-x86
+</span></code></pre></td></tr></table></div></figure>
 
-<p>ac_add_options &mdash;disable-crashreporter</p>
 
-<h1>maintenance service</h1>
 
-<p>ac_add_options &mdash;disable-maintenance-service</p>
 
-<h1>JDK</h1>
+<figure class='code'><figcaption><span>mozconfig-android-x86</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'># Global options
+</span><span class='line'>mk_add_options MOZ_MAKE_FLAGS=&quot;-j4&quot;
+</span><span class='line'>
+</span><span class='line'># Build Fennec
+</span><span class='line'>ac_add_options --enable-application=mobile/android
+</span><span class='line'>
+</span><span class='line'># Android
+</span><span class='line'>ac_add_options --target=i386-linux-android
+</span><span class='line'>ac_add_options --with-endian=little
+</span><span class='line'>ac_add_options --with-android-ndk=&quot;$HOME/Projects/Android/android-ndk-r8&quot;
+</span><span class='line'>ac_add_options --with-android-sdk=&quot;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&quot;
+</span><span class='line'>ac_add_options --with-android-version=10
+</span><span class='line'>ac_add_options --with-android-platform=&quot;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&quot;
+</span><span class='line'>ac_add_options --with-system-zlib
+</span><span class='line'>
+</span><span class='line'>#
+</span><span class='line'>ac_add_options --disable-auto-deps
+</span><span class='line'>ac_add_options --disable-debug
+</span><span class='line'>ac_add_options --disable-debug-symbols
+</span><span class='line'>ac_add_options --disable-tests
+</span><span class='line'>ac_add_options --disable-ipdl-tests
+</span><span class='line'>ac_add_options --enable-strip
+</span><span class='line'>ac_add_options --enable-install-strip
+</span><span class='line'>
+</span><span class='line'># updater
+</span><span class='line'>ac_add_options --disable-updater
+</span><span class='line'>ac_add_options --disable-update-channel
+</span><span class='line'>ac_add_options --disable-update-packaging
+</span><span class='line'>
+</span><span class='line'># crash reporter
+</span><span class='line'>ac_add_options --disable-crashreporter
+</span><span class='line'>
+</span><span class='line'># maintenance service
+</span><span class='line'>ac_add_options --disable-maintenance-service
+</span><span class='line'>
+</span><span class='line'># JDK
+</span><span class='line'>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
+</span><span class='line'>
+</span><span class='line'># branding
+</span><span class='line'>ac_add_options --with-branding=mobile/android/branding/beta
+</span></code></pre></td></tr></table></div></figure>
 
-<p>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64</p>
-
-<h1>branding</h1>
-
-<p>ac_add_options &mdash;with-branding=mobile/android/branding/beta
-[/plain]</p>
 
 <ol>
 <li><p> ロゴ画像の作成
 他のサイズのロゴ画像を参考にサイズ40x40 のPNG 形式画像を作成する。
 ./mobile/android/branding/beta/content/fennec_40x40.png</p></li>
-<li><p> インストール先のAndroid 端末を無線LAN で接続する。
-[shell gutter=&ldquo;false&rdquo;]
-$ export ADBHOST=192.168.0.4
-$ adb devices
-[/shell]</p></li>
-<li><p> ビルドとインストール
-[shell gutter=&ldquo;false&rdquo;]
-$ export MOZCONFIG=./mozconfig-android-x86
-$ make -f client.mk build_and_deploy
-$
-[/shell]
-インストーラパッケージは以下に生成される。
-./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p></li>
-<li><p> 次回ビルド時にソースを最新の状態にするには
-[shell gutter=&ldquo;false&rdquo;]
-$ hg pull -u
-[/shell]</p></li>
+<li><p> インストール先のAndroid 端末を無線LAN で接続する。</p></li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">ADBHOST</span><span class="o">=</span>192.168.0.4
+</span><span class='line'><span class="nv">$ </span>adb devices
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ビルドとインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">MOZCONFIG</span><span class="o">=</span>./mozconfig-android-x86
+</span><span class='line'><span class="nv">$ </span>make -f client.mk build_and_deploy
+</span><span class='line'><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>インストーラパッケージは以下に生成される。
+./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p>
+
+<ol>
+<li> 次回ビルド時にソースを最新の状態にするには</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>hg pull -u
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 
 </div>
@@ -654,36 +805,67 @@ $ hg pull -u
 <p>Android 2.3 用のアプリをAndroid-x86 4.0.3 用にリビルドして、Inspiron duo 実機で動かしてみた。さすがにスマートフォンより動作が非常に軽快だけど、画面がiPod の広告みたいになってしまった。画像やフォントが表示されてないのは、なんでだろう。パスがずれているのかな。パスが違っていたらエラーになるはずなんだけど。ボタンイベントはタッチスクリーン上を指で押したら正しく動作した。</p>
 
 <ol>
-<li><p> Android 4.0.3 のターゲット情報は以下のとおり。ID は10。
-[shell gutter=&ldquo;false&rdquo;]
-$ android list target
-id: 10 or &ldquo;android-15&rdquo;
- Name: Android 4.0.3
- Type: Platform
- API level: 15
- Revision: 3
- Skins: WXGA720, QVGA, WSVGA, WQVGA400, WQVGA432, HVGA, WVGA854, WXGA800, WVGA800 (default)
- ABIs : armeabi-v7a, x86
-[/shell]</p></li>
-<li><p> Application.mk でx86 を指定
-[plain title=&ldquo;Application.mk&rdquo; firstline=&ldquo;8&rdquo; highlight=&ldquo;9&rdquo;]</p>
-
-<h1>APP_ABI := armeabi armeabi-v7a</h1>
-
-<p>APP_ABI := armeabi-v7a x86
-[/plain]</p></li>
-<li><p> プロジェクトをアップデート
-[shell gutter=&ldquo;false&rdquo;]
-$ android update project &mdash;path . &mdash;target 10
-[/shell]</p></li>
-<li><p> ビルド
-[shell gutter=&ldquo;false&rdquo;]
-$ ndk-build clean
-$ ndk-build -j 4
-$ ant clean
-$ ant debug
-[/shell]</p></li>
+<li> Android 4.0.3 のターゲット情報は以下のとおり。ID は10。</li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>android list target
+</span><span class='line'>id: 10 or <span class="s2">&quot;android-15&quot;</span>
+</span><span class='line'>     Name: Android 4.0.3
+</span><span class='line'>     Type: Platform
+</span><span class='line'>     API level: 15
+</span><span class='line'>     Revision: 3
+</span><span class='line'>     Skins: WXGA720, QVGA, WSVGA, WQVGA400, WQVGA432, HVGA, WVGA854, WXGA800, WVGA800 <span class="o">(</span>default<span class="o">)</span>
+</span><span class='line'>     ABIs : armeabi-v7a, x86
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> Application.mk でx86 を指定</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>Application.mk</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>#APP_ABI := armeabi armeabi-v7a
+</span><span class='line'>APP_ABI := armeabi-v7a x86
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> プロジェクトをアップデート</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>android update project --path . --target 10
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ビルド</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>ndk-build clean
+</span><span class='line'><span class="nv">$ </span>ndk-build -j 4
+</span><span class='line'><span class="nv">$ </span>ant clean
+</span><span class='line'><span class="nv">$ </span>ant debug
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
   
@@ -720,14 +902,21 @@ $ ant debug
   </header>
 
 
-  <div class="entry-content"><p>Firefox のアドオンNewsFox を使ってRSS を購読しているのだけど、Firefox を13.0 にアップデートしてから、時々マウスのボタンダウンイベントがキャプチャーされて無効化されてしまうような挙動があったので、やっつけで暫定対策してみた。<del>Linux でもWindows でも発生する(?)ので、NewsFox 側に問題がありそう。いろいろFirefox のバグ回避もしているようだし。</del>とりあえず、ドラッグ開始しないようにreturn してしまうことにした。NewsFox でドラッグアンドドロップなんて飾りですよ。
-[javascript title=&ldquo;newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js&rdquo; firstline=&ldquo;507&rdquo;]
-function dragIt(evt) { return;
-[/javascript]
-[javascript title=&ldquo;newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js&rdquo; firstline=&ldquo;987&rdquo;]
-function dragArt(evt) { return;
-[/javascript]
-他に古いAPI を使っているところもあるようだし、早くアップデート版がリリースされるといいな。</p>
+  <div class="entry-content"><p>Firefox のアドオンNewsFox を使ってRSS を購読しているのだけど、Firefox を13.0 にアップデートしてから、時々マウスのボタンダウンイベントがキャプチャーされて無効化されてしまうような挙動があったので、やっつけで暫定対策してみた。<del>Linux でもWindows でも発生する(?)ので、NewsFox 側に問題がありそう。いろいろFirefox のバグ回避もしているようだし。</del>とりあえず、ドラッグ開始しないようにreturn してしまうことにした。NewsFox でドラッグアンドドロップなんて飾りですよ。</p>
+
+<figure class='code'><figcaption><span>newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">dragIt</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">dragArt</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>他に古いAPI を使っているところもあるようだし、早くアップデート版がリリースされるといいな。</p>
 
 <p>newsfox.xpi = {899DF1F8-2F43-4394-8315-37F6744E6319}.xpi</p>
 </div>
@@ -787,49 +976,94 @@ function dragArt(evt) { return;
 </ol>
 
 
-<p>設定保存用のフォルダも作成
-[shell gutter=&ldquo;false&rdquo;]
-$ mkdir /PATHTO/Android-x86/tegav2/data
-[/shell]</p>
+<p>設定保存用のフォルダも作成</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>mkdir /PATHTO/Android-x86/tegav2/data
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ol>
-<li><p> Burg のインストール
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo add-apt-repository ppa:n-muench/burg
-$ sudo apt-get update
-$ sudo apt-get install burg burg-themes
-[/shell]</p></li>
-<li><p> Burg のテーマfortune とAndroid 用アイコンをgnome-look.org からダウンロードしてテーマ変更
-[plain title=&ldquo;/etc/default/burg&rdquo;]
-GRUB_GFXMODE=1366x768
-GRUB_THEME=fortune
-[/plain]
-[plain title=&ldquo;/boot/burg/themes/fortune/icons/hover&rdquo; firstline=&ldquo;16&rdquo; highlight=&ldquo;17&rdquo;]
--slackware { image = &ldquo;$$/grey_slackware.png:$$/large_slackware.png&rdquo; }
--android { image = &ldquo;$$/grey_android.png:$$/large_android.png&rdquo; }
-}
-[/plain]</p></li>
-<li><p> Android-x86 用のブートエントリを追加
-[plain title=&ldquo;/etc/burg.d/40_custom&rdquo; firstline=&ldquo;6&rdquo;]
-menuentry &ldquo;Android-x86 4.0&rdquo; &mdash;class android &mdash;class os {
-insmod ext2
-set root=&lsquo;(hd0,3)&rsquo;
-search &mdash;no-floppy &mdash;fs-uuid &mdash;set MY-UU-ID
-echo &lsquo;Loading Android-x86 4.0 &hellip;&rsquo;
-linux /PATHTO/Android-x86/tegav2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/PATHTO/Android-x86/tegav2 DATA=
-initrd /PATHTO/Android-x86/tegav2/initrd.img
-}
-[/plain]</p></li>
-<li><p> Burg の設定を更新
-[plain gutter=&ldquo;false&rdquo;]
-$ sudo burg-install /dev/sda
-$ sudo update-burg
-[/plain]</p></li>
-<li><p> 設定が有効になっているかを確認
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo burg-emu -D
-[/shell]</p></li>
+<li> Burg のインストール</li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:n-muench/burg
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install burg burg-themes
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> Burg のテーマfortune とAndroid 用アイコンをgnome-look.org からダウンロードしてテーマ変更</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>/etc/default/burg</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>GRUB_GFXMODE=1366x768
+</span><span class='line'>GRUB_THEME=fortune
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>/boot/burg/themes/fortune/icons/hover</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>  -slackware { image = &quot;$$/grey_slackware.png:$$/large_slackware.png&quot; }
+</span><span class='line'>  -android { image = &quot;$$/grey_android.png:$$/large_android.png&quot; }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> Android-x86 用のブートエントリを追加</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>/etc/burg.d/40_custom</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>menuentry &quot;Android-x86 4.0&quot; --class android --class os {
+</span><span class='line'>    insmod ext2
+</span><span class='line'>    set root=&#39;(hd0,3)&#39;
+</span><span class='line'>    search --no-floppy --fs-uuid --set MY-UU-ID
+</span><span class='line'>    echo &#39;Loading Android-x86 4.0 ...&#39;
+</span><span class='line'>    linux /PATHTO/Android-x86/tegav2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/PATHTO/Android-x86/tegav2 DATA=
+</span><span class='line'>    initrd /PATHTO/Android-x86/tegav2/initrd.img
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> Burg の設定を更新</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-install /dev/sda
+</span><span class='line'><span class="nv">$ </span>sudo update-burg
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> 設定が有効になっているかを確認</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-emu -D
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>パーティションレイアウト</h3>
@@ -950,7 +1184,7 @@ Linux swap</p>
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -959,40 +1193,6 @@ Linux swap</p>
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'ktkr3d',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 
 

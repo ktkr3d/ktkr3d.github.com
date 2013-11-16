@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player/"/>
     <updated>2013-08-11T03:47:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png">{% img /images/irrlicht_android_player_tab_tn.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png"><img src="/images/irrlicht_android_player_tab_tn.png"></a></p>
 
 <p>Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。</p>
 
@@ -73,7 +73,7 @@ Android NDK のNative Activity の場合はJNI を経由してPower Manager へ�
     <link href="http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android/"/>
     <updated>2013-08-04T04:04:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_ogl-es_android.png">{% img /images/irrlicht_ogl-es_android_tn.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_ogl-es_android.png"><img src="/images/irrlicht_ogl-es_android_tn.png"></a></p>
 
 <ul>
 <li>Compiling Irrlicht ogl-es branch for Android on Ubuntu GNOME 13.10 x86_64.</li>
@@ -171,7 +171,7 @@ Linux 版のアーカイブをダウンロードして展開し、android-studio
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline-gplv2-dev lib32z1-dev
 $ sudo apt-get install gcc-multilib g++-multilib libc6-i386 libc6-dev-i386
 </code></p>
@@ -183,7 +183,7 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ mkdir ~/bin
 $ PATH=~/bin:$PATH
 $ curl http://android.git.kernel.org/repo &gt; ~/bin/repo
@@ -195,7 +195,7 @@ $ chmod a+x ~/bin/repo
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ mkdir jellybean-x86
 $ cd jellybean-x86
 $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.1.1_r1
@@ -207,7 +207,7 @@ $ repo sync
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ source build/envsetup.sh
 $ lunch generic_x86-eng
 $ make -j8
@@ -217,7 +217,7 @@ $ make -j8
 
 <p>generic_x86-eng で失敗したので、lunch の選択肢に従って、full_x86-eng でやり直してみよう。make の実行は、C/C++ の部分は多重度を8 にして、Java の部分は多重度を1 にできるとCPU とメモリが有効活用できて効率的なんだけど、できないのかな。</p>
 
-<p><code>shell
+<p><code>sh
 $ source build/envsetup.sh
 $ lunch vbox_x86-eng
 $ make android_disk_vdi -j1

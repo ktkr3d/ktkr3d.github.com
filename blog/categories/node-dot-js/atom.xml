@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Node.js | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -30,7 +30,7 @@
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ source ~/.nvm/nvm.sh
 $ nvm install v0.8.19
 </code></p>
@@ -40,7 +40,7 @@ $ nvm install v0.8.19
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ source ~/.nvm/nvm.sh
 $ nvm use v0.8.19
 $ npm install -g appjs
@@ -129,7 +129,7 @@ window.on(&lsquo;close&rsquo;, function(){
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ source ~/.nvm/nvm.sh
 $ nvm use v0.8.19
 $ export NODE_PATH=${NVM_PATH}_modules
@@ -165,7 +165,7 @@ $ node --harmony app.js
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ sudo apt-get install build-essential libssl-dev curl git
 $ git clone git://github.com/creationix/nvm.git ~/.nvm
 </code></p>
@@ -233,7 +233,7 @@ $ git clone git://github.com/creationix/nvm.git ~/.nvm
 
 <h3>Node.js v0.6.21 とsourcemint のインストール</h3>
 
-<p><code>shell
+<p><code>sh
 $ source ~/.nvm/nvm.sh
 $ nvm install v0.6.21
 $ nvm use v0.6.21
@@ -242,7 +242,7 @@ $ npm install -g sm
 
 <h3>Cound9 IDE のインストール</h3>
 
-<p><code>shell
+<p><code>sh
 $ git clone https://github.com/ajaxorg/cloud9.git ~/cloud9
 $ cd ~/cloud9
 $ sm install
@@ -250,7 +250,7 @@ $ sm install
 
 <h3>Cound9 IDE の実行</h3>
 
-<p><code>shell
+<p><code>sh
 $ source ~/.nvm/nvm.sh
 $ nvm use v0.6.21
 $ cd ~/cloud9/bin &amp;&amp; ./cloud9.sh

@@ -170,18 +170,32 @@ Linux の他にはWindows XP 32bit しか入っていないデスクトップPC 
 軽量なコンソール型のメディアプレーヤーMOC(Music On Console)を使ってみた。コマンドはmocp で、mocp を実行するとメディアを再生するサーバと操作用のクライアント画面が同時に起動する。クライアント画面を終了してもサーバはメディアの再生を継続するような仕組みになっている。moc-ffmpeg-plugin をインストールするとWMA, RealAudio, MP4, AAC 等のフォーマットの再生も可能。イコライザがついていたり、歌詞表示ができたり、テーマ変更もできたりする。日本語のタグやファイル名も表示可能。軽量だからwine で動かしているアプリケーションへの影響も少ないようだ。</p>
 
 <ul>
-<li><p>インストール
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install moc moc-ffmpeg-plugin
-[/shell]</p></li>
-<li><p>起動とサーバの停止
-[shell gutter=&ldquo;false&rdquo;]
-$ mocp
-$ mocp -x
-[/shell]
-オプションの詳細はman mocp で。</p></li>
-<li><p>よく使うキー操作
-[h][?] キーボードショートカット一覧を表示</p></li>
+<li>インストール</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install moc moc-ffmpeg-plugin
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>起動とサーバの停止</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>mocp
+</span><span class='line'><span class="nv">$ </span>mocp -x
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>オプションの詳細はman mocp で。</p>
+
+<ul>
+<li>よく使うキー操作
+[h][?] キーボードショートカット一覧を表示</li>
 </ul>
 
 
@@ -204,12 +218,17 @@ $ mocp -x
 <li><p>インターネットラジオの聞き方
 SHOUTcast で探して、ローカルにpls ファイルを保存して、開いたり、[o]で直接URL を入力したり。</p></li>
 <li><p>moc で再生中のメディアの情報をConky に表示するには
-mocp -Q でいろいろな情報を取得して表示することができる。
-[plain title=&ldquo;~/.conkyrc&rdquo; firstline=&ldquo;124&rdquo;]
-${if_running mocp}${font DejaVu Sans}MUSIC (moc)${font} ${hr 2}
-${font :size=10}${execi 5 mocp -Q %title | nkf -w -F36-0}${endif}
-[/plain]</p></li>
+mocp -Q でいろいろな情報を取得して表示することができる。</p></li>
 </ul>
+
+
+<figure class='code'><figcaption><span>~/.conkyrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>${if_running mocp}${font DejaVu Sans}MUSIC (moc)${font} ${hr 2}
+</span><span class='line'>${font :size=10}${execi 5 mocp -Q %title | nkf -w -F36-0}${endif}
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
   
@@ -295,11 +314,14 @@ ${font :size=10}${execi 5 mocp -Q %title | nkf -w -F36-0}${endif}
 
 <p>週末になったので、Diablo III で遊ぼう！</p>
 
-<p>Ubuntu 12.04 x86_64 + wine-1.5.4 + fglrx 8.960 の環境で遊んでみた。アップデータがうまく終了しなかったので、Windows のドライブをマウントして、インストールしたディレクトリに移動して、以下のコマンドで起動した。
-[shell gutter=&ldquo;false&rdquo;]
-$ wine Diablo\ III.exe -launch
-[/shell]
-たまにサウンドやグラフィックスに不具合があるものの、調子が良い時はWindows 上で動作している時とほとんど変わらない感じ。日本語も特に設定変更なしで入力できた。Z キーでズーム。スクリーンショットを撮る時は、GNOME のPrintScreen キーのショートカットを変更しておく。</p>
+<p>Ubuntu 12.04 x86_64 + wine-1.5.4 + fglrx 8.960 の環境で遊んでみた。アップデータがうまく終了しなかったので、Windows のドライブをマウントして、インストールしたディレクトリに移動して、以下のコマンドで起動した。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>wine Diablo<span class="se">\ </span>III.exe -launch
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>たまにサウンドやグラフィックスに不具合があるものの、調子が良い時はWindows 上で動作している時とほとんど変わらない感じ。日本語も特に設定変更なしで入力できた。Z キーでズーム。スクリーンショットを撮る時は、GNOME のPrintScreen キーのショートカットを変更しておく。</p>
 
 <p>なんとなく、Diablo III はシューティングゲームの要素が取り込まれているような、WoW に似ているような感じがする。弾幕避け、地雷避けとか。初回難しくても、何回かトライするとBOSS や雑魚キャラの攻撃パターンみたいなものがわかってきて、クリアできるようになる。
 やっとアクトIIIまで到着した。何故か小指がつりそう。</p>
@@ -387,57 +409,80 @@ $ wine Diablo\ III.exe -launch
 
 <p>Ubuntu 12.04 のConky 1.8.1 の挙動が怪しい(アップタイムより大きい更新間隔で実行するexeci 等が原因でcore dump する過去の不具合に似ている)のでconky 1.9.0 のソースを取得してインストールしてみた。configure するとインストール済みの開発用ライブラリに応じて使える機能が追加されるので、適宜、開発用ライブラリを追加しておく。configure の際には、画像を表示するので、&mdash;enable-imlib2 もつけてみた。デフォルトでは、/usr/local/bin/conky にインストールされる。これでエラーが出なくなってすっきり。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ ./configure &mdash;enable-imlib2
-$ make
-$ sudo make install
-[/shell]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>./configure --enable-imlib2
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>また、conkyForecast は以下の手順で設定した。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo add-apt-repository ppa:conky-companions/ppa
-$ sudo apt-get update
-$ sudo apt-get install conkyforecast
-$ cp /usr/share/conkyforecast/conkyForecast.config ~/.conkyForecast.config
-[/shell]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:conky-companions/ppa
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install conkyforecast
+</span><span class='line'><span class="nv">$ </span>cp /usr/share/conkyforecast/conkyForecast.config ~/.conkyForecast.config
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>xoap.weather.com ではなく、xml.weather.com から取得。地域は東京(JAXX0085)を設定。</p>
 
-<p>[plain title=&ldquo;~/.conkyForecast.config&rdquo; highlight=&ldquo;4, 5, 6, 19&rdquo;]</p>
+<figure class='code'><figcaption><span>~/.conkyForecast.config</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>#=============================================#
+</span><span class='line'># EXPERT SETTINGS, NOT REQUIRED TO BE ALTERED #
+</span><span class='line'>#=============================================#
+</span><span class='line'>#BASE_XOAP_URL = http://xoap.weather.com/weather/local/&lt;LOCATION&gt;?cc=*&amp;dayf=5&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID&gt;&amp;key=&lt;XOAP_LICENCE_KEY&gt;&amp;unit=m
+</span><span class='line'>BASE_XOAP_URL = http://xml.weather.com/weather/local/&lt;LOCATION&gt;?cc=*&amp;dayf=10&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID&gt;&amp;key=&lt;XOAP_LICENCE_KEY&gt;&amp;unit=m
+</span><span class='line'>MAXIMUM_DAYS_FORECAST = 5
+</span><span class='line'>
+</span><span class='line'>#===============================================#
+</span><span class='line'># USER SETTINGS, EDIT BASED ON DOCUMENTED SETUP #
+</span><span class='line'>#===============================================#
+</span><span class='line'>CACHE_FOLDERPATH = /tmp/
+</span><span class='line'>CONNECTION_TIMEOUT = 5
+</span><span class='line'>EXPIRY_MINUTES = 30
+</span><span class='line'>TIME_FORMAT = %H:%M
+</span><span class='line'>DATE_FORMAT = %Y-%m-%d
+</span><span class='line'>LOCALE = en
+</span><span class='line'>XOAP_PARTNER_ID =
+</span><span class='line'>XOAP_LICENCE_KEY =
+</span><span class='line'>DEFAULT_LOCATION = JAXX0085
+</span><span class='line'>AUTO_NIGHT = False
+</span><span class='line'>PROXY_HOST =
+</span><span class='line'>PROXY_PORT = 8080
+</span><span class='line'>PROXY_USERNAME =
+</span><span class='line'>PROXY_PASSWORD =
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>=============================================</h1>
-
-<h1>EXPERT SETTINGS, NOT REQUIRED TO BE ALTERED</h1>
-
-<h1>=============================================</h1>
-
-<h1>BASE_XOAP_URL = <a href="http://xoap.weather.com/weather/local/">http://xoap.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=5&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m</h1>
-
-<p>BASE_XOAP_URL = <a href="http://xml.weather.com/weather/local/">http://xml.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=10&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m
-MAXIMUM_DAYS_FORECAST = 5</p>
-
-<h1>===============================================</h1>
-
-<h1>USER SETTINGS, EDIT BASED ON DOCUMENTED SETUP</h1>
-
-<h1>===============================================</h1>
-
-<p>CACHE_FOLDERPATH = /tmp/
-CONNECTION_TIMEOUT = 5
-EXPIRY_MINUTES = 30
-TIME_FORMAT = %H:%M
-DATE_FORMAT = %Y-%m-%d
-LOCALE = en
-XOAP_PARTNER_ID =
-XOAP_LICENCE_KEY =
-DEFAULT_LOCATION = JAXX0085
-AUTO_NIGHT = False
-PROXY_HOST =
-PROXY_PORT = 8080
-PROXY_USERNAME =
-PROXY_PASSWORD =
-[/plain]</p>
 
 <p>天気予報の文言を日本語で表示するには、/usr/share/conkyforecast/locale/ja/* を作成しておいて、.conkyForecast.config でLOCALE = ja を設定すればよさそう。中国語(zh)をサンプルにして作成すれば、少し楽かも。</p>
 </div>
@@ -622,14 +667,12 @@ Unity デスクトップ環境や不要な設定(オーバーレイスクロー�
 
 <p>Ubuntu 12.04 のConky 1.8.1 の環境で、自前の.conkyrc の文字が表示されなくなったので、暫定対策してみた。試してみたところ、Droid Sans が認識されなくなっているみたいなので、省略してみた。fonts-droid はインストール済みでフォント名も変わってないと思うのだけど。</p>
 
-<p>[plain title=&ldquo;~/.conkyrc&rdquo; firstline=&ldquo;48&rdquo; highlight=&ldquo;49&rdquo;]</p>
+<figure class='code'><figcaption><span>~/.conkyrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>#    xftfont Droid Sans:size=10
+</span><span class='line'>    xftfont :size=10
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>xftfont Droid Sans:size=10</h1>
-
-<pre><code>xftfont :size=10
-</code></pre>
-
-<p>[/plain]</p>
 
 <p>Ubuntu 11.10 + Conky 1.8.1 では正常に表示されるし、DejaVu Sans はうまく処理されているようなので、Conky 自体の問題ではないかもしれない。ConkyForecast やパブリックIP アドレス取得スクリプト等の通信処理も若干不安定みたいだけど、Ubuntu 12.04 リリース時には安定していたらいいな。</p>
 </div>
@@ -679,7 +722,7 @@ Unity デスクトップ環境や不要な設定(オーバーレイスクロー�
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -688,40 +731,6 @@ Unity デスクトップ環境や不要な設定(オーバーレイスクロー�
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'ktkr3d',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 
 

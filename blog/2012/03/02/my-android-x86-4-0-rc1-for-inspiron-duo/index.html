@@ -9,9 +9,9 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Indpiron duo でandroid-x86 4.0 RC1 のtegav2 ビルドがほぼ動くので微調整してみよう。 repo でandroid-x86 のソースコードを拾ってきて展開する。
-[shell gutter=&ldquo;false&rdquo;]
-$ repo init -u &hellip;">
+  <meta name="description" content="Indpiron duo でandroid-x86 4.0 RC1 のtegav2 ビルドがほぼ動くので微調整してみよう。 repo でandroid-x86 のソースコードを拾ってきて展開する。 1
+2
+$ repo init -u http://git.android-x86.org/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -118,107 +118,158 @@ $(document).ready( function () {
 <div class="entry-content"><p>Indpiron duo でandroid-x86 4.0 RC1 のtegav2 ビルドがほぼ動くので微調整してみよう。</p>
 
 <ol>
-<li><p> repo でandroid-x86 のソースコードを拾ってきて展開する。
-[shell gutter=&ldquo;false&rdquo;]
-$ repo init -u <a href="http://git.android-x86.org/manifest">http://git.android-x86.org/manifest</a> -b ics-x86
-$ repo sync
-[/shell]</p></li>
-<li><p> キーボードの調整
-tegav2 ビルドではキーレイアウトは以下のようになっている。
-[plain title=&ldquo;./device/tegatech/tegav2/AT_Translated_Set_2_keyboard.kl&rdquo; firstline=&ldquo;10&rdquo;]
-key 1     HOME          WAKE_DROPPED
-key 114   VOLUME_DOWN
-key 115   VOLUME_UP
-key 125   APP_SWITCH
-key 127   ESCAPE        WAKE_DROPPED
-[/plain]
-それ以外のキーも動作するように、このファイルをコピーしないようにする。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2.mk&rdquo; firstline=&ldquo;5&rdquo; highlight=&ldquo;7,8&rdquo;]
-PRODUCT_COPY_FILES := \
-$(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \</p></li>
+<li> repo でandroid-x86 のソースコードを拾ってきて展開する。</li>
 </ol>
 
 
-<h1>$(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \</h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>repo init -u http://git.android-x86.org/manifest -b ics-x86
+</span><span class='line'><span class="nv">$ </span>repo sync
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[/plain]</p>
+
+<ol>
+<li> キーボードの調整
+tegav2 ビルドではキーレイアウトは以下のようになっている。</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/AT_Translated_Set_2_keyboard.kl</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>key 1     HOME          WAKE_DROPPED
+</span><span class='line'>key 114   VOLUME_DOWN
+</span><span class='line'>key 115   VOLUME_UP
+</span><span class='line'>key 125   APP_SWITCH
+</span><span class='line'>key 127   ESCAPE        WAKE_DROPPED
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>それ以外のキーも動作するように、このファイルをコピーしないようにする。</p>
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2.mk</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>PRODUCT_COPY_FILES := \
+</span><span class='line'>    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+</span><span class='line'>
+</span><span class='line'>#    $(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ol>
 <li> SDCARD の認識
-tegav2 ビルドではfstab の設定が以下のようになっている。
-[plain title=&ldquo;./device/tegatech/tegav2/vold.fstab&rdquo;]
-dev_mount sdcard  /mnt/MicroSD auto /devices/pci0000:00/0000:00:1d.7/usb1/1-5/1-5:1.0
-dev_mount usb     /mnt/USB     auto
-[/plain]
-デバイスの指定を外す。
-[plain title=&ldquo;./device/tegatech/tegav2/vold.fstab&rdquo; highlight=&ldquo;1&rdquo;]
-dev_mount sdcard  /mnt/MicroSD auto
-dev_mount usb     /mnt/USB     auto
-[/plain]
-または、このファイルもコピーしないようにする。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2.mk&rdquo; firstline=&ldquo;5&rdquo; highlight=&ldquo;6,7&rdquo;]
-PRODUCT_COPY_FILES := \</li>
+tegav2 ビルドではfstab の設定が以下のようになっている。</li>
 </ol>
 
 
-<h1>$(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \</h1>
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/vold.fstab</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>dev_mount sdcard  /mnt/MicroSD auto /devices/pci0000:00/0000:00:1d.7/usb1/1-5/1-5:1.0
+</span><span class='line'>dev_mount usb     /mnt/USB     auto
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>$(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \</h1>
 
-<p>[/plain]</p>
+<p>デバイスの指定を外す。</p>
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/vold.fstab</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>dev_mount sdcard  /mnt/MicroSD auto
+</span><span class='line'>dev_mount usb     /mnt/USB     auto
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>または、このファイルもコピーしないようにする。</p>
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2.mk</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>PRODUCT_COPY_FILES := \
+</span><span class='line'>
+</span><span class='line'>#    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+</span><span class='line'>#    $(LOCAL_PATH)/AT_Translated_Set_2_keyboard.kl:system/usr/keylayout/AT_Translated_Set_2_keyboard.kl \
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ol>
-<li><p> スピーカーの調整
-ヘッドフォンを繋いでもPC のスピーカーがミュートしない。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2_defconfig&rdquo; firstline=&ldquo;2124&rdquo; highlight=&ldquo;2128,2129,2140,2141&rdquo;]
-CONFIG_SND_HDA_INTEL=m
-CONFIG_SND_HDA_HWDEP=y
-CONFIG_SND_HDA_RECONFIG=y</p>
-
-<h1>CONFIG_SND_HDA_INPUT_BEEP is not set</h1>
-
-<h1>CONFIG_SND_HDA_INPUT_JACK=y</h1>
-
-<h1>CONFIG_SND_HDA_PATCH_LOADER=y</h1>
-
-CONFIG_SND_HDA_CODEC_REALTEK=y
-CONFIG_SND_HDA_CODEC_ANALOG is not set
-CONFIG_SND_HDA_CODEC_SIGMATEL=y
-CONFIG_SND_HDA_CODEC_VIA=y
-CONFIG_SND_HDA_CODEC_HDMI=y
-CONFIG_SND_HDA_CODEC_CIRRUS=y
-CONFIG_SND_HDA_CODEC_CONEXANT=y
-CONFIG_SND_HDA_CODEC_CA0110=y
-CONFIG_SND_HDA_CODEC_CMEDIA=y
-CONFIG_SND_HDA_CODEC_SI3054=y
-
-<h1>CONFIG_SND_HDA_GENERIC is not set</h1>
-
-<p>CONFIG_SND_HDA_GENERIC=y
-CONFIG_SND_HDA_POWER_SAVE=y
-CONFIG_SND_HDA_POWER_SAVE_DEFAULT=3
-[/plain]
-とりあえず過去のsparta_defconfig を参考にsnd_hda 関連を書き換える。</p></li>
-<li><p> ISO イメージの作成
-ファイルの編集が済んだらビルド。メモリが少ないので多重度は1に。
-[shell gutter=&ldquo;false&rdquo;]
-$ make -j1 iso_img TARGET_PRODUCT=tegav2
-$
-[/shell]</p></li>
+<li> スピーカーの調整
+ヘッドフォンを繋いでもPC のスピーカーがミュートしない。</li>
 </ol>
+
+
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2_defconfig</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>CONFIG_SND_HDA_INTEL=m
+</span><span class='line'>CONFIG_SND_HDA_HWDEP=y
+</span><span class='line'>CONFIG_SND_HDA_RECONFIG=y
+</span><span class='line'># CONFIG_SND_HDA_INPUT_BEEP is not set
+</span><span class='line'># CONFIG_SND_HDA_INPUT_JACK=y
+</span><span class='line'># CONFIG_SND_HDA_PATCH_LOADER=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_REALTEK=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_ANALOG is not set
+</span><span class='line'>CONFIG_SND_HDA_CODEC_SIGMATEL=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_VIA=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_HDMI=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_CIRRUS=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_CONEXANT=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_CA0110=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_CMEDIA=y
+</span><span class='line'>CONFIG_SND_HDA_CODEC_SI3054=y
+</span><span class='line'># CONFIG_SND_HDA_GENERIC is not set
+</span><span class='line'>CONFIG_SND_HDA_GENERIC=y
+</span><span class='line'>CONFIG_SND_HDA_POWER_SAVE=y
+</span><span class='line'>CONFIG_SND_HDA_POWER_SAVE_DEFAULT=3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とりあえず過去のsparta_defconfig を参考にsnd_hda 関連を書き換える。</p>
+
+<ol>
+<li> ISO イメージの作成
+ファイルの編集が済んだらビルド。メモリが少ないので多重度は1に。</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>make -j1 iso_img <span class="nv">TARGET_PRODUCT</span><span class="o">=</span>tegav2
+</span><span class='line'><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>キーボード入力ができるようになったけれど、仮想キーボードが表示されなくなったので、キーマッピングを追加するようにした方がよさそう。また、スピーカーの音は改善されなく、初期インストールアプリも減ってしまったので、見直しが必要だ。
 tegav2.mk を見て、電源ボタンダブルクリックでシャットダウンする設定になっているのに気がついた。</p>
 
 <p>EDIT1:
-他のLinux と同様にオプションを追加してみよう。
-[plain title=&ldquo;./device/tegatech/tegav2/tegav2_info&rdquo; firstline=&ldquo;16&rdquo;]</p>
+他のLinux と同様にオプションを追加してみよう。</p>
 
-<pre><code>SNDDEV="snd-hda-intel model=ideapad" 
-</code></pre>
+<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2_info</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>SNDDEV=&quot;snd-hda-intel model=ideapad&quot;
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[/plain]</p>
 </div>
 
 
@@ -311,7 +362,7 @@ tegav2.mk を見て、電源ボタンダブルクリックでシャットダウ�
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -320,40 +371,6 @@ tegav2.mk を見て、電源ボタンダブルクリックでシャットダウ�
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'ktkr3d',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 
 

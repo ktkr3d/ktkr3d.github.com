@@ -311,45 +311,61 @@ Ubuntu のリポジトリを使いたいけれど、デスクトップ環境はG
 
 <p>nautilus 3.6 のリストビューでは、あえて更新日付の書式をシンプル(informal)にしているようです。これはこれでアリなのですが、やはり詳細表示されていた方が統一感があって使い勝手がよいような気がするので、昔のISO 日付書式になるようにカスタマイズしてみました。dpkg-buildpackage でfakeroot が効かなかったので、sudo で実行しています。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get build-dep nautilus
-$ mkdir nautilus &amp;&amp; cd nautilus
-$ apt-get source nautilus
-$ dpkg-source -x <em>.dsc
-$ cd nautilus-3.</em>
-[/shell]
-[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4484&rdquo; highlight=&ldquo;4489&rdquo;]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get build-dep nautilus
+</span><span class='line'><span class="nv">$ </span>mkdir nautilus <span class="o">&amp;&amp;</span> <span class="nb">cd </span>nautilus
+</span><span class='line'><span class="nv">$ </span>apt-get <span class="nb">source </span>nautilus
+</span><span class='line'><span class="nv">$ </span>dpkg-source -x *.dsc
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>nautilus-3.*
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>define TODAY_TIME_FORMAT_24 N_(&ldquo;%R&rdquo;)</h1>
 
-<h1>define TODAY_TIME_FORMAT N_(&ldquo;%-I:%M %P&rdquo;)</h1>
 
-<h1>define THIS_MONTH_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
 
-<h1>define THIS_YEAR_TIME_FORMAT N_(&ldquo;%b %-e&rdquo;)</h1>
+<figure class='code'><figcaption><span>libnautilus-private/nautilus-file.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#define TODAY_TIME_FORMAT_24 N_(&quot;%R&quot;)</span>
+</span><span class='line'><span class="cp">#define TODAY_TIME_FORMAT N_(&quot;%-I:%M %P&quot;)</span>
+</span><span class='line'><span class="cp">#define THIS_MONTH_TIME_FORMAT N_(&quot;%b %-e&quot;)</span>
+</span><span class='line'><span class="cp">#define THIS_YEAR_TIME_FORMAT N_(&quot;%b %-e&quot;)</span>
+</span><span class='line'><span class="cp">#define ANYTIME_TIME_FORMAT N_(&quot;%b %-d %Y&quot;)</span>
+</span><span class='line'><span class="cp">#define ANYTIME_TIME_FORMAT_ISO N_(&quot;%Y-%m-%d %H:%M:%S&quot;)</span>
+</span><span class='line'><span class="cp">#define FULL_FORMAT N_(&quot;%a, %b %e %Y %I:%M:%S %p&quot;)</span>
+</span><span class='line'><span class="cp">#define FULL_FORMAT_24 N_(&quot;%a, %b %e %Y %T&quot;)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>define ANYTIME_TIME_FORMAT N_(&ldquo;%b %-d %Y&rdquo;)</h1>
 
-<h1>define ANYTIME_TIME_FORMAT_ISO N_(&ldquo;%Y-%m-%d %H:%M:%S&rdquo;)</h1>
 
-<h1>define FULL_FORMAT N_(&ldquo;%a, %b %e %Y %I:%M:%S %p&rdquo;)</h1>
 
-<h1>define FULL_FORMAT_24 N_(&ldquo;%a, %b %e %Y %T&rdquo;)</h1>
+<figure class='code'><figcaption><span>libnautilus-private/nautilus-file.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">format</span> <span class="o">=</span> <span class="n">ANYTIME_TIME_FORMAT</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="n">format</span> <span class="o">=</span> <span class="n">ANYTIME_TIME_FORMAT_ISO</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[/c]
-[c title=&ldquo;libnautilus-private/nautilus-file.c&rdquo; firstline=&ldquo;4538&rdquo; highlight=&ldquo;4541&rdquo;]</p>
 
-<pre><code>} else {
-    format = ANYTIME_TIME_FORMAT;
-}
-format = ANYTIME_TIME_FORMAT_ISO;
-</code></pre>
 
-<p>[/c]
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo dpkg-buildpackage -us -uc -nc -b
-$ sudo dpkg -i ../nautilus_3.*.deb
-[/shell]</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo dpkg-buildpackage -us -uc -nc -b
+</span><span class='line'><span class="nv">$ </span>sudo dpkg -i ../nautilus_3.*.deb
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
   
   
@@ -472,19 +488,24 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
 
 <p>Ubuntu 12.04/12.10 のAvant Window Navigator で表示される謎のプラスアイコンを消してみた。これですっきり。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get build-dep avant-window-navigator
-$ sudo apt-get -b source avant-window-navigator
-$ sudo dpkg -i *.deb
-[/shell]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get build-dep avant-window-navigator
+</span><span class='line'><span class="nv">$ </span>sudo apt-get -b <span class="nb">source </span>avant-window-navigator
+</span><span class='line'><span class="nv">$ </span>sudo dpkg -i *.deb
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h3>追記(2012/11/10)</h3>
 
 <p><a href="https://bugs.launchpad.net/awn/+bug/990774/comments/21">https://bugs.launchpad.net/awn/+bug/990774/comments/21</a>
-リビルドしなくても、以下のコマンドで解決しました。
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install libdesktop-agnostic-cfg-gconf
-[/shell]</p>
+リビルドしなくても、以下のコマンドで解決しました。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install libdesktop-agnostic-cfg-gconf
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
   
   
@@ -592,10 +613,12 @@ Ubuntu 12.10 alpha 3 x86_64 にGNOME Shell 3.5.4 を入れてみた。</p>
 nVidia のGPU でも起動時のカーネルパラメータにnouveau.modeset=0 を追加したら普通に起動できた。</p>
 
 <p>EDIT2:
-overlay-scrollbar を削除するとログインできなくなるみたいだ。あわてず、Ctrl+Alt+F1 で、sudo apt-cache search overlay-scrollbar してパッケージ名を探して、sudo apt-get install でインストール。
-[shell gutter=&ldquo;false&rdquo;]
-$ echo export LIBOVERLAY_SCROLLBAR=0 >> ~/.xprofile
-[/shell]</p>
+overlay-scrollbar を削除するとログインできなくなるみたいだ。あわてず、Ctrl+Alt+F1 で、sudo apt-cache search overlay-scrollbar してパッケージ名を探して、sudo apt-get install でインストール。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">echo export </span><span class="nv">LIBOVERLAY_SCROLLBAR</span><span class="o">=</span>0 &gt;&gt; ~/.xprofile
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>EDIT3:
 nautilus でファイルの新規作成をするには、$HOME/Templates にテンプレートファイルを入れておくとアプリケーションメニューやコンテキストメニューにNew Document メニューが表示されるようになるみたい。</p>
@@ -640,24 +663,33 @@ nautilus でファイルの新規作成をするには、$HOME/Templates にテ�
 <a href="http://www.povray.org/beta/source/unix-src-INSTALL.txt">http://www.povray.org/beta/source/unix-src-INSTALL.txt</a>
 POV-Ray 3.7.0 RC6 を試してみた。環境はUbuntu 12.04 x86_64, Intel® Core™ i7 CPU 930 @ 2.80GHz × 8。</p>
 
-<p>64bit OS の場合は./configure の際に&#8221;&mdash;with-boost-thread=boost_thread-mt&#8221; オプションを付けるといいらしい。3.7 からマルチスレッドに対応したらしい。
-[shell gutter=&ldquo;false&rdquo;]
-$ sudo apt-get install build-essential
-$ wget <a href="http://www.povray.org/redirect/www.povray.org/beta/source/povray-3.7.0.RC6.tar.gz">http://www.povray.org/redirect/www.povray.org/beta/source/povray-3.7.0.RC6.tar.gz</a>
-$ tar -zxvf povray-3.7.0.RC6.tar.gz
-$ cd povray-3.7.0.RC6
-$ ./configure &mdash;with-boost-thread=boost_thread-mt COMPILED_BY=&ldquo;yourname <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x79;&#x6f;&#x75;&#114;&#x65;&#109;&#97;&#x69;&#x6c;&#64;&#115;&#111;&#x6d;&#101;&#119;&#x68;&#x65;&#114;&#x65;&#46;&#99;&#x6f;&#x6d;">&#x79;&#x6f;&#117;&#x72;&#x65;&#109;&#97;&#105;&#x6c;&#x40;&#x73;&#x6f;&#109;&#x65;&#x77;&#x68;&#x65;&#x72;&#x65;&#x2e;&#x63;&#111;&#109;</a>&rdquo;
-$ make
-$ sudo make install
-[/shell]</p>
+<p>64bit OS の場合は./configure の際に&#8221;&mdash;with-boost-thread=boost_thread-mt&#8221; オプションを付けるといいらしい。3.7 からマルチスレッドに対応したらしい。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install build-essential
+</span><span class='line'><span class="nv">$ </span>wget http://www.povray.org/redirect/www.povray.org/beta/source/povray-3.7.0.RC6.tar.gz
+</span><span class='line'><span class="nv">$ </span>tar -zxvf povray-3.7.0.RC6.tar.gz
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>povray-3.7.0.RC6
+</span><span class='line'><span class="nv">$ </span>./configure --with-boost-thread<span class="o">=</span>boost_thread-mt <span class="nv">COMPILED_BY</span><span class="o">=</span><span class="s2">&quot;yourname &lt;youremail@somewhere.com&gt;&quot;</span>
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>POV-Ray Object Collection のサンプルをダウンロードしてレンダリング。
 <a href="http://lib.povray.org/searchcollection/index.php  ">http://lib.povray.org/searchcollection/index.php  </a>
 <a href="http://manpages.ubuntu.com/manpages/precise/man1/povray.1.html">http://manpages.ubuntu.com/manpages/precise/man1/povray.1.html</a></p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ povray +W800 +H600 +A0.1 multiobj_alt_demo.pov
-[/shell]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>povray +W800 +H600 +A0.1 multiobj_alt_demo.pov
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>右の立方体のレンダリング結果がサンプル画像とちょっと違うのは気のせいか？</p>
 </div>
@@ -701,14 +733,17 @@ $ povray +W800 +H600 +A0.1 multiobj_alt_demo.pov
 
 <p>telnet でnyancat してみた。</p>
 
-<p>[shell gutter=&ldquo;false&rdquo;]
-$ telnet miku.acm.uiuc.edu
-[/shell]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>telnet miku.acm.uiuc.edu
+</span></code></pre></td></tr></table></div></figure>
 
-<p>終了はエスケープキーを忘れずに。
-[plain gutter=&ldquo;false&rdquo;]
-^]quit
-[/plain]</p>
+
+<p>終了はエスケープキーを忘れずに。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>^]quit
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
   
   
@@ -756,7 +791,7 @@ $ telnet miku.acm.uiuc.edu
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -765,40 +800,6 @@ $ telnet miku.acm.uiuc.edu
 </section>
  
  
-<section>
-  <h1>GitHub Cards</h1>
-  <iframe src="http://lab.lepture.com/github-cards/card.html?user=ktkr3d" frameborder="0" scrolling="0" width="270" height="200" allowtransparency></iframe>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/ktkr3d">@ktkr3d</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'ktkr3d',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
 
 
 

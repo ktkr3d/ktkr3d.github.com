@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -58,7 +58,7 @@ $ python exitwp.py
     <link href="http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/"/>
     <updated>2013-07-15T13:26:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_octopress_menu.png">{% img /images/zenity_octopress_menu.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_octopress_menu.png"><img src="/images/zenity_octopress_menu.png"></a></p>
 
 <p>OctoPress のフロントエンドをZenity で作ってみました。
 Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。</p>
@@ -68,8 +68,8 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 
 <h4>zenity スクリプト</h4>
 
-<p><a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png">{% img /images/zenity_octopress_new_post.png %}</a><br>
-<a href="http://ktkr3d.github.io/images/zenity_octopress_deploy.png">{% img /images/zenity_octopress_deploy.png %}</a></p>
+<p><a href="http://ktkr3d.github.io/images/zenity_octopress_new_post.png"><img src="/images/zenity_octopress_new_post.png"></a><br>
+<a href="http://ktkr3d.github.io/images/zenity_octopress_deploy.png"><img src="/images/zenity_octopress_deploy.png"></a></p>
 
 <p>Zenity のリストボックス、テキスト入力、プログレスバー等を利用して、フロントエンドを作成します。</p>
 
@@ -152,7 +152,7 @@ StartupNotify=false
     <link href="http://ktkr3d.github.io/blog/2013/06/16/octopress/"/>
     <updated>2013-06-16T12:34:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/octopress</id>
-    <content type="html"><![CDATA[<p>{% img /images/octopress.png %}</p>
+    <content type="html"><![CDATA[<p><img src="/images/octopress.png"></p>
 
 <p><a href="http://ktkr3d.site11.com">http://ktkr3d.site11.com</a> 上のWordPress からGitHub 上のOctopress にブログを移行してみました。</p>
 
@@ -180,11 +180,8 @@ StartupNotify=false
 画像はsource/images/ に格納することにします。
 画像の挿入は</p>
 
-<p>{% codeblock %}
-{% raw %}
-{% img /images/Ubuntu-GNOME-13-10.png 600 %}
-{% endraw %}
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{% img /images/Ubuntu-GNOME-13-10.png 600 %}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <ul>
 <li><p>生成とデプロイ</p>

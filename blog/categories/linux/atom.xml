@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/11/09/screenfetch/"/>
     <updated>2013-11-09T08:56:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/11/09/screenfetch</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/screenfetch_debian.png">{% img /images/screenfetch_debian_tn.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/screenfetch_debian.png"><img src="/images/screenfetch_debian_tn.png"></a></p>
 
 <p><a href="http://www.unixmen.com/find-system-information-screenfetch-tool/">http://www.unixmen.com/find-system-information-screenfetch-tool/</a></p>
 
@@ -31,7 +31,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/11/04/minetest/"/>
     <updated>2013-11-04T21:28:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/11/04/minetest</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png">{% img /images/minetest_ogl42_tn.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png"><img src="/images/minetest_ogl42_tn.png"></a></p>
 
 <p><a href="http://minetest.net/">http://minetest.net/</a></p>
 
@@ -56,7 +56,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
 
 <p>グラフィックがオンボードでATOM なOpenGL 1.4 の環境で動かしてみると、さすがに重かったです。</p>
 
-<p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png">{% img /images/minetest_ogl14_tn.png %}</a></p>
+<p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png"><img src="/images/minetest_ogl14_tn.png"></a></p>
 ]]></content>
   </entry>
   
@@ -65,7 +65,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
     <link href="http://ktkr3d.github.io/blog/2013/10/05/fedora-20/"/>
     <updated>2013-10-05T20:14:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/10/05/fedora-20</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png">{% img /images/fedora_20_tn.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png"><img src="/images/fedora_20_tn.png"></a></p>
 
 <p>Fedora 20 alpha + GNOME Shell 3.10 をインストールしてみました。</p>
 
@@ -112,7 +112,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
     <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
     <updated>2013-07-15T08:57:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png">{% img /images/gnome_shell_lock_screen.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png"></a></p>
 
 <p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
 
@@ -153,7 +153,7 @@ font-size: 24pt;
     <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
     <updated>2013-07-14T11:11:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png">{% img /images/docky_cardapio_tn.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png"></a></p>
 
 <p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
 

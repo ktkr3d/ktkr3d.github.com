@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity3D | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/unity3d/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -31,7 +31,7 @@
 <p><strong>Edit:</strong>
 Unity 4.0 で出力されたLinux 用実行形式ファイルの情報はこんな感じ。</p>
 
-<p><code>shell
+<p><code>sh
 $ file MyFirst.x86*
 MyFirst.x86:    ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, BuildID[sha1]=0x650aeda57c5cf21ae3934e7a753eaef9ed525f2a, stripped
 MyFirst.x86_64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, BuildID[sha1]=0xa877bae6da45dc12eb314505bf5ec6bf96b3b503, stripped

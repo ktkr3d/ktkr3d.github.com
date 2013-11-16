@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android-x86 | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android-x86/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T01:05:56+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -37,7 +37,7 @@ initrd /android-4.2-test/initrd.img
 <p>}
 ```</p>
 
-<p><code>shell
+<p><code>sh
 $ sudo update-grub
 </code></p>
 
@@ -111,14 +111,14 @@ savedefault
 </ol>
 
 
-<p>``` shell</p>
+<p>``` sh</p>
 
 <blockquote><p>bcdedit /create /d &ldquo;Android-x86&rdquo; /application BOOTSECTOR
 ```</p></blockquote>
 
 <p>上記コマンドで表示された値{☆}を以下のコマンドで使います。</p>
 
-<p>``` shell</p>
+<p>``` sh</p>
 
 <blockquote><p>bcdedit /set {☆} device partition=C:
 bcdedit /set {☆} path \grldr.mbr
@@ -127,7 +127,7 @@ bcdedit /displayorder {☆} /addlast
 
 <p>ちなみに一旦別のブートローダにしてしまった後にWindows 8 のブートマネージャに戻すには、コマンドプロンプトアイコンを右クリックして、「管理者として実行」して、以下のコマンドを実行します。</p>
 
-<p>``` shell</p>
+<p>``` sh</p>
 
 <blockquote><p>bcdboot C:\Windows
 ```</p></blockquote>
@@ -196,7 +196,7 @@ bcdedit /displayorder {☆} /addlast
 
 <h3>ビルド用依存パッケージの取得</h3>
 
-<p><code>shell
+<p><code>sh
 $ sudo apt-get install mercurial ccache
 $ sudo apt-get build-dep firefox
 </code></p>
@@ -208,7 +208,7 @@ $ sudo apt-get build-dep firefox
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cd /tools/apps/firefox/
 $ hg clone http://hg.mozilla.org/mozilla-central/ src-central
 $ cd src-central
@@ -219,7 +219,7 @@ $ cd src-central
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
 </code></p>
 
@@ -272,7 +272,7 @@ ac_add_options &mdash;with-system-zlib</p>
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cd /tools/apps/firefox/
 $ hg clone http://hg.mozilla.org/releases/mozilla-release src-release
 $ cd src-release
@@ -283,7 +283,7 @@ $ cd src-release
 </ol>
 
 
-<p><code>shell
+<p><code>sh
 $ cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
 </code></p>
 
@@ -322,7 +322,7 @@ ac_add_options &mdash;with-system-zlib</p>
 
 <h3>firefox のビルド</h3>
 
-<p><code>shell
+<p><code>sh
 $ make -f client.mk build_and_deploy
 </code></p>
 

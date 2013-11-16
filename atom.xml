@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T00:26:32+09:00</updated>
+  <updated>2013-11-17T01:45:33+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -675,8 +675,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 
 <p>Zenity のリストボックス、テキスト入力、プログレスバー等を利用して、フロントエンドを作成します。</p>
 
-<figure class='code'><figcaption><span>octopress_helper.sh </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>octopress_helper.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -772,7 +771,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 <p>起動用のショートカットファイル<code>octopress_helper.desktop</code>を作成してドックにドラッグ&amp;ドロップします。
 端末を非表示にする場合は<code>Terminal=false</code>とします。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>octopress_helper.desktop</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -781,7 +780,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[Desktop Entry]
+</pre></td><td class='code'><pre><code class='text'><span class='line'>[Desktop Entry]
 </span><span class='line'>Encoding=UTF-8
 </span><span class='line'>Name=OctoPress Helper
 </span><span class='line'>Exec=/mnt/common/home/Script/octopress_helper.sh
@@ -789,7 +788,8 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 </span><span class='line'>Terminal=true
 </span><span class='line'>Type=Application
 </span><span class='line'>Categories=Application;
-</span><span class='line'>StartupNotify=false</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>StartupNotify=false
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4>プレビュー</h4>
@@ -814,8 +814,7 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 
 <p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
 
-<figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -933,11 +932,10 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#97;&#117;&#116;&#x6f;&#x68;&#x69;&#x64;&#x65;&#x74;&#x6f;&#112;&#x62;&#x61;&#x72;&#50;&#x40;&#119;&#101;&#114;&#x65;&#x77;&#111;&#108;&#118;&#101;&#115;&#46;&#117;&#115;">&#x61;&#x75;&#116;&#x6f;&#104;&#x69;&#100;&#x65;&#x74;&#x6f;&#112;&#98;&#x61;&#114;&#x32;&#64;&#119;&#x65;&#114;&#101;&#x77;&#111;&#x6c;&#x76;&#101;&#x73;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x61;&#117;&#x74;&#x6f;&#x68;&#105;&#100;&#101;&#x74;&#x6f;&#x70;&#x62;&#97;&#114;&#50;&#x40;&#x77;&#101;&#x72;&#x65;&#x77;&#111;&#108;&#118;&#101;&#115;&#46;&#x75;&#x73;">&#97;&#117;&#116;&#111;&#x68;&#105;&#x64;&#101;&#116;&#x6f;&#x70;&#x62;&#97;&#114;&#50;&#x40;&#x77;&#x65;&#114;&#x65;&#x77;&#x6f;&#x6c;&#x76;&#x65;&#x73;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
-<figure class='code'><figcaption><span>metadata.json </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -971,8 +969,6 @@ shell-version は3.9.4 を指定しました。</p>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
-
 ]]></content>
   </entry>
   
@@ -992,10 +988,14 @@ shell-version は3.9.4 を指定しました。</p>
 
 <p></p>
 
-<pre><code>$ sudo apt-add-repository ppa:mir-team/staging
-$ sudo apt-get update
-$ sudo apt-get upgrade
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-add-repository ppa:mir-team/staging
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get upgrade
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>特に資料を参考にしていないので、正式な手順ではないかもしれませんし、不十分かもしれません。</p>
 
@@ -1296,80 +1296,100 @@ P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTor
 
 <p>P2P なので、視聴者が増えた時に有利なようです。Peercast と同じような原理でしょうか。ポートを開ける手間がないのが、お手軽でよいかもしれません。手動でポートを開ける場合はUDP ports 31400-31499 らしいです。トレイアイコンをクリックすると、送受信のビットレートが表示されます。btlive コマンドのパラメタは以下のとおり。</p>
 
-<p>[bash gutter=&ldquo;false&rdquo;]
-$ btlive &mdash;help
-usage: btlive [-h] [-v] [&mdash;force-version FORCED_VER] [-o OFFSET]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>btlive --help
+</span><span class='line'>usage: btlive <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>--force-version FORCED_VER<span class="o">]</span> <span class="o">[</span>-o OFFSET<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>-j TRACKER|SWARMPUBKEY<span class="o">]</span> <span class="o">[</span>--no-crashlog-reporting<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--no-stats-thread<span class="o">]</span> <span class="o">[</span>--no-bench-thread<span class="o">]</span> <span class="o">[</span>--no-update-thread<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--no-headless-thread<span class="o">]</span> <span class="o">[</span>--no-nat-detection<span class="o">]</span> <span class="o">[</span>--no-rtmp-server<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--no-http-server<span class="o">]</span> <span class="o">[</span>--no-local-discovery<span class="o">]</span> <span class="o">[</span>--no-sysreqs<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--ignore-headless | --force-headless<span class="o">]</span> <span class="o">[</span>--staging-bench<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--staging-dau<span class="o">]</span> <span class="o">[</span>--staging-onair<span class="o">]</span> <span class="o">[</span>--testing-mode<span class="o">]</span> <span class="o">[</span>--nogui<span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>optional arguments:
+</span><span class='line'>  -h, --help            show this <span class="nb">help </span>message and <span class="nb">exit</span>
+</span><span class='line'>  -v, --version         show program<span class="s1">&#39;s version number and exit</span>
+</span><span class='line'><span class="s1">  --force-version FORCED_VER</span>
+</span><span class='line'><span class="s1">                        Forces Live to think that it is another version</span>
+</span><span class='line'><span class="s1">                        number. Must follow format 0.4.11.1234.</span>
+</span><span class='line'><span class="s1">  -o OFFSET, --offset OFFSET</span>
+</span><span class='line'><span class="s1">                        RTMP Server port offset (from 1935). A value of 100 is</span>
+</span><span class='line'><span class="s1">                        commonly used for sourcing.</span>
+</span><span class='line'><span class="s1">  -j TRACKER|SWARMPUBKEY, --join TRACKER|SWARMPUBKEY</span>
+</span><span class='line'><span class="s1">                        Swarm to autojoin on launch. Specify the tracker and</span>
+</span><span class='line'><span class="s1">                        the swarm public key, separated by a pipe symbol</span>
+</span><span class='line'><span class="s1">                        (&#39;</span>|<span class="err">&#39;</span><span class="o">)</span>.
+</span><span class='line'>  --no-crashlog-reporting
+</span><span class='line'>                        Disable all communication with the crashlog server.
+</span><span class='line'>  --no-stats-thread     Disable debugging statistics being reported to
+</span><span class='line'>                        graphite/statsd.
+</span><span class='line'>  --no-bench-thread     Disable bench statistics.
+</span><span class='line'>  --no-update-thread    Disable autoupdate checking.
+</span><span class='line'>  --no-headless-thread  Disable all communication with the automation server.
+</span><span class='line'>  --no-nat-detection    Disable NAT detection on launch.
+</span><span class='line'>  --no-rtmp-server      Disable RTMP server.
+</span><span class='line'>  --no-http-server      Disable HTTP server.
+</span><span class='line'>  --no-local-discovery  Disable <span class="nb">local </span>peer discovery.
+</span><span class='line'>  --no-sysreqs          Disable system requirements <span class="k">for </span>launch/install.
+</span><span class='line'>  --ignore-headless     Set headless_enabled pref to off and ignore any
+</span><span class='line'>                        scheduled tests.
+</span><span class='line'>  --force-headless      Set headless_enabled pref to on and join any scheduled
+</span><span class='line'>                        tests.
+</span><span class='line'>  --staging-bench       Use staging bench server <span class="k">for </span>bench statistics.
+</span><span class='line'>  --staging-dau         Use staging server <span class="k">for </span>autoupdate.
+</span><span class='line'>  --staging-onair       Use staging server <span class="k">for </span>on-air messaging.
+</span><span class='line'>  --testing-mode        Disable all non-essential network communication.
+</span><span class='line'>                        Implies --no-crashlog-reporting, --no-nat-detection,
+</span><span class='line'>                        --no-stats-thread, --no-update-thread, --no-headless-
+</span><span class='line'>                        thread, and --no-sysreqs.
+</span><span class='line'>  --nogui               Disable GUI/icon.
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>          [-j TRACKER|SWARMPUBKEY] [--no-crashlog-reporting]
-          [--no-stats-thread] [--no-bench-thread] [--no-update-thread]
-          [--no-headless-thread] [--no-nat-detection] [--no-rtmp-server]
-          [--no-http-server] [--no-local-discovery] [--no-sysreqs]
-          [--ignore-headless | --force-headless] [--staging-bench]
-          [--staging-dau] [--staging-onair] [--testing-mode] [--nogui]
-</code></pre>
-
-<p>optional arguments:
-  -h, &mdash;help            show this help message and exit
-  -v, &mdash;version         show program&rsquo;s version number and exit
-  &mdash;force-version FORCED_VER</p>
-
-<pre><code>                    Forces Live to think that it is another version
-                    number. Must follow format 0.4.11.1234.
-</code></pre>
-
-<p>  -o OFFSET, &mdash;offset OFFSET</p>
-
-<pre><code>                    RTMP Server port offset (from 1935). A value of 100 is
-                    commonly used for sourcing.
-</code></pre>
-
-<p>  -j TRACKER|SWARMPUBKEY, &mdash;join TRACKER|SWARMPUBKEY</p>
-
-<pre><code>                    Swarm to autojoin on launch. Specify the tracker and
-                    the swarm public key, separated by a pipe symbol
-                    ('|').
-</code></pre>
-
-<p>  &mdash;no-crashlog-reporting</p>
-
-<pre><code>                    Disable all communication with the crashlog server.
-</code></pre>
-
-<p>  &mdash;no-stats-thread     Disable debugging statistics being reported to</p>
-
-<pre><code>                    graphite/statsd.
-</code></pre>
-
-<p>  &mdash;no-bench-thread     Disable bench statistics.
-  &mdash;no-update-thread    Disable autoupdate checking.
-  &mdash;no-headless-thread  Disable all communication with the automation server.
-  &mdash;no-nat-detection    Disable NAT detection on launch.
-  &mdash;no-rtmp-server      Disable RTMP server.
-  &mdash;no-http-server      Disable HTTP server.
-  &mdash;no-local-discovery  Disable local peer discovery.
-  &mdash;no-sysreqs          Disable system requirements for launch/install.
-  &mdash;ignore-headless     Set headless_enabled pref to off and ignore any</p>
-
-<pre><code>                    scheduled tests.
-</code></pre>
-
-<p>  &mdash;force-headless      Set headless_enabled pref to on and join any scheduled</p>
-
-<pre><code>                    tests.
-</code></pre>
-
-<p>  &mdash;staging-bench       Use staging bench server for bench statistics.
-  &mdash;staging-dau         Use staging server for autoupdate.
-  &mdash;staging-onair       Use staging server for on-air messaging.
-  &mdash;testing-mode        Disable all non-essential network communication.</p>
-
-<pre><code>                    Implies --no-crashlog-reporting, --no-nat-detection,
-                    --no-stats-thread, --no-update-thread, --no-headless-
-                    thread, and --no-sysreqs.
-</code></pre>
-
-<p>  &mdash;nogui               Disable GUI/icon.
-[/bash]</p>
 ]]></content>
   </entry>
   
@@ -1383,31 +1403,59 @@ usage: btlive [-h] [-v] [&mdash;force-version FORCED_VER] [-o OFFSET]</p>
 <p>先日のアップデートでxnoise のメディアブラウザ表示/非表示切り替えボタンが無くなりました。ボタンがメディアブラウザの上に被っていたので邪魔ではあったのですが、無いと不便です。そこで、簡単にメディアブラウザの表示/非表示を切り替えるためのショートカットキー(F9)を追加してみました。xnoise はVala 言語で実装されているようですので、valac パッケージをインストールして、ビルドしています。</p>
 
 <ol>
-<li><p> valac のインストールとソースコードの取得
-[bash gutter=&ldquo;false&rdquo;]
-$ sudo apt-get build-dep xnoise
-$ sudo apt-get install valac
-$ git clone <a href="https://bitbucket.org/shuerhaaken/xnoise.git">https://bitbucket.org/shuerhaaken/xnoise.git</a>
-[/bash]</p></li>
-<li><p> ソースコードの修正
-[plain title=&ldquo;./xnoise/libxnoise/MainWindow/xnoise-main-window.vala&rdquo; firstline=&ldquo;919&rdquo; highlight=&ldquo;919,920,921,922&rdquo;]
-        case Gdk.Key.F9: {
-            toggle_media_browser_visibility();
-            return true;
-        }
-        case Gdk.Key.F11: {
-            this.toggle_mainwindow_fullscreen();
-            return true;
-        }
-[/plain]</p></li>
-<li><p> ビルドとインストール
-[bash gutter=&ldquo;false&rdquo;]
-$ cd xnoise
-$ ./autogen.sh
-$ make
-$ sudo make install
-[/bash]</p></li>
+<li> valac のインストールとソースコードの取得</li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get build-dep xnoise
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install valac
+</span><span class='line'><span class="nv">$ </span>git clone https://bitbucket.org/shuerhaaken/xnoise.git
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ソースコードの修正</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>./xnoise/libxnoise/MainWindow/xnoise-main-window.vala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>        case Gdk.Key.F9: {
+</span><span class='line'>            toggle_media_browser_visibility();
+</span><span class='line'>            return true;
+</span><span class='line'>        }
+</span><span class='line'>        case Gdk.Key.F11: {
+</span><span class='line'>            this.toggle_mainwindow_fullscreen();
+</span><span class='line'>            return true;
+</span><span class='line'>        }
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ビルドとインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>xnoise
+</span><span class='line'><span class="nv">$ </span>./autogen.sh
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
