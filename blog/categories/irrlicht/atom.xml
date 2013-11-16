@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Irrlicht | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/irrlicht/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -174,7 +174,7 @@ $ ant debug
     <link href="http://ktkr3d.github.io/blog/2012/06/30/irrlicht-1-8-trunk-xeffects/"/>
     <updated>2012-06-30T22:08:59+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/06/30/irrlicht-1-8-trunk-xeffects</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/irrlicht_1.8_xeffects.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/irrlicht_1.8_xeffects.png" alt="irrlicht 1.8 xeffects" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/06/irrlicht_1.8_xeffects.png"><img src="/images/uploads/2012/06/irrlicht_1.8_xeffects.png" alt="irrlicht 1.8 xeffects" /></a></p>
 
 <p>Irrlicht 1.8 trunk でXEffects の影が有効にならなくなっていたので、XEffects のヘッダを修正してみた。Irrlicht 側のインタフェースが変わったのが原因かな。Irrlicht 1.8 ではXEffects を使っても画像が反転しないし、CGUITTFONT とも同時に使えるし、便利になったなぁ。環境はUbuntu 12.04 x86_64 + Irrlicht 1.8 trunk (SVN rev: 4170 ) + XEffects v1.3。</p>
 
@@ -227,7 +227,7 @@ virtual void OnSetConstants(irr::video::IMaterialRendererServices* services, irr
     <link href="http://ktkr3d.github.io/blog/2012/06/17/android-ndk-android-x86-4-0-3/"/>
     <updated>2012-06-17T18:54:52+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/06/17/android-ndk-android-x86-4-0-3</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android_ndk_android-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/android_ndk_android-x86.png" alt="android ndk android-x86 irrlicht" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/06/android_ndk_android-x86.png"><img src="/images/uploads/2012/06/android_ndk_android-x86.png" alt="android ndk android-x86 irrlicht" /></a></p>
 
 <p>Android 2.3 用のアプリをAndroid-x86 4.0.3 用にリビルドして、Inspiron duo 実機で動かしてみた。さすがにスマートフォンより動作が非常に軽快だけど、画面がiPod の広告みたいになってしまった。画像やフォントが表示されてないのは、なんでだろう。パスがずれているのかな。パスが違っていたらエラーになるはずなんだけど。ボタンイベントはタッチスクリーン上を指で押したら正しく動作した。</p>
 

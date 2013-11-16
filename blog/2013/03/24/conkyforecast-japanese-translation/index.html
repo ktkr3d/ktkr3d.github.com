@@ -9,8 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://github.com/ktkr3d/conkyforecast-ja ConkyForecast 用の日本語PO ファイルを作成して、Conky-HTC を日本語化してみました。また、Conky-HTC の表示用スクリプトを整理してみました。 パッケージのインストール
-http &hellip;">
+  <meta name="description" content="https://github.com/ktkr3d/conkyforecast-ja ConkyForecast 用の日本語PO ファイルを作成して、Conky-HTC を日本語化してみました。また、Conky-HTC の表示用スクリプトを整理してみました。 パッケージのインストール http &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -114,124 +113,171 @@ $(document).ready( function () {
   </header>
 
 
-<div class="entry-content"><p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/conkyforecast_japanese.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/conkyforecast_japanese.png" alt="conkyforecast japanese" /></a></p>
+<div class="entry-content"><p><a href="/images/uploads/2013/03/conkyforecast_japanese.png"><img src="/images/uploads/2013/03/conkyforecast_japanese.png" alt="conkyforecast japanese" /></a></p>
 
 <p><a href="https://github.com/ktkr3d/conkyforecast-ja">https://github.com/ktkr3d/conkyforecast-ja</a></p>
 
 <p>ConkyForecast 用の日本語PO ファイルを作成して、Conky-HTC を日本語化してみました。また、Conky-HTC の表示用スクリプトを整理してみました。</p>
 
-<ol>
-<li><p> パッケージのインストール
-<a href="http://ktkr3d.site11.com/2011/10/09/conky-htc/">http://ktkr3d.site11.com/2011/10/09/conky-htc/</a>
-conky, conkyForecast, Conky-HTC パッケージをインストールして以下の構成にしておきます。
-[plain title=&ldquo;フォルダ/ファイル構成&rdquo; gutter=&ldquo;false&rdquo;]
-~/
-├── .fonts/
-├── .images/
-├── .conkyForecast.config
-├── .conkyrc
-├── .conky_start
-└── .vreme.template
-[/plain]</p></li>
-<li><p> conkyForecast の日本語化
-[bash gutter=&ldquo;false&rdquo;]
-$ wget <a href="https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecast.po">https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecast.po</a>
-$ wget <a href="https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecastWU.po">https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecastWU.po</a>
-$ msgfmt -o conkyForecast.mo conkyForecast.po
-$ msgfmt -o conkyForecastWU.mo conkyForecastWU.po
-$ sudo mkdir -p /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
-$ sudo cp *.mo /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
-[/bash]</p></li>
-<li><p> ~/.conkyForecast.config の編集
-[plain title=&ldquo;~/.conkyForecast.config&rdquo; highlight=&ldquo;4,5,16,19&rdquo;]</p>
+<h4>パッケージのインストール</h4>
 
-<h1>=============================================</h1>
+<p><a href="http://ktkr3d.site11.com/2011/10/09/conky-htc/">http://ktkr3d.site11.com/2011/10/09/conky-htc/</a>
+conky, conkyForecast, Conky-HTC パッケージをインストールして以下の構成にしておきます。</p>
 
-<h1>EXPERT SETTINGS, NOT REQUIRED TO BE ALTERED</h1>
-
-<h1>=============================================</h1>
-
-<h1>BASE_XOAP_URL = <a href="http://xoap.weather.com/weather/local/">http://xoap.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=5&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m</h1>
-
-<p>BASE_XOAP_URL = <a href="http://xml.weather.com/weather/local/">http://xml.weather.com/weather/local/</a><LOCATION>?cc=*&amp;dayf=10&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID>&amp;key=&lt;XOAP_LICENCE_KEY>&amp;unit=m
-MAXIMUM_DAYS_FORECAST = 10</p></li>
-</ol>
+<figure class='code'><figcaption><span>フォルダ/ファイル構成</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>~/
+</span><span class='line'>├── .fonts/
+</span><span class='line'>├── .images/
+</span><span class='line'>├── .conkyForecast.config
+</span><span class='line'>├── .conkyrc
+</span><span class='line'>├── .conky_start
+</span><span class='line'>└── .vreme.template
+</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>===============================================</h1>
+<h4>conkyForecast の日本語化</h4>
 
-<h1>USER SETTINGS, EDIT BASED ON DOCUMENTED SETUP</h1>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>wget https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecast.po
+</span><span class='line'><span class="nv">$ </span>wget https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecastWU.po
+</span><span class='line'><span class="nv">$ </span>msgfmt -o conkyForecast.mo conkyForecast.po
+</span><span class='line'><span class="nv">$ </span>msgfmt -o conkyForecastWU.mo conkyForecastWU.po
+</span><span class='line'><span class="nv">$ </span>sudo mkdir -p /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
+</span><span class='line'><span class="nv">$ </span>sudo cp *.mo /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>===============================================</h1>
 
-<p>CACHE_FOLDERPATH = /tmp/
-CONNECTION_TIMEOUT = 5
-EXPIRY_MINUTES = 30
-TIME_FORMAT = %H:%M
-DATE_FORMAT = %Y-%m-%d
-LOCALE = ja
-XOAP_PARTNER_ID =
-XOAP_LICENCE_KEY =
-DEFAULT_LOCATION = JAXX0085
-AUTO_NIGHT = False
-PROXY_HOST =
-PROXY_PORT = 8080
-PROXY_USERNAME =
-PROXY_PASSWORD =
-[/plain]</p>
+<h4>~/.conkyForecast.config の編集</h4>
 
-<ol>
-<li> ~/.conkyrc の編集
-[plain title=&ldquo;~/.conkyrc&rdquo; firstline=&ldquo;48&rdquo;]
+<figure class='code'><figcaption><span>~/.conkyForecast.config</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>#=============================================#
+</span><span class='line'># EXPERT SETTINGS, NOT REQUIRED TO BE ALTERED #
+</span><span class='line'>#=============================================#
+</span><span class='line'>#BASE_XOAP_URL = http://xoap.weather.com/weather/local/&lt;LOCATION&gt;?cc=*&amp;dayf=5&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID&gt;&amp;key=&lt;XOAP_LICENCE_KEY&gt;&amp;unit=m
+</span><span class='line'>BASE_XOAP_URL = http://xml.weather.com/weather/local/&lt;LOCATION&gt;?cc=*&amp;dayf=10&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID&gt;&amp;key=&lt;XOAP_LICENCE_KEY&gt;&amp;unit=m
+</span><span class='line'>MAXIMUM_DAYS_FORECAST = 10
+</span><span class='line'>
+</span><span class='line'>#===============================================#
+</span><span class='line'># USER SETTINGS, EDIT BASED ON DOCUMENTED SETUP #
+</span><span class='line'>#===============================================#
+</span><span class='line'>CACHE_FOLDERPATH = /tmp/
+</span><span class='line'>CONNECTION_TIMEOUT = 5
+</span><span class='line'>EXPIRY_MINUTES = 30
+</span><span class='line'>TIME_FORMAT = %H:%M
+</span><span class='line'>DATE_FORMAT = %Y-%m-%d
+</span><span class='line'>LOCALE = ja
+</span><span class='line'>XOAP_PARTNER_ID =
+</span><span class='line'>XOAP_LICENCE_KEY =
+</span><span class='line'>DEFAULT_LOCATION = JAXX0085
+</span><span class='line'>AUTO_NIGHT = False
+</span><span class='line'>PROXY_HOST =
+</span><span class='line'>PROXY_PORT = 8080
+</span><span class='line'>PROXY_USERNAME =
+</span><span class='line'>PROXY_PASSWORD =
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>Time</h1>
 
-${voffset 35}${goto 39}${font Helvetica LT Std:style=Condensed:size=60}${color 434343}${time %H}${goto 140}${color 434343}${time %M}${font Helvetica LT Std:style=Condensed:size=18}${color ffffff}${goto 225}${time %S}
+<h4>~/.conkyrc の編集</h4>
 
-<h1>Date</h1>
+<figure class='code'><figcaption><span>~/.conkyrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'># Time
+</span><span class='line'>${voffset 35}${goto 39}${font Helvetica LT Std:style=Condensed:size=60}${color 434343}${time %H}${goto 140}${color 434343}${time %M}${font Helvetica LT Std:style=Condensed:size=18}${color ffffff}${goto 225}${time %S}
+</span><span class='line'># Date
+</span><span class='line'>${voffset 47}${font TakaoPGothic:size=8}${alignr 80}${time %G}/${time %m}/${time %d} (${time %a})
+</span><span class='line'># City Name
+</span><span class='line'>${voffset -40}${goto 22}${exec conkyForecast --datatype=CN}
+</span><span class='line'># Conditions Text, Current Temp
+</span><span class='line'>${goto 22}${execi 1800 conkyForecast --datatype=CT}${voffset -20}${goto 200}${font Helvetica LT Std:size=24}${execi 1800 conkyForecast -u --datatype=HT}
+</span><span class='line'># High Temp, Low Temp of Today
+</span><span class='line'>${voffset -15}${font Helvetica LT Std:style=Condensed:size=10}#
+</span><span class='line'>${goto 200}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=0}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=0}
+</span><span class='line'># High Temp, Low Temp of Next 5 Days
+</span><span class='line'>${voffset 53}${font Helvetica LT Std:style=Condensed:size=8}#
+</span><span class='line'>${goto  25}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=1}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=1}#
+</span><span class='line'>${goto  70}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=2}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=2}#
+</span><span class='line'>${goto 115}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=3}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=3}#
+</span><span class='line'>${goto 160}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=4}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=4}#
+</span><span class='line'>${goto 205}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=5}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=5}
+</span><span class='line'># Day of Week
+</span><span class='line'>${font TakaoPGothic:size=8}${color ffffff}#
+</span><span class='line'>${goto  37}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=1}#
+</span><span class='line'>${goto  82}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=2}#
+</span><span class='line'>${goto 127}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=3}#
+</span><span class='line'>${goto 172}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=4}#
+</span><span class='line'>${goto 217}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=5}
+</span><span class='line'>${image ~/.images/base.png -p 12,30 -s 238x140}
+</span><span class='line'>${image ~/.images/base.png -p 12,190 -s 238x55}
+</span><span class='line'>${image ~/.images/flip_bg.png -p 30,10 -s 100x110}
+</span><span class='line'>${image ~/.images/flip_bg.png -p 130,10 -s 100x110}
+</span><span class='line'>${execpi 1800 conkyForecast --template=~/.vreme.template}
+</span></code></pre></td></tr></table></div></figure>
 
-${voffset 47}${font TakaoPGothic:size=8}${alignr 80}${time %G}/${time %m}/${time %d} (${time %a})
 
-<h1>City Name</h1>
-
-${voffset -40}${goto 22}${exec conkyForecast &mdash;datatype=CN}
-
-<h1>Conditions Text, Current Temp</h1>
-
-${goto 22}${execi 1800 conkyForecast &mdash;datatype=CT}${voffset -20}${goto 200}${font Helvetica LT Std:size=24}${execi 1800 conkyForecast -u &mdash;datatype=HT}
-
-<h1>High Temp, Low Temp of Today</h1>
-
-${voffset -15}${font Helvetica LT Std:style=Condensed:size=10}#
-${goto 200}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=0}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=0}
-
-<h1>High Temp, Low Temp of Next 5 Days</h1>
-
-${voffset 53}${font Helvetica LT Std:style=Condensed:size=8}#
-${goto  25}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=1}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=1}#
-${goto  70}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=2}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=2}#
-${goto 115}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=3}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=3}#
-${goto 160}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=4}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=4}#
-${goto 205}${color ffaaaa}${execi 1800 conkyForecast &mdash;datatype=HT -u &mdash;startday=5}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast &mdash;datatype=LT -u &mdash;startday=5}
-
-<h1>Day of Week</h1>
-
-<p>${font TakaoPGothic:size=8}${color ffffff}#
-${goto  37}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=1}#
-${goto  82}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=2}#
-${goto 127}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=3}#
-${goto 172}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=4}#
-${goto 217}${execi 1800 conkyForecast &mdash;datatype=DW &mdash;shortweekday &mdash;startday=5}
-${image ~/.images/base.png -p 12,30 -s 238x140}
-${image ~/.images/base.png -p 12,190 -s 238x55}
-${image ~/.images/flip_bg.png -p 30,10 -s 100x110}
-${image ~/.images/flip_bg.png -p 130,10 -s 100x110}
-${execpi 1800 conkyForecast &mdash;template=~/.vreme.template}
-[/plain]
-行中/行末に# を挿入すると次の行と連結(改行をエスケープ)できます。
-今日の最高/最低気温を取得するために「&mdash;startday=0」を指定してみましたが、値は無効かもしれません。</p></li>
-</ol>
-
+<p>行中/行末に# を挿入すると次の行と連結(改行をエスケープ)できます。
+今日の最高/最低気温を取得するために「&mdash;startday=0」を指定してみましたが、値は無効かもしれません。</p>
 </div>
 
 
@@ -259,7 +305,7 @@ ${execpi 1800 conkyForecast &mdash;template=~/.vreme.template}
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/linux/'>Linux</a>
+    <a class='category' href='/blog/categories/conky/'>Conky</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
   
 </span>
 
@@ -324,7 +370,7 @@ ${execpi 1800 conkyForecast &mdash;template=~/.vreme.template}
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (1)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li><li><a href='/blog/categories/wei-fen-lei/'>未分類 (1)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

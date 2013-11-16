@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Node.js | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/02/10/appjs/"/>
     <updated>2013-02-10T22:12:07+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/02/10/appjs</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/appjs.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/appjs-600x457.png" alt="AppJS Node.js" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2013/02/appjs.png"><img src="/images/uploads/2013/02/appjs-600x457.png" alt="AppJS Node.js" /></a>
 <a href="http://appjs.org/  ">http://appjs.org/  </a>
 <a href="https://github.com/appjs/appjs  ">https://github.com/appjs/appjs  </a>
 <a href="https://github.com/appjs/appjs/wiki">https://github.com/appjs/appjs/wiki</a></p>
@@ -126,15 +126,15 @@ $ node &mdash;harmony app.js
 
 
 <p>サンプルでは、[F12]キーにwindow.frame.openDevTools() をアサインしていて、キー押下により開発ツールウィンドウが開くようになっています。
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/node_devtool.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/node_devtool-600x470.png" alt="Node.js devtool" /></a></p>
+<a href="/images/uploads/2013/02/node_devtool.png"><img src="/images/uploads/2013/02/node_devtool-600x470.png" alt="Node.js devtool" /></a></p>
 
 <p><strong>EDIT:</strong></p>
 
 <h3>サンプルのカスタマイズ</h3>
 
 <p>HelloWorld サンプルをカスタマイズしてみました。日本語表示、メニュー構成の変更、ファイルオープンダイアログ、lame/speaker パッケージを使ったMP3 の再生など。
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/hello_world_appjs.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/hello_world_appjs-600x457.png" alt="hello world appjs" /></a>
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/mp3player_js.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/mp3player_js.png" alt="mp3 player node.js" /></a></p>
+<a href="/images/uploads/2013/02/hello_world_appjs.png"><img src="/images/uploads/2013/02/hello_world_appjs-600x457.png" alt="hello world appjs" /></a>
+<a href="/images/uploads/2013/02/mp3player_js.png"><img src="/images/uploads/2013/02/mp3player_js.png" alt="mp3 player node.js" /></a></p>
 ]]></content>
   </entry>
   
@@ -143,7 +143,7 @@ $ node &mdash;harmony app.js
     <link href="http://ktkr3d.github.io/blog/2013/02/10/scrumblr/"/>
     <updated>2013-02-10T19:58:59+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/02/10/scrumblr</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/scrumblr.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/scrumblr-600x337.png" alt="scrumblr node.js" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2013/02/scrumblr.png"><img src="/images/uploads/2013/02/scrumblr-600x337.png" alt="scrumblr node.js" /></a>
 <a href="https://github.com/aliasaria/scrumblr">https://github.com/aliasaria/scrumblr</a></p>
 
 <p>Node.js で実装された掲示板アプリscrumblr をインストールしてみました。socket.io を使っていて、複数のブラウザで掲示板をリアルタイムに共有できます。ちょっとしたメモをネットワークを介して共有するのに便利かもしれません。</p>
@@ -194,7 +194,7 @@ node server.js 3132
     <link href="http://ktkr3d.github.io/blog/2013/02/10/cloud9-ide/"/>
     <updated>2013-02-10T00:10:48+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/02/10/cloud9-ide</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/cloud9_ide.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/cloud9_ide-600x454.png" alt="Cloud9 IDE" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2013/02/cloud9_ide.png"><img src="/images/uploads/2013/02/cloud9_ide-600x454.png" alt="Cloud9 IDE" /></a></p>
 
 <p><a href="https://github.com/ajaxorg/cloud9  ">https://github.com/ajaxorg/cloud9  </a>
 <a href="http://nodejs.org/dist/">http://nodejs.org/dist/</a></p>

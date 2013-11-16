@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity3D | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/unity3d/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,15 +18,15 @@
     <link href="http://ktkr3d.github.io/blog/2012/11/18/ubuntu-12-10-unity-4-0/"/>
     <updated>2012-11-18T00:59:34+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/11/18/ubuntu-12-10-unity-4-0</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_ubnuntu.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_ubnuntu-600x375.png" alt="ubuntu 12.10 unity 4.0" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/11/unity4_ubnuntu.png"><img src="/images/uploads/2012/11/unity4_ubnuntu-600x375.png" alt="ubuntu 12.10 unity 4.0" /></a></p>
 
 <p>Unity 4.0 で作成したアプリをUbuntu 12.10 x86_64 上で動かしてみました。Unity 4.0 ではLinux 向けにネイティブアプリを出力できるようになっています。ビルドの設定では「x86」、「x86_64 」、「x86 + x86_64 (Universal)」が選択できます。Windows 8 の環境では以下のように表示されました。</p>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_build_settings.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity4_build_settings-600x560.png" alt="unity 4.0 build settings" /></a></p>
+<p><a href="/images/uploads/2012/11/unity4_build_settings.png"><img src="/images/uploads/2012/11/unity4_build_settings-600x560.png" alt="unity 4.0 build settings" /></a></p>
 
 <p>ちなみに、過去(2009年なのでバージョン2.6 かな)のバージョンのUnity で作成したIsland Demo のWindows 向けロードモジュールがハードディスクの中にあったのでWine で動かしてみました。問題なく動きました。</p>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity_island_demo_2009_wine.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity_island_demo_2009_wine-600x375.png" alt="unity island demo 2009 wine" /></a></p>
+<p><a href="/images/uploads/2012/11/unity_island_demo_2009_wine.png"><img src="/images/uploads/2012/11/unity_island_demo_2009_wine-600x375.png" alt="unity island demo 2009 wine" /></a></p>
 
 <p><strong>Edit:</strong>
 Unity 4.0 で出力されたLinux 用実行形式ファイルの情報はこんな感じ。
@@ -43,7 +43,7 @@ MyFirst.x86_64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically
     <link href="http://ktkr3d.github.io/blog/2012/11/15/unity-4-0-gnome-shell-3-6/"/>
     <updated>2012-11-15T07:32:43+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/11/15/unity-4-0-gnome-shell-3-6</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity3d_4.0_wine.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/11/unity3d_4.0_wine-600x337.png" alt="unity 4.0 wine 1.5.17" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/11/unity3d_4.0_wine.png"><img src="/images/uploads/2012/11/unity3d_4.0_wine-600x337.png" alt="unity 4.0 wine 1.5.17" /></a></p>
 
 <p><a href="http://blogs.unity3d.com/2012/11/13/unity-4-is-out/">http://blogs.unity3d.com/2012/11/13/unity-4-is-out/</a></p>
 

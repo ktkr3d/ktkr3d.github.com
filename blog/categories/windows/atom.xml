@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Windows | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/windows/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2012/06/06/burg-ubuntu-12-04-windows-8-android-x86-4-0/"/>
     <updated>2012-06-06T21:28:47+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/06/06/burg-ubuntu-12-04-windows-8-android-x86-4-0</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png" alt="burg windows 8 ubuntu 12.04 android-x86 4.0" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png"><img src="/images/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png" alt="burg windows 8 ubuntu 12.04 android-x86 4.0" /></a></p>
 
 <p>Ubuntu 12.04 とWindows 8 とAndroid-x86 4.0 のマルチブート環境を構築して、ブートローダをBurg にしてみた。<a href="/2011/05/07/burg-%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/">一年前</a>と同じことの繰り返しだけれど。</p>
 
@@ -122,11 +122,11 @@ Linux swap</p>
     <link href="http://ktkr3d.github.io/blog/2012/06/05/inspiron-duo-windows-8-64bit/"/>
     <updated>2012-06-05T04:27:56+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/06/05/inspiron-duo-windows-8-64bit</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_inspiron_duo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_inspiron_duo.png" alt="windows 8 inspiron duo" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/06/windows8_inspiron_duo.png"><img src="/images/uploads/2012/06/windows8_inspiron_duo.png" alt="windows 8 inspiron duo" /></a></p>
 
 <p>Inspiron duo にWindows 8 Release Preview をインストールしてみた。Inspiron duo のCPU はDual Core ATOM N550 で64bit 対応しているので、Windows 8 の64bit 版がインストールできる。</p>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_metro.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_metro.png" alt="windows 8 metro" /></a></p>
+<p><a href="/images/uploads/2012/06/windows8_metro.png"><img src="/images/uploads/2012/06/windows8_metro.png" alt="windows 8 metro" /></a></p>
 
 <p>Inspiron duo のスクリーンは10.1 インチの1366x768 でMetro はこんな感じで表示された。タッチスクリーンで横にスライドする。</p>
 ]]></content>
@@ -137,7 +137,7 @@ Linux swap</p>
     <link href="http://ktkr3d.github.io/blog/2012/06/02/windows-8-release-preview-64bit/"/>
     <updated>2012-06-02T00:15:41+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/06/02/windows-8-release-preview-64bit</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_boot_usb.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/06/windows8_boot_usb.png" alt="windows 8 boot usb" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/06/windows8_boot_usb.png"><img src="/images/uploads/2012/06/windows8_boot_usb.png" alt="windows 8 boot usb" /></a>
 <a href="http://windows.microsoft.com/ja-JP/windows-8/download">http://windows.microsoft.com/ja-JP/windows-8/download</a>
 Linux の他にはWindows XP 32bit しか入っていないデスクトップPC にWindows 8 Release Preview 64bit をインストールしてみた。</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Kinect | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/kinect/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/"/>
     <updated>2012-02-10T21:20:03+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="/images/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
 
 <p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
 
@@ -60,7 +60,7 @@ collect2: ld はステータス 1 で終了しました
     <link href="http://ktkr3d.github.io/blog/2012/02/05/ubuntu-11-10-kinect-irrlicht/"/>
     <updated>2012-02-05T22:25:28+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/02/05/ubuntu-11-10-kinect-irrlicht</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_sinbad_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/irrlicht_sinbad_kinect.png" alt="irrlicht ubuntu 11.10 kinect NITE sinbad" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/02/irrlicht_sinbad_kinect.png"><img src="/images/uploads/2012/02/irrlicht_sinbad_kinect.png" alt="irrlicht ubuntu 11.10 kinect NITE sinbad" /></a></p>
 
 <p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730</a></p>
 
@@ -126,7 +126,7 @@ Calibration complete, start tracking user 1
     <link href="http://ktkr3d.github.io/blog/2011/01/02/kinect_1/"/>
     <updated>2011-01-02T23:06:52+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2011/01/02/kinect_1</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/miku_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/miku_kinect.png" alt="miku kinect" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/03/miku_kinect.png"><img src="/images/uploads/2011/03/miku_kinect.png" alt="miku kinect" /></a>
 ボーンの座標とかを修正してみた。
 四肢の動きが「遊星からの物体X」から「人型」に進化した。</p>
 ]]></content>
@@ -137,7 +137,7 @@ Calibration complete, start tracking user 1
     <link href="http://ktkr3d.github.io/blog/2010/12/27/faast_wow/"/>
     <updated>2010-12-27T18:32:39+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2010/12/27/faast_wow</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/03/FAAST_WoW2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/03/FAAST_WoW2.png" alt="FAAST WoW kinect" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/03/FAAST_WoW2.png"><img src="/images/uploads/2011/03/FAAST_WoW2.png" alt="FAAST WoW kinect" /></a>
 <a href="http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f">http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f</a>
 OpenNI のフォーラムにKinect を使ってWorld of Warcraft を操作するFAAST(Flexible Action and Articulated Skeleton Toolkit) のデモがあったので試してみた。
 デフォルトでは体を傾けると前進/後退/右旋回/左旋回が設定されている。
@@ -151,7 +151,7 @@ FAAST のホームページによるとマウスイベントのエミュレー�
     <link href="http://ktkr3d.github.io/blog/2010/12/25/ogre3d_1/"/>
     <updated>2010-12-25T21:35:34+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2010/12/25/ogre3d_1</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_miku.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2010/12/ogre3d_miku.png" alt="ogre3d miku pmd" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2010/12/ogre3d_miku.png"><img src="/images/uploads/2010/12/ogre3d_miku.png" alt="ogre3d miku pmd" /></a>
 Kinect でミクさんを動かしてみようと思い、とりあえずOgre3D でミクさんを表示してみた
 Kinect に接続して動かしてみると、この世のものとは思えない動きをするようになった
 ボーンの見直しが必要だ&hellip;

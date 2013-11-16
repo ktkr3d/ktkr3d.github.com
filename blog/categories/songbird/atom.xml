@@ -4,7 +4,7 @@
   <title><![CDATA[Category: songbird | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/songbird/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2011/12/20/nightingale/"/>
     <updated>2011-12-20T20:10:39+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2011/12/20/nightingale</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/12/nightingale_linux.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/12/nightingale_linux.png" alt="nightingale linux" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/12/nightingale_linux.png"><img src="/images/uploads/2011/12/nightingale_linux.png" alt="nightingale linux" /></a>
 <a href="http://getnightingale.com">http://getnightingale.com</a>
 Nightingale 1.8.1 が公開されたのでUbuntu 11.10 で使ってみた。アドオンも続々移植されているので期待。Linux x86_64 にもネイティブで対応。OGV 以外のビデオも再生可能。</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: P2P | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/p2p/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/03/17/bittorrent-live-beta/"/>
     <updated>2013-03-17T22:55:37+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/03/17/bittorrent-live-beta</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/03/BitTorrentLive_Beta.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/03/BitTorrentLive_Beta-600x375.png" alt="BitTorrent Live" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2013/03/BitTorrentLive_Beta.png"><img src="/images/uploads/2013/03/BitTorrentLive_Beta-600x375.png" alt="BitTorrent Live" /></a></p>
 
 <p><a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a>
 P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTorrent Live」のオープンベータテストが開始されたので、試してみました。Windows/Mac/Ubuntu 用のクライアントプログラムBTLive が配布されており、私はUbuntu 64bit 用をダウンロードしてインストールしました。インストールから視聴までの手順は以下のとおりです。</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ogre3D | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/ogre3d/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/"/>
     <updated>2012-02-10T21:20:03+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="/images/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
 
 <p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
 
@@ -60,7 +60,7 @@ collect2: ld はステータス 1 で終了しました
     <link href="http://ktkr3d.github.io/blog/2011/11/27/wine-proun/"/>
     <updated>2011-11-27T22:47:52+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2011/11/27/wine-proun</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/wine_proun1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/wine_proun1.png" alt="wine proun" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/11/wine_proun1.png"><img src="/images/uploads/2011/11/wine_proun1.png" alt="wine proun" /></a></p>
 
 <p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
 <a href="http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049">http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049</a>
@@ -77,7 +77,7 @@ collect2: ld はステータス 1 で終了しました
     <link href="http://ktkr3d.github.io/blog/2011/06/28/proun-3/"/>
     <updated>2011-06-28T00:23:34+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2011/06/28/proun-3</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/06/proun_archipelago.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/06/proun_archipelago.png" alt="proun archipelago" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/06/proun_archipelago.png"><img src="/images/uploads/2011/06/proun_archipelago.png" alt="proun archipelago" /></a></p>
 
 <p><a href="http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd">http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd</a></p>
 
@@ -95,7 +95,7 @@ collect2: ld はステータス 1 で終了しました
     <link href="http://ktkr3d.github.io/blog/2011/06/25/proun-2/"/>
     <updated>2011-06-25T12:51:16+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2011/06/25/proun-2</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/06/proun_ss2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/06/proun_ss2.png" alt="proun" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/06/proun_ss2.png"><img src="/images/uploads/2011/06/proun_ss2.png" alt="proun" /></a></p>
 
 <ul>
 <li><p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a></p></li>
@@ -118,7 +118,7 @@ collect2: ld はステータス 1 で終了しました
     <link href="http://ktkr3d.github.io/blog/2011/05/22/proun-e381a7e9818ae38293e381a7e381bfe3819f/"/>
     <updated>2011-05-22T10:35:28+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2011/05/22/proun-e381a7e9818ae38293e381a7e381bfe3819f</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2011/05/proun.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/05/proun.png" alt="proun ogre3d" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/05/proun.png"><img src="/images/uploads/2011/05/proun.png" alt="proun ogre3d" /></a></p>
 
 <p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
 Ogre3D で作られたレースゲームProun のベータ版で遊んでみた。

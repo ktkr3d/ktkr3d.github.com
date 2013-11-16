@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android-x86 | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android-x86/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/02/28/android-x86-4-2-2/"/>
     <updated>2013-02-28T22:18:41+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/02/28/android-x86-4-2-2</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2_duo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2_duo.png" alt="android-x86 4.2.2 inspiron duo" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2013/02/android-x86_4.2.2_duo.png"><img src="/images/uploads/2013/02/android-x86_4.2.2_duo.png" alt="android-x86 4.2.2 inspiron duo" /></a></p>
 
 <p><a href="http://www.android-x86.org/releases/build-20130228">http://www.android-x86.org/releases/build-20130228</a></p>
 
@@ -46,9 +46,9 @@ $ sudo update-grub
 <h3>EDIT</h3>
 
 <p>デスクトップPC にインストールして、別のPC からAirDroid 経由で参照してみました。
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/android-x86_4.2.2.png" alt="android-x86 4.2.2" /></a></p>
+<a href="/images/uploads/2013/02/android-x86_4.2.2.png"><img src="/images/uploads/2013/02/android-x86_4.2.2.png" alt="android-x86 4.2.2" /></a></p>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/02/airdroid.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/02/airdroid.png" alt="airdroid android 4.2.2" /></a></p>
+<p><a href="/images/uploads/2013/02/airdroid.png"><img src="/images/uploads/2013/02/airdroid.png" alt="airdroid android 4.2.2" /></a></p>
 ]]></content>
   </entry>
   
@@ -132,7 +132,7 @@ bcdedit /displayorder {☆} /addlast
     <link href="http://ktkr3d.github.io/blog/2012/12/26/android-x86-4-2-1/"/>
     <updated>2012-12-26T22:15:23+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/12/26/android-x86-4-2-1</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/12/android-x86_4.2.1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/12/android-x86_4.2.1-600x337.png" alt="android-x86 4.2.1" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/12/android-x86_4.2.1.png"><img src="/images/uploads/2012/12/android-x86_4.2.1-600x337.png" alt="android-x86 4.2.1" /></a></p>
 
 <p><a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso">http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso</a></p>
 
@@ -172,7 +172,7 @@ bcdedit /displayorder {☆} /addlast
     <link href="http://ktkr3d.github.io/blog/2012/10/14/android-x86-4-0-4-firefox-fennec-19-0a1-16-0-1/"/>
     <updated>2012-10-14T08:36:56+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/10/14/android-x86-4-0-4-firefox-fennec-19-0a1-16-0-1</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/android-x86_firefox_19.0a1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/android-x86_firefox_19.0a1-600x337.png" alt="android-x86 firefoex fennec 19.0a1 16.0.1" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/10/android-x86_firefox_19.0a1.png"><img src="/images/uploads/2012/10/android-x86_firefox_19.0a1-600x337.png" alt="android-x86 firefoex fennec 19.0a1 16.0.1" /></a></p>
 
 <p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a></p>
 
@@ -321,7 +321,7 @@ $ make -f client.mk build_and_deploy
     <link href="http://ktkr3d.github.io/blog/2012/10/02/vlc-for-android-x86/"/>
     <updated>2012-10-02T23:20:14+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/10/02/vlc-for-android-x86</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/10/galaxias_vlc_for_android-x86.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/10/galaxias_vlc_for_android-x86-600x337.png" alt="vlc for android-x86" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/10/galaxias_vlc_for_android-x86.png"><img src="/images/uploads/2012/10/galaxias_vlc_for_android-x86-600x337.png" alt="vlc for android-x86" /></a>
 <a href="http://nightlies.videolan.org/build/android-x86/">http://nightlies.videolan.org/build/android-x86/</a></p>
 
 <p>VLC for Android-x86 のデバッグ版が公開されていたので、使ってみました。実行環境は、Android-x86 4.0.4 RC2 tegav2 ビルドです。</p>

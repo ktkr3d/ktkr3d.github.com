@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-16T19:55:44+09:00</updated>
+  <updated>2013-11-16T21:04:29+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -140,17 +140,17 @@ $ ant debug
     <link href="http://ktkr3d.github.io/blog/2013/06/01/android-studio/"/>
     <updated>2013-06-01T15:55:52+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/01/android-studio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/06/android-studo.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/06/android-studo.png" alt="android-studo" /></a>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2013/06/android-studo.png"><img src="/images/uploads/2013/06/android-studo.png" alt="android-studo" /></a>
 <a href="http://developer.android.com/sdk/installing/studio.html">http://developer.android.com/sdk/installing/studio.html</a></p>
 
 <p>Android Studio でサンプルアプリを作って動かしてみました。
 Linux 版のアーカイブをダウンロードして展開し、android-studio/bin/studio.sh を実行します。ウィザードに従っていくと、サンプルアプリのapk ファイルが生成されます。</p>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/06/android_studio_project.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/06/android_studio_project-600x550.png" alt="android_studio_project" /></a></p>
+<p><a href="/images/uploads/2013/06/android_studio_project.png"><img src="/images/uploads/2013/06/android_studio_project-600x550.png" alt="android_studio_project" /></a></p>
 
 <p>インストールして実行すると、こんな感じになりました。実行環境はAndroid 4.1.2 です。</p>
 
-<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2013/06/my_app.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2013/06/my_app-600x337.png" alt="my_app" /></a></p>
+<p><a href="/images/uploads/2013/06/my_app.png"><img src="/images/uploads/2013/06/my_app-600x337.png" alt="my_app" /></a></p>
 ]]></content>
   </entry>
   
@@ -159,7 +159,7 @@ Linux 版のアーカイブをダウンロードして展開し、android-studio
     <link href="http://ktkr3d.github.io/blog/2012/07/12/building-android-4-1-for-x86-on-ubuntu-12-04/"/>
     <updated>2012-07-12T00:17:01+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2012/07/12/building-android-4-1-for-x86-on-ubuntu-12-04</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/wp-content/uploads/2012/07/android_4.1.1.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2012/07/android_4.1.1.png" alt="android 4.1.1 x86" /></a></p>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2012/07/android_4.1.1.png"><img src="/images/uploads/2012/07/android_4.1.1.png" alt="android 4.1.1 x86" /></a></p>
 
 <p><a href="http://source.android.com/source/download.html  ">http://source.android.com/source/download.html  </a>
 <a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a></p>
@@ -236,7 +236,7 @@ Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので�
 
 <p><strong>update:</strong>
 エミュレータでAndroid 4.0 Ice Cream Sandwich を動かしてみた。
-<a href="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android_4_ics.png"><img src="http://ktkr3d.site11.com/wp-content/uploads/2011/11/android_4_ics.png" alt="android 4 ice cream sandwich" /></a></p>
+<a href="/images/uploads/2011/11/android_4_ics.png"><img src="/images/uploads/2011/11/android_4_ics.png" alt="android 4 ice cream sandwich" /></a></p>
 ]]></content>
   </entry>
   
