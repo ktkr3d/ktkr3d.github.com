@@ -9,10 +9,9 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://www.android-x86.org/getsourcecode
-android-x86 のサイトでAndroid 2.3(gingerbread)版のリポジトリが公開されているものの、ISO イメージが公開されていないので、自分でビルドしてみた。 1
-2
-$ uname -a &hellip;">
+  <meta name="description" content="Gnome Shell の上部パネルには、曜日と時刻が表示されている。 日付も表示したいので、設定を探してみたら、
+/usr/share/gnome-shell/js/ui/dateMenu.js
+の中で、org.gnome.shell.clock のshow-date の値(論理値) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,8 +79,7 @@ $(document).ready( function () {
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/android">Android</a></li>
-  <li><a href="/linux">Linux</a></li>
+  <li><a href="/pages">Pages</a></li>
   <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
 </ul>
 
@@ -90,6 +88,195 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/17/gnome-shell-e38292e382abe382b9e382bfe3839ee382a4e382ba/">Gnome Shell をカスタマイズ</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-17T21:06:57+09:00" pubdate data-updated="true">2011年03月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Gnome Shell の上部パネルには、曜日と時刻が表示されている。
+<a href="/images/uploads/2011/03/gnome_shell_panel_before.png"><img src="/images/uploads/2011/03/gnome_shell_panel_before.png" alt="gnome shell panel date time" /></a>
+日付も表示したいので、設定を探してみたら、
+/usr/share/gnome-shell/js/ui/dateMenu.js
+の中で、org.gnome.shell.clock のshow-date の値(論理値)を参照して日付表示の要否を判定しているようだった。
+とりあえず、true にして動かしてみた。
+<a href="/images/uploads/2011/03/gnome_shell_panel_after.png"><img src="/images/uploads/2011/03/gnome_shell_panel_after.png" alt="gnome shell panel date time" /></a>
+どこか見覚えのある、OS インストール直後にアップデートしていない時のような、残念な雰囲気のある表示になった。よくある書式にしてみた。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">showSeconds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'><span class="nx">clockFormat</span> <span class="o">=</span> <span class="nx">_</span><span class="p">(</span><span class="s2">&quot;%Y/%m/%d(%a) %H:%M:%S&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="/images/uploads/2011/03/gnome_shell_panel_customized.png"><img src="/images/uploads/2011/03/gnome_shell_panel_customized.png" alt="gnome shell panel date time" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/13/worpress-e38292e8a9a6e38197e381a6e381bfe3819f/">WordPress を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-13T19:38:08+09:00" pubdate data-updated="true">2011年03月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>使用中のレンタルサーバのディスク容量が上限に到達しそうになったので、byethost.com に引越してみた。byethost.com 無料版ではPerl が使えないみたいなので、MovableType からWordPress に移行してみた。</p>
+
+<p>引越してみて、</p>
+
+<ul>
+<li><p>容量が大きくて安心</p></li>
+<li><p>商用契約もあるので安定してそう</p></li>
+<li><p>広告不要なのがうれしい</p></li>
+<li><p>ZIP をサーバ側で展開できるのは便利</p></li>
+<li><p>WordPress はプラグインが多くておもしろそう</p></li>
+</ul>
+
+
+<p>使い方に慣れたら、MovableType 3 のテーマをWordPress に移植して、IE 対応してみよう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/09/fedora-15-alpha-e38292e8a9a6e38197e381a6e381bfe3819f/">Fedora 15 Alpha を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-09T23:37:53+09:00" pubdate data-updated="true">2011年03月09日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/fedra15a.png"><img src="/images/uploads/2011/03/fedra15a.png" alt="fedra" /></a></p>
+
+<p><a href="http://news.softpedia.com/news/Fedora-15-Alpha-Is-Available-for-Download-188519.shtml">http://news.softpedia.com/news/Fedora-15-Alpha-Is-Available-for-Download-188519.shtml</a>
+<a href="http://distrowatch.com/table.php?distribution=fedora">http://distrowatch.com/table.php?distribution=fedora</a></p>
+
+<p>Fedora 15 のアルファ版が公開されていたので試してみた。
+カーネル2.6.38、xorg-server 1.9.99.1、デスクトップ環境がGNOME 3 になっていた。</p>
+
+<p>March 08, 2011 &ndash; Alpha release
+April 14, 2011 &ndash; Beta release
+May 17, 2011 &ndash; Final release</p>
+
+<p>openSUSE 11.4 も公開されたので、後で試してみよう。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/13/gibson_screensaver/">Gibson Screensaver を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-13T15:53:02+09:00" pubdate data-updated="true">2011年02月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/02/gibson_screensaver2.png"><img src="/images/uploads/2011/02/gibson_screensaver2.png" alt="gibson screensaver irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=42787">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=42787</a>
+Irrlicht で作られた、Tron の雰囲気があるWindows 用のスクリーンセーバーGibson Screensaver を試してみた。
+スクリーンセーバーだから自動操縦だけど、建物の間を進んだり、上昇して建物を見下ろしたりする。
+Windows のスクリーンセーバー形式(.scr)なので、Linux 上でもWine で動作する。［F10］キーでスクリーンショットを撮ることができる。ソースも付いてる。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -373,203 +560,6 @@ FAAST のホームページによるとマウスイベントのエミュレー�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/25/ogre3d_1/">まずはOgre3D でミクさんを表示してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-25T21:35:34+09:00" pubdate data-updated="true">2010年12月25日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/12/ogre3d_miku.png"><img src="/images/uploads/2010/12/ogre3d_miku.png" alt="ogre3d miku pmd" /></a>
-Kinect でミクさんを動かしてみようと思い、とりあえずOgre3D でミクさんを表示してみた
-Kinect に接続して動かしてみると、この世のものとは思えない動きをするようになった
-ボーンの見直しが必要だ&hellip;
-<strong>モデルの変換</strong>
-1. PMDEditor でPMD モデルのサイズ変更(x0.5)、位置変更(Y:-5)
-2. Pmd2OgreMesh (作者さんに感謝!!)で.pmd から.mesh, .mesh.xml, .skeleton, .skeleton.xml, .materialを生成
-3. XML データ修正
-&ndash; .skeleton.xml にSinbad.skeleton のanimation 13種類をダミーで挿入
-&ndash; .skeleton.xml 内のボーン名(bone000 等10個)をSinbad.skelton のボーン名(Root 等)に置換
-4. OgreXMLConverter で .skeleton.xml → .skeleton を再生成
-<strong>ソースの修正</strong>
-1. 剣メッシュ関連の処理(剣の表示や剣を抜く動作等)をコメントアウト
-2. マッピングしなかったボーン名(Stomach, Waist)についてはtransformBone() をコメントアウト
-3. setupbone() で指定する角度を修正</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/24/linux_kinect/">Linux でKinect Sinbad デモを動かしてみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-24T03:33:41+09:00" pubdate data-updated="true">2010年12月24日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/03/linux_kinect.png"><img src="/images/uploads/2011/03/linux_kinect.png" alt="linux kinect" /></a>
-OpenNI のSinbad デモ(SampleAppSinbad)のLinux 版が見つからなかったのでポーティングしてみた
-<strong>環境</strong>
-OS: Ubuntu 10.10 32bit
-Ogre3D: Ver. 1.7.2
-IDE: Code::Blocks 10.05
-GCC: 4.4.5
-<strong>改造前ソース</strong>
-<a href="https://github.com/OpenNI/SampleAppSinbad">https://github.com/OpenNI/SampleAppSinbad</a>
-<strong>主な修正点</strong>
-Sinbad:
-&ndash; Code::Blocks でOgre3D プロジェクト(コンソールアプリケーション)を作成
-&ndash; FileSystemLayerImpl_WIN32.cpp の代わりにFileSystemLayerImpl_Unix.cpp を使用
-&ndash; FileSystemLayerImpl_Unix.cpp でerrno.h のインクルードを追加
-&ndash; SampleBrowser.cpp でAllocConsole.h のインクルードを削除
-Sample_Character.so:
-&ndash; Code::Blocks でOgre3D プロジェクト(動的ライブラリ)を作成
-&ndash; WIN32 依存処理(time とか)を修正
-&ndash; XnSkeletonJoint のスコープを省略
-&ndash; Ogre オリジナルヘッダにOgreBites::YesNoSlider が含まれていないので、CharacterSample.h
-では&#8221;SdkSample.h&#8221;ではなく&#8221;../../Common/include/SdkSample.h&#8221;をインクルードする
-&ndash; openNi.xml のパス指定を修正
-&ndash; OpenNI とXnVNite をリンク
-ogre.cfg:
-&ndash; レンダラをOpenGL のみにする
-&ndash; 「Colour Depth」、「VSync Interval」のエントリを削除
-plugins.cfg:
-&ndash; Direct3D 系のレンダラのエントリをコメントアウト</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/23/ogre3d/">ついでにOgre3D を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-23T13:46:25+09:00" pubdate data-updated="true">2010年12月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/12/ogre3d_skeltal.png"><img src="/images/uploads/2010/12/ogre3d_skeltal.png" alt="ogre3d skeltal SampleBrowser" /></a>
-OpenNI のSampleAppSinbad デモがOgre3D で出来ていたので初めてOgre3D を触ってみた
-Ogre3D 自体はWindows でもLinux でも動くしエフェクトも揃ってそうなのでなかなか良さそう
-サンプルパッケージ(ogre-samples-bin)の実行は/usr/bin/SampleBrowser
-OpenNI のSampleAppSinbad デモはOgre3D のSampleBrowser
-のモジュール(Sample_Character)を改造しているようなので、WIN32
-依存のコード(SkeletonPoseDetector.h, SinbadCharacterController.h
-あたり)を修正すればLinux でも動くかもしれない
-Kinect を使った他のOpenNI のデモ自体はLinux でも動いたし</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/22/kinect/">Kinect を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-22T19:16:07+09:00" pubdate data-updated="true">2010年12月22日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/12/kinect_ogre3d.png"><img src="/images/uploads/2010/12/kinect_ogre3d.png" alt="kinect ogre3d" /></a>
-<a href="https://github.com/OpenNI/SampleAppSinbad">https://github.com/OpenNI/SampleAppSinbad</a>
-<a href="http://www.ogre3d.org/forums/viewtopic.php?f=11&amp;t=61571">http://www.ogre3d.org/forums/viewtopic.php?f=11&amp;t=61571</a>
-Kinect が話題になっていたのでOgre3D 版のデモ（ソース付き）を試してみた
-認識の精度が予想以上に高くて驚いた&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/16/">&larr; Older</a>
@@ -610,7 +600,7 @@ Kinect が話題になっていたのでOgre3D 版のデモ（ソース付き）
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

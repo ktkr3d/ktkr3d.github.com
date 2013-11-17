@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Peercast | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/peercast/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2013-11-17T20:46:48+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Peercast Radio をMac で動かしてみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/06/15/peercast-radio-e38292mac-e381a7e58b95e3818be38197e381a6e381bfe3819f/"/>
+    <updated>2011-06-15T21:31:47+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/06/15/peercast-radio-e38292mac-e381a7e58b95e3818be38197e381a6e381bfe3819f</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.site11.com/?page_id=11">http://ktkr3d.site11.com/?page_id=11</a></p>
+
+<p>Firefox でPeercast の配信を選局するアドオン「Peercast Radio for Firefox」をMac OS X 10.6.7 で試してみたら、改造なしで動作した。Firefox のアドオンだし、難しいことをしていないから当然か。
+Mac OS X 用のPeercast 本体はCocoaYP さんのビルドをお借りした。外部プレイヤーにはVLC Media Player を選び、外部プレイヤー設定画面の「外部プレイヤー1(MMSストリーム)」を以下のように設定した。</p>
+
+<ul>
+<li>場所</li>
+</ul>
+
+
+<p><code>text
+/Applications/VLC.app/Contents/MacOS/VLC
+</code></p>
+
+<ul>
+<li>「mms: の代わりにmmsh: を使用する」をチェック！</li>
+</ul>
+
+
+<p>Linux と同様にmmsh: にすると再生待ちが発生しないみたい。
+Quick Time Player のパスには空白が入るから、少し修正が必要そう。</p>
+
+<p>最近の更新は、以下のとおり。</p>
+
+<ul>
+<li><p><a href="http://ktkr3d.site11.com/archives/peercast_radio_4ff_0.1.0a5_20110524.xpi">0.1.0a5 (2011/05/24)</a> Firefox 5.0 対応</p></li>
+<li><p><a href="http://ktkr3d.site11.com/archives/peercast_radio_4ff_0.1.0a4_20110212.xpi">0.1.0a4 (2011/02/12)</a> Firefox 4.0 対応、Ustream イエローページ追加</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

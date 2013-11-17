@@ -122,7 +122,7 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2010/09/12/terrain_pager/</loc>
-        <lastmod>2013-11-16T20:56:24+09:00</lastmod>
+        <lastmod>2013-11-17T09:36:56+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/2010/09/12/post_10/</loc>
@@ -880,18 +880,58 @@
     </url>
     <url>
         <loc>http://ktkr3d.github.io/</loc>
-        <lastmod>2013-11-17T01:44:47+09:00</lastmod>
+        <lastmod>2013-11-17T09:36:56+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/ca/</loc>
+        <lastmod>2013-11-17T20:34:32+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/node-js/</loc>
+        <lastmod>2013-11-17T20:31:42+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/kinect/</loc>
+        <lastmod>2013-11-17T20:34:32+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/pages/</loc>
+        <lastmod>2013-11-17T20:17:53+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/blog/archives/</loc>
-        <lastmod>2013-11-17T01:44:47+09:00</lastmod>
+        <lastmod>2013-11-17T09:36:56+09:00</lastmod>
     </url>
     <url>
         <loc>http://ktkr3d.github.io/android/</loc>
         <lastmod>2013-11-10T18:32:48+09:00</lastmod>
     </url>
     <url>
+        <loc>http://ktkr3d.github.io/android-x86/</loc>
+        <lastmod>2013-11-17T20:34:31+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/irrlicht/</loc>
+        <lastmod>2013-11-17T20:34:32+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/peercast-radio/</loc>
+        <lastmod>2013-11-17T20:44:36+09:00</lastmod>
+    </url>
+    <url>
         <loc>http://ktkr3d.github.io/robots.txt</loc>
         <lastmod>2013-11-10T18:32:48+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/game/</loc>
+        <lastmod>2013-11-17T20:26:08+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/gnome3/</loc>
+        <lastmod>2013-11-17T20:34:32+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ktkr3d.github.io/meego-2/</loc>
+        <lastmod>2013-11-17T20:34:32+09:00</lastmod>
     </url>
 </urlset>

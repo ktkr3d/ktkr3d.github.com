@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Node.js - ktkr3d</title>
+  <meta name="author" content="ktkr3d">
+
+  
+  <meta name="description" content="Node.js 2013年02月10日 http://nodejs.org/ https://npmjs.org/ nvm のインストール Node.js の複数のバージョンを使い分けるためにnvm をインストールします。
+[bash gutter=&ldquo;false&rdquo;]
+$ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ktkr3d.github.io/node-js">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
+})
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41927897-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<hgroup>
+  <h1><a href="/">ktkr3d</a></h1>
+  
+    <h2>少し立体的で痛いチラ裏</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ktkr3d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/pages">Pages</a></li>
+  <li><a href="https://github.com/ktkr3d?tab=repositories">Repositories</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Node.js</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-10T17:03:32+09:00" pubdate data-updated="true">2013年02月10日</time></p>
+  </header>
+  
+  <p><a href="http://nodejs.org/  ">http://nodejs.org/  </a>
+<a href="https://npmjs.org/">https://npmjs.org/</a></p>
+
+<h3>nvm のインストール</h3>
+
+<p>Node.js の複数のバージョンを使い分けるためにnvm をインストールします。
+[bash gutter=&ldquo;false&rdquo;]
+$ sudo apt-get install build-essential libssl-dev curl git
+$ git clone git://github.com/creationix/nvm.git ~/.nvm
+[/bash]</p>
+
+<h3>Node.js のインストール</h3>
+
+<ol>
+<li><p> <a href="http://nodejs.org/dist/">http://nodejs.org/dist/</a> にあるバージョンを列挙します。</p></li>
+<li><p> インストールするバージョンを指定します。</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>nvm install v0.8.19
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ~/.bashrc に以下を記述しておくと便利です。</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>~/.bashrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'>nvm use v0.8.19 &gt; /dev/null
+</span><span class='line'><span class="nb">export </span><span class="nv">NODE_PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">NVM_PATH</span><span class="k">}</span>_modules
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Node.js アプリのインストールと実行</h3>
+
+<ul>
+<li><p>Calipso
+<a href="https://npmjs.org/package/calipso">https://npmjs.org/package/calipso</a></p>
+
+<ol>
+<li> インストール</li>
+</ol>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>npm install -g node-gyp
+</span><span class='line'><span class="nv">$ </span>npm install -g calipso
+</span><span class='line'><span class="nv">$ </span>mkdir ~/calipso
+</span><span class='line'><span class="nv">$ </span>calipso site ~/calipso
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>2. 実行
+</code></pre>
+
+<figure class='code'><figcaption><span>start_calipro.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Start Calipso Server</span>
+</span><span class='line'><span class="c"># http://localhost:3000</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'>nvm use v0.8.19
+</span><span class='line'><span class="nb">export </span><span class="nv">NODE_PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">NVM_PATH</span><span class="k">}</span>_modules
+</span><span class='line'><span class="nb">cd</span> ~/calipso
+</span><span class='line'>calipso server
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>Cound9 IDE</p>
+
+<ol>
+<li>インストール</li>
+</ol>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>npm install -g sm
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git clone https://github.com/ajaxorg/cloud9.git ~/cloud9
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/cloud9
+</span><span class='line'><span class="nv">$ </span>sm install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>2. 実行
+</code></pre>
+
+<figure class='code'><figcaption><span>start_cloud9.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Start Cloud9 IDE</span>
+</span><span class='line'><span class="c"># http://localhost:3131</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'>nvm use v0.8.19
+</span><span class='line'><span class="nb">export </span><span class="nv">NODE_PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">NVM_PATH</span><span class="k">}</span>_modules
+</span><span class='line'><span class="nb">cd</span> ~/cloud9/bin
+</span><span class='line'>./cloud9.sh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>scrumblr</p>
+
+<ol>
+<li>インストール</li>
+</ol>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install redis-server
+</span><span class='line'><span class="nv">$ </span>git clone https://github.com/aliasaria/scrumblr ~/scrumblr
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/scrumblr
+</span><span class='line'><span class="nv">$ </span>npm install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>2. 実行
+</code></pre>
+
+<figure class='code'><figcaption><span>start_scrumblr.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Start Scrumblr Server</span>
+</span><span class='line'><span class="c"># http://localhost:3132</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'>nvm use v0.8.19
+</span><span class='line'><span class="nb">export </span><span class="nv">NODE_PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">NVM_PATH</span><span class="k">}</span>_modules
+</span><span class='line'><span class="nb">cd</span> ~/scrumblr
+</span><span class='line'>node server.js 3132
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>lame, speaker を利用したMP3 プレイヤー
+<a href="https://npmjs.org/package/lame  ">https://npmjs.org/package/lame  </a>
+<a href="https://npmjs.org/package/speaker">https://npmjs.org/package/speaker</a></p>
+
+<ol>
+<li> インストール</li>
+</ol>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install libasound2-dev
+</span><span class='line'><span class="nv">$ </span>npm install -g lame speaker
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>2. アプリケーション
+</code></pre>
+
+<figure class='code'><figcaption><span>mp3player.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">lame</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;lame&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">Speaker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;speaker&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="k">new</span> <span class="nx">lame</span><span class="p">.</span><span class="nx">Decoder</span><span class="p">())</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;format&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">format</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">format</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">this</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="k">new</span> <span class="nx">Speaker</span><span class="p">(</span><span class="nx">format</span><span class="p">));</span>
+</span><span class='line'>  <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>3. 実行
+</code></pre>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>node mp3player.js hogehoeg.mp3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>自動起動の設定</h3>
+
+<p>[システムツール]&ndash;[設定]&ndash;[自動起動するアプリケーション]に起動シェルを登録します。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>gnome-session-properties
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+  
+    <footer>
+      <p class="meta">
+        
+  
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="https://plus.google.com/118064786423053991892" rel="author">ktkr3d</a></span></span>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-10T17:03:32+09:00" pubdate data-updated="true">2013年02月10日</time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/node-js/index.html" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/node-js/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最近の投稿</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/minetest/">Minetest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/yad/">Yad</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>カテゴリ</h1>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+</section>
+<section>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline"  href="https://twitter.com/ktkr3d"  data-widget-id="356413531807178752">@ktkr3d からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+ 
+ 
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - ktkr3d -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ktkr3d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ktkr3d.github.io/node-js/index.html';
+        var disqus_url = 'http://ktkr3d.github.io/node-js/index.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
