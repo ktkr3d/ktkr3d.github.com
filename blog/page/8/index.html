@@ -248,128 +248,6 @@ Ubuntu 11.10 のデフォルトのリモートデスクトップビューアだ�
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/17/inspiron-duo-android-x86-4-0-headphone/">Inspiron Duo + Android-x86 4.0 でヘッドフォン</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-17T04:26:05+09:00" pubdate data-updated="true">2012年03月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Inspiron duo + Android-x86 4.0 の環境でヘッドフォンジャックにプラグを挿した時に内部スピーカーをミュートするように設定してみた。
-普通のLinux カーネルではalsa-base.conf などにmodel=ideapad を指定すれば良いけれど、Android-x86 では./kernel/sound/pci/hda/patch_realtek.c にmodel のプリセットが定義されているみたいだ。</p>
-
-<figure class='code'><figcaption><span>./kernel/sound/pci/hda/patch_realtek.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cm">/*</span>
-</span><span class='line'><span class="cm"> * configuration and preset</span>
-</span><span class='line'><span class="cm"> */</span>
-</span><span class='line'><span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="k">const</span> <span class="n">alc662_models</span><span class="p">[</span><span class="n">ALC662_MODEL_LAST</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>        <span class="p">[</span><span class="n">ALC662_3ST_2ch_DIG</span><span class="p">]</span>    <span class="o">=</span> <span class="s">&quot;3stack-dig&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="p">[</span><span class="n">ALC662_3ST_6ch_DIG</span><span class="p">]</span>    <span class="o">=</span> <span class="s">&quot;3stack-6ch-dig&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="p">[</span><span class="n">ALC662_3ST_6ch</span><span class="p">]</span>        <span class="o">=</span> <span class="s">&quot;3stack-6ch&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="p">[</span><span class="n">ALC662_5ST_DIG</span><span class="p">]</span>        <span class="o">=</span> <span class="s">&quot;5stack-dig&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="p">[</span><span class="n">ALC662_LENOVO_101E</span><span class="p">]</span>    <span class="o">=</span> <span class="s">&quot;lenovo-101e&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="p">[</span><span class="n">ALC662_ASUS_EEEPC_P701</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;eeepc-p701&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="p">[</span><span class="n">ALC662_ASUS_EEEPC_EP20</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;eeepc-ep20&quot;</span><span class="p">,</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>ideapad に相当する指定は、lenovo-101e みたいなので、 以下を設定する。</p>
-
-<figure class='code'><figcaption><span>./device/tegatech/tegav2/tegav2_info</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>SNDDEV=&quot;snd-hda-intel model=lenovo-101e position_fix=1 enable=yes&quot;
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/10/1648/">No Content Found</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-10T13:05:54+09:00" pubdate data-updated="true">2012年03月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>AMD Catalyst 12.2 on Ubuntu 11.10</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get build-dep fglrx
-</span><span class='line'>wget http://www2.ati.com/drivers/linux/amd-driver-installer-12-2-x86.x86_64.run
-</span><span class='line'>chmod 755 amd-driver-installer-12-2-x86.x86_64.run
-</span><span class='line'>./amd-driver-installer-12-2-x86.x86_64.run --buildpkg Ubuntu/precise
-</span><span class='line'>sudo dpkg -i fglrx_8.950-0ubuntu1_amd64.deb fglrx-amdcccle_8.950-0ubuntu1_amd64.deb fglrx-dev_8.950-0ubuntu1_amd64.deb
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2012/03/08/android-x86-tegav2-physical-keyboard/">Inspiron Duo + Android-x86 4.0 で仮想+物理キーボード入力</a></h1>
     
     
@@ -839,6 +717,141 @@ Esc キー, スーパーキー(Windows)等は有効なので、
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/12/irrlicht-lensflare-effect/">Irrlicht + Lens Flare Effect</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-12T12:58:28+09:00" pubdate data-updated="true">2012年02月12日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/irrlicht_lensflare.png"><img src="/images/uploads/2012/02/irrlicht_lensflare.png" alt="irrlicht lens flare" /></a></p>
+
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728</a></p>
+
+<p>Irrlicht フォーラムにレンズフレアのサンプルがあったのでLinux で試してみた。</p>
+
+<p>Irrlicht 1.8.0
+gcc/g++ 4.6.1</p>
+
+<p>一点修正。</p>
+
+<figure class='code'><figcaption><span>LensFlareSceneNode.h</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'>  <span class="c1">// constructor</span>
+</span><span class='line'>  <span class="n">SFlareData</span><span class="p">(</span><span class="n">E_FLARE_TYPE</span> <span class="n">type</span><span class="p">,</span> <span class="kt">float</span> <span class="n">position</span><span class="p">,</span> <span class="kt">float</span> <span class="n">scale</span><span class="p">,</span> <span class="n">video</span><span class="o">::</span><span class="n">SColor</span> <span class="n">color</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/">Ubuntu 11.10 + Ogre 1.7.3 + Kinect</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-10T21:20:03+09:00" pubdate data-updated="true">2012年02月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="/images/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
+
+<p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
+
+<p>Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
+OpenNI/NITE 1.5.2
+avin2-sensor 5.1.0.25
+Ogre3d 1.7.3
+gcc/g++ 4.6.1
+codeblocks 10.05</p>
+
+<p>ソースコードとロードモジュール: <a href="https://github.com/ktkr3d/sample-app-sinbad">https://github.com/ktkr3d/sample-app-sinbad</a></p>
+
+<p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>コンパイル中: src/CharacterSample.cpp
+</span><span class='line'>リンク中 動的ライブラリ: ../bin/Sample_Character.so
+</span><span class='line'>/usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1&#39; can not be used when making a shared object; recompile with -fPIC
+</span><span class='line'>obj/Release/src/CharacterSample.o: could not read symbols: Bad value
+</span><span class='line'>collect2: ld はステータス 1 で終了しました
+</span><span class='line'>プロセスはステータス 1 で終了しました (0 分 10 秒)
+</span><span class='line'>0 個のエラー、 0 個の警告
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>-fPIC オプションをつけたらビルドできた。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>コンパイル中: src/CharacterSample.cpp
+</span><span class='line'>リンク中 動的ライブラリ: ../bin/Sample_Character.so
+</span><span class='line'>出力サイズは 232.84 KB
+</span><span class='line'>プロセスはステータス 0 で終了しました (0 分 5 秒)
+</span><span class='line'>0 個のエラー、 0 個の警告
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -879,7 +892,7 @@ Esc キー, スーパーキー(Windows)等は有効なので、
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
