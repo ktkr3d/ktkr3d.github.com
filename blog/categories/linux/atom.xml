@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-11-17T20:51:09+09:00</updated>
+  <updated>2013-11-23T22:07:04+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,194 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Partitions]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/11/23/partitions/"/>
+    <updated>2013-11-23T15:44:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/11/23/partitions</id>
+    <content type="html"><![CDATA[<p>構成変更前のパーティションレイアウトのメモ。</p>
+
+<p>Markdown だと表組みが簡単に書けていいね。</p>
+
+<h4>PC1 &ndash; sda</h4>
+
+<p>Hitachi HDS72105 465.76 GiB</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="right">Size</th>
+<th align="left">FS</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">sda1</td>
+<td align="right">0.35 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">efi</td>
+</tr>
+<tr>
+<td align="left">sda2</td>
+<td align="right">150.00 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">Windows 8</td>
+</tr>
+<tr>
+<td align="left">sda3</td>
+<td align="right">150.00 GiB</td>
+<td align="left">ext4</td>
+<td align="left">Ubuntu GNOME 12.10</td>
+</tr>
+<tr>
+<td align="left">sda6</td>
+<td align="right">150.00 GiB</td>
+<td align="left">ext4</td>
+<td align="left">Ubuntu GNOME 13.10</td>
+</tr>
+<tr>
+<td align="left">sda5</td>
+<td align="right">15.42 GiB</td>
+<td align="left">linux-swap</td>
+<td align="left">swap</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- more -->
+
+
+<h4>PC1 &ndash; sdb</h4>
+
+<p>WDC WD30EZRX-00D 2.73 TiB</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="right">Size</th>
+<th align="left">FS</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">&ndash;</td>
+<td align="right">0.40 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">sdb5</td>
+<td align="right">500.00 GiB</td>
+<td align="left">ext4</td>
+<td align="left">Ubuntu GNOME 13.04</td>
+</tr>
+<tr>
+<td align="left">&ndash;</td>
+<td align="right">499.61 GiB</td>
+<td align="left">&ndash;</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">sdb3</td>
+<td align="right">1.71 TiB</td>
+<td align="left">ext4</td>
+<td align="left">common</td>
+</tr>
+<tr>
+<td align="left">sdb4</td>
+<td align="right">44.52 GiB</td>
+<td align="left">linux-swap</td>
+<td align="left">swap</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>PC2 &ndash; sda</h4>
+
+<p>Hitachi HTS72323 298.09 GiB</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="right">Size</th>
+<th align="left">FS</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">sda1</td>
+<td align="right">0.35 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">efi</td>
+</tr>
+<tr>
+<td align="left">sda2</td>
+<td align="right">150.00 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">Windows 8</td>
+</tr>
+<tr>
+<td align="left">sda3</td>
+<td align="right">145.00 GiB</td>
+<td align="left">ext4</td>
+<td align="left">Ubuntu GNOME 13.10<br>Android-x86 4.3</td>
+</tr>
+<tr>
+<td align="left">sda4</td>
+<td align="right">2.75 GiB</td>
+<td align="left">linux-swap</td>
+<td align="left">swap</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>PC3 &ndash; hda</h4>
+
+<p>Hitachi HMS360606D5CF00 6.0 GB</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="right">Size</th>
+<th align="left">FS</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">hda1</td>
+<td align="right">0.13 GiB</td>
+<td align="left">ext</td>
+<td align="left">Lineo Linux</td>
+</tr>
+<tr>
+<td align="left">hda2</td>
+<td align="right">0.13 GiB</td>
+<td align="left">linux-swap</td>
+<td align="left">swap</td>
+</tr>
+<tr>
+<td align="left">hda3</td>
+<td align="right">5.29 GiB</td>
+<td align="left">ext</td>
+<td align="left">Debian</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[screenfetch]]></title>
@@ -145,63 +333,6 @@ font-size: 24pt;
 <h4>設定の反映</h4>
 
 <p>設定を反映するには、<code>Alt + F2</code> を押下、<code>r</code> を入力して<code>Enter</code>で、GNOME Shell を再起動します。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Docky + Cardapio]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
-    <updated>2013-07-14T11:11:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png"></a></p>
-
-<p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
-
-<ol>
-<li>電源ボタンが無いこと</li>
-<li>アプリケーションメニューがないこと</li>
-</ol>
-
-
-<p>Docky とCardapio の設定で上記を動くようにしてみました。</p>
-
-<!-- more -->
-
-
-<p></p>
-
-<h4>電源ボタンの設定</h4>
-
-<p>一番右の「画面のロック」アイコンを右クリックすることで、「画面のロック」、「ログアウト」、「サスペンド」、「再起動」、「シャットダウン」のようなサブメニューが表示されます。
-「画面のロック」のアイコン上でマウスのホイールボタンで上下にホイールすると、デフォルトの動作を指定できます。
-ボタン押下後に再起動かシャットダウンかを選択させる形式がよかったのですが、とりあえずこれで良しとしましょう。</p>
-
-<h4>Cardapio の設定</h4>
-
-<p>Cardapio を使ってDocky からアプリケーションメニューを表示することにします。</p>
-
-<pre><code>$ sudo add-apt-repository ppa:cardapio-team/unstable
-$ sudo apt-get update
-$ sudo apt-get install cardapio
-</code></pre>
-
-<p>saucy 向けのCardapio が存在しなかったので、ソフトウェアソースをquantal 向けに切り替えてインストールしました。
-cardapio を起動してみたところ、いくつかエラーが表示されたので、<code>/usr/lib/cardapio/Cardapio.py</code> を修正しました。</p>
-
-<ol>
-<li><p>以下を追加<br>
-<code>from xdg import BaseDirectory</code></p></li>
-<li><p>以下を置換<br>
-<code>DesktopEntry.xdg_config_home</code> &ndash;> <code>BaseDirectory.xdg_config_home</code></p></li>
-<li><p>以下を置換<br>
-<code>DesktopEntry.xdg_cache_home</code> &ndash;> <code>BaseDirectory.xdg_cache_home</code></p></li>
-</ol>
-
-
-<h4>Docky へCardapio を登録</h4>
-
-<p>cardapio-helper というDocky のヘルパーを使うと、Docky アイコンクリックで、Cardapio が起動されるはずなのですが、うまく動作しませんでした。
-仕方がないので、<code>/usr/share/applications/cardapio.desktop</code> をDocky にドラッグ&amp;ドロップして、メニューアイコンを登録しました。</p>
 ]]></content>
   </entry>
   

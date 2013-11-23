@@ -5,13 +5,18 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ubuntu 11.10 + Ogre 1.7.3 + Kinect - ktkr3d</title>
+  <title>Partitions - ktkr3d</title>
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="一年くらい前にポーティングしたOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。 Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
-OpenNI/NITE 1.5.2
-avin2- &hellip;">
+  <meta name="description" content="構成変更前のパーティションレイアウトのメモ。 Markdown だと表組みが簡単に書けていいね。 PC1 &ndash; sda Hitachi HDS72105 465.76 GiB Partition
+Size
+FS
+Use sda1
+0.35 GiB
+ntfs
+efi sda2
+150.00 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +25,7 @@ avin2- &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect">
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/2013/11/23/partitions">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
@@ -91,7 +96,7 @@ $(document).ready( function () {
   
   <header>
     
-      <h1 class="entry-title">Ubuntu 11.10 + Ogre 1.7.3 + Kinect</h1>
+      <h1 class="entry-title">Partitions</h1>
     
     
       <p class="meta">
@@ -107,61 +112,193 @@ $(document).ready( function () {
   
 
 
-<time datetime="2012-02-10T21:20:03+09:00" pubdate data-updated="true">2012年02月10日</time>
+<time datetime="2013-11-23T15:44:00+09:00" pubdate data-updated="true">2013年11月23日</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="/images/uploads/2012/02/ubuntu_ogre_kinect.png"><img src="/images/uploads/2012/02/ubuntu_ogre_kinect.png" alt="ubuntu ogre kinect sampleappsinbad openni nite " /></a></p>
+<div class="entry-content"><p>構成変更前のパーティションレイアウトのメモ。</p>
 
-<p><a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">一年くらい前にポーティング</a>したOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。</p>
+<p>Markdown だと表組みが簡単に書けていいね。</p>
 
-<p>Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
-OpenNI/NITE 1.5.2
-avin2-sensor 5.1.0.25
-Ogre3d 1.7.3
-gcc/g++ 4.6.1
-codeblocks 10.05</p>
+<h4>PC1 &ndash; sda</h4>
 
-<p>ソースコードとロードモジュール: <a href="https://github.com/ktkr3d/sample-app-sinbad">https://github.com/ktkr3d/sample-app-sinbad</a></p>
+<p>Hitachi HDS72105 465.76 GiB</p>
 
-<p>Sample_Character.so のビルド時に以下のエラーがでるようになったけれど、</p>
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="right">Size</th>
+<th align="left">FS</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">sda1</td>
+<td align="right">0.35 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">efi</td>
+</tr>
+<tr>
+<td align="left">sda2</td>
+<td align="right">150.00 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">Windows 8</td>
+</tr>
+<tr>
+<td align="left">sda3</td>
+<td align="right">150.00 GiB</td>
+<td align="left">ext4</td>
+<td align="left">Ubuntu GNOME 12.10</td>
+</tr>
+<tr>
+<td align="left">sda6</td>
+<td align="right">150.00 GiB</td>
+<td align="left">ext4</td>
+<td align="left">Ubuntu GNOME 13.10</td>
+</tr>
+<tr>
+<td align="left">sda5</td>
+<td align="right">15.42 GiB</td>
+<td align="left">linux-swap</td>
+<td align="left">swap</td>
+</tr>
+</tbody>
+</table>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>コンパイル中: src/CharacterSample.cpp
-</span><span class='line'>リンク中 動的ライブラリ: ../bin/Sample_Character.so
-</span><span class='line'>/usr/bin/ld: obj/Release/src/CharacterSample.o: relocation R_X86_64_32 against `.rodata.str1.1&#39; can not be used when making a shared object; recompile with -fPIC
-</span><span class='line'>obj/Release/src/CharacterSample.o: could not read symbols: Bad value
-</span><span class='line'>collect2: ld はステータス 1 で終了しました
-</span><span class='line'>プロセスはステータス 1 で終了しました (0 分 10 秒)
-</span><span class='line'>0 個のエラー、 0 個の警告
-</span></code></pre></td></tr></table></div></figure>
+
+<!-- more -->
 
 
-<p>-fPIC オプションをつけたらビルドできた。</p>
+<h4>PC1 &ndash; sdb</h4>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>コンパイル中: src/CharacterSample.cpp
-</span><span class='line'>リンク中 動的ライブラリ: ../bin/Sample_Character.so
-</span><span class='line'>出力サイズは 232.84 KB
-</span><span class='line'>プロセスはステータス 0 で終了しました (0 分 5 秒)
-</span><span class='line'>0 個のエラー、 0 個の警告
-</span></code></pre></td></tr></table></div></figure>
+<p>WDC WD30EZRX-00D 2.73 TiB</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="right">Size</th>
+<th align="left">FS</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">&ndash;</td>
+<td align="right">0.40 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">sdb5</td>
+<td align="right">500.00 GiB</td>
+<td align="left">ext4</td>
+<td align="left">Ubuntu GNOME 13.04</td>
+</tr>
+<tr>
+<td align="left">&ndash;</td>
+<td align="right">499.61 GiB</td>
+<td align="left">&ndash;</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">sdb3</td>
+<td align="right">1.71 TiB</td>
+<td align="left">ext4</td>
+<td align="left">common</td>
+</tr>
+<tr>
+<td align="left">sdb4</td>
+<td align="right">44.52 GiB</td>
+<td align="left">linux-swap</td>
+<td align="left">swap</td>
+</tr>
+</tbody>
+</table>
 
 
-<p></p>
+<h4>PC2 &ndash; sda</h4>
+
+<p>Hitachi HTS72323 298.09 GiB</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="right">Size</th>
+<th align="left">FS</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">sda1</td>
+<td align="right">0.35 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">efi</td>
+</tr>
+<tr>
+<td align="left">sda2</td>
+<td align="right">150.00 GiB</td>
+<td align="left">ntfs</td>
+<td align="left">Windows 8</td>
+</tr>
+<tr>
+<td align="left">sda3</td>
+<td align="right">145.00 GiB</td>
+<td align="left">ext4</td>
+<td align="left">Ubuntu GNOME 13.10<br>Android-x86 4.3</td>
+</tr>
+<tr>
+<td align="left">sda4</td>
+<td align="right">2.75 GiB</td>
+<td align="left">linux-swap</td>
+<td align="left">swap</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>PC3 &ndash; hda</h4>
+
+<p>Hitachi HMS360606D5CF00 6.0 GB</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="right">Size</th>
+<th align="left">FS</th>
+<th align="left">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">hda1</td>
+<td align="right">0.13 GiB</td>
+<td align="left">ext</td>
+<td align="left">Lineo Linux</td>
+</tr>
+<tr>
+<td align="left">hda2</td>
+<td align="right">0.13 GiB</td>
+<td align="left">linux-swap</td>
+<td align="left">swap</td>
+</tr>
+<tr>
+<td align="left">hda3</td>
+<td align="right">5.29 GiB</td>
+<td align="left">ext</td>
+<td align="left">Debian</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 
 
@@ -184,12 +321,12 @@ codeblocks 10.05</p>
   
 
 
-<time datetime="2012-02-10T21:20:03+09:00" pubdate data-updated="true">2012年02月10日</time>
+<time datetime="2013-11-23T15:44:00+09:00" pubdate data-updated="true">2013年11月23日</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/kinect/'>Kinect</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/ogre3d/'>Ogre3D</a>
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
   
 </span>
 
@@ -198,7 +335,7 @@ codeblocks 10.05</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2013/11/23/partitions/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2013/11/23/partitions/" >Tweet</a>
   
   
   
@@ -207,10 +344,8 @@ codeblocks 10.05</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/02/07/ubuntu-11-10-blender-2-61/" title="Previous Post: Ubuntu 11.10 + blender 2.61">&laquo; Ubuntu 11.10 + blender 2.61</a>
+        <a class="basic-alignment left" href="/blog/2013/11/16/wordpress-to-jekyll/" title="Previous Post: WordPress to Jekyll">&laquo; WordPress to Jekyll</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/02/12/irrlicht-lensflare-effect/" title="Next Post: Irrlicht  + Lens Flare Effect">Irrlicht  + Lens Flare Effect &raquo;</a>
       
     </p>
   </footer>
@@ -286,8 +421,8 @@ codeblocks 10.05</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/';
-        var disqus_url = 'http://ktkr3d.github.io/blog/2012/02/10/ubuntu-11-10-ogre-1-7-3-kinect/';
+        var disqus_identifier = 'http://ktkr3d.github.io/blog/2013/11/23/partitions/';
+        var disqus_url = 'http://ktkr3d.github.io/blog/2013/11/23/partitions/';
         var disqus_script = 'embed.js';
       
     (function () {

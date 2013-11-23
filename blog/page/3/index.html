@@ -9,8 +9,9 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="xnoise http://www.xnoise-media-player.com/
-xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.7.90 の環境で試してみました。GStreamer を利用した音楽、ビデオ、 &hellip;">
+  <meta name="description" content=" http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/
+Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたので試してみました。
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +88,45 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/14/ubuntu-gnome-13-04-daily-build/">Ubuntu GNOME 13.04 Daily Build</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-14T23:09:21+09:00" pubdate data-updated="true">2013年03月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2013/03/Ubuntu_GNOME_installer.png"><img src="/images/uploads/2013/03/Ubuntu_GNOME_installer.png" alt="Ubuntu GNOME installer" /></a></p>
+
+<p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a>
+Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたので試してみました。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1075,135 +1115,6 @@ GRUB4DOS でAndroid-x86 を起動できるようにC:\menu.lst を編集しま�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb/">Ubuntu 12.10 + Calipso CMS (node.js, Express, MongoDB)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-12T21:10:34+09:00" pubdate data-updated="true">2013年01月12日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2013/01/Calipso_CMS.png"><img src="/images/uploads/2013/01/Calipso_CMS-600x482.png" alt="calipso node.js express mongodb ubuntu" /></a></p>
-
-<p><a href="https://github.com/cliftonc/calipso">https://github.com/cliftonc/calipso</a></p>
-
-<p>Calipso はnode.js(サーバサイドJavaScript)、express(node.js 上のフレームワーク)、MongoDB で構築されたシンプルなCMS アプリです。node.js のお試し用にUbuntu 12.10 上でCalipso 0.3.17 の環境を構築してみました。</p>
-
-<ol>
-<li> パッケージのインストール
-Ubuntu オフィシャルリポジトリのnode.js はバージョンが古いのでPPA のリポジトリを追加します。</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:chris-lea/node.js
-</span><span class='line'><span class="nv">$ </span>sudo apt-get update
-</span><span class='line'><span class="nv">$ </span>sudo apt-get install nodejs npm mongodb
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> Calipso のインストールの前に
-このままの状態でCalipso のインストールを進めると、node コマンドが見つからない旨のメッセージを出力して、途中で終了してしまいます。Debian/Ubuntu には別にnode コマンドがあるため、node.js のコマンドはnodejs になっているようです。暫定的にシンボリックリンクを作成しておきます。作成したシンボリックリンク(/usr/bin/node)は後で消しておきます。</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo ln -s /usr/bin/nodejs /usr/bin/node
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> Calipso のインストールと起動</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo npm install -g node-gyp
-</span><span class='line'><span class="nv">$ </span>sudo npm install -g calipso
-</span><span class='line'><span class="nv">$ </span>sudo calipso site /var/www/MySite
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /var/www/MySite
-</span><span class='line'><span class="nv">$ </span>sudo calipso server
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li><p> ブラウザからアクセス
-<a href="http://localhost:3000">http://localhost:3000</a>
-表示されたウィザードに従って、データベースの作成、アカウントの作成をします。表示に関しては、一応、日本語設定が用意されています。</p></li>
-<li><p> nginx からリバースプロキシで接続</p></li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install nginx
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>/etc/nginx/sites-available/default</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>location / {
-</span><span class='line'>    # First attempt to serve request as file, then
-</span><span class='line'>    # as directory, then fall back to displaying a 404.
-</span><span class='line'>    #try_files $uri $uri/ /index.html;
-</span><span class='line'>    # Uncomment to enable naxsi on this location
-</span><span class='line'>    # include /etc/nginx/naxsi.rules
-</span><span class='line'>    proxy_pass http://localhost:3000/;
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo /etc/init.d/nginx reload
-</span><span class='line'><span class="nv">$ </span>sudo /etc/init.d/nginx restart
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://localhost">http://localhost</a> からアクセスできるようになります。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1221,6 +1132,10 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/23/partitions/">Partitions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
       </li>
     
@@ -1236,15 +1151,11 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
         <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/10/08/yad/">Yad</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

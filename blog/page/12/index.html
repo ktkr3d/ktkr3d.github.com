@@ -9,8 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://www.mozilla.com/en-US/firefox/5.0/whatsnew/
-http://www.webupd8.org/2011/05/firefox-5-beta-channel-ubuntu-ppa.html Firefox 5 のベータ2 &hellip;">
+  <meta name="description" content="GNOME Shell を3.0.2 にしたらdock が消えたので復活させてみた。 Ubuntu 11.04 の場合
+/usr/local/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/metadata. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,87 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/30/gnome-shell-extension-e38292e5bea9e6b4bbe38195e3819be381a6e381bfe3819f/">GNOME Shell Extension を復活させてみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-30T22:15:07+09:00" pubdate data-updated="true">2011年05月30日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>GNOME Shell を3.0.2 にしたらdock が消えたので復活させてみた。</p>
+
+<ul>
+<li><p>Ubuntu 11.04 の場合
+/usr/local/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/metadata.json</p></li>
+<li><p>Fedora 15, openSUSE 11.4 の場合
+/usr/share/gnome-shell/extensions/dock@gnome-shell-extensions.gnome.org/metadata.json</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>{
+</span><span class='line'>&quot;uuid&quot;: &quot;dock@gnome-shell-extensions.gnome.org&quot;,
+</span><span class='line'>&quot;name&quot;: &quot;Dock&quot;,
+</span><span class='line'>&quot;description&quot;: &quot;A dock for the GNOME Shell -- displays favorite and running applications&quot;,
+</span><span class='line'>&quot;original-author&quot;: &quot;tclaesson@gmail.com&quot;,
+</span><span class='line'>&quot;shell-version&quot;: [ &quot;3.0.1&quot; ],
+</span><span class='line'>&quot;localedir&quot;: &quot;/usr/local/share/locale&quot;,
+</span><span class='line'>&quot;url&quot;: &quot;http://git.gnome.org/gnome-shell-extensions&quot;
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>を以下のように修正した。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>&quot;shell-version&quot;: [ &quot;3.0&quot; ],
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>または、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>&quot;shell-version&quot;: [ &quot;3.0.1&quot;, &quot;3.0.2&quot; ],
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -724,58 +805,6 @@ ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じが�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/10/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f2/">GNOME Shell を拡張してみた2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-10T00:17:38+09:00" pubdate data-updated="true">2011年05月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/05/gnome-shell-extensions2.png"><img src="/images/uploads/2011/05/gnome-shell-extensions2.png" alt="gnome shell extensions" /></a></p>
-
-<p><a href="http://intgat.tigress.co.uk/rmy/extensions/index.html">http://intgat.tigress.co.uk/rmy/extensions/index.html</a></p>
-
-<p>GNOME Shell をさらに拡張してみた。</p>
-
-<ul>
-<li><p>Move the clock
-時計の位置を変更</p></li>
-<li><p>Favourites in panel
-お気に入りをパネルに表示</p></li>
-<li><p>Applications menu in panel
-アプリケーションメニューをパネルに表示</p></li>
-<li><p>Disable dynamic workspaces
-ダイナミックワークスペースを無効に</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Older</a>
@@ -793,6 +822,10 @@ ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じが�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/23/partitions/">Partitions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
       </li>
     
@@ -808,15 +841,11 @@ ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じが�
         <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/10/08/yad/">Yad</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>カテゴリ</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (96)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (28)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (97)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
