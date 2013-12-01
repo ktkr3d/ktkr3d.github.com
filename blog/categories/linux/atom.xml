@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-01T10:42:28+09:00</updated>
+  <updated>2013-12-01T10:43:30+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,148 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu GNOME + GNOME3 PPA]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/"/>
+    <updated>2013-12-01T10:25:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa</id>
+    <content type="html"><![CDATA[<p>Ubuntu GNOME にGNOME3 関連PPA を継ぎ足すのですが、各PPA に含まれるパッケージおよびそのバージョンに凸凹があったので、整理してみました。</p>
+
+<!-- more -->
+
+
+<h4>GNOME3 関連PPA</h4>
+
+<ul>
+<li>ppa:gnome3-team/gnome3-staging</li>
+<li>ppa:gnome3-team/gnome3-next</li>
+<li>ppa:ricotz/testing</li>
+</ul>
+
+
+<h4>Ubuntu GNOME 13.10 + GNOME3 PPA</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Staging</th>
+<th align="left">Next</th>
+<th align="left">Testing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">clutter</td>
+<td align="left">1.14.4</td>
+<td align="left">1.14.4</td>
+<td align="left">1.14.5</td>
+</tr>
+<tr>
+<td align="left">gnome-control-center</td>
+<td align="left">3.10.1</td>
+<td align="left">&ndash;</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">gnome-desktop3</td>
+<td align="left">3.10.1</td>
+<td align="left">&ndash;</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">gnome-shell</td>
+<td align="left">3.10.2.1</td>
+<td align="left">3.10.1</td>
+<td align="left">3.11.2</td>
+</tr>
+<tr>
+<td align="left">gnome-tweak-tool</td>
+<td align="left">3.10.1</td>
+<td align="left">&ndash;</td>
+<td align="left">3.9.0</td>
+</tr>
+<tr>
+<td align="left">gtk+3.0</td>
+<td align="left">3.10.5</td>
+<td align="left">3.10.4</td>
+<td align="left">3.11.3</td>
+</tr>
+<tr>
+<td align="left">mutter</td>
+<td align="left">3.10.1.1</td>
+<td align="left">3.10.1.1</td>
+<td align="left">3.11.2</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Ubuntu GNOME 14.04 + GNOME3 PPA</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Staging</th>
+<th align="left">Next</th>
+<th align="left">Testing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">clutter</td>
+<td align="left">1.16.0</td>
+<td align="left">&ndash;</td>
+<td align="left">1.14.5</td>
+</tr>
+<tr>
+<td align="left">gnome-control-center</td>
+<td align="left">&ndash;</td>
+<td align="left">&ndash;</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">gnome-desktop3</td>
+<td align="left">3.11.1</td>
+<td align="left">&ndash;</td>
+<td align="left">3.10.0</td>
+</tr>
+<tr>
+<td align="left">gnome-shell</td>
+<td align="left">3.10.2.1</td>
+<td align="left">&ndash;</td>
+<td align="left">3.11.2</td>
+</tr>
+<tr>
+<td align="left">gnome-tweak-tool</td>
+<td align="left">&ndash;</td>
+<td align="left">&ndash;</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">gtk+3.0</td>
+<td align="left">3.11.2</td>
+<td align="left">&ndash;</td>
+<td align="left">3.11.3</td>
+</tr>
+<tr>
+<td align="left">mutter</td>
+<td align="left">3.10.1.1</td>
+<td align="left">&ndash;</td>
+<td align="left">3.11.2</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>まとめ</h4>
+
+<p>現時点でtrusty の環境を新しいパッケージで整えるとしたら、Staging + Testing を基本として、saucy のStaging からgnome-control-center とgnome-tweak-tool を入れるのが良さそうです。
+混ぜると危険な気もしますけど。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Partitions]]></title>
@@ -292,47 +434,6 @@ minetest はIrrlicht エンジンを利用して実装されています。
   SSH 上で、ローカルの10445 をリモートの445 にポートフォワード</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GNOME Shell Lock Screen]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
-    <updated>2013-07-15T08:57:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png"></a></p>
-
-<p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
-
-<!-- more -->
-
-
-<h4>ロック画面のフォントの変更</h4>
-
-<p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
-
-<p>``` css /usr/share/gnome-shell/theme/gnome-shell.css
-.screen-shield-clock-time {</p>
-
-<pre><code>font-family: "DejaVu Sans";
-font-size: 64pt;
-text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
-</code></pre>
-
-<p>}</p>
-
-<p>.screen-shield-clock-date {</p>
-
-<pre><code>font-family: "DejaVu Sans";
-font-size: 24pt;
-</code></pre>
-
-<p>}
-```</p>
-
-<h4>設定の反映</h4>
-
-<p>設定を反映するには、<code>Alt + F2</code> を押下、<code>r</code> を入力して<code>Enter</code>で、GNOME Shell を再起動します。</p>
 ]]></content>
   </entry>
   
