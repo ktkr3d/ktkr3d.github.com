@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://www.openshot.org/ Openshot はオープンソースな動画編集ソフトウェアです。バージョン1.4.3 では、Blender と連携して、3D 効果やアニメーションが強化されたようです。テキストの3D 効果では日本語フォントもレンダリングできました。 &hellip;">
+  <meta name="description" content="https://wiki.mozilla.org/Mobile/Fennec/Android Android-x86 4.0.4 (i386-linux-android) 向けにFirefox の開発バージョン19.0a1 と最新リリース版16.0.1 をビルドしてみました。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,246 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/14/android-x86-4-0-4-firefox-fennec-19-0a1-16-0-1/">Android-x86 4.0.4 + Firefox (Fennec) 19.0a1 / 16.0.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-14T08:36:56+09:00" pubdate data-updated="true">2012年10月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/10/android-x86_firefox_19.0a1.png"><img src="/images/uploads/2012/10/android-x86_firefox_19.0a1-600x337.png" alt="android-x86 firefoex fennec 19.0a1 16.0.1" /></a></p>
+
+<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a></p>
+
+<p>Android-x86 4.0.4 (i386-linux-android) 向けにFirefox の開発バージョン19.0a1 と最新リリース版16.0.1 をビルドしてみました。ビルド環境はUbuntu 12.10 x86_64 です。手順は、<a href="/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">前回</a>とほとんど同じです。</p>
+
+<h3>ビルド用SDK の配置</h3>
+
+<ul>
+<li><p>/tools/android-sdk-linux</p></li>
+<li><p>/tools/android-ndk-r7c</p></li>
+<li><p>/tools/jdk1.6.0_35</p></li>
+</ul>
+
+
+<h3>ビルド用依存パッケージの取得</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install mercurial ccache
+</span><span class='line'><span class="nv">$ </span>sudo apt-get build-dep firefox
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>開発版(19.0a1)をビルドする場合</h3>
+
+<ol>
+<li> 開発版ソースコードの取得</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /tools/apps/firefox/
+</span><span class='line'><span class="nv">$ </span>hg clone http://hg.mozilla.org/mozilla-central/ src-central
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>src-central
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> mozconfig のカスタマイズ</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>/tools/apps/firefox/src-central/.mozconfig</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>. &quot;$topsrcdir/mobile/android/config/mozconfigs/common&quot;
+</span><span class='line'>
+</span><span class='line'># Global options
+</span><span class='line'>mk_add_options MOZ_MAKE_FLAGS=&quot;-j4&quot;
+</span><span class='line'>
+</span><span class='line'># Build Fennec
+</span><span class='line'>ac_add_options --enable-application=mobile/android
+</span><span class='line'>
+</span><span class='line'># Android
+</span><span class='line'>ac_add_options --target=i386-linux-android
+</span><span class='line'>ac_add_options --with-android-ndk=&quot;/tools/android-ndk-r7c&quot;
+</span><span class='line'>ac_add_options --with-android-sdk=&quot;/tools/android-sdk-linux/platforms/android-14&quot;
+</span><span class='line'>ac_add_options --with-android-version=14
+</span><span class='line'>ac_add_options --with-system-zlib
+</span><span class='line'>#ac_add_options --enable-update-channel=${MOZ_UPDATE_CHANNEL}
+</span><span class='line'>
+</span><span class='line'># IonMonkey disabled in bug 789373
+</span><span class='line'>ac_add_options --disable-ion
+</span><span class='line'>
+</span><span class='line'>export JAVA_HOME=/tools/jdk1.6.0_35
+</span><span class='line'>#export MOZILLA_OFFICIAL=1
+</span><span class='line'>#export MOZ_TELEMETRY_REPORTING=1
+</span><span class='line'>
+</span><span class='line'>ac_add_options --with-branding=mobile/android/branding/nightly
+</span><span class='line'>
+</span><span class='line'># Treat warnings as errors in directories with FAIL_ON_WARNINGS.
+</span><span class='line'>ac_add_options --enable-warnings-as-errors
+</span><span class='line'>
+</span><span class='line'># Use ccache
+</span><span class='line'>ac_add_options --with-ccache=/usr/bin/ccache
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>リリース版(16.0.1)をビルドする場合</h3>
+
+<ol>
+<li> リリース版ソースコードの取得</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /tools/apps/firefox/
+</span><span class='line'><span class="nv">$ </span>hg clone http://hg.mozilla.org/releases/mozilla-release src-release
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>src-release
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> mozconfig のカスタマイズ</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>/tools/apps/firefox/src-release/.mozconfig</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'># Global options
+</span><span class='line'>mk_add_options MOZ_MAKE_FLAGS=&quot;-j4&quot;
+</span><span class='line'>
+</span><span class='line'># Build Fennec
+</span><span class='line'>ac_add_options --enable-application=mobile/android
+</span><span class='line'>
+</span><span class='line'># Android
+</span><span class='line'>ac_add_options --target=i386-linux-android
+</span><span class='line'>ac_add_options --with-android-ndk=&quot;/tools/android-ndk-r7c&quot;
+</span><span class='line'>ac_add_options --with-android-sdk=&quot;/tools/android-sdk-linux/platforms/android-14&quot;
+</span><span class='line'>ac_add_options --with-android-version=14
+</span><span class='line'>ac_add_options --with-system-zlib
+</span><span class='line'>#ac_add_options --enable-updater
+</span><span class='line'>#ac_add_options --enable-update-channel=${MOZ_UPDATE_CHANNEL}
+</span><span class='line'>
+</span><span class='line'>export JAVA_HOME=/tools/jdk1.6.0_35
+</span><span class='line'>#export MOZILLA_OFFICIAL=1
+</span><span class='line'>#export MOZ_TELEMETRY_REPORTING=1
+</span><span class='line'>
+</span><span class='line'>#ac_add_options --enable-official-branding
+</span><span class='line'>ac_add_options --with-branding=mobile/android/branding/unofficial
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>firefox のビルド</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>make -f client.mk build_and_deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>インストール</h3>
+
+<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。</p>
+
+<figure class='code'><figcaption><span>出力先</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>./obj-x86_64-unknown-linux-gnu/dist/
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -689,76 +929,6 @@ nautilus でファイルの新規作成をするには、$HOME/Templates にテ�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/29/ubuntu-12-04-pov-ray-3-7-0-rc6-2/">Ubuntu 12.04 + POV-Ray 3.7.0 RC6</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-29T21:17:07+09:00" pubdate data-updated="true">2012年07月29日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/07/multiobj_alt_demo.png"><img src="/images/uploads/2012/07/multiobj_alt_demo.png" alt="ubuntu 12.04 pov-ray 3.7.0 rc6" /></a></p>
-
-<p><a href="http://www.povray.org/beta/source/  ">http://www.povray.org/beta/source/  </a>
-<a href="http://www.povray.org/beta/source/unix-src-INSTALL.txt">http://www.povray.org/beta/source/unix-src-INSTALL.txt</a>
-POV-Ray 3.7.0 RC6 を試してみた。環境はUbuntu 12.04 x86_64, Intel® Core™ i7 CPU 930 @ 2.80GHz × 8。</p>
-
-<p>64bit OS の場合は./configure の際に&#8221;&mdash;with-boost-thread=boost_thread-mt&#8221; オプションを付けるといいらしい。3.7 からマルチスレッドに対応したらしい。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install build-essential
-</span><span class='line'><span class="nv">$ </span>wget http://www.povray.org/redirect/www.povray.org/beta/source/povray-3.7.0.RC6.tar.gz
-</span><span class='line'><span class="nv">$ </span>tar -zxvf povray-3.7.0.RC6.tar.gz
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>povray-3.7.0.RC6
-</span><span class='line'><span class="nv">$ </span>./configure --with-boost-thread<span class="o">=</span>boost_thread-mt <span class="nv">COMPILED_BY</span><span class="o">=</span><span class="s2">&quot;yourname &lt;youremail@somewhere.com&gt;&quot;</span>
-</span><span class='line'><span class="nv">$ </span>make
-</span><span class='line'><span class="nv">$ </span>sudo make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>POV-Ray Object Collection のサンプルをダウンロードしてレンダリング。
-<a href="http://lib.povray.org/searchcollection/index.php  ">http://lib.povray.org/searchcollection/index.php  </a>
-<a href="http://manpages.ubuntu.com/manpages/precise/man1/povray.1.html">http://manpages.ubuntu.com/manpages/precise/man1/povray.1.html</a></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>povray +W800 +H600 +A0.1 multiobj_alt_demo.pov
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>右の立方体のレンダリング結果がサンプル画像とちょっと違うのは気のせいか？</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -776,6 +946,10 @@ POV-Ray 3.7.0 RC6 を試してみた。環境はUbuntu 12.04 x86_64, Intel® Cor
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
@@ -789,10 +963,6 @@ POV-Ray 3.7.0 RC6 を試してみた。環境はUbuntu 12.04 x86_64, Intel® Cor
     
       <li class="post">
         <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
   </ul>

@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://askubuntu.com/questions/14815/unity-menu-desktop-design-how-will-it-act Ubuntu 11.04 で採用されたデスクトップ環境Unity ではアプリケーションメニューが上部のパネルに統合されて表示される。 &hellip;">
+  <meta name="description" content="Inspiron duo に入れたIntel 版のMeeGo Tablet が動くようになった。 隠しアクセスポイントに接続するには、一旦端末で、 1
+# iwconfig wlan0 essid &lt;ESSID&gt; key &lt;KEY&gt; とするとWi-Fi &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,69 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/06/meego-tablet-e38292e4bdbfe381a3e381a6e381bfe3819f/">MeeGo Tablet を使ってみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-06T18:49:24+09:00" pubdate data-updated="true">2011年04月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/04/all_apps.png"><img src="/images/uploads/2011/04/all_apps.png" alt="meego tablet inspiron duo" /></a></p>
+
+<p>Inspiron duo に入れたIntel 版のMeeGo Tablet が動くようになった。</p>
+
+<p>隠しアクセスポイントに接続するには、一旦端末で、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># iwconfig wlan0 essid &lt;ESSID&gt; key &lt;KEY&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とするとWi-Fi の設定画面のアクセスポイント一覧に追加される。</p>
+
+<p>画面のキャプチャは</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>xwd -root &gt; ScreenShot.xwd
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>画面の切り替えは、Windows キー。パネル画面（横）、すべてのアプリケーション画面（縦）、実行中のアプリケーションの選択などができる。</p>
+
+<p><a href="/images/uploads/2011/04/panel1.png"><img src="/images/uploads/2011/04/panel1.png" alt="meego tablet inspiron duo" /></a></p>
+
+<p>パネルの配置を変えるには、タブの右上隅をドラッグ。パネルの設定を変えるには、タブをシングルクリック（パネルが回転する）</p>
+
+<p>標準で再生可能な形式はogg/ogv 。ffmpeg, ffmpeg2theora で変換すると簡単。
+<a href="/images/uploads/2011/04/panel3.png"><img src="/images/uploads/2011/04/panel3.png" alt="meego tablet inspiron duo" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -547,54 +611,6 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/09/fedora-15-alpha-e38292e8a9a6e38197e381a6e381bfe3819f/">Fedora 15 Alpha を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-09T23:37:53+09:00" pubdate data-updated="true">2011年03月09日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/03/fedra15a.png"><img src="/images/uploads/2011/03/fedra15a.png" alt="fedra" /></a></p>
-
-<p><a href="http://news.softpedia.com/news/Fedora-15-Alpha-Is-Available-for-Download-188519.shtml">http://news.softpedia.com/news/Fedora-15-Alpha-Is-Available-for-Download-188519.shtml</a>
-<a href="http://distrowatch.com/table.php?distribution=fedora">http://distrowatch.com/table.php?distribution=fedora</a></p>
-
-<p>Fedora 15 のアルファ版が公開されていたので試してみた。
-カーネル2.6.38、xorg-server 1.9.99.1、デスクトップ環境がGNOME 3 になっていた。</p>
-
-<p>March 08, 2011 &ndash; Alpha release
-April 14, 2011 &ndash; Beta release
-May 17, 2011 &ndash; Final release</p>
-
-<p>openSUSE 11.4 も公開されたので、後で試してみよう。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Older</a>
@@ -612,6 +628,10 @@ May 17, 2011 &ndash; Final release</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
@@ -625,10 +645,6 @@ May 17, 2011 &ndash; Final release</p>
     
       <li class="post">
         <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
   </ul>

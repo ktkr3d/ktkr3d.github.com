@@ -9,9 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="一年くらい前にポーティングしたOpenNI/NITE のデモSampleAppSinbad をUbuntu 11.10 x86_64 の環境で動かしてみた。 Ubuntu 11.10 x86_64 (Linux kernel 3.0.0-16)
-OpenNI/NITE 1.5.2
-avin2- &hellip;">
+  <meta name="description" content="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728 Irrlicht フォーラムにレンズフレアのサンプルがあったのでLinux で試してみた。 Irrlicht 1.8.0
+gcc/g++ 4.6.1 一点修正 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +87,58 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/12/irrlicht-lensflare-effect/">Irrlicht + Lens Flare Effect</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-12T12:58:28+09:00" pubdate data-updated="true">2012年02月12日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/irrlicht_lensflare.png"><img src="/images/uploads/2012/02/irrlicht_lensflare.png" alt="irrlicht lens flare" /></a></p>
+
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=44728</a></p>
+
+<p>Irrlicht フォーラムにレンズフレアのサンプルがあったのでLinux で試してみた。</p>
+
+<p>Irrlicht 1.8.0
+gcc/g++ 4.6.1</p>
+
+<p>一点修正。</p>
+
+<figure class='code'><figcaption><span>LensFlareSceneNode.h</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'>  <span class="c1">// constructor</span>
+</span><span class='line'>  <span class="n">SFlareData</span><span class="p">(</span><span class="n">E_FLARE_TYPE</span> <span class="n">type</span><span class="p">,</span> <span class="kt">float</span> <span class="n">position</span><span class="p">,</span> <span class="kt">float</span> <span class="n">scale</span><span class="p">,</span> <span class="n">video</span><span class="o">::</span><span class="n">SColor</span> <span class="n">color</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -665,46 +716,6 @@ ASUS Laptop 用のビルドが安定していた。AMD Brazos 用のビルドや
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/06/diablo3-beta/">Diablo 3 ベータで遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-06T23:09:46+09:00" pubdate data-updated="true">2011年12月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/12/diablo3_install.png"><img src="/images/uploads/2011/12/diablo3_install.png" alt="diablo 3 beta install" /></a></p>
-
-<p>Diablo 3 のベータテスタの抽選に当選したので、早速インストールしてみた。</p>
-
-<p><a href="/images/uploads/2011/12/d3_demon_hunter.png"><img src="/images/uploads/2011/12/d3_demon_hunter.png" alt="diablo 3 beta demon hunter" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/10/">&larr; Older</a>
@@ -722,6 +733,10 @@ ASUS Laptop 用のビルドが安定していた。AMD Brazos 用のビルドや
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
@@ -735,10 +750,6 @@ ASUS Laptop 用のビルドが安定していた。AMD Brazos 用のビルドや
     
       <li class="post">
         <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
   </ul>

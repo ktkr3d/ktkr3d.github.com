@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content=" GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。 ">
+  <meta name="description" content=" OctoPress のフロントエンドをZenity で作ってみました。
+Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,50 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/15/zenity-octopress-helper/">Zenity OctoPress Helper</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-15T13:26:00+09:00" pubdate data-updated="true">2013年07月15日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/zenity_octopress_menu.png"><img src="/images/zenity_octopress_menu.png"></a></p>
+
+<p>OctoPress のフロントエンドをZenity で作ってみました。
+Web ベースのUI を作っている方もいるようですが、とりあえずこれでもお手軽になりました。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/15/zenity-octopress-helper/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -748,100 +793,6 @@ P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTor
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/17/create-a-shortcut-key-in-xnoise/">Create a Shortcut Key in Xnoise</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-17T12:48:45+09:00" pubdate data-updated="true">2013年03月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2013/03/xnoise_shortcut_key.png"><img src="/images/uploads/2013/03/xnoise_shortcut_key.png" alt="xnoise shortcut key" /></a></p>
-
-<p>先日のアップデートでxnoise のメディアブラウザ表示/非表示切り替えボタンが無くなりました。ボタンがメディアブラウザの上に被っていたので邪魔ではあったのですが、無いと不便です。そこで、簡単にメディアブラウザの表示/非表示を切り替えるためのショートカットキー(F9)を追加してみました。xnoise はVala 言語で実装されているようですので、valac パッケージをインストールして、ビルドしています。</p>
-
-<ol>
-<li> valac のインストールとソースコードの取得</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get build-dep xnoise
-</span><span class='line'><span class="nv">$ </span>sudo apt-get install valac
-</span><span class='line'><span class="nv">$ </span>git clone https://bitbucket.org/shuerhaaken/xnoise.git
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> ソースコードの修正</li>
-</ol>
-
-
-<figure class='code'><figcaption><span>./xnoise/libxnoise/MainWindow/xnoise-main-window.vala</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>        case Gdk.Key.F9: {
-</span><span class='line'>            toggle_media_browser_visibility();
-</span><span class='line'>            return true;
-</span><span class='line'>        }
-</span><span class='line'>        case Gdk.Key.F11: {
-</span><span class='line'>            this.toggle_mainwindow_fullscreen();
-</span><span class='line'>            return true;
-</span><span class='line'>        }
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> ビルドとインストール</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>xnoise
-</span><span class='line'><span class="nv">$ </span>./autogen.sh
-</span><span class='line'><span class="nv">$ </span>make
-</span><span class='line'><span class="nv">$ </span>sudo make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -859,6 +810,10 @@ P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTor
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
@@ -872,10 +827,6 @@ P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTor
     
       <li class="post">
         <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
   </ul>

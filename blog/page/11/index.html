@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Proton SDK にIrrlicht とBullet とboost が入っていたので、irrmmd も混ぜてMMD のPMD モデルを表示してみた。boost がちょっと古そうだったので、Linux マシンに入っている物で差し替えた。VMD も組み込んでみた。Android NDK といえど &hellip;">
+  <meta name="description" content="Proton SDK 上のIrrlicht ではGUIEnvironment がうまく取得できなかったので、Proton SDK を外した。素のIrrlicht にしたら、画像や文字の表示に問題なかった。ついでに、FreeType を取り込んでTrueType のフォントで日本語を表示してみた &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,53 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/10/android-ndk/">Android NDK で日本語表示してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-10T21:55:28+09:00" pubdate data-updated="true">2011年08月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_freetype.png"><img src="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_freetype.png" alt="android ndk irrlicht pmd vmd freetype" /></a></p>
+
+<p>Proton SDK 上のIrrlicht ではGUIEnvironment がうまく取得できなかったので、Proton SDK を外した。素のIrrlicht にしたら、画像や文字の表示に問題なかった。ついでに、FreeType を取り込んでTrueType のフォントで日本語を表示してみた。
+Proton SDK を外したら、なぜかIrrlicht 上の幅と高さが半分くらいになってしまったので、直さないと。GLES2 にも移行したいところ。</p>
+
+<p><a href="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_fullscreen.png"><img src="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_fullscreen.png" alt="android ndk irrlicht pmd vmd fullscreen" /></a></p>
+
+<p>AndroidManifest.xml を修正したら、フルスクリーンになって最大解像度が有効になった。</p>
+
+<p><a href="/images/uploads/2011/08/android_ndk_pmd_homerun.png"><img src="/images/uploads/2011/08/android_ndk_pmd_homerun.png" alt="android ndk pmd vmd irrlicht freetype" /></a></p>
+
+<p>いろいろなボタンをつけてみた。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -538,46 +585,6 @@ Puzzle Moppet のフリー版で遊んでみた。
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/03/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f5/">GNOME Shell を拡張してみた5</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-03T06:10:59+09:00" pubdate data-updated="true">2011年06月03日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/06/system_monitor.png"><img src="/images/uploads/2011/06/system_monitor.png" alt="gnome shell extension system monitor" /></a>
-<a href="http://www.webupd8.org/2011/05/system-monitor-extension-puts-ram-swap.html">http://www.webupd8.org/2011/05/system-monitor-extension-puts-ram-swap.html</a>
-GNOME Shell のシステムモニタ拡張を追加してみた。
-通信速度を表示できて便利。
-パネル上にリアルタイムに値を表示できるものの幅をとってしまうので非表示の設定にしてみた。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -595,6 +602,10 @@ GNOME Shell のシステムモニタ拡張を追加してみた。
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
@@ -608,10 +619,6 @@ GNOME Shell のシステムモニタ拡張を追加してみた。
     
       <li class="post">
         <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
   </ul>

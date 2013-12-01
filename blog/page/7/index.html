@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Inspiron duo にWindows 8 Release Preview をインストールしてみた。Inspiron duo のCPU はDual Core ATOM N550 で64bit 対応しているので、Windows 8 の64bit 版がインストールできる。 Inspiron &hellip;">
+  <meta name="description" content="Ubuntu 12.04 とWindows 8 とAndroid-x86 4.0 のマルチブート環境を構築して、ブートローダをBurg にしてみた。一年前と同じことの繰り返しだけれど。 手順 Windows 8 RP をインストール Ubuntu 12.04 を/dev/sda3 にインストール &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,182 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/06/burg-ubuntu-12-04-windows-8-android-x86-4-0/">Burg + Ubuntu 12.04 + Windows 8 + Android-x86 4.0</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-06T21:28:47+09:00" pubdate data-updated="true">2012年06月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png"><img src="/images/uploads/2012/06/burg_windows_8_ubuntu_12.04_android-x86_4.0.png" alt="burg windows 8 ubuntu 12.04 android-x86 4.0" /></a></p>
+
+<p>Ubuntu 12.04 とWindows 8 とAndroid-x86 4.0 のマルチブート環境を構築して、ブートローダをBurg にしてみた。<a href="/2011/05/07/burg-%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/">一年前</a>と同じことの繰り返しだけれど。</p>
+
+<h3>手順</h3>
+
+<ol>
+<li><p> Windows 8 RP をインストール</p></li>
+<li><p> Ubuntu 12.04 を/dev/sda3 にインストール
+ブートローダ(GRUB)を/dev/sda にインストール</p></li>
+<li><p> Android-x86 4.0 のISO の中にある以下の4つのファイルを/dev/sda3 (/PATHTO/Android-x86/tegav2/)にコピー</p>
+
+<ul>
+<li><p>initrd.img</p></li>
+<li><p>kernel</p></li>
+<li><p>ramdisk.img</p></li>
+<li><p>system.sfs</p></li>
+</ul>
+</li>
+</ol>
+
+
+<p>設定保存用のフォルダも作成</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>mkdir /PATHTO/Android-x86/tegav2/data
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> Burg のインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:n-muench/burg
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install burg burg-themes
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> Burg のテーマfortune とAndroid 用アイコンをgnome-look.org からダウンロードしてテーマ変更</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>/etc/default/burg</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>GRUB_GFXMODE=1366x768
+</span><span class='line'>GRUB_THEME=fortune
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>/boot/burg/themes/fortune/icons/hover</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>  -slackware { image = &quot;$$/grey_slackware.png:$$/large_slackware.png&quot; }
+</span><span class='line'>  -android { image = &quot;$$/grey_android.png:$$/large_android.png&quot; }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> Android-x86 用のブートエントリを追加</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>/etc/burg.d/40_custom</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>menuentry &quot;Android-x86 4.0&quot; --class android --class os {
+</span><span class='line'>    insmod ext2
+</span><span class='line'>    set root=&#39;(hd0,3)&#39;
+</span><span class='line'>    search --no-floppy --fs-uuid --set MY-UU-ID
+</span><span class='line'>    echo &#39;Loading Android-x86 4.0 ...&#39;
+</span><span class='line'>    linux /PATHTO/Android-x86/tegav2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/PATHTO/Android-x86/tegav2 DATA=
+</span><span class='line'>    initrd /PATHTO/Android-x86/tegav2/initrd.img
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> Burg の設定を更新</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-install /dev/sda
+</span><span class='line'><span class="nv">$ </span>sudo update-burg
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> 設定が有効になっているかを確認</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-emu -D
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>パーティションレイアウト</h3>
+
+<p>デバイス
+タイプ
+サイズ
+用途</p>
+
+<p>/dev/sda1
+ntfs
+0.35 GiB
+EFI</p>
+
+<p>/dev/sda2
+ntfs
+150.00 GiB
+Windows 8</p>
+
+<p>/dev/sda3
+ext4
+145.00 GiB
+Ubuntu 12.04,<br/>
+Andorid-x86 4.0</p>
+
+<p>/dev/sda4
+swap
+2.75 GiB
+Linux swap</p>
+
+<p>少し改善した手順は<a href="http://ktkr3d.site11.com/android-x86/">こちら</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -675,58 +851,6 @@ C: throttle</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/02/ubuntu-gnome-shell-remix-12-04/">Ubuntu GNOME Shell Remix 12.04</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-02T02:54:29+09:00" pubdate data-updated="true">2012年05月02日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/05/ubnutu_gnome_shell_remix_12.04.png"><img src="/images/uploads/2012/05/ubnutu_gnome_shell_remix_12.04.png" alt="ubnutu gnome shell remix 12.04" /></a></p>
-
-<p><a href="http://ubuntu-gs-remix.sourceforge.net/p/download/">http://ubuntu-gs-remix.sourceforge.net/p/download/</a></p>
-
-<p>Ubuntu GNOME Shell Remix 12.04 をクリーンインストールしてみた。
-Unity デスクトップ環境や不要な設定(オーバーレイスクロールバーとか)が省略できてすっきり。
-いつものようにトップパネルを隠して、Avant Window Navigator とConky を設定してみた。</p>
-
-<p>オリジナルのUbuntu と比べると、システム設定画面に次の二つのアイコンが無いみたい。</p>
-
-<ul>
-<li><p>ユーザー向け &ndash; プライバシー</p></li>
-<li><p>システム &ndash; 管理サービス</p></li>
-</ul>
-
-
-<p>よく見ると、各カテゴリのアイキャッチアイコンが利用不可状態になっている。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -744,6 +868,10 @@ Unity デスクトップ環境や不要な設定(オーバーレイスクロー�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
@@ -757,10 +885,6 @@ Unity デスクトップ環境や不要な設定(オーバーレイスクロー�
     
       <li class="post">
         <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
   </ul>

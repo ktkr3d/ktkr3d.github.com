@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://github.com/cliftonc/calipso Calipso はnode.js(サーバサイドJavaScript)、express(node.js 上のフレームワーク)、MongoDB で構築されたシンプルなCMS アプリです。node.js のお試し用にUbuntu &hellip;">
+  <meta name="description" content="Windows 8 のブートマネージャからAndorid-x86 を起動する環境を、できるだけWindows 環境でできる手段で構築してみました。Andorid-x86 を起動する際にはGRUB がチェインロードされるような表示になります。Windows 8 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,133 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86/">Windows 8 Boot Manager + GRUB4DOS + Android-x86</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-19T22:38:11+09:00" pubdate data-updated="true">2013年01月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Windows 8 のブートマネージャからAndorid-x86 を起動する環境を、できるだけWindows 環境でできる手段で構築してみました。Andorid-x86 を起動する際にはGRUB がチェインロードされるような表示になります。Windows 8 のブートマネージャはタッチスクリーンが有効なので、キーボードを使わないで起動するOS を選択できますね。(ご質問いただいたので考えてみました)</p>
+
+<ol>
+<li><p> Windows 8 のインストール
+Windows 8 をインストールします。私の環境では、以下のようなパーティション構成になりました。
+第1パーティション(/dev/sda1) ntfs
+第2パーティション(/dev/sda2) ntfs Windows 8</p></li>
+<li><p> Andorid-x86 のインストール
+Android-x86 をWindows 8 のインストールされているNTFS パーティションにインストールします。もちろん、別のパーティションにインストールしても構いません。
+インストール先: /dev/sda2
+フォーマット: しない
+GRUB: インストールしない</p></li>
+<li><p> GRUB4DOS のダウンロード
+<a href="http://sourceforge.net/projects/grub4dos/files/GRUB4DOS/">http://sourceforge.net/projects/grub4dos/files/GRUB4DOS/</a> からgrub4dos-0.4.4.zip をダウンロードして、ZIP内の以下の4つのファイルをC:\ に展開します。</p>
+
+<ul>
+<li><p>default</p></li>
+<li><p>grldr</p></li>
+<li><p>grldr.mbr</p></li>
+<li><p>menu.lst</p></li>
+<li><p>GRUB4DOS の設定
+GRUB4DOS でAndroid-x86 を起動できるようにC:\menu.lst を編集します。</p></li>
+</ul>
+</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>C:¥menu.lst</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>timeout 3
+</span><span class='line'>default /default
+</span><span class='line'>
+</span><span class='line'>title Android-x86 4.2.1 on /dev/sda2
+</span><span class='line'>root (hd0,1)
+</span><span class='line'>kernel /android-4.2-20121205/kernel root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-4.2-20121205 DATA=
+</span><span class='line'>initrd /android-4.2-20121205/initrd.img
+</span><span class='line'>savedefault
+</span><span class='line'>
+</span><span class='line'>title Android-x86 4.0.4 on /dev/sda2
+</span><span class='line'>root (hd0,1)
+</span><span class='line'>kernel /android-4.0-RC2/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/android-4.0-RC2 DATA=
+</span><span class='line'>initrd /android-4.0-RC2/initrd.img
+</span><span class='line'>savedefault
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※ 1番目のディスクの2番目のパーティション番号は(hd0,1) のように番号を-1した値になるので要注意です。
+※ 複数のバージョンを切り替えたい場合は複数件登録します。ただし、この起動の切り替えはタッチスクリーンが使えません。
+※ タイムアウト時間は好みで秒数を指定します。0にするとGRUB4DOSの画面が表示されなくなります。</p>
+
+<ol>
+<li> Windows 8 ブートマネージャにGRUB4DOS を登録
+コマンドプロンプトアイコンを右クリックして、「管理者として実行」します。</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&gt; bcdedit /create /d <span class="s2">&quot;Android-x86&quot;</span> /application BOOTSECTOR
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上記コマンドで表示された値{☆}を以下のコマンドで使います。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&gt; bcdedit /set <span class="o">{</span>☆<span class="o">}</span> device <span class="nv">partition</span><span class="o">=</span>C:
+</span><span class='line'>&gt; bcdedit /set <span class="o">{</span>☆<span class="o">}</span> path <span class="se">\g</span>rldr.mbr
+</span><span class='line'>&gt; bcdedit /displayorder <span class="o">{</span>☆<span class="o">}</span> /addlast
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ちなみに一旦別のブートローダにしてしまった後にWindows 8 のブートマネージャに戻すには、コマンドプロンプトアイコンを右クリックして、「管理者として実行」して、以下のコマンドを実行します。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&gt; bcdboot C:<span class="se">\W</span>indows
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1017,246 +1144,6 @@ OE_DATA</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/14/android-x86-4-0-4-firefox-fennec-19-0a1-16-0-1/">Android-x86 4.0.4 + Firefox (Fennec) 19.0a1 / 16.0.1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-14T08:36:56+09:00" pubdate data-updated="true">2012年10月14日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/10/android-x86_firefox_19.0a1.png"><img src="/images/uploads/2012/10/android-x86_firefox_19.0a1-600x337.png" alt="android-x86 firefoex fennec 19.0a1 16.0.1" /></a></p>
-
-<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a></p>
-
-<p>Android-x86 4.0.4 (i386-linux-android) 向けにFirefox の開発バージョン19.0a1 と最新リリース版16.0.1 をビルドしてみました。ビルド環境はUbuntu 12.10 x86_64 です。手順は、<a href="/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">前回</a>とほとんど同じです。</p>
-
-<h3>ビルド用SDK の配置</h3>
-
-<ul>
-<li><p>/tools/android-sdk-linux</p></li>
-<li><p>/tools/android-ndk-r7c</p></li>
-<li><p>/tools/jdk1.6.0_35</p></li>
-</ul>
-
-
-<h3>ビルド用依存パッケージの取得</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install mercurial ccache
-</span><span class='line'><span class="nv">$ </span>sudo apt-get build-dep firefox
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>開発版(19.0a1)をビルドする場合</h3>
-
-<ol>
-<li> 開発版ソースコードの取得</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /tools/apps/firefox/
-</span><span class='line'><span class="nv">$ </span>hg clone http://hg.mozilla.org/mozilla-central/ src-central
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>src-central
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> mozconfig のカスタマイズ</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>cp ./mobile/android/config/mozconfigs/android-x86/nightly .mozconfig
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>/tools/apps/firefox/src-central/.mozconfig</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>. &quot;$topsrcdir/mobile/android/config/mozconfigs/common&quot;
-</span><span class='line'>
-</span><span class='line'># Global options
-</span><span class='line'>mk_add_options MOZ_MAKE_FLAGS=&quot;-j4&quot;
-</span><span class='line'>
-</span><span class='line'># Build Fennec
-</span><span class='line'>ac_add_options --enable-application=mobile/android
-</span><span class='line'>
-</span><span class='line'># Android
-</span><span class='line'>ac_add_options --target=i386-linux-android
-</span><span class='line'>ac_add_options --with-android-ndk=&quot;/tools/android-ndk-r7c&quot;
-</span><span class='line'>ac_add_options --with-android-sdk=&quot;/tools/android-sdk-linux/platforms/android-14&quot;
-</span><span class='line'>ac_add_options --with-android-version=14
-</span><span class='line'>ac_add_options --with-system-zlib
-</span><span class='line'>#ac_add_options --enable-update-channel=${MOZ_UPDATE_CHANNEL}
-</span><span class='line'>
-</span><span class='line'># IonMonkey disabled in bug 789373
-</span><span class='line'>ac_add_options --disable-ion
-</span><span class='line'>
-</span><span class='line'>export JAVA_HOME=/tools/jdk1.6.0_35
-</span><span class='line'>#export MOZILLA_OFFICIAL=1
-</span><span class='line'>#export MOZ_TELEMETRY_REPORTING=1
-</span><span class='line'>
-</span><span class='line'>ac_add_options --with-branding=mobile/android/branding/nightly
-</span><span class='line'>
-</span><span class='line'># Treat warnings as errors in directories with FAIL_ON_WARNINGS.
-</span><span class='line'>ac_add_options --enable-warnings-as-errors
-</span><span class='line'>
-</span><span class='line'># Use ccache
-</span><span class='line'>ac_add_options --with-ccache=/usr/bin/ccache
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>リリース版(16.0.1)をビルドする場合</h3>
-
-<ol>
-<li> リリース版ソースコードの取得</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /tools/apps/firefox/
-</span><span class='line'><span class="nv">$ </span>hg clone http://hg.mozilla.org/releases/mozilla-release src-release
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>src-release
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> mozconfig のカスタマイズ</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>cp ./mobile/android/config/mozconfigs/android-x86/release .mozconfig
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>/tools/apps/firefox/src-release/.mozconfig</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'># Global options
-</span><span class='line'>mk_add_options MOZ_MAKE_FLAGS=&quot;-j4&quot;
-</span><span class='line'>
-</span><span class='line'># Build Fennec
-</span><span class='line'>ac_add_options --enable-application=mobile/android
-</span><span class='line'>
-</span><span class='line'># Android
-</span><span class='line'>ac_add_options --target=i386-linux-android
-</span><span class='line'>ac_add_options --with-android-ndk=&quot;/tools/android-ndk-r7c&quot;
-</span><span class='line'>ac_add_options --with-android-sdk=&quot;/tools/android-sdk-linux/platforms/android-14&quot;
-</span><span class='line'>ac_add_options --with-android-version=14
-</span><span class='line'>ac_add_options --with-system-zlib
-</span><span class='line'>#ac_add_options --enable-updater
-</span><span class='line'>#ac_add_options --enable-update-channel=${MOZ_UPDATE_CHANNEL}
-</span><span class='line'>
-</span><span class='line'>export JAVA_HOME=/tools/jdk1.6.0_35
-</span><span class='line'>#export MOZILLA_OFFICIAL=1
-</span><span class='line'>#export MOZ_TELEMETRY_REPORTING=1
-</span><span class='line'>
-</span><span class='line'>#ac_add_options --enable-official-branding
-</span><span class='line'>ac_add_options --with-branding=mobile/android/branding/unofficial
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>firefox のビルド</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>make -f client.mk build_and_deploy
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>インストール</h3>
-
-<p>以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。</p>
-
-<figure class='code'><figcaption><span>出力先</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>./obj-x86_64-unknown-linux-gnu/dist/
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1274,6 +1161,10 @@ OE_DATA</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
@@ -1287,10 +1178,6 @@ OE_DATA</p>
     
       <li class="post">
         <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
   </ul>

@@ -9,9 +9,11 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="IrrCg のひと(黄色のバギーに乗っていると思われる)が作ったカーレースゲームBuggyRace で遊んでみた
-http://buggy-race.pl/
-マップやオブジェクトはb3d 形式でシェーダはirrCg、サウンドはogg 形式でOpenAL で再生している &hellip;">
+  <meta name="description" content="SPARK のエフェクトを試してみた
+綺麗なエフェクトがいろいろあって楽しい!!
+http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754
+http://spark.developpez.com/
+http://www. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +90,56 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/29/spark/">SPARK を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-29T22:25:50+09:00" pubdate data-updated="true">2010年08月29日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/SPARKFire.png"><img src="/images/uploads/2011/03/SPARKFire.png" alt="irrlicht SPARK" /></a>
+SPARK のエフェクトを試してみた
+綺麗なエフェクトがいろいろあって楽しい!!
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=35754</a>
+<a href="http://spark.developpez.com/">http://spark.developpez.com/</a>
+<a href="http://www.youtube.com/watch?v=7lJu2rf3Ras">http://www.youtube.com/watch?v=7lJu2rf3Ras</a>
+Linux + Code::Blocks でデモをビルドする手順</p>
+
+<ol>
+<li><p> Code::Blocks 用のワークスペース「SPARK.workspace」を開く</p></li>
+<li><p> 「SPARK Engine CORE LIB」プロジェクトを開いてWIN32 のマクロを外して「libSPARK.a」をビルド</p></li>
+<li><p> 「SPARK Engine IRR LIB」プロジェクトを開いてWIN32 のマクロを外して「libSPARK_IRR.a」をビルド</p></li>
+<li><p> デモのプロジェクトを作成して、ソース内の「\」を「/」に置換してビルド(libSPARK.a, libSPARK_IRR.a をリンク)</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -461,46 +513,6 @@ Software Center にあったSunflow というソフトでサンプルのエイ�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/25/post_9/">ディスプレイ上を歩いてみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-25T00:04:43+09:00" pubdate data-updated="true">2010年07月25日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/07/artk_test.png"><img src="/images/uploads/2010/07/artk_test.png" alt="artoolkit irrlicht" /></a>
-Irrlicht + ARToolKit を使ってディスプレイの中から出て歩いてみた
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=30000">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=30000</a>
-このスレより元スレの方がシンプルな気もするけれど・・・
-多謝: irrAR のひと、ARToolKit のひと</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/19/">&larr; Older</a>
@@ -518,6 +530,10 @@ Irrlicht + ARToolKit を使ってディスプレイの中から出て歩いて�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
@@ -531,10 +547,6 @@ Irrlicht + ARToolKit を使ってディスプレイの中から出て歩いて�
     
       <li class="post">
         <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a>
       </li>
     
   </ul>
