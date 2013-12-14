@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-15T07:17:11+09:00</updated>
+  <updated>2013-12-15T08:08:37+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -24,6 +24,8 @@
 
 <p><a href="https://gist.github.com/voltagex/7955961">https://gist.github.com/voltagex/7955961</a></p>
 
+<p><a href="http://www.redgamingtech.com/how-to-install-steamos-on-virtual-box-virtual-machine/">http://www.redgamingtech.com/how-to-install-steamos-on-virtual-box-virtual-machine/</a></p>
+
 <p>SteamOS のベータ版がリリースされたので、インストールしてみました。</p>
 
 <!-- more -->
@@ -36,6 +38,17 @@
 たまたま外出中で手元にPC がないので、スマートフォンから自宅のLinux マシンにVNC over SSH で繋いで作業してみました。ソフトキーボードは面倒ですね。</p>
 
 <p>PrintScreen キーが使えなかったので、xwd を使いましたが、画像が少し変ですね。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># uname -a</span>
+</span><span class='line'>Linux steamos 3.10-3-amd64 <span class="c">#1 SMP Debian 3.10.11-1st1 (2013-11-15) x86_64 GNU/Linux</span>
+</span><span class='line'><span class="c"># gnome-shell --version</span>
+</span><span class='line'>GNOME Shell 3.4.2
+</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
@@ -1288,7 +1301,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x61;&#x75;&#116;&#111;&#x68;&#105;&#x64;&#101;&#x74;&#111;&#112;&#x62;&#97;&#114;&#x32;&#64;&#x77;&#x65;&#x72;&#x65;&#x77;&#x6f;&#108;&#118;&#x65;&#115;&#x2e;&#x75;&#115;">&#97;&#117;&#x74;&#x6f;&#104;&#x69;&#x64;&#x65;&#x74;&#x6f;&#112;&#x62;&#x61;&#x72;&#50;&#x40;&#119;&#101;&#114;&#x65;&#x77;&#x6f;&#x6c;&#118;&#x65;&#x73;&#46;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#97;&#117;&#116;&#111;&#104;&#105;&#x64;&#x65;&#x74;&#x6f;&#x70;&#98;&#97;&#114;&#x32;&#64;&#x77;&#x65;&#x72;&#x65;&#x77;&#111;&#108;&#x76;&#101;&#115;&#x2e;&#x75;&#115;">&#97;&#x75;&#116;&#111;&#x68;&#105;&#100;&#x65;&#x74;&#111;&#x70;&#x62;&#x61;&#x72;&#x32;&#x40;&#119;&#101;&#x72;&#x65;&#x77;&#111;&#x6c;&#x76;&#101;&#115;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-15T07:17:11+09:00</updated>
+  <updated>2013-12-15T08:08:37+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -24,6 +24,8 @@
 
 <p><a href="https://gist.github.com/voltagex/7955961">https://gist.github.com/voltagex/7955961</a></p>
 
+<p><a href="http://www.redgamingtech.com/how-to-install-steamos-on-virtual-box-virtual-machine/">http://www.redgamingtech.com/how-to-install-steamos-on-virtual-box-virtual-machine/</a></p>
+
 <p>SteamOS のベータ版がリリースされたので、インストールしてみました。</p>
 
 <!-- more -->
@@ -36,6 +38,17 @@
 たまたま外出中で手元にPC がないので、スマートフォンから自宅のLinux マシンにVNC over SSH で繋いで作業してみました。ソフトキーボードは面倒ですね。</p>
 
 <p>PrintScreen キーが使えなかったので、xwd を使いましたが、画像が少し変ですね。</p>
+
+<p>``` sh</p>
+
+<h1>uname -a</h1>
+
+<p>Linux steamos 3.10-3-amd64 #1 SMP Debian 3.10.11-1st1 (2013-11-15) x86_64 GNU/Linux</p>
+
+<h1>gnome-shell &mdash;version</h1>
+
+<p>GNOME Shell 3.4.2
+```</p>
 ]]></content>
   </entry>
   
