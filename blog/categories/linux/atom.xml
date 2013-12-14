@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-14T23:32:36+09:00</updated>
+  <updated>2013-12-15T07:17:11+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/12/14/steamos/"/>
     <updated>2013-12-14T22:55:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/12/14/steamos</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/steamos.png"><img src="/images/steamos_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/SteamOS-desktop.png"><img src="/images/SteamOS-desktop.png"></a></p>
 
 <p><a href="http://store.steampowered.com/steamos/">http://store.steampowered.com/steamos/</a></p>
 
@@ -28,6 +28,8 @@
 
 <!-- more -->
 
+
+<p><a href="http://ktkr3d.github.io/images/steamos.png"><img src="/images/steamos_tn.png"></a></p>
 
 <p>SteamOS はDebian ベースのようです。
 手順にしたがってISO に変換して仮想環境にインストールしてみました。
