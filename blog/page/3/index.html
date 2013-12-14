@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="先日のアップデートでxnoise のメディアブラウザ表示/非表示切り替えボタンが無くなりました。ボタンがメディアブラウザの上に被っていたので邪魔ではあったのですが、無いと不便です。そこで、簡単にメディアブラウザの表示/非表示を切り替えるためのショートカットキー(F9)を追加してみました。 &hellip;">
+  <meta name="description" content="http://live.bittorrent.com/
+P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTorrent Live」のオープンベータテストが開始されたので、試してみました。Windows/Mac/Ubuntu 用のクライアントプログラムBTLive &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,149 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/17/bittorrent-live-beta/">BitTorrent Live Beta</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T22:55:37+09:00" pubdate data-updated="true">2013年03月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2013/03/BitTorrentLive_Beta.png"><img src="/images/uploads/2013/03/BitTorrentLive_Beta.png" alt="BitTorrent Live" /></a></p>
+
+<p><a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a>
+P2P 技術を使ったWeb 型ライブストリーミングサービス「BitTorrent Live」のオープンベータテストが開始されたので、試してみました。Windows/Mac/Ubuntu 用のクライアントプログラムBTLive が配布されており、私はUbuntu 64bit 用をダウンロードしてインストールしました。インストールから視聴までの手順は以下のとおりです。</p>
+
+<ol>
+<li><p> <a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a> の一番下のリンクから各OS 用のクライアントプログラムをダウンロードして、インストールします。</p></li>
+<li><p> [アプリケーション]&ndash;[インターネット]&ndash;[BTLive]を起動します。</p></li>
+<li><p> <a href="http://live.bittorrent.com/">http://live.bittorrent.com/</a> で公開されているチャンネルを視聴します。アカウントを登録すれば、配信もできます。配信はWebCam かエンコーダ等のアプリが利用できます。</p></li>
+</ol>
+
+
+<p>P2P なので、視聴者が増えた時に有利なようです。Peercast と同じような原理でしょうか。ポートを開ける手間がないのが、お手軽でよいかもしれません。手動でポートを開ける場合はUDP ports 31400-31499 らしいです。トレイアイコンをクリックすると、送受信のビットレートが表示されます。btlive コマンドのパラメタは以下のとおり。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>btlive --help
+</span><span class='line'>usage: btlive <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>--force-version FORCED_VER<span class="o">]</span> <span class="o">[</span>-o OFFSET<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>-j TRACKER|SWARMPUBKEY<span class="o">]</span> <span class="o">[</span>--no-crashlog-reporting<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--no-stats-thread<span class="o">]</span> <span class="o">[</span>--no-bench-thread<span class="o">]</span> <span class="o">[</span>--no-update-thread<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--no-headless-thread<span class="o">]</span> <span class="o">[</span>--no-nat-detection<span class="o">]</span> <span class="o">[</span>--no-rtmp-server<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--no-http-server<span class="o">]</span> <span class="o">[</span>--no-local-discovery<span class="o">]</span> <span class="o">[</span>--no-sysreqs<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--ignore-headless | --force-headless<span class="o">]</span> <span class="o">[</span>--staging-bench<span class="o">]</span>
+</span><span class='line'>              <span class="o">[</span>--staging-dau<span class="o">]</span> <span class="o">[</span>--staging-onair<span class="o">]</span> <span class="o">[</span>--testing-mode<span class="o">]</span> <span class="o">[</span>--nogui<span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>optional arguments:
+</span><span class='line'>  -h, --help            show this <span class="nb">help </span>message and <span class="nb">exit</span>
+</span><span class='line'>  -v, --version         show program<span class="s1">&#39;s version number and exit</span>
+</span><span class='line'><span class="s1">  --force-version FORCED_VER</span>
+</span><span class='line'><span class="s1">                        Forces Live to think that it is another version</span>
+</span><span class='line'><span class="s1">                        number. Must follow format 0.4.11.1234.</span>
+</span><span class='line'><span class="s1">  -o OFFSET, --offset OFFSET</span>
+</span><span class='line'><span class="s1">                        RTMP Server port offset (from 1935). A value of 100 is</span>
+</span><span class='line'><span class="s1">                        commonly used for sourcing.</span>
+</span><span class='line'><span class="s1">  -j TRACKER|SWARMPUBKEY, --join TRACKER|SWARMPUBKEY</span>
+</span><span class='line'><span class="s1">                        Swarm to autojoin on launch. Specify the tracker and</span>
+</span><span class='line'><span class="s1">                        the swarm public key, separated by a pipe symbol</span>
+</span><span class='line'><span class="s1">                        (&#39;</span>|<span class="err">&#39;</span><span class="o">)</span>.
+</span><span class='line'>  --no-crashlog-reporting
+</span><span class='line'>                        Disable all communication with the crashlog server.
+</span><span class='line'>  --no-stats-thread     Disable debugging statistics being reported to
+</span><span class='line'>                        graphite/statsd.
+</span><span class='line'>  --no-bench-thread     Disable bench statistics.
+</span><span class='line'>  --no-update-thread    Disable autoupdate checking.
+</span><span class='line'>  --no-headless-thread  Disable all communication with the automation server.
+</span><span class='line'>  --no-nat-detection    Disable NAT detection on launch.
+</span><span class='line'>  --no-rtmp-server      Disable RTMP server.
+</span><span class='line'>  --no-http-server      Disable HTTP server.
+</span><span class='line'>  --no-local-discovery  Disable <span class="nb">local </span>peer discovery.
+</span><span class='line'>  --no-sysreqs          Disable system requirements <span class="k">for </span>launch/install.
+</span><span class='line'>  --ignore-headless     Set headless_enabled pref to off and ignore any
+</span><span class='line'>                        scheduled tests.
+</span><span class='line'>  --force-headless      Set headless_enabled pref to on and join any scheduled
+</span><span class='line'>                        tests.
+</span><span class='line'>  --staging-bench       Use staging bench server <span class="k">for </span>bench statistics.
+</span><span class='line'>  --staging-dau         Use staging server <span class="k">for </span>autoupdate.
+</span><span class='line'>  --staging-onair       Use staging server <span class="k">for </span>on-air messaging.
+</span><span class='line'>  --testing-mode        Disable all non-essential network communication.
+</span><span class='line'>                        Implies --no-crashlog-reporting, --no-nat-detection,
+</span><span class='line'>                        --no-stats-thread, --no-update-thread, --no-headless-
+</span><span class='line'>                        thread, and --no-sysreqs.
+</span><span class='line'>  --nogui               Disable GUI/icon.
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1004,82 +1148,6 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/26/ubuntu-13-04-gnome-shell/">Ubuntu 13.04 + GNOME Shell</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-26T21:45:06+09:00" pubdate data-updated="true">2013年01月26日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2013/01/ubuntu_13_04_gnome_shell.png"><img src="/images/uploads/2013/01/ubuntu_13_04_gnome_shell-600x375.png" alt="ubuntu 13.04 raring ringtail gnome shell" /></a></p>
-
-<p><a href="http://cdimage.ubuntu.com/daily-live/">http://cdimage.ubuntu.com/daily-live/</a></p>
-
-<p>Ubuntu 13.04 Raring Ringtail のデイリービルドがライブISO イメージで公開されていますので、そろそろ環境構築をし始めます。デスクトップ環境はGNOME Shell にします。</p>
-
-<ul>
-<li><p>Linux Kernel は3.8.0 でした。</p></li>
-<li><p>GNOME Shell  (ppa:gnome3-team/gnome3)は3.6.2 のままでした。今後、3.8 に向けて更新されると思います。</p></li>
-<li><p>Avant Window Navigator パッケージが登録されていませんでした。公式リポジトリから消えるかもしれません。</p></li>
-<li><p>Code::Blocks が12.11　になっていました。</p></li>
-</ul>
-
-
-<p>Avant Window Navigator が消えていて残念でした。これを契機にGNOME Shell 拡張のDash to Dock に移行しましょうか。
-Dash to Dock のデフォルトのアニメーション設定は遅いので、設定で少し速くなるように変更しました。クリック感がないのと、ドックからアプリケーションを一括で閉じられないのが気になりますが、慣れでしょうか。しばらく触ってみて物足りなければ、自前でビルドするか、CairoDock を使うと思います。</p>
-
-<p><strong>EDIT:</strong></p>
-
-<h3>Avant Window Navigator</h3>
-
-<p><a href="http://www.webupd8.org/2012/11/how-to-install-avant-window-navigator.html">http://www.webupd8.org/2012/11/how-to-install-avant-window-navigator.html</a>
-やはり少し不便なので、webupd8 のリポジトリ(quantal)を利用してAWN をインストールしてみました。</p>
-
-<p><a href="/images/uploads/2013/01/ubuntu_13_04_gnome_shell_awn.png"><img src="/images/uploads/2013/01/ubuntu_13_04_gnome_shell_awn-600x375.png" alt="ubuntu 13.04 gnome shell awn" /></a></p>
-
-<h3>Quit from Dash 拡張</h3>
-
-<p><a href="https://extensions.gnome.org/extension/559/quit-from-dash/">https://extensions.gnome.org/extension/559/quit-from-dash/</a>
-調べてみたら、Quit from Dash 拡張を使えば、Dash to Dock からでも複数起動した同種のアプリケーションを一括して終了させることができました。</p>
-
-<h3>現在使用中のGNOME Shell Extension</h3>
-
-<ul>
-<li><p>Auto hide top panel</p></li>
-<li><p>Drop down terminal</p></li>
-<li><p>GMail Notify</p></li>
-<li><p>メッセージトレイのカスタマイズ
-<a href="http://ktkr3d.site11.com/2012/12/31/move-the-hot-corner-of-the-message-tray/">http://ktkr3d.site11.com/2012/12/31/move-the-hot-corner-of-the-message-tray/</a></p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1097,6 +1165,10 @@ Dash to Dock のデフォルトのアニメーション設定は遅いので、�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
@@ -1112,15 +1184,11 @@ Dash to Dock のデフォルトのアニメーション設定は遅いので、�
         <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (98)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

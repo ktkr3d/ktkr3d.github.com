@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-01T16:12:58+09:00</updated>
+  <updated>2013-12-14T23:09:25+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[SteamOS]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/12/14/steamos/"/>
+    <updated>2013-12-14T22:55:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/12/14/steamos</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/steamos.png"><img src="/images/steamos_tn.png"></a></p>
+
+<p><a href="http://store.steampowered.com/steamos/">http://store.steampowered.com/steamos/</a></p>
+
+<p><a href="https://gist.github.com/voltagex/7955961">https://gist.github.com/voltagex/7955961</a></p>
+
+<p>SteamOS のベータ版がリリースされたので、インストールしてみました。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu GNOME + GNOME3 PPA]]></title>
@@ -387,53 +402,6 @@ minetest はIrrlicht エンジンを利用して実装されています。
 <p>グラフィックがオンボードでATOM なOpenGL 1.4 の環境で動かしてみると、さすがに重かったです。</p>
 
 <p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png"><img src="/images/minetest_ogl14_tn.png"></a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Fedora 20]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/10/05/fedora-20/"/>
-    <updated>2013-10-05T20:14:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/10/05/fedora-20</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png"><img src="/images/fedora_20_tn.png"></a></p>
-
-<p>Fedora 20 alpha + GNOME Shell 3.10 をインストールしてみました。</p>
-
-<h4>Fedora 20 alpha</h4>
-
-<p><code>https://fedoraproject.org/ja/get-prerelease</code></p>
-
-<h4>RPM Fusion</h4>
-
-<p><code>http://rpmfusion.org/Configuration</code></p>
-
-<h4>その他の設定</h4>
-
-<ul>
-<li>Autohide Top Bar extension</li>
-<li>Cairo-Dock</li>
-<li>Bluetooth Keyboard</li>
-<li>VNC Server<br/>
-  <code>sudo yum install vino</code> を実行すると、[設定]&ndash;[共有]&ndash;[画面共有]メニューが有効になる。クライアントからはSSH トンネル経由で接続する。</li>
-</ul>
-
-
-<!-- more -->
-
-
-<h4>Android からインターネット経由の通信と接続ツール</h4>
-
-<ul>
-<li>SSH (Connect Bot)
-  <code>https://play.google.com/store/apps/details?id=org.connectbot</code></li>
-<li>VNC over SSH (bVNC Free)
-  <code>https://play.google.com/store/apps/details?id=com.iiordanov.freebVNC</code><br/>
-  SSH 上で、ターゲットホストへ接続</li>
-<li>Samba over SSH (SSH Tunnel)
-  <code>https://play.google.com/store/apps/details?id=org.sshtunnel</code><br/>
-  SSH 上で、ローカルの10445 をリモートの445 にポートフォワード</li>
-</ul>
-
 ]]></content>
   </entry>
   

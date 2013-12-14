@@ -9,8 +9,10 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Unity のv3 からMonoDevelop でのステップ実行/変数ウォッチができるようになると聞いてMonoDevelop を試してみた(v2.6 でも単純な連携はできるんだけどね)はやく無償版ユーザにもUnity v3/ベータが公開されないかなぁ
-ちょっと使ってみた感じ Linux/ &hellip;">
+  <meta name="description" content="http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml
+マウスで描いた軌跡で作った物体を使って解くパズルゲーム
+物理エンジンのリアルな動きがおもしろいー
+README &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +89,47 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/30/caph/">Caph で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-30T00:37:59+09:00" pubdate data-updated="true">2010年09月30日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/09/caph.png"><img src="/images/uploads/2010/09/caph.png" alt="caph" /></a>
+<a href="http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml">http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml</a>
+マウスで描いた軌跡で作った物体を使って解くパズルゲーム
+物理エンジンのリアルな動きがおもしろいー
+README のとおりにやってうまく動かなかったのでちょっと修正
+src/draw.c(299): png_get_IHDR() のheight が変な値を返すので変数h の値を修正(64bit OS 上でのpng_uint_32 型の処理にバグがあるのかな)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -598,45 +641,6 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/31/b-momi/">モーションキャプチャデータを試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-31T21:11:20+09:00" pubdate data-updated="true">2010年08月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/08/motion_capture.png"><img src="/images/uploads/2010/08/motion_capture.png" alt="motion capture irrlicht" /></a>
-モーションキャプチャデータBVH をB-MoMi でVMD に変換して動かしてみた
-さすがに動きが自然でなめらかだ
-<a href="http://atupdate.web.fc2.com/">http://atupdate.web.fc2.com/</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/18/">&larr; Older</a>
@@ -654,6 +658,10 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
@@ -669,15 +677,11 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
         <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (98)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

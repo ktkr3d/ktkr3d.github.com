@@ -9,8 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://ubuntu-gs-remix.sourceforge.net/p/download/ Ubuntu GNOME Shell Remix 12.04 をクリーンインストールしてみた。
-Unity デスクトップ環境や不要な設定(オーバーレイスクロールバーとか)が省略できてすっきり。 &hellip;">
+  <meta name="description" content="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46226
+http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46250 Irrlicht &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,58 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/02/irrlicht-chopper-scene-node-control/">Irrlicht + Chopper Scene Node & Control</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-02T18:47:10+09:00" pubdate data-updated="true">2012年05月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/05/irrlicht_chopper.png"><img src="/images/uploads/2012/05/irrlicht_chopper.png" alt="irrlicht chopper scene node simple chopper control" /></a></p>
+
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46226">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46226</a>
+<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46250">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=46250</a></p>
+
+<p>Irrlicht Forum にヘリコプターを操縦するデモがあったので、動かしてみた。ヘリコプターのモデルはBell UH-1 Iroquois (<a href="http://en.wikipedia.org/wiki/Bell_UH-1_Iroquois">http://en.wikipedia.org/wiki/Bell_UH-1_Iroquois</a>)という機体みたい。慣性があって、ゆったりと動き出す。赤い線がデバッグ用の垂直線。キー操作は以下。
+F1〜F10: カメラの切り替え
+W/S: pitchDown/pitchUp
+H: hover
+Q/E: rollLeft/rollRight
+R: resetRoll &amp; resetPitch
+A/D: turnLeft/turnRight
+Z: brake
+X: stop
+C: throttle</p>
+
+<p>Blender 2.4 を使って、ヘリコプターのモデルを.ac 形式から.obj 形式に変換した。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -719,104 +771,6 @@ Esc キー, スーパーキー(Windows)等は有効なので、
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/20/inspiron-duo-ubuntu-11-10-crystal-hd/">Inspiron Duo + Ubuntu 11.10 + Crystal HD</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-20T00:17:33+09:00" pubdate data-updated="true">2012年02月20日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Inspiron duo 上のUbuntu 11.10 x86_64 にBroadcom Crystal HD Decoder Driver を組み込んでみた。</p>
-
-<figure class='code'><figcaption><span>必要なパッケージのインストール</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install build-essential g++ automake autoconf libtool libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>ソースの取得</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone git://linuxtv.org/jarod/crystalhd.git
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>ドライバーのインストール</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>driver/linux/
-</span><span class='line'><span class="nv">$ </span>autoconf
-</span><span class='line'><span class="nv">$ </span>./configure
-</span><span class='line'><span class="nv">$ </span>make
-</span><span class='line'><span class="nv">$ </span>sudo make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>コンパイル時に警告がでるので、とりあえず-w をつけた。</p>
-
-<figure class='code'><figcaption><span>ライブラリのインストール</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>linux_lib/libcrystalhd/
-</span><span class='line'><span class="nv">$ </span>make
-</span><span class='line'><span class="nv">$ </span>sudo make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>gstreamer プラグインのインストール</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>filters/gst/gst-plugin/
-</span><span class='line'><span class="nv">$ </span>./autogen.sh
-</span><span class='line'><span class="nv">$ </span>make
-</span><span class='line'><span class="nv">$ </span>sudo make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>ファームウェアのコピー</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo cp firmware/fwbin/70015/* /lib/firmware/
-</span><span class='line'><span class="nv">$ </span>sudo cp firmware/fwbin/70012/* /lib/firmware/
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -834,6 +788,10 @@ Esc キー, スーパーキー(Windows)等は有効なので、
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
@@ -849,15 +807,11 @@ Esc キー, スーパーキー(Windows)等は有効なので、
         <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (98)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

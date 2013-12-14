@@ -9,8 +9,9 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://www.povray.org/beta/source/ http://www.povray.org/beta/source/unix-src-INSTALL.txt
-POV-Ray 3.7.0 RC6 を試してみた。環境はUbuntu 12.04 x86_64, Intel® &hellip;">
+  <meta name="description" content="http://cdimage.ubuntu.com/releases/quantal/
+Ubuntu 12.10 alpha 3 x86_64 にGNOME Shell 3.5.4 を入れてみた。 Linux Kernel が3.5.0 になった。
+nautilus のGUI が変更されたみたい &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +88,79 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/05/ubuntu-12-10-alpha3-gnome-shell-3-5-4/">Ubuntu 12.10 Alpha3 + GNOME Shell 3.5.4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-05T21:11:46+09:00" pubdate data-updated="true">2012年08月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/08/ubuntu_12_10_alpha3_gnome_shell_3_5_4.png"><img src="/images/uploads/2012/08/ubuntu_12_10_alpha3_gnome_shell_3_5_4.png" alt="ubuntu 12.10 alpha3 GNOME Shell 3.5.4" /></a>
+<a href="http://cdimage.ubuntu.com/releases/quantal/">http://cdimage.ubuntu.com/releases/quantal/</a>
+Ubuntu 12.10 alpha 3 x86_64 にGNOME Shell 3.5.4 を入れてみた。</p>
+
+<ul>
+<li><p>Linux Kernel が3.5.0 になった。</p></li>
+<li><p>nautilus のGUI が変更されたみたい。</p></li>
+<li><p>マウントポイントが/media から/run/media/$USER に移動したみたい。</p></li>
+<li><p>firefox が15.0 に。Tab Utilities アドオンの挙動が少し変かもしれないので、Tab Mix Plus に移行。</p></li>
+<li><p>GIMP が2.8 に。</p></li>
+<li><p>アップデートマネージャがSoftware Updater に名前が変わった。</p></li>
+<li><p>alpha3 時点でnVidia のGPU 環境でLive CD うまくブートしないみたい。</p></li>
+</ul>
+
+
+<p>いつものようにカスタマイズ</p>
+
+<ul>
+<li><p>フォルダを英語名に。</p></li>
+<li><p>Avant Window Navigator を常駐。</p></li>
+<li><p>conky を設定。conkyforecast は古いバージョンのものを使用。</p></li>
+<li><p>Gnome Shell のAuto Hide Top Panel 拡張はmetadata.json の対応バージョンを3.5.4 にした。</p></li>
+</ul>
+
+
+<p>EDIT:
+nVidia のGPU でも起動時のカーネルパラメータにnouveau.modeset=0 を追加したら普通に起動できた。</p>
+
+<p>EDIT2:
+overlay-scrollbar を削除するとログインできなくなるみたいだ。あわてず、Ctrl+Alt+F1 で、sudo apt-cache search overlay-scrollbar してパッケージ名を探して、sudo apt-get install でインストール。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">echo export </span><span class="nv">LIBOVERLAY_SCROLLBAR</span><span class="o">=</span>0 &gt;&gt; ~/.xprofile
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>EDIT3:
+nautilus でファイルの新規作成をするには、$HOME/Templates にテンプレートファイルを入れておくとアプリケーションメニューやコンテキストメニューにNew Document メニューが表示されるようになるみたい。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -996,58 +1070,6 @@ Android-x86 用のFirefox がPlay ストアに登録されていないので、�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/09/firefox-13-newsfox/">Firefox 13 + NewsFox</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-09T23:04:20+09:00" pubdate data-updated="true">2012年06月09日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Firefox のアドオンNewsFox を使ってRSS を購読しているのだけど、Firefox を13.0 にアップデートしてから、時々マウスのボタンダウンイベントがキャプチャーされて無効化されてしまうような挙動があったので、やっつけで暫定対策してみた。<del>Linux でもWindows でも発生する(?)ので、NewsFox 側に問題がありそう。いろいろFirefox のバグ回避もしているようだし。</del>とりあえず、ドラッグ開始しないようにreturn してしまうことにした。NewsFox でドラッグアンドドロップなんて飾りですよ。</p>
-
-<figure class='code'><figcaption><span>newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">dragIt</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>newsfox.xpi/chrome/newsfox.jar/content/newsfox/model.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">dragArt</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>他に古いAPI を使っているところもあるようだし、早くアップデート版がリリースされるといいな。</p>
-
-<p>newsfox.xpi = {899DF1F8-2F43-4394-8315-37F6744E6319}.xpi</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -1065,6 +1087,10 @@ Android-x86 用のFirefox がPlay ストアに登録されていないので、�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
@@ -1080,15 +1106,11 @@ Android-x86 用のFirefox がPlay ストアに登録されていないので、�
         <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (98)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

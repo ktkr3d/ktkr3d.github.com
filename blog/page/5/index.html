@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://wiki.mozilla.org/Mobile/Fennec/Android Android-x86 4.0.4 (i386-linux-android) 向けにFirefox の開発バージョン19.0a1 と最新リリース版16.0.1 をビルドしてみました。 &hellip;">
+  <meta name="description" content="http://openelec.tv/get-openelec http://wiki.openelec.tv/index.php?title=Installation OpenELEC (Open Embedded Linux Entertainment Center) はXBMC (旧名: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,249 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/24/openelec-2-0-mediatomb/">OpenELEC 2.0 + MediaTomb</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-24T20:41:37+09:00" pubdate data-updated="true">2012年10月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/10/openelec_2.png"><img src="/images/uploads/2012/10/openelec_2-600x337.png" alt="OpenELEC 2.0 XBMC" /></a></p>
+
+<p><a href="http://openelec.tv/get-openelec  ">http://openelec.tv/get-openelec  </a>
+<a href="http://wiki.openelec.tv/index.php?title=Installation">http://wiki.openelec.tv/index.php?title=Installation</a></p>
+
+<p>OpenELEC (Open Embedded Linux Entertainment Center) はXBMC (旧名: XBox Media Center)の機能を持つ軽量なLinux ディストリビューションです。バージョン2.0 がリリースされたので、DLNA サーバのMediaTomb に繋げて試してみました。綺麗なテーマが多数用意されていて、動作は軽快でした。</p>
+
+<p>OpenELEC をインストールするネットブックInspiron Duo はION ではないATOM 64bit プロセッサのPC なので、Intel x86_64 向けのアーカイブをダウンロードしました。「マニュアルインストール-マルチブート」の手順を参考にして、8GB のUSB メモリに2つのパーティションを作成し、Ubuntu 12.10 のGRUB ブートローダから起動するように設定しています。</p>
+
+<h3>OpenELEC 2.0 のインストールと設定</h3>
+
+<ol>
+<li> USB メモリにパーティションを作成</li>
+</ol>
+
+
+<p>デバイス
+フォーマット
+サイズ
+ラベル
+ブートフラグ</p>
+
+<p>/dev/sdb1
+ext4
+1GB
+OE_SYSTEM
+*</p>
+
+<p>/dev/sdb2
+ext4
+7GB
+OE_DATA</p>
+
+<ol>
+<li><p> ファイルのコピー
+/dev/sdb1 の直下に以下の２つのファイルをコピーします。</p>
+
+<ul>
+<li><p>KERNEL</p></li>
+<li><p>SYSTEM</p></li>
+<li><p>クライアントのUbuntu でOpenELEC ブート用GRUB エントリの追加</p></li>
+</ul>
+</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>/etc/grub.d/40_custom</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>menuentry &quot;OpenELEC 2.0&quot; {
+</span><span class='line'>    set root=(hd1,1)
+</span><span class='line'>    linux /KERNEL boot=/dev/sdb1 disk=/dev/sdb2 quiet
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> クライアントのUbuntu でGRUB 設定の更新</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo update-grub
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li><p> OpenELEC の起動
+クライアントPC を再起動して、GRUB の起動エントリからOpenELEC 2.0 を選択します。</p></li>
+<li><p> 言語と時刻の設定</p>
+
+<ol>
+<li><p>[System]&ndash;[Settings]&ndash;[Appearance] の画面に進みます。</p></li>
+<li><p>[Skin]&ndash;[Fonts] を<strong>Arial based</strong> に設定します。</p></li>
+<li><p>[International]&ndash;[Language] をJapanese に設定します。</p></li>
+<li><p>地域、タイムゾーン(国)、タイムゾーンを設定します。</p></li>
+</ol>
+</li>
+<li><p> Wi-Fi の設定</p>
+
+<ol>
+<li><p>[プログラム]&ndash;[OpenELEC OS Settings]&ndash;[Network] の画面に進みます。</p></li>
+<li><p>Network Technology をWLAN に設定します。</p></li>
+<li><p>Network Interface をwlan0 に設定します。</p></li>
+<li><p>Static IP address, Network gateway, DNS server 1 を環境に合わせて設定します。</p></li>
+</ol>
+</li>
+<li><p> 音量調整
+ボリュームダウンは[Fn]&ndash;[F9]、ボリュームアップは[Fn]&ndash;[F10] でした。</p></li>
+</ol>
+
+
+<h3>MediaTomb のインストールと設定</h3>
+
+<p>サーバのUbnutu でMediaTomb の環境を設定します。</p>
+
+<ol>
+<li> MediaTomb のインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install mediatomb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> MediaTomb の環境設定</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>/etc/default/mediatomb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'># The network interface for MediaTomb to bind to and for which the multicast
+</span><span class='line'># routing entry should be added; &quot;&quot; if the route shouldn&#39;t be added at all.
+</span><span class='line'># For example: INTERFACE=&quot;eth0&quot;
+</span><span class='line'>INTERFACE=&quot;eth0&quot;
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>/etc/mediatomb/config.xml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>  <span class="nt">&lt;server&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;ui</span> <span class="na">enabled=</span><span class="s">&quot;yes&quot;</span> <span class="na">show-tooltips=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>       <span class="nt">&lt;accounts</span> <span class="na">enabled=</span><span class="s">&quot;yes&quot;</span> <span class="na">session-timeout=</span><span class="s">&quot;30&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>         <span class="nt">&lt;account</span> <span class="na">user=</span><span class="s">&quot;mediatomb&quot;</span> <span class="na">password=</span><span class="s">&quot;mediatomb&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>       <span class="nt">&lt;/accounts&gt;</span>
+</span><span class='line'>     <span class="nt">&lt;/ui&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>/etc/mediatomb/config.xml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>  <span class="nt">&lt;import</span> <span class="na">hidden-files=</span><span class="s">&quot;no&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;filesystem-charset&gt;</span>UTF-8<span class="nt">&lt;/filesystem-charset&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;metadata-charset&gt;</span>UTF-8<span class="nt">&lt;/metadata-charset&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;scripting</span> <span class="na">script-charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>/etc/mediatomb/config.xml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>  <span class="nt">&lt;mappings&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;extension-mimetype</span> <span class="na">ignore-unknown=</span><span class="s">&quot;no&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;mp4&quot;</span> <span class="na">to=</span><span class="s">&quot;video/mp4&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;mp3&quot;</span> <span class="na">to=</span><span class="s">&quot;audio/mpeg&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;ogg&quot;</span> <span class="na">to=</span><span class="s">&quot;application/ogg&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;asf&quot;</span> <span class="na">to=</span><span class="s">&quot;video/x-ms-asf&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;asx&quot;</span> <span class="na">to=</span><span class="s">&quot;video/x-ms-asf&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;wma&quot;</span> <span class="na">to=</span><span class="s">&quot;audio/x-ms-wma&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;wax&quot;</span> <span class="na">to=</span><span class="s">&quot;audio/x-ms-wax&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;wmv&quot;</span> <span class="na">to=</span><span class="s">&quot;video/x-ms-wmv&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;wvx&quot;</span> <span class="na">to=</span><span class="s">&quot;video/x-ms-wvx&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;map</span> <span class="na">from=</span><span class="s">&quot;wm&quot;</span> <span class="na">to=</span><span class="s">&quot;video/x-ms-wm&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> MediaTomb の再起動</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo service mediatomb restart
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> 公開するメディアの選択
+アプリケーションメニューの[サウンドとビデオ]&ndash;[MediaTomb] メニューを選択すると、ブラウザ上に環境設定画面が表示されるので、公開するフォルダを選択します。</li>
+</ol>
+
+
+<h3>OpenELEC からMediaTomb への接続</h3>
+
+<p>DLNA サーバのメディアを参照するには、以下のようにしました。</p>
+
+<ol>
+<li><p> [ビデオ]&ndash;[ファイル]の画面に進みます。</p></li>
+<li><p> [ビデオを追加&hellip;]&ndash;[参照]&ndash;[UPnP Devices]を選択します。</p></li>
+<li><p> MediaTomb というサーバ名が表示されますので、表示したい階層を選択して[OK]を押します。</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -856,79 +1099,6 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/05/ubuntu-12-10-alpha3-gnome-shell-3-5-4/">Ubuntu 12.10 Alpha3 + GNOME Shell 3.5.4</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-05T21:11:46+09:00" pubdate data-updated="true">2012年08月05日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/08/ubuntu_12_10_alpha3_gnome_shell_3_5_4.png"><img src="/images/uploads/2012/08/ubuntu_12_10_alpha3_gnome_shell_3_5_4.png" alt="ubuntu 12.10 alpha3 GNOME Shell 3.5.4" /></a>
-<a href="http://cdimage.ubuntu.com/releases/quantal/">http://cdimage.ubuntu.com/releases/quantal/</a>
-Ubuntu 12.10 alpha 3 x86_64 にGNOME Shell 3.5.4 を入れてみた。</p>
-
-<ul>
-<li><p>Linux Kernel が3.5.0 になった。</p></li>
-<li><p>nautilus のGUI が変更されたみたい。</p></li>
-<li><p>マウントポイントが/media から/run/media/$USER に移動したみたい。</p></li>
-<li><p>firefox が15.0 に。Tab Utilities アドオンの挙動が少し変かもしれないので、Tab Mix Plus に移行。</p></li>
-<li><p>GIMP が2.8 に。</p></li>
-<li><p>アップデートマネージャがSoftware Updater に名前が変わった。</p></li>
-<li><p>alpha3 時点でnVidia のGPU 環境でLive CD うまくブートしないみたい。</p></li>
-</ul>
-
-
-<p>いつものようにカスタマイズ</p>
-
-<ul>
-<li><p>フォルダを英語名に。</p></li>
-<li><p>Avant Window Navigator を常駐。</p></li>
-<li><p>conky を設定。conkyforecast は古いバージョンのものを使用。</p></li>
-<li><p>Gnome Shell のAuto Hide Top Panel 拡張はmetadata.json の対応バージョンを3.5.4 にした。</p></li>
-</ul>
-
-
-<p>EDIT:
-nVidia のGPU でも起動時のカーネルパラメータにnouveau.modeset=0 を追加したら普通に起動できた。</p>
-
-<p>EDIT2:
-overlay-scrollbar を削除するとログインできなくなるみたいだ。あわてず、Ctrl+Alt+F1 で、sudo apt-cache search overlay-scrollbar してパッケージ名を探して、sudo apt-get install でインストール。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">echo export </span><span class="nv">LIBOVERLAY_SCROLLBAR</span><span class="o">=</span>0 &gt;&gt; ~/.xprofile
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>EDIT3:
-nautilus でファイルの新規作成をするには、$HOME/Templates にテンプレートファイルを入れておくとアプリケーションメニューやコンテキストメニューにNew Document メニューが表示されるようになるみたい。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -946,6 +1116,10 @@ nautilus でファイルの新規作成をするには、$HOME/Templates にテ�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
@@ -961,15 +1135,11 @@ nautilus でファイルの新規作成をするには、$HOME/Templates にテ�
         <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (98)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

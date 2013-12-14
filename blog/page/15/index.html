@@ -9,8 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://news.softpedia.com/news/Fedora-15-Alpha-Is-Available-for-Download-188519.shtml
-http://distrowatch.com/table.php?distribution=fedora Fedora 15 &hellip;">
+  <meta name="description" content="使用中のレンタルサーバのディスク容量が上限に到達しそうになったので、byethost.com に引越してみた。byethost.com 無料版ではPerl が使えないみたいなので、MovableType からWordPress に移行してみた。 引越してみて、 容量が大きくて安心 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +86,55 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/13/worpress-e38292e8a9a6e38197e381a6e381bfe3819f/">WordPress を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-13T19:38:08+09:00" pubdate data-updated="true">2011年03月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>使用中のレンタルサーバのディスク容量が上限に到達しそうになったので、byethost.com に引越してみた。byethost.com 無料版ではPerl が使えないみたいなので、MovableType からWordPress に移行してみた。</p>
+
+<p>引越してみて、</p>
+
+<ul>
+<li><p>容量が大きくて安心</p></li>
+<li><p>商用契約もあるので安定してそう</p></li>
+<li><p>広告不要なのがうれしい</p></li>
+<li><p>ZIP をサーバ側で展開できるのは便利</p></li>
+<li><p>WordPress はプラグインが多くておもしろそう</p></li>
+</ul>
+
+
+<p>使い方に慣れたら、MovableType 3 のテーマをWordPress に移植して、IE 対応してみよう。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -508,69 +556,6 @@ Kinect に接続して動かしてみると、この世のものとは思えな�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/24/linux_kinect/">Linux でKinect Sinbad デモを動かしてみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-24T03:33:41+09:00" pubdate data-updated="true">2010年12月24日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/03/linux_kinect.png"><img src="/images/uploads/2011/03/linux_kinect.png" alt="linux kinect" /></a>
-OpenNI のSinbad デモ(SampleAppSinbad)のLinux 版が見つからなかったのでポーティングしてみた
-<strong>環境</strong>
-OS: Ubuntu 10.10 32bit
-Ogre3D: Ver. 1.7.2
-IDE: Code::Blocks 10.05
-GCC: 4.4.5
-<strong>改造前ソース</strong>
-<a href="https://github.com/OpenNI/SampleAppSinbad">https://github.com/OpenNI/SampleAppSinbad</a>
-<strong>主な修正点</strong>
-Sinbad:
-&ndash; Code::Blocks でOgre3D プロジェクト(コンソールアプリケーション)を作成
-&ndash; FileSystemLayerImpl_WIN32.cpp の代わりにFileSystemLayerImpl_Unix.cpp を使用
-&ndash; FileSystemLayerImpl_Unix.cpp でerrno.h のインクルードを追加
-&ndash; SampleBrowser.cpp でAllocConsole.h のインクルードを削除
-Sample_Character.so:
-&ndash; Code::Blocks でOgre3D プロジェクト(動的ライブラリ)を作成
-&ndash; WIN32 依存処理(time とか)を修正
-&ndash; XnSkeletonJoint のスコープを省略
-&ndash; Ogre オリジナルヘッダにOgreBites::YesNoSlider が含まれていないので、CharacterSample.h
-では&#8221;SdkSample.h&#8221;ではなく&#8221;../../Common/include/SdkSample.h&#8221;をインクルードする
-&ndash; openNi.xml のパス指定を修正
-&ndash; OpenNI とXnVNite をリンク
-ogre.cfg:
-&ndash; レンダラをOpenGL のみにする
-&ndash; 「Colour Depth」、「VSync Interval」のエントリを削除
-plugins.cfg:
-&ndash; Direct3D 系のレンダラのエントリをコメントアウト</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/16/">&larr; Older</a>
@@ -588,6 +573,10 @@ plugins.cfg:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
@@ -603,15 +592,11 @@ plugins.cfg:
         <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/04/minetest/">Minetest</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (98)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
