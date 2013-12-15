@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-15T09:02:34+09:00</updated>
+  <updated>2013-12-15T20:59:19+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -50,6 +50,19 @@
 <h1>gnome-shell &mdash;version</h1>
 
 <p>GNOME Shell 3.4.2
+```</p>
+
+<h4>魔改造</h4>
+
+<p>``` text /etc/apt/source.list
+deb <a href="http://ftp.jp.debian.org/debian">http://ftp.jp.debian.org/debian</a> experimental main contrib non-free
+deb-src <a href="http://ftp.jp.debian.org/debian">http://ftp.jp.debian.org/debian</a> experimental main contrib non-free</p>
+
+<p>deb <a href="http://ftp.debian.org/debian/">http://ftp.debian.org/debian/</a> -updates main contrib non-free
+deb-src <a href="http://ftp.debian.org/debian/">http://ftp.debian.org/debian/</a> -updates main contrib non-free</p>
+
+<p>deb <a href="http://security.debian.org/">http://security.debian.org/</a> /updates main contrib non-free
+deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> /updates main contrib non-free
 ```</p>
 ]]></content>
   </entry>
