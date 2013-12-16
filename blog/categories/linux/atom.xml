@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-15T21:45:52+09:00</updated>
+  <updated>2013-12-17T00:31:55+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -66,6 +66,8 @@ deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> wh
 ```</p>
 
 <p><a href="http://ktkr3d.github.io/images/SteamOS-conky.png"><img src="/images/SteamOS-conky.png"></a></p>
+
+<p><a href="http://ktkr3d.github.io/images/SteamOS-japanese.png"><img src="/images/SteamOS-japanese.png"></a></p>
 
 <p>``` text /etc/apt/sources.list
 deb <a href="http://ftp.jp.debian.org/debian">http://ftp.jp.debian.org/debian</a> experimental main contrib non-free
