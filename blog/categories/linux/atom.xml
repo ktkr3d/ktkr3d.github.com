@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-17T01:19:47+09:00</updated>
+  <updated>2013-12-22T11:08:44+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Add remote location over SSH on XBMC]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/"/>
+    <updated>2013-12-22T10:50:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/xbmc-ssh.png"><img src="/images/xbmc-ssh.png"></a></p>
+
+<p>外出先から自宅のPC に格納しているメディアにアクセスするためにXBMC を設定してみました。</p>
+
+<!-- more -->
+
+
+<p>Android やモバイルLinux にインストールしたXBMC からSSH 経由で自宅PC のメディアにアクセスするには、<code>Add network location</code> で <code>Secure Shell (SSH/SFTP)</code> プロトコルを選択します。</p>
+
+<p>以下のクライアントで動作確認できました。</p>
+
+<ul>
+<li>Android 4.2 + XBMC 12.2</li>
+<li>Android-x86 4.0 + XBMC 12.2</li>
+<li>Ubuntu GNOME 14.04 + XBMC 12.0</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SteamOS]]></title>
@@ -420,40 +445,6 @@ deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> /u
 <p><a href="http://www.unixmen.com/find-system-information-screenfetch-tool/">http://www.unixmen.com/find-system-information-screenfetch-tool/</a></p>
 
 <p>ScreenFetch でシステム情報を表示してみました。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[minetest]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/11/04/minetest/"/>
-    <updated>2013-11-04T21:28:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/11/04/minetest</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/minetest_ogl42.png"><img src="/images/minetest_ogl42_tn.png"></a></p>
-
-<p><a href="http://minetest.net/">http://minetest.net/</a></p>
-
-<p>minecraft のクローンminetest がUbuntu の標準リポジトリに登録されていたので、遊んでみました。
-minetest はIrrlicht エンジンを利用して実装されています。
-動作は軽快ですが、一部文字が表示されない箇所がありました。</p>
-
-<!-- more -->
-
-
-<h4>サーバへの接続方法</h4>
-
-<p>初期画面の一部の文字が表示されていなかったので、適当に勘を働かせて操作してみます。</p>
-
-<ol>
-<li>左から二番目のタブ(マルチプレイヤー)を選択</li>
-<li>下のテキストボックスに、サーバのIP アドレスとポート番号を入力(<code>http://servers.minetest.net/</code>から適当に選ぶ)</li>
-<li>右上から二番目のテキストボックスにパスワードを入力</li>
-<li>右下のボタン(接続)を押下</li>
-</ol>
-
-
-<p>グラフィックがオンボードでATOM なOpenGL 1.4 の環境で動かしてみると、さすがに重かったです。</p>
-
-<p><a href="http://ktkr3d.github.io/images/minetest_ogl14.png"><img src="/images/minetest_ogl14_tn.png"></a></p>
 ]]></content>
   </entry>
   

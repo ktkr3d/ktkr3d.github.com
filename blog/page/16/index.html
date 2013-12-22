@@ -9,12 +9,11 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="OpenNI のSinbad デモ(SampleAppSinbad)のLinux 版が見つからなかったのでポーティングしてみた
-環境
-OS: Ubuntu 10.10 32bit
-Ogre3D: Ver. 1.7.2
-IDE: Code::Blocks 10.05
-GCC: 4.4.5 &hellip;">
+  <meta name="description" content="Kinect でミクさんを動かしてみようと思い、とりあえずOgre3D でミクさんを表示してみた
+Kinect に接続して動かしてみると、この世のものとは思えない動きをするようになった
+ボーンの見直しが必要だ&hellip;
+モデルの変換
+1. PMDEditor でPMD モデルのサイズ変更( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +90,56 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/25/ogre3d_1/">まずはOgre3D でミクさんを表示してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-25T21:35:34+09:00" pubdate data-updated="true">2010年12月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/12/ogre3d_miku.png"><img src="/images/uploads/2010/12/ogre3d_miku.png" alt="ogre3d miku pmd" /></a>
+Kinect でミクさんを動かしてみようと思い、とりあえずOgre3D でミクさんを表示してみた
+Kinect に接続して動かしてみると、この世のものとは思えない動きをするようになった
+ボーンの見直しが必要だ&hellip;
+<strong>モデルの変換</strong>
+1. PMDEditor でPMD モデルのサイズ変更(x0.5)、位置変更(Y:-5)
+2. Pmd2OgreMesh (作者さんに感謝!!)で.pmd から.mesh, .mesh.xml, .skeleton, .skeleton.xml, .materialを生成
+3. XML データ修正
+&ndash; .skeleton.xml にSinbad.skeleton のanimation 13種類をダミーで挿入
+&ndash; .skeleton.xml 内のボーン名(bone000 等10個)をSinbad.skelton のボーン名(Root 等)に置換
+4. OgreXMLConverter で .skeleton.xml → .skeleton を再生成
+<strong>ソースの修正</strong>
+1. 剣メッシュ関連の処理(剣の表示や剣を抜く動作等)をコメントアウト
+2. マッピングしなかったボーン名(Stomach, Waist)についてはtransformBone() をコメントアウト
+3. setupbone() で指定する角度を修正</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -493,64 +542,6 @@ varying vec2 texCoords; → vec2 texCoords;</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/16/billardgl/">BillardGL で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-16T14:16:12+09:00" pubdate data-updated="true">2010年10月16日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/10/biilardgl.png"><img src="/images/uploads/2010/10/biilardgl.png" alt="billardgl" /></a>
-<a href="http://www.billardgl.de/">http://www.billardgl.de/</a>
-3D のビリヤードゲーム
-F1〜F8 キーで画面がかっこよくくるくる回転する
-Ubuntu のタブレットPC デモ動画に載っていたのでリポジトリにあるのかと思いきや無く、ホームページのdeb パッケージのリンクも切れていて、alien もdeb パッケージを生成できなかったのでソースからビルドしてみた
-src/bmp.cpp の修正</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
-</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span><span class='line'><span class="cp">#include &lt;fstream&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>リンクするライブラリ
-Xxf86vm; GL; GLU; glut;
-リソースファイルのコピー
-src/Texturen → /usr/share/BillardGL/Texturen
-src/lang → /usr/share/BillardGL/lang
-追記: Ubuntu でのパッケージ名はbillard-gl だった
-追記2: openSUSE にあるfoobillard も同様によくできている</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/17/">&larr; Older</a>
@@ -568,6 +559,10 @@ src/lang → /usr/share/BillardGL/lang
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
@@ -583,15 +578,11 @@ src/lang → /usr/share/BillardGL/lang
         <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

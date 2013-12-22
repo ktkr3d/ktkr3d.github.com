@@ -9,9 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Compiling Irrlicht ogl-es branch for Android on Ubuntu GNOME 13.10 x86_64.
-Native C/C++ Android Application (Native Activity).
-Fullscreen (1080x1920 &hellip;">
+  <meta name="description" content=" Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +86,49 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/11/irrlicht-android-media-player/">Irrlicht Android Media Player</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-11T03:47:00+09:00" pubdate data-updated="true">2013年08月11日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/irrlicht_android_player_tab.png"><img src="/images/irrlicht_android_player_tab_tn.png"></a></p>
+
+<p>Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/11/irrlicht-android-media-player/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -502,206 +543,6 @@ Linux 版のアーカイブをダウンロードして展開し、android-studio
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/24/conkyforecast-japanese-translation/">ConkyForecast Japanese Translation</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-24T09:36:01+09:00" pubdate data-updated="true">2013年03月24日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2013/03/conkyforecast_japanese.png"><img src="/images/uploads/2013/03/conkyforecast_japanese.png" alt="conkyforecast japanese" /></a></p>
-
-<p><a href="https://github.com/ktkr3d/conkyforecast-ja">https://github.com/ktkr3d/conkyforecast-ja</a></p>
-
-<p>ConkyForecast 用の日本語PO ファイルを作成して、Conky-HTC を日本語化してみました。また、Conky-HTC の表示用スクリプトを整理してみました。</p>
-
-<h4>パッケージのインストール</h4>
-
-<p><a href="http://ktkr3d.site11.com/2011/10/09/conky-htc/">http://ktkr3d.site11.com/2011/10/09/conky-htc/</a>
-conky, conkyForecast, Conky-HTC パッケージをインストールして以下の構成にしておきます。</p>
-
-<figure class='code'><figcaption><span>フォルダ/ファイル構成</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>~/
-</span><span class='line'>├── .fonts/
-</span><span class='line'>├── .images/
-</span><span class='line'>├── .conkyForecast.config
-</span><span class='line'>├── .conkyrc
-</span><span class='line'>├── .conky_start
-</span><span class='line'>└── .vreme.template
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>conkyForecast の日本語化</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>wget https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecast.po
-</span><span class='line'><span class="nv">$ </span>wget https://github.com/ktkr3d/conkyforecast-ja/raw/master/locale/ja/LC_MESSAGES/conkyForecastWU.po
-</span><span class='line'><span class="nv">$ </span>msgfmt -o conkyForecast.mo conkyForecast.po
-</span><span class='line'><span class="nv">$ </span>msgfmt -o conkyForecastWU.mo conkyForecastWU.po
-</span><span class='line'><span class="nv">$ </span>sudo mkdir -p /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
-</span><span class='line'><span class="nv">$ </span>sudo cp *.mo /usr/share/conkyforecast/locale/ja/LC_MESSAGES/
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>~/.conkyForecast.config の編集</h4>
-
-<figure class='code'><figcaption><span>~/.conkyForecast.config</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>#=============================================#
-</span><span class='line'># EXPERT SETTINGS, NOT REQUIRED TO BE ALTERED #
-</span><span class='line'>#=============================================#
-</span><span class='line'>#BASE_XOAP_URL = http://xoap.weather.com/weather/local/&lt;LOCATION&gt;?cc=*&amp;dayf=5&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID&gt;&amp;key=&lt;XOAP_LICENCE_KEY&gt;&amp;unit=m
-</span><span class='line'>BASE_XOAP_URL = http://xml.weather.com/weather/local/&lt;LOCATION&gt;?cc=*&amp;dayf=10&amp;link=xoap&amp;prod=xoap&amp;par=&lt;XOAP_PARTNER_ID&gt;&amp;key=&lt;XOAP_LICENCE_KEY&gt;&amp;unit=m
-</span><span class='line'>MAXIMUM_DAYS_FORECAST = 10
-</span><span class='line'>
-</span><span class='line'>#===============================================#
-</span><span class='line'># USER SETTINGS, EDIT BASED ON DOCUMENTED SETUP #
-</span><span class='line'>#===============================================#
-</span><span class='line'>CACHE_FOLDERPATH = /tmp/
-</span><span class='line'>CONNECTION_TIMEOUT = 5
-</span><span class='line'>EXPIRY_MINUTES = 30
-</span><span class='line'>TIME_FORMAT = %H:%M
-</span><span class='line'>DATE_FORMAT = %Y-%m-%d
-</span><span class='line'>LOCALE = ja
-</span><span class='line'>XOAP_PARTNER_ID =
-</span><span class='line'>XOAP_LICENCE_KEY =
-</span><span class='line'>DEFAULT_LOCATION = JAXX0085
-</span><span class='line'>AUTO_NIGHT = False
-</span><span class='line'>PROXY_HOST =
-</span><span class='line'>PROXY_PORT = 8080
-</span><span class='line'>PROXY_USERNAME =
-</span><span class='line'>PROXY_PASSWORD =
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>~/.conkyrc の編集</h4>
-
-<figure class='code'><figcaption><span>~/.conkyrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'># Time
-</span><span class='line'>${voffset 35}${goto 39}${font Helvetica LT Std:style=Condensed:size=60}${color 434343}${time %H}${goto 140}${color 434343}${time %M}${font Helvetica LT Std:style=Condensed:size=18}${color ffffff}${goto 225}${time %S}
-</span><span class='line'># Date
-</span><span class='line'>${voffset 47}${font TakaoPGothic:size=8}${alignr 80}${time %G}/${time %m}/${time %d} (${time %a})
-</span><span class='line'># City Name
-</span><span class='line'>${voffset -40}${goto 22}${exec conkyForecast --datatype=CN}
-</span><span class='line'># Conditions Text, Current Temp
-</span><span class='line'>${goto 22}${execi 1800 conkyForecast --datatype=CT}${voffset -20}${goto 200}${font Helvetica LT Std:size=24}${execi 1800 conkyForecast -u --datatype=HT}
-</span><span class='line'># High Temp, Low Temp of Today
-</span><span class='line'>${voffset -15}${font Helvetica LT Std:style=Condensed:size=10}#
-</span><span class='line'>${goto 200}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=0}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=0}
-</span><span class='line'># High Temp, Low Temp of Next 5 Days
-</span><span class='line'>${voffset 53}${font Helvetica LT Std:style=Condensed:size=8}#
-</span><span class='line'>${goto  25}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=1}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=1}#
-</span><span class='line'>${goto  70}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=2}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=2}#
-</span><span class='line'>${goto 115}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=3}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=3}#
-</span><span class='line'>${goto 160}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=4}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=4}#
-</span><span class='line'>${goto 205}${color ffaaaa}${execi 1800 conkyForecast --datatype=HT -u --startday=5}${color ffffff} / ${color aaaaff}${execi 1800 conkyForecast --datatype=LT -u --startday=5}
-</span><span class='line'># Day of Week
-</span><span class='line'>${font TakaoPGothic:size=8}${color ffffff}#
-</span><span class='line'>${goto  37}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=1}#
-</span><span class='line'>${goto  82}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=2}#
-</span><span class='line'>${goto 127}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=3}#
-</span><span class='line'>${goto 172}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=4}#
-</span><span class='line'>${goto 217}${execi 1800 conkyForecast --datatype=DW --shortweekday --startday=5}
-</span><span class='line'>${image ~/.images/base.png -p 12,30 -s 238x140}
-</span><span class='line'>${image ~/.images/base.png -p 12,190 -s 238x55}
-</span><span class='line'>${image ~/.images/flip_bg.png -p 30,10 -s 100x110}
-</span><span class='line'>${image ~/.images/flip_bg.png -p 130,10 -s 100x110}
-</span><span class='line'>${execpi 1800 conkyForecast --template=~/.vreme.template}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>行中/行末に# を挿入すると次の行と連結(改行をエスケープ)できます。
-今日の最高/最低気温を取得するために「&mdash;startday=0」を指定してみましたが、値は無効かもしれません。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -719,6 +560,10 @@ conky, conkyForecast, Conky-HTC パッケージをインストールして以下
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
@@ -734,15 +579,11 @@ conky, conkyForecast, Conky-HTC パッケージをインストールして以下
         <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

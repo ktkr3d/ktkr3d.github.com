@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://cdimage.ubuntu.com/daily-live/ Ubuntu 13.04 Raring Ringtail のデイリービルドがライブISO イメージで公開されていますので、そろそろ環境構築をし始めます。デスクトップ環境はGNOME Shell にします。 Linux &hellip;">
+  <meta name="description" content="https://launchpad.net/~gnome3-team/+archive/gnome3 https://launchpad.net/~ricotz/+archive/testing Ubuntu 13.04 x86_64 デイリービルドにGNOME Shell 3.7.5 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,104 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/08/ubuntu-13-04-gnome-shell-3-7-5/">Ubuntu 13.04 + GNOME Shell 3.7.5</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-08T06:28:05+09:00" pubdate data-updated="true">2013年02月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2013/02/ubuntu_13.04_gnome_shell_3.7.5.png"><img src="/images/uploads/2013/02/ubuntu_13.04_gnome_shell_3.7.5-600x337.png" alt="ubuntu_13.04_gnome_shell_3.7.5" /></a></p>
+
+<p><a href="https://launchpad.net/~gnome3-team/+archive/gnome3  ">https://launchpad.net/~gnome3-team/+archive/gnome3  </a>
+<a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
+
+<p>Ubuntu 13.04 x86_64 デイリービルドにGNOME Shell 3.7.5 をインストールしてみました。</p>
+
+<h3>手順</h3>
+
+<p>以下のPPA をソフトウェアソースに追加して、gnome-shell パッケージをインストール/アップデートします。</p>
+
+<ul>
+<li><p>ppa:gnome3-team/gnome3</p></li>
+<li><p>ppa:ricotz/testing</p></li>
+</ul>
+
+
+<h3>GNOME Shell 3.7.5 のチェンジログ</h3>
+
+<p><a href="http://ftp.acc.umu.se/pub/GNOME/sources/gnome-shell/3.7/gnome-shell-3.7.5.news">http://ftp.acc.umu.se/pub/GNOME/sources/gnome-shell/3.7/gnome-shell-3.7.5.news</a>
+* MessageTray: pass keyboard events to tray icons
+* network: add support for virtual devices
+* gdm: Allow right-clicking buttons for left-handed users
+* Make list search results span all available horizontal space
+* Make Show-Applications button depress when held down
+* Set a max width on search results
+* Reserve scrollbar allocation for automatic policy
+* Improve scaling algorithm for window thumbnails</p>
+
+<h3>GNOME Shell Extension のバージョン指定の更新</h3>
+
+<p>Auto hide the top panel GNOME Shell Extension のバージョン指定を更新して、暫定的に動作させてみました。</p>
+
+<figure class='code'><figcaption><span>.local/share/gnome-shell/extensions/autohidetopbar2@werewolves.us/metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>{
+</span><span class='line'>  &quot;description&quot;: &quot;Auto hide the top panel&quot;,
+</span><span class='line'>  &quot;extension-id&quot;: &quot;auto-hide-top-panel&quot;,
+</span><span class='line'>  &quot;gettext-domain&quot;: &quot;gnome-shell-extensions&quot;,
+</span><span class='line'>  &quot;name&quot;: &quot;Auto Hide Top Panel&quot;,
+</span><span class='line'>  &quot;settings-schema&quot;: &quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;,
+</span><span class='line'>  &quot;shell-version&quot;: [
+</span><span class='line'>    &quot;3.5.92&quot;, &quot;3.6.1&quot;, &quot;3.6&quot;, &quot;3.7.5&quot;
+</span><span class='line'>  ],
+</span><span class='line'>  &quot;url&quot;: &quot;http://fpmurphy.com/gnome-shell-extensions&quot;,
+</span><span class='line'>  &quot;uuid&quot;: &quot;autohidetopbar2@werewolves.us&quot;,
+</span><span class='line'>  &quot;version&quot;: 1
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -835,148 +933,6 @@ Unity 4.0 で出力されたLinux 用実行形式ファイルの情報はこん�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/11/ubuntu-12-10-hibernateresume/">Ubuntu 12.10 + Hibernate/Resume</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-11T21:30:33+09:00" pubdate data-updated="true">2012年11月11日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/11/ubuntu_12.10_hibernate.png"><img src="/images/uploads/2012/11/ubuntu_12.10_hibernate-600x264.png" alt="ubuntu 12.10 hibernate" /></a></p>
-
-<p><a href="https://help.ubuntu.com/community/SwapFaq#line-98">https://help.ubuntu.com/community/SwapFaq#line-98</a></p>
-
-<p>Ubuntu 12.10 をインストールしたネットブックInspiron duo をハイバネートするようにしてみました。ちなみにInspiron duo のディスプレイは、反転した状態でふたをしてもハイバネートやサスペンドしないようにできています。</p>
-
-<ol>
-<li> 目標
-ハイバネートでG1/S4 に遷移した後、元の状態に復帰することが目標です。詳しく知らないのですが、ACPI 電源状態は以下のようです。</li>
-</ol>
-
-
-<p>G0
-S0
-起動状態</p>
-
-<p>G1
-S1
-省電力</p>
-
-<p>S2
-CPU 電源OFF</p>
-
-<p>S3
-スタンバイ/スリープ(Suspend to RAM)</p>
-
-<p>S4
-ハイバネート(Suspend to Disk)</p>
-
-<p>G2
-S5
-ソフト電源OFF</p>
-
-<p>G3
-メカニカル電源OFF</p>
-
-<ol>
-<li> コマンドラインで試してみます</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo pm-hibernate
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>電源を入れても元の状態に復帰しないので、GRUB を設定することにします。</p>
-
-<ol>
-<li> GRUB の設定
-swap パーティションのUUID は/etc/fstab やgparted で調べておきます。</li>
-</ol>
-
-
-<figure class='code'><figcaption><span>/etc/default/grub</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>GRUB_CMDLINE_LINUX=&quot;resume=UUID=001d9fdb-7e31-40ab-af01-cb124b8bc710&quot;
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo update-grub
-</span><span class='line'><span class="nv">$ </span>sudo update-initramfs -u
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>これでハイバネート後に復帰するようになりました。</p>
-
-<ol>
-<li> システム設定でハイバネートを選択できるようにします。</li>
-</ol>
-
-
-<figure class='code'><figcaption><span>/etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>[Re-enable hibernate by default]
-</span><span class='line'>Identity=unix-user:*
-</span><span class='line'>Action=org.freedesktop.upower.hibernate
-</span><span class='line'>ResultActive=yes
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> GNOME Shell のメニューからハイバネート
-<a href="https://extensions.gnome.org/extension/5/alternative-status-menu/">https://extensions.gnome.org/extension/5/alternative-status-menu/</a>
-Suspend メニューは表示されますが、Hibernate メニューがでてきませんでした。なぜだろう。
-<strong>Edit:</strong>
-暫定的に表示するには&hellip;</li>
-</ol>
-
-
-<figure class='code'><figcaption><span>~/.local/share/gnome-shell/extensions/alternative-status-menu@gnome-shell-extensions.gcampax.github.com/extension.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>function updateHibernate(object, pspec, item) {
-</span><span class='line'>    //item.actor.visible = object.get_can_hibernate() &amp;&amp; settings.get_boolean(&#39;allow-hibernate&#39;);
-</span><span class='line'>    item.actor.visible = object.get_can_hibernate();
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -994,6 +950,10 @@ Suspend メニューは表示されますが、Hibernate メニューがでて�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
@@ -1009,15 +969,11 @@ Suspend メニューは表示されますが、Hibernate メニューがでて�
         <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

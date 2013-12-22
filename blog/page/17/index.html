@@ -9,10 +9,10 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://linux.softpedia.com/get/GAMES-ENTERTAINMENT/Puzzle/Caph-53323.shtml
-マウスで描いた軌跡で作った物体を使って解くパズルゲーム
-物理エンジンのリアルな動きがおもしろいー
-README &hellip;">
+  <meta name="description" content="http://www.billardgl.de/
+3D のビリヤードゲーム
+F1〜F8 キーで画面がかっこよくくるくる回転する
+Ubuntu のタブレットPC デモ動画に載っていたのでリポジトリにあるのかと思いきや無く、ホームページのdeb パッケージのリンクも切れていて、alien もdeb &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +89,64 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/16/billardgl/">BillardGL で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-16T14:16:12+09:00" pubdate data-updated="true">2010年10月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/10/biilardgl.png"><img src="/images/uploads/2010/10/biilardgl.png" alt="billardgl" /></a>
+<a href="http://www.billardgl.de/">http://www.billardgl.de/</a>
+3D のビリヤードゲーム
+F1〜F8 キーで画面がかっこよくくるくる回転する
+Ubuntu のタブレットPC デモ動画に載っていたのでリポジトリにあるのかと思いきや無く、ホームページのdeb パッケージのリンクも切れていて、alien もdeb パッケージを生成できなかったのでソースからビルドしてみた
+src/bmp.cpp の修正</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'><span class="cp">#include &lt;fstream&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>リンクするライブラリ
+Xxf86vm; GL; GLU; glut;
+リソースファイルのコピー
+src/Texturen → /usr/share/BillardGL/Texturen
+src/lang → /usr/share/BillardGL/lang
+追記: Ubuntu でのパッケージ名はbillard-gl だった
+追記2: openSUSE にあるfoobillard も同様によくできている</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -593,54 +651,6 @@ GUI はxml 化、フォントはgun4fc.ttf</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/04/irrlamb/">Irrlamb で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-04T21:58:43+09:00" pubdate data-updated="true">2010年09月04日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/09/irrlamb.png"><img src="/images/uploads/2010/09/irrlamb.png" alt="irrlamb irrlicht" /></a>
-irrlamb で遊んでみた
-面クリアタイプの3D アクションゲームで、ちょっと慣れが必要だけれどおもしろい!!
-物理エンジンはBullet を使っている
-画面構成がかっこよくて、リプレイ機能もある
-<a href="http://code.google.com/p/irrlamb/">http://code.google.com/p/irrlamb/</a>
-<a href="http://www.youtube.com/profile?user=irrlamb">http://www.youtube.com/profile?user=irrlamb</a>
-ubuntu lucid/universe のリポジトリにlibirrlicht1.7,
-libirrlicht-dev(/usr/include/irrlicht, /usr/lib/libirrlicht.a,
-/usr/lib/libirrlicht.so とか), libirrlicht1.7-dbg,
-libirrlicht-doc(リファレンスとexamples)
-のパッケージ(1.7+dfsg1-1)があることを初めて知った・・・いつできたんだろう
-ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/18/">&larr; Older</a>
@@ -658,6 +668,10 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
@@ -673,15 +687,11 @@ ubuntu maverick/universe の方は1.7.1+dfsg1-1 になっているっぽい</p>
         <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

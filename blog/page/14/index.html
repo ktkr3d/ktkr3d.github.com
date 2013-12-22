@@ -9,9 +9,10 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="
-MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、「メモ」アイコンが増えた。タッチスクリーンは反応せず。上部パネルのレイアウトは若干変わっている。
-">
+  <meta name="description" content="http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty Ubuntu 11.04 用のGNOME Shell を含むppa を見つけたので、早速インストールしてみた。ちゃんとローカライズもされている。 1
+2
+3
+$ sudo add-apt- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +89,59 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/08/ubuntu-11-04-e381a7gnome-shell/">Ubuntu 11.04 でGNOME Shell</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-08T00:40:12+09:00" pubdate data-updated="true">2011年04月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/04/ubuntu-natty-gnome-shell.png"><img src="/images/uploads/2011/04/ubuntu-natty-gnome-shell.png" alt="ubuntu 11.04 natty gnome shell" /></a></p>
+
+<p><a href="http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty">http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty</a></p>
+
+<p>Ubuntu 11.04 用のGNOME Shell を含むppa を見つけたので、早速インストールしてみた。ちゃんとローカライズもされている。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:gnome3-team/gnome3
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install gnome-shell
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>GDM でログインする際に「Ubuntu GNOME Shell Desktop」を選択する。</p>
+
+<p>上部パネルの日付、時刻の書式はスクリプトをカスタマイズ。シャットダウン系のメニューもスクリプトなので後で改造しよう。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -548,58 +602,6 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/17/gnome-shell-e38292e382abe382b9e382bfe3839ee382a4e382ba/">Gnome Shell をカスタマイズ</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-17T21:06:57+09:00" pubdate data-updated="true">2011年03月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Gnome Shell の上部パネルには、曜日と時刻が表示されている。
-<a href="/images/uploads/2011/03/gnome_shell_panel_before.png"><img src="/images/uploads/2011/03/gnome_shell_panel_before.png" alt="gnome shell panel date time" /></a>
-日付も表示したいので、設定を探してみたら、
-/usr/share/gnome-shell/js/ui/dateMenu.js
-の中で、org.gnome.shell.clock のshow-date の値(論理値)を参照して日付表示の要否を判定しているようだった。
-とりあえず、true にして動かしてみた。
-<a href="/images/uploads/2011/03/gnome_shell_panel_after.png"><img src="/images/uploads/2011/03/gnome_shell_panel_after.png" alt="gnome shell panel date time" /></a>
-どこか見覚えのある、OS インストール直後にアップデートしていない時のような、残念な雰囲気のある表示になった。よくある書式にしてみた。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">showSeconds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'><span class="nx">clockFormat</span> <span class="o">=</span> <span class="nx">_</span><span class="p">(</span><span class="s2">&quot;%Y/%m/%d(%a) %H:%M:%S&quot;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="/images/uploads/2011/03/gnome_shell_panel_customized.png"><img src="/images/uploads/2011/03/gnome_shell_panel_customized.png" alt="gnome shell panel date time" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Older</a>
@@ -617,6 +619,10 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
@@ -632,15 +638,11 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
         <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/09/screenfetch/">Screenfetch</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (9)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (99)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
