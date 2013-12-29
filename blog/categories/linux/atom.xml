@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-29T12:50:19+09:00</updated>
+  <updated>2013-12-30T08:43:18+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -75,6 +75,10 @@ $ time ~/test.sh
 </tbody>
 </table>
 
+
+<h3>ファイルの削除</h3>
+
+<p>ファイルのサイズとディレクトリを参照して冗長なファイルを削除します。</p>
 ]]></content>
   </entry>
   
@@ -100,6 +104,19 @@ $ time ~/test.sh
 <li>Ubuntu GNOME 14.04 alpha1 + XBMC 12.0</li>
 </ul>
 
+
+<p>Linux の場合はsshfs でマウントしておいた方が何かと便利</p>
+
+<p><code>bash
+$ ssh-keygen
+$ ssh-copy-id -i .ssh/id_rsa.pub useranme@hostname -p 22222
+</code></p>
+
+<p><code>gnome-session-properties</code> で自動起動するアプリケーションに以下を追加</p>
+
+<p><code>bash
+sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
+</code></p>
 ]]></content>
   </entry>
   

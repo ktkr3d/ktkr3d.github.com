@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-29T12:50:19+09:00</updated>
+  <updated>2013-12-30T08:43:18+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -83,6 +83,10 @@
 </tbody>
 </table>
 
+
+<h3>ファイルの削除</h3>
+
+<p>ファイルのサイズとディレクトリを参照して冗長なファイルを削除します。</p>
 ]]></content>
   </entry>
   
@@ -107,6 +111,24 @@
 <li>Android-x86 4.0 + XBMC 13.0 alpha10</li>
 <li>Ubuntu GNOME 14.04 alpha1 + XBMC 12.0</li>
 </ul>
+
+
+<p>Linux の場合はsshfs でマウントしておいた方が何かと便利</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh-keygen
+</span><span class='line'><span class="nv">$ </span>ssh-copy-id -i .ssh/id_rsa.pub useranme@hostname -p 22222
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>gnome-session-properties</code> で自動起動するアプリケーションに以下を追加</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
@@ -1445,7 +1467,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x61;&#x75;&#116;&#111;&#104;&#x69;&#100;&#101;&#116;&#x6f;&#112;&#x62;&#x61;&#x72;&#50;&#64;&#x77;&#x65;&#x72;&#x65;&#119;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#117;&#115;">&#x61;&#x75;&#x74;&#x6f;&#x68;&#x69;&#x64;&#101;&#116;&#x6f;&#x70;&#x62;&#97;&#114;&#50;&#x40;&#x77;&#101;&#114;&#101;&#x77;&#x6f;&#x6c;&#x76;&#101;&#x73;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#97;&#117;&#116;&#x6f;&#x68;&#105;&#x64;&#101;&#116;&#x6f;&#x70;&#98;&#97;&#114;&#x32;&#64;&#x77;&#101;&#x72;&#x65;&#119;&#x6f;&#x6c;&#x76;&#x65;&#115;&#x2e;&#117;&#115;">&#x61;&#x75;&#116;&#x6f;&#104;&#x69;&#100;&#101;&#x74;&#x6f;&#112;&#98;&#97;&#114;&#50;&#64;&#x77;&#101;&#x72;&#x65;&#119;&#x6f;&#x6c;&#x76;&#101;&#x73;&#x2e;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
