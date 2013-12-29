@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://live.gnome.org/GnomeShell/Extensions http://blog.fpmurphy.com/2011/04/gnome-3-shell-extensions.html まずは、上部のパネルをクリックすると一定時間メッセージを表示するHello &hellip;">
+  <meta name="description" content="http://blog.fpmurphy.com/2011/04/gnome-shell-theme-selector-preview.html GNOME Shell のテーマを変更する拡張を見つけたので、Fedora15 とUbuntu 11.04 で試してみた。Atolm &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,95 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/16/gnome-shell-e381aee38386e383bce3839ee38292e5a489e69bb4e38197e381a6e381bfe3819f/">GNOME Shell のテーマを選んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-16T01:14:58+09:00" pubdate data-updated="true">2011年05月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/gnome-shell-extension-theme-selector.png"><img src="/images/uploads/2011/05/gnome-shell-extension-theme-selector.png" alt="gnome shell extension theme selector" /></a></p>
+
+<p><a href="/images/uploads/2011/05/gnome-shell-extension-theme-selector-ubuntu.png"><img src="/images/uploads/2011/05/gnome-shell-extension-theme-selector-ubuntu.png" alt="gnome shell extension theme selector ubuntu" /></a></p>
+
+<p><a href="http://blog.fpmurphy.com/2011/04/gnome-shell-theme-selector-preview.html">http://blog.fpmurphy.com/2011/04/gnome-shell-theme-selector-preview.html</a></p>
+
+<p>GNOME Shell のテーマを変更する拡張を見つけたので、Fedora15 とUbuntu 11.04 で試してみた。Atolm テーマが選べるようになったよ！！</p>
+
+<p><a href="http://www.fpmurphy.com/gnome-shell-extensions/">http://www.fpmurphy.com/gnome-shell-extensions/</a> の下の最新のthemeselector のアーカイブをダウンロードして、README に従って設定した。</p>
+
+<ol>
+<li> /usr/share/glib-2.0/org.gnome.shell.extensions.user-theme.gschema.xml を作成。</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;schemalist</span> <span class="na">gettext-domain=</span><span class="s">&quot;gnome-shell-extensions&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;schema</span> <span class="na">path=</span><span class="s">&quot;/org/gnome/shell/extensions/user-theme/&quot;</span> <span class="na">id=</span><span class="s">&quot;org.gnome.shell.extensions.user-theme&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;key</span> <span class="na">type=</span><span class="s">&quot;s&quot;</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;default&gt;</span>&quot;&quot;<span class="nt">&lt;/default&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;summary&gt;</span>Theme name<span class="nt">&lt;/summary&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;description&gt;</span>The name of the current shell theme<span class="nt">&lt;/description&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/key&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/schema&gt;</span>
+</span><span class='line'><span class="nt">&lt;/schemalist&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> glib-compile-schemas を実行する。</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo glib-compile-schemas /usr/share/glib-2.0
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li><p> $HOME/.themes/ ディレクトリを作成して、アーカイブの中のテーマを展開する。</p></li>
+<li><p> $HOME/.local/share/gnome-shell/extensions/themeselector@fpmurphy.com/ ディレクトリを作成して、アーカイブの中のextension.js とmetadata.json を展開する。</p></li>
+<li><p> [Alt]+[F2]を押して、r を入力して、[Enter] を押す。</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -728,83 +817,6 @@ KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/09/gnome-3-e38292e8aabfe381b9e381a6e381bfe3819f/">GNOME Shell を拡張してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-09T10:17:03+09:00" pubdate data-updated="true">2011年04月09日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://wiki.archlinux.org/index.php/GNOME_3  ">https://wiki.archlinux.org/index.php/GNOME_3  </a>
-<a href="https://live.gnome.org/GnomeShell/CheatSheet  ">https://live.gnome.org/GnomeShell/CheatSheet  </a>
-<a href="http://www.webupd8.org/2011/04/gnome-shell-extensions-additional.html  ">http://www.webupd8.org/2011/04/gnome-shell-extensions-additional.html  </a>
-<a href="http://git.gnome.org/browse/gnome-shell-extensions/">http://git.gnome.org/browse/gnome-shell-extensions/</a></p>
-
-<p>GNOME Shell Extensions やGNOME 3 の便利な機能を使ってみよう。</p>
-
-<h3>GNOME Shell Extensions</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone git://git.gnome.org/gnome-shell-extensions
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>gnome-shell-extensions
-</span><span class='line'><span class="nv">$ </span>./autogen.sh
-</span><span class='line'><span class="nv">$ </span>make
-</span><span class='line'><span class="nv">$ </span>sudo make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><p>alternate-tab: Alt+Tab 操作関連</p></li>
-<li><p>alternative-status-menu: 電源オフメニュー常時表示
-標準ではステータスメニューを開いて、「Alt」ボタンを押すと「サスペンド」が「電源オフ&hellip;」に切り替わる。alternative-status-menu を使うと「サスペンド」と「電源オフ」の両方が常に表示されるようになり、「Alt」ボタンを押すと「サスペンド」が「Hibernate」に切り替わる。必須!!</p></li>
-<li><p>dock: 右端にドックバーを表示（画面が狭くなった&hellip;微妙?）</p></li>
-<li><p>windowsNavigator: overview 画面上でALT+数字キーによりウィンドウ選択</p></li>
-</ul>
-
-
-<h3>GNOME 3</h3>
-
-<ul>
-<li><p>テーマのカスタマイズ
-gnome-tweak-tool またはsetting.ini</p></li>
-<li><p>スクリーンキャストを撮る
-Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li>
-<li><p>キー操作でoverview へ切り替える
-システム(Windows)キーまたはAlt+F1</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/14/">&larr; Older</a>
@@ -822,6 +834,10 @@ Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
@@ -837,15 +853,11 @@ Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

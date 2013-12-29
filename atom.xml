@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-22T13:44:48+09:00</updated>
+  <updated>2013-12-29T12:50:19+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,79 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cleaning]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/12/29/cleaning/"/>
+    <updated>2013-12-29T12:40:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/12/29/cleaning</id>
+    <content type="html"><![CDATA[<p>年末だし、ハードディスクの中の重複したファイルを見つけて、削除してしまおう。</p>
+
+<!-- more -->
+
+
+<h4>対象とするファイル</h4>
+
+<ul>
+<li>ファイルサイズが大きめ</li>
+<li>不完全なファイルも存在する</li>
+<li>ディレクトリ階層を再帰的に検索</li>
+</ul>
+
+
+<p>そのため、先頭1MB を対象としたハッシュ比較により、ファイルの同一性を検出します。</p>
+
+<h4>スクリプト</h4>
+
+<figure class='code'><figcaption><span>~/test.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/sh</span>
+</span><span class='line'>
+</span><span class='line'>cp /dev/null /tmp/list0.txt
+</span><span class='line'>find . -type f -exec dd <span class="k">if</span><span class="o">={}</span> <span class="nv">bs</span><span class="o">=</span>1024 <span class="nv">count</span><span class="o">=</span>1000 <span class="nv">of</span><span class="o">=</span>/tmp/work.bin <span class="se">\;</span> -exec md5sum /tmp/work.bin &gt;&gt; /tmp/list0.txt <span class="se">\;</span> -exec du <span class="o">{}</span>  &gt;&gt; /tmp/list0.txt <span class="se">\;</span>
+</span><span class='line'>sed <span class="s1">&#39;:loop; N; $!b loop; ;s/\/tmp\/work.bin\n//g&#39;</span> /tmp/list0.txt &gt; /tmp/list1.txt
+</span><span class='line'>sort /tmp/list1.txt | uniq -D -w 32  &gt; /tmp/list2.txt
+</span><span class='line'>rm /tmp/work.bin /tmp/list0.txt
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>スクリプトの実行</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /PATH/TO/TARGET
+</span><span class='line'><span class="nv">$ </span><span class="nb">time</span> ~/test.sh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>実行結果</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">出力されるファイル</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/tmp/list1.txt</td>
+<td align="left">ハッシュとサイズとパス</td>
+</tr>
+<tr>
+<td align="left">/tmp/list2.txt</td>
+<td align="left">重複しているファイルの一覧</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Add remote location over SSH on XBMC]]></title>
@@ -1372,7 +1445,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x61;&#x75;&#116;&#111;&#x68;&#x69;&#100;&#101;&#x74;&#111;&#112;&#98;&#97;&#114;&#50;&#x40;&#119;&#101;&#x72;&#101;&#x77;&#x6f;&#108;&#x76;&#x65;&#x73;&#46;&#x75;&#115;">&#x61;&#117;&#x74;&#111;&#104;&#x69;&#100;&#x65;&#116;&#111;&#112;&#98;&#97;&#114;&#50;&#64;&#x77;&#101;&#114;&#x65;&#x77;&#x6f;&#x6c;&#118;&#x65;&#115;&#46;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x61;&#x75;&#116;&#111;&#104;&#x69;&#100;&#101;&#116;&#x6f;&#112;&#x62;&#x61;&#x72;&#50;&#64;&#x77;&#x65;&#x72;&#x65;&#119;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#117;&#115;">&#x61;&#x75;&#x74;&#x6f;&#x68;&#x69;&#x64;&#101;&#116;&#x6f;&#x70;&#x62;&#97;&#114;&#50;&#x40;&#x77;&#101;&#114;&#101;&#x77;&#x6f;&#x6c;&#x76;&#101;&#x73;&#46;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1522,25 +1595,6 @@ shell-version は3.9.4 を指定しました。</p>
 
 <p>いつものようにAvant Window Navigator を使いたかったのですが、うまく起動しなかったので、Cairo Dock に移行してみました。Cairo Dock は挙動が派手で好みではなかったのですが、テーマを変更して、詳細設定をしたらAWN みたいな挙動にすることができました。
 その他で気になったのは、Code::Blocks が起動しないことと、GTK+ テーマのリストボックスの挙動が少し不自然なことくらいでしょうか。そのうち、直るでしょう。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android Studio]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/06/01/android-studio/"/>
-    <updated>2013-06-01T15:55:52+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/06/01/android-studio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/uploads/2013/06/android-studio.png"><img src="http://ktkr3d.github.io/images/uploads/2013/06/android-studio.png" alt="android-studo" /></a>
-<a href="http://developer.android.com/sdk/installing/studio.html">http://developer.android.com/sdk/installing/studio.html</a></p>
-
-<p>Android Studio でサンプルアプリを作って動かしてみました。
-Linux 版のアーカイブをダウンロードして展開し、android-studio/bin/studio.sh を実行します。ウィザードに従っていくと、サンプルアプリのapk ファイルが生成されます。</p>
-
-<p><a href="http://ktkr3d.github.io/images/uploads/2013/06/android_studio_project.png"><img src="http://ktkr3d.github.io/images/uploads/2013/06/android_studio_project.png" alt="android_studio_project" /></a></p>
-
-<p>インストールして実行すると、こんな感じになりました。実行環境はAndroid 4.1.2 です。</p>
-
-<p><a href="http://ktkr3d.github.io/images/uploads/2013/06/my_app.png"><img src="http://ktkr3d.github.io/images/uploads/2013/06/my_app.png" alt="my_app" /></a></p>
 ]]></content>
   </entry>
   

@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ubuntu 12.10 + Calipso CMS (node.js, express, MongoDB) - ktkr3d</title>
+  <title>Cleaning - ktkr3d</title>
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://github.com/cliftonc/calipso Calipso はnode.js(サーバサイドJavaScript)、express(node.js 上のフレームワーク)、MongoDB で構築されたシンプルなCMS アプリです。node.js のお試し用にUbuntu &hellip;">
+  <meta name="description" content="年末だし、ハードディスクの中の重複したファイルを見つけて、削除してしまおう。 対象とするファイル ファイルサイズが大きめ
+不完全なファイルも存在する
+ディレクトリ階層を再帰的に検索 そのため、先頭1MB を対象としたハッシュ比較により、ファイルの同一性を検出します。 スクリプト ~/test. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ktkr3d.github.io/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb">
+  <link rel="canonical" href="http://ktkr3d.github.io/blog/2013/12/29/cleaning">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="ktkr3d" type="application/atom+xml">
@@ -89,7 +91,7 @@ $(document).ready( function () {
   
   <header>
     
-      <h1 class="entry-title">Ubuntu 12.10 + Calipso CMS (node.js, Express, MongoDB)</h1>
+      <h1 class="entry-title">Cleaning</h1>
     
     
       <p class="meta">
@@ -105,107 +107,78 @@ $(document).ready( function () {
   
 
 
-<time datetime="2013-01-12T21:10:34+09:00" pubdate data-updated="true">2013年01月12日</time>
+<time datetime="2013-12-29T12:40:00+09:00" pubdate data-updated="true">2013年12月29日</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="/images/uploads/2013/01/Calipso_CMS.png"><img src="/images/uploads/2013/01/Calipso_CMS-600x482.png" alt="calipso node.js express mongodb ubuntu" /></a></p>
+<div class="entry-content"><p>年末だし、ハードディスクの中の重複したファイルを見つけて、削除してしまおう。</p>
 
-<p><a href="https://github.com/cliftonc/calipso">https://github.com/cliftonc/calipso</a></p>
-
-<p>Calipso はnode.js(サーバサイドJavaScript)、express(node.js 上のフレームワーク)、MongoDB で構築されたシンプルなCMS アプリです。node.js のお試し用にUbuntu 12.10 上でCalipso 0.3.17 の環境を構築してみました。</p>
-
-<ol>
-<li> パッケージのインストール
-Ubuntu オフィシャルリポジトリのnode.js はバージョンが古いのでPPA のリポジトリを追加します。</li>
-</ol>
+<!-- more -->
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:chris-lea/node.js
-</span><span class='line'><span class="nv">$ </span>sudo apt-get update
-</span><span class='line'><span class="nv">$ </span>sudo apt-get install nodejs npm mongodb
-</span></code></pre></td></tr></table></div></figure>
+<h4>対象とするファイル</h4>
+
+<ul>
+<li>ファイルサイズが大きめ</li>
+<li>不完全なファイルも存在する</li>
+<li>ディレクトリ階層を再帰的に検索</li>
+</ul>
 
 
-<ol>
-<li> Calipso のインストールの前に
-このままの状態でCalipso のインストールを進めると、node コマンドが見つからない旨のメッセージを出力して、途中で終了してしまいます。Debian/Ubuntu には別にnode コマンドがあるため、node.js のコマンドはnodejs になっているようです。暫定的にシンボリックリンクを作成しておきます。作成したシンボリックリンク(/usr/bin/node)は後で消しておきます。</li>
-</ol>
+<p>そのため、先頭1MB を対象としたハッシュ比較により、ファイルの同一性を検出します。</p>
 
+<h4>スクリプト</h4>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo ln -s /usr/bin/nodejs /usr/bin/node
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> Calipso のインストールと起動</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo npm install -g node-gyp
-</span><span class='line'><span class="nv">$ </span>sudo npm install -g calipso
-</span><span class='line'><span class="nv">$ </span>sudo calipso site /var/www/MySite
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /var/www/MySite
-</span><span class='line'><span class="nv">$ </span>sudo calipso server
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li><p> ブラウザからアクセス
-<a href="http://localhost:3000">http://localhost:3000</a>
-表示されたウィザードに従って、データベースの作成、アカウントの作成をします。表示に関しては、一応、日本語設定が用意されています。</p></li>
-<li><p> nginx からリバースプロキシで接続</p></li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install nginx
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>/etc/nginx/sites-available/default</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>~/test.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>location / {
-</span><span class='line'>    # First attempt to serve request as file, then
-</span><span class='line'>    # as directory, then fall back to displaying a 404.
-</span><span class='line'>    #try_files $uri $uri/ /index.html;
-</span><span class='line'>    # Uncomment to enable naxsi on this location
-</span><span class='line'>    # include /etc/nginx/naxsi.rules
-</span><span class='line'>    proxy_pass http://localhost:3000/;
-</span><span class='line'>}
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/sh</span>
+</span><span class='line'>
+</span><span class='line'>cp /dev/null /tmp/list0.txt
+</span><span class='line'>find . -type f -exec dd <span class="k">if</span><span class="o">={}</span> <span class="nv">bs</span><span class="o">=</span>1024 <span class="nv">count</span><span class="o">=</span>1000 <span class="nv">of</span><span class="o">=</span>/tmp/work.bin <span class="se">\;</span> -exec md5sum /tmp/work.bin &gt;&gt; /tmp/list0.txt <span class="se">\;</span> -exec du <span class="o">{}</span>  &gt;&gt; /tmp/list0.txt <span class="se">\;</span>
+</span><span class='line'>sed <span class="s1">&#39;:loop; N; $!b loop; ;s/\/tmp\/work.bin\n//g&#39;</span> /tmp/list0.txt &gt; /tmp/list1.txt
+</span><span class='line'>sort /tmp/list1.txt | uniq -D -w 32  &gt; /tmp/list2.txt
+</span><span class='line'>rm /tmp/work.bin /tmp/list0.txt
 </span></code></pre></td></tr></table></div></figure>
 
 
-
+<h4>スクリプトの実行</h4>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo /etc/init.d/nginx reload
-</span><span class='line'><span class="nv">$ </span>sudo /etc/init.d/nginx restart
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /PATH/TO/TARGET
+</span><span class='line'><span class="nv">$ </span><span class="nb">time</span> ~/test.sh
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><a href="http://localhost">http://localhost</a> からアクセスできるようになります。</p>
+<h4>実行結果</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">出力されるファイル</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/tmp/list1.txt</td>
+<td align="left">ハッシュとサイズとパス</td>
+</tr>
+<tr>
+<td align="left">/tmp/list2.txt</td>
+<td align="left">重複しているファイルの一覧</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 
 
@@ -228,7 +201,7 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
   
 
 
-<time datetime="2013-01-12T21:10:34+09:00" pubdate data-updated="true">2013年01月12日</time>
+<time datetime="2013-12-29T12:40:00+09:00" pubdate data-updated="true">2013年12月29日</time>
       
 
 <span class="categories">
@@ -242,7 +215,7 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ktkr3d.github.io/blog/2013/12/29/cleaning/" data-via="ktkr3d" data-counturl="http://ktkr3d.github.io/blog/2013/12/29/cleaning/" >Tweet</a>
   
   
   
@@ -251,10 +224,8 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/01/04/moc-2-5-0-beta1-patch-r2519r2520/" title="Previous Post: moc 2.5.0 beta1 + patch r2519/r2520">&laquo; moc 2.5.0 beta1 + patch r2519/r2520</a>
+        <a class="basic-alignment left" href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/" title="Previous Post: Add remote location over SSH on XBMC">&laquo; Add remote location over SSH on XBMC</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/01/19/windows-8-boot-manager-grub4dos-android-x86/" title="Next Post: Windows 8 Boot Manager + GRUB4DOS + Android-x86">Windows 8 Boot Manager + GRUB4DOS + Android-x86 &raquo;</a>
       
     </p>
   </footer>
@@ -339,8 +310,8 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://ktkr3d.github.io/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb/';
-        var disqus_url = 'http://ktkr3d.github.io/blog/2013/01/12/ubuntu-12-10-calipso-cms-node-js-express-mongodb/';
+        var disqus_identifier = 'http://ktkr3d.github.io/blog/2013/12/29/cleaning/';
+        var disqus_url = 'http://ktkr3d.github.io/blog/2013/12/29/cleaning/';
         var disqus_script = 'embed.js';
       
     (function () {

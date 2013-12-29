@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://help.ubuntu.com/community/SwapFaq#line-98 Ubuntu 12.10 をインストールしたネットブックInspiron duo をハイバネートするようにしてみました。ちなみにInspiron duo のディスプレイは、 &hellip;">
+  <meta name="description" content="http://blogs.unity3d.com/2012/11/13/unity-4-is-out/ Unity 4.0 (デスクトップ環境のUnity ではなくUnity3D の方)がリリースされたので、フリー版をUbuntu 12.10 x86_64, Linux kernel 3.5.0 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,48 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/15/unity-4-0-gnome-shell-3-6/">Unity 4.0 + GNOME Shell 3.6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-15T07:32:43+09:00" pubdate data-updated="true">2012年11月15日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/11/unity3d_4.0_wine.png"><img src="/images/uploads/2012/11/unity3d_4.0_wine-600x337.png" alt="unity 4.0 wine 1.5.17" /></a></p>
+
+<p><a href="http://blogs.unity3d.com/2012/11/13/unity-4-is-out/">http://blogs.unity3d.com/2012/11/13/unity-4-is-out/</a></p>
+
+<p>Unity 4.0 (デスクトップ環境のUnity ではなくUnity3D の方)がリリースされたので、フリー版をUbuntu 12.10 x86_64, Linux kernel 3.5.0, GNOME Shell 3.6.1 + Wine 1.5.17 の環境で試してみよう。</p>
+
+<p>つづく&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1138,66 +1180,6 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/04/rebuild-avant-window-navigator-package-2/">Rebuild Avant-window-navigator Package</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-04T21:27:52+09:00" pubdate data-updated="true">2012年09月04日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/09/awn_without_plus_icon.png"><img src="/images/uploads/2012/09/awn_without_plus_icon.png" alt="avant window navigator without a green plus icon" /></a></p>
-
-<p><a href="https://bugs.launchpad.net/awn/+bug/990774  ">https://bugs.launchpad.net/awn/+bug/990774  </a>
-<a href="https://bugs.launchpad.net/awn/+bug/990774/comments/15">https://bugs.launchpad.net/awn/+bug/990774/comments/15</a></p>
-
-<p>Ubuntu 12.04/12.10 のAvant Window Navigator で表示される謎のプラスアイコンを消してみた。これですっきり。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get build-dep avant-window-navigator
-</span><span class='line'><span class="nv">$ </span>sudo apt-get -b <span class="nb">source </span>avant-window-navigator
-</span><span class='line'><span class="nv">$ </span>sudo dpkg -i *.deb
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>追記(2012/11/10)</h3>
-
-<p><a href="https://bugs.launchpad.net/awn/+bug/990774/comments/21">https://bugs.launchpad.net/awn/+bug/990774/comments/21</a>
-リビルドしなくても、以下のコマンドで解決しました。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install libdesktop-agnostic-cfg-gconf
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -1215,6 +1197,10 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
@@ -1230,15 +1216,11 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

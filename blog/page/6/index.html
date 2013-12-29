@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://github.com/paradoxxxzero/gnome-shell-focus-effects-extension http://www.upubuntu.com/2012/08/how-to-install-gnome-shell-focus-effect.html &hellip;">
+  <meta name="description" content="https://bugs.launchpad.net/awn/+bug/990774 https://bugs.launchpad.net/awn/+bug/990774/comments/15 Ubuntu 12.04/12.10 のAvant Window Navigator &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,66 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/04/rebuild-avant-window-navigator-package-2/">Rebuild Avant-window-navigator Package</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-04T21:27:52+09:00" pubdate data-updated="true">2012年09月04日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/09/awn_without_plus_icon.png"><img src="/images/uploads/2012/09/awn_without_plus_icon.png" alt="avant window navigator without a green plus icon" /></a></p>
+
+<p><a href="https://bugs.launchpad.net/awn/+bug/990774  ">https://bugs.launchpad.net/awn/+bug/990774  </a>
+<a href="https://bugs.launchpad.net/awn/+bug/990774/comments/15">https://bugs.launchpad.net/awn/+bug/990774/comments/15</a></p>
+
+<p>Ubuntu 12.04/12.10 のAvant Window Navigator で表示される謎のプラスアイコンを消してみた。これですっきり。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get build-dep avant-window-navigator
+</span><span class='line'><span class="nv">$ </span>sudo apt-get -b <span class="nb">source </span>avant-window-navigator
+</span><span class='line'><span class="nv">$ </span>sudo dpkg -i *.deb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>追記(2012/11/10)</h3>
+
+<p><a href="https://bugs.launchpad.net/awn/+bug/990774/comments/21">https://bugs.launchpad.net/awn/+bug/990774/comments/21</a>
+リビルドしなくても、以下のコマンドで解決しました。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install libdesktop-agnostic-cfg-gconf
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -802,213 +862,6 @@ Grub Customizer はBurg が有効である場合に検知して、確認して�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">Android-x86 4.0.3 + Firefox(Fennec) 16.0a1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-23T12:03:13+09:00" pubdate data-updated="true">2012年06月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png"><img src="/images/uploads/2012/06/android-x86_4.0.3_firefox_16.0a1.png" alt="android-x86 4.0.3 firefox fennec 16.0a1" /></a></p>
-
-<p><a href="https://wiki.mozilla.org/Mobile/Fennec/Android">https://wiki.mozilla.org/Mobile/Fennec/Android</a>
-Android-x86 用のFirefox がPlay ストアに登録されていないので、自分でx86 アーキテクチャ向けのAndroid 用Firefox(Fennec) をビルドしてみた。i386-linux-android 向けのmozconfig を見つけたけれど、そのままではうまくビルドできなかったので、修正して利用してみた。Android SDK/NDK の環境はできているので、その後から始めよう。ビルドする環境はUbuntu 12.04 x86_64。Android 端末は、Inspiron duo にandroid-x86-4.0-RC1-tegav2.iso をインストール済み。</p>
-
-<ol>
-<li> ビルドするための依存関係の取得</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install mercurial ccache
-</span><span class='line'><span class="nv">$ </span>sudo apt-get build-dep firefox
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> Firefox のソースの取得</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>hg clone http://hg.mozilla.org/mozilla-central/ src
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> MOZCONFIG のカスタマイズ</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>src
-</span><span class='line'><span class="nv">$ </span>gedit mozconfig-android-x86
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>mozconfig-android-x86</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'># Global options
-</span><span class='line'>mk_add_options MOZ_MAKE_FLAGS=&quot;-j4&quot;
-</span><span class='line'>
-</span><span class='line'># Build Fennec
-</span><span class='line'>ac_add_options --enable-application=mobile/android
-</span><span class='line'>
-</span><span class='line'># Android
-</span><span class='line'>ac_add_options --target=i386-linux-android
-</span><span class='line'>ac_add_options --with-endian=little
-</span><span class='line'>ac_add_options --with-android-ndk=&quot;$HOME/Projects/Android/android-ndk-r8&quot;
-</span><span class='line'>ac_add_options --with-android-sdk=&quot;$HOME/Projects/Android/android-sdk-linux/platforms/android-15&quot;
-</span><span class='line'>ac_add_options --with-android-version=10
-</span><span class='line'>ac_add_options --with-android-platform=&quot;$HOME/Projects/Android/android-ndk-r8/platforms/android-14/arch-x86&quot;
-</span><span class='line'>ac_add_options --with-system-zlib
-</span><span class='line'>
-</span><span class='line'>#
-</span><span class='line'>ac_add_options --disable-auto-deps
-</span><span class='line'>ac_add_options --disable-debug
-</span><span class='line'>ac_add_options --disable-debug-symbols
-</span><span class='line'>ac_add_options --disable-tests
-</span><span class='line'>ac_add_options --disable-ipdl-tests
-</span><span class='line'>ac_add_options --enable-strip
-</span><span class='line'>ac_add_options --enable-install-strip
-</span><span class='line'>
-</span><span class='line'># updater
-</span><span class='line'>ac_add_options --disable-updater
-</span><span class='line'>ac_add_options --disable-update-channel
-</span><span class='line'>ac_add_options --disable-update-packaging
-</span><span class='line'>
-</span><span class='line'># crash reporter
-</span><span class='line'>ac_add_options --disable-crashreporter
-</span><span class='line'>
-</span><span class='line'># maintenance service
-</span><span class='line'>ac_add_options --disable-maintenance-service
-</span><span class='line'>
-</span><span class='line'># JDK
-</span><span class='line'>export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
-</span><span class='line'>
-</span><span class='line'># branding
-</span><span class='line'>ac_add_options --with-branding=mobile/android/branding/beta
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li><p> ロゴ画像の作成
-他のサイズのロゴ画像を参考にサイズ40x40 のPNG 形式画像を作成する。
-./mobile/android/branding/beta/content/fennec_40x40.png</p></li>
-<li><p> インストール先のAndroid 端末を無線LAN で接続する。</p></li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">ADBHOST</span><span class="o">=</span>192.168.0.4
-</span><span class='line'><span class="nv">$ </span>adb devices
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> ビルドとインストール</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">MOZCONFIG</span><span class="o">=</span>./mozconfig-android-x86
-</span><span class='line'><span class="nv">$ </span>make -f client.mk build_and_deploy
-</span><span class='line'><span class="err">$</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>インストーラパッケージは以下に生成される。
-./obj-x86_64-unknown-linux-gnu/dist/fennec-16.0a1.en-US.android-i386.apk</p>
-
-<ol>
-<li> 次回ビルド時にソースを最新の状態にするには</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>hg pull -u
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/06/23/android-x86-4-0-3-firefoxfennec-16-0a1/">続きを読む &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -1026,6 +879,10 @@ Android-x86 用のFirefox がPlay ストアに登録されていないので、�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
@@ -1041,15 +898,11 @@ Android-x86 用のFirefox がPlay ストアに登録されていないので、�
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

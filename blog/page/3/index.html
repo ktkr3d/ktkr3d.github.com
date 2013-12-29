@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://github.com/ktkr3d/conkyforecast-ja ConkyForecast 用の日本語PO ファイルを作成して、Conky-HTC を日本語化してみました。また、Conky-HTC の表示用スクリプトを整理してみました。 パッケージのインストール http &hellip;">
+  <meta name="description" content="http://developer.android.com/sdk/installing/studio.html Android Studio でサンプルアプリを作って動かしてみました。
+Linux 版のアーカイブをダウンロードして展開し、android-studio/bin/studio.sh &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,52 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/01/android-studio/">Android Studio</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-01T15:55:52+09:00" pubdate data-updated="true">2013年06月01日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2013/06/android-studio.png"><img src="/images/uploads/2013/06/android-studio.png" alt="android-studo" /></a>
+<a href="http://developer.android.com/sdk/installing/studio.html">http://developer.android.com/sdk/installing/studio.html</a></p>
+
+<p>Android Studio でサンプルアプリを作って動かしてみました。
+Linux 版のアーカイブをダウンロードして展開し、android-studio/bin/studio.sh を実行します。ウィザードに従っていくと、サンプルアプリのapk ファイルが生成されます。</p>
+
+<p><a href="/images/uploads/2013/06/android_studio_project.png"><img src="/images/uploads/2013/06/android_studio_project.png" alt="android_studio_project" /></a></p>
+
+<p>インストールして実行すると、こんな感じになりました。実行環境はAndroid 4.1.2 です。</p>
+
+<p><a href="/images/uploads/2013/06/my_app.png"><img src="/images/uploads/2013/06/my_app.png" alt="my_app" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1160,95 +1207,6 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/10/cloud9-ide/">Cloud9 IDE</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-10T00:10:48+09:00" pubdate data-updated="true">2013年02月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2013/02/cloud9_ide.png"><img src="/images/uploads/2013/02/cloud9_ide.png" alt="Cloud9 IDE" /></a></p>
-
-<p><a href="https://github.com/ajaxorg/cloud9  ">https://github.com/ajaxorg/cloud9  </a>
-<a href="http://nodejs.org/dist/">http://nodejs.org/dist/</a></p>
-
-<p>Node.js の統合開発環境であるCloude9 IDE をローカル環境に構築してみました。Cloude9 IDE の動作前提となるNode.js のバージョンは古めなので、nvm(Node Version Manager)を利用して、Node.js v0.6.21 をインストールしました。ちなみに現在の最新のNode.js のバージョンはv0.9.9 のようです。</p>
-
-<h3>Node Version Manager のインストール</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install build-essential libssl-dev curl git
-</span><span class='line'><span class="nv">$ </span>git clone git://github.com/creationix/nvm.git ~/.nvm
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Node.js v0.6.21 とsourcemint のインストール</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source</span> ~/.nvm/nvm.sh
-</span><span class='line'><span class="nv">$ </span>nvm install v0.6.21
-</span><span class='line'><span class="nv">$ </span>nvm use v0.6.21
-</span><span class='line'><span class="nv">$ </span>npm install -g sm
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Cound9 IDE のインストール</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone https://github.com/ajaxorg/cloud9.git ~/cloud9
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/cloud9
-</span><span class='line'><span class="nv">$ </span>sm install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Cound9 IDE の実行</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source</span> ~/.nvm/nvm.sh
-</span><span class='line'><span class="nv">$ </span>nvm use v0.6.21
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/cloud9/bin <span class="o">&amp;&amp;</span> ./cloud9.sh
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Cound9 IDE 画面の表示</h3>
-
-<p>ブラウザで<a href="http://localhost:3131/">http://localhost:3131/</a> を開く。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1266,6 +1224,10 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
@@ -1281,15 +1243,11 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

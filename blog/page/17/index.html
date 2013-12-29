@@ -9,10 +9,9 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://www.billardgl.de/
-3D のビリヤードゲーム
-F1〜F8 キーで画面がかっこよくくるくる回転する
-Ubuntu のタブレットPC デモ動画に載っていたのでリポジトリにあるのかと思いきや無く、ホームページのdeb パッケージのリンクも切れていて、alien もdeb &hellip;">
+  <meta name="description" content="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624
+Water エフェクトは水面のゆらぎや反射がうまく表現されていて近距離でも遠距離でも見栄えがする
+Blood エフェクト(KEY1〜KEY5)は使いどころが限られるかも &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +88,52 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/17/blood_water/">Blood & Water を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-17T17:06:32+09:00" pubdate data-updated="true">2010年10月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/10/water.png"><img src="/images/uploads/2010/10/water.png" alt="blood water irrlicht" /></a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624</a>
+Water エフェクトは水面のゆらぎや反射がうまく表現されていて近距離でも遠距離でも見栄えがする
+Blood エフェクト(KEY1〜KEY5)は使いどころが限られるかも
+DirectX/HLSL 以外にも同じトピック内にOpenGL/GLSL にコンバートされたスクリプトも掲載されているけれど少し修正が必要でレンダリングがチープ&hellip;
+改造すればHLSL 版と同様なことが実現できそうなんだけど
+media/shaders/blood_ps.glsl
+uniform float time; → float time;
+varying vec2 texCoord; → vec2 texCoord;
+media/shaders/water_ps.glsl
+varying vec2 texCoords; → vec2 texCoords;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -607,50 +652,6 @@ createDeviceEx() でルートウィンドウのWindow ID を設定してあげ�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/07/h-craft_championship/">H-Craft Championship で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-07T21:22:55+09:00" pubdate data-updated="true">2010年09月07日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/09/hcraft.jpg"><img src="/images/uploads/2010/09/hcraft.jpg" alt="hcraft irrlicht" /></a>
-F-Zero/wipEout ライクな3D レースゲームでデモ版と商用版がある
-2006 年リリースだからかなり古いけど画面が綺麗で完成度が高い
-操作に慣れると気持ちいい
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=17871">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=17871</a>
-<a href="http://www.irrgheist.com/">http://www.irrgheist.com/</a>
-サウンドはwav とogg でOpenAL
-モデルはX とobj
-GUI はxml 化、フォントはgun4fc.ttf</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/18/">&larr; Older</a>
@@ -668,6 +669,10 @@ GUI はxml 化、フォントはgun4fc.ttf</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
@@ -683,15 +688,11 @@ GUI はxml 化、フォントはgun4fc.ttf</p>
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

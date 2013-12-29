@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-22T13:44:48+09:00</updated>
+  <updated>2013-12-29T12:50:19+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cleaning]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/12/29/cleaning/"/>
+    <updated>2013-12-29T12:40:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/12/29/cleaning</id>
+    <content type="html"><![CDATA[<p>年末だし、ハードディスクの中の重複したファイルを見つけて、削除してしまおう。</p>
+
+<!-- more -->
+
+
+<h4>対象とするファイル</h4>
+
+<ul>
+<li>ファイルサイズが大きめ</li>
+<li>不完全なファイルも存在する</li>
+<li>ディレクトリ階層を再帰的に検索</li>
+</ul>
+
+
+<p>そのため、先頭1MB を対象としたハッシュ比較により、ファイルの同一性を検出します。</p>
+
+<h4>スクリプト</h4>
+
+<p>``` bash ~/test.sh</p>
+
+<h1>!/bin/sh</h1>
+
+<p>cp /dev/null /tmp/list0.txt
+find . -type f -exec dd if={} bs=1024 count=1000 of=/tmp/work.bin \; -exec md5sum /tmp/work.bin >> /tmp/list0.txt \; -exec du {}  >> /tmp/list0.txt \;
+sed &lsquo;:loop; N; $!b loop; ;s/\/tmp\/work.bin\n//g&rsquo; /tmp/list0.txt > /tmp/list1.txt
+sort /tmp/list1.txt | uniq -D -w 32  > /tmp/list2.txt
+rm /tmp/work.bin /tmp/list0.txt
+```</p>
+
+<h4>スクリプトの実行</h4>
+
+<p><code>bash
+$ cd /PATH/TO/TARGET
+$ time ~/test.sh
+</code></p>
+
+<h4>実行結果</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">出力されるファイル</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/tmp/list1.txt</td>
+<td align="left">ハッシュとサイズとパス</td>
+</tr>
+<tr>
+<td align="left">/tmp/list2.txt</td>
+<td align="left">重複しているファイルの一覧</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Add remote location over SSH on XBMC]]></title>
@@ -432,19 +497,6 @@ deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> /u
 </tbody>
 </table>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[screenfetch]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/11/09/screenfetch/"/>
-    <updated>2013-11-09T08:56:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/11/09/screenfetch</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/screenfetch_debian.png"><img src="/images/screenfetch_debian_tn.png"></a></p>
-
-<p><a href="http://www.unixmen.com/find-system-information-screenfetch-tool/">http://www.unixmen.com/find-system-information-screenfetch-tool/</a></p>
-
-<p>ScreenFetch でシステム情報を表示してみました。</p>
 ]]></content>
   </entry>
   

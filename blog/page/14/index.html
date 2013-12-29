@@ -9,10 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://www.ubuntuupdates.org/ppa/gnome_3?dist=natty Ubuntu 11.04 用のGNOME Shell を含むppa を見つけたので、早速インストールしてみた。ちゃんとローカライズもされている。 1
-2
-3
-$ sudo add-apt- &hellip;">
+  <meta name="description" content="https://wiki.archlinux.org/index.php/GNOME_3 https://live.gnome.org/GnomeShell/CheatSheet http://www.webupd8.org/2011/04/gnome-shell-extensions- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +86,83 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/09/gnome-3-e38292e8aabfe381b9e381a6e381bfe3819f/">GNOME Shell を拡張してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-09T10:17:03+09:00" pubdate data-updated="true">2011年04月09日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://wiki.archlinux.org/index.php/GNOME_3  ">https://wiki.archlinux.org/index.php/GNOME_3  </a>
+<a href="https://live.gnome.org/GnomeShell/CheatSheet  ">https://live.gnome.org/GnomeShell/CheatSheet  </a>
+<a href="http://www.webupd8.org/2011/04/gnome-shell-extensions-additional.html  ">http://www.webupd8.org/2011/04/gnome-shell-extensions-additional.html  </a>
+<a href="http://git.gnome.org/browse/gnome-shell-extensions/">http://git.gnome.org/browse/gnome-shell-extensions/</a></p>
+
+<p>GNOME Shell Extensions やGNOME 3 の便利な機能を使ってみよう。</p>
+
+<h3>GNOME Shell Extensions</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone git://git.gnome.org/gnome-shell-extensions
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>gnome-shell-extensions
+</span><span class='line'><span class="nv">$ </span>./autogen.sh
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>alternate-tab: Alt+Tab 操作関連</p></li>
+<li><p>alternative-status-menu: 電源オフメニュー常時表示
+標準ではステータスメニューを開いて、「Alt」ボタンを押すと「サスペンド」が「電源オフ&hellip;」に切り替わる。alternative-status-menu を使うと「サスペンド」と「電源オフ」の両方が常に表示されるようになり、「Alt」ボタンを押すと「サスペンド」が「Hibernate」に切り替わる。必須!!</p></li>
+<li><p>dock: 右端にドックバーを表示（画面が狭くなった&hellip;微妙?）</p></li>
+<li><p>windowsNavigator: overview 画面上でALT+数字キーによりウィンドウ選択</p></li>
+</ul>
+
+
+<h3>GNOME 3</h3>
+
+<ul>
+<li><p>テーマのカスタマイズ
+gnome-tweak-tool またはsetting.ini</p></li>
+<li><p>スクリーンキャストを撮る
+Ctrl+Alt+Shift+R で開始&amp;終了。WEBM 形式で出力される。</p></li>
+<li><p>キー操作でoverview へ切り替える
+システム(Windows)キーまたはAlt+F1</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -561,47 +635,6 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/21/usb-e784a1e7b79alan-e5ad90e6a99fe38292e981b8e38293e381a7e381bfe3828b/">USB 無線LAN 子機を選んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-21T14:31:44+09:00" pubdate data-updated="true">2011年03月21日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="http://buffalo.jp/export/sites/buffalo.jp/product/wireless-lan/client/wli-uc-gnm/parts/images/lineup/1.jpg" alt="WLI-UC-GNM" /></p>
-
-<p><a href="http://buffalo.jp/product/wireless-lan/client/wli-uc-gnm/">http://buffalo.jp/product/wireless-lan/client/wli-uc-gnm/</a></p>
-
-<p>必要に迫られてUSB 接続の無線LAN の子機を選んでみた。小さいことはいいことだけど、アンテナの性能が犠牲になって、受信感度が落ちるみたい。Linux での動作確認の報告あり。1,208円～なり。
-結果的にはアンテナ折りたたみ式のスティックタイプの方がよかったのかな。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Older</a>
@@ -619,6 +652,10 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
@@ -634,15 +671,11 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

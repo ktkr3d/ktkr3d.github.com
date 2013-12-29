@@ -9,11 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Kinect でミクさんを動かしてみようと思い、とりあえずOgre3D でミクさんを表示してみた
-Kinect に接続して動かしてみると、この世のものとは思えない動きをするようになった
-ボーンの見直しが必要だ&hellip;
-モデルの変換
-1. PMDEditor でPMD モデルのサイズ変更( &hellip;">
+  <meta name="description" content="http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f
+OpenNI のフォーラムにKinect を使ってWorld of Warcraft を操作するFAAST(Flexible &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +87,47 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/27/faast_wow/">FAAST でWoW を操作してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-27T18:32:39+09:00" pubdate data-updated="true">2010年12月27日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/FAAST_WoW2.png"><img src="/images/uploads/2011/03/FAAST_WoW2.png" alt="FAAST WoW kinect" /></a>
+<a href="http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f">http://groups.google.com/group/openni-dev/browse_thread/thread/2f4a0d679abf216f</a>
+OpenNI のフォーラムにKinect を使ってWorld of Warcraft を操作するFAAST(Flexible Action and Articulated Skeleton Toolkit) のデモがあったので試してみた。
+デフォルトでは体を傾けると前進/後退/右旋回/左旋回が設定されている。
+「left_arm_up」アクションを「0」キーにアサインして、Druid クラスのスペル「<a href="http://www.wowwiki.com/Mark_of_the_Wild"><img src="mt.cgi_files/Spell_nature_regeneration.png" alt="" />Mark of the Wild</a>」を唱えてみた。
+FAAST のホームページによるとマウスイベントのエミュレータ追加とLinux 版ポーティングも計画されているらしい。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -496,52 +534,6 @@ irrCg を使っていてリアルタイムにアニメーションする</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/17/blood_water/">Blood & Water を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-17T17:06:32+09:00" pubdate data-updated="true">2010年10月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/10/water.png"><img src="/images/uploads/2010/10/water.png" alt="blood water irrlicht" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39624</a>
-Water エフェクトは水面のゆらぎや反射がうまく表現されていて近距離でも遠距離でも見栄えがする
-Blood エフェクト(KEY1〜KEY5)は使いどころが限られるかも
-DirectX/HLSL 以外にも同じトピック内にOpenGL/GLSL にコンバートされたスクリプトも掲載されているけれど少し修正が必要でレンダリングがチープ&hellip;
-改造すればHLSL 版と同様なことが実現できそうなんだけど
-media/shaders/blood_ps.glsl
-uniform float time; → float time;
-varying vec2 texCoord; → vec2 texCoord;
-media/shaders/water_ps.glsl
-varying vec2 texCoords; → vec2 texCoords;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/17/">&larr; Older</a>
@@ -559,6 +551,10 @@ varying vec2 texCoords; → vec2 texCoords;</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
@@ -574,15 +570,11 @@ varying vec2 texCoords; → vec2 texCoords;</p>
         <a href="/blog/2013/11/23/partitions/">Partitions</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/16/wordpress-to-jekyll/">WordPress to Jekyll</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (100)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
