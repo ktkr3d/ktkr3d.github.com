@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-30T10:53:20+09:00</updated>
+  <updated>2013-12-30T11:00:10+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -50,7 +50,7 @@ $ bundle install
 
 <p><code>bash .bashrc
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source /home/m/.rvm/scripts/rvm
+source $HOME/.rvm/scripts/rvm
 </code></p>
 
 <h4>Git の設定</h4>
