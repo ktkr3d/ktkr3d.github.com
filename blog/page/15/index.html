@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://buffalo.jp/product/wireless-lan/client/wli-uc-gnm/ 必要に迫られてUSB 接続の無線LAN の子機を選んでみた。小さいことはいいことだけど、アンテナの性能が犠牲になって、受信感度が落ちるみたい。Linux での動作確認の報告あり。1 &hellip;">
+  <meta name="description" content="http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/
+Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地がよいので、しばらくFedora 15 を使ってみることにした。ただし、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,65 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/21/fedora-15-e381a7e792b0e5a283e8a8ade5ae9a/">Fedora 15 Alpha で環境設定</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-21T21:41:08+09:00" pubdate data-updated="true">2011年03月21日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/fedora15a.png"><img src="/images/uploads/2011/03/fedora15a.png" alt="" /></a>
+<a href="http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/">http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/</a>
+Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地がよいので、しばらくFedora 15 を使ってみることにした。ただし、ソフトウェア更新をすると非常に高い確率で不具合が起こるので注意が必要だ。</p>
+
+<p>行き当たりばったりで環境設定をしてみた。</p>
+
+<ul>
+<li><p>RPM Fusion (Installing Free and Nonfree Repositories)を入れる</p></li>
+<li><p>ファイアウォール: system-config-firewall で設定</p></li>
+<li><p>lsb_release: redhat_lsb パッケージに入っている</p></li>
+<li><p>eth0: デバイス名はなぜか pci3p1 になった</p></li>
+<li><p>Gnome Shell は左上隅にカーソルを持って行った時の画面の切り替わりが楽しい!!</p></li>
+<li><p>個人向け環境設定はgnome-control-center で実行。上部パネルのユーザ名をクリックした時のメニューでも起動可。今のところ外観の設定ツールが充実していない。そのうち、増えると思う。</p></li>
+<li><p>Firefox 4.0 のFirebug アドオンは開発版1.7X.0b3 をインストール</p></li>
+<li><p>Firefox 4.0 のChaika アドオンは開発版r316 をインストール</p></li>
+<li><p>yoono (7.6.2 時点)がバギーかも。Firefox がクラッシュしたらプロファイルの中のyoono ディレクトリを退避して再起動。</p></li>
+<li><p>ウィンドウの最小化は[Alt]+[F9]</p></li>
+<li><p>mozc_tool は/usr/libexec/mozc_tool に入った</p></li>
+<li><p>自動で起動するアプリはgnome-session-properties で設定</p></li>
+<li><p>compiz が無くてもあまり困らない</p></li>
+</ul>
+
+
+<p>でも、まともに動くUbuntu 11.04 のGnome Shell スピンが出たら乗り換えると思う。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -520,44 +580,6 @@ Android をx86 にポートしたAndroid-x86 のバージョン2.2(Froyo-x86) �
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/02/kinect_1/">Kinect でミクさんを動かしてみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-02T23:06:52+09:00" pubdate data-updated="true">2011年01月02日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/03/miku_kinect.png"><img src="/images/uploads/2011/03/miku_kinect.png" alt="miku kinect" /></a>
-ボーンの座標とかを修正してみた。
-四肢の動きが「遊星からの物体X」から「人型」に進化した。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/16/">&larr; Older</a>
@@ -575,6 +597,10 @@ Android をx86 にポートしたAndroid-x86 のバージョン2.2(Froyo-x86) �
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
@@ -590,15 +616,11 @@ Android をx86 にポートしたAndroid-x86 のバージョン2.2(Froyo-x86) �
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/23/partitions/">Partitions</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

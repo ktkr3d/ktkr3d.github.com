@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://wiki.archlinux.org/index.php/GNOME_3 https://live.gnome.org/GnomeShell/CheatSheet http://www.webupd8.org/2011/04/gnome-shell-extensions- &hellip;">
+  <meta name="description" content="http://community.kde.org/Plasma/Active/Installation http://community.kde.org/Plasma/Active/Contour/Installation
+Plasma Active Tablet パッケージのContour &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,84 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/14/plasma-active-contour/">Plasma/Active/Contour を試してみる</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-14T23:41:11+09:00" pubdate data-updated="true">2011年04月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/04/contour.png"><img src="/images/uploads/2011/04/contour.png" alt="contour kde plasma active tablet opensuse" /></a></p>
+
+<p><a href="http://community.kde.org/Plasma/Active/Installation  ">http://community.kde.org/Plasma/Active/Installation  </a>
+<a href="http://community.kde.org/Plasma/Active/Contour/Installation">http://community.kde.org/Plasma/Active/Contour/Installation</a>
+Plasma Active Tablet パッケージのContour がおもしろそうなのでInspiron duo で試してみる。</p>
+
+<ol>
+<li><p> openSUSE 11.4 をインストール
+<a href="http://software.opensuse.org/114/ja">http://software.opensuse.org/114/ja</a>
+KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて、Live USB を作った。</p></li>
+<li><p> Plasma/Active をインストール（不要だったかも）</p></li>
+</ol>
+
+
+<p>/etc/zypp/zypp.conf</p>
+
+<blockquote><p>solver.allowVendorChange = true</p></blockquote>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># zypper ar http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/ kde-unstable</span>
+</span><span class='line'><span class="c"># zypper mr -p 100 kde-unstable</span>
+</span><span class='line'><span class="c"># zypper ar http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/ plasma-active</span>
+</span><span class='line'><span class="c"># zypper mr -p 101 plasma-active</span>
+</span><span class='line'><span class="c"># zypper refresh -f</span>
+</span><span class='line'><span class="c"># zypper in plasma-active:kdebase4-runtime plasma-tablet-config plasma-declarative-widgets</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li><p> Contour パッケージのインストール
+<a href="http://software.opensuse.org/">http://software.opensuse.org/</a> でcontour を1-クリック インストール</p></li>
+<li><p> Contour の自動起動設定
+<a href="http://software.opensuse.org/">http://software.opensuse.org/</a> でplasma-contour-config を1-クリック インストール
+(plasma-tablet プロセスが残っていたらkquitapp plasma-tablet で消しておく)</p></li>
+</ol>
+
+
+<p>おもしろそう！！使い方がよくわかんない！！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -576,65 +655,6 @@ Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネッ�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/21/fedora-15-e381a7e792b0e5a283e8a8ade5ae9a/">Fedora 15 Alpha で環境設定</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-21T21:41:08+09:00" pubdate data-updated="true">2011年03月21日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/03/fedora15a.png"><img src="/images/uploads/2011/03/fedora15a.png" alt="" /></a>
-<a href="http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/">http://alt.fedoraproject.org/pub/alt/nightly-composes/desktop/</a>
-Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地がよいので、しばらくFedora 15 を使ってみることにした。ただし、ソフトウェア更新をすると非常に高い確率で不具合が起こるので注意が必要だ。</p>
-
-<p>行き当たりばったりで環境設定をしてみた。</p>
-
-<ul>
-<li><p>RPM Fusion (Installing Free and Nonfree Repositories)を入れる</p></li>
-<li><p>ファイアウォール: system-config-firewall で設定</p></li>
-<li><p>lsb_release: redhat_lsb パッケージに入っている</p></li>
-<li><p>eth0: デバイス名はなぜか pci3p1 になった</p></li>
-<li><p>Gnome Shell は左上隅にカーソルを持って行った時の画面の切り替わりが楽しい!!</p></li>
-<li><p>個人向け環境設定はgnome-control-center で実行。上部パネルのユーザ名をクリックした時のメニューでも起動可。今のところ外観の設定ツールが充実していない。そのうち、増えると思う。</p></li>
-<li><p>Firefox 4.0 のFirebug アドオンは開発版1.7X.0b3 をインストール</p></li>
-<li><p>Firefox 4.0 のChaika アドオンは開発版r316 をインストール</p></li>
-<li><p>yoono (7.6.2 時点)がバギーかも。Firefox がクラッシュしたらプロファイルの中のyoono ディレクトリを退避して再起動。</p></li>
-<li><p>ウィンドウの最小化は[Alt]+[F9]</p></li>
-<li><p>mozc_tool は/usr/libexec/mozc_tool に入った</p></li>
-<li><p>自動で起動するアプリはgnome-session-properties で設定</p></li>
-<li><p>compiz が無くてもあまり困らない</p></li>
-</ul>
-
-
-<p>でも、まともに動くUbuntu 11.04 のGnome Shell スピンが出たら乗り換えると思う。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Older</a>
@@ -652,6 +672,10 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
@@ -667,15 +691,11 @@ Gnome Shell やFirefox 4.0 の日本語環境が思いのほか使い心地が�
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/23/partitions/">Partitions</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

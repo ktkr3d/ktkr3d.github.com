@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-30T08:43:18+09:00</updated>
+  <updated>2013-12-30T10:23:47+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,74 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Remote Blogging with Octopress]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/12/30/remote-blogging-with-octopress/"/>
+    <updated>2013-12-30T10:09:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/12/30/remote-blogging-with-octopress</id>
+    <content type="html"><![CDATA[<p>モバイルPC からGitHub 上に構築したOctopress を更新してみます。</p>
+
+<!-- more -->
+
+
+<h4>ホストPC のディスクをsshfs でマウント</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh-keygen
+</span><span class='line'><span class="nv">$ </span>ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostnmae -p 22222
+</span><span class='line'><span class="nv">$ </span>ssh username@hostname -p 22222
+</span><span class='line'><span class="nv">$ </span>sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Ruby のインストール</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>curl -L https://get.rvm.io | bash -s stable --ruby
+</span><span class='line'><span class="nv">$ </span>rvm install 1.9.3
+</span><span class='line'><span class="nv">$ </span>rvm use 1.9.3
+</span><span class='line'><span class="nv">$ </span>rvm rubygems latest
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /mnt/common/github/octopress
+</span><span class='line'><span class="nv">$ </span>bundle install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>.bashrc の設定</h4>
+
+<figure class='code'><figcaption><span>.bashrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
+</span><span class='line'><span class="nb">source</span> /home/m/.rvm/scripts/rvm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Git の設定</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git config --global user.name <span class="s2">&quot;username&quot;</span>
+</span><span class='line'><span class="nv">$ </span>git config --global user.email mail_account_name@mail_domain_name
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>GitHub の設定</h4>
+
+<p>GitHub にログインして~/.ssh/id_rsa.pub を登録</p>
+
+<h4>Octopress Helper の設定</h4>
+
+<p><a href="http://ktkr3d.github.io/blog/2013/10/08/yad/">http://ktkr3d.github.io/blog/2013/10/08/yad/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cleaning]]></title>
@@ -1467,7 +1535,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#97;&#117;&#116;&#x6f;&#x68;&#105;&#x64;&#101;&#116;&#x6f;&#x70;&#98;&#97;&#114;&#x32;&#64;&#x77;&#101;&#x72;&#x65;&#119;&#x6f;&#x6c;&#x76;&#x65;&#115;&#x2e;&#117;&#115;">&#x61;&#x75;&#116;&#x6f;&#104;&#x69;&#100;&#101;&#x74;&#x6f;&#112;&#98;&#97;&#114;&#50;&#64;&#x77;&#101;&#x72;&#x65;&#119;&#x6f;&#x6c;&#x76;&#101;&#x73;&#x2e;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#97;&#117;&#x74;&#111;&#104;&#105;&#x64;&#101;&#x74;&#111;&#112;&#x62;&#x61;&#x72;&#50;&#64;&#x77;&#101;&#x72;&#x65;&#x77;&#x6f;&#108;&#x76;&#101;&#x73;&#46;&#117;&#115;">&#x61;&#117;&#116;&#x6f;&#x68;&#105;&#x64;&#101;&#x74;&#x6f;&#x70;&#98;&#97;&#114;&#x32;&#x40;&#119;&#101;&#114;&#x65;&#x77;&#x6f;&#108;&#x76;&#x65;&#x73;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1598,25 +1666,6 @@ shell-version は3.9.4 を指定しました。</p>
 スタイルシートのカスタマイズは<code>./octopress/saas/custom/</code>にあるファイルを編集します。</p>
 
 <p>OctoPress のテーマは画面幅が狭い場合にサイドバーが下部に移動するようになっているようですので、少し調整が必要そうです。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntu GNOME 13.10 Daily Build + Cairo-Dock]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
-    <updated>2013-06-16T01:43:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png"><img src="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10_tn.png"></a></p>
-
-<p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a></p>
-
-<p>Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。kernel 3.9.0, GNOME Shell 3.8.2, Firefox 22.0 でした。</p>
-
-<!-- more -->
-
-
-<p>いつものようにAvant Window Navigator を使いたかったのですが、うまく起動しなかったので、Cairo Dock に移行してみました。Cairo Dock は挙動が派手で好みではなかったのですが、テーマを変更して、詳細設定をしたらAWN みたいな挙動にすることができました。
-その他で気になったのは、Code::Blocks が起動しないことと、GTK+ テーマのリストボックスの挙動が少し不自然なことくらいでしょうか。そのうち、直るでしょう。</p>
 ]]></content>
   </entry>
   

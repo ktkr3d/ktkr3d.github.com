@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://bugs.launchpad.net/awn/+bug/990774 https://bugs.launchpad.net/awn/+bug/990774/comments/15 Ubuntu 12.04/12.10 のAvant Window Navigator &hellip;">
+  <meta name="description" content="Ubuntu 12.10 x86_64 の環境にオレオレ認証局を構築してクライアント証明書認証してみた。サーバはApache2 でクライアントはUbuntu 12.04 x86_64 上のFirefox。クライアントPC 側のネットワークはスマートフォンのWiMAX + Wi-Fi &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,45 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/16/ubuntu-12-10-certificate-authority/">Ubuntu 12.10 + Certificate Authority</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-16T23:59:35+09:00" pubdate data-updated="true">2012年09月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/09/ubuntu_ca.png"><img src="/images/uploads/2012/09/ubuntu_ca-600x337.png" alt="ubuntu 12.10 certificate authority openssl ssl client" /></a></p>
+
+<p>Ubuntu 12.10 x86_64 の環境にオレオレ認証局を構築してクライアント証明書認証してみた。サーバはApache2 でクライアントはUbuntu 12.04 x86_64 上のFirefox。クライアントPC 側のネットワークはスマートフォンのWiMAX + Wi-Fi テザリングからインターネットに接続して、ダイナミックDNS でアドレス解決したサーバに到達する構成で試してみた。設定手順は、以下のページ。
+<a href="http://ktkr3d.site11.com/ca/">http://ktkr3d.site11.com/ca/</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -779,89 +818,6 @@ Grub Customizer はBurg が有効である場合に検知して、確認して�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/30/irrlicht-1-8-trunk-xeffects/">Irrlicht 1.8 Trunk + XEffects</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-30T22:08:59+09:00" pubdate data-updated="true">2012年06月30日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/06/irrlicht_1.8_xeffects.png"><img src="/images/uploads/2012/06/irrlicht_1.8_xeffects.png" alt="irrlicht 1.8 xeffects" /></a></p>
-
-<p>Irrlicht 1.8 trunk でXEffects の影が有効にならなくなっていたので、XEffects のヘッダを修正してみた。Irrlicht 側のインタフェースが変わったのが原因かな。Irrlicht 1.8 ではXEffects を使っても画像が反転しないし、CGUITTFONT とも同時に使えるし、便利になったなぁ。環境はUbuntu 12.04 x86_64 + Irrlicht 1.8 trunk (SVN rev: 4170 ) + XEffects v1.3。</p>
-
-<figure class='code'><figcaption><span>EffectCB.h</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnSetConstants</span><span class="p">(</span><span class="n">irr</span><span class="o">::</span><span class="n">video</span><span class="o">::</span><span class="n">IMaterialRendererServices</span><span class="o">*</span> <span class="n">services</span><span class="p">,</span> <span class="n">irr</span><span class="o">::</span><span class="n">s32</span> <span class="n">userData</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">services</span><span class="o">-&gt;</span><span class="n">getVideoDriver</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getDriverType</span><span class="p">()</span> <span class="o">==</span> <span class="n">irr</span><span class="o">::</span><span class="n">video</span><span class="o">::</span><span class="n">EDT_OPENGL</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'><span class="c1">//       irr::f32 TexVar = 0;</span>
-</span><span class='line'>      <span class="n">irr</span><span class="o">::</span><span class="n">s32</span> <span class="n">TexVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="c1">//       services-&gt;setPixelShaderConstant(&quot;ColorMapSampler&quot;, (irr::f32*)(&amp;TexVar), 1);</span>
-</span><span class='line'>      <span class="n">services</span><span class="o">-&gt;</span><span class="n">setPixelShaderConstant</span><span class="p">(</span><span class="s">&quot;ColorMapSampler&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">TexVar</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">TexVar</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="c1">//       services-&gt;setPixelShaderConstant(&quot;ScreenMapSampler&quot;, (irr::f32*)(&amp;TexVar), 1);</span>
-</span><span class='line'>      <span class="n">services</span><span class="o">-&gt;</span><span class="n">setPixelShaderConstant</span><span class="p">(</span><span class="s">&quot;ScreenMapSampler&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">TexVar</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">TexVar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-</span><span class='line'><span class="c1">//       services-&gt;setPixelShaderConstant(&quot;DepthMapSampler&quot;, (irr::f32*)(&amp;TexVar), 1);</span>
-</span><span class='line'>      <span class="n">services</span><span class="o">-&gt;</span><span class="n">setPixelShaderConstant</span><span class="p">(</span><span class="s">&quot;DepthMapSampler&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">TexVar</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">TexVar</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-</span><span class='line'><span class="c1">//       services-&gt;setPixelShaderConstant(&quot;UserMapSampler&quot;, (irr::f32*)(&amp;TexVar), 1);</span>
-</span><span class='line'>      <span class="n">services</span><span class="o">-&gt;</span><span class="n">setPixelShaderConstant</span><span class="p">(</span><span class="s">&quot;UserMapSampler&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">TexVar</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -879,6 +835,10 @@ Grub Customizer はBurg が有効である場合に検知して、確認して�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
@@ -894,15 +854,11 @@ Grub Customizer はBurg が有効である場合に検知して、確認して�
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/23/partitions/">Partitions</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

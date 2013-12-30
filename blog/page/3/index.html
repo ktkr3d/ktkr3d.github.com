@@ -9,8 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://developer.android.com/sdk/installing/studio.html Android Studio でサンプルアプリを作って動かしてみました。
-Linux 版のアーカイブをダウンロードして展開し、android-studio/bin/studio.sh &hellip;">
+  <meta name="description" content="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/ Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。kernel 3.9.0, GNOME Shell 3. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +86,51 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/">Ubuntu GNOME 13.10 Daily Build + Cairo-Dock</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-16T01:43:00+09:00" pubdate data-updated="true">2013年06月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/Ubuntu-GNOME-13-10.png"><img src="/images/Ubuntu-GNOME-13-10_tn.png"></a></p>
+
+<p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a></p>
+
+<p>Ubuntu GNOME 13.10 (Saucy) のデイリービルドが公開されていましたので、インストールしてみました。kernel 3.9.0, GNOME Shell 3.8.2, Firefox 22.0 でした。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -1102,111 +1146,6 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/10/scrumblr/">Scrumblr</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-10T19:58:59+09:00" pubdate data-updated="true">2013年02月10日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2013/02/scrumblr.png"><img src="/images/uploads/2013/02/scrumblr-600x337.png" alt="scrumblr node.js" /></a>
-<a href="https://github.com/aliasaria/scrumblr">https://github.com/aliasaria/scrumblr</a></p>
-
-<p>Node.js で実装された掲示板アプリscrumblr をインストールしてみました。socket.io を使っていて、複数のブラウザで掲示板をリアルタイムに共有できます。ちょっとしたメモをネットワークを介して共有するのに便利かもしれません。</p>
-
-<ol>
-<li> nvm のインストール</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install build-essential libssl-dev curl git
-</span><span class='line'><span class="nv">$ </span>git clone git://github.com/creationix/nvm.git ~/.nvm
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> scrumblr のインストール</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install redis-server
-</span><span class='line'><span class="nv">$ </span><span class="nb">source</span> ~/.nvm/nvm.sh
-</span><span class='line'><span class="nv">$ </span>nvm install v0.9.9
-</span><span class='line'><span class="nv">$ </span>nvm use v0.9.9
-</span><span class='line'><span class="nv">$ </span>git clone https://github.com/aliasaria/scrumblr ~/scrumblr
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/scrumblr
-</span><span class='line'><span class="nv">$ </span>npm install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> scrumblr サーバの実行</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># Start Scrumblr Server</span>
-</span><span class='line'><span class="c"># http://localhost:3132</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">source</span> ~/.nvm/nvm.sh
-</span><span class='line'>nvm use v0.9.9
-</span><span class='line'><span class="nb">cd</span> ~/scrumblr
-</span><span class='line'>node server.js 3132
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> scrumblr の表示
-ブラウザで<a href="http://localhost:3132">http://localhost:3132</a> を開きます。</li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1224,6 +1163,10 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
@@ -1239,15 +1182,11 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/23/partitions/">Partitions</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

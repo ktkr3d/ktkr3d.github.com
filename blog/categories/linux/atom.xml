@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-30T08:43:18+09:00</updated>
+  <updated>2013-12-30T10:23:47+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Remote Blogging with Octopress]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/12/30/remote-blogging-with-octopress/"/>
+    <updated>2013-12-30T10:09:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/12/30/remote-blogging-with-octopress</id>
+    <content type="html"><![CDATA[<p>モバイルPC からGitHub 上に構築したOctopress を更新してみます。</p>
+
+<!-- more -->
+
+
+<h4>ホストPC のディスクをsshfs でマウント</h4>
+
+<p><code>bash
+$ ssh-keygen
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostnmae -p 22222
+$ ssh username@hostname -p 22222
+$ sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
+</code></p>
+
+<h4>Ruby のインストール</h4>
+
+<p><code>bash
+$ curl -L https://get.rvm.io | bash -s stable --ruby
+$ rvm install 1.9.3
+$ rvm use 1.9.3
+$ rvm rubygems latest
+$ cd /mnt/common/github/octopress
+$ bundle install
+</code></p>
+
+<h4>.bashrc の設定</h4>
+
+<p><code>bash .bashrc
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source /home/m/.rvm/scripts/rvm
+</code></p>
+
+<h4>Git の設定</h4>
+
+<p><code>bash
+$ git config --global user.name "username"
+$ git config --global user.email mail_account_name@mail_domain_name
+</code></p>
+
+<h4>GitHub の設定</h4>
+
+<p>GitHub にログインして~/.ssh/id_rsa.pub を登録</p>
+
+<h4>Octopress Helper の設定</h4>
+
+<p><a href="http://ktkr3d.github.io/blog/2013/10/08/yad/">http://ktkr3d.github.io/blog/2013/10/08/yad/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cleaning]]></title>
@@ -326,194 +380,6 @@ deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> /u
 
 <p>現時点でUbuntu GNOME 14.04 の環境を新しいパッケージで整えるとしたら、Staging + Testing を基本として、13.10 のStaging からgnome-control-center とgnome-tweak-tool を入れるのが良さそうです。
 混ぜると危険な気もしますけど。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Partitions]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/11/23/partitions/"/>
-    <updated>2013-11-23T15:44:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/11/23/partitions</id>
-    <content type="html"><![CDATA[<p>構成変更前のパーティションレイアウトのメモ。</p>
-
-<p>Markdown だと表組みが簡単に書けていいね。</p>
-
-<h4>PC1 &ndash; sda</h4>
-
-<p>Hitachi HDS72105 465.76 GiB</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">Partition</th>
-<th align="right">Size</th>
-<th align="left">FS</th>
-<th align="left">Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">sda1</td>
-<td align="right">0.35 GiB</td>
-<td align="left">ntfs</td>
-<td align="left">efi</td>
-</tr>
-<tr>
-<td align="left">sda2</td>
-<td align="right">150.00 GiB</td>
-<td align="left">ntfs</td>
-<td align="left">Windows 8</td>
-</tr>
-<tr>
-<td align="left">sda3</td>
-<td align="right">150.00 GiB</td>
-<td align="left">ext4</td>
-<td align="left">Ubuntu GNOME 12.10</td>
-</tr>
-<tr>
-<td align="left">sda6</td>
-<td align="right">150.00 GiB</td>
-<td align="left">ext4</td>
-<td align="left">Ubuntu GNOME 13.10</td>
-</tr>
-<tr>
-<td align="left">sda5</td>
-<td align="right">15.42 GiB</td>
-<td align="left">linux-swap</td>
-<td align="left">swap</td>
-</tr>
-</tbody>
-</table>
-
-
-<!-- more -->
-
-
-<h4>PC1 &ndash; sdb</h4>
-
-<p>WDC WD30EZRX-00D 2.73 TiB</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">Partition</th>
-<th align="right">Size</th>
-<th align="left">FS</th>
-<th align="left">Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">&ndash;</td>
-<td align="right">0.40 GiB</td>
-<td align="left">ntfs</td>
-<td align="left">&ndash;</td>
-</tr>
-<tr>
-<td align="left">sdb5</td>
-<td align="right">500.00 GiB</td>
-<td align="left">ext4</td>
-<td align="left">Ubuntu GNOME 13.04</td>
-</tr>
-<tr>
-<td align="left">&ndash;</td>
-<td align="right">499.61 GiB</td>
-<td align="left">&ndash;</td>
-<td align="left">&ndash;</td>
-</tr>
-<tr>
-<td align="left">sdb3</td>
-<td align="right">1.71 TiB</td>
-<td align="left">ext4</td>
-<td align="left">common</td>
-</tr>
-<tr>
-<td align="left">sdb4</td>
-<td align="right">44.52 GiB</td>
-<td align="left">linux-swap</td>
-<td align="left">swap</td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>PC2 &ndash; sda</h4>
-
-<p>Hitachi HTS72323 298.09 GiB</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">Partition</th>
-<th align="right">Size</th>
-<th align="left">FS</th>
-<th align="left">Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">sda1</td>
-<td align="right">0.35 GiB</td>
-<td align="left">ntfs</td>
-<td align="left">efi</td>
-</tr>
-<tr>
-<td align="left">sda2</td>
-<td align="right">150.00 GiB</td>
-<td align="left">ntfs</td>
-<td align="left">Windows 8</td>
-</tr>
-<tr>
-<td align="left">sda3</td>
-<td align="right">145.00 GiB</td>
-<td align="left">ext4</td>
-<td align="left">Ubuntu GNOME 13.10<br>Android-x86 4.3</td>
-</tr>
-<tr>
-<td align="left">sda4</td>
-<td align="right">2.75 GiB</td>
-<td align="left">linux-swap</td>
-<td align="left">swap</td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>PC3 &ndash; hda</h4>
-
-<p>Hitachi HMS360606D5CF00 6.0 GB</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">Partition</th>
-<th align="right">Size</th>
-<th align="left">FS</th>
-<th align="left">Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">hda1</td>
-<td align="right">0.13 GiB</td>
-<td align="left">ext</td>
-<td align="left">Lineo Linux</td>
-</tr>
-<tr>
-<td align="left">hda2</td>
-<td align="right">0.13 GiB</td>
-<td align="left">linux-swap</td>
-<td align="left">swap</td>
-</tr>
-<tr>
-<td align="left">hda3</td>
-<td align="right">5.29 GiB</td>
-<td align="left">ext</td>
-<td align="left">Debian</td>
-</tr>
-</tbody>
-</table>
-
 ]]></content>
   </entry>
   

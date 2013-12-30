@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://github.com/ajaxorg/cloud9 http://nodejs.org/dist/ Node.js の統合開発環境であるCloude9 IDE をローカル環境に構築してみました。Cloude9 IDE の動作前提となるNode.js のバージョンは古めなので、 &hellip;">
+  <meta name="description" content="https://github.com/aliasaria/scrumblr Node.js で実装された掲示板アプリscrumblr をインストールしてみました。socket.io を使っていて、複数のブラウザで掲示板をリアルタイムに共有できます。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,111 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/10/scrumblr/">Scrumblr</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-10T19:58:59+09:00" pubdate data-updated="true">2013年02月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2013/02/scrumblr.png"><img src="/images/uploads/2013/02/scrumblr-600x337.png" alt="scrumblr node.js" /></a>
+<a href="https://github.com/aliasaria/scrumblr">https://github.com/aliasaria/scrumblr</a></p>
+
+<p>Node.js で実装された掲示板アプリscrumblr をインストールしてみました。socket.io を使っていて、複数のブラウザで掲示板をリアルタイムに共有できます。ちょっとしたメモをネットワークを介して共有するのに便利かもしれません。</p>
+
+<ol>
+<li> nvm のインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install build-essential libssl-dev curl git
+</span><span class='line'><span class="nv">$ </span>git clone git://github.com/creationix/nvm.git ~/.nvm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> scrumblr のインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install redis-server
+</span><span class='line'><span class="nv">$ </span><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'><span class="nv">$ </span>nvm install v0.9.9
+</span><span class='line'><span class="nv">$ </span>nvm use v0.9.9
+</span><span class='line'><span class="nv">$ </span>git clone https://github.com/aliasaria/scrumblr ~/scrumblr
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/scrumblr
+</span><span class='line'><span class="nv">$ </span>npm install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> scrumblr サーバの実行</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Start Scrumblr Server</span>
+</span><span class='line'><span class="c"># http://localhost:3132</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'>nvm use v0.9.9
+</span><span class='line'><span class="nb">cd</span> ~/scrumblr
+</span><span class='line'>node server.js 3132
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> scrumblr の表示
+ブラウザで<a href="http://localhost:3132">http://localhost:3132</a> を開きます。</li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -924,62 +1029,6 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/18/ubuntu-12-10-unity-4-0/">Ubuntu 12.10 + Unity 4.0</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-18T00:59:34+09:00" pubdate data-updated="true">2012年11月18日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/11/unity4_ubnuntu.png"><img src="/images/uploads/2012/11/unity4_ubnuntu-600x375.png" alt="ubuntu 12.10 unity 4.0" /></a></p>
-
-<p>Unity 4.0 で作成したアプリをUbuntu 12.10 x86_64 上で動かしてみました。Unity 4.0 ではLinux 向けにネイティブアプリを出力できるようになっています。ビルドの設定では「x86」、「x86_64 」、「x86 + x86_64 (Universal)」が選択できます。Windows 8 の環境では以下のように表示されました。</p>
-
-<p><a href="/images/uploads/2012/11/unity4_build_settings.png"><img src="/images/uploads/2012/11/unity4_build_settings-600x560.png" alt="unity 4.0 build settings" /></a></p>
-
-<p>ちなみに、過去(2009年なのでバージョン2.6 かな)のバージョンのUnity で作成したIsland Demo のWindows 向けロードモジュールがハードディスクの中にあったのでWine で動かしてみました。問題なく動きました。</p>
-
-<p><a href="/images/uploads/2012/11/unity_island_demo_2009_wine.png"><img src="/images/uploads/2012/11/unity_island_demo_2009_wine-600x375.png" alt="unity island demo 2009 wine" /></a></p>
-
-<p><strong>Edit:</strong>
-Unity 4.0 で出力されたLinux 用実行形式ファイルの情報はこんな感じ。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>file MyFirst.x86*
-</span><span class='line'>MyFirst.x86:    ELF 32-bit LSB executable, Intel 80386, version 1 <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked <span class="o">(</span>uses shared libs<span class="o">)</span>, <span class="k">for </span>GNU/Linux 2.6.15, BuildID<span class="o">[</span>sha1<span class="o">]=</span>0x650aeda57c5cf21ae3934e7a753eaef9ed525f2a, stripped
-</span><span class='line'>MyFirst.x86_64: ELF 64-bit LSB executable, x86-64, version 1 <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked <span class="o">(</span>uses shared libs<span class="o">)</span>, <span class="k">for </span>GNU/Linux 2.6.15, BuildID<span class="o">[</span>sha1<span class="o">]=</span>0xa877bae6da45dc12eb314505bf5ec6bf96b3b503, stripped
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -997,6 +1046,10 @@ Unity 4.0 で出力されたLinux 用実行形式ファイルの情報はこん�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
@@ -1012,15 +1065,11 @@ Unity 4.0 で出力されたLinux 用実行形式ファイルの情報はこん�
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/23/partitions/">Partitions</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

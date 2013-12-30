@@ -9,7 +9,10 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://blog.fpmurphy.com/2011/04/gnome-shell-theme-selector-preview.html GNOME Shell のテーマを変更する拡張を見つけたので、Fedora15 とUbuntu 11.04 で試してみた。Atolm &hellip;">
+  <meta name="description" content="http://wildfiregames.com/0ad/ フリーでオープンソースでクロスプラットフォーム(Windows, Linux, Mac)なリアルタイムストラテジーゲーム0 A.D. で遊んでみよう。 Ubuntu 版の安定版のインストール 1
+2
+3
+sudo add-apt- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +89,75 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/18/0-a-d-e381a7e9818ae38293e381a7e381bfe3828b/">0 A.D. で遊んでみる</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-18T05:13:57+09:00" pubdate data-updated="true">2011年05月18日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/0ad_256.png"><img src="/images/uploads/2011/05/0ad_256.png" alt="0 A.D." /></a>
+<a href="http://wildfiregames.com/0ad/">http://wildfiregames.com/0ad/</a></p>
+
+<p>フリーでオープンソースでクロスプラットフォーム(Windows, Linux, Mac)なリアルタイムストラテジーゲーム0 A.D. で遊んでみよう。</p>
+
+<ul>
+<li>Ubuntu 版の安定版のインストール</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo add-apt-repository ppa:wfg/0ad
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install 0ad
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Ubuntu 版のより新しい開発版のインストール</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo add-apt-repository ppa:wfg/0ad.dev
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install 0ad 0ad-data
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -739,84 +811,6 @@ ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じが�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/14/plasma-active-contour/">Plasma/Active/Contour を試してみる</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-14T23:41:11+09:00" pubdate data-updated="true">2011年04月14日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/04/contour.png"><img src="/images/uploads/2011/04/contour.png" alt="contour kde plasma active tablet opensuse" /></a></p>
-
-<p><a href="http://community.kde.org/Plasma/Active/Installation  ">http://community.kde.org/Plasma/Active/Installation  </a>
-<a href="http://community.kde.org/Plasma/Active/Contour/Installation">http://community.kde.org/Plasma/Active/Contour/Installation</a>
-Plasma Active Tablet パッケージのContour がおもしろそうなのでInspiron duo で試してみる。</p>
-
-<ol>
-<li><p> openSUSE 11.4 をインストール
-<a href="http://software.opensuse.org/114/ja">http://software.opensuse.org/114/ja</a>
-KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて、Live USB を作った。</p></li>
-<li><p> Plasma/Active をインストール（不要だったかも）</p></li>
-</ol>
-
-
-<p>/etc/zypp/zypp.conf</p>
-
-<blockquote><p>solver.allowVendorChange = true</p></blockquote>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># zypper ar http://download.opensuse.org/repositories/home:/rwooninck:/UNSTABLE_KDE4/openSUSE_11.4/ kde-unstable</span>
-</span><span class='line'><span class="c"># zypper mr -p 100 kde-unstable</span>
-</span><span class='line'><span class="c"># zypper ar http://download.opensuse.org/repositories/home:/vizzzion/kde-unstable/ plasma-active</span>
-</span><span class='line'><span class="c"># zypper mr -p 101 plasma-active</span>
-</span><span class='line'><span class="c"># zypper refresh -f</span>
-</span><span class='line'><span class="c"># zypper in plasma-active:kdebase4-runtime plasma-tablet-config plasma-declarative-widgets</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li><p> Contour パッケージのインストール
-<a href="http://software.opensuse.org/">http://software.opensuse.org/</a> でcontour を1-クリック インストール</p></li>
-<li><p> Contour の自動起動設定
-<a href="http://software.opensuse.org/">http://software.opensuse.org/</a> でplasma-contour-config を1-クリック インストール
-(plasma-tablet プロセスが残っていたらkquitapp plasma-tablet で消しておく)</p></li>
-</ol>
-
-
-<p>おもしろそう！！使い方がよくわかんない！！</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/14/">&larr; Older</a>
@@ -834,6 +828,10 @@ KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
@@ -849,15 +847,11 @@ KDE 版のISO の拡張子を.img にしてsudo image-writer でUSBに入れて�
         <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/11/23/partitions/">Partitions</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (101)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (3)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

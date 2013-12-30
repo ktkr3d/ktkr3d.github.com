@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-30T08:43:18+09:00</updated>
+  <updated>2013-12-30T10:23:47+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Remote Blogging with Octopress]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/12/30/remote-blogging-with-octopress/"/>
+    <updated>2013-12-30T10:09:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/12/30/remote-blogging-with-octopress</id>
+    <content type="html"><![CDATA[<p>モバイルPC からGitHub 上に構築したOctopress を更新してみます。</p>
+
+<!-- more -->
+
+
+<h4>ホストPC のディスクをsshfs でマウント</h4>
+
+<p><code>bash
+$ ssh-keygen
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostnmae -p 22222
+$ ssh username@hostname -p 22222
+$ sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
+</code></p>
+
+<h4>Ruby のインストール</h4>
+
+<p><code>bash
+$ curl -L https://get.rvm.io | bash -s stable --ruby
+$ rvm install 1.9.3
+$ rvm use 1.9.3
+$ rvm rubygems latest
+$ cd /mnt/common/github/octopress
+$ bundle install
+</code></p>
+
+<h4>.bashrc の設定</h4>
+
+<p><code>bash .bashrc
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source /home/m/.rvm/scripts/rvm
+</code></p>
+
+<h4>Git の設定</h4>
+
+<p><code>bash
+$ git config --global user.name "username"
+$ git config --global user.email mail_account_name@mail_domain_name
+</code></p>
+
+<h4>GitHub の設定</h4>
+
+<p>GitHub にログインして~/.ssh/id_rsa.pub を登録</p>
+
+<h4>Octopress Helper の設定</h4>
+
+<p><a href="http://ktkr3d.github.io/blog/2013/10/08/yad/">http://ktkr3d.github.io/blog/2013/10/08/yad/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[WordPress to Jekyll]]></title>
@@ -50,6 +104,82 @@ $ python exitwp.py
 <h4>Octopress/Jekyll へ取り込み</h4>
 
 <p><code>./build/</code>ディレクトリに作成されたデータをOctopress/Jekyll のディレクトリにコピーしてGenerate &amp; Deploy します。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[yad]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/10/08/yad/"/>
+    <updated>2013-10-08T23:26:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/10/08/yad</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/zenity_yad.png"><img src="/images/zenity_yad_tn.png"></a></p>
+
+<p>GTK+ 3.10 の環境(Fedora 20 Alpha, Ubuntu GNOME 13.10 Beta)で、zenity の<code>--list</code> オプションが正しく表示されないので、代わりにzenity のフォークであるyad(yet another dialog)を使ってみました。
+ただし、yad の<code>--progress --pulsate</code> オプションはzenity と仕様が異なるようなので、リストボックスを表示する部分のみに対してyad を使うことにしました。</p>
+
+<!-- more -->
+
+
+<h4>yad インストール</h4>
+
+<p><code>bash
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+sudo apt-get update
+sudo apt-get install yad
+</code></p>
+
+<h4>yad &amp; zenity スクリプト</h4>
+
+<p>``` bash octopress_helper_yad</p>
+
+<h1>!/bin/bash</h1>
+
+<p>OCTOPRESS_DIR=/mnt/common/github/octopress</p>
+
+<p>PATH=$PATH:$HOME/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm
+cd $OCTOPRESS_DIR</p>
+
+<p>while :
+do</p>
+
+<pre><code>pick=$(yad --height=300 --width=300 --print-column=2 --list --title "OctoPress Helper" --text "Select Action." --radiolist --column Pick --column dummy --column Action --hide-column 2 true 0 "New Post" false 1 "New Page" false 2 "Generate" false 3 "Deploy" false 4 "Preview" false 5 "Open Posts Folder" false 6 "Push Source");
+case $pick in
+    "0|")
+        post_title=$(zenity --entry --title="New Post" --text="Enter Title." )
+        if [ ${#post_title} &gt; 0 ] ; then
+            rake new_post["$post_title"] &gt;(yad --progress --title="New Post" --pulsate --auto-close --auto-kill)
+        fi
+        ;;
+    "1|") 
+        page_title=$(zenity --entry --title="New Page" --text="Enter Title." )
+        if [ ${#page_title} &gt; 0 ] ; then
+            rake new_page["$page_title"] &gt;(yad --progress --title="New Page" --pulsate --auto-close --auto-kill)
+        fi
+        ;;
+    "2|")
+        rake generate &gt;(zenity --progress --title="Generate" --pulsate --auto-close --auto-kill)
+        ;;
+    "3|")
+        rake deploy &gt;(zenity --progress --title="Deploy" --pulsate --auto-close --auto-kill)
+        ;;
+    "4|")
+        rake preview &gt;(zenity --progress --title="Preview" --pulsate --auto-close --auto-kill)
+        ;;
+    "5|")
+        nautilus $OCTOPRESS_DIR/source/_posts/ &amp;
+        ;;
+    "6|")
+        git add . &amp;&amp; git commit -m 'update' &amp;&amp; git push -u origin source &gt;(zenity --progress --title="Push Source" --pulsate --auto-close --auto-kill)
+        ;;
+    *)
+        break
+        ;;
+esac
+</code></pre>
+
+<p>done
+```</p>
 ]]></content>
   </entry>
   
