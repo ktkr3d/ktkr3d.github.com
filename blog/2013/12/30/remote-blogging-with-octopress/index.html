@@ -133,11 +133,13 @@ $(document).ready( function () {
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh-keygen
-</span><span class='line'><span class="nv">$ </span>ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostnmae -p 22222
+</span><span class='line'><span class="nv">$ </span>ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostname -p 22222
 </span><span class='line'><span class="nv">$ </span>ssh username@hostname -p 22222
 </span><span class='line'><span class="nv">$ </span>sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
 </span></code></pre></td></tr></table></div></figure>
 
+
+<p>自動でマウントするには、<code>gnome-session-properties</code> で設定するか、<code>/etc/fstab</code> に設定します。</p>
 
 <h4>Ruby のインストール</h4>
 

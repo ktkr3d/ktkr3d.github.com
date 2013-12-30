@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-30T11:01:57+09:00</updated>
+  <updated>2013-12-30T12:35:59+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -30,10 +30,12 @@
 
 <p><code>bash
 $ ssh-keygen
-$ ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostnmae -p 22222
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostname -p 22222
 $ ssh username@hostname -p 22222
 $ sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
 </code></p>
+
+<p>自動でマウントするには、<code>gnome-session-properties</code> で設定するか、<code>/etc/fstab</code> に設定します。</p>
 
 <h4>Ruby のインストール</h4>
 
