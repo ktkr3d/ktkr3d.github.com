@@ -157,6 +157,7 @@ $(document).ready( function () {
 <h4>パッケージ</h4>
 
 <ul>
+<li>audacious</li>
 <li>audacity</li>
 <li>avidemux</li>
 <li>blender</li>
@@ -167,6 +168,18 @@ $(document).ready( function () {
 <li>firefox</li>
 <li>geany</li>
 <li>gimp</li>
+<li>git</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git config --global user.name <span class="s2">&quot;username&quot;</span>
+</span><span class='line'><span class="nv">$ </span>git config --global user.email mail_account_name@mail_domain_name
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
 <li>gitg</li>
 <li>gnome-common</li>
 <li>gnome-terminal</li>
@@ -183,6 +196,53 @@ $(document).ready( function () {
 <li>osd-lylic</li>
 <li>peercast</li>
 <li>poedit</li>
+<li>ruby</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>curl -L https://get.rvm.io | bash -s stable --ruby
+</span><span class='line'><span class="nv">$ </span>rvm install 1.9.3
+</span><span class='line'><span class="nv">$ </span>rvm use 1.9.3
+</span><span class='line'><span class="nv">$ </span>rvm rubygems latest
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span>.bashrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/.rvm/bin <span class="c"># Add RVM to PATH for scripting</span>
+</span><span class='line'><span class="nb">source</span> <span class="nv">$HOME</span>/.rvm/scripts/rvm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>ssh</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>ssh-keygen
+</span><span class='line'><span class="nv">$ </span>ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostname -p 22222
+</span><span class='line'><span class="nv">$ </span>ssh username@hostname -p 22222
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>sshfs</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
 <li>synaptic</li>
 <li>system-config-samba</li>
 <li>thunderbird</li>
@@ -191,6 +251,17 @@ $(document).ready( function () {
 <li>wine</li>
 <li>winff</li>
 <li>xbmc</li>
+</ul>
+
+
+<figure class='code'><figcaption><span>/usr/bin/xbmc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bh</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">SDL_MOUSE_RELATIVE</span><span class="o">=</span>0
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
 <li>xnoise</li>
 </ul>
 
