@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://irrlicht.convextech.ca/ Linux(Ubuntu 11.10 x86_64 + fglrx 8.991 + OpenGL/GLSL 3.3 + XEffects 1.3 + OpenAL 1.13 + cAudio 2.1.0 + Bullet 2.7.6 &hellip;">
+  <meta name="description" content="http://cdimage.ubuntu.com/releases/12.04/alpha-2/ Ubuntu 12.04 Precise Pangolin のアルファ2 がリリースされたので、インストールしてみた。Linux カーネル は3.2。GNOME Shell も入れてみた。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,99 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/04/ubuntu-12-04-precise-pangolin-alpha-2-gnome-shell/">Ubuntu 12.04 Precise Pangolin Alpha 2 + GNOME Shell</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-04T19:24:50+09:00" pubdate data-updated="true">2012年02月04日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/ubuntu12.04.png"><img src="/images/uploads/2012/02/ubuntu12.04.png" alt="ubuntu 12.04 precise pangolin apha 2 gnome shell" /></a></p>
+
+<p><a href="http://cdimage.ubuntu.com/releases/12.04/alpha-2/">http://cdimage.ubuntu.com/releases/12.04/alpha-2/</a></p>
+
+<p>Ubuntu 12.04 Precise Pangolin のアルファ2 がリリースされたので、インストールしてみた。Linux カーネル は3.2。GNOME Shell も入れてみた。インストーラや一部のパッケージの動作がおかしいけれど、普通に使えそうな感じ。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/29/ubuntu-11-10-gnome-shell-catalyst-12-1/">Ubuntu 11.10 + GNOME Shell + Catalyst 12.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-29T11:46:04+09:00" pubdate data-updated="true">2012年01月29日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/01/gnome_shell_catalyst_12.1.png"><img src="/images/uploads/2012/01/gnome_shell_catalyst_12.1.png" alt="gnome shell catalyst 12.1 fglrx 8.930 ubuntu 11.10" /></a></p>
+
+<p>AMD Catalyst™ Proprietary Display Driver &ndash; Linux x86 &amp; Linux x86_64 の12.1 (fglrx 8.930)がリリースされたのでUbuntu 11.10 x86_64 の環境にインストールしてみた。GNOME Shell での画面のちらつきが無くなり、これでUnity とはサヨナラだ。</p>
+
+<p>既にfglrx やfglrx-updates がインストールされていたらアンインストールしておいて、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>wget http://www2.ati.com/drivers/linux/amd-driver-installer-12-1-x86.x86_64.run
+</span><span class='line'><span class="nv">$ </span>chmod 755 amd-driver-installer-12-1-x86.x86_64.run
+</span><span class='line'><span class="nv">$ </span>./amd-driver-installer-12-1-x86.x86_64.run --buildpkg Ubuntu/oneiric
+</span><span class='line'><span class="nv">$ </span>sudo dpkg -i fglrx_8.930-0ubuntu1_amd64.deb fglrx-amdcccle_8.930-0ubuntu1_amd64.deb fglrx-dev_8.930-0ubuntu1_amd64.deb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>GNOME Shell に切り替えてAuto Hide Top Panel 拡張を入れれば、トップパネルを隠せる。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -537,106 +630,6 @@ DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/16/android-4-0/">Android 4.0 をビルドしてみよう（その1）</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-16T04:22:55+09:00" pubdate data-updated="true">2011年11月16日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://source.android.com/source/download.html">http://source.android.com/source/download.html</a>
-Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので、Ubuntu 11.10 64bit の環境でビルドしてみよう。手順はAndroid 2.3 の時と同じみたい。今回から（?）実験的に32bit 環境での手順も記載されている。
-はやくAndroid-x86 にも取り込まれないかな。</p>
-
-<ol>
-<li><p> 環境の構築
-<a href="http://source.android.com/source/initializing.html">http://source.android.com/source/initializing.html</a>
-前提パッケージlib32readline5-dev が見つからないのは、とりあえず無視してみる。</p></li>
-<li><p> ソースコードのダウンロード
-<a href="http://source.android.com/source/downloading.html">http://source.android.com/source/downloading.html</a>
-今回もrepo を使ったダウンロードが遅い。</p></li>
-<li><p> ソースコードのビルド
-<a href="http://source.android.com/source/building.html">http://source.android.com/source/building.html</a></p></li>
-</ol>
-
-
-<p>source.android.com に繋がりにくい時があるので、手順はhtml で保存しておいた方がよさそう。
-ダウンロードが終わらないので、今日（今朝）はここまで。</p>
-
-<p><strong>update:</strong>
-エミュレータでAndroid 4.0 Ice Cream Sandwich を動かしてみた。
-<a href="/images/uploads/2011/11/android_4_ics.png"><img src="/images/uploads/2011/11/android_4_ics.png" alt="android 4 ice cream sandwich" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/06/linux-mint-12/">Linux Mint 12 を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-06T12:18:05+09:00" pubdate data-updated="true">2011年11月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/11/linux_mint_12_gnome_shell.png"><img src="/images/uploads/2011/11/linux_mint_12_gnome_shell.png" alt="linux mint 12 gnome shell" /></a></p>
-
-<p><a href="http://ohheyitslou.blogspot.com/2011/11/tutorial-how-to-install-linux-mint-12.html">http://ohheyitslou.blogspot.com/2011/11/tutorial-how-to-install-linux-mint-12.html</a></p>
-
-<p><a href="http://blog.linuxmint.com/?p=1851">http://blog.linuxmint.com/?p=1851</a></p>
-
-<p>Ubuntu ベースで人気のディストリビューションLinux Mint のバージョン12 RC1 版が2011.11.11 にリリースされるようなので、リポジトリを更新してひと足お先に試してみた。(Daily Builds は公開されてないみたい？)
-Linux Mint ではMint GNOME Shell Extensions (MGSE) でGNOME Shell の拡張機能が整理されていて、GNOME Shell 上でクラシックメニューのようなものを提供している。Ubuntu 同様、fglrx を組み込むと一部の画像やテキストがうまく描画されないのは仕方なしか。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -677,7 +670,7 @@ Linux Mint ではMint GNOME Shell Extensions (MGSE) でGNOME Shell の拡張機�
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

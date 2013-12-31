@@ -9,7 +9,13 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://blog.getnightingale.com/2012/03/05/nightingale-1-11-0-our-first-official-release/ Nightingale 1.11.0 がリリースされたのでUbuntu 11.10 x86_64 で使ってみた。 &hellip;">
+  <meta name="description" content="AMD Catalyst 12.2 on Ubuntu 11.10 1
+2
+3
+4
+5
+sudo apt-get build-dep fglrx
+wget http://www2.ati.com/drivers/linux/amd-driver-installer-12-2-x86.x86_64. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +92,108 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/10/1648/">No Content Found</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-10T13:05:54+09:00" pubdate data-updated="true">2012年03月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>AMD Catalyst 12.2 on Ubuntu 11.10</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get build-dep fglrx
+</span><span class='line'>wget http://www2.ati.com/drivers/linux/amd-driver-installer-12-2-x86.x86_64.run
+</span><span class='line'>chmod 755 amd-driver-installer-12-2-x86.x86_64.run
+</span><span class='line'>./amd-driver-installer-12-2-x86.x86_64.run --buildpkg Ubuntu/precise
+</span><span class='line'>sudo dpkg -i fglrx_8.950-0ubuntu1_amd64.deb fglrx-amdcccle_8.950-0ubuntu1_amd64.deb fglrx-dev_8.950-0ubuntu1_amd64.deb
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/08/android-x86-tegav2-physical-keyboard/">Inspiron Duo + Android-x86 4.0 で仮想+物理キーボード入力</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-08T04:02:40+09:00" pubdate data-updated="true">2012年03月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/03/android-x86_4.0_virtual_physical_keyboard.png"><img src="/images/uploads/2012/03/android-x86_4.0_virtual_physical_keyboard.png" alt="android-x86 4.0 virtual physical keyboard inspiron duo" /></a></p>
+
+<p>Inspiron duo 上のandroid-x86 4.0 tegav2 ビルドを物理キーボードと仮想キーボードで使えるようにしてみた。</p>
+
+<p>./device/tegatech/tegav2/AT_Translated_Set_2_keyboard.kl にキーレイアウトを追加すると、</p>
+
+<ul>
+<li><p>仮想キーボード入力中に物理キーボード入力できる。</p></li>
+<li><p>タスクトレイのキーボード設定から、仮想キーボードを隠して物理キーボード入力に切り替えることができる。</p></li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/08/android-x86-tegav2-physical-keyboard/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -793,99 +901,6 @@ blender 2.6 での日本語化は、</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/04/ubuntu-12-04-precise-pangolin-alpha-2-gnome-shell/">Ubuntu 12.04 Precise Pangolin Alpha 2 + GNOME Shell</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-04T19:24:50+09:00" pubdate data-updated="true">2012年02月04日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/02/ubuntu12.04.png"><img src="/images/uploads/2012/02/ubuntu12.04.png" alt="ubuntu 12.04 precise pangolin apha 2 gnome shell" /></a></p>
-
-<p><a href="http://cdimage.ubuntu.com/releases/12.04/alpha-2/">http://cdimage.ubuntu.com/releases/12.04/alpha-2/</a></p>
-
-<p>Ubuntu 12.04 Precise Pangolin のアルファ2 がリリースされたので、インストールしてみた。Linux カーネル は3.2。GNOME Shell も入れてみた。インストーラや一部のパッケージの動作がおかしいけれど、普通に使えそうな感じ。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/29/ubuntu-11-10-gnome-shell-catalyst-12-1/">Ubuntu 11.10 + GNOME Shell + Catalyst 12.1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-29T11:46:04+09:00" pubdate data-updated="true">2012年01月29日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/01/gnome_shell_catalyst_12.1.png"><img src="/images/uploads/2012/01/gnome_shell_catalyst_12.1.png" alt="gnome shell catalyst 12.1 fglrx 8.930 ubuntu 11.10" /></a></p>
-
-<p>AMD Catalyst™ Proprietary Display Driver &ndash; Linux x86 &amp; Linux x86_64 の12.1 (fglrx 8.930)がリリースされたのでUbuntu 11.10 x86_64 の環境にインストールしてみた。GNOME Shell での画面のちらつきが無くなり、これでUnity とはサヨナラだ。</p>
-
-<p>既にfglrx やfglrx-updates がインストールされていたらアンインストールしておいて、</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>wget http://www2.ati.com/drivers/linux/amd-driver-installer-12-1-x86.x86_64.run
-</span><span class='line'><span class="nv">$ </span>chmod 755 amd-driver-installer-12-1-x86.x86_64.run
-</span><span class='line'><span class="nv">$ </span>./amd-driver-installer-12-1-x86.x86_64.run --buildpkg Ubuntu/oneiric
-</span><span class='line'><span class="nv">$ </span>sudo dpkg -i fglrx_8.930-0ubuntu1_amd64.deb fglrx-amdcccle_8.930-0ubuntu1_amd64.deb fglrx-dev_8.930-0ubuntu1_amd64.deb
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>GNOME Shell に切り替えてAuto Hide Top Panel 拡張を入れれば、トップパネルを隠せる。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/10/">&larr; Older</a>
@@ -926,7 +941,7 @@ blender 2.6 での日本語化は、</p>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

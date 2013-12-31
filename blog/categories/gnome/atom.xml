@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GNOME | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/gnome/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2013-12-30T12:55:16+09:00</updated>
+  <updated>2013-12-31T19:08:36+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/10/05/fedora-20/"/>
     <updated>2013-10-05T20:14:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/10/05/fedora-20</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png"><img src="/images/fedora_20_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/fedora_20.png">{% img /images/fedora_20_tn.png %}</a></p>
 
 <p>Fedora 20 alpha + GNOME Shell 3.10 をインストールしてみました。</p>
 
@@ -65,7 +65,7 @@
     <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
     <updated>2013-07-15T08:57:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="/images/gnome_shell_lock_screen.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png">{% img /images/gnome_shell_lock_screen.png %}</a></p>
 
 <p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
 
@@ -106,7 +106,7 @@ font-size: 24pt;
     <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
     <updated>2013-07-14T11:11:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png">{% img /images/docky_cardapio_tn.png %}</a></p>
 
 <p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
 
@@ -163,7 +163,7 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
     <link href="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/"/>
     <updated>2013-07-13T09:36:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="/images/gnome_shell_3_9_4_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png">{% img /images/gnome_shell_3_9_4_tn.png %}</a></p>
 
 <p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
 
@@ -190,7 +190,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#97;&#x75;&#116;&#x6f;&#x68;&#x69;&#100;&#101;&#x74;&#x6f;&#x70;&#x62;&#97;&#x72;&#50;&#64;&#119;&#101;&#x72;&#x65;&#x77;&#111;&#108;&#x76;&#101;&#115;&#46;&#x75;&#x73;">&#x61;&#117;&#x74;&#111;&#104;&#105;&#x64;&#101;&#116;&#x6f;&#x70;&#x62;&#97;&#114;&#50;&#x40;&#119;&#101;&#x72;&#101;&#x77;&#x6f;&#x6c;&#x76;&#x65;&#115;&#x2e;&#x75;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#97;&#117;&#116;&#x6f;&#x68;&#x69;&#x64;&#101;&#x74;&#111;&#x70;&#x62;&#x61;&#x72;&#50;&#64;&#x77;&#101;&#x72;&#x65;&#x77;&#111;&#x6c;&#118;&#101;&#x73;&#x2e;&#117;&#x73;">&#97;&#117;&#x74;&#111;&#104;&#105;&#x64;&#x65;&#116;&#x6f;&#112;&#98;&#97;&#x72;&#x32;&#x40;&#x77;&#101;&#x72;&#x65;&#x77;&#111;&#108;&#118;&#x65;&#115;&#46;&#117;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <p>``` js metadata.json
@@ -210,7 +210,7 @@ shell-version は3.9.4 を指定しました。</p>
 
 <p>  ],
   &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
-  &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x61;&#117;&#x74;&#x6f;&#x68;&#105;&#x64;&#101;&#116;&#x6f;&#x70;&#98;&#x61;&#x72;&#x32;&#64;&#119;&#101;&#x72;&#x65;&#x77;&#111;&#x6c;&#x76;&#101;&#115;&#x2e;&#117;&#115;">&#97;&#x75;&#x74;&#111;&#104;&#x69;&#x64;&#101;&#116;&#x6f;&#112;&#x62;&#x61;&#x72;&#50;&#64;&#119;&#101;&#114;&#101;&#x77;&#x6f;&#x6c;&#x76;&#101;&#x73;&#x2e;&#117;&#115;</a>&rdquo;,
+  &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#x61;&#x75;&#116;&#x6f;&#104;&#105;&#x64;&#x65;&#x74;&#x6f;&#112;&#x62;&#x61;&#x72;&#50;&#64;&#x77;&#x65;&#114;&#x65;&#x77;&#x6f;&#x6c;&#x76;&#101;&#x73;&#46;&#x75;&#x73;">&#97;&#117;&#116;&#x6f;&#104;&#x69;&#x64;&#101;&#x74;&#111;&#x70;&#98;&#x61;&#114;&#x32;&#64;&#x77;&#x65;&#114;&#101;&#119;&#x6f;&#x6c;&#x76;&#101;&#115;&#x2e;&#x75;&#x73;</a>&rdquo;,
   &ldquo;version&rdquo;: 1
 }
 ```</p>
@@ -222,7 +222,7 @@ shell-version は3.9.4 を指定しました。</p>
     <link href="http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock/"/>
     <updated>2013-06-16T01:43:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2013/06/16/ubuntu-gnome-13-dot-10-daily-build-plus-cairo-dock</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png"><img src="/images/Ubuntu-GNOME-13-10_tn.png"></a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/Ubuntu-GNOME-13-10.png">{% img /images/Ubuntu-GNOME-13-10_tn.png %}</a></p>
 
 <p><a href="http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/">http://cdimage.ubuntu.com/ubuntu-gnome/daily-live/current/</a></p>
 

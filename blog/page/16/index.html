@@ -9,10 +9,10 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="
-ボーンの座標とかを修正してみた。
-四肢の動きが「遊星からの物体X」から「人型」に進化した。
-">
+  <meta name="description" content="http://www.android-x86.org/getsourcecode
+android-x86 のサイトでAndroid 2.3(gingerbread)版のリポジトリが公開されているものの、ISO イメージが公開されていないので、自分でビルドしてみた。 1
+2
+$ uname -a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +89,209 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/11/android-x86_23/">Android-x86 2.3(Ginger Bread)をビルドしてみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-11T19:50:17+09:00" pubdate data-updated="true">2011年02月11日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/02/gingerbread-x86.png"><img src="/images/uploads/2011/02/gingerbread-x86.png" alt="android android-x86 2.3 gingerbread" /></a>
+<a href="http://www.android-x86.org/getsourcecode">http://www.android-x86.org/getsourcecode</a>
+android-x86 のサイトでAndroid 2.3(gingerbread)版のリポジトリが公開されているものの、ISO イメージが公開されていないので、自分でビルドしてみた。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>uname -a
+</span><span class='line'>Linux localhost 2.6.37-android-x86+ <span class="c">#1 SMP PREEMPT Fri Feb 11 18:01:30 JST 2011 i686 GNU/Linux</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>カーネルが2.6.37 系になったみたい。
+2.2版(Froyo-x86)にあったethernet 関連のモジュールが入っていない(?)せいか、そのままでは有線LAN がうまく動かないみたいだ。
+マウスの挙動も少し変かもしれない。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/06/android_30/">Android 3.0 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-06T13:14:51+09:00" pubdate data-updated="true">2011年02月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/android_honeycomb.png"><img src="/images/uploads/2011/03/android_honeycomb.png" alt="" /></a>
+<a href="http://developer.android.com/sdk/android-3.0-highlights.html">http://developer.android.com/sdk/android-3.0-highlights.html</a>
+環境構築をしていたらAndroid SDK 3.0 のPreview があったので、エミュレータでAndroid 3.0(Honeycomb)を起動してみた。
+実機やVM と比べるともっさりした感じ。
+<a href="/images/uploads/2011/03/android_helloworld.png"><img src="/images/uploads/2011/03/android_helloworld.png" alt="android 3.0 honeycomb hello world" /></a>
+はろーあんどろいど！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/05/android-x86/">Android-x86 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-05T12:42:40+09:00" pubdate data-updated="true">2011年02月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/android-x86_hdmi.png"><img src="/images/uploads/2011/03/android-x86_hdmi.png" alt="android android-x86" /></a>
+<a href="http://www.android-x86.org/">http://www.android-x86.org/</a>
+Android をx86 にポートしたAndroid-x86 のバージョン2.2(Froyo-x86) をネットブック実機と仮想環境の両方で試してみた。
+バージョン2.3(Gingerbread-x86) のブランチもあったけれど、さすがにAndroid 3.0 版(Honeycomb)はなかった。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>uname -a
+</span><span class='line'>Linux localhost 2.6.35.7-android-x86+ <span class="c">#3 SMP PREEMPT Thu Jan 13 18:03:15 CST 2011 i686 GNU/Linux</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>GRUB からの起動時にSD カードに見せかけるパーティションを追加指定(&ldquo;SDCARD=/dev/sdb2&rdquo; 等)</p></li>
+<li><p>音声、動画、有線LAN、キーボード、マウスは問題なかった</p></li>
+<li><p>手持ちのネットブックのカメラ、タッチスクリーン、無線LAN はうまく動かなかった</p></li>
+<li><p>App Store からのインストールはできたけれど、Android Market からのインストールができなかった（これは仕方なしか&hellip;）</p></li>
+</ul>
+
+
+<p>3.0 版もはやくリリースされないかな。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/13/ubuntu_1104/">Ubuntu 11.04 a を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-13T22:18:39+09:00" pubdate data-updated="true">2011年01月13日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>挙動が怪しいところがあるものの一通り動くようになっていた
+<a href="http://cdimage.ubuntu.com/">http://cdimage.ubuntu.com/</a>
+<strong>パッケージ</strong>
+&ndash; kernel 2.6.37
+&ndash; xorg-server 1.9.0
+&ndash; Unity
+&ndash; Firefox 4.0b
+* Firefox Sync が標準になってた
+* Tab Mix Plus の代わりにTab Utilities を利用
+* yoono が対応するまで代わりにyoono-desktop を利用
+(<a href="https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi/versions/">https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi/versions/</a>)
+* Textlink はinstall.rdf を書き換え
+* Stylish は後で探そう
+&ndash; Banshee 1.9
+<strong>気づき事項</strong>
+* 起動後とりあえずNautilus を起動すると他のアプリのメニュー表示が安定するみたい
+* サイドバーランチャーの登録処理が怪しい
+* 音量アプレットがうまく動作しないことがある
+* シャットダウン・リブートが完了しないことがある
+* GNOME メニューの表示仕様は今後改善されそう
+* fglrx はもう少し落ちついてから試そう
+アップデートが頻繁にあるので、このまま様子見</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -366,175 +569,6 @@ Kinect が話題になっていたのでOgre3D 版のデモ（ソース付き）
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/26/anaglyph/">Anaglyph を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-26T00:34:01+09:00" pubdate data-updated="true">2010年11月26日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/11/anaglyph.png"><img src="/images/uploads/2010/11/anaglyph.png" alt="anaglyph irrlicht" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=33463">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=33463</a>
-立体視(Anaglyph Rendering)を試してみた
-動きがあると立体感が顕著になっておもしろい
-右目を青、左目を赤でマスク
-少し離れてみるのがコツかも</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/18/blockout/">BlockOut II で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-18T01:23:53+09:00" pubdate data-updated="true">2010年11月18日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/11/blockout.png"><img src="/images/uploads/2010/11/blockout.png" alt="blockout" /></a>
-<a href="http://www.blockout.net/blockout2/">http://www.blockout.net/blockout2/</a>
-レトロな三次元テトリス
-高速で操作するのがおもしろい
-高難易度のデモを見ているだけでも楽しい</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/09/neverball/">Neverball で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-09T19:07:59+09:00" pubdate data-updated="true">2010年11月09日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/11/neverball.png"><img src="/images/uploads/2010/11/neverball.png" alt="neverball" /></a>
-<a href="http://neverball.org/">http://neverball.org/</a>
-<a href="http://neverball.org/screenshots.php">http://neverball.org/screenshots.php</a>
-ボードを傾けてコインを拾いながらボールをゴールに導く3D ゲーム
-低スペックなPC でもよく動く
-先の方のステージがとんでもないことになっている&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/01/meego/">MeeGo を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-01T23:39:42+09:00" pubdate data-updated="true">2010年11月01日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/11/ika_meego.png"><img src="/images/uploads/2010/11/ika_meego.png" alt="meego" /></a>
-<a href="http://meego.com/">http://meego.com/</a>
-<a href="http://distrowatch.com/table.php?distribution=meego">http://distrowatch.com/table.php?distribution=meego</a>
-ネットブック向けのディストリビューションMeeGo v1.1 for Netbooks
-動作は軽快で見た目もいいんだけど細かいところで少し癖があるかも
-パッケージ管理はRPM でzypper
-日本語入力はSCIM＋SKK
-ATOM 縛りでMoblin がインストールできなかったPC にもインストールできるかも
-ブートローダの書き込み中にフリーズする場合はフォーマットを変えるといける
-変更前 /boot: ext3, /: btrfs
-変更後 /boot: ext3, /: ext3
-<a href="http://ktkr3d.site11.com/?page_id=9">MeeGo/Smeegol メモ</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/17/">&larr; Older</a>
@@ -575,7 +609,7 @@ ATOM 縛りでMoblin がインストールできなかったPC にもインス�
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

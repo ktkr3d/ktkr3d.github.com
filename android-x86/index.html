@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Android-x86 2011年03月13日 プロジェクトホームページ http://www.android-x86.org/ ISO ライブイメージダウンロード http://www.android-x86.org/download/ http://code.google.com/p/ &hellip;">
+  <meta name="description" content="Android-x86 2011年03月13日 プロジェクトホームページ http://www.android-x86.org/ ISO ライブイメージダウンロード http://code.google.com/p/android-x86/downloads/list ハードウェア動作報告一覧 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,31 +106,38 @@ $(document).ready( function () {
   
   <p><a href="/images/uploads/2012/06/android-x86_4.0_RC1.png"><img src="/images/uploads/2012/06/android-x86_4.0_RC1.png" alt="android-x86 rc1" /></a></p>
 
-<h3>プロジェクトホームページ</h3>
+<h4>プロジェクトホームページ</h4>
 
 <p><a href="http://www.android-x86.org/">http://www.android-x86.org/</a></p>
 
-<h3>ISO ライブイメージダウンロード</h3>
+<h4>ISO ライブイメージダウンロード</h4>
 
-<p><a href="http://www.android-x86.org/download/  ">http://www.android-x86.org/download/  </a>
-<a href="http://code.google.com/p/android-x86/downloads/list  ">http://code.google.com/p/android-x86/downloads/list  </a>
-<a href="http://tabletsx86.org/">http://tabletsx86.org/</a></p>
+<p><a href="http://code.google.com/p/android-x86/downloads/list">http://code.google.com/p/android-x86/downloads/list</a></p>
 
-<h3>ハードウェア動作報告一覧</h3>
+<h4>ハードウェア動作報告一覧</h4>
 
 <p><a href="http://www.android-x86.org/hardware-list">http://www.android-x86.org/hardware-list</a></p>
 
-<h3>Windows + Ubuntu + Android-x86 マルチブート環境構築手順</h3>
+<h4>Windows + Ubuntu + Android-x86 マルチブート環境構築手順</h4>
 
 <ol>
-<li><p> Windows 8 をインストール</p></li>
-<li><p> Ubuntu 13.04 を/dev/sda3 にインストール
-ファイルシステムはext4。
-ブートローダ(GRUB)を/dev/sda にインストール。</p></li>
-<li><p> Android-x86 4.0 RC1 (tegav2 版)を/dev/sda3 にインストール
-/android-4.0-RC1/ にインストールされる。
-ただし、ブートローダはインストールしない！</p></li>
-<li><p> Android-x86 用のブートエントリを追加</p></li>
+<li><p>Windows 8 をインストール</p></li>
+<li><p>Ubuntu を/dev/sda3 にインストール</p>
+
+<ul>
+<li>ファイルシステムはext4。</li>
+<li>ブートローダ(GRUB)を/dev/sda にインストール。</li>
+</ul>
+</li>
+<li><p>Android-x86 を/dev/sda3 にインストール</p>
+
+<ul>
+<li>/android-******/ にインストールされる。</li>
+<li>ブートローダはインストールしない</li>
+<li>書き込み可能にする</li>
+</ul>
+</li>
+<li><p>Android-x86 用のブートエントリを追加</p></li>
 </ol>
 
 
@@ -151,9 +158,6 @@ $(document).ready( function () {
 </span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li> GRUB の設定を更新</li>
-</ol>
 
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -161,33 +165,45 @@ $(document).ready( function () {
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>パーティションレイアウト</h3>
+<h4>パーティションレイアウト</h4>
 
-<p>デバイス
-タイプ
-サイズ
-用途</p>
+<table>
+<thead>
+<tr>
+<th align="left">デバイス</th>
+<th align="left">タイプ</th>
+<th align="left">サイズ</th>
+<th align="left">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">/dev/sda1</td>
+<td align="left">ntfs</td>
+<td align="left">0.35 GiB</td>
+<td align="left">EFI</td>
+</tr>
+<tr>
+<td align="left">/dev/sda2</td>
+<td align="left">ntfs</td>
+<td align="left">150.00 GiB</td>
+<td align="left">Windows 8</td>
+</tr>
+<tr>
+<td align="left">/dev/sda3</td>
+<td align="left">ext4</td>
+<td align="left">145.00 GiB</td>
+<td align="left">Ubuntu 12.04,<br/> Andorid-x86 4.0</td>
+</tr>
+<tr>
+<td align="left">/dev/sda4</td>
+<td align="left">swap</td>
+<td align="left">2.75 GiB</td>
+<td align="left">Linux swap</td>
+</tr>
+</tbody>
+</table>
 
-<p>/dev/sda1
-ntfs
-0.35 GiB
-EFI</p>
-
-<p>/dev/sda2
-ntfs
-150.00 GiB
-Windows 8</p>
-
-<p>/dev/sda3
-ext4
-145.00 GiB
-Ubuntu 12.04,<br/>
-Andorid-x86 4.0</p>
-
-<p>/dev/sda4
-swap
-2.75 GiB
-Linux swap</p>
 
 <h3>仮想キーボードと物理キーボードを同時に使うための設定</h3>
 
@@ -394,15 +410,15 @@ Inspiron duo 用のサンプル（一部誤っている）</p>
 <h3>Android-x86 で動作するFirefox (Fennec) 開発版/リリース版のビルド手順</h3>
 
 <ol>
-<li><p> ビルド用SDK の配置</p>
+<li><p>ビルド用SDK の配置</p>
 
 <ul>
-<li><p>/tools/android-sdk-linux</p></li>
-<li><p>/tools/android-ndk-r7c</p></li>
-<li><p>/tools/jdk1.6.0_35</p></li>
+<li>/tools/android-sdk-linux</li>
+<li>/tools/android-ndk-r7c</li>
+<li>/tools/jdk1.6.0_35</li>
 </ul>
 </li>
-<li><p> ビルド用依存パッケージの取得</p></li>
+<li><p>ビルド用依存パッケージの取得</p></li>
 </ol>
 
 
@@ -414,7 +430,7 @@ Inspiron duo 用のサンプル（一部誤っている）</p>
 
 
 <ol>
-<li> 開発版ソースコードの取得</li>
+<li>開発版ソースコードの取得</li>
 </ol>
 
 
@@ -428,7 +444,7 @@ Inspiron duo 用のサンプル（一部誤っている）</p>
 
 
 <ol>
-<li> 開発版ソースコード用のmozconfig のカスタマイズ</li>
+<li>開発版ソースコード用のmozconfig のカスタマイズ</li>
 </ol>
 
 
@@ -503,7 +519,7 @@ Inspiron duo 用のサンプル（一部誤っている）</p>
 
 
 <ol>
-<li> リリース版ソースコードの取得</li>
+<li>リリース版ソースコードの取得</li>
 </ol>
 
 
@@ -517,7 +533,7 @@ Inspiron duo 用のサンプル（一部誤っている）</p>
 
 
 <ol>
-<li> リリース版ソースコード用のmozconfig のカスタマイズ</li>
+<li>リリース版ソースコード用のmozconfig のカスタマイズ</li>
 </ol>
 
 
@@ -574,7 +590,7 @@ Inspiron duo 用のサンプル（一部誤っている）</p>
 
 
 <ol>
-<li> firefox のビルド
+<li>firefox のビルド
 各フォルダで以下のコマンドを実行します。</li>
 </ol>
 
@@ -585,7 +601,7 @@ Inspiron duo 用のサンプル（一部誤っている）</p>
 
 
 <ol>
-<li> インストール
+<li>インストール
 以下のフォルダに生成された.apk ファイルをAndroid-x86 でインストールします。</li>
 </ol>
 
@@ -756,7 +772,7 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

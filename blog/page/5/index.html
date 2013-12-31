@@ -951,108 +951,98 @@ VLC だと760p も全く問題なく再生できました。音量調節は上�
 Ubuntu のリポジトリを使いたいけれど、デスクトップ環境はGNOME Shell がよいので、今後、どちらをベースにして行くか悩みどころです。そこで、それぞれのデフォルトの構成を比較してみました。
 どちらをベースにしても大差なさそうですが、ブラウザにFirefox を使うので、Ubuntu をインストールしておいて、ppa:gnome3-team/gnome3 を追加する方が若干楽かもしれません。GDM のログイン画面やロック画面の外観が大幅に改善されていたので、LightDM からGDM に切り替えるのならば、Ubuntu GNOME Remix がよいかもしれません。</p>
 
-<p>Ubuntu</p>
+<table>
+<thead>
+<tr>
+<th align="left">Ubuntu</th>
+<th align="left">Ubuntu GNOME Remix</th>
+<th align="left">My Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Unity</td>
+<td align="left">GNOME Shell</td>
+<td align="left">GNOME Shell + AWN*</td>
+</tr>
+<tr>
+<td align="left">LightDM</td>
+<td align="left">GDM</td>
+<td align="left">?</td>
+</tr>
+<tr>
+<td align="left">software-center</td>
+<td align="left">gpk-application</td>
+<td align="left">synaptic</td>
+</tr>
+<tr>
+<td align="left">nautilus 3.4</td>
+<td align="left">nautilus 3.4</td>
+<td align="left">nautilus 3.6</td>
+</tr>
+<tr>
+<td align="left">gnome-disks</td>
+<td align="left">gnome-disks</td>
+<td align="left">gparted</td>
+</tr>
+<tr>
+<td align="left">&ndash;</td>
+<td align="left">tweak-tool</td>
+<td align="left">tweak-tool</td>
+</tr>
+<tr>
+<td align="left">Firefox</td>
+<td align="left">epiphany-browser</td>
+<td align="left">Firefox</td>
+</tr>
+<tr>
+<td align="left">Evolution</td>
+<td align="left">Evolution</td>
+<td align="left">GMail</td>
+</tr>
+<tr>
+<td align="left">Evolution</td>
+<td align="left">Evolution</td>
+<td align="left">Google Calendar</td>
+</tr>
+<tr>
+<td align="left">Rhythmbox</td>
+<td align="left">Rhythmbox</td>
+<td align="left">Moc</td>
+</tr>
+<tr>
+<td align="left">Totem</td>
+<td align="left">Totem</td>
+<td align="left">VLC</td>
+</tr>
+<tr>
+<td align="left">EoG</td>
+<td align="left">EoG</td>
+<td align="left">EoG</td>
+</tr>
+<tr>
+<td align="left">Gedit</td>
+<td align="left">Gedit</td>
+<td align="left">Kate</td>
+</tr>
+<tr>
+<td align="left">Libre-writer</td>
+<td align="left">AbiWord</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">Libre-calc</td>
+<td align="left">Gnumeric</td>
+<td align="left">&ndash;</td>
+</tr>
+<tr>
+<td align="left">ibus-anthy</td>
+<td align="left">ibus-anthy</td>
+<td align="left">ibus-mozc</td>
+</tr>
+</tbody>
+</table>
 
-<p>Ubuntu GNOME Remix</p>
-
-<p>My Choice</p>
-
-<p>Unity</p>
-
-<p><strong>GNOME Shell</strong></p>
-
-<p><strong>GNOME Shell<br/>
-+ AWN</strong></p>
-
-<p><strong>LightDM</strong></p>
-
-<p><strong>GDM</strong></p>
-
-<p><strong>?</strong></p>
-
-<p>software-center</p>
-
-<p>gpk-application</p>
-
-<p>synaptic</p>
-
-<p>nautilus 3.4</p>
-
-<p>nautilus 3.4</p>
-
-<p>nautilus 3.6</p>
-
-<p>gnome-disks</p>
-
-<p>gnome-disks</p>
-
-<p>gparted</p>
-
-<p>&ndash;</p>
-
-<p><strong>tweak-tool</strong></p>
-
-<p><strong>tweak-tool</strong></p>
-
-<p><strong>Firefox</strong></p>
-
-<p>epiphany-browser</p>
-
-<p><strong>Firefox</strong></p>
-
-<p>Evolution</p>
-
-<p>Evolution</p>
-
-<p>GMail</p>
-
-<p>Evolution</p>
-
-<p>Evolution</p>
-
-<p>Google Calendar</p>
-
-<p>Rhythmbox</p>
-
-<p>Rhythmbox</p>
-
-<p>Moc</p>
-
-<p>Totem</p>
-
-<p>Totem</p>
-
-<p>VLC</p>
-
-<p>EoG</p>
-
-<p>EoG</p>
-
-<p>EoG</p>
-
-<p>Gedit</p>
-
-<p>Gedit</p>
-
-<p>Kate</p>
-
-<p>Libre-writer</p>
-
-<p>AbiWord</p>
-
-<p>&ndash;</p>
-
-<p>Libre-calc</p>
-
-<p>Gnumeric</p>
-
-<p>&ndash;</p>
-
-<p>ibus-anthy</p>
-
-<p>ibus-anthy</p>
-
-<p>ibus-mozc</p>
 </div>
   
   
@@ -1237,7 +1227,7 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

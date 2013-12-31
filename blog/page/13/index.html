@@ -9,10 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://wildfiregames.com/0ad/ フリーでオープンソースでクロスプラットフォーム(Windows, Linux, Mac)なリアルタイムストラテジーゲーム0 A.D. で遊んでみよう。 Ubuntu 版の安定版のインストール 1
-2
-3
-sudo add-apt- &hellip;">
+  <meta name="description" content="http://www.mozilla.com/en-US/firefox/5.0/whatsnew/
+http://www.webupd8.org/2011/05/firefox-5-beta-channel-ubuntu-ppa.html Firefox 5 のベータ2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +87,243 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/24/firefox-5-beta-2-e38292e8a9a6e38197e381a6e381bfe3819f/">Firefox 5 Beta 2 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-24T10:49:26+09:00" pubdate data-updated="true">2011年05月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/firefox5beta.png"><img src="/images/uploads/2011/05/firefox5beta.png" alt="firefox 5 beta" /></a></p>
+
+<ul>
+<li><p><a href="http://www.mozilla.com/en-US/firefox/5.0/whatsnew/">http://www.mozilla.com/en-US/firefox/5.0/whatsnew/</a></p></li>
+<li><p><a href="http://www.webupd8.org/2011/05/firefox-5-beta-channel-ubuntu-ppa.html">http://www.webupd8.org/2011/05/firefox-5-beta-channel-ubuntu-ppa.html</a></p></li>
+</ul>
+
+
+<p>Firefox 5 のベータ2 が公開されていたので試してみた。</p>
+
+<ul>
+<li>リポジトリの追加</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:mozillateam/firefox-next
+</span><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>firefox をインストール</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install firefox
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>または既存のFirefox 4 からアップグレード</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get upgrade
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>なにが変わるかというと、</p>
+
+<blockquote><p>The latest version of Firefox Beta has the following changes:</p>
+
+<ul>
+<li><p>Added support for <strong>CSS animations</strong></p></li>
+<li><p>Added support for <strong>switching Firefox development channels</strong></p></li>
+<li><p>The Do-Not-Track header preference has been moved to increase discoverability</p></li>
+<li><p>Improved canvas, JavaScript, memory, and networking performance</p></li>
+<li><p>Improved standards support for HTML5, XHR, MathML, SMIL, and canvas</p></li>
+<li><p>Improved spell checking for some locales</p></li>
+<li><p><strong>Improved desktop environment integration for Linux users</strong></p></li>
+</ul>
+</blockquote>
+
+<p>詳細なリストは、
+<a href="http://www.mozilla.com/en-US/firefox/5.0/releasenotes/buglist.html">http://www.mozilla.com/en-US/firefox/5.0/releasenotes/buglist.html</a>
+チャンネル(Aurora/Beta/Release)の切り替えはバージョン情報ダイアログから。</p>
+
+<p>Firefox5 に未対応なアドオンもゴニョゴニョすればたいてい動きそうだ。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/23/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f4/">GNOME Shell を拡張してみた4</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-23T23:38:30+09:00" pubdate data-updated="true">2011年05月23日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/Screenshot-weather.png"><img src="/images/uploads/2011/05/Screenshot-weather.png" alt="gnome shell extension weather" /></a></p>
+
+<ul>
+<li><p><a href="http://www.webupd8.org/2011/05/gnome-shell-weather-extension.html">http://www.webupd8.org/2011/05/gnome-shell-weather-extension.html</a></p></li>
+<li><p><a href="https://github.com/simon04/gnome-shell-extension-weather">https://github.com/simon04/gnome-shell-extension-weather</a></p></li>
+</ul>
+
+
+<p>天気を表示する拡張を入れてみた。
+<a href="http://weather.yahoo.com/">http://weather.yahoo.com/</a> で地域を検索して、RSS のリンクに含まれる地域コードをextension.js に設定する。東京はJAXX0085、大阪はJAXX0071 になる。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>const UNITS = &#39;c&#39;; // Units for temperature (case sensitive). f: Fahrenheit. c: Celsius
+</span><span class='line'>const YAHOO_ID = &#39;JAXX0085&#39;;
+</span><span class='line'>const WEATHER_URL = &#39;http://weather.yahooapis.com/forecastjson?u=&#39; + UNITS + &#39;&amp;p=&#39; + YAHOO_ID;
+</span><span class='line'>const FORECAST_URL = &#39;http://query.yahooapis.com/v1/public/yql?format=json&amp;q=select%20item.forecast%20from%20weather.forecast%20where%20location%3D%22&#39; + YAHOO_ID + &#39;%22%20%20and%20u=&quot;&#39; + UNITS + &#39;&quot;&#39;;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>リアルタイムの気温が怪しいんだけど、どこから拾ってきているんだろう&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/23/gnome-tweak-tool-3-0-4-e38292e8a9a6e38197e381a6e381bfe3819f/">Gnome-tweak-tool 3.0.4 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-23T22:58:52+09:00" pubdate data-updated="true">2011年05月23日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/Screenshot-Tweak-Tool.png"><img src="/images/uploads/2011/05/Screenshot-Tweak-Tool.png" alt="gnome tweak tool 3.0.4 extension" /></a></p>
+
+<p><a href="http://git.gnome.org/browse/gnome-tweak-tool">http://git.gnome.org/browse/gnome-tweak-tool</a>
+予告通り、3.0.4 でGNOME Shell Extensions の拡張の管理ができるようになっていた。
+ON/OFF を切り替えると、再起動を促すボタンが表示されるので便利。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/22/proun-e381a7e9818ae38293e381a7e381bfe3819f/">Proun で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-22T10:35:28+09:00" pubdate data-updated="true">2011年05月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/proun.png"><img src="/images/uploads/2011/05/proun.png" alt="proun ogre3d" /></a></p>
+
+<p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
+Ogre3D で作られたレースゲームProun のベータ版で遊んでみた。
+2011年春にリリースされるらしい？</p>
+
+<p>プレイ動画を見ているだけでも楽しい。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -541,276 +776,6 @@ ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じが�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/08/hex-a-hop-e381a7e9818ae38293e381a7e381bfe3819f/">Hex-a-Hop で遊んでみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-08T14:07:09+09:00" pubdate data-updated="true">2011年05月08日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/05/Hex-a-hop_bokensha.png"><img src="/images/uploads/2011/05/Hex-a-hop_bokensha.png" alt="Hex-a-Hop" /></a>
-<a href="/images/uploads/2011/05/Hex-a-hop.png"><img src="/images/uploads/2011/05/Hex-a-hop.png" alt="Hex-a-Hop" /></a>
-<a href="http://hexahop.sourceforge.net/  ">http://hexahop.sourceforge.net/  </a>
-<a href="http://www.omgubuntu.co.uk/2011/05/download-of-the-week/">http://www.omgubuntu.co.uk/2011/05/download-of-the-week/</a></p>
-
-<p>パズルゲームHex-a-Hop で遊んでみた。マウスかQWEASD キーで移動。U キーでアンドゥ。ヘルプ画面は上下矢印キーでページ移動。紫色のタイルはトランポリン。レベルをクリアすると、マップ画面で次のレベルを選べるようになる。</p>
-
-<p>Ubuntu でのインストールは、</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install hex-a-hop
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>実行するには、</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>/usr/games/hex-a-hop
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>/usr/games/ にインストールされるので/usr/games/ にパスを通しておくか、/usr/share/applications/hex-a-hop.desktop のEXEC= 行を絶対パス指定にするといいかも。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/05/08/hex-a-hop-e381a7e9818ae38293e381a7e381bfe3819f/">続きを読む &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/07/burg-e38292e8a9a6e38197e381a6e381bfe3819f/">BURG を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-07T00:12:03+09:00" pubdate data-updated="true">2011年05月07日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/05/burg.png"><img src="/images/uploads/2011/05/burg.png" alt="burg boot loader" /></a></p>
-
-<p><a href="http://code.google.com/p/burg/  ">http://code.google.com/p/burg/  </a>
-<a href="http://www.omgubuntu.co.uk/2011/05/beautiful-burg-boot-loader-gets-ubuntu-11-04-ppa/">http://www.omgubuntu.co.uk/2011/05/beautiful-burg-boot-loader-gets-ubuntu-11-04-ppa/</a></p>
-
-<p>ブートローダをBURG(Brand-new Universal loadeR from GRUB)にしてみた。
-カラフルでいろんなテーマがあっておもしろいし、いちいちOS をリブートしなくても設定を試せるのでお手軽！</p>
-
-<p>Android-x86 とMeeGo のアイコンがなかったので、適当に追加してみた。
-<strong>*edit: gnome-look.org にあった!!</strong>
-<a href="http://gnome-look.org/content/show.php/Faenza-style+Linux+OS+icons+for+%22Burg%22?content=138684">http://gnome-look.org/content/show.php/Faenza-style+Linux+OS+icons+for+%22Burg%22?content=138684</a></p>
-
-<ol>
-<li><p> burg をインストール</p></li>
-<li><p> /etc/default/burg でテーマを設定</p></li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>GRUB_GFXMODE=1366x768
-</span><span class='line'>GRUB_THEME=fortune
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li><p> 追加するOS のアイコンファイルを作成
-カラーとグレイスケールのPNG ファイル（128x128, RGB モード）を用意して、テーマディレクトリ内のicons ディレクトリに格納</p></li>
-<li><p> 追加するOS に対応する定義をhover ファイルに追加</p></li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>  -slackware { image = &quot;$$/grey_slackware.png:$$/large_slackware.png&quot; }
-</span><span class='line'>  -android { image = &quot;$$/grey_android.png:$$/large_android.png&quot; }
-</span><span class='line'>  -meego { image = &quot;$$/grey_meego.png:$$/large_meego.png&quot; }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> /boot/burg/burg.cfg 内のmenuentry でクラスを指定</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>menuentry &quot;MeeGo Tablet 1.2 (on /dev/sda9)&quot; --class meego --class os --group group_/dev/sda9 {
-</span><span class='line'>  insmod ext2
-</span><span class='line'>  set root=&#39;(hd0,9)&#39;
-</span><span class='line'>  search --no-floppy --fs-uuid --set d6dc4505-c05f-434a-af52-8cd3d543b03f
-</span><span class='line'>  linux /boot/vmlinuz-2.6.38.2-8.1-adaptation-pinetrail root=/dev/sda9
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> 試してみる！</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-emu -D
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/28/meego-tablet-e381aee3839ee382a6e382b9e3839de382a4e383b3e382bf/">MeeGo Tablet 1.2 のマウスポインタ</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-28T03:41:43+09:00" pubdate data-updated="true">2011年04月28日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>meego.com 版のMeeGo Tablet 1.2 でマウスポインタが表示されなかったので、表示するように設定を変えてみた。</p>
-
-<p>/etc/sysconfig/uxlaunch</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>session=/usr/bin/mutter --sm-disable
-</span><span class='line'>user=meego
-</span><span class='line'>session=/usr/bin/mcompositor
-</span><span class='line'>#xopts=-nocursor
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>-nocursor を無効にする。</p>
-
-<p><a href="/images/uploads/2011/04/meego.png"><img src="/images/uploads/2011/04/meego.png" alt="meego tablet 1.2 lock" /></a></p>
-
-<p>マウスポインタはキャプチャされないみたい。ロック画面のデザインが少し変わったみたい。時刻がうまく調整できない？</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/17/ubuntu-tweak-0-6e38080e38292e8a9a6e38197e381a6e381bfe3819f/">Ubuntu Tweak 0.6 を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-17T06:33:50+09:00" pubdate data-updated="true">2011年04月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/04/ubuntu_tweak_06_overview.png"><img src="/images/uploads/2011/04/ubuntu_tweak_06_overview.png" alt="ubuntu tweak 0.6 overview gnome shell adwaita" /></a>
-<a href="/images/uploads/2011/04/ubuntu_tweak06.png"><img src="/images/uploads/2011/04/ubuntu_tweak06.png" alt="ubuntu tweak 0.6 gnome shell adwaita" /></a></p>
-
-<p><a href="http://blog.ubuntu-tweak.com/2011/04/01/first-look-at-the-next-generation-of-ubuntu-tweak.html  ">http://blog.ubuntu-tweak.com/2011/04/01/first-look-at-the-next-generation-of-ubuntu-tweak.html  </a>
-<a href="https://launchpad.net/~tualatrix/+archive/next/+packages">https://launchpad.net/~tualatrix/+archive/next/+packages</a></p>
-
-<p>Ubuntu Tweak のGUI がバージョン0.6 で大きく変わるらしいので、Ubuntu 11.04 + GNOME3(GNOME Shell &ndash; Adwaita テーマ) の環境でUbuntu Tweak 0.6 開発版を試してみた。開発版なので動かない機能や不具合はあるみたい。</p>
-
-<p>「GNOMEの設定」にgnome-tweak-tool の設定項目も反映されるといいな。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/14/">&larr; Older</a>
@@ -851,7 +816,7 @@ ps コマンドやdf コマンドがBSD っぽくて少し懐かしい感じが�
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

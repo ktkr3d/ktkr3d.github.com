@@ -9,8 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://community.kde.org/Plasma/Active/Installation http://community.kde.org/Plasma/Active/Contour/Installation
-Plasma Active Tablet パッケージのContour &hellip;">
+  <meta name="description" content="http://hexahop.sourceforge.net/ http://www.omgubuntu.co.uk/2011/05/download-of-the-week/ パズルゲームHex-a-Hop で遊んでみた。マウスかQWEASD キーで移動。U キーでアンドゥ。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +86,276 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/08/hex-a-hop-e381a7e9818ae38293e381a7e381bfe3819f/">Hex-a-Hop で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-08T14:07:09+09:00" pubdate data-updated="true">2011年05月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/Hex-a-hop_bokensha.png"><img src="/images/uploads/2011/05/Hex-a-hop_bokensha.png" alt="Hex-a-Hop" /></a>
+<a href="/images/uploads/2011/05/Hex-a-hop.png"><img src="/images/uploads/2011/05/Hex-a-hop.png" alt="Hex-a-Hop" /></a>
+<a href="http://hexahop.sourceforge.net/  ">http://hexahop.sourceforge.net/  </a>
+<a href="http://www.omgubuntu.co.uk/2011/05/download-of-the-week/">http://www.omgubuntu.co.uk/2011/05/download-of-the-week/</a></p>
+
+<p>パズルゲームHex-a-Hop で遊んでみた。マウスかQWEASD キーで移動。U キーでアンドゥ。ヘルプ画面は上下矢印キーでページ移動。紫色のタイルはトランポリン。レベルをクリアすると、マップ画面で次のレベルを選べるようになる。</p>
+
+<p>Ubuntu でのインストールは、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install hex-a-hop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行するには、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>/usr/games/hex-a-hop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>/usr/games/ にインストールされるので/usr/games/ にパスを通しておくか、/usr/share/applications/hex-a-hop.desktop のEXEC= 行を絶対パス指定にするといいかも。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/05/08/hex-a-hop-e381a7e9818ae38293e381a7e381bfe3819f/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/07/burg-e38292e8a9a6e38197e381a6e381bfe3819f/">BURG を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-07T00:12:03+09:00" pubdate data-updated="true">2011年05月07日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/burg.png"><img src="/images/uploads/2011/05/burg.png" alt="burg boot loader" /></a></p>
+
+<p><a href="http://code.google.com/p/burg/  ">http://code.google.com/p/burg/  </a>
+<a href="http://www.omgubuntu.co.uk/2011/05/beautiful-burg-boot-loader-gets-ubuntu-11-04-ppa/">http://www.omgubuntu.co.uk/2011/05/beautiful-burg-boot-loader-gets-ubuntu-11-04-ppa/</a></p>
+
+<p>ブートローダをBURG(Brand-new Universal loadeR from GRUB)にしてみた。
+カラフルでいろんなテーマがあっておもしろいし、いちいちOS をリブートしなくても設定を試せるのでお手軽！</p>
+
+<p>Android-x86 とMeeGo のアイコンがなかったので、適当に追加してみた。
+<strong>*edit: gnome-look.org にあった!!</strong>
+<a href="http://gnome-look.org/content/show.php/Faenza-style+Linux+OS+icons+for+%22Burg%22?content=138684">http://gnome-look.org/content/show.php/Faenza-style+Linux+OS+icons+for+%22Burg%22?content=138684</a></p>
+
+<ol>
+<li><p> burg をインストール</p></li>
+<li><p> /etc/default/burg でテーマを設定</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>GRUB_GFXMODE=1366x768
+</span><span class='line'>GRUB_THEME=fortune
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li><p> 追加するOS のアイコンファイルを作成
+カラーとグレイスケールのPNG ファイル（128x128, RGB モード）を用意して、テーマディレクトリ内のicons ディレクトリに格納</p></li>
+<li><p> 追加するOS に対応する定義をhover ファイルに追加</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>  -slackware { image = &quot;$$/grey_slackware.png:$$/large_slackware.png&quot; }
+</span><span class='line'>  -android { image = &quot;$$/grey_android.png:$$/large_android.png&quot; }
+</span><span class='line'>  -meego { image = &quot;$$/grey_meego.png:$$/large_meego.png&quot; }
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> /boot/burg/burg.cfg 内のmenuentry でクラスを指定</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>menuentry &quot;MeeGo Tablet 1.2 (on /dev/sda9)&quot; --class meego --class os --group group_/dev/sda9 {
+</span><span class='line'>  insmod ext2
+</span><span class='line'>  set root=&#39;(hd0,9)&#39;
+</span><span class='line'>  search --no-floppy --fs-uuid --set d6dc4505-c05f-434a-af52-8cd3d543b03f
+</span><span class='line'>  linux /boot/vmlinuz-2.6.38.2-8.1-adaptation-pinetrail root=/dev/sda9
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> 試してみる！</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-emu -D
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/28/meego-tablet-e381aee3839ee382a6e382b9e3839de382a4e383b3e382bf/">MeeGo Tablet 1.2 のマウスポインタ</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-28T03:41:43+09:00" pubdate data-updated="true">2011年04月28日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>meego.com 版のMeeGo Tablet 1.2 でマウスポインタが表示されなかったので、表示するように設定を変えてみた。</p>
+
+<p>/etc/sysconfig/uxlaunch</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>session=/usr/bin/mutter --sm-disable
+</span><span class='line'>user=meego
+</span><span class='line'>session=/usr/bin/mcompositor
+</span><span class='line'>#xopts=-nocursor
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>-nocursor を無効にする。</p>
+
+<p><a href="/images/uploads/2011/04/meego.png"><img src="/images/uploads/2011/04/meego.png" alt="meego tablet 1.2 lock" /></a></p>
+
+<p>マウスポインタはキャプチャされないみたい。ロック画面のデザインが少し変わったみたい。時刻がうまく調整できない？</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/17/ubuntu-tweak-0-6e38080e38292e8a9a6e38197e381a6e381bfe3819f/">Ubuntu Tweak 0.6 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-17T06:33:50+09:00" pubdate data-updated="true">2011年04月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/04/ubuntu_tweak_06_overview.png"><img src="/images/uploads/2011/04/ubuntu_tweak_06_overview.png" alt="ubuntu tweak 0.6 overview gnome shell adwaita" /></a>
+<a href="/images/uploads/2011/04/ubuntu_tweak06.png"><img src="/images/uploads/2011/04/ubuntu_tweak06.png" alt="ubuntu tweak 0.6 gnome shell adwaita" /></a></p>
+
+<p><a href="http://blog.ubuntu-tweak.com/2011/04/01/first-look-at-the-next-generation-of-ubuntu-tweak.html  ">http://blog.ubuntu-tweak.com/2011/04/01/first-look-at-the-next-generation-of-ubuntu-tweak.html  </a>
+<a href="https://launchpad.net/~tualatrix/+archive/next/+packages">https://launchpad.net/~tualatrix/+archive/next/+packages</a></p>
+
+<p>Ubuntu Tweak のGUI がバージョン0.6 で大きく変わるらしいので、Ubuntu 11.04 + GNOME3(GNOME Shell &ndash; Adwaita テーマ) の環境でUbuntu Tweak 0.6 開発版を試してみた。開発版なので動かない機能や不具合はあるみたい。</p>
+
+<p>「GNOMEの設定」にgnome-tweak-tool の設定項目も反映されるといいな。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -439,222 +708,6 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/03/inspiron-duo-e381a7alsa/">Inspiron Duo でALSA</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-03T22:08:04+09:00" pubdate data-updated="true">2011年04月03日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ubuntuforums.org/showthread.php?t=1658635">http://ubuntuforums.org/showthread.php?t=1658635</a></p>
-
-<p>Inspiron duo にLinux をインストールしてイヤフォンから音が出ないので調べてみたら、Ubuntu のフォーラムに解決方法が掲載されていた。model をdell とかdell-laptop にしても治らなかったのに、ideapad で解決するとは&hellip;</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo gedit /etc/modprobe.d/alsa-base.conf
-</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>options snd-hda-intel model=ideapad</p></blockquote>
-
-<p>Fedora の場合は、/etc/modprobe.d/dist-alsa.conf を修正。</p>
-
-<p>他にもタッチスクリーンでのマルチタッチの設定とか、画面回転の設定とかがあるので試してみよう!!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/02/inspiron-duo/">Inspiron Duo でLinux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-02T03:19:29+09:00" pubdate data-updated="true">2011年04月02日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Ubuntu 11.04b1</h3>
-
-<p>natty-desktop-i386.iso
-普通に動いた。イヤフォンを繋いでも内臓スピーカーが動作してしまうのは後で調べよう。</p>
-
-<h3>Fedora 15a</h3>
-
-<p>Fedora-15-Nightly-20110401.17-i686-Live-desktop.iso
-普通に動いた。イヤフォンが優先されないのは同様。</p>
-
-<h3>MeeGo Tablet 1.2 のIntel 版</h3>
-
-<p>meego-tablet-ia32-pinetrail.iso
-ライブイメージで動作した。タッチパネルは使えたが、タッチスクリーンが使えなかった。イヤフォンが優先されないのは同様。アクセスポイントのリストは公開されているものが表示される。隠しアクセスポイントに接続するインタフェースがない？メニューを戻る操作がよくわからなかった。</p>
-
-<h3>MeeGo Tablet 1.2 の本家版</h3>
-
-<p>meego-tablet-ia32-pinetrail-1.1.99.0.20110330.3.img
-縦モードで起動。壁紙がかっこよい。タッチスクリーンが動作せず。残念。</p>
-
-<h3>MeeGo Netbook 1.2 の本家版</h3>
-
-<p>meego-netbook-ia32-1.1.99.0.20110330.3.img
-普通に動作。ソフトウェアリポジトリが貧弱なような気がする。標準でNTFS が参照不可。Fedora 版かopenSUSE 版に切り替えた方がよいかも。</p>
-
-<h3>Android-x86 2.2</h3>
-
-<p>android-x86-2.2-sparta.iso
-Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネットワークも日本語表示もOK。イヤフォンが優先されないのは他と同様。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/">Inspiron Duo で遊んでみよう</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-31T23:12:18+09:00" pubdate data-updated="true">2011年03月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.dell.com/us/p/inspiron-duo/pd">http://www.dell.com/us/p/inspiron-duo/pd</a></p>
-
-<p>Inspiron Duo でいろんなOS を動かして遊んでみよう。</p>
-
-<ul>
-<li><p>Fedora 15 (DE: GNOME Shell)</p></li>
-<li><p>Ubuntu 11.04 (DE: Unity)</p></li>
-<li><p>MeeGo 1.2 Tablet UX Pre-Alpha Release</p></li>
-<li><p>MeeGo v1.1 for Netbooks</p></li>
-<li><p>MeeGo v1.1 for In-Vehicle Infotainment</p></li>
-<li><p>Android-x86 2.2 / 2.3</p></li>
-<li><p>Splashtop OS 1.0</p></li>
-<li><p>Windows 7</p></li>
-<li><p>Windows XP</p></li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/">続きを読む &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/22/wine-e381a7windows-e382a2e38397e383aae38292e4bdbfe381a3e381a6e381bfe3819f/">Wine でWindows アプリを使ってみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-22T23:31:50+09:00" pubdate data-updated="true">2011年03月22日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.winehq.org/  ">http://www.winehq.org/  </a>
-<a href="http://appdb.winehq.org/">http://appdb.winehq.org/</a></p>
-
-<ul>
-<li><p>サクラエディタ (<a href="http://sakura-editor.sourceforge.net/">http://sakura-editor.sourceforge.net/</a>)
-テキストエディタ。マクロや矩形処理とかいろいろと便利。Windows アプリなのにWine 対策用のオプション設定がある。</p></li>
-<li><p>World of Warcraft  (<a href="http://us.battle.net/wow/en/">http://us.battle.net/wow/en/</a>)
-世界で人気のMMORPG。Wine 側で対応優先度が非常に高いゲーム。最近はATI のビデオカードでも普通に動くようになった。</p></li>
-<li><p>lhaz (<a href="http://www.chitora.jp/lhaz.html">http://www.chitora.jp/lhaz.html</a>)
-日本語リソースを含むアーカイブやLHA 形式の展開に利用。Linux ネイティブのアーカイバの環境を揃えるよりもお手軽。</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Older</a>
@@ -695,7 +748,7 @@ Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネッ�
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (103)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
