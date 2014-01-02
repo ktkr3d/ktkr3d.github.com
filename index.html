@@ -9,8 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content=" モバイルPC からGitHub 上に構築したOctopress を更新してみます。
-今回は、Octopress を設定済みのホストPC のリモートディレクトリをマウントして利用します。 ">
+  <meta name="description" content=" Firefox にスクロールアップ/ダウンボタンを追加してみました。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +86,49 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-02T15:41:00+09:00" pubdate data-updated="true">2014年01月02日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/scroll_buttons.png"><img src="/images/scroll_buttons.png"></a></p>
+
+<p>Firefox にスクロールアップ/ダウンボタンを追加してみました。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -338,54 +380,6 @@ $(document).ready( function () {
 
 <p>Markdown だと表組みが簡単に書けていいね。</p>
 
-<h4>PC1 &ndash; sda</h4>
-
-<p>Hitachi HDS72105 465.76 GiB</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">Partition</th>
-<th align="right">Size</th>
-<th align="left">FS</th>
-<th align="left">Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">sda1</td>
-<td align="right">0.35 GiB</td>
-<td align="left">ntfs</td>
-<td align="left">efi</td>
-</tr>
-<tr>
-<td align="left">sda2</td>
-<td align="right">150.00 GiB</td>
-<td align="left">ntfs</td>
-<td align="left">Windows 8</td>
-</tr>
-<tr>
-<td align="left">sda3</td>
-<td align="right">150.00 GiB</td>
-<td align="left">ext4</td>
-<td align="left">Ubuntu GNOME 12.10</td>
-</tr>
-<tr>
-<td align="left">sda6</td>
-<td align="right">150.00 GiB</td>
-<td align="left">ext4</td>
-<td align="left">Ubuntu GNOME 13.10</td>
-</tr>
-<tr>
-<td align="left">sda5</td>
-<td align="right">15.42 GiB</td>
-<td align="left">linux-swap</td>
-<td align="left">swap</td>
-</tr>
-</tbody>
-</table>
-
-
 </div>
   
   
@@ -430,40 +424,12 @@ exitwp というスクリプトを使って、WordPress のデータをmarkdown 
 
 <p><a href="https://github.com/thomasf/exitwp">https://github.com/thomasf/exitwp</a></p>
 
-<h4>exitwp を取得</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone https://github.com/thomasf/exitwp
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>exitwp
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>バックアップデータを格納</h4>
-
-<p><code>./wordpress-xml/wordpress.xml</code></p>
-
-<h4>前提パッケージをインストール</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install python-yaml python-bs4 python-html2text
-</span><span class='line'><span class="nv">$ </span>sudo pip install --upgrade  -r pip_requirements.txt
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>変換実行</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>python exitwp.py
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Octopress/Jekyll へ取り込み</h4>
-
-<p><code>./build/</code>ディレクトリに作成されたデータをOctopress/Jekyll のディレクトリにコピーしてGenerate &amp; Deploy します。</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/11/16/wordpress-to-jekyll/">続きを読む &rarr;</a>
+    </footer>
   
 
 
@@ -556,52 +522,6 @@ minetest はIrrlicht エンジンを利用して実装されています。
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/02/conky-google-now/">Conky Google Now</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-02T12:05:00+09:00" pubdate data-updated="true">2013年11月02日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/conky_google_now.png"><img src="/images/conky_google_now_tn.png"></a></p>
-
-<p><a href="http://satya164.deviantart.com/art/Conky-Google-Now-366545753">http://satya164.deviantart.com/art/Conky-Google-Now-366545753</a></p>
-
-<p>ConkyForecast のスクリプトがうまく動かなくなったので、Conky Google Now に乗り換えてみました。
-フォントをOpen Sans Light に統一しようかと思いましたが、行間が空いてしまったので止めておきました。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/11/02/conky-google-now/">続きを読む &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -615,6 +535,10 @@ minetest はIrrlicht エンジンを利用して実装されています。
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
@@ -632,15 +556,11 @@ minetest はIrrlicht エンジンを利用して実装されています。
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -668,7 +588,7 @@ minetest はIrrlicht エンジンを利用して実装されています。
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - ktkr3d -
+  Copyright &copy; 2014 - ktkr3d -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

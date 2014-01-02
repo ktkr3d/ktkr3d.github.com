@@ -9,10 +9,11 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186
-CRadiosityGenerator クラスを使ってみた(とりあえず光反射は3回にしてみた)
-モデルと光源を工夫するともっといい画像が撮れそう
-内部でXEffects &hellip;">
+  <meta name="description" content="nVidia のCg 言語のシェーダラッパirrCg を試してみた
+Radeon でも使える
+http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=23676
+http://code.google.com/p/irrcg/
+1. Cg &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,167 +90,6 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/12/post_10/">ラジオシティを試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-12T15:52:02+09:00" pubdate data-updated="true">2010年09月12日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/09/gpurad.png"><img src="/images/uploads/2010/09/gpurad.png" alt="gpurad irrlicht" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39186</a>
-CRadiosityGenerator クラスを使ってみた(とりあえず光反射は3回にしてみた)
-モデルと光源を工夫するともっといい画像が撮れそう
-内部でXEffects を使用している
-shader model 2.0 対応のGPU 限定になるみたい
-ファイル名&#8221;MainBuilding.irrmesh&#8221; がmain.cpp 内と異なっているので修正した</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/12/terrain_pager/">Terrain Pager を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-12T10:25:53+09:00" pubdate data-updated="true">2010年09月12日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2010/09/iterrain.png"><img src="/images/uploads/2010/09/iterrain.png" alt="iterrain irrlicht" /></a>
-<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29356">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29356</a>
-広大なマップを格子状に区切って近隣部分のみ表示することによってメモリの節約と性能の向上を図るもののよう
-Fog と一緒に使うべきだけどわかりにくいのでFog を外してみた
-シームレスなマップの切り替えに使えそう</p>
-
-<p>他にも同じような実装を見かけたような気がするけれど失念&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/11/shader/">シェーダラッパをちょっと試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-11T23:53:32+09:00" pubdate data-updated="true">2010年09月11日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Irrlicht で使えるシェーダラッパをRadeon でちょっとだけ試してみた</p>
-
-<p>XEffects
-irrCg</p>
-
-<p>Normal
-VSM
-Forward
-Deferred</p>
-
-<p>Windows
-DirectX
-OK
-OK
-OK
-OK</p>
-
-<p>OpenGL
-OK
-OK
-OK
-OK</p>
-
-<p>Linux
-OpenGL/fglrx
-OK
-OK
-OK
-?</p>
-
-<p>OpenGL/OSS</p>
-
-<h2>OK</h2>
-
-<p>OK
-?</p>
-
-<p>Linux + Radeon の組み合わせはやっぱりまだ鬼門なのかな&hellip;
-? はうまく描画されない
-&ndash; はIrrlicht 内で落ちる
-OSSは今後の実装/改善に期待かな
-<a href="http://www.x.org/wiki/RadeonFeature">http://www.x.org/wiki/RadeonFeature</a></p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -636,6 +476,125 @@ IrrCg のひと(黄色のバギーに乗っていると思われる)が作った
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/25/videomaster/">VideoMaster を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-25T18:10:23+09:00" pubdate data-updated="true">2010年08月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/VideoPlayer.png"><img src="/images/uploads/2011/03/VideoPlayer.png" alt="irrlicht theora video master" /></a>
+VideoMaster クラスを使ってTheora(OGV/OGG)形式の動画を再生してみた
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39693">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=39693</a>
+&ndash; IImage, ITexture のインタフェースがあるのでIGUIEnvironment, ISceneManager ともに使い易そう
+&ndash; gcc でコンパイルする時はgoto の処理と#include のパスを書き換えた方がよいかも
+&ndash; リンクするライブラリはlibopenal, libtheoraplayer</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/24/shield_effect/">Shield Effect を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-24T00:43:39+09:00" pubdate data-updated="true">2010年08月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2010/08/ShieldEffect.png"><img src="/images/uploads/2010/08/ShieldEffect.png" alt="ShieldEffect irrlicht" /></a>
+球状のシールド（亀A）とメッシュの形状を覆うようなシールド（亀B）のエフェクトを試してみた
+シールドに直撃した後に周りに伝播するアニメーションがいい感じ
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=38544">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=38544</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/23/caudio_openal/">cAudio(OpenAL ラッパ)を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-23T03:44:49+09:00" pubdate data-updated="true">2010年08月23日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://caudio.deathtouchstudios.com/">http://caudio.deathtouchstudios.com/</a>
+<a href="http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=37754">http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=37754</a>
+mp3 のプラグインもあって簡単にサウンドを扱える
+irrKlang の代わりに使えそう</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/19/">&larr; Older</a>
@@ -653,6 +612,10 @@ IrrCg のひと(黄色のバギーに乗っていると思われる)が作った
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
@@ -668,15 +631,11 @@ IrrCg のひと(黄色のバギーに乗っていると思われる)が作った
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -704,7 +663,7 @@ IrrCg のひと(黄色のバギーに乗っていると思われる)が作った
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - ktkr3d -
+  Copyright &copy; 2014 - ktkr3d -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

@@ -170,35 +170,35 @@ $(document).ready( function () {
 <table>
 <thead>
 <tr>
-<th align="left">デバイス</th>
-<th align="left">タイプ</th>
-<th align="left">サイズ</th>
-<th align="left">用途</th>
+<th align="left">Device</th>
+<th align="left">FS</th>
+<th align="right">Size</th>
+<th align="left">Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">/dev/sda1</td>
 <td align="left">ntfs</td>
-<td align="left">0.35 GiB</td>
+<td align="right">0.35 GiB</td>
 <td align="left">EFI</td>
 </tr>
 <tr>
 <td align="left">/dev/sda2</td>
 <td align="left">ntfs</td>
-<td align="left">150.00 GiB</td>
+<td align="right">150.00 GiB</td>
 <td align="left">Windows 8</td>
 </tr>
 <tr>
 <td align="left">/dev/sda3</td>
 <td align="left">ext4</td>
-<td align="left">145.00 GiB</td>
+<td align="right">145.00 GiB</td>
 <td align="left">Ubuntu 12.04,<br/> Andorid-x86 4.0</td>
 </tr>
 <tr>
 <td align="left">/dev/sda4</td>
 <td align="left">swap</td>
-<td align="left">2.75 GiB</td>
+<td align="right">2.75 GiB</td>
 <td align="left">Linux swap</td>
 </tr>
 </tbody>
@@ -616,24 +616,20 @@ Inspiron duo 用のサンプル（一部誤っている）</p>
 <p><a href="http://www.android-x86.org/getsourcecode  ">http://www.android-x86.org/getsourcecode  </a>
 <a href="http://source.android.com/source/download.html">http://source.android.com/source/download.html</a></p>
 
-<ol>
-<li> 前提パッケージをインストール</li>
-</ol>
-
+<h4>前提パッケージをインストール</h4>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline-gplv2-dev lib32z1-dev
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev x11proto-core-dev libx11-dev lib32readline-gplv2-dev lib32z1-dev lib32z1 lib32ncurses5 lib32bz2-1.0
 </span><span class='line'><span class="nv">$ </span>sudo apt-get install gcc-multilib g++-multilib libc6-i386 libc6-dev-i386
 </span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li><p> JDK をインストール
-Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin にパスを通しておく。念の為、JAVA_HOME も./ を設定しておこう。</p></li>
-<li><p> repo をインストール</p></li>
-</ol>
+<h4>JDK をインストール</h4>
 
+<p>Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin にパスを通しておく。念の為、JAVA_HOME も./ を設定しておこう。</p>
+
+<h4>repo をインストール</h4>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -646,14 +642,11 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
 </span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li><p> ソースを取得</p>
+<h4>ソースを取得</h4>
 
 <ul>
 <li>Android 4.1 (Jelly Bean) の場合</li>
 </ul>
-</li>
-</ol>
 
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -667,8 +660,10 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
 </span></code></pre></td></tr></table></div></figure>
 
 
-<pre><code>* Android-x86 4.0 (Ice Cream Sandwich) の場合
-</code></pre>
+<ul>
+<li>Android-x86 4.0 (Ice Cream Sandwich) の場合</li>
+</ul>
+
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -681,17 +676,14 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
 </span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li> ビルド</li>
-</ol>
-
+<h4>ビルド</h4>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source </span>build/envsetup.sh
 </span><span class='line'><span class="nv">$ </span>lunch <span class="c"># 選択肢が表示されるので、選択</span>
-</span><span class='line'><span class="nv">$ </span>make -j8
+</span><span class='line'><span class="nv">$ </span>make -j4
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -749,6 +741,10 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
@@ -764,15 +760,11 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -801,7 +793,7 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - ktkr3d -
+  Copyright &copy; 2014 - ktkr3d -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

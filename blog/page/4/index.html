@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://github.com/aliasaria/scrumblr Node.js で実装された掲示板アプリscrumblr をインストールしてみました。socket.io を使っていて、複数のブラウザで掲示板をリアルタイムに共有できます。 &hellip;">
+  <meta name="description" content="http://appjs.org/ https://github.com/appjs/appjs https://github.com/appjs/appjs/wiki Node.js アプリをコマンドラインからデスクトップアプリとして実行するAppJS を試してみました。HTML, CSS, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,231 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/10/appjs/">AppJS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-10T22:12:07+09:00" pubdate data-updated="true">2013年02月10日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2013/02/appjs.png"><img src="/images/uploads/2013/02/appjs-600x457.png" alt="AppJS Node.js" /></a>
+<a href="http://appjs.org/  ">http://appjs.org/  </a>
+<a href="https://github.com/appjs/appjs  ">https://github.com/appjs/appjs  </a>
+<a href="https://github.com/appjs/appjs/wiki">https://github.com/appjs/appjs/wiki</a></p>
+
+<p>Node.js アプリをコマンドラインからデスクトップアプリとして実行するAppJS を試してみました。HTML, CSS, JavaScript でアプリケーションが実装できて、Windows, Mac(32bit のみ), Linux(x86/x86_64) に対応しています。Unity のグローバルメニューにも対応していました。Node.js のバージョンはv0.8 系が良いようです。Linux x86_64 の環境でv0.9.9 ではうまく動作しませんでした。</p>
+
+<ol>
+<li> Node.js v0.8.19 のインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'><span class="nv">$ </span>nvm install v0.8.19
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> AppJS のインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'><span class="nv">$ </span>nvm use v0.8.19
+</span><span class='line'><span class="nv">$ </span>npm install -g appjs
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> アプリケーションの準備</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>~/appjs/app.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// load appjs</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">appjs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;appjs&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// serve static files from a directory</span>
+</span><span class='line'><span class="nx">appjs</span><span class="p">.</span><span class="nx">serveFilesFrom</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/content&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// handle requests from the browser</span>
+</span><span class='line'><span class="nx">appjs</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+</span><span class='line'>  <span class="nx">response</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hey! How are you &#39;</span> <span class="o">+</span> <span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;firstname&#39;</span><span class="p">));</span>
+</span><span class='line'><span class="p">})</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// create a window</span>
+</span><span class='line'><span class="kd">var</span> <span class="nb">window</span> <span class="o">=</span> <span class="nx">appjs</span><span class="p">.</span><span class="nx">createWindow</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">width</span><span class="o">:</span> <span class="mi">640</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">height</span><span class="o">:</span> <span class="mi">460</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">alpha</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// prepare the window when first created</span>
+</span><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Window Created&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// window.frame controls the desktop window</span>
+</span><span class='line'>  <span class="nb">window</span><span class="p">.</span><span class="nx">frame</span><span class="p">.</span><span class="nx">show</span><span class="p">().</span><span class="nx">center</span><span class="p">();</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// the window is ready when the DOM is loaded</span>
+</span><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Window Ready&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// directly interact with the DOM</span>
+</span><span class='line'>  <span class="nb">window</span><span class="p">.</span><span class="nx">process</span> <span class="o">=</span> <span class="nx">process</span><span class="p">;</span>
+</span><span class='line'>  <span class="nb">window</span><span class="p">.</span><span class="nx">module</span> <span class="o">=</span> <span class="nx">module</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;keydown&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>    <span class="c1">// show chrome devtools on f12 or commmand+option+j</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyIdentifier</span> <span class="o">===</span> <span class="s1">&#39;F12&#39;</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">74</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">metaKey</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">altKey</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nb">window</span><span class="p">.</span><span class="nx">frame</span><span class="p">.</span><span class="nx">openDevTools</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// cleanup code when window is closed</span>
+</span><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Window Closed&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>~/appjs/content/index.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!doctype html&gt;</span>
+</span><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;title&gt;</span>Hello World!<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;/&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;firstname&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Firstname&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;lastname&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Lastname&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/form&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> 実行</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source</span> ~/.nvm/nvm.sh
+</span><span class='line'><span class="nv">$ </span>nvm use v0.8.19
+</span><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">NODE_PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">NVM_PATH</span><span class="k">}</span>_modules
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/appjs/
+</span><span class='line'><span class="nv">$ </span>node --harmony app.js
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>サンプルでは、[F12]キーにwindow.frame.openDevTools() をアサインしていて、キー押下により開発ツールウィンドウが開くようになっています。
+<a href="/images/uploads/2013/02/node_devtool.png"><img src="/images/uploads/2013/02/node_devtool-600x470.png" alt="Node.js devtool" /></a></p>
+
+<p><strong>EDIT:</strong></p>
+
+<h3>サンプルのカスタマイズ</h3>
+
+<p>HelloWorld サンプルをカスタマイズしてみました。日本語表示、メニュー構成の変更、ファイルオープンダイアログ、lame/speaker パッケージを使ったMP3 の再生など。
+<a href="/images/uploads/2013/02/hello_world_appjs.png"><img src="/images/uploads/2013/02/hello_world_appjs-600x457.png" alt="hello world appjs" /></a>
+<a href="/images/uploads/2013/02/mp3player_js.png"><img src="/images/uploads/2013/02/mp3player_js.png" alt="mp3 player node.js" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -919,116 +1144,6 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/08/thunderbird-gmail-google-calendar-google-tasks/">Thunderbird + GMail + Google Calendar + Google Tasks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-08T17:41:05+09:00" pubdate data-updated="true">2012年12月08日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Thunderbird とGoogle のメール、カレンダー、TODO を同期してみました。</p>
-
-<h3>Thunderbird のインストール</h3>
-
-<p>thunderbird をインストールします。</p>
-
-<h3>Thunderbird アドオンのインストール</h3>
-
-<p>Thunderbirdで、
-[アドオン]メニューから下記のアドオンを検索してインストールします。</p>
-
-<ul>
-<li><p>Lightning
-<a href="https://addons.mozilla.org/ja/thunderbird/addon/lightning/">https://addons.mozilla.org/ja/thunderbird/addon/lightning/</a></p></li>
-<li><p>Provider for Google Calendar
-<a href="https://addons.mozilla.org/ja/thunderbird/addon/provider-for-google-calendar/">https://addons.mozilla.org/ja/thunderbird/addon/provider-for-google-calendar/</a></p></li>
-<li><p>Google Tasks Sync
-<a href="https://addons.mozilla.org/ja/thunderbird/addon/google-tasks-sync/">https://addons.mozilla.org/ja/thunderbird/addon/google-tasks-sync/</a></p></li>
-<li><p>Google Contacts
-<a href="https://addons.mozilla.org/ja/thunderbird/addon/google-contacts/">https://addons.mozilla.org/ja/thunderbird/addon/google-contacts/</a></p></li>
-</ul>
-
-
-<h3>メールアカウントの設定</h3>
-
-<p>Thunderbird で、</p>
-
-<ol>
-<li><p> [新規作成]&ndash;[既存のメールアカウント&hellip;]メニューを選択</p></li>
-<li><p> Google のアカウント情報を指定</p></li>
-</ol>
-
-
-<h3>Google カレンダーのアドレスの取得</h3>
-
-<p>Google カレンダーで、</p>
-
-<ol>
-<li><p> [設定]メニューを選択</p></li>
-<li><p> [カレンダー]タブをクリック</p></li>
-<li><p> [このカレンダーを共有]リンクをクリック</p></li>
-<li><p> [カレンダーの情報]タブをクリック</p></li>
-<li><p> カレンダーのアドレスの[XML]リンクを右クリックして[リンクのURLをコピー]</p></li>
-</ol>
-
-
-<h3>カレンダーの同期設定</h3>
-
-<p>Thunderbird で、</p>
-
-<ol>
-<li><p> [新規作成]&ndash;[カレンダー&hellip;]メニューを選択</p>
-
-<ul>
-<li><p>カレンダーの保存先: ネットワークのサーバに保存する</p></li>
-<li><p>フォーマット: Google カレンダー</p></li>
-<li><p>場所: 上記手順で取得したGoogle カレンダーのアドレス</p></li>
-<li><p>オフラインサポート: チェック</p></li>
-<li><p>パスワードマネージャにこのパスワードを保存する。: チェック</p></li>
-<li><p>カレンダー名を設定</p></li>
-</ul>
-</li>
-</ol>
-
-
-<h3>TODO の同期設定</h3>
-
-<p>Thunderbird で、</p>
-
-<ol>
-<li><p> 右下ペインの「Google Tasks Sync」の「Click here to get started.」をクリック</p></li>
-<li><p> アカウント情報を指定してログイン</p></li>
-<li><p> [アクセスを許可]をクリック</p></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1046,6 +1161,10 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
@@ -1061,15 +1180,11 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -1097,7 +1212,7 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - ktkr3d -
+  Copyright &copy; 2014 - ktkr3d -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

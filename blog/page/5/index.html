@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Unity 4.0 で作成したアプリをUbuntu 12.10 x86_64 上で動かしてみました。Unity 4.0 ではLinux 向けにネイティブアプリを出力できるようになっています。ビルドの設定では「x86」、「x86_64 」、「x86 + x86_64 (Universal)」 &hellip;">
+  <meta name="description" content="Thunderbird とGoogle のメール、カレンダー、TODO を同期してみました。 Thunderbird のインストール thunderbird をインストールします。 Thunderbird アドオンのインストール Thunderbirdで、
+[アドオン] &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,116 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/08/thunderbird-gmail-google-calendar-google-tasks/">Thunderbird + GMail + Google Calendar + Google Tasks</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-08T17:41:05+09:00" pubdate data-updated="true">2012年12月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Thunderbird とGoogle のメール、カレンダー、TODO を同期してみました。</p>
+
+<h3>Thunderbird のインストール</h3>
+
+<p>thunderbird をインストールします。</p>
+
+<h3>Thunderbird アドオンのインストール</h3>
+
+<p>Thunderbirdで、
+[アドオン]メニューから下記のアドオンを検索してインストールします。</p>
+
+<ul>
+<li><p>Lightning
+<a href="https://addons.mozilla.org/ja/thunderbird/addon/lightning/">https://addons.mozilla.org/ja/thunderbird/addon/lightning/</a></p></li>
+<li><p>Provider for Google Calendar
+<a href="https://addons.mozilla.org/ja/thunderbird/addon/provider-for-google-calendar/">https://addons.mozilla.org/ja/thunderbird/addon/provider-for-google-calendar/</a></p></li>
+<li><p>Google Tasks Sync
+<a href="https://addons.mozilla.org/ja/thunderbird/addon/google-tasks-sync/">https://addons.mozilla.org/ja/thunderbird/addon/google-tasks-sync/</a></p></li>
+<li><p>Google Contacts
+<a href="https://addons.mozilla.org/ja/thunderbird/addon/google-contacts/">https://addons.mozilla.org/ja/thunderbird/addon/google-contacts/</a></p></li>
+</ul>
+
+
+<h3>メールアカウントの設定</h3>
+
+<p>Thunderbird で、</p>
+
+<ol>
+<li><p> [新規作成]&ndash;[既存のメールアカウント&hellip;]メニューを選択</p></li>
+<li><p> Google のアカウント情報を指定</p></li>
+</ol>
+
+
+<h3>Google カレンダーのアドレスの取得</h3>
+
+<p>Google カレンダーで、</p>
+
+<ol>
+<li><p> [設定]メニューを選択</p></li>
+<li><p> [カレンダー]タブをクリック</p></li>
+<li><p> [このカレンダーを共有]リンクをクリック</p></li>
+<li><p> [カレンダーの情報]タブをクリック</p></li>
+<li><p> カレンダーのアドレスの[XML]リンクを右クリックして[リンクのURLをコピー]</p></li>
+</ol>
+
+
+<h3>カレンダーの同期設定</h3>
+
+<p>Thunderbird で、</p>
+
+<ol>
+<li><p> [新規作成]&ndash;[カレンダー&hellip;]メニューを選択</p>
+
+<ul>
+<li><p>カレンダーの保存先: ネットワークのサーバに保存する</p></li>
+<li><p>フォーマット: Google カレンダー</p></li>
+<li><p>場所: 上記手順で取得したGoogle カレンダーのアドレス</p></li>
+<li><p>オフラインサポート: チェック</p></li>
+<li><p>パスワードマネージャにこのパスワードを保存する。: チェック</p></li>
+<li><p>カレンダー名を設定</p></li>
+</ul>
+</li>
+</ol>
+
+
+<h3>TODO の同期設定</h3>
+
+<p>Thunderbird で、</p>
+
+<ol>
+<li><p> 右下ペインの「Google Tasks Sync」の「Click here to get started.」をクリック</p></li>
+<li><p> アカウント情報を指定してログイン</p></li>
+<li><p> [アクセスを許可]をクリック</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1146,47 +1257,6 @@ Ubuntu のリポジトリを使いたいけれど、デスクトップ環境はG
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/24/gnome-shell-extension-drop-down-terminal/">GNOME Shell Extension - Drop Down Terminal</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-24T21:17:32+09:00" pubdate data-updated="true">2012年09月24日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/09/drop_down_terminal_gnome_shell_extension.png"><img src="/images/uploads/2012/09/drop_down_terminal_gnome_shell_extension-600x337.png" alt="gnome shell extension drop down terminal" /></a>
-<a href="https://extensions.gnome.org/extension/442/drop-down-terminal/">https://extensions.gnome.org/extension/442/drop-down-terminal/</a></p>
-
-<p>Drop Down Terminal はGNOME Shell 3.5.2 (正確にはgjs >= 1.33.2 and vte3 >= 0.31, gnome-shell >= 3.2 らしい)以降で動作する、ターミナル画面を表示するためのGNOME Shell 拡張機能です。Ubuntu 12.10 + GNOME Shell 3.5.92 の環境で使ってみました。
-GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面の上部に半透明なターミナル画面が瞬時に表示されます。もう一度[F12]キーを押すとターミナル画面が隠れます。作者のコメントによると、キーバインドはgsettings やdconf-editor でカスタマイズできるようです。
-ちょっとしたターミナル操作をする場合にとても便利です。クリップボードからのペーストは[Shift]&ndash;[Insert]が使用できます。フォーカスが合っていない場合はマウスでクリックすると良いようです。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -1204,6 +1274,10 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
@@ -1219,15 +1293,11 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -1255,7 +1325,7 @@ GNOME Shell のデスクトップ環境で[F12]キーを押下すると、画面
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - ktkr3d -
+  Copyright &copy; 2014 - ktkr3d -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

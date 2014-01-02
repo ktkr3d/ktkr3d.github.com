@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://ubuntuforums.org/showthread.php?t=1658635 Inspiron duo にLinux をインストールしてイヤフォンから音が出ないので調べてみたら、Ubuntu のフォーラムに解決方法が掲載されていた。model をdell とかdell- &hellip;">
+  <meta name="description" content="http://www.winehq.org/ http://appdb.winehq.org/ サクラエディタ (http://sakura-editor.sourceforge.net/)
+テキストエディタ。マクロや矩形処理とかいろいろと便利。Windows アプリなのにWine &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,175 +87,6 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/03/inspiron-duo-e381a7alsa/">Inspiron Duo でALSA</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-03T22:08:04+09:00" pubdate data-updated="true">2011年04月03日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ubuntuforums.org/showthread.php?t=1658635">http://ubuntuforums.org/showthread.php?t=1658635</a></p>
-
-<p>Inspiron duo にLinux をインストールしてイヤフォンから音が出ないので調べてみたら、Ubuntu のフォーラムに解決方法が掲載されていた。model をdell とかdell-laptop にしても治らなかったのに、ideapad で解決するとは&hellip;</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo gedit /etc/modprobe.d/alsa-base.conf
-</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>options snd-hda-intel model=ideapad</p></blockquote>
-
-<p>Fedora の場合は、/etc/modprobe.d/dist-alsa.conf を修正。</p>
-
-<p>他にもタッチスクリーンでのマルチタッチの設定とか、画面回転の設定とかがあるので試してみよう!!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/02/inspiron-duo/">Inspiron Duo でLinux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-02T03:19:29+09:00" pubdate data-updated="true">2011年04月02日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Ubuntu 11.04b1</h3>
-
-<p>natty-desktop-i386.iso
-普通に動いた。イヤフォンを繋いでも内臓スピーカーが動作してしまうのは後で調べよう。</p>
-
-<h3>Fedora 15a</h3>
-
-<p>Fedora-15-Nightly-20110401.17-i686-Live-desktop.iso
-普通に動いた。イヤフォンが優先されないのは同様。</p>
-
-<h3>MeeGo Tablet 1.2 のIntel 版</h3>
-
-<p>meego-tablet-ia32-pinetrail.iso
-ライブイメージで動作した。タッチパネルは使えたが、タッチスクリーンが使えなかった。イヤフォンが優先されないのは同様。アクセスポイントのリストは公開されているものが表示される。隠しアクセスポイントに接続するインタフェースがない？メニューを戻る操作がよくわからなかった。</p>
-
-<h3>MeeGo Tablet 1.2 の本家版</h3>
-
-<p>meego-tablet-ia32-pinetrail-1.1.99.0.20110330.3.img
-縦モードで起動。壁紙がかっこよい。タッチスクリーンが動作せず。残念。</p>
-
-<h3>MeeGo Netbook 1.2 の本家版</h3>
-
-<p>meego-netbook-ia32-1.1.99.0.20110330.3.img
-普通に動作。ソフトウェアリポジトリが貧弱なような気がする。標準でNTFS が参照不可。Fedora 版かopenSUSE 版に切り替えた方がよいかも。</p>
-
-<h3>Android-x86 2.2</h3>
-
-<p>android-x86-2.2-sparta.iso
-Inspiron Duo 用のビルドなだけに、よく動く。画面表示もネットワークも日本語表示もOK。イヤフォンが優先されないのは他と同様。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/">Inspiron Duo で遊んでみよう</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-31T23:12:18+09:00" pubdate data-updated="true">2011年03月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.dell.com/us/p/inspiron-duo/pd">http://www.dell.com/us/p/inspiron-duo/pd</a></p>
-
-<p>Inspiron Duo でいろんなOS を動かして遊んでみよう。</p>
-
-<ul>
-<li><p>Fedora 15 (DE: GNOME Shell)</p></li>
-<li><p>Ubuntu 11.04 (DE: Unity)</p></li>
-<li><p>MeeGo 1.2 Tablet UX Pre-Alpha Release</p></li>
-<li><p>MeeGo v1.1 for Netbooks</p></li>
-<li><p>MeeGo v1.1 for In-Vehicle Infotainment</p></li>
-<li><p>Android-x86 2.2 / 2.3</p></li>
-<li><p>Splashtop OS 1.0</p></li>
-<li><p>Windows 7</p></li>
-<li><p>Windows XP</p></li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/03/31/inspiron-duo-e381a7e9818ae38293e381a7e381bfe3819f/">続きを読む &rarr;</a>
-    </footer>
-  
-
-
-    </article>
   
   
     <article>
@@ -592,6 +424,152 @@ Windows のスクリーンセーバー形式(.scr)なので、Linux 上でもWin
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/11/android-x86_23/">Android-x86 2.3(Ginger Bread)をビルドしてみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-11T19:50:17+09:00" pubdate data-updated="true">2011年02月11日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/02/gingerbread-x86.png"><img src="/images/uploads/2011/02/gingerbread-x86.png" alt="android android-x86 2.3 gingerbread" /></a>
+<a href="http://www.android-x86.org/getsourcecode">http://www.android-x86.org/getsourcecode</a>
+android-x86 のサイトでAndroid 2.3(gingerbread)版のリポジトリが公開されているものの、ISO イメージが公開されていないので、自分でビルドしてみた。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>uname -a
+</span><span class='line'>Linux localhost 2.6.37-android-x86+ <span class="c">#1 SMP PREEMPT Fri Feb 11 18:01:30 JST 2011 i686 GNU/Linux</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>カーネルが2.6.37 系になったみたい。
+2.2版(Froyo-x86)にあったethernet 関連のモジュールが入っていない(?)せいか、そのままでは有線LAN がうまく動かないみたいだ。
+マウスの挙動も少し変かもしれない。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/06/android_30/">Android 3.0 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-06T13:14:51+09:00" pubdate data-updated="true">2011年02月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/android_honeycomb.png"><img src="/images/uploads/2011/03/android_honeycomb.png" alt="" /></a>
+<a href="http://developer.android.com/sdk/android-3.0-highlights.html">http://developer.android.com/sdk/android-3.0-highlights.html</a>
+環境構築をしていたらAndroid SDK 3.0 のPreview があったので、エミュレータでAndroid 3.0(Honeycomb)を起動してみた。
+実機やVM と比べるともっさりした感じ。
+<a href="/images/uploads/2011/03/android_helloworld.png"><img src="/images/uploads/2011/03/android_helloworld.png" alt="android 3.0 honeycomb hello world" /></a>
+はろーあんどろいど！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/05/android-x86/">Android-x86 を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-05T12:42:40+09:00" pubdate data-updated="true">2011年02月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/03/android-x86_hdmi.png"><img src="/images/uploads/2011/03/android-x86_hdmi.png" alt="android android-x86" /></a>
+<a href="http://www.android-x86.org/">http://www.android-x86.org/</a>
+Android をx86 にポートしたAndroid-x86 のバージョン2.2(Froyo-x86) をネットブック実機と仮想環境の両方で試してみた。
+バージョン2.3(Gingerbread-x86) のブランチもあったけれど、さすがにAndroid 3.0 版(Honeycomb)はなかった。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>uname -a
+</span><span class='line'>Linux localhost 2.6.35.7-android-x86+ <span class="c">#3 SMP PREEMPT Thu Jan 13 18:03:15 CST 2011 i686 GNU/Linux</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>GRUB からの起動時にSD カードに見せかけるパーティションを追加指定(&ldquo;SDCARD=/dev/sdb2&rdquo; 等)</p></li>
+<li><p>音声、動画、有線LAN、キーボード、マウスは問題なかった</p></li>
+<li><p>手持ちのネットブックのカメラ、タッチスクリーン、無線LAN はうまく動かなかった</p></li>
+<li><p>App Store からのインストールはできたけれど、Android Market からのインストールができなかった（これは仕方なしか&hellip;）</p></li>
+</ul>
+
+
+<p>3.0 版もはやくリリースされないかな。</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/16/">&larr; Older</a>
@@ -609,6 +587,10 @@ Windows のスクリーンセーバー形式(.scr)なので、Linux 上でもWin
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
@@ -624,15 +606,11 @@ Windows のスクリーンセーバー形式(.scr)なので、Linux 上でもWin
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -660,7 +638,7 @@ Windows のスクリーンセーバー形式(.scr)なので、Linux 上でもWin
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - ktkr3d -
+  Copyright &copy; 2014 - ktkr3d -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

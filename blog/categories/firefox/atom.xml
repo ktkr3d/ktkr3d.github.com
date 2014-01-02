@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Firefox | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/firefox/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-02T16:10:24+09:00</updated>
+  <updated>2014-01-02T16:13:32+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ktkr3d.github.io/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/"/>
     <updated>2014-01-02T15:41:00+09:00</updated>
     <id>http://ktkr3d.github.io/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/scroll_buttons.png">{% img /images/scroll_buttons.png %}</a></p>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/scroll_buttons.png"><img src="/images/scroll_buttons.png"></a></p>
 
 <p>Firefox にスクロールアップ/ダウンボタンを追加してみました。</p>
 

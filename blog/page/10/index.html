@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://cdimage.ubuntu.com/releases/12.04/alpha-2/ Ubuntu 12.04 Precise Pangolin のアルファ2 がリリースされたので、インストールしてみた。Linux カーネル は3.2。GNOME Shell も入れてみた。 &hellip;">
+  <meta name="description" content="AMD Catalyst™ Proprietary Display Driver &ndash; Linux x86 &amp; Linux x86_64 の12.1 (fglrx 8.930)がリリースされたのでUbuntu 11.10 x86_64 の環境にインストールしてみた。GNOME &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,46 +86,6 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/04/ubuntu-12-04-precise-pangolin-alpha-2-gnome-shell/">Ubuntu 12.04 Precise Pangolin Alpha 2 + GNOME Shell</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-04T19:24:50+09:00" pubdate data-updated="true">2012年02月04日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/02/ubuntu12.04.png"><img src="/images/uploads/2012/02/ubuntu12.04.png" alt="ubuntu 12.04 precise pangolin apha 2 gnome shell" /></a></p>
-
-<p><a href="http://cdimage.ubuntu.com/releases/12.04/alpha-2/">http://cdimage.ubuntu.com/releases/12.04/alpha-2/</a></p>
-
-<p>Ubuntu 12.04 Precise Pangolin のアルファ2 がリリースされたので、インストールしてみた。Linux カーネル は3.2。GNOME Shell も入れてみた。インストーラや一部のパッケージの動作がおかしいけれど、普通に使えそうな感じ。</p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -630,6 +590,63 @@ DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日�
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/16/android-4-0/">Android 4.0 をビルドしてみよう（その1）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-16T04:22:55+09:00" pubdate data-updated="true">2011年11月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://source.android.com/source/download.html">http://source.android.com/source/download.html</a>
+Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので、Ubuntu 11.10 64bit の環境でビルドしてみよう。手順はAndroid 2.3 の時と同じみたい。今回から（?）実験的に32bit 環境での手順も記載されている。
+はやくAndroid-x86 にも取り込まれないかな。</p>
+
+<ol>
+<li><p> 環境の構築
+<a href="http://source.android.com/source/initializing.html">http://source.android.com/source/initializing.html</a>
+前提パッケージlib32readline5-dev が見つからないのは、とりあえず無視してみる。</p></li>
+<li><p> ソースコードのダウンロード
+<a href="http://source.android.com/source/downloading.html">http://source.android.com/source/downloading.html</a>
+今回もrepo を使ったダウンロードが遅い。</p></li>
+<li><p> ソースコードのビルド
+<a href="http://source.android.com/source/building.html">http://source.android.com/source/building.html</a></p></li>
+</ol>
+
+
+<p>source.android.com に繋がりにくい時があるので、手順はhtml で保存しておいた方がよさそう。
+ダウンロードが終わらないので、今日（今朝）はここまで。</p>
+
+<p><strong>update:</strong>
+エミュレータでAndroid 4.0 Ice Cream Sandwich を動かしてみた。
+<a href="/images/uploads/2011/11/android_4_ics.png"><img src="/images/uploads/2011/11/android_4_ics.png" alt="android 4 ice cream sandwich" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -647,6 +664,10 @@ DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
@@ -662,15 +683,11 @@ DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日�
         <a href="/blog/2013/12/14/steamos/">SteamOS</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/">Ubuntu GNOME + GNOME3 PPA</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (3)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/peercast/'>Peercast (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
@@ -698,7 +715,7 @@ DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日�
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - ktkr3d -
+  Copyright &copy; 2014 - ktkr3d -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
