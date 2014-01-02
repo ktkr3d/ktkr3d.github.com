@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-01T20:08:44+09:00</updated>
+  <updated>2014-01-02T16:10:24+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Scroll up/down button add-on for firefox]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/"/>
+    <updated>2014-01-02T15:41:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/scroll_buttons.png">{% img /images/scroll_buttons.png %}</a></p>
+
+<p>Firefox にスクロールアップ/ダウンボタンを追加してみました。</p>
+
+<!-- more -->
+
+
+<p>タブレットにインストールしたLinux のFirefox ではタッチスクリーンを使ったスクロール操作が面倒でした。
+スクロールバーは細くて扱い難く、スクロールバーの近辺のリンクは誤って選択してしまいます。
+Android のようにドラッグでスクロールできるアドオンもありますが、副作用もあります。
+ツールバーでスクロールボタンを実装しているアドオンを探してみましたが、見つけられませんでした。
+幸い、ページ先頭/ページ末尾に移動できるボタンを実装したToolbar Buttons アドオンがありましたので、改造して代用することにしました。
+XUL の<code>cmd_scrollBottom</code> を<code>cmd_scrollPageDown</code> に、<code>cmd_scrollTop</code> を<code>cmd_scrollPageUp</code> に置換しています。</p>
+
+<h4>Toolbar Buttons アドオンのインストール</h4>
+
+<p><a href="https://addons.mozilla.org/ja/firefox/addon/toolbar-buttons/">https://addons.mozilla.org/ja/firefox/addon/toolbar-buttons/</a></p>
+
+<h4>スクリプトの改造(修正前)</h4>
+
+<p>``` xml tbutton.jar/content/browser.xul</p>
+
+<pre><code>oncommand="document.commandDispatcher.getControllerForCommand('cmd_scrollBottom').doCommand('cmd_scrollBottom');" /&gt;
+</code></pre>
+
+<p>```</p>
+
+<p>``` xml tbutton.jar/content/browser.xul</p>
+
+<pre><code>oncommand="document.commandDispatcher.getControllerForCommand('cmd_scrollTop').doCommand('cmd_scrollTop');" /&gt;
+</code></pre>
+
+<p>```</p>
+
+<h4>スクリプトの改造(修正後)</h4>
+
+<p>``` xml tbutton.jar/content/browser.xul</p>
+
+<pre><code>oncommand="document.commandDispatcher.getControllerForCommand('cmd_scrollPageDown').doCommand('cmd_scrollPageDown');" /&gt;
+</code></pre>
+
+<p>```</p>
+
+<p>``` xml tbutton.jar/content/browser.xul</p>
+
+<pre><code>oncommand="document.commandDispatcher.getControllerForCommand('cmd_scrollPageUp').doCommand('cmd_scrollPageUp');" /&gt;
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Remote Blogging with Octopress]]></title>
@@ -245,148 +302,6 @@ deb-src <a href="http://ftp.debian.org/debian/">http://ftp.debian.org/debian/</a
 <p>deb <a href="http://security.debian.org/">http://security.debian.org/</a> /updates main contrib non-free
 deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> /updates main contrib non-free
 ```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntu GNOME + GNOME3 PPA]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa/"/>
-    <updated>2013-12-01T10:25:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/12/01/ubuntu-gnome-plus-gnome3-ppa</id>
-    <content type="html"><![CDATA[<p>Ubuntu GNOME にGNOME3 関連PPA を継ぎ足すのですが、各PPA に含まれるパッケージおよびそのバージョンに凸凹があったので、整理してみました。</p>
-
-<!-- more -->
-
-
-<h4>GNOME3 関連PPA</h4>
-
-<ul>
-<li>ppa:gnome3-team/gnome3-staging</li>
-<li>ppa:gnome3-team/gnome3-next</li>
-<li>ppa:ricotz/testing</li>
-</ul>
-
-
-<h4>Ubuntu GNOME 13.10 + GNOME3 PPA</h4>
-
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left">Staging</th>
-<th align="left">Next</th>
-<th align="left">Testing</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">clutter</td>
-<td align="left">1.14.4</td>
-<td align="left">1.14.4</td>
-<td align="left">1.14.5</td>
-</tr>
-<tr>
-<td align="left">gnome-control-center</td>
-<td align="left">3.10.1</td>
-<td align="left">&ndash;</td>
-<td align="left">&ndash;</td>
-</tr>
-<tr>
-<td align="left">gnome-desktop3</td>
-<td align="left">3.10.1</td>
-<td align="left">&ndash;</td>
-<td align="left">&ndash;</td>
-</tr>
-<tr>
-<td align="left">gnome-shell</td>
-<td align="left">3.10.2.1</td>
-<td align="left">3.10.1</td>
-<td align="left">3.11.2</td>
-</tr>
-<tr>
-<td align="left">gnome-tweak-tool</td>
-<td align="left">3.10.1</td>
-<td align="left">&ndash;</td>
-<td align="left">3.9.0</td>
-</tr>
-<tr>
-<td align="left">gtk+3.0</td>
-<td align="left">3.10.5</td>
-<td align="left">3.10.4</td>
-<td align="left">3.11.3</td>
-</tr>
-<tr>
-<td align="left">mutter</td>
-<td align="left">3.10.1.1</td>
-<td align="left">3.10.1.1</td>
-<td align="left">3.11.2</td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>Ubuntu GNOME 14.04 + GNOME3 PPA</h4>
-
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left">Staging</th>
-<th align="left">Next</th>
-<th align="left">Testing</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">clutter</td>
-<td align="left">1.16.0</td>
-<td align="left">&ndash;</td>
-<td align="left">1.14.5</td>
-</tr>
-<tr>
-<td align="left">gnome-control-center</td>
-<td align="left">&ndash;</td>
-<td align="left">&ndash;</td>
-<td align="left">&ndash;</td>
-</tr>
-<tr>
-<td align="left">gnome-desktop3</td>
-<td align="left">3.11.1</td>
-<td align="left">&ndash;</td>
-<td align="left">3.10.0</td>
-</tr>
-<tr>
-<td align="left">gnome-shell</td>
-<td align="left">3.10.2.1</td>
-<td align="left">&ndash;</td>
-<td align="left">3.11.2</td>
-</tr>
-<tr>
-<td align="left">gnome-tweak-tool</td>
-<td align="left">&ndash;</td>
-<td align="left">&ndash;</td>
-<td align="left">&ndash;</td>
-</tr>
-<tr>
-<td align="left">gtk+3.0</td>
-<td align="left">3.11.2</td>
-<td align="left">&ndash;</td>
-<td align="left">3.11.3</td>
-</tr>
-<tr>
-<td align="left">mutter</td>
-<td align="left">3.10.1.1</td>
-<td align="left">&ndash;</td>
-<td align="left">3.11.2</td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>まとめ</h4>
-
-<p>現時点でUbuntu GNOME 14.04 の環境を新しいパッケージで整えるとしたら、Staging + Testing を基本として、13.10 のStaging からgnome-control-center とgnome-tweak-tool を入れるのが良さそうです。
-混ぜると危険な気もしますけど。</p>
 ]]></content>
   </entry>
   
