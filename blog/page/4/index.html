@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://appjs.org/ https://github.com/appjs/appjs https://github.com/appjs/appjs/wiki Node.js アプリをコマンドラインからデスクトップアプリとして実行するAppJS を試してみました。HTML, CSS, &hellip;">
+  <meta name="description" content="Ubuntu 13.04 + GNOME Shell 3.7.5 で、Git クライアントを試してみました。 Git クライアント一覧
+https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,103 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/19/gitg-and-geanyvc/">Gitg and GeanyVC</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-19T18:14:48+09:00" pubdate data-updated="true">2013年02月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2013/02/gitg_without_overlay_scroll_bar.png"><img src="/images/uploads/2013/02/gitg_without_overlay_scroll_bar.png" alt="gitg without overlay scroll bar" /></a></p>
+
+<p>Ubuntu 13.04 + GNOME Shell 3.7.5 で、Git クライアントを試してみました。</p>
+
+<ul>
+<li><p>Git クライアント一覧
+<a href="https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces">https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces</a></p></li>
+<li><p>Git クライアント機能比較
+<a href="https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Summary_.28feature_matrix.29">https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Summary_.28feature_matrix.29</a></p></li>
+</ul>
+
+
+<h3>gitg</h3>
+
+<p>プッシュもできて使いやすそうです。日本語のpo を公開されている方がいらっしゃいましたので、利用させていただきました。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install gitg
+</span><span class='line'><span class="nv">$ </span>wget https://raw.github.com/miyucy/gitg-ja/master/ja.po
+</span><span class='line'><span class="nv">$ </span>sed -e <span class="s2">&quot;s/, fuzzy//&quot;</span> ja.po | grep -v <span class="s2">&quot;^#$&quot;</span> &gt; ja.po.cf
+</span><span class='line'><span class="nv">$ </span>msgfmt -o gitg.mo ja.po.cf
+</span><span class='line'><span class="nv">$ </span>sudo cp gitg.mo /usr/share/locale/ja/LC_MESSAGES/
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://sourceforge.jp/projects/freshmeat_gitg/howto/usage">http://sourceforge.jp/projects/freshmeat_gitg/howto/usage</a></p>
+
+<ul>
+<li><p>プッシュ
+ローカルブランチのアイコン(オレンジ色)を右クリックして、[ブランチをプッシュ]サブメニューから選択します。</p></li>
+<li><p>プル
+[ファイル]&ndash;[Repository Properties]でリモートのURL を選んで[フェッチ]、[ブランチ]ドロップダウンリストを変更してリモートブランチを表示、リモートブランチのアイコンをローカルのブランチのアイコンにドラッグ、[マージ]を選択します。</p></li>
+</ul>
+
+
+<p>ただし、オーバーレイスクロールバーが有効になっていると、各ペインの背景色が黒くなってしまうようです。オーバーレイスクロールバーを無効にしておきます。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">echo export </span><span class="nv">LIBOVERLAY_SCROLLBAR</span><span class="o">=</span>0 &gt;&gt; ~/.xprofile
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>/usr/share/gitg/ui/gitg-window.ui をカスタマイズすれば対処できるのかもしれませんが、よくわかりませんでした。</p>
+
+<h3>GeanyVC</h3>
+
+<p>私はテキストエディタにGeany を利用しているので、コミットならGeanyVC プラグインが利用できます。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install geany-plugin-vc
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>インストールしたら、Geany の[ツール]&ndash;[プラグインマネージャ]でGeanyVC プラグインを有効にした後で、[ツール]&ndash;[VC]メニューから操作します。</p>
+
+<h3>RabbitVCS</h3>
+
+<p>Ubuntu 13.04 のリポジトリにはパッケージがなく、12.10 のパッケージもNautilus のバージョンが新しいため(?)にうまく動きませんでした。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1077,73 +1175,6 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/26/android-x86-4-2-1/">Android-x86 4.2.1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-26T22:15:23+09:00" pubdate data-updated="true">2012年12月26日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/12/android-x86_4.2.1.png"><img src="/images/uploads/2012/12/android-x86_4.2.1-600x337.png" alt="android-x86 4.2.1" /></a></p>
-
-<p><a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso">http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso</a></p>
-
-<p>Android-x86 4.2.1 が公開されたのでInspiron Duo にインストールして、Windows 8 64bit やUbuntu 12.10 x86_64 とのマルチブート環境を構築してみました。Android-x86 4.2 では過去の問題が改善されていることを確認できました。ファーストリリースだけあって、まだ動かない/動作が不安定になるアプリがあるみたい。方向キー二度押ししても画面が回転しなくなったみたい。</p>
-
-<h3>改善された過去の問題</h3>
-
-<ul>
-<li><p>物理/仮想キーボードの切り替え、キーマップの改善</p></li>
-<li><p>更新がおかしかった時計の改善</p></li>
-<li><p>電源ボタン二度押ししなくても電源メニュー表示</p></li>
-</ul>
-
-
-<h3>Google Play からインストールしたアプリ</h3>
-
-<ul>
-<li><p>ES ファイルエクスプローラ</p></li>
-<li><p>Google ドライブ</p></li>
-<li><p>VLC</p></li>
-<li><p>XiiaLive</p></li>
-<li><p>Seesmic</p></li>
-</ul>
-
-
-<h3>自前でビルドしたアプリ</h3>
-
-<ul>
-<li>Fennec (Firefox) 19.0</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1161,6 +1192,10 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/10/gitg-0-dot-3-1/">Gitg 0.3.1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
       </li>
     
@@ -1176,15 +1211,11 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (105)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

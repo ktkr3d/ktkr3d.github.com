@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="https://extensions.gnome.org/extension/442/drop-down-terminal/ Drop Down Terminal はGNOME Shell 3.5.2 (正確にはgjs >= 1.33.2 and vte3 >= 0.31, gnome- &hellip;">
+  <meta name="description" content="https://bugzilla.gnome.org/show_bug.cgi?id=676898 http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060 nautilus 3.6 のリストビューでは、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,102 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/25/changing-the-date-format-in-nautilus-3-6-list-view/">Changing the Date Format in Nautilus 3.6 List View</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-25T06:45:38+09:00" pubdate data-updated="true">2012年09月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/09/nautilus_list_view.png"><img src="/images/uploads/2012/09/nautilus_list_view.png" alt="nautilus 3.6 list view modification date" /></a>
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676898  ">https://bugzilla.gnome.org/show_bug.cgi?id=676898  </a>
+<a href="http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060">http://bugzilla-attachments.gnome.org/attachment.cgi?id=215060</a></p>
+
+<p>nautilus 3.6 のリストビューでは、あえて更新日付の書式をシンプル(informal)にしているようです。これはこれでアリなのですが、やはり詳細表示されていた方が統一感があって使い勝手がよいような気がするので、昔のISO 日付書式になるようにカスタマイズしてみました。dpkg-buildpackage でfakeroot が効かなかったので、sudo で実行しています。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get build-dep nautilus
+</span><span class='line'><span class="nv">$ </span>mkdir nautilus <span class="o">&amp;&amp;</span> <span class="nb">cd </span>nautilus
+</span><span class='line'><span class="nv">$ </span>apt-get <span class="nb">source </span>nautilus
+</span><span class='line'><span class="nv">$ </span>dpkg-source -x *.dsc
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>nautilus-3.*
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>libnautilus-private/nautilus-file.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#define TODAY_TIME_FORMAT_24 N_(&quot;%R&quot;)</span>
+</span><span class='line'><span class="cp">#define TODAY_TIME_FORMAT N_(&quot;%-I:%M %P&quot;)</span>
+</span><span class='line'><span class="cp">#define THIS_MONTH_TIME_FORMAT N_(&quot;%b %-e&quot;)</span>
+</span><span class='line'><span class="cp">#define THIS_YEAR_TIME_FORMAT N_(&quot;%b %-e&quot;)</span>
+</span><span class='line'><span class="cp">#define ANYTIME_TIME_FORMAT N_(&quot;%b %-d %Y&quot;)</span>
+</span><span class='line'><span class="cp">#define ANYTIME_TIME_FORMAT_ISO N_(&quot;%Y-%m-%d %H:%M:%S&quot;)</span>
+</span><span class='line'><span class="cp">#define FULL_FORMAT N_(&quot;%a, %b %e %Y %I:%M:%S %p&quot;)</span>
+</span><span class='line'><span class="cp">#define FULL_FORMAT_24 N_(&quot;%a, %b %e %Y %T&quot;)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>libnautilus-private/nautilus-file.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">format</span> <span class="o">=</span> <span class="n">ANYTIME_TIME_FORMAT</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="n">format</span> <span class="o">=</span> <span class="n">ANYTIME_TIME_FORMAT_ISO</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo dpkg-buildpackage -us -uc -nc -b
+</span><span class='line'><span class="nv">$ </span>sudo dpkg -i ../nautilus_3.*.deb
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -660,167 +756,6 @@ Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/07/burg-clonezilla-iso/">Burg + Clonezilla ISO</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-07T08:56:14+09:00" pubdate data-updated="true">2012年07月07日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/07/burg_clonezilla_iso.png"><img src="/images/uploads/2012/07/burg_clonezilla_iso.png" alt="burg clonezilla iso" /></a></p>
-
-<p>パーティション/ディスククローンツールClonezilla のISO をBurg から起動してみた。ブートローダから直接ISO を指定するので、起動デバイスが不要で楽チン。Clonezilla は日本語表示も選択できるし、バックアップも簡単で速くていいかも。
-GRUB 1.99 以降と違って、Burg は有効なカーネルのエントリーをすべて表示してしまうので、表示したい起動エントリーについてはGrub Customizer で選択した。</p>
-
-<ol>
-<li> Clonezilla 用の起動エントリーを追加。</li>
-</ol>
-
-
-<figure class='code'><figcaption><span>/etc/burg.d/40_custom</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>#!/bin/sh
-</span><span class='line'>exec tail -n +3 $0
-</span><span class='line'># This file provides an easy way to add custom menu entries.  Simply type the
-</span><span class='line'># menu entries you want to add after this comment.  Be careful not to change
-</span><span class='line'># the &#39;exec tail&#39; line above.
-</span><span class='line'>menuentry &quot;Android-x86 4.0.3&quot; --class android --class os {
-</span><span class='line'>  insmod ext2
-</span><span class='line'>  set root=&#39;(hd0,3)&#39;
-</span><span class='line'>  echo    &#39;Loading Android-x86 4.0.3 ...&#39;
-</span><span class='line'>  linux /android-4.0-RC1/kernel root=/dev/ram0 androidboot.hardware=tegav2 acpi_sleep=s3_bios,s3_mode SRC=/android-4.0-RC1 DATA=
-</span><span class='line'>  initrd /android-4.0-RC1/initrd.img
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>menuentry &quot;Clonezilla 20120620&quot; --class iso --class os {
-</span><span class='line'>  insmod ext2
-</span><span class='line'>  set root=&#39;(hd0,3)&#39;
-</span><span class='line'>  loopback loop &quot;/Clonezilla/clonezilla-live-20120620-precise.iso&quot;
-</span><span class='line'>  linux (loop)/live/vmlinuz boot=live live-config union=aufs nolocales noprompt gfxpayload=800x600x16 ip=frommedia findiso=&quot;/Clonezilla/clonezilla-live-20120620-precise.iso&quot;
-</span><span class='line'>  initrd (loop)/live/initrd.img
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> ISO 用のアイコンが表示されるようにBurg のテーマを修正。</li>
-</ol>
-
-
-<figure class='code'><figcaption><span>/boot/burg/themes/fortune/icons/hover</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>+class
-</span><span class='line'>{
-</span><span class='line'>  -windows { image = &quot;$$/grey_windows.png:$$/large_windows.png&quot; }
-</span><span class='line'>  -ubuntu { image = &quot;$$/grey_ubuntu.png:$$/large_ubuntu.png&quot; }
-</span><span class='line'>  -debian { image = &quot;$$/grey_debian.png:$$/large_debian.png&quot; }
-</span><span class='line'>  -suse { image = &quot;$$/grey_opensuse.png:$$/large_opensuse.png&quot; }
-</span><span class='line'>  -freebsd { image = &quot;$$/grey_freebsd.png:$$/large_freebsd.png&quot; }
-</span><span class='line'>  -macosx { image = &quot;$$/grey_osx.png:$$/large_osx.png&quot; }
-</span><span class='line'>  -gentoo { image = &quot;$$/grey_gentoo.png:$$/large_gentoo.png&quot; }
-</span><span class='line'>  -linuxmint { image = &quot;$$/grey_linuxmint.png:$$/large_linuxmint.png&quot; }
-</span><span class='line'>  -mandrake { image = &quot;$$/grey_mandrake.png:$$/large_mandrake.png&quot; }
-</span><span class='line'>  -arch { image = &quot;$$/grey_arch.png:$$/large_arch.png&quot; }
-</span><span class='line'>  -fedora { image = &quot;$$/grey_fedora.png:$$/large_fedora.png&quot; }
-</span><span class='line'>  -pclinuxos { image = &quot;$$/grey_pclinuxos.png:$$/large_pclinuxos.png&quot; }
-</span><span class='line'>  -sabayon { image = &quot;$$/grey_sabayon.png:$$/large_sabayon.png&quot; }
-</span><span class='line'>  -slackware { image = &quot;$$/grey_slackware.png:$$/large_slackware.png&quot; }
-</span><span class='line'>  -android { image = &quot;$$/grey_android.png:$$/large_android.png&quot; }
-</span><span class='line'>  -iso { image = &quot;$$/grey_iso.png:$$/large_iso.png&quot; }
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>-include &quot;../custom/icon_hover&quot;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li> burg.cfg を更新</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo update-burg
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li><p> Grub Customizer で表示したい起動エントリーを選択する。
-Grub Customizer はBurg が有効である場合に検知して、確認してくるので、Burg を更新するように選択する。</p></li>
-<li><p> 設定の確認</p></li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo burg-emu -D
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -838,6 +773,10 @@ Grub Customizer はBurg が有効である場合に検知して、確認して�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/10/gitg-0-dot-3-1/">Gitg 0.3.1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
       </li>
     
@@ -853,15 +792,11 @@ Grub Customizer はBurg が有効である場合に検知して、確認して�
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (105)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

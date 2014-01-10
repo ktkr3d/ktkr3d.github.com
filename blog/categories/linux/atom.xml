@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-02T16:17:44+09:00</updated>
+  <updated>2014-01-10T20:52:22+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gitg 0.3.1]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/10/gitg-0-dot-3-1/"/>
+    <updated>2014-01-10T20:31:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/10/gitg-0-dot-3-1</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gitg_0.3.1_vala.png"><img src="/images/gitg_0.3.1_vala.png"></a></p>
+
+<p><a href="https://wiki.gnome.org/Apps/Gitg#Get_gitg">https://wiki.gnome.org/Apps/Gitg#Get_gitg</a></p>
+
+<p>VALA 言語で書き直されたgitg 0.3.1 がリリースされたので、ビルドして実行してみました。</p>
+
+<!-- more -->
+
+
+<h4>libgit2</h4>
+
+<p>前提の<code>libgit2</code>をインストールします。<code>cmake</code> する際に<code>THREADSAFE</code> をON にしておきます。</p>
+
+<p><code>bash
+$ git clone https://github.com/libgit2/libgit2.git
+$ cd libgit2
+$ mkdir build &amp;&amp; cd build
+$ cmake .. -DTHREADSAFE:BOOL=ON
+$ sudo cmake --build . --target install
+</code></p>
+
+<h4>libgit2-glib</h4>
+
+<p>前提の<code>libgit2-glib</code>をインストールします。API の引数が足らない旨のエラーが出るので、引数を追加します。</p>
+
+<p><code>bash
+$ git clone https://git.gnome.org/browse/libgit2-glib
+</code></p>
+
+<p>``` vala ./libgit2-glib/libgit2-glib/ggit-ref.c
+gboolean
+ggit_ref_has_reflog (GgitRef *ref)
+{</p>
+
+<pre><code>g_return_val_if_fail (GGIT_IS_REF (ref), FALSE);
+</code></pre>
+
+<p>//  return git_reference_has_log (_ggit_native_get (ref)) == 1;</p>
+
+<pre><code>return git_reference_has_log (_ggit_native_get (ref), git_reference_name(ref)) == 1;
+</code></pre>
+
+<p>}
+```</p>
+
+<p><code>bash
+$ cd libgit2-glib
+$ ./autogen.sh
+$ make
+$ sudo make install
+</code></p>
+
+<h4>gitg</h4>
+
+<p><code>gitg</code>をインストールします。</p>
+
+<p><code>https://download.gnome.org/sources/gitg/0.3/gitg-0.3.1.tar.xz</code></p>
+
+<p><code>bash
+$ cd gitg-0.3.1
+$ ./autogen.sh
+$ make
+$ sudo make install
+</code> bash</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Scroll up/down button add-on for firefox]]></title>
@@ -237,73 +309,6 @@ $ ssh-copy-id -i .ssh/id_rsa.pub useranme@hostname -p 22222
 <p><code>bash
 sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
 </code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SteamOS]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/12/14/steamos/"/>
-    <updated>2013-12-14T22:55:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/12/14/steamos</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/SteamOS-desktop.png"><img src="/images/SteamOS-desktop.png"></a></p>
-
-<p><a href="http://store.steampowered.com/steamos/">http://store.steampowered.com/steamos/</a></p>
-
-<p><a href="https://gist.github.com/voltagex/7955961">https://gist.github.com/voltagex/7955961</a></p>
-
-<p><a href="http://www.redgamingtech.com/how-to-install-steamos-on-virtual-box-virtual-machine/">http://www.redgamingtech.com/how-to-install-steamos-on-virtual-box-virtual-machine/</a></p>
-
-<p>SteamOS のベータ版がリリースされたので、インストールしてみました。</p>
-
-<!-- more -->
-
-
-<p><a href="http://ktkr3d.github.io/images/steamos.png"><img src="/images/steamos_tn.png"></a></p>
-
-<p>SteamOS はDebian ベースのようです。
-手順にしたがってISO に変換して仮想環境にインストールしてみました。
-たまたま外出中で手元にPC がないので、スマートフォンから自宅のLinux マシンにVNC over SSH で繋いで作業してみました。ソフトキーボードは面倒ですね。</p>
-
-<p>PrintScreen キーが使えなかったので、xwd を使いましたが、画像が少し変です。</p>
-
-<p><a href="http://ktkr3d.github.io/images/SteamOS-login.png"><img src="/images/SteamOS-login.png"></a></p>
-
-<p>``` sh</p>
-
-<h1>uname -a</h1>
-
-<p>Linux steamos 3.10-3-amd64 #1 SMP Debian 3.10.11-1st1 (2013-11-15) x86_64 GNU/Linux</p>
-
-<h1>gnome-shell &mdash;version</h1>
-
-<p>GNOME Shell 3.4.2
-```</p>
-
-<h4>魔改造</h4>
-
-<p>``` text /etc/apt/sources.list
-deb <a href="http://ftp.jp.debian.org/debian">http://ftp.jp.debian.org/debian</a> stable main contrib non-free
-deb-src <a href="http://ftp.jp.debian.org/debian">http://ftp.jp.debian.org/debian</a> stable main contrib non-free</p>
-
-<p>deb <a href="http://ftp.debian.org/debian/">http://ftp.debian.org/debian/</a> wheezy-updates main contrib non-free
-deb-src <a href="http://ftp.debian.org/debian/">http://ftp.debian.org/debian/</a> wheezy-updates main contrib non-free</p>
-
-<p>deb <a href="http://security.debian.org/">http://security.debian.org/</a> wheezy/updates main contrib non-free
-deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> wheezy/updates main contrib non-free
-```</p>
-
-<p><a href="http://ktkr3d.github.io/images/SteamOS-japanese.png"><img src="/images/SteamOS-japanese.png"></a></p>
-
-<p>``` text /etc/apt/sources.list
-deb <a href="http://ftp.jp.debian.org/debian">http://ftp.jp.debian.org/debian</a> experimental main contrib non-free
-deb-src <a href="http://ftp.jp.debian.org/debian">http://ftp.jp.debian.org/debian</a> experimental main contrib non-free</p>
-
-<p>deb <a href="http://ftp.debian.org/debian/">http://ftp.debian.org/debian/</a> -updates main contrib non-free
-deb-src <a href="http://ftp.debian.org/debian/">http://ftp.debian.org/debian/</a> -updates main contrib non-free</p>
-
-<p>deb <a href="http://security.debian.org/">http://security.debian.org/</a> /updates main contrib non-free
-deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> /updates main contrib non-free
-```</p>
 ]]></content>
   </entry>
   

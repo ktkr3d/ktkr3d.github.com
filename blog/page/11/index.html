@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://ohheyitslou.blogspot.com/2011/11/tutorial-how-to-install-linux-mint-12.html http://blog.linuxmint.com/?p=1851 Ubuntu ベースで人気のディストリビューションLinux &hellip;">
+  <meta name="description" content="http://source.android.com/source/download.html
+Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので、Ubuntu 11.10 64bit の環境でビルドしてみよう。手順はAndroid 2.3 の時と同じみたい。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,63 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/16/android-4-0/">Android 4.0 をビルドしてみよう（その1）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-16T04:22:55+09:00" pubdate data-updated="true">2011年11月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://source.android.com/source/download.html">http://source.android.com/source/download.html</a>
+Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので、Ubuntu 11.10 64bit の環境でビルドしてみよう。手順はAndroid 2.3 の時と同じみたい。今回から（?）実験的に32bit 環境での手順も記載されている。
+はやくAndroid-x86 にも取り込まれないかな。</p>
+
+<ol>
+<li><p> 環境の構築
+<a href="http://source.android.com/source/initializing.html">http://source.android.com/source/initializing.html</a>
+前提パッケージlib32readline5-dev が見つからないのは、とりあえず無視してみる。</p></li>
+<li><p> ソースコードのダウンロード
+<a href="http://source.android.com/source/downloading.html">http://source.android.com/source/downloading.html</a>
+今回もrepo を使ったダウンロードが遅い。</p></li>
+<li><p> ソースコードのビルド
+<a href="http://source.android.com/source/building.html">http://source.android.com/source/building.html</a></p></li>
+</ol>
+
+
+<p>source.android.com に繋がりにくい時があるので、手順はhtml で保存しておいた方がよさそう。
+ダウンロードが終わらないので、今日（今朝）はここまで。</p>
+
+<p><strong>update:</strong>
+エミュレータでAndroid 4.0 Ice Cream Sandwich を動かしてみた。
+<a href="/images/uploads/2011/11/android_4_ics.png"><img src="/images/uploads/2011/11/android_4_ics.png" alt="android 4 ice cream sandwich" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -494,56 +552,6 @@ ant install の代わりにant debug でパッケージを生成して止まる�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/25/proun-2/">Proun で遊んでみた2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-25T12:51:16+09:00" pubdate data-updated="true">2011年06月25日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/06/proun_ss2.png"><img src="/images/uploads/2011/06/proun_ss2.png" alt="proun" /></a></p>
-
-<ul>
-<li><p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a></p></li>
-<li><p><a href="http://blog.oogst3d.net/">http://blog.oogst3d.net/</a></p></li>
-<li><p><a href="http://www.ronimo-games.com/forum/viewforum.php?f=7">http://www.ronimo-games.com/forum/viewforum.php?f=7</a></p></li>
-<li><p><a href="http://www.proun-game.com/UserTracks.html">http://www.proun-game.com/UserTracks.html</a></p></li>
-</ul>
-
-
-<p>Proun が2011.6.24 にリリースされたので遊んでみた。
-抽象的なコースが綺麗でBGM も軽快なのが楽しい。
-ゲームを進めていくとスピードがアップ(Fast &ndash;> Sonic &ndash;> Supersonic &ndash;> Speed of light)していってかなり難しくなる。
-ネットワーク上でのランキングやユーザトラック（コース）の拡張ができるようなので、長く遊べそう。
-正式版になって、フリーダウンロードとPay what you want($2, $5, $10, $20, any) から選択できるようになったので、PayPal で購入してみた。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -561,6 +569,10 @@ ant install の代わりにant debug でパッケージを生成して止まる�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/10/gitg-0-dot-3-1/">Gitg 0.3.1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/02/scroll-up-slash-down-button-add-on-for-firefox/">Scroll Up/down Button Add-on for Firefox</a>
       </li>
     
@@ -576,15 +588,11 @@ ant install の代わりにant debug でパッケージを生成して止まる�
         <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/14/steamos/">SteamOS</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (104)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (105)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-02T16:17:44+09:00</updated>
+  <updated>2014-01-10T20:52:22+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,101 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gitg 0.3.1]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/10/gitg-0-dot-3-1/"/>
+    <updated>2014-01-10T20:31:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/10/gitg-0-dot-3-1</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gitg_0.3.1_vala.png"><img src="http://ktkr3d.github.io/images/gitg_0.3.1_vala.png"></a></p>
+
+<p><a href="https://wiki.gnome.org/Apps/Gitg#Get_gitg">https://wiki.gnome.org/Apps/Gitg#Get_gitg</a></p>
+
+<p>VALA 言語で書き直されたgitg 0.3.1 がリリースされたので、ビルドして実行してみました。</p>
+
+<!-- more -->
+
+
+<h4>libgit2</h4>
+
+<p>前提の<code>libgit2</code>をインストールします。<code>cmake</code> する際に<code>THREADSAFE</code> をON にしておきます。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/libgit2/libgit2.git
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>libgit2
+</span><span class='line'><span class="nv">$ </span>mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build
+</span><span class='line'><span class="nv">$ </span>cmake .. -DTHREADSAFE:BOOL<span class="o">=</span>ON
+</span><span class='line'><span class="nv">$ </span>sudo cmake --build . --target install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>libgit2-glib</h4>
+
+<p>前提の<code>libgit2-glib</code>をインストールします。API の引数が足らない旨のエラーが出るので、引数を追加します。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://git.gnome.org/browse/libgit2-glib
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>./libgit2-glib/libgit2-glib/ggit-ref.c</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='vala'><span class='line'><span class="n">gboolean</span>
+</span><span class='line'><span class="n">ggit_ref_has_reflog</span> <span class="p">(</span><span class="n">GgitRef</span> <span class="o">*</span><span class="kd">ref</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">g_return_val_if_fail</span> <span class="p">(</span><span class="n">GGIT_IS_REF</span> <span class="p">(</span><span class="kd">ref</span><span class="p">),</span> <span class="n">FALSE</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//   return git_reference_has_log (_ggit_native_get (ref)) == 1;</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">git_reference_has_log</span> <span class="p">(</span><span class="n">_ggit_native_get</span> <span class="p">(</span><span class="kd">ref</span><span class="p">),</span> <span class="n">git_reference_name</span><span class="p">(</span><span class="kd">ref</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>libgit2-glib
+</span><span class='line'><span class="nv">$ </span>./autogen.sh
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>gitg</h4>
+
+<p><code>gitg</code>をインストールします。</p>
+
+<p><code>https://download.gnome.org/sources/gitg/0.3/gitg-0.3.1.tar.xz</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>gitg-0.3.1
+</span><span class='line'><span class="nv">$ </span>./autogen.sh
+</span><span class='line'><span class="nv">$ </span>make
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> bash</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Scroll up/down button add-on for firefox]]></title>
@@ -1600,7 +1695,7 @@ $ sudo apt-get install gnome-shell
 
 <h4>トップバーの非表示</h4>
 
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#97;&#117;&#116;&#x6f;&#104;&#x69;&#100;&#x65;&#116;&#x6f;&#x70;&#x62;&#x61;&#x72;&#x32;&#64;&#119;&#x65;&#x72;&#101;&#119;&#111;&#108;&#118;&#101;&#x73;&#x2e;&#117;&#115;">&#97;&#117;&#116;&#111;&#x68;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#x62;&#x61;&#114;&#50;&#64;&#x77;&#101;&#114;&#101;&#119;&#111;&#x6c;&#118;&#x65;&#x73;&#x2e;&#117;&#115;</a> の方のGNOME Shell 拡張を使用してみました。
+<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x61;&#x75;&#116;&#x6f;&#104;&#105;&#100;&#x65;&#x74;&#x6f;&#112;&#x62;&#97;&#x72;&#x32;&#x40;&#x77;&#x65;&#x72;&#101;&#119;&#111;&#x6c;&#x76;&#x65;&#115;&#x2e;&#117;&#115;">&#x61;&#x75;&#x74;&#111;&#x68;&#x69;&#100;&#x65;&#x74;&#x6f;&#x70;&#x62;&#97;&#114;&#x32;&#x40;&#x77;&#101;&#114;&#101;&#119;&#x6f;&#108;&#118;&#101;&#x73;&#x2e;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
 shell-version は3.9.4 を指定しました。</p>
 
 <figure class='code'><figcaption><span>metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1637,43 +1732,6 @@ shell-version は3.9.4 を指定しました。</p>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntu 13.10 Daily Build + Mir]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir/"/>
-    <updated>2013-07-01T00:30:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/07/01/ubuntu-13-dot-10-daily-build-plus-mir</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir.png"><img src="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_tn.png"></a></p>
-
-<p><a href="https://launchpad.net/~mir-team/+archive/staging">https://launchpad.net/~mir-team/+archive/staging</a></p>
-
-<p>Ubuntu 13.10 Daily Build にMir を適用してみました。現時点では若干もたつく感じがしますが、今後改善されるでしょう。</p>
-
-<!-- more -->
-
-
-<p></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-add-repository ppa:mir-team/staging
-</span><span class='line'><span class="nv">$ </span>sudo apt-get update
-</span><span class='line'><span class="nv">$ </span>sudo apt-get upgrade
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>特に資料を参考にしていないので、正式な手順ではないかもしれませんし、不十分かもしれません。</p>
-
-<p><a href="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell.png"><img src="http://ktkr3d.github.io/images/ubuntu_13_10_daily_build_mir_gnome_shell_tn.png"></a></p>
-
-<p>GNOME Shell 3.8.3 で使った方が快適なような気がします。気のせいかもしれませんが。</p>
-
-<p><a href="http://www.olli-ries.com/running-mir/">http://www.olli-ries.com/running-mir/</a></p>
-
-<p>ここにインストール方法が書いてありました。</p>
 ]]></content>
   </entry>
   

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Gitg | ktkr3d]]></title>
+  <link href="http://ktkr3d.github.io/blog/categories/gitg/atom.xml" rel="self"/>
+  <link href="http://ktkr3d.github.io/"/>
+  <updated>2014-01-10T20:52:22+09:00</updated>
+  <id>http://ktkr3d.github.io/</id>
+  <author>
+    <name><![CDATA[ktkr3d]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[gitg 0.3.1]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/10/gitg-0-dot-3-1/"/>
+    <updated>2014-01-10T20:31:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/10/gitg-0-dot-3-1</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gitg_0.3.1_vala.png"><img src="/images/gitg_0.3.1_vala.png"></a></p>
+
+<p><a href="https://wiki.gnome.org/Apps/Gitg#Get_gitg">https://wiki.gnome.org/Apps/Gitg#Get_gitg</a></p>
+
+<p>VALA 言語で書き直されたgitg 0.3.1 がリリースされたので、ビルドして実行してみました。</p>
+
+<!-- more -->
+
+
+<h4>libgit2</h4>
+
+<p>前提の<code>libgit2</code>をインストールします。<code>cmake</code> する際に<code>THREADSAFE</code> をON にしておきます。</p>
+
+<p><code>bash
+$ git clone https://github.com/libgit2/libgit2.git
+$ cd libgit2
+$ mkdir build &amp;&amp; cd build
+$ cmake .. -DTHREADSAFE:BOOL=ON
+$ sudo cmake --build . --target install
+</code></p>
+
+<h4>libgit2-glib</h4>
+
+<p>前提の<code>libgit2-glib</code>をインストールします。API の引数が足らない旨のエラーが出るので、引数を追加します。</p>
+
+<p><code>bash
+$ git clone https://git.gnome.org/browse/libgit2-glib
+</code></p>
+
+<p>``` vala ./libgit2-glib/libgit2-glib/ggit-ref.c
+gboolean
+ggit_ref_has_reflog (GgitRef *ref)
+{</p>
+
+<pre><code>g_return_val_if_fail (GGIT_IS_REF (ref), FALSE);
+</code></pre>
+
+<p>//  return git_reference_has_log (_ggit_native_get (ref)) == 1;</p>
+
+<pre><code>return git_reference_has_log (_ggit_native_get (ref), git_reference_name(ref)) == 1;
+</code></pre>
+
+<p>}
+```</p>
+
+<p><code>bash
+$ cd libgit2-glib
+$ ./autogen.sh
+$ make
+$ sudo make install
+</code></p>
+
+<h4>gitg</h4>
+
+<p><code>gitg</code>をインストールします。</p>
+
+<p><code>https://download.gnome.org/sources/gitg/0.3/gitg-0.3.1.tar.xz</code></p>
+
+<p><code>bash
+$ cd gitg-0.3.1
+$ ./autogen.sh
+$ make
+$ sudo make install
+</code> bash</p>
+]]></content>
+  </entry>
+  
+</feed>
