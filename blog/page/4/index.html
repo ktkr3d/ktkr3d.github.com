@@ -9,8 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="Ubuntu 13.04 + GNOME Shell 3.7.5 で、Git クライアントを試してみました。 Git クライアント一覧
-https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools# &hellip;">
+  <meta name="description" content="http://www.android-x86.org/releases/build-20130228 新しいAndorid-x86 4.2.2 のISO イメージが公開されたので、いつものようにInspion duo にインストールしてみました。Ubuntu &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +86,79 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/28/android-x86-4-2-2/">Android-x86 4.2.2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-28T22:18:41+09:00" pubdate data-updated="true">2013年02月28日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2013/02/android-x86_4.2.2_duo.png"><img src="/images/uploads/2013/02/android-x86_4.2.2_duo.png" alt="android-x86 4.2.2 inspiron duo" /></a></p>
+
+<p><a href="http://www.android-x86.org/releases/build-20130228">http://www.android-x86.org/releases/build-20130228</a></p>
+
+<p>新しいAndorid-x86 4.2.2 のISO イメージが公開されたので、いつものようにInspion duo にインストールしてみました。Ubuntu をインストール済みのパーティションにフォーマットせずにインストールして、GRUB に起動用のエントリを追加しました。</p>
+
+<figure class='code'><figcaption><span>/etc/grub.d/40_custom</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>menuentry &quot;Android-x86 4.2.2&quot; --class android --class os {
+</span><span class='line'>    insmod ext2
+</span><span class='line'>    set root=&#39;(hd0,3)&#39;
+</span><span class='line'>    echo &#39;Loading Android-x86 4.2.2 ...&#39;
+</span><span class='line'>    linux /android-4.2-test/kernel root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-4.2-test DATA=
+</span><span class='line'>    initrd /android-4.2-test/initrd.img
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo update-grub
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>今回のビルドは普通のデスクトップPC でも容易に起動しそうな気がします。</p>
+
+<h3>EDIT</h3>
+
+<p>デスクトップPC にインストールして、別のPC からAirDroid 経由で参照してみました。
+<a href="/images/uploads/2013/02/android-x86_4.2.2.png"><img src="/images/uploads/2013/02/android-x86_4.2.2.png" alt="android-x86 4.2.2" /></a></p>
+
+<p><a href="/images/uploads/2013/02/airdroid.png"><img src="/images/uploads/2013/02/airdroid.png" alt="airdroid android 4.2.2" /></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1092,89 +1164,6 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/31/move-the-hot-corner-of-the-message-tray/">Move the Hot Corner of the Message Tray</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-31T18:00:18+09:00" pubdate data-updated="true">2012年12月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked">http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked</a></p>
-
-<p>GNOME Shell 3.6 では画面下端にマウスカーソルを持って行くと、メッセージトレイが表示されます。オートハイドに設定したドックアプリ(AWN)と併用していると、ドックアプリを操作したいのにメッセージトレイが表示されてしまって、困ります。GNOME Shell 3.6 に対応したGNOME Shell extension が見当たりませんでしたので、GNOME Shell をカスタマイズして、暫定的に画面右下隅をメッセージトレイのホットコーナーにしてみました。</p>
-
-<figure class='code'><figcaption><span>/usr/share/gnome-shell/js/ui/messageTray.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// Time the user needs to leave the mouse on the bottom pixel row to open the tray</span>
-</span><span class='line'><span class="c1">//const TRAY_DWELL_TIME = 1000; // ms</span>
-</span><span class='line'><span class="kr">const</span> <span class="nx">TRAY_DWELL_TIME</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="c1">// ms</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>/usr/share/gnome-shell/js/ui/messageTray.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">_checkTrayDwell</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kd">let</span> <span class="nx">monitor</span> <span class="o">=</span> <span class="nx">Main</span><span class="p">.</span><span class="nx">layoutManager</span><span class="p">.</span><span class="nx">bottomMonitor</span><span class="p">;</span>
-</span><span class='line'><span class="c1">//      let shouldDwell = (x &gt;= monitor.x &amp;&amp; x &lt;= monitor.x + monitor.width &amp;&amp;</span>
-</span><span class='line'>    <span class="kd">let</span> <span class="nx">shouldDwell</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;=</span> <span class="nx">monitor</span><span class="p">.</span><span class="nx">x</span> <span class="o">&amp;&amp;</span> <span class="nx">x</span> <span class="o">==</span> <span class="nx">monitor</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">monitor</span><span class="p">.</span><span class="nx">width</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span>
-</span><span class='line'>                       <span class="nx">y</span> <span class="o">==</span> <span class="nx">monitor</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="nx">monitor</span><span class="p">.</span><span class="nx">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>/usr/share/gnome-shell/js/ui/messageTray.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'>    <span class="k">this</span><span class="p">.</span><span class="nx">_tween</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_desktopClone</span><span class="p">,</span> <span class="s1">&#39;_desktopCloneState&#39;</span><span class="p">,</span> <span class="nx">State</span><span class="p">.</span><span class="nx">SHOWN</span><span class="p">,</span>
-</span><span class='line'><span class="c1">//                  { y: -this.actor.height,</span>
-</span><span class='line'>                <span class="p">{</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-</span><span class='line'>                  <span class="nx">time</span><span class="o">:</span> <span class="nx">ANIMATION_TIME</span><span class="p">,</span>
-</span><span class='line'>                  <span class="nx">transition</span><span class="o">:</span> <span class="s1">&#39;easeOutQuad&#39;</span><span class="p">,</span>
-</span><span class='line'>                  <span class="nx">onUpdate</span><span class="o">:</span> <span class="nx">Lang</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">_updateDesktopCloneClip</span><span class="p">)</span>
-</span><span class='line'>                <span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>GNOME Shell Extension にして投稿してくれる人がいるといいな。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1192,6 +1181,10 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/10/gitg-0-dot-3-1/">Gitg 0.3.1</a>
       </li>
     
@@ -1207,15 +1200,11 @@ Ubuntu オフィシャルリポジトリのnode.js はバージョンが古い�
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (105)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

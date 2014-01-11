@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GNOME3 | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/gnome3/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-11T15:44:33+09:00</updated>
+  <updated>2014-01-12T03:58:49+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gEdit 3.11.2]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/12/gedit-3-dot-11-dot-2/"/>
+    <updated>2014-01-12T03:39:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/12/gedit-3-dot-11-dot-2</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gedit_3.11.2.png"><img src="/images/gedit_3.11.2.png" title="gedit 3.11.2" alt="gedit 3.11.2" /></a></p>
+
+<p><a href="http://worldofgnome.org/gedit-3-12-migrates-to-hig-3/">http://worldofgnome.org/gedit-3-12-migrates-to-hig-3/</a></p>
+
+<p>gEdit 3.11.2 がリリースされたので、ビルドして実行してみました。
+Gitg もそうですが、GNOME Human Interface Guidelines(HIG) 3 に準拠したアプリが続々とリリースされていますね。</p>
+
+<!-- more -->
+
+
+<h4>gtksouceview-3.0</h4>
+
+<p>前提となる<code>gtksouceview-3.0</code> のバージョン3.11.2 をビルドしてインストールします。</p>
+
+<p><code>ftp://ftp.gnome.org/pub/GNOME/sources/gtksourceview/3.11/gtksourceview-3.11.2.tar.xz</code></p>
+
+<p><code>bash
+$ ./configure
+$ make -j4
+$ sudo make install
+</code></p>
+
+<h4>gedit</h4>
+
+<p>gedit をビルドします。
+make するとgedit 3.11.2 が起動します。</p>
+
+<p><code>https://git.gnome.org/browse/gedit/snapshot/gedit-3.11.2.tar.gz</code></p>
+
+<p><code>bash
+$ ./autogen.sh
+$ ./configure
+$ make -j4
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu GNOME + GNOME3 PPA]]></title>
@@ -219,7 +261,7 @@ Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたの
 
 <p>  ],
   &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
-  &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x61;&#x75;&#116;&#x6f;&#104;&#105;&#x64;&#x65;&#116;&#111;&#112;&#x62;&#x61;&#114;&#50;&#x40;&#x77;&#101;&#x72;&#x65;&#x77;&#x6f;&#108;&#118;&#101;&#115;&#x2e;&#117;&#115;">&#97;&#117;&#x74;&#x6f;&#104;&#105;&#x64;&#101;&#x74;&#111;&#x70;&#x62;&#x61;&#114;&#50;&#x40;&#119;&#101;&#114;&#101;&#x77;&#x6f;&#x6c;&#x76;&#x65;&#x73;&#x2e;&#117;&#115;</a>&rdquo;,
+  &ldquo;uuid&rdquo;: &ldquo;<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#97;&#117;&#116;&#111;&#104;&#105;&#x64;&#101;&#x74;&#111;&#112;&#x62;&#x61;&#114;&#x32;&#64;&#119;&#x65;&#x72;&#101;&#119;&#x6f;&#x6c;&#118;&#101;&#115;&#x2e;&#117;&#x73;">&#x61;&#x75;&#x74;&#x6f;&#x68;&#105;&#x64;&#x65;&#x74;&#111;&#x70;&#x62;&#97;&#114;&#50;&#x40;&#x77;&#x65;&#x72;&#x65;&#119;&#x6f;&#x6c;&#x76;&#101;&#115;&#x2e;&#x75;&#x73;</a>&rdquo;,
   &ldquo;version&rdquo;: 1
 }
 ```</p>
@@ -272,55 +314,6 @@ Dash to Dock のデフォルトのアニメーション設定は遅いので、�
 <a href="http://ktkr3d.site11.com/2012/12/31/move-the-hot-corner-of-the-message-tray/">http://ktkr3d.site11.com/2012/12/31/move-the-hot-corner-of-the-message-tray/</a></p></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Move the hot corner of the message tray]]></title>
-    <link href="http://ktkr3d.github.io/blog/2012/12/31/move-the-hot-corner-of-the-message-tray/"/>
-    <updated>2012-12-31T18:00:18+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2012/12/31/move-the-hot-corner-of-the-message-tray</id>
-    <content type="html"><![CDATA[<p><a href="http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked">http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked</a></p>
-
-<p>GNOME Shell 3.6 では画面下端にマウスカーソルを持って行くと、メッセージトレイが表示されます。オートハイドに設定したドックアプリ(AWN)と併用していると、ドックアプリを操作したいのにメッセージトレイが表示されてしまって、困ります。GNOME Shell 3.6 に対応したGNOME Shell extension が見当たりませんでしたので、GNOME Shell をカスタマイズして、暫定的に画面右下隅をメッセージトレイのホットコーナーにしてみました。</p>
-
-<p><code>javascript /usr/share/gnome-shell/js/ui/messageTray.js
-// Time the user needs to leave the mouse on the bottom pixel row to open the tray
-//const TRAY_DWELL_TIME = 1000; // ms
-const TRAY_DWELL_TIME = 50; // ms
-</code></p>
-
-<p>``` javascript /usr/share/gnome-shell/js/ui/messageTray.js</p>
-
-<pre><code>_checkTrayDwell: function(x, y) {
-    let monitor = Main.layoutManager.bottomMonitor;
-</code></pre>
-
-<p>//      let shouldDwell = (x >= monitor.x &amp;&amp; x &lt;= monitor.x + monitor.width &amp;&amp;</p>
-
-<pre><code>    let shouldDwell = (x &gt;= monitor.x &amp;&amp; x == monitor.x + monitor.width - 1 &amp;&amp;
-                       y == monitor.y + monitor.height - 1);
-</code></pre>
-
-<p>```</p>
-
-<p>``` javascript /usr/share/gnome-shell/js/ui/messageTray.js</p>
-
-<pre><code>    this._tween(this._desktopClone, '_desktopCloneState', State.SHOWN,
-</code></pre>
-
-<p>//                  { y: -this.actor.height,</p>
-
-<pre><code>                { y: 0,
-                  time: ANIMATION_TIME,
-                  transition: 'easeOutQuad',
-                  onUpdate: Lang.bind(this, this._updateDesktopCloneClip)
-                });
-</code></pre>
-
-<p>```</p>
-
-<p>GNOME Shell Extension にして投稿してくれる人がいるといいな。</p>
 ]]></content>
   </entry>
   

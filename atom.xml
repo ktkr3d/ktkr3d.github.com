@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-11T15:44:33+09:00</updated>
+  <updated>2014-01-12T03:58:49+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gEdit 3.11.2]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/12/gedit-3-dot-11-dot-2/"/>
+    <updated>2014-01-12T03:39:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/12/gedit-3-dot-11-dot-2</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gedit_3.11.2.png"><img src="http://ktkr3d.github.io/images/gedit_3.11.2.png" title="gedit 3.11.2" alt="gedit 3.11.2" /></a></p>
+
+<p><a href="http://worldofgnome.org/gedit-3-12-migrates-to-hig-3/">http://worldofgnome.org/gedit-3-12-migrates-to-hig-3/</a></p>
+
+<p>gEdit 3.11.2 がリリースされたので、ビルドして実行してみました。
+Gitg もそうですが、GNOME Human Interface Guidelines(HIG) 3 に準拠したアプリが続々とリリースされていますね。</p>
+
+<!-- more -->
+
+
+<h4>gtksouceview-3.0</h4>
+
+<p>前提となる<code>gtksouceview-3.0</code> のバージョン3.11.2 をビルドしてインストールします。</p>
+
+<p><code>ftp://ftp.gnome.org/pub/GNOME/sources/gtksourceview/3.11/gtksourceview-3.11.2.tar.xz</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>./configure
+</span><span class='line'><span class="nv">$ </span>make -j4
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>gedit</h4>
+
+<p>gedit をビルドします。
+make するとgedit 3.11.2 が起動します。</p>
+
+<p><code>https://git.gnome.org/browse/gedit/snapshot/gedit-3.11.2.tar.gz</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>./autogen.sh
+</span><span class='line'><span class="nv">$ </span>./configure
+</span><span class='line'><span class="nv">$ </span>make -j4
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gitg 0.3.1]]></title>
@@ -1658,78 +1708,6 @@ cardapio を起動してみたところ、いくつかエラーが表示され�
 
 <p>cardapio-helper というDocky のヘルパーを使うと、Docky アイコンクリックで、Cardapio が起動されるはずなのですが、うまく動作しませんでした。
 仕方がないので、<code>/usr/share/applications/cardapio.desktop</code> をDocky にドラッグ&amp;ドロップして、メニューアイコンを登録しました。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GNOME Shell 3.9.4]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4/"/>
-    <updated>2013-07-13T09:36:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/07/13/gnome-shell-3-dot-9-4</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_3_9_4.png"><img src="http://ktkr3d.github.io/images/gnome_shell_3_9_4_tn.png"></a></p>
-
-<p><a href="https://launchpad.net/~ricotz/+archive/testing">https://launchpad.net/~ricotz/+archive/testing</a></p>
-
-<p>GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。</p>
-
-<!-- more -->
-
-
-<p></p>
-
-<h4>GNOME Shell 3.9.4 のインストール</h4>
-
-<pre><code>$ sudo add-apt-repository ppa:ricotz/testing
-$ sudo apt-get update
-$ sudo apt-get install gnome-shell
-</code></pre>
-
-<h4>ドックの設定</h4>
-
-<p>前回のAWN に続き、このバージョンではCairo-Dock も動かなくなりました。Dash to Dock GNOME Shell 拡張も正常に動かないようです。Docky を使うことにしました。</p>
-
-<pre><code>$ sudo apt-get install docky
-</code></pre>
-
-<h4>トップバーの非表示</h4>
-
-<p>Hide Top Bar GNOME Shell 拡張が正常に動かなかったので、以前使用していた<a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x61;&#117;&#x74;&#111;&#x68;&#x69;&#100;&#x65;&#116;&#111;&#112;&#x62;&#97;&#x72;&#50;&#x40;&#119;&#x65;&#x72;&#101;&#119;&#x6f;&#108;&#x76;&#x65;&#x73;&#46;&#x75;&#115;">&#97;&#x75;&#x74;&#111;&#104;&#x69;&#x64;&#101;&#x74;&#111;&#112;&#x62;&#97;&#x72;&#x32;&#x40;&#x77;&#101;&#114;&#x65;&#119;&#111;&#x6c;&#x76;&#101;&#x73;&#46;&#x75;&#x73;</a> の方のGNOME Shell 拡張を使用してみました。
-shell-version は3.9.4 を指定しました。</p>
-
-<figure class='code'><figcaption><span>metadata.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto hide the top panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;extension-id&quot;</span><span class="o">:</span> <span class="s2">&quot;auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;gettext-domain&quot;</span><span class="o">:</span> <span class="s2">&quot;gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Auto Hide Top Panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;settings-schema&quot;</span><span class="o">:</span> <span class="s2">&quot;org.gnome.shell.extensions.auto-hide-top-panel&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;shell-version&quot;</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>  <span class="s2">&quot;3.5.92&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.6&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.6.1&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;3.9.4&quot;</span>
-</span><span class='line'>  <span class="p">],</span>
-</span><span class='line'>  <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;http://fpmurphy.com/gnome-shell-extensions&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;uuid&quot;</span><span class="o">:</span> <span class="s2">&quot;autohidetopbar2@werewolves.us&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="mi">1</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
 ]]></content>
   </entry>
   

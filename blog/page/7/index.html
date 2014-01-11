@@ -9,8 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="パーティション/ディスククローンツールClonezilla のISO をBurg から起動してみた。ブートローダから直接ISO を指定するので、起動デバイスが不要で楽チン。Clonezilla は日本語表示も選択できるし、バックアップも簡単で速くていいかも。
-GRUB 1.99 以降と違って、 &hellip;">
+  <meta name="description" content="http://source.android.com/source/download.html https://android.googlesource.com/platform/manifest Android 4.1 Jelly Bean のソースが公開されたのでビルドしてみた。./build &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +86,124 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/12/building-android-4-1-for-x86-on-ubuntu-12-04/">Building Android 4.1 for X86 on Ubuntu 12.04</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-12T00:17:01+09:00" pubdate data-updated="true">2012年07月12日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/07/android_4.1.1.png"><img src="/images/uploads/2012/07/android_4.1.1.png" alt="android 4.1.1 x86" /></a></p>
+
+<p><a href="http://source.android.com/source/download.html  ">http://source.android.com/source/download.html  </a>
+<a href="https://android.googlesource.com/platform/manifest">https://android.googlesource.com/platform/manifest</a></p>
+
+<p>Android 4.1 Jelly Bean のソースが公開されたのでビルドしてみた。<del>./build/target/product/generic_x86.mk があるので、使わせていただこう。</del>ビルド環境はUbuntu 12.04 x86_64。<del>インストール先はInspiron duo (Dual Core Atom N550, 1366x768, Touch Screen + Keyboard)。</del></p>
+
+<ol>
+<li> 前提パッケージをインストール</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline-gplv2-dev lib32z1-dev
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install gcc-multilib g++-multilib libc6-i386 libc6-dev-i386
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li><p> JDK をインストール
+Oracle のサイトからjdk-6u33-linux-x64.bin を拾ってきて展開、./bin にパスを通しておく。</p></li>
+<li><p> repo をインストール</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>mkdir ~/bin
+</span><span class='line'><span class="nv">$ PATH</span><span class="o">=</span>~/bin:<span class="nv">$PATH</span>
+</span><span class='line'><span class="nv">$ </span>curl http://android.git.kernel.org/repo &gt; ~/bin/repo
+</span><span class='line'><span class="nv">$ </span>chmod a+x ~/bin/repo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ソースを取得(Android 4.1(Jelly Bean) の場合)</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>mkdir jellybean-x86
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>jellybean-x86
+</span><span class='line'><span class="nv">$ </span>repo init -u https://android.googlesource.com/platform/manifest -b android-4.1.1_r1
+</span><span class='line'><span class="nv">$ </span>repo sync
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li> ビルド</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source </span>build/envsetup.sh
+</span><span class='line'><span class="nv">$ </span>lunch generic_x86-eng
+</span><span class='line'><span class="nv">$ </span>make -j8
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>./out/target/product/generic_x86/ にバイナリが作成されるので、GRUB から起動してあげればOK!、と思うけど、時間が掛かりそうなので、明日の朝確認しようzzz。</p>
+
+<p>generic_x86-eng で失敗したので、lunch の選択肢に従って、full_x86-eng でやり直してみよう。make の実行は、C/C++ の部分は多重度を8 にして、Java の部分は多重度を1 にできるとCPU とメモリが有効活用できて効率的なんだけど、できないのかな。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">source </span>build/envsetup.sh
+</span><span class='line'><span class="nv">$ </span>lunch vbox_x86-eng
+</span><span class='line'><span class="nv">$ </span>make android_disk_vdi -j1
+</span><span class='line'><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>VirtualBox イメージ(android_data_disk.vdi, android_system_disk.vdi)の生成と起動はできた。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -996,159 +1113,6 @@ Linux の他にはWindows XP 32bit しか入っていないデスクトップPC 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/31/moc-music-on-console/">MOC (Music on Console)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-31T19:59:21+09:00" pubdate data-updated="true">2012年05月31日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/05/moc.png"><img src="/images/uploads/2012/05/moc.png" alt="moc music on console mocp" /></a></p>
-
-<p><a href="http://moc.daper.net/">http://moc.daper.net/</a>
-軽量なコンソール型のメディアプレーヤーMOC(Music On Console)を使ってみた。コマンドはmocp で、mocp を実行するとメディアを再生するサーバと操作用のクライアント画面が同時に起動する。クライアント画面を終了してもサーバはメディアの再生を継続するような仕組みになっている。moc-ffmpeg-plugin をインストールするとWMA, RealAudio, MP4, AAC 等のフォーマットの再生も可能。イコライザがついていたり、歌詞表示ができたり、テーマ変更もできたりする。日本語のタグやファイル名も表示可能。軽量だからwine で動かしているアプリケーションへの影響も少ないようだ。</p>
-
-<ul>
-<li>インストール</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install moc moc-ffmpeg-plugin
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>起動とサーバの停止</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>mocp
-</span><span class='line'><span class="nv">$ </span>mocp -x
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>オプションの詳細はman mocp で。</p>
-
-<ul>
-<li>よく使うキー操作</li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th align="center">キー</th>
-<th align="left">動作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">[h][?]</td>
-<td align="left">キーボードショートカット一覧を表示</td>
-</tr>
-<tr>
-<td align="center">[ENTER]</td>
-<td align="left">メディアの再生、フォルダの選択等</td>
-</tr>
-<tr>
-<td align="center">[SPACE]</td>
-<td align="left">ポーズ</td>
-</tr>
-<tr>
-<td align="center">[q]</td>
-<td align="left">mocp クライアント画面を終了(サーバは実行のまま)</td>
-</tr>
-<tr>
-<td align="center">[Q]</td>
-<td align="left">mocp クライアント画面を終了(サーバも終了)</td>
-</tr>
-<tr>
-<td align="center">[TAB]</td>
-<td align="left">左ペイン(ファイルリスト)と右ペイン(プレイリスト)を移動</td>
-</tr>
-<tr>
-<td align="center">[l]</td>
-<td align="left">選択しているペインのレイアウトを最大に</td>
-</tr>
-<tr>
-<td align="center">[,][&lt;]</td>
-<td align="left">ボリュームダウン(5%, 1%)</td>
-</tr>
-<tr>
-<td align="center">[.][>]</td>
-<td align="left">ボリュームアップ(5%, 1%)</td>
-</tr>
-<tr>
-<td align="center">[o]</td>
-<td align="left">URL を開く</td>
-</tr>
-<tr>
-<td align="center">[R]</td>
-<td align="left">リピート再生の切り替え</td>
-</tr>
-<tr>
-<td align="center">[S]</td>
-<td align="left">シャッフル再生の切り替え</td>
-</tr>
-<tr>
-<td align="center">[A]</td>
-<td align="left">プレイリストに追加(ディレクトリは再帰的に)</td>
-</tr>
-<tr>
-<td align="center">[L]</td>
-<td align="left">歌詞表示(歌詞ファイルはメディアと同じファイル名で拡張子無し)</td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li><p>インターネットラジオの聞き方
-SHOUTcast で探して、ローカルにpls ファイルを保存して、開いたり、[o]で直接URL を入力したり。</p></li>
-<li><p>moc で再生中のメディアの情報をConky に表示するには
-mocp -Q でいろいろな情報を取得して表示することができる。</p></li>
-</ul>
-
-
-<figure class='code'><figcaption><span>~/.conkyrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>${if_running mocp}${font DejaVu Sans}MUSIC (moc)${font} ${hr 2}
-</span><span class='line'>${font :size=10}${execi 5 mocp -Q %title | nkf -w -F36-0}${endif}
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -1166,6 +1130,10 @@ mocp -Q でいろいろな情報を取得して表示することができる。
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/10/gitg-0-dot-3-1/">Gitg 0.3.1</a>
       </li>
     
@@ -1181,15 +1149,11 @@ mocp -Q でいろいろな情報を取得して表示することができる。
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (105)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

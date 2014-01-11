@@ -9,10 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://www.proun-game.com/
-http://blog.oogst3d.net/
-http://www.ronimo-games.com/forum/viewforum.php?f=7
-http://www.proun-game.com/UserTracks.html &hellip;">
+  <meta name="description" content="http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd proun のユーザトラックArchipelago &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +86,51 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/28/proun-3/">Proun で遊んでみた3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-28T00:23:34+09:00" pubdate data-updated="true">2011年06月28日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/06/proun_archipelago.png"><img src="/images/uploads/2011/06/proun_archipelago.png" alt="proun archipelago" /></a></p>
+
+<p><a href="http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd">http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd</a></p>
+
+<p>proun のユーザトラックArchipelago がフォーラムに掲載されていたので遊んでみた。
+ファンタジーっぽいコースに見えるけど、なかなか難しくておもしろい。
+しかもこのコースはInspiron duo でも発生していた<a href="http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t=1038&amp;sid=a2b52fd4f493e88335b57fa70b5ba637">このエラー</a>が発生しないみたいなので、ビデオ環境が弱いPC　にも優しいかもしれない。
+これからもおもしろいコースが増えるといいな。</p>
+
+<p>クレジットを見ると、Proun はOgre3D で作られているけどサウンドはirrKlang だった。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -603,64 +645,6 @@ GNOME Shell のシステムモニタ拡張を追加してみた。
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/23/gnome-shell-e38292e68ba1e5bcb5e38197e381a6e381bfe3819f4/">GNOME Shell を拡張してみた4</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-23T23:38:30+09:00" pubdate data-updated="true">2011年05月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/05/Screenshot-weather.png"><img src="/images/uploads/2011/05/Screenshot-weather.png" alt="gnome shell extension weather" /></a></p>
-
-<ul>
-<li><p><a href="http://www.webupd8.org/2011/05/gnome-shell-weather-extension.html">http://www.webupd8.org/2011/05/gnome-shell-weather-extension.html</a></p></li>
-<li><p><a href="https://github.com/simon04/gnome-shell-extension-weather">https://github.com/simon04/gnome-shell-extension-weather</a></p></li>
-</ul>
-
-
-<p>天気を表示する拡張を入れてみた。
-<a href="http://weather.yahoo.com/">http://weather.yahoo.com/</a> で地域を検索して、RSS のリンクに含まれる地域コードをextension.js に設定する。東京はJAXX0085、大阪はJAXX0071 になる。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>const UNITS = &#39;c&#39;; // Units for temperature (case sensitive). f: Fahrenheit. c: Celsius
-</span><span class='line'>const YAHOO_ID = &#39;JAXX0085&#39;;
-</span><span class='line'>const WEATHER_URL = &#39;http://weather.yahooapis.com/forecastjson?u=&#39; + UNITS + &#39;&amp;p=&#39; + YAHOO_ID;
-</span><span class='line'>const FORECAST_URL = &#39;http://query.yahooapis.com/v1/public/yql?format=json&amp;q=select%20item.forecast%20from%20weather.forecast%20where%20location%3D%22&#39; + YAHOO_ID + &#39;%22%20%20and%20u=&quot;&#39; + UNITS + &#39;&quot;&#39;;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>リアルタイムの気温が怪しいんだけど、どこから拾ってきているんだろう&hellip;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/13/">&larr; Older</a>
@@ -678,6 +662,10 @@ GNOME Shell のシステムモニタ拡張を追加してみた。
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/10/gitg-0-dot-3-1/">Gitg 0.3.1</a>
       </li>
     
@@ -693,15 +681,11 @@ GNOME Shell のシステムモニタ拡張を追加してみた。
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (105)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

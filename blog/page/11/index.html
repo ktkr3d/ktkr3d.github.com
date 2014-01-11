@@ -9,8 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://source.android.com/source/download.html
-Android 4.0 のソースコード（android-4.0.1_r1）が公開されたので、Ubuntu 11.10 64bit の環境でビルドしてみよう。手順はAndroid 2.3 の時と同じみたい。 &hellip;">
+  <meta name="description" content="http://code.google.com/p/android-x86/downloads/list
+http://code.google.com/p/android-x86/downloads/detail?name=android-x86-3.2-RC2-asus_laptop.iso &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,80 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/22/android-x86-3-2-honeycomb/">Android-x86 3.2 Honeycomb を試してみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-22T02:19:50+09:00" pubdate data-updated="true">2011年11月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/11/android-x86_3.2.png"><img src="/images/uploads/2011/11/android-x86_3.2.png" alt="android-x86 3.2 honeycomb" /></a></p>
+
+<p><a href="http://code.google.com/p/android-x86/downloads/list">http://code.google.com/p/android-x86/downloads/list</a>
+<a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-3.2-RC2-asus_laptop.iso">http://code.google.com/p/android-x86/downloads/detail?name=android-x86-3.2-RC2-asus_laptop.iso</a></p>
+
+<p>Android のx86 ポート、Android-x86 3.2 Honeycomb RC2 のISO イメージが公開されていたので、android-x86-3.2-RC2-asus_laptop.iso を実機(DELL Inspiron Duo)と仮想環境で実行してみた。
+DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日本語表示、サウンド、YouTube での動画再生等が動作した。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>app_68@laptop:/ <span class="nv">$ </span>uname -a
+</span><span class='line'>Linux localhost 3.0.1-android-x86-asus-laptop+ <span class="c">#3 SMP PREEMPT Sun Nov 13 04:33:58 CST 2011 i686 GNU/Linux</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>update:</strong>
+<a href="/images/uploads/2011/11/android-x86_3.2_inspiron_duo.png"><img src="/images/uploads/2011/11/android-x86_3.2_inspiron_duo.png" alt="android-x86 3.2 inspiron duo" /></a>
+実機のスクリーンキャプチャは、Wi-Fi 接続してから、Android SDK をインストールしたPC から</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">ADBHOST</span><span class="o">=</span>192.168.0.4
+</span><span class='line'><span class="nv">$ </span>adb devices
+</span><span class='line'>* daemon not running. starting it now on port 5037 *
+</span><span class='line'>* daemon started successfully *
+</span><span class='line'>List of devices attached
+</span><span class='line'>emulator-5554 device
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>ddms
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>でddms を起動して、「Device」-「Screen Capture&hellip;」メニューから取得する。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -507,51 +581,6 @@ ant install の代わりにant debug でパッケージを生成して止まる�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/28/proun-3/">Proun で遊んでみた3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-28T00:23:34+09:00" pubdate data-updated="true">2011年06月28日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/06/proun_archipelago.png"><img src="/images/uploads/2011/06/proun_archipelago.png" alt="proun archipelago" /></a></p>
-
-<p><a href="http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd">http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t;=1074&amp;sid;=5db794ee543f3b1f8a0ee10f51774acd</a></p>
-
-<p>proun のユーザトラックArchipelago がフォーラムに掲載されていたので遊んでみた。
-ファンタジーっぽいコースに見えるけど、なかなか難しくておもしろい。
-しかもこのコースはInspiron duo でも発生していた<a href="http://www.ronimo-games.com/forum/viewtopic.php?f=7&amp;t=1038&amp;sid=a2b52fd4f493e88335b57fa70b5ba637">このエラー</a>が発生しないみたいなので、ビデオ環境が弱いPC　にも優しいかもしれない。
-これからもおもしろいコースが増えるといいな。</p>
-
-<p>クレジットを見ると、Proun はOgre3D で作られているけどサウンドはirrKlang だった。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -569,6 +598,10 @@ ant install の代わりにant debug でパッケージを生成して止まる�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/10/gitg-0-dot-3-1/">Gitg 0.3.1</a>
       </li>
     
@@ -584,15 +617,11 @@ ant install の代わりにant debug でパッケージを生成して止まる�
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (105)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

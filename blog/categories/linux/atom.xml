@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-11T15:44:33+09:00</updated>
+  <updated>2014-01-12T03:58:49+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gEdit 3.11.2]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/12/gedit-3-dot-11-dot-2/"/>
+    <updated>2014-01-12T03:39:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/12/gedit-3-dot-11-dot-2</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gedit_3.11.2.png"><img src="/images/gedit_3.11.2.png" title="gedit 3.11.2" alt="gedit 3.11.2" /></a></p>
+
+<p><a href="http://worldofgnome.org/gedit-3-12-migrates-to-hig-3/">http://worldofgnome.org/gedit-3-12-migrates-to-hig-3/</a></p>
+
+<p>gEdit 3.11.2 がリリースされたので、ビルドして実行してみました。
+Gitg もそうですが、GNOME Human Interface Guidelines(HIG) 3 に準拠したアプリが続々とリリースされていますね。</p>
+
+<!-- more -->
+
+
+<h4>gtksouceview-3.0</h4>
+
+<p>前提となる<code>gtksouceview-3.0</code> のバージョン3.11.2 をビルドしてインストールします。</p>
+
+<p><code>ftp://ftp.gnome.org/pub/GNOME/sources/gtksourceview/3.11/gtksourceview-3.11.2.tar.xz</code></p>
+
+<p><code>bash
+$ ./configure
+$ make -j4
+$ sudo make install
+</code></p>
+
+<h4>gedit</h4>
+
+<p>gedit をビルドします。
+make するとgedit 3.11.2 が起動します。</p>
+
+<p><code>https://git.gnome.org/browse/gedit/snapshot/gedit-3.11.2.tar.gz</code></p>
+
+<p><code>bash
+$ ./autogen.sh
+$ ./configure
+$ make -j4
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gitg 0.3.1]]></title>
@@ -271,44 +313,6 @@ $ time ~/test.sh
 <h3>ファイルの削除</h3>
 
 <p>ファイルのサイズとディレクトリを参照して冗長なファイルを削除します。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Add remote location over SSH on XBMC]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/"/>
-    <updated>2013-12-22T10:50:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/xbmc-ssh.png"><img src="/images/xbmc-ssh.png"></a></p>
-
-<p>外出先から自宅のPC に格納しているメディアにアクセスするためにXBMC を設定してみました。</p>
-
-<!-- more -->
-
-
-<p>Android やモバイルLinux にインストールしたXBMC からSSH 経由で自宅PC のメディアにアクセスするには、<code>Add network location</code> で <code>Secure Shell (SSH/SFTP)</code> プロトコルを選択します。</p>
-
-<p>以下のクライアントで動作確認できました。</p>
-
-<ul>
-<li>Android 4.2 + XBMC 12.2</li>
-<li>Android-x86 4.0 + XBMC 13.0 alpha10</li>
-<li>Ubuntu GNOME 14.04 alpha1 + XBMC 12.0</li>
-</ul>
-
-
-<p>Linux の場合はsshfs でマウントしておいた方が何かと便利</p>
-
-<p><code>bash
-$ ssh-keygen
-$ ssh-copy-id -i .ssh/id_rsa.pub useranme@hostname -p 22222
-</code></p>
-
-<p><code>gnome-session-properties</code> で自動起動するアプリケーションに以下を追加</p>
-
-<p><code>bash
-sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
-</code></p>
 ]]></content>
   </entry>
   

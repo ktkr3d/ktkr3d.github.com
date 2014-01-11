@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://cdimage.ubuntu.com/releases/12.04/alpha-2/ Ubuntu 12.04 Precise Pangolin のアルファ2 がリリースされたので、インストールしてみた。Linux カーネル は3.2。GNOME Shell も入れてみた。 &hellip;">
+  <meta name="description" content="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730 Ubuntu 11.10 x86_64 にKinect の環境を構築してIrrlicht と連動させてみた。モデルはOrge3D のキャラクターSinbad( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,104 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/05/ubuntu-11-10-kinect-irrlicht/">Ubuntu 11.10 + Kinect + Irrlicht</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-05T22:25:28+09:00" pubdate data-updated="true">2012年02月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2012/02/irrlicht_sinbad_kinect.png"><img src="/images/uploads/2012/02/irrlicht_sinbad_kinect.png" alt="irrlicht ubuntu 11.10 kinect NITE sinbad" /></a></p>
+
+<p><a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730">http://irrlicht.sourceforge.net/forum/viewtopic.php?f=9&amp;t;=45730</a></p>
+
+<p>Ubuntu 11.10 x86_64 にKinect の環境を構築してIrrlicht と連動させてみた。モデルはOrge3D のキャラクターSinbad(Sinbad.mesh)を使おうと思うので、Kinect.cpp とCPlayer.cpp の中のボーン名を変更しておく。ogremesh のボーン名やモーションは取り込めたけど、テクスチャがうまく貼れてないのはなんでだろう。キャリブレーションに成功すると以下のログが表示される。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>New User 1
+</span><span class='line'>Calibration started for user 1
+</span><span class='line'>Calibration complete, start tracking user 1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>キャリブレーション後に動きが連動しないのはb3d, ms3d, X 形式でないからかな。</p>
+
+<p>Kinect の環境構築手順は<a href="http://ktkr3d.site11.com/2010/12/24/linux_kinect/">Ubuntu 10.10 の時</a>と基本的に同じだけど、最近のLinux ではカーネルドライバを無効にしないといけないみたい。</p>
+
+<h3>Linux Kernel のKinect ドライバの無効化</h3>
+
+<p>/lib/modules/3.0.0-16-generic/kernel/drivers/media/video/gspca/gspca_kinect.ko
+まず、Linux Kernel 3.0 からKinect のカーネルドライバが組み込まれているので、あらかじめ無効にしておく。rmmod gspca_kinect かgspca_kinect.ko をリネームする。</p>
+
+<h3>OpenNI のインストール</h3>
+
+<ol>
+<li><p> <a href="https://github.com/OpenNI/OpenNI/tree/unstable">https://github.com/OpenNI/OpenNI/tree/unstable</a> からダウンロードして展開</p></li>
+<li><p> cd Platform/Linux/Build</p></li>
+<li><p> make
+ここで CreateRedist/RedistMaker に実行パーミッションを与えておく</p></li>
+<li><p> sudo make install</p></li>
+<li><p> Redist/*/install.sh を実行する</p></li>
+</ol>
+
+
+<h3>ドライバ(avin2)のインストール</h3>
+
+<ol>
+<li><p> <a href="https://github.com/avin2/SensorKinect">https://github.com/avin2/SensorKinect</a> からダウンロードして展開</p></li>
+<li><p> cd Platform/Linux/Build</p></li>
+<li><p> make
+ここで CreateRedist/RedistMaker に実行パーミッションを与えておく</p></li>
+<li><p> sudo make install</p></li>
+<li><p> Redist/*/install.sh を実行する</p></li>
+</ol>
+
+
+<h3>NITE のインストール</h3>
+
+<ol>
+<li><p> <a href="http://www.openni.org/Downloads/OpenNIModules.aspx">http://www.openni.org/Downloads/OpenNIModules.aspx</a> からダウンロードして展開（Ubuntu 10.10 用でも動く）</p></li>
+<li><p> sudo ./install.sh</p></li>
+</ol>
+
+
+<h3>サンプルを実行して動作確認</h3>
+
+<ul>
+<li><p>OpenNI のPlatform/Linux/Bin/ で、./NiViewer を実行</p></li>
+<li><p>NITE のSamples/Bin/x64-Release で、./Sample-Players を実行</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -556,80 +654,6 @@ Android-x86 4.0 ICS(Ice Cream Sandwich)の仮想マシンイメージらしき�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/22/android-x86-3-2-honeycomb/">Android-x86 3.2 Honeycomb を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-22T02:19:50+09:00" pubdate data-updated="true">2011年11月22日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/11/android-x86_3.2.png"><img src="/images/uploads/2011/11/android-x86_3.2.png" alt="android-x86 3.2 honeycomb" /></a></p>
-
-<p><a href="http://code.google.com/p/android-x86/downloads/list">http://code.google.com/p/android-x86/downloads/list</a>
-<a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-3.2-RC2-asus_laptop.iso">http://code.google.com/p/android-x86/downloads/detail?name=android-x86-3.2-RC2-asus_laptop.iso</a></p>
-
-<p>Android のx86 ポート、Android-x86 3.2 Honeycomb RC2 のISO イメージが公開されていたので、android-x86-3.2-RC2-asus_laptop.iso を実機(DELL Inspiron Duo)と仮想環境で実行してみた。
-DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日本語表示、サウンド、YouTube での動画再生等が動作した。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>app_68@laptop:/ <span class="nv">$ </span>uname -a
-</span><span class='line'>Linux localhost 3.0.1-android-x86-asus-laptop+ <span class="c">#3 SMP PREEMPT Sun Nov 13 04:33:58 CST 2011 i686 GNU/Linux</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>update:</strong>
-<a href="/images/uploads/2011/11/android-x86_3.2_inspiron_duo.png"><img src="/images/uploads/2011/11/android-x86_3.2_inspiron_duo.png" alt="android-x86 3.2 inspiron duo" /></a>
-実機のスクリーンキャプチャは、Wi-Fi 接続してから、Android SDK をインストールしたPC から</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">ADBHOST</span><span class="o">=</span>192.168.0.4
-</span><span class='line'><span class="nv">$ </span>adb devices
-</span><span class='line'>* daemon not running. starting it now on port 5037 *
-</span><span class='line'>* daemon started successfully *
-</span><span class='line'>List of devices attached
-</span><span class='line'>emulator-5554 device
-</span><span class='line'>
-</span><span class='line'><span class="nv">$ </span>ddms
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>でddms を起動して、「Device」-「Screen Capture&hellip;」メニューから取得する。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/11/">&larr; Older</a>
@@ -647,6 +671,10 @@ DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/10/gitg-0-dot-3-1/">Gitg 0.3.1</a>
       </li>
     
@@ -662,15 +690,11 @@ DELL Inspiron Duo では最大解像度表示(1366x768)、無線LAN接続、日�
         <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/22/add-remote-location-over-ssh-on-xbmc/">Add Remote Location Over SSH on XBMC</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (29)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (105)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
