@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://askubuntu.com/questions/203220/can-the-gnome-3-6-notification-area-be-shrinked GNOME Shell 3.6 では画面下端にマウスカーソルを持って行くと、メッセージトレイが表示されます。 &hellip;">
+  <meta name="description" content="http://moc.daper.net/node/850 moc (music on console) はコンソールで動作する軽量な音楽プレイヤーです。マルチバイト文字に依存してトリム位置がずれるバグがありましたが、解決(2.5.0 beta1 + patch r2519/r2520)されました &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,64 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/04/moc-2-5-0-beta1-patch-r2519r2520/">Moc 2.5.0 Beta1 + Patch R2519/r2520</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-04T23:39:52+09:00" pubdate data-updated="true">2013-01-04</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://moc.daper.net/node/850">http://moc.daper.net/node/850</a></p>
+
+<p>moc (music on console) はコンソールで動作する軽量な音楽プレイヤーです。マルチバイト文字に依存してトリム位置がずれるバグがありましたが、解決(2.5.0 beta1 + patch r2519/r2520)されました。これで日本語のパスやタグが入っていてもレイアウトが崩れなくなりました。現時点でのUbuntu のリポジトリに存在するmoc のバージョンは2.5.0 alpha4 + svn20120224-1ubuntu1 ですので、最新のソースを取得して、コンパイル、インストールしてみました。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get build-dep moc
+</span><span class='line'><span class="nv">$ </span>svn co svn://daper.net/moc/trunk
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>trunk
+</span><span class='line'><span class="nv">$ </span>./autogen.sh
+</span><span class='line'><span class="nv">$ </span>./configure --prefix<span class="o">=</span>/usr
+</span><span class='line'><span class="nv">$ </span>make -j4
+</span><span class='line'><span class="nv">$ </span>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>過去の記事
+<a href="http://ktkr3d.site11.com/2012/05/31/moc-music-on-console/">http://ktkr3d.site11.com/2012/05/31/moc-music-on-console/</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1131,51 +1189,6 @@ OE_DATA</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/02/vlc-for-android-x86/">VLC for Android-x86</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-02T23:20:14+09:00" pubdate data-updated="true">2012-10-02</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2012/10/galaxias_vlc_for_android-x86.png"><img src="/images/uploads/2012/10/galaxias_vlc_for_android-x86-600x337.png" alt="vlc for android-x86" /></a>
-<a href="http://nightlies.videolan.org/build/android-x86/">http://nightlies.videolan.org/build/android-x86/</a></p>
-
-<p>VLC for Android-x86 のデバッグ版が公開されていたので、使ってみました。実行環境は、Android-x86 4.0.4 RC2 tegav2 ビルドです。</p>
-
-<p>ビルドする手順は以下のようです。
-<a href="http://wiki.videolan.org/AndroidCompile">http://wiki.videolan.org/AndroidCompile</a></p>
-
-<p><strong>EDIT:</strong>
-VLC だと760p も全く問題なく再生できました。音量調節は上下にフリックします。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -1193,6 +1206,10 @@ VLC だと760p も全く問題なく再生できました。音量調節は上�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/mikumikupenguin/">MikuMikuPenguin</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
       </li>
     
@@ -1208,15 +1225,11 @@ VLC だと760p も全く問題なく再生できました。音量調節は上�
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (107)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/mmd/'>MMD (1)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

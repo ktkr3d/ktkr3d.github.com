@@ -9,7 +9,8 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content=" https://launchpad.net/~ricotz/+archive/testing GNOME Shell 3.9.4 をUbuntu GNOME 13.10 にインストールしてみました。 ">
+  <meta name="description" content=" Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。 電源ボタンが無いこと
+アプリケーションメニューがないこと Docky とCardapio の設定で上記を動くようにしてみました。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +87,57 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/14/docky-plus-cardapio/">Docky + Cardapio</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-14T11:11:00+09:00" pubdate data-updated="true">2013-07-14</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/docky_cardapio.png"><img src="/images/docky_cardapio_tn.png"></a></p>
+
+<p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
+
+<ol>
+<li>電源ボタンが無いこと</li>
+<li>アプリケーションメニューがないこと</li>
+</ol>
+
+
+<p>Docky とCardapio の設定で上記を動くようにしてみました。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/14/docky-plus-cardapio/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -787,103 +839,6 @@ Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたの
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/10/xnoise-media-player-0-2-16-mediterraneannight-gtk-theme-2/">Xnoise Media Player 0.2.16 + MediterraneanNight GTK+ Theme</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-10T12:14:59+09:00" pubdate data-updated="true">2013-03-10</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2013/03/xnoise.png"><img src="/images/uploads/2013/03/xnoise.png" alt="xnoise media player 0.2.16" /></a></p>
-
-<h3>xnoise</h3>
-
-<p><a href="http://www.xnoise-media-player.com/">http://www.xnoise-media-player.com/</a>
-xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.7.90 の環境で試してみました。GStreamer を利用した音楽、ビデオ、インターネットストリームの再生が可能で、軽快に動作します。シンプルで整ったデザインになっています。また、コンテキストメニューに登録されている機能(ID3 タグ編集、親フォルダ表示)が便利です。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo add-apt-repository ppa:shkn/xnoise
-</span><span class='line'><span class="nv">$ </span>sudo apt-get update
-</span><span class='line'><span class="nv">$ </span>sudo apt-get install xnoise
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>主な機能:</strong></p>
-
-<ul>
-<li><p>メディアライブラリの高速な検索</p></li>
-<li><p>アルバムアートグリッド表示</p></li>
-<li><p>GStreamer を利用した音楽、ビデオ、ストリーム再生</p></li>
-<li><p>イコライザ(プリセット付)</p></li>
-<li><p>「最近再生された」「最も再生された」スマートプレイリスト</p></li>
-<li><p>ID3 タグ編集</p></li>
-<li><p>自動アルバムアート取得</p></li>
-<li><p>軽量で高速</p></li>
-<li><p>プラグイン(MPRIS、Magnatune、Last.fm、歌詞表示、通知、Ubuntu との連携)</p></li>
-</ul>
-
-
-<p><strong>Tips:</strong></p>
-
-<ul>
-<li><p>アルバムアート表示への切り替えは左上のX ロゴアイコンを押します。</p></li>
-<li><p>インターネットストリームの追加は設定画面でURL を追加します。メイン画面左側のストリームライブラリ一覧に表示されたURL をクリックするとストリームに別名をつけることができます。</p></li>
-<li><p>メニューバーの非表示は設定画面から実行します。(&lsquo;Use menu button&rsquo; ではわかりにくい&hellip;)</p></li>
-<li><p>停止ボタンの非表示は設定画面から実行します。</p></li>
-<li><p>トラックリストの列をカスタマイズするには、列名の上で右クリックして、各項目の表示/非表示を切り替えます。</p></li>
-<li><p>音が鳴らない場合は、一度、イコライザを表示してみるとよいかもしれません。</p></li>
-<li><p>日本語化用のja.po を作って(作りかけて)みました。
-<a href="https://github.com/ktkr3d/xnoise-ja">https://github.com/ktkr3d/xnoise-ja</a></p></li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>msgfmt -o ja.mo ja.po
-</span><span class='line'><span class="nv">$ </span>sudo cp ja.mo /usr/share/locale/ja/LC_MESSAGES/xnoise.mo
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>MediterraneanNight</h3>
-
-<p><a href="http://gnome-look.org/content/show.php/?content=156782">http://gnome-look.org/content/show.php/?content=156782</a>
-今までGTK+ のテーマにGNOME Shell 標準のAdwaita を利用していましたが、選択箇所の文字が背景色と同じになって読めなくて困っていました。そこで、<a href="http://gnome-look.org/">http://gnome-look.org/</a> でGTK+ テーマを探したところ、MediterraneanNight がよさそうでしたので、あわせて利用してみました。ダウンロードしたアーカイブを~/.themes/ と~/.local/share/themes/ に展開して、gnome-tweak-tool の[テーマ]&ndash;[GTK+ テーマ]からテーマを選択して、適用します。
-なお、このテーマは、GTK3 にunico-engine を、GTK2 にgtk2-engines-murrine とgtk2-engines-pixbuf を使用しますが、Ubuntu ではgtk2-engines-pixbuf がインストールされていませんでしたので、追加しておきます。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install gtk2-engines-pixbuf
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -901,6 +856,10 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/mikumikupenguin/">MikuMikuPenguin</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
       </li>
     
@@ -916,15 +875,11 @@ xnoise 0.2.16 がリリースされたのでUbuntu 13.04 x86_64 + GNOME Shell 3.
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (107)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/mmd/'>MMD (1)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

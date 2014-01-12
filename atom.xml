@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-12T20:19:10+09:00</updated>
+  <updated>2014-01-12T23:59:12+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,110 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[MikuMikuPenguin]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/12/mikumikupenguin/"/>
+    <updated>2014-01-12T23:40:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/12/mikumikupenguin</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/mikumikupenguin.png"><img src="http://ktkr3d.github.io/images/mikumikupenguin.png" title="MikuMikuPenguin" alt="MikuMikuPenguin" /></a></p>
+
+<p><a href="https://github.com/sn0w75/MikuMikuPenguin">https://github.com/sn0w75/MikuMikuPenguin</a></p>
+
+<p>ニコニコ動画でMikuMikuPenguin が公開されていたので、試してみました。
+作成者の方に感謝です。今後に期待ですね。</p>
+
+<!-- more -->
+
+
+<h4>実行環境</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">環境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ディストロ</td>
+<td align="left">Ubuntu GNOME 14.04 a1</td>
+</tr>
+<tr>
+<td align="left">デスクトップ環境</td>
+<td align="left">GNOME Shell 3.11.3</td>
+</tr>
+<tr>
+<td align="left">Linux カーネル</td>
+<td align="left">3.12.0</td>
+</tr>
+<tr>
+<td align="left">コンパイラ</td>
+<td align="left">gcc/g++ 4.8.2</td>
+</tr>
+<tr>
+<td align="left">ビデオカード</td>
+<td align="left">GeForce GTX 560 Ti/PCIe/SSE2</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>前提ライブラリ等</h4>
+
+<p>確か、こんな感じで入れたと思う。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install git dialog automake autoconf libtool libglfw-dev libBullet-dev libglm-dev libSOIL-dev libSDL2-dev libsdl2-mixer-dev
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>ビルド</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>./configure
+</span><span class='line'><span class="nv">$ </span>make -j4
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>実行</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>./pmx
+</span><span class='line'>This is PMXViewer, a demonstration using the MikuMikuPenguin library.
+</span><span class='line'>Usage: pmx <span class="o">[</span>options<span class="o">]</span> model_file.pmx motion_file.vmd
+</span><span class='line'>Options:
+</span><span class='line'>  -s  Play sound file to go with VMD motion
+</span><span class='line'>  Only formats compatible with your build of SDL2_mixer are accepted.
+</span><span class='line'>  If libmmp was compiled without SDL2_mixer support, no music will play.
+</span><span class='line'>
+</span><span class='line'>  --help  display this <span class="nb">help </span>and <span class="nb">exit</span>
+</span><span class='line'>  --version   output version information and <span class="nb">exit</span>
+</span><span class='line'>
+</span><span class='line'>FOR JAPANESE DOCUMENTATION, SEE:
+</span><span class='line'>&lt;file:///usr/local/share/mikumikupenguin/doc/README_JP.html&gt;
+</span><span class='line'>
+</span><span class='line'>Report bugs to &lt;ibenrunnin@gmail.com&gt; <span class="o">(</span>English or Japanese is ok<span class="o">)</span>.
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gEdit 3.11.2]]></title>
@@ -1675,63 +1779,6 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 <h4>設定の反映</h4>
 
 <p>設定を反映するには、<code>Alt + F2</code> を押下、<code>r</code> を入力して<code>Enter</code>で、GNOME Shell を再起動します。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Docky + Cardapio]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio/"/>
-    <updated>2013-07-14T11:11:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/07/14/docky-plus-cardapio</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/docky_cardapio.png"><img src="http://ktkr3d.github.io/images/docky_cardapio_tn.png"></a></p>
-
-<p>Ubuntu 13.10 + GNOME Shell 3.9.4 上で、Docky に移行して困ったことは、以下でした。</p>
-
-<ol>
-<li>電源ボタンが無いこと</li>
-<li>アプリケーションメニューがないこと</li>
-</ol>
-
-
-<p>Docky とCardapio の設定で上記を動くようにしてみました。</p>
-
-<!-- more -->
-
-
-<p></p>
-
-<h4>電源ボタンの設定</h4>
-
-<p>一番右の「画面のロック」アイコンを右クリックすることで、「画面のロック」、「ログアウト」、「サスペンド」、「再起動」、「シャットダウン」のようなサブメニューが表示されます。
-「画面のロック」のアイコン上でマウスのホイールボタンで上下にホイールすると、デフォルトの動作を指定できます。
-ボタン押下後に再起動かシャットダウンかを選択させる形式がよかったのですが、とりあえずこれで良しとしましょう。</p>
-
-<h4>Cardapio の設定</h4>
-
-<p>Cardapio を使ってDocky からアプリケーションメニューを表示することにします。</p>
-
-<pre><code>$ sudo add-apt-repository ppa:cardapio-team/unstable
-$ sudo apt-get update
-$ sudo apt-get install cardapio
-</code></pre>
-
-<p>saucy 向けのCardapio が存在しなかったので、ソフトウェアソースをquantal 向けに切り替えてインストールしました。
-cardapio を起動してみたところ、いくつかエラーが表示されたので、<code>/usr/lib/cardapio/Cardapio.py</code> を修正しました。</p>
-
-<ol>
-<li><p>以下を追加<br>
-<code>from xdg import BaseDirectory</code></p></li>
-<li><p>以下を置換<br>
-<code>DesktopEntry.xdg_config_home</code> &ndash;> <code>BaseDirectory.xdg_config_home</code></p></li>
-<li><p>以下を置換<br>
-<code>DesktopEntry.xdg_cache_home</code> &ndash;> <code>BaseDirectory.xdg_cache_home</code></p></li>
-</ol>
-
-
-<h4>Docky へCardapio を登録</h4>
-
-<p>cardapio-helper というDocky のヘルパーを使うと、Docky アイコンクリックで、Cardapio が起動されるはずなのですが、うまく動作しませんでした。
-仕方がないので、<code>/usr/share/applications/cardapio.desktop</code> をDocky にドラッグ&amp;ドロップして、メニューアイコンを登録しました。</p>
 ]]></content>
   </entry>
   

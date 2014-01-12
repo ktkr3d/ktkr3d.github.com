@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-12T20:19:10+09:00</updated>
+  <updated>2014-01-12T23:59:12+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[MikuMikuPenguin]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/12/mikumikupenguin/"/>
+    <updated>2014-01-12T23:40:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/12/mikumikupenguin</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/mikumikupenguin.png"><img src="/images/mikumikupenguin.png" title="MikuMikuPenguin" alt="MikuMikuPenguin" /></a></p>
+
+<p><a href="https://github.com/sn0w75/MikuMikuPenguin">https://github.com/sn0w75/MikuMikuPenguin</a></p>
+
+<p>ニコニコ動画でMikuMikuPenguin が公開されていたので、試してみました。
+作成者の方に感謝です。今後に期待ですね。</p>
+
+<!-- more -->
+
+
+<h4>実行環境</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">環境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ディストロ</td>
+<td align="left">Ubuntu GNOME 14.04 a1</td>
+</tr>
+<tr>
+<td align="left">デスクトップ環境</td>
+<td align="left">GNOME Shell 3.11.3</td>
+</tr>
+<tr>
+<td align="left">Linux カーネル</td>
+<td align="left">3.12.0</td>
+</tr>
+<tr>
+<td align="left">コンパイラ</td>
+<td align="left">gcc/g++ 4.8.2</td>
+</tr>
+<tr>
+<td align="left">ビデオカード</td>
+<td align="left">GeForce GTX 560 Ti/PCIe/SSE2</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>前提ライブラリ等</h4>
+
+<p>確か、こんな感じで入れたと思う。</p>
+
+<p><code>bash
+$ sudo apt-get install git dialog automake autoconf libtool libglfw-dev libBullet-dev libglm-dev libSOIL-dev libSDL2-dev libsdl2-mixer-dev
+</code></p>
+
+<h4>ビルド</h4>
+
+<p><code>bash
+$ ./configure
+$ make -j4
+</code></p>
+
+<h4>実行</h4>
+
+<p>``` bash
+$ ./pmx
+This is PMXViewer, a demonstration using the MikuMikuPenguin library.
+Usage: pmx [options] model_file.pmx motion_file.vmd
+Options:
+  -s    Play sound file to go with VMD motion</p>
+
+<pre><code>Only formats compatible with your build of SDL2_mixer are accepted.
+If libmmp was compiled without SDL2_mixer support, no music will play.
+</code></pre>
+
+<p>  &mdash;help    display this help and exit
+  &mdash;version output version information and exit</p>
+
+<p>FOR JAPANESE DOCUMENTATION, SEE:
+&lt;file:///usr/local/share/mikumikupenguin/doc/README_JP.html></p>
+
+<p>Report bugs to <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#105;&#98;&#x65;&#110;&#114;&#x75;&#x6e;&#x6e;&#x69;&#x6e;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">&#x69;&#98;&#x65;&#x6e;&#x72;&#117;&#x6e;&#110;&#x69;&#110;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a> (English or Japanese is ok).
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gEdit 3.11.2]]></title>
@@ -264,75 +352,6 @@ $ git config --global user.email mail_account_name@mail_domain_name
 <p><a href="http://ktkr3d.github.io/blog/2013/10/08/yad/">http://ktkr3d.github.io/blog/2013/10/08/yad/</a></p>
 
 <p><a href="http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/">http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cleaning]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/12/29/cleaning/"/>
-    <updated>2013-12-29T12:40:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/12/29/cleaning</id>
-    <content type="html"><![CDATA[<p>年末だし、ハードディスクの中の重複したファイルを見つけて、削除してしまおう。</p>
-
-<!-- more -->
-
-
-<h4>対象とするファイル</h4>
-
-<ul>
-<li>ファイルサイズが大きめ</li>
-<li>不完全なファイルも存在する</li>
-<li>ディレクトリ階層を再帰的に検索</li>
-</ul>
-
-
-<p>そのため、先頭1MB を対象としたハッシュ比較により、ファイルの同一性を検出します。</p>
-
-<h4>スクリプト</h4>
-
-<p>``` bash ~/test.sh</p>
-
-<h1>!/bin/sh</h1>
-
-<p>cp /dev/null /tmp/list0.txt
-find . -type f -exec dd if={} bs=1024 count=1000 of=/tmp/work.bin \; -exec md5sum /tmp/work.bin >> /tmp/list0.txt \; -exec du {}  >> /tmp/list0.txt \;
-sed &lsquo;:loop; N; $!b loop; ;s/\/tmp\/work.bin\n//g&rsquo; /tmp/list0.txt > /tmp/list1.txt
-sort /tmp/list1.txt | uniq -D -w 32  > /tmp/list2.txt
-rm /tmp/work.bin /tmp/list0.txt
-```</p>
-
-<h4>スクリプトの実行</h4>
-
-<p><code>bash
-$ cd /PATH/TO/TARGET
-$ time ~/test.sh
-</code></p>
-
-<h4>実行結果</h4>
-
-<table>
-<thead>
-<tr>
-<th align="left">出力されるファイル</th>
-<th align="left">内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">/tmp/list1.txt</td>
-<td align="left">ハッシュとサイズとパス</td>
-</tr>
-<tr>
-<td align="left">/tmp/list2.txt</td>
-<td align="left">重複しているファイルの一覧</td>
-</tr>
-</tbody>
-</table>
-
-
-<h3>ファイルの削除</h3>
-
-<p>ファイルのサイズとディレクトリを参照して冗長なファイルを削除します。</p>
 ]]></content>
   </entry>
   

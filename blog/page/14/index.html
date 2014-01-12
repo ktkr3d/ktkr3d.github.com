@@ -9,7 +9,7 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://code.google.com/p/burg/ http://www.omgubuntu.co.uk/2011/05/beautiful-burg-boot-loader-gets-ubuntu-11-04-ppa/ ブートローダをBURG(Brand-new Universal &hellip;">
+  <meta name="description" content="http://hexahop.sourceforge.net/ http://www.omgubuntu.co.uk/2011/05/download-of-the-week/ パズルゲームHex-a-Hop で遊んでみた。マウスかQWEASD キーで移動。U キーでアンドゥ。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,68 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/05/08/hex-a-hop-e381a7e9818ae38293e381a7e381bfe3819f/">Hex-a-Hop で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-08T14:07:09+09:00" pubdate data-updated="true">2011-05-08</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/05/Hex-a-hop_bokensha.png"><img src="/images/uploads/2011/05/Hex-a-hop_bokensha.png" alt="Hex-a-Hop" /></a>
+<a href="/images/uploads/2011/05/Hex-a-hop.png"><img src="/images/uploads/2011/05/Hex-a-hop.png" alt="Hex-a-Hop" /></a>
+<a href="http://hexahop.sourceforge.net/  ">http://hexahop.sourceforge.net/  </a>
+<a href="http://www.omgubuntu.co.uk/2011/05/download-of-the-week/">http://www.omgubuntu.co.uk/2011/05/download-of-the-week/</a></p>
+
+<p>パズルゲームHex-a-Hop で遊んでみた。マウスかQWEASD キーで移動。U キーでアンドゥ。ヘルプ画面は上下矢印キーでページ移動。紫色のタイルはトランポリン。レベルをクリアすると、マップ画面で次のレベルを選べるようになる。</p>
+
+<p>Ubuntu でのインストールは、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo apt-get install hex-a-hop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行するには、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>/usr/games/hex-a-hop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>/usr/games/ にインストールされるので/usr/games/ にパスを通しておくか、/usr/share/applications/hex-a-hop.desktop のEXEC= 行を絶対パス指定にするといいかも。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/05/08/hex-a-hop-e381a7e9818ae38293e381a7e381bfe3819f/">続きを読む &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -646,55 +708,6 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/03/inspiron-duo-e381a7alsa/">Inspiron Duo でALSA</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-03T22:08:04+09:00" pubdate data-updated="true">2011-04-03</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://ubuntuforums.org/showthread.php?t=1658635">http://ubuntuforums.org/showthread.php?t=1658635</a></p>
-
-<p>Inspiron duo にLinux をインストールしてイヤフォンから音が出ないので調べてみたら、Ubuntu のフォーラムに解決方法が掲載されていた。model をdell とかdell-laptop にしても治らなかったのに、ideapad で解決するとは&hellip;</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo gedit /etc/modprobe.d/alsa-base.conf
-</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>options snd-hda-intel model=ideapad</p></blockquote>
-
-<p>Fedora の場合は、/etc/modprobe.d/dist-alsa.conf を修正。</p>
-
-<p>他にもタッチスクリーンでのマルチタッチの設定とか、画面回転の設定とかがあるので試してみよう!!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Older</a>
@@ -712,6 +725,10 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/mikumikupenguin/">MikuMikuPenguin</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
       </li>
     
@@ -727,15 +744,11 @@ MeeGo Tablet 1.2 本家版ではアイコン名が日本語で表示されて、
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (107)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/mmd/'>MMD (1)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>

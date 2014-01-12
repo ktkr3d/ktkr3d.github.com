@@ -9,8 +9,9 @@
   <meta name="author" content="ktkr3d">
 
   
-  <meta name="description" content="http://code.google.com/p/android-x86/downloads/list
-http://code.google.com/p/android-x86/downloads/detail?name=android-x86-3.2-RC2-asus_laptop.iso &hellip;">
+  <meta name="description" content="http://www.proun-game.com/
+http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049
+http://www.proun-game.com/UserTracks.html Wine を使ったらProun &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +88,50 @@ $(document).ready( function () {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/27/wine-proun/">Wine + Proun で遊んでみた</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-27T22:47:52+09:00" pubdate data-updated="true">2011-11-27</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="/images/uploads/2011/11/wine_proun1.png"><img src="/images/uploads/2011/11/wine_proun1.png" alt="wine proun" /></a></p>
+
+<p><a href="http://www.proun-game.com/">http://www.proun-game.com/</a>
+<a href="http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049">http://www.awesomenauts.com/forum/viewtopic.php?f=7&amp;t;=1049</a>
+<a href="http://www.proun-game.com/UserTracks.html">http://www.proun-game.com/UserTracks.html</a></p>
+
+<p>Wine を使ったらProun がLinux で動くようになっていたので、Ubuntu 11.10 x86_64(GNOME Shell) + Wine 1.3.28 + Proun(Patch v109 again, 19 October 2011)の環境で遊んでみた。
+いつの間にかユーザトラックが増えていた。
+ユーザトラック&#8221;Solar Coaster&#8221;が難しい。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -514,73 +559,6 @@ Proton SDK を外したら、なぜかIrrlicht 上の幅と高さが半分くら
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/27/proton-sdk/">Android NDK を試してみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-27T06:51:39+09:00" pubdate data-updated="true">2011-07-27</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="/images/uploads/2011/07/proton_android_irrlicht_quake_map.png"><img src="/images/uploads/2011/07/proton_android_irrlicht_quake_map.png" alt="proton android irrlicht quake map" /></a></p>
-
-<p><a href="http://www.protonsdk.com/">http://www.protonsdk.com/</a></p>
-
-<p>Proton SDK を使って、Android NDK で実装されたIrrlicht のQuake マップデモをAndroid 端末実機で実行してみた。スクリーン上に「方向キー」、「ポインティング用のパッド」、「メニュー画面へ戻るボタン」などのGUI の他、サウンドも実装されている。
-デモ用のRT3DApp.apk が提供されているけれど、自分でビルドする場合はAndroid SDK, Android NDK の環境を構築しておいて、以下のコマンドを投入するとAndroid 端末(android-8: Android 2.2)への転送までやってくれるみたい。Android 端末側では、「設定」-「アプリケーション」-「USBデバッグ」を許可しておく。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>svn checkout svn://rtsoft.com/rtsvn/proton
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>proton
-</span><span class='line'><span class="nv">$ </span>mv ./shared/GUI/rtfontfileformat.h ./shared/GUI/RTFontFileFormat.h
-</span><span class='line'><span class="nv">$ </span>cp -r ./shared/util ./shared/Util
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ./RT3DApp/android
-</span><span class='line'><span class="nv">$ </span>ndk-build
-</span><span class='line'><span class="nv">$ </span>ant install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>./RT3DApp/android/local.properties の中のsdk.dir にはAndroid SDK のパスを指定する。アプリケーション本体のソースコードは、./RT3DApp/source/ で、アウトプットは./RT3DApp/android/bin/RT3DApp-debug.apk に生成された。</p>
-
-<p>ant install の前に./RT3DApp/media/update_media.bat と./RT3DApp/android/build.bat 相当を実行して、./RT3DApp/android/assets/ にリソースを展開しておく必要があるみたい。
-ant install の代わりにant debug でパッケージを生成して止まるみたい。</p>
-
-<p>Proton SDK はXFree86 1.1 ライセンスで提供されていて、各種プラットフォームに対応しているみたい。Bullet ライブラリも取り込まれているようなので、何か作るのには便利かも。</p>
-
-<p><a href="/images/uploads/2011/07/proton_android_irrlicht_menu.png"><img src="/images/uploads/2011/07/proton_android_irrlicht_menu.png" alt="" /></a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/12/">&larr; Older</a>
@@ -598,6 +576,10 @@ ant install の代わりにant debug でパッケージを生成して止まる�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/12/mikumikupenguin/">MikuMikuPenguin</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/12/gedit-3-dot-11-dot-2/">gEdit 3.11.2</a>
       </li>
     
@@ -613,15 +595,11 @@ ant install の代わりにant debug でパッケージを生成して止まる�
         <a href="/blog/2013/12/30/remote-blogging-with-octopress/">Remote Blogging With Octopress</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/12/29/cleaning/">Cleaning</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (106)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android/'>Android (10)</a></li><li><a href='/blog/categories/android-x86/'>Android-x86 (17)</a></li><li><a href='/blog/categories/bsd/'>BSD (1)</a></li><li><a href='/blog/categories/conky/'>Conky (2)</a></li><li><a href='/blog/categories/develop/'>Develop (1)</a></li><li><a href='/blog/categories/firefox/'>Firefox (4)</a></li><li><a href='/blog/categories/game/'>Game (16)</a></li><li><a href='/blog/categories/gitg/'>Gitg (1)</a></li><li><a href='/blog/categories/gnome/'>GNOME (5)</a></li><li><a href='/blog/categories/gnome3/'>GNOME3 (30)</a></li><li><a href='/blog/categories/gtk-plus/'>GTK+ (1)</a></li><li><a href='/blog/categories/haiku/'>Haiku (1)</a></li><li><a href='/blog/categories/hardware/'>Hardware (2)</a></li><li><a href='/blog/categories/irrlicht/'>Irrlicht (49)</a></li><li><a href='/blog/categories/kinect/'>Kinect (7)</a></li><li><a href='/blog/categories/linux/'>Linux (107)</a></li><li><a href='/blog/categories/meego/'>MeeGo (4)</a></li><li><a href='/blog/categories/mmd/'>MMD (1)</a></li><li><a href='/blog/categories/nightingale/'>Nightingale (1)</a></li><li><a href='/blog/categories/node-dot-js/'>Node.js (3)</a></li><li><a href='/blog/categories/octopress/'>Octopress (5)</a></li><li><a href='/blog/categories/ogre3d/'>Ogre3D (11)</a></li><li><a href='/blog/categories/p2p/'>P2P (1)</a></li><li><a href='/blog/categories/raytracer/'>raytracer (2)</a></li><li><a href='/blog/categories/songbird/'>songbird (1)</a></li><li><a href='/blog/categories/unity3d/'>Unity3D (2)</a></li><li><a href='/blog/categories/windows/'>Windows (3)</a></li><li><a href='/blog/categories/wordpress/'>WordPress (2)</a></li></ul>
 </section>
 <section>
     <h1>Twitter</h1>
