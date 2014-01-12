@@ -4,7 +4,7 @@
   <title><![CDATA[Category: GNOME3 | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/gnome3/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-12T04:30:57+09:00</updated>
+  <updated>2014-01-12T20:14:18+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -263,7 +263,7 @@ Ubuntu GNOME 13.04 デイリービルドのISO イメージが公開されたの
 
 <p>  ],
   &ldquo;url&rdquo;: &ldquo;<a href="http://fpmurphy.com/gnome-shell-extensions">http://fpmurphy.com/gnome-shell-extensions</a>&rdquo;,
-  &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#97;&#x75;&#x74;&#x6f;&#x68;&#105;&#100;&#101;&#116;&#x6f;&#112;&#98;&#x61;&#114;&#x32;&#x40;&#x77;&#x65;&#x72;&#101;&#x77;&#111;&#x6c;&#118;&#101;&#115;&#x2e;&#x75;&#115;">&#x61;&#117;&#x74;&#111;&#x68;&#105;&#100;&#101;&#116;&#111;&#112;&#98;&#97;&#114;&#x32;&#x40;&#x77;&#101;&#114;&#101;&#x77;&#111;&#x6c;&#118;&#x65;&#x73;&#46;&#117;&#115;</a>&rdquo;,
+  &ldquo;uuid&rdquo;: &ldquo;<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x61;&#117;&#116;&#111;&#104;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#98;&#97;&#114;&#50;&#x40;&#119;&#x65;&#x72;&#101;&#x77;&#111;&#x6c;&#x76;&#x65;&#x73;&#x2e;&#x75;&#x73;">&#97;&#117;&#116;&#111;&#104;&#105;&#100;&#101;&#116;&#x6f;&#x70;&#x62;&#97;&#x72;&#50;&#x40;&#x77;&#x65;&#x72;&#101;&#x77;&#111;&#x6c;&#x76;&#x65;&#115;&#46;&#x75;&#115;</a>&rdquo;,
   &ldquo;version&rdquo;: 1
 }
 ```</p>

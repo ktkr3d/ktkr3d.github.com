@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-12T04:30:57+09:00</updated>
+  <updated>2014-01-12T20:14:18+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -139,6 +139,16 @@ make するとgedit 3.11.2 が起動します。</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h4>libgd</h4>
+
+<p>libgd をダウンロードします。
+後でgitg のフォルダにコピーします。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone git://git.gnome.org/libgd
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h4>gitg</h4>
 
 <p><code>gitg</code>をインストールします。</p>
@@ -154,6 +164,8 @@ make するとgedit 3.11.2 が起動します。</p>
 </span><span class='line'><span class="nv">$ </span>make
 </span><span class='line'><span class="nv">$ </span>sudo make install
 </span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
