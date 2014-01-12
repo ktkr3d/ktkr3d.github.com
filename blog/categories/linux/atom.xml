@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-12T20:14:18+09:00</updated>
+  <updated>2014-01-12T20:19:10+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -40,6 +40,15 @@
 $ ./configure
 $ make -j4
 $ sudo make install
+</code></p>
+
+<h4>libgd</h4>
+
+<p>libgd をダウンロードします。
+後でgedit のフォルダにコピーします。</p>
+
+<p><code>bash
+$ git clone git://git.gnome.org/libgd
 </code></p>
 
 <h4>gedit</h4>
