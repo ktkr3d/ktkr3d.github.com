@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MMD | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/mmd/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-12T23:59:12+09:00</updated>
+  <updated>2014-01-13T00:10:38+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -96,8 +96,167 @@ If libmmp was compiled without SDL2_mixer support, no music will play.
 <p>FOR JAPANESE DOCUMENTATION, SEE:
 &lt;file:///usr/local/share/mikumikupenguin/doc/README_JP.html></p>
 
-<p>Report bugs to <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x69;&#x62;&#101;&#110;&#114;&#x75;&#110;&#110;&#105;&#110;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#105;&#x62;&#101;&#x6e;&#114;&#117;&#110;&#110;&#105;&#110;&#64;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a> (English or Japanese is ok).
+<p>Report bugs to <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#x69;&#98;&#101;&#110;&#114;&#x75;&#110;&#110;&#x69;&#110;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x69;&#x62;&#x65;&#x6e;&#114;&#117;&#x6e;&#x6e;&#105;&#x6e;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a> (English or Japanese is ok).
 ```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Irrlicht Android Media Player]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player/"/>
+    <updated>2013-08-11T03:47:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/08/11/irrlicht-android-media-player</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_android_player_tab.png"><img src="/images/irrlicht_android_player_tab_tn.png"></a></p>
+
+<p>Android のNative Activity で実装したアプリからオーディオの再生ができたので、ミクさんが踊ってくれるメディアプレイヤー的なものにしてみました。</p>
+
+<!-- more -->
+
+
+<h4>PMD とVMD のロード処理の修正</h4>
+
+<p>以前のソースコードがHDD の故障とともに消えてしまったので、コードやMakefile を書きなおしていたところ、うまくロードできないPMD、VMD があることに気が付きました。
+BinaryReader のロード処理で、プロセッサ種別に依存してうまく取り込めない(ARM CPU で構造体のアラインメントが異なる)のが原因のようです。<br/>
+以前のバージョンのコンパイラ＋古いバージョンのAndroid デバイスでは動いていたような気がするのに。
+原因は単純なので修正しておきました。</p>
+
+<h4>Native Activity からのWakeLock の制御</h4>
+
+<p>少し経つと画面が暗くなって、画面が非表示状態になります。
+PowerManager のWakeLock を制御すれば良さそうです。
+Android NDK のNative Activity の場合はJNI を経由してPower Manager へアクセスするのかな。
+後で調べておこう。</p>
+
+<h4>画面インタフェース</h4>
+
+<ul>
+<li><strong>パネル表示切替ボタン「⇅」</strong><br/>
+画面下部の設定用のインタフェースの表示/非表示を切り替える。曲目リスト、モデルリスト、環境設定のタブがある。</li>
+<li><strong>ミュート切替ボタン「♪」</strong><br/>
+音声の出力状態を切り替える。OpenSL ES の<code>(*uriPlayerVolume)-&gt;SetMute()</code>をコールしている。</li>
+<li><strong>再生/停止切替ボタン「▶」</strong><br/>
+モーションと音声の再生/停止を切り替える。アニメーションスピードの切り替えと<code>(*uriPlayerPlay)-&gt;SetPlayState()</code>をコールしている。モデルまたは曲を変更した場合は最初から開始する。</li>
+<li><strong>終了ボタン「×」</strong><br/>
+アプリケーションを終了する。</li>
+<li><strong>カメラ位置スクロールバー</strong><br/>
+カメラの位置を前後させる。</li>
+</ul>
+
+
+<h4>TODO</h4>
+
+<ul>
+<li><code>state-&gt;onAppCmd</code> にコールバック関数を設定しているのにキックされない原因を調べる。</li>
+<li><code>pFileSystem-&gt;createFileList()</code> が失敗する原因を調べる。</li>
+<li>タスク復帰時に描画コンテキストをリストアする。</li>
+<li>GUI のSkin を変更する。</li>
+<li>Android 固有の入力イベントに対応する。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Compiling Irrlicht ogl-es branch for Android]]></title>
+    <link href="http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android/"/>
+    <updated>2013-08-04T04:04:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2013/08/04/compiling-irrlicht-ogl-es-branch-for-android</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_ogl-es_android.png"><img src="/images/irrlicht_ogl-es_android_tn.png"></a></p>
+
+<ul>
+<li>Compiling Irrlicht ogl-es branch for Android on Ubuntu GNOME 13.10 x86_64.</li>
+<li>Native C/C++ Android Application (Native Activity).</li>
+<li>Fullscreen (1080x1920)</li>
+<li>Input Event Receiver</li>
+<li>True Type Font (FreeType2)</li>
+<li>OpenSL ES (Native Audio)</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h4>Environment</h4>
+
+<ul>
+<li>Android SDK: 22.0.5</li>
+<li>Android NDK: r9</li>
+<li>Android Device: Android 4.1.2 (API level 16)</li>
+<li>Irrlicht 1.9 [r4528]</li>
+</ul>
+
+
+<h4>Download Irrlicht ogl-es branch</h4>
+
+<p><code>http://sourceforge.net/p/irrlicht/code/</code></p>
+
+<ol>
+<li>Select <code>branches</code>, <code>ogl-es</code>, <code>Download Snapshot</code>.</li>
+<li>Download.</li>
+<li>Extract.</li>
+</ol>
+
+
+<h4>Compile Irrlicht Library</h4>
+
+<p><code>bash
+$ cd source/Irrlicht/Andorid
+$ ndk-build -j4
+</code></p>
+
+<p>&ndash;> <code>lib/Android/libirrlicht.a</code></p>
+
+<h4>Build example</h4>
+
+<p><code>bash
+$ cd examples/17.HelloWorld_Mobile
+$ android update project --path . --target android-16
+$ ndk-build -j4
+$ ant debug
+</code></p>
+
+<p>&ndash;> <code>examples/17.HellowWorld_Mobile/HelloWorldMobile-debug.apk</code></p>
+
+<h4>TrueType Font</h4>
+
+<p><code>include/irrUString.h</code>, <code>jni/CGUITTFont.h</code>, <code>jni/CGUITTFont.cpp</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android NDK で日本語表示してみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/08/10/android-ndk/"/>
+    <updated>2011-08-10T21:55:28+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/08/10/android-ndk</id>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_freetype.png"><img src="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_freetype.png" alt="android ndk irrlicht pmd vmd freetype" /></a></p>
+
+<p>Proton SDK 上のIrrlicht ではGUIEnvironment がうまく取得できなかったので、Proton SDK を外した。素のIrrlicht にしたら、画像や文字の表示に問題なかった。ついでに、FreeType を取り込んでTrueType のフォントで日本語を表示してみた。
+Proton SDK を外したら、なぜかIrrlicht 上の幅と高さが半分くらいになってしまったので、直さないと。GLES2 にも移行したいところ。</p>
+
+<p><a href="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_fullscreen.png"><img src="/images/uploads/2011/08/android_ndk_irrlicht_pmd_vmd_fullscreen.png" alt="android ndk irrlicht pmd vmd fullscreen" /></a></p>
+
+<p>AndroidManifest.xml を修正したら、フルスクリーンになって最大解像度が有効になった。</p>
+
+<p><a href="/images/uploads/2011/08/android_ndk_pmd_homerun.png"><img src="/images/uploads/2011/08/android_ndk_pmd_homerun.png" alt="android ndk pmd vmd irrlicht freetype" /></a></p>
+
+<p>いろいろなボタンをつけてみた。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android NDK でPMD モデルを表示してみた]]></title>
+    <link href="http://ktkr3d.github.io/blog/2011/07/31/android-ndk-pmd/"/>
+    <updated>2011-07-31T10:46:13+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2011/07/31/android-ndk-pmd</id>
+    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd.png" alt="android ndk irrlicht pmd proton sdk" /></a></p>
+
+<p>Proton SDK にIrrlicht とBullet とboost が入っていたので、irrmmd も混ぜてMMD のPMD モデルを表示してみた。boost がちょっと古そうだったので、Linux マシンに入っている物で差し替えた。VMD も組み込んでみた。Android NDK といえど、重いモデルや激しいモーションで性能がでないだろうから、チューニングしないと。Proton SDK を外したら早くなるかな？CPU が古いARM だから仕方なしかな。</p>
+
+<p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd_vmd.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd_vmd.png" alt="android ndk irrlicht pmd vmd proton sdk" /></a></p>
+
+<p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd_menu.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd_menu.png" alt="android ndk irrlicht proton sdk" /></a></p>
+
+<p>サンプルプログラムに「PMD and VMD」メニューを追加してみた。ついでに位置ずれも修正。</p>
 ]]></content>
   </entry>
   
