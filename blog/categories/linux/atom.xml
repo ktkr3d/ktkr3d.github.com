@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-13T00:15:46+09:00</updated>
+  <updated>2014-01-13T11:35:30+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,156 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Irrlicht 1.9 trunk]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/13/irrlicht-1-dot-9-trunk/"/>
+    <updated>2014-01-13T11:10:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/13/irrlicht-1-dot-9-trunk</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_1.9_trunk.png"><img src="/images/irrlicht_1.9_trunk.png" title="Irrlicht 1.9 trunk" alt="Irrlicht 1.9 trunk" /></a></p>
+
+<p><a href="http://sourceforge.net/p/irrlicht/code/HEAD/tarball">http://sourceforge.net/p/irrlicht/code/HEAD/tarball</a></p>
+
+<p>Irrlicht 1.9 trunk を試してみたら、シェーダーのバグが修正されていた。</p>
+
+<!-- more -->
+
+
+<h4>実行環境</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">環境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ディストロ</td>
+<td align="left">Ubuntu GNOME 14.04 a1</td>
+</tr>
+<tr>
+<td align="left">デスクトップ環境</td>
+<td align="left">GNOME Shell 3.11.3</td>
+</tr>
+<tr>
+<td align="left">Linux カーネル</td>
+<td align="left">3.12.0</td>
+</tr>
+<tr>
+<td align="left">コンパイラ</td>
+<td align="left">gcc/g++ 4.8.2</td>
+</tr>
+<tr>
+<td align="left">ビデオカード</td>
+<td align="left">GeForce GTX 560 Ti/PCIe/SSE2</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>ディレクトリ構成</h4>
+
+<p>OS を入れ替える度に忘れてしまうのでメモ。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">内容</th>
+<th align="left">パス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Irrlicht 3D エンジン</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk</td>
+</tr>
+<tr>
+<td align="left">Bullet</td>
+<td align="left">/mnt/common/tools/bullet-2.76</td>
+</tr>
+<tr>
+<td align="left">サウンドエンジン</td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64</td>
+</tr>
+<tr>
+<td align="left">アプリソース</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/examples/XEffects</td>
+</tr>
+<tr>
+<td align="left">IrrMMD</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/examples/XEffects/irrmmd</td>
+</tr>
+<tr>
+<td align="left">実行ディレクトリ</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/bin/Linux</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Bullet とcAudio は以前ビルドしたものを再利用する。
+.so を実行ディレクトリにコピーしておく。
+IrrMMD(PMD/VMDローダ) は<code>http://gunload.web.fc2.com/irrlicht/download.html</code>からダウンロードする。</p>
+
+<h4>前提パッケージ等</h4>
+
+<p><code>bash
+$ sudo apt-get -y install build-essential xserver-xorg-dev x11proto-xf86vidmode-dev libxxf86vm-dev mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev libxext-dev libxcursor-dev
+$ sudo apt-get install libfreetype6-dev freeglut3-dev libboost-dev libglew1.5-dev libtheora-dev libopenal-dev codeblocks
+</code></p>
+
+<h4>Irrlicht のビルド</h4>
+
+<p><code>http://sourceforge.net/p/irrlicht/code/HEAD/tarball</code> のtrunk を選んで、<code>Download Snapshot</code> を押下する。</p>
+
+<p><code>bash
+$ cd /mnt/common/tools/irrlicht-trunk/source/Irrlicht
+$ make -j4
+</code></p>
+
+<h4>Code::Blocks の設定</h4>
+
+<p>Settings &ndash;> Compiler &ndash;> Search directories で設定</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">分類</th>
+<th align="left">パス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Compiler</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk/include</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64/include</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/bullet-2.76/src</td>
+</tr>
+<tr>
+<td align="left">Linker</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk/lib/Linux</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64/lib/linux-64</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/bullet-2.76/lib_x86_64</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[MikuMikuPenguin]]></title>
@@ -96,7 +246,7 @@ If libmmp was compiled without SDL2_mixer support, no music will play.
 <p>FOR JAPANESE DOCUMENTATION, SEE:
 &lt;file:///usr/local/share/mikumikupenguin/doc/README_JP.html></p>
 
-<p>Report bugs to <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x69;&#x62;&#x65;&#110;&#x72;&#117;&#x6e;&#110;&#105;&#x6e;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#105;&#x62;&#101;&#x6e;&#x72;&#117;&#x6e;&#x6e;&#105;&#110;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a> (English or Japanese is ok).
+<p>Report bugs to <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x69;&#98;&#101;&#110;&#114;&#x75;&#110;&#110;&#x69;&#x6e;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#105;&#98;&#101;&#x6e;&#x72;&#117;&#x6e;&#110;&#x69;&#x6e;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a> (English or Japanese is ok).
 ```</p>
 ]]></content>
   </entry>
@@ -291,67 +441,6 @@ XUL の<code>cmd_scrollBottom</code> を<code>cmd_scrollPageDown</code> に、<c
 </code></pre>
 
 <p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Remote Blogging with Octopress]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/12/30/remote-blogging-with-octopress/"/>
-    <updated>2013-12-30T10:09:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/12/30/remote-blogging-with-octopress</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/octopress_helper.png"><img src="/images/octopress_helper.png"></a></p>
-
-<p>モバイルPC からGitHub 上に構築したOctopress を更新してみます。
-今回は、Octopress を設定済みのホストPC のリモートディレクトリをマウントして利用します。</p>
-
-<!-- more -->
-
-
-<h4>ホストPC のディスクをsshfs でマウント</h4>
-
-<p><code>bash
-$ ssh-keygen
-$ ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostname -p 22222
-$ ssh username@hostname -p 22222
-$ sshfs username@hostname:/mnt/common /mnt/common -p 22222 -o reconnect
-</code></p>
-
-<p>自動でマウントするには、<code>gnome-session-properties</code> で設定するか、<code>/etc/fstab</code> に設定します。</p>
-
-<h4>Ruby のインストール</h4>
-
-<p><code>bash
-$ curl -L https://get.rvm.io | bash -s stable --ruby
-$ rvm install 1.9.3
-$ rvm use 1.9.3
-$ rvm rubygems latest
-$ cd /mnt/common/github/octopress
-$ bundle install
-</code></p>
-
-<h4>.bashrc の設定</h4>
-
-<p><code>bash .bashrc
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source $HOME/.rvm/scripts/rvm
-</code></p>
-
-<h4>Git の設定</h4>
-
-<p><code>bash
-$ git config --global user.name "username"
-$ git config --global user.email mail_account_name@mail_domain_name
-</code></p>
-
-<h4>GitHub の設定</h4>
-
-<p>GitHub にログインして~/.ssh/id_rsa.pub を登録</p>
-
-<h4>Octopress Helper の設定</h4>
-
-<p><a href="http://ktkr3d.github.io/blog/2013/10/08/yad/">http://ktkr3d.github.io/blog/2013/10/08/yad/</a></p>
-
-<p><a href="http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/">http://ktkr3d.github.io/blog/2013/07/15/zenity-octopress-helper/</a></p>
 ]]></content>
   </entry>
   

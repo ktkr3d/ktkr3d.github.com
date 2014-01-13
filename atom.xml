@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-13T00:15:46+09:00</updated>
+  <updated>2014-01-13T11:35:30+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,160 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Irrlicht 1.9 trunk]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/13/irrlicht-1-dot-9-trunk/"/>
+    <updated>2014-01-13T11:10:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/13/irrlicht-1-dot-9-trunk</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_1.9_trunk.png"><img src="http://ktkr3d.github.io/images/irrlicht_1.9_trunk.png" title="Irrlicht 1.9 trunk" alt="Irrlicht 1.9 trunk" /></a></p>
+
+<p><a href="http://sourceforge.net/p/irrlicht/code/HEAD/tarball">http://sourceforge.net/p/irrlicht/code/HEAD/tarball</a></p>
+
+<p>Irrlicht 1.9 trunk を試してみたら、シェーダーのバグが修正されていた。</p>
+
+<!-- more -->
+
+
+<h4>実行環境</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">環境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ディストロ</td>
+<td align="left">Ubuntu GNOME 14.04 a1</td>
+</tr>
+<tr>
+<td align="left">デスクトップ環境</td>
+<td align="left">GNOME Shell 3.11.3</td>
+</tr>
+<tr>
+<td align="left">Linux カーネル</td>
+<td align="left">3.12.0</td>
+</tr>
+<tr>
+<td align="left">コンパイラ</td>
+<td align="left">gcc/g++ 4.8.2</td>
+</tr>
+<tr>
+<td align="left">ビデオカード</td>
+<td align="left">GeForce GTX 560 Ti/PCIe/SSE2</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>ディレクトリ構成</h4>
+
+<p>OS を入れ替える度に忘れてしまうのでメモ。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">内容</th>
+<th align="left">パス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Irrlicht 3D エンジン</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk</td>
+</tr>
+<tr>
+<td align="left">Bullet</td>
+<td align="left">/mnt/common/tools/bullet-2.76</td>
+</tr>
+<tr>
+<td align="left">サウンドエンジン</td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64</td>
+</tr>
+<tr>
+<td align="left">アプリソース</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/examples/XEffects</td>
+</tr>
+<tr>
+<td align="left">IrrMMD</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/examples/XEffects/irrmmd</td>
+</tr>
+<tr>
+<td align="left">実行ディレクトリ</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/bin/Linux</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Bullet とcAudio は以前ビルドしたものを再利用する。
+.so を実行ディレクトリにコピーしておく。
+IrrMMD(PMD/VMDローダ) は<code>http://gunload.web.fc2.com/irrlicht/download.html</code>からダウンロードする。</p>
+
+<h4>前提パッケージ等</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get -y install build-essential xserver-xorg-dev x11proto-xf86vidmode-dev libxxf86vm-dev mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev libxext-dev libxcursor-dev
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install libfreetype6-dev freeglut3-dev libboost-dev libglew1.5-dev libtheora-dev libopenal-dev codeblocks
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Irrlicht のビルド</h4>
+
+<p><code>http://sourceforge.net/p/irrlicht/code/HEAD/tarball</code> のtrunk を選んで、<code>Download Snapshot</code> を押下する。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /mnt/common/tools/irrlicht-trunk/source/Irrlicht
+</span><span class='line'><span class="nv">$ </span>make -j4
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Code::Blocks の設定</h4>
+
+<p>Settings &ndash;> Compiler &ndash;> Search directories で設定</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">分類</th>
+<th align="left">パス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Compiler</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk/include</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64/include</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/bullet-2.76/src</td>
+</tr>
+<tr>
+<td align="left">Linker</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk/lib/Linux</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64/lib/linux-64</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/bullet-2.76/lib_x86_64</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[MikuMikuPenguin]]></title>
@@ -1734,51 +1888,6 @@ Web ベースのUI を作っている方もいるようですが、とりあえ�
 <h4>プレビュー</h4>
 
 <p>私は <code>rake preview</code> をログイン時に常駐させて、ブラウザから <code>http://localhost:4000/</code> にアクセスしてレイアウト結果を確認しています。フォルダ内の変更が監視されるので、多少の負荷はあるかもしれません。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GNOME Shell Lock Screen]]></title>
-    <link href="http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen/"/>
-    <updated>2013-07-15T08:57:00+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2013/07/15/gnome-shell-lock-screen</id>
-    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"><img src="http://ktkr3d.github.io/images/gnome_shell_lock_screen.png"></a></p>
-
-<p>GNOME Shell のロック画面で表示される時刻のフォントの上部が欠けていたので、暫定対策しました。</p>
-
-<!-- more -->
-
-
-<h4>ロック画面のフォントの変更</h4>
-
-<p><code>font-family: "DejaVu Sans";</code>でフォントファミリーを指定しています。</p>
-
-<figure class='code'><figcaption><span>/usr/share/gnome-shell/theme/gnome-shell.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.screen-shield-clock-time</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">64pt</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">4</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nc">.screen-shield-clock-date</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;DejaVu Sans&quot;</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">24pt</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>設定の反映</h4>
-
-<p>設定を反映するには、<code>Alt + F2</code> を押下、<code>r</code> を入力して<code>Enter</code>で、GNOME Shell を再起動します。</p>
 ]]></content>
   </entry>
   

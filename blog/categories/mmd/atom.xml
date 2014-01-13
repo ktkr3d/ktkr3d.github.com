@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MMD | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/mmd/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-13T00:15:46+09:00</updated>
+  <updated>2014-01-13T11:35:30+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -12,6 +12,156 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Irrlicht 1.9 trunk]]></title>
+    <link href="http://ktkr3d.github.io/blog/2014/01/13/irrlicht-1-dot-9-trunk/"/>
+    <updated>2014-01-13T11:10:00+09:00</updated>
+    <id>http://ktkr3d.github.io/blog/2014/01/13/irrlicht-1-dot-9-trunk</id>
+    <content type="html"><![CDATA[<p><a href="http://ktkr3d.github.io/images/irrlicht_1.9_trunk.png"><img src="/images/irrlicht_1.9_trunk.png" title="Irrlicht 1.9 trunk" alt="Irrlicht 1.9 trunk" /></a></p>
+
+<p><a href="http://sourceforge.net/p/irrlicht/code/HEAD/tarball">http://sourceforge.net/p/irrlicht/code/HEAD/tarball</a></p>
+
+<p>Irrlicht 1.9 trunk を試してみたら、シェーダーのバグが修正されていた。</p>
+
+<!-- more -->
+
+
+<h4>実行環境</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">環境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ディストロ</td>
+<td align="left">Ubuntu GNOME 14.04 a1</td>
+</tr>
+<tr>
+<td align="left">デスクトップ環境</td>
+<td align="left">GNOME Shell 3.11.3</td>
+</tr>
+<tr>
+<td align="left">Linux カーネル</td>
+<td align="left">3.12.0</td>
+</tr>
+<tr>
+<td align="left">コンパイラ</td>
+<td align="left">gcc/g++ 4.8.2</td>
+</tr>
+<tr>
+<td align="left">ビデオカード</td>
+<td align="left">GeForce GTX 560 Ti/PCIe/SSE2</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>ディレクトリ構成</h4>
+
+<p>OS を入れ替える度に忘れてしまうのでメモ。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">内容</th>
+<th align="left">パス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Irrlicht 3D エンジン</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk</td>
+</tr>
+<tr>
+<td align="left">Bullet</td>
+<td align="left">/mnt/common/tools/bullet-2.76</td>
+</tr>
+<tr>
+<td align="left">サウンドエンジン</td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64</td>
+</tr>
+<tr>
+<td align="left">アプリソース</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/examples/XEffects</td>
+</tr>
+<tr>
+<td align="left">IrrMMD</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/examples/XEffects/irrmmd</td>
+</tr>
+<tr>
+<td align="left">実行ディレクトリ</td>
+<td align="left">/mnt/common/home/Projects/Irrlicht/bin/Linux</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Bullet とcAudio は以前ビルドしたものを再利用する。
+.so を実行ディレクトリにコピーしておく。
+IrrMMD(PMD/VMDローダ) は<code>http://gunload.web.fc2.com/irrlicht/download.html</code>からダウンロードする。</p>
+
+<h4>前提パッケージ等</h4>
+
+<p><code>bash
+$ sudo apt-get -y install build-essential xserver-xorg-dev x11proto-xf86vidmode-dev libxxf86vm-dev mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev libxext-dev libxcursor-dev
+$ sudo apt-get install libfreetype6-dev freeglut3-dev libboost-dev libglew1.5-dev libtheora-dev libopenal-dev codeblocks
+</code></p>
+
+<h4>Irrlicht のビルド</h4>
+
+<p><code>http://sourceforge.net/p/irrlicht/code/HEAD/tarball</code> のtrunk を選んで、<code>Download Snapshot</code> を押下する。</p>
+
+<p><code>bash
+$ cd /mnt/common/tools/irrlicht-trunk/source/Irrlicht
+$ make -j4
+</code></p>
+
+<h4>Code::Blocks の設定</h4>
+
+<p>Settings &ndash;> Compiler &ndash;> Search directories で設定</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">分類</th>
+<th align="left">パス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Compiler</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk/include</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64/include</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/bullet-2.76/src</td>
+</tr>
+<tr>
+<td align="left">Linker</td>
+<td align="left">/mnt/common/tools/irrlicht-trunk/lib/Linux</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/cAudio2.1.0-Linux_64/lib/linux-64</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/mnt/common/tools/bullet-2.76/lib_x86_64</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[MikuMikuPenguin]]></title>
@@ -96,7 +246,7 @@ If libmmp was compiled without SDL2_mixer support, no music will play.
 <p>FOR JAPANESE DOCUMENTATION, SEE:
 &lt;file:///usr/local/share/mikumikupenguin/doc/README_JP.html></p>
 
-<p>Report bugs to <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#105;&#98;&#101;&#x6e;&#114;&#x75;&#110;&#110;&#x69;&#x6e;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#105;&#x62;&#x65;&#x6e;&#114;&#117;&#110;&#x6e;&#x69;&#x6e;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a> (English or Japanese is ok).
+<p>Report bugs to <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#105;&#x62;&#101;&#x6e;&#114;&#x75;&#x6e;&#x6e;&#x69;&#x6e;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#105;&#98;&#101;&#110;&#114;&#x75;&#110;&#110;&#105;&#x6e;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a> (English or Japanese is ok).
 ```</p>
 ]]></content>
   </entry>
@@ -240,23 +390,6 @@ Proton SDK を外したら、なぜかIrrlicht 上の幅と高さが半分くら
 <p><a href="/images/uploads/2011/08/android_ndk_pmd_homerun.png"><img src="/images/uploads/2011/08/android_ndk_pmd_homerun.png" alt="android ndk pmd vmd irrlicht freetype" /></a></p>
 
 <p>いろいろなボタンをつけてみた。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android NDK でPMD モデルを表示してみた]]></title>
-    <link href="http://ktkr3d.github.io/blog/2011/07/31/android-ndk-pmd/"/>
-    <updated>2011-07-31T10:46:13+09:00</updated>
-    <id>http://ktkr3d.github.io/blog/2011/07/31/android-ndk-pmd</id>
-    <content type="html"><![CDATA[<p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd.png" alt="android ndk irrlicht pmd proton sdk" /></a></p>
-
-<p>Proton SDK にIrrlicht とBullet とboost が入っていたので、irrmmd も混ぜてMMD のPMD モデルを表示してみた。boost がちょっと古そうだったので、Linux マシンに入っている物で差し替えた。VMD も組み込んでみた。Android NDK といえど、重いモデルや激しいモーションで性能がでないだろうから、チューニングしないと。Proton SDK を外したら早くなるかな？CPU が古いARM だから仕方なしかな。</p>
-
-<p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd_vmd.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd_vmd.png" alt="android ndk irrlicht pmd vmd proton sdk" /></a></p>
-
-<p><a href="/images/uploads/2011/07/android_ndk_irrlicht_pmd_menu.png"><img src="/images/uploads/2011/07/android_ndk_irrlicht_pmd_menu.png" alt="android ndk irrlicht proton sdk" /></a></p>
-
-<p>サンプルプログラムに「PMD and VMD」メニューを追加してみた。ついでに位置ずれも修正。</p>
 ]]></content>
   </entry>
   
