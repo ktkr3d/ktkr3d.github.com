@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MMD | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/mmd/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-13T11:35:30+09:00</updated>
+  <updated>2014-01-13T11:49:31+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -103,7 +103,8 @@
 
 <p>Bullet とcAudio は以前ビルドしたものを再利用する。
 .so を実行ディレクトリにコピーしておく。
-IrrMMD(PMD/VMDローダ) は<code>http://gunload.web.fc2.com/irrlicht/download.html</code>からダウンロードする。</p>
+IrrMMD(PMD/VMDローダ) は<code>http://gunload.web.fc2.com/irrlicht/download.html</code>からダウンロードする。
+/mnt/common/tools/irrlicht-trunk/include/irrUString.h は<code>http://irrlicht.sourceforge.net/forum//viewtopic.php?t=37296</code> からダウンロードする。</p>
 
 <h4>前提パッケージ等</h4>
 
@@ -144,6 +145,10 @@ $ make -j4
 <tr>
 <td align="left"></td>
 <td align="left">/mnt/common/tools/bullet-2.76/src</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/usr/include/freetype2</td>
 </tr>
 <tr>
 <td align="left">Linker</td>
@@ -246,7 +251,7 @@ If libmmp was compiled without SDL2_mixer support, no music will play.
 <p>FOR JAPANESE DOCUMENTATION, SEE:
 &lt;file:///usr/local/share/mikumikupenguin/doc/README_JP.html></p>
 
-<p>Report bugs to <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#105;&#x62;&#101;&#x6e;&#114;&#x75;&#x6e;&#x6e;&#x69;&#x6e;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#105;&#98;&#101;&#110;&#114;&#x75;&#110;&#110;&#105;&#x6e;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a> (English or Japanese is ok).
+<p>Report bugs to <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#105;&#98;&#101;&#x6e;&#114;&#x75;&#x6e;&#110;&#105;&#x6e;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#105;&#x62;&#101;&#x6e;&#114;&#x75;&#x6e;&#x6e;&#105;&#110;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a> (English or Japanese is ok).
 ```</p>
 ]]></content>
   </entry>

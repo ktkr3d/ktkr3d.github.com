@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Irrlicht | ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/blog/categories/irrlicht/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-13T11:35:30+09:00</updated>
+  <updated>2014-01-13T11:49:31+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -103,7 +103,8 @@
 
 <p>Bullet とcAudio は以前ビルドしたものを再利用する。
 .so を実行ディレクトリにコピーしておく。
-IrrMMD(PMD/VMDローダ) は<code>http://gunload.web.fc2.com/irrlicht/download.html</code>からダウンロードする。</p>
+IrrMMD(PMD/VMDローダ) は<code>http://gunload.web.fc2.com/irrlicht/download.html</code>からダウンロードする。
+/mnt/common/tools/irrlicht-trunk/include/irrUString.h は<code>http://irrlicht.sourceforge.net/forum//viewtopic.php?t=37296</code> からダウンロードする。</p>
 
 <h4>前提パッケージ等</h4>
 
@@ -144,6 +145,10 @@ $ make -j4
 <tr>
 <td align="left"></td>
 <td align="left">/mnt/common/tools/bullet-2.76/src</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">/usr/include/freetype2</td>
 </tr>
 <tr>
 <td align="left">Linker</td>
