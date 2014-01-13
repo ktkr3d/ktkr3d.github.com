@@ -4,7 +4,7 @@
   <title><![CDATA[ktkr3d]]></title>
   <link href="http://ktkr3d.github.io/atom.xml" rel="self"/>
   <link href="http://ktkr3d.github.io/"/>
-  <updated>2014-01-13T12:34:08+09:00</updated>
+  <updated>2014-01-13T13:21:15+09:00</updated>
   <id>http://ktkr3d.github.io/</id>
   <author>
     <name><![CDATA[ktkr3d]]></name>
@@ -176,6 +176,10 @@ Irrlicht 1.9 trunk を試してみたら、シェーダーのバグが修正さ�
 </tbody>
 </table>
 
+
+<h4>サンプルアプリ</h4>
+
+<p><code>https://github.com/ktkr3d/irrlicht-sandbox</code></p>
 ]]></content>
   </entry>
   
